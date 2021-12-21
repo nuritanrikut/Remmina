@@ -40,24 +40,29 @@
 #include "remmina_pref.h"
 #include "remmina/remmina_trace_calls.h"
 
-G_DEFINE_TYPE( RemminaScrolledViewport, remmina_scrolled_viewport, GTK_TYPE_EVENT_BOX)
+G_DEFINE_TYPE( RemminaScrolledViewport, remmina_scrolled_viewport, GTK_TYPE_EVENT_BOX )
 
-static void remmina_scrolled_viewport_get_preferred_width(GtkWidget* widget, gint* minimum_width, gint* natural_width)
+static void remmina_scrolled_viewport_get_preferred_width( GtkWidget *widget, gint *minimum_width, gint *natural_width )
 {
-	TRACE_CALL(__func__);
-	/* Just return a fake small size, so gtk_window_fullscreen() will not fail
+    TRACE_CALL( __func__ );
+    /* Just return a fake small size, so gtk_window_fullscreen() will not fail
 	 * because our content is too big*/
-	if (minimum_width != NULL) *minimum_width = 100;
-	if (natural_width != NULL) *natural_width = 100;
+    if( minimum_width != NULL )
+        *minimum_width = 100;
+    if( natural_width != NULL )
+        *natural_width = 100;
 }
 
-static void remmina_scrolled_viewport_get_preferred_height(GtkWidget* widget, gint* minimum_height, gint* natural_height)
+static void
+remmina_scrolled_viewport_get_preferred_height( GtkWidget *widget, gint *minimum_height, gint *natural_height )
 {
-	TRACE_CALL(__func__);
-	/* Just return a fake small size, so gtk_window_fullscreen() will not fail
+    TRACE_CALL( __func__ );
+    /* Just return a fake small size, so gtk_window_fullscreen() will not fail
 	 * because our content is too big*/
-	if (minimum_height != NULL) *minimum_height = 100;
-	if (natural_height != NULL) *natural_height = 100;
+    if( minimum_height != NULL )
+        *minimum_height = 100;
+    if( natural_height != NULL )
+        *natural_height = 100;
 }
 
 /* Event handler when mouse move on borders
@@ -65,149 +70,153 @@ static void remmina_scrolled_viewport_get_preferred_height(GtkWidget* widget, gi
  * relay the fact that this specific occurrence of timeout has been cancelled.
  * A new one may be scheduled if the mouse pointer moves to the edge again.
  */
-static gboolean remmina_scrolled_viewport_motion_timeout(gpointer data)
+static gboolean remmina_scrolled_viewport_motion_timeout( gpointer data )
 {
-	TRACE_CALL(__func__);
-	RemminaScrolledViewport *gsv;
-	GtkWidget *child;
-	GdkDisplay *display;
-#if GTK_CHECK_VERSION(3, 20, 0)
-	GdkSeat *seat;
+    TRACE_CALL( __func__ );
+    RemminaScrolledViewport *gsv;
+    GtkWidget *child;
+    GdkDisplay *display;
+#if GTK_CHECK_VERSION( 3, 20, 0 )
+    GdkSeat *seat;
 #else
-	GdkDeviceManager *device_manager;
+    GdkDeviceManager *device_manager;
 #endif
-	GdkDevice *pointer;
-	GdkScreen *screen;
-	GdkWindow *gsvwin;
-	gint x, y, mx, my, w, h, rootx, rooty;
-	GtkAdjustment *adj;
-	gdouble value;
+    GdkDevice *pointer;
+    GdkScreen *screen;
+    GdkWindow *gsvwin;
+    gint x, y, mx, my, w, h, rootx, rooty;
+    GtkAdjustment *adj;
+    gdouble value;
 
-	gsv = REMMINA_SCROLLED_VIEWPORT(data);
-	if (!gsv || !gsv->viewport_motion_handler)
-		// Either the pointer is nullptr or the source id is already 0
-		return FALSE;
-	if (!REMMINA_IS_SCROLLED_VIEWPORT(data)) {
-		gsv->viewport_motion_handler = 0;
-		return FALSE;
-	}
-	if (!GTK_IS_BIN(data)) {
-		gsv->viewport_motion_handler = 0;
-		return FALSE;
-	}
+    gsv = REMMINA_SCROLLED_VIEWPORT( data );
+    if( !gsv || !gsv->viewport_motion_handler )
+        // Either the pointer is nullptr or the source id is already 0
+        return FALSE;
+    if( !REMMINA_IS_SCROLLED_VIEWPORT( data ) )
+    {
+        gsv->viewport_motion_handler = 0;
+        return FALSE;
+    }
+    if( !GTK_IS_BIN( data ) )
+    {
+        gsv->viewport_motion_handler = 0;
+        return FALSE;
+    }
 
-	child = gtk_bin_get_child(GTK_BIN(gsv));
-	if (!GTK_IS_VIEWPORT(child)) {
-		gsv->viewport_motion_handler = 0;
-		return FALSE;
-	}
+    child = gtk_bin_get_child( GTK_BIN( gsv ) );
+    if( !GTK_IS_VIEWPORT( child ) )
+    {
+        gsv->viewport_motion_handler = 0;
+        return FALSE;
+    }
 
-	gsvwin = gtk_widget_get_window(GTK_WIDGET(gsv));
-	display = gdk_display_get_default();
-	if (!display) {
-		gsv->viewport_motion_handler = 0;
-		return FALSE;
-	}
+    gsvwin = gtk_widget_get_window( GTK_WIDGET( gsv ) );
+    display = gdk_display_get_default();
+    if( !display )
+    {
+        gsv->viewport_motion_handler = 0;
+        return FALSE;
+    }
 
-#if GTK_CHECK_VERSION(3, 20, 0)
-	seat = gdk_display_get_default_seat(display);
-	pointer = gdk_seat_get_pointer(seat);
+#if GTK_CHECK_VERSION( 3, 20, 0 )
+    seat = gdk_display_get_default_seat( display );
+    pointer = gdk_seat_get_pointer( seat );
 #else
-	device_manager = gdk_display_get_device_manager(display);
-	pointer = gdk_device_manager_get_client_pointer(device_manager);
+    device_manager = gdk_display_get_device_manager( display );
+    pointer = gdk_device_manager_get_client_pointer( device_manager );
 #endif
-	gdk_device_get_position(pointer, &screen, &x, &y);
+    gdk_device_get_position( pointer, &screen, &x, &y );
 
-	w = gdk_window_get_width(gsvwin) + SCROLL_BORDER_SIZE;   // Add 2px of black scroll border
-	h = gdk_window_get_height(gsvwin) + SCROLL_BORDER_SIZE;  // Add 2px of black scroll border
+    w = gdk_window_get_width( gsvwin ) + SCROLL_BORDER_SIZE;  // Add 2px of black scroll border
+    h = gdk_window_get_height( gsvwin ) + SCROLL_BORDER_SIZE; // Add 2px of black scroll border
 
-	gdk_window_get_root_origin(gsvwin, &rootx, &rooty );
+    gdk_window_get_root_origin( gsvwin, &rootx, &rooty );
 
-	x -= rootx;
-	y -= rooty;
+    x -= rootx;
+    y -= rooty;
 
-	mx = (x <= 0 ? -1 : (x >= w - 1 ? 1 : 0));
-	my = (y <= 0 ? -1 : (y >= h - 1 ? 1 : 0));
-	if (mx != 0) {
-		gint step = MAX(10, MIN(remmina_pref.auto_scroll_step, w / 5));
-		adj = gtk_scrollable_get_hadjustment(GTK_SCROLLABLE(child));
-		value = gtk_adjustment_get_value(GTK_ADJUSTMENT(adj)) + (gdouble)(mx * step);
-		value = MAX(0, MIN(value, gtk_adjustment_get_upper(GTK_ADJUSTMENT(adj)) - (gdouble)w + 2.0));
-		gtk_adjustment_set_value(GTK_ADJUSTMENT(adj), value);
-	}
-	if (my != 0) {
-		gint step = MAX(10, MIN(remmina_pref.auto_scroll_step, h / 5));
-		adj = gtk_scrollable_get_vadjustment(GTK_SCROLLABLE(child));
-		value = gtk_adjustment_get_value(GTK_ADJUSTMENT(adj)) + (gdouble)(my * step);
-		value = MAX(0, MIN(value, gtk_adjustment_get_upper(GTK_ADJUSTMENT(adj)) - (gdouble)h + 2.0));
-		gtk_adjustment_set_value(GTK_ADJUSTMENT(adj), value);
-	}
-	return TRUE;
+    mx = ( x <= 0 ? -1 : ( x >= w - 1 ? 1 : 0 ) );
+    my = ( y <= 0 ? -1 : ( y >= h - 1 ? 1 : 0 ) );
+    if( mx != 0 )
+    {
+        gint step = MAX( 10, MIN( remmina_pref.auto_scroll_step, w / 5 ) );
+        adj = gtk_scrollable_get_hadjustment( GTK_SCROLLABLE( child ) );
+        value = gtk_adjustment_get_value( GTK_ADJUSTMENT( adj ) ) + (gdouble)( mx * step );
+        value = MAX( 0, MIN( value, gtk_adjustment_get_upper( GTK_ADJUSTMENT( adj ) ) - (gdouble)w + 2.0 ) );
+        gtk_adjustment_set_value( GTK_ADJUSTMENT( adj ), value );
+    }
+    if( my != 0 )
+    {
+        gint step = MAX( 10, MIN( remmina_pref.auto_scroll_step, h / 5 ) );
+        adj = gtk_scrollable_get_vadjustment( GTK_SCROLLABLE( child ) );
+        value = gtk_adjustment_get_value( GTK_ADJUSTMENT( adj ) ) + (gdouble)( my * step );
+        value = MAX( 0, MIN( value, gtk_adjustment_get_upper( GTK_ADJUSTMENT( adj ) ) - (gdouble)h + 2.0 ) );
+        gtk_adjustment_set_value( GTK_ADJUSTMENT( adj ), value );
+    }
+    return TRUE;
 }
 
-static gboolean remmina_scrolled_viewport_enter(GtkWidget *widget, GdkEventCrossing *event, gpointer data)
+static gboolean remmina_scrolled_viewport_enter( GtkWidget *widget, GdkEventCrossing *event, gpointer data )
 {
-	TRACE_CALL(__func__);
-	remmina_scrolled_viewport_remove_motion(REMMINA_SCROLLED_VIEWPORT(widget));
-	return FALSE;
+    TRACE_CALL( __func__ );
+    remmina_scrolled_viewport_remove_motion( REMMINA_SCROLLED_VIEWPORT( widget ) );
+    return FALSE;
 }
 
-static gboolean remmina_scrolled_viewport_leave(GtkWidget *widget, GdkEventCrossing *event, gpointer data)
+static gboolean remmina_scrolled_viewport_leave( GtkWidget *widget, GdkEventCrossing *event, gpointer data )
 {
-	TRACE_CALL(__func__);
-	RemminaScrolledViewport *gsv = REMMINA_SCROLLED_VIEWPORT(widget);
-	gsv->viewport_motion_handler = g_timeout_add(20, remmina_scrolled_viewport_motion_timeout, gsv);
-	return FALSE;
+    TRACE_CALL( __func__ );
+    RemminaScrolledViewport *gsv = REMMINA_SCROLLED_VIEWPORT( widget );
+    gsv->viewport_motion_handler = g_timeout_add( 20, remmina_scrolled_viewport_motion_timeout, gsv );
+    return FALSE;
 }
 
-static void remmina_scrolled_viewport_destroy(GtkWidget *widget, gpointer data)
+static void remmina_scrolled_viewport_destroy( GtkWidget *widget, gpointer data )
 {
-	TRACE_CALL(__func__);
-	remmina_scrolled_viewport_remove_motion(REMMINA_SCROLLED_VIEWPORT(widget));
+    TRACE_CALL( __func__ );
+    remmina_scrolled_viewport_remove_motion( REMMINA_SCROLLED_VIEWPORT( widget ) );
 }
 
-static void remmina_scrolled_viewport_class_init(RemminaScrolledViewportClass *klass)
+static void remmina_scrolled_viewport_class_init( RemminaScrolledViewportClass *klass )
 {
-	TRACE_CALL(__func__);
-	GtkWidgetClass *widget_class;
-	widget_class = (GtkWidgetClass*)klass;
+    TRACE_CALL( __func__ );
+    GtkWidgetClass *widget_class;
+    widget_class = (GtkWidgetClass *)klass;
 
-	widget_class->get_preferred_width = remmina_scrolled_viewport_get_preferred_width;
-	widget_class->get_preferred_height = remmina_scrolled_viewport_get_preferred_height;
-
+    widget_class->get_preferred_width = remmina_scrolled_viewport_get_preferred_width;
+    widget_class->get_preferred_height = remmina_scrolled_viewport_get_preferred_height;
 }
 
-static void remmina_scrolled_viewport_init(RemminaScrolledViewport *gsv)
+static void remmina_scrolled_viewport_init( RemminaScrolledViewport *gsv )
 {
-	TRACE_CALL(__func__);
+    TRACE_CALL( __func__ );
 }
 
-void remmina_scrolled_viewport_remove_motion(RemminaScrolledViewport *gsv)
+void remmina_scrolled_viewport_remove_motion( RemminaScrolledViewport *gsv )
 {
-	TRACE_CALL(__func__);
-	guint handler = gsv->viewport_motion_handler;
-	if (handler) {
-		gsv->viewport_motion_handler = 0;
-		g_source_remove(handler);
-	}
+    TRACE_CALL( __func__ );
+    guint handler = gsv->viewport_motion_handler;
+    if( handler )
+    {
+        gsv->viewport_motion_handler = 0;
+        g_source_remove( handler );
+    }
 }
 
-GtkWidget*
-remmina_scrolled_viewport_new(void)
+GtkWidget *remmina_scrolled_viewport_new( void )
 {
-	TRACE_CALL(__func__);
-	RemminaScrolledViewport *gsv;
+    TRACE_CALL( __func__ );
+    RemminaScrolledViewport *gsv;
 
-	gsv = REMMINA_SCROLLED_VIEWPORT(g_object_new(REMMINA_TYPE_SCROLLED_VIEWPORT, NULL));
+    gsv = REMMINA_SCROLLED_VIEWPORT( g_object_new( REMMINA_TYPE_SCROLLED_VIEWPORT, NULL ) );
 
-	gsv->viewport_motion_handler = 0;
+    gsv->viewport_motion_handler = 0;
 
-	gtk_widget_set_size_request(GTK_WIDGET(gsv), 1, 1);
-	gtk_widget_add_events(GTK_WIDGET(gsv), GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK);
-	g_signal_connect(G_OBJECT(gsv), "destroy", G_CALLBACK(remmina_scrolled_viewport_destroy), NULL);
-	g_signal_connect(G_OBJECT(gsv), "enter-notify-event", G_CALLBACK(remmina_scrolled_viewport_enter), NULL);
-	g_signal_connect(G_OBJECT(gsv), "leave-notify-event", G_CALLBACK(remmina_scrolled_viewport_leave), NULL);
+    gtk_widget_set_size_request( GTK_WIDGET( gsv ), 1, 1 );
+    gtk_widget_add_events( GTK_WIDGET( gsv ), GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK );
+    g_signal_connect( G_OBJECT( gsv ), "destroy", G_CALLBACK( remmina_scrolled_viewport_destroy ), NULL );
+    g_signal_connect( G_OBJECT( gsv ), "enter-notify-event", G_CALLBACK( remmina_scrolled_viewport_enter ), NULL );
+    g_signal_connect( G_OBJECT( gsv ), "leave-notify-event", G_CALLBACK( remmina_scrolled_viewport_leave ), NULL );
 
-	return GTK_WIDGET(gsv);
+    return GTK_WIDGET( gsv );
 }
-

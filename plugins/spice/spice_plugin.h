@@ -37,36 +37,37 @@
 #include "common/remmina_plugin.h"
 #include <spice-client.h>
 #ifdef SPICE_GTK_CHECK_VERSION
-#  if SPICE_GTK_CHECK_VERSION(0, 31, 0)
-#    include <spice-client-gtk.h>
-#  else
+#    if SPICE_GTK_CHECK_VERSION( 0, 31, 0 )
+#        include <spice-client-gtk.h>
+#    else
+#        include <spice-widget.h>
+#        include <usb-device-widget.h>
+#    endif
+#else
 #    include <spice-widget.h>
 #    include <usb-device-widget.h>
-#  endif
-#else
-#  include <spice-widget.h>
-#  include <usb-device-widget.h>
 #endif
 
-#define GET_PLUGIN_DATA(gp) (RemminaPluginSpiceData *)g_object_get_data(G_OBJECT(gp), "plugin-data")
+#define GET_PLUGIN_DATA( gp ) (RemminaPluginSpiceData *)g_object_get_data( G_OBJECT( gp ), "plugin-data" )
 
 extern RemminaPluginService *remmina_plugin_service;
-#define REMMINA_PLUGIN_DEBUG(fmt, ...) remmina_plugin_service->_remmina_debug(__func__, fmt, ##__VA_ARGS__)
+#define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )
 
-typedef struct _RemminaPluginSpiceData {
-	SpiceAudio *		audio;
-	SpiceDisplay *		display;
-	SpiceDisplayChannel *	display_channel;
-	SpiceGtkSession *	gtk_session;
-	SpiceMainChannel *	main_channel;
-	SpiceSession *		session;
-	gint			fd;
+typedef struct _RemminaPluginSpiceData
+{
+    SpiceAudio *audio;
+    SpiceDisplay *display;
+    SpiceDisplayChannel *display_channel;
+    SpiceGtkSession *gtk_session;
+    SpiceMainChannel *main_channel;
+    SpiceSession *session;
+    gint fd;
 
 #ifdef SPICE_GTK_CHECK_VERSION
-#  if SPICE_GTK_CHECK_VERSION(0, 31, 0)
-	/* key: SpiceFileTransferTask, value: RemminaPluginSpiceXferWidgets */
-	GHashTable *		file_transfers;
-	GtkWidget *		file_transfer_dialog;
-#  endif        /* SPICE_GTK_CHECK_VERSION(0, 31, 0) */
-#endif          /* SPICE_GTK_CHECK_VERSION */
+#    if SPICE_GTK_CHECK_VERSION( 0, 31, 0 )
+    /* key: SpiceFileTransferTask, value: RemminaPluginSpiceXferWidgets */
+    GHashTable *file_transfers;
+    GtkWidget *file_transfer_dialog;
+#    endif /* SPICE_GTK_CHECK_VERSION(0, 31, 0) */
+#endif     /* SPICE_GTK_CHECK_VERSION */
 } RemminaPluginSpiceData;

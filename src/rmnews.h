@@ -32,18 +32,19 @@
  *
  */
 
-typedef struct _RemminaNewsDialog {
-	GtkBuilder *	builder;
-	GtkDialog *	dialog;
+typedef struct _RemminaNewsDialog
+{
+    GtkBuilder *builder;
+    GtkDialog *dialog;
 
-	GtkTextView *	rmnews_text_view;
-	GtkLabel *	rmnews_label;
-	GtkButton *	rmnews_button_close;
-	GtkLabel *	rmnews_defaultcl_label;
-	GtkButton *	rmnews_defaultcl_button;
-	GtkSwitch *	rmnews_news_switch;
+    GtkTextView *rmnews_text_view;
+    GtkLabel *rmnews_label;
+    GtkButton *rmnews_button_close;
+    GtkLabel *rmnews_defaultcl_label;
+    GtkButton *rmnews_defaultcl_button;
+    GtkSwitch *rmnews_news_switch;
 
-	gint		retval;
+    gint retval;
 } RemminaNewsDialog;
 
 #pragma once
@@ -51,5 +52,5 @@ typedef struct _RemminaNewsDialog {
 G_BEGIN_DECLS
 void rmnews_schedule();
 void rmnews_show_news();
-void rmnews_get_url(const char *url);
+void rmnews_get_url( const char *url );
 G_END_DECLS

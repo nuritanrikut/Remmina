@@ -46,101 +46,96 @@ static RemminaPluginService *remmina_plugin_service = NULL;
 
 gboolean remmina_plugin_kwallet_is_service_available()
 {
-	return rp_kwallet_is_service_available();
+    return rp_kwallet_is_service_available();
 }
 
-
-static gchar *build_kwallet_key(RemminaFile *remminafile, const gchar *key)
+static gchar *build_kwallet_key( RemminaFile *remminafile, const gchar *key )
 {
-	const gchar *path;
-	gchar *kwkey;
-	size_t kwkey_sz;
+    const gchar *path;
+    gchar *kwkey;
+    size_t kwkey_sz;
 
-	path = remmina_plugin_service->file_get_path(remminafile);
+    path = remmina_plugin_service->file_get_path( remminafile );
 
-	kwkey_sz = strlen(key) + 1 + strlen(path) + 1;
-	kwkey = g_malloc(kwkey_sz);
+    kwkey_sz = strlen( key ) + 1 + strlen( path ) + 1;
+    kwkey = g_malloc( kwkey_sz );
 
-	strcpy(kwkey, key);
-	strcat(kwkey, ";");
-	strcat(kwkey, path);
+    strcpy( kwkey, key );
+    strcat( kwkey, ";" );
+    strcat( kwkey, path );
 
-	return kwkey;
+    return kwkey;
 }
 
-void remmina_plugin_kwallet_store_password(RemminaFile *remminafile, const gchar *key, const gchar *password)
+void remmina_plugin_kwallet_store_password( RemminaFile *remminafile, const gchar *key, const gchar *password )
 {
-	TRACE_CALL(__func__);
-	gchar *kwkey;
-	kwkey = build_kwallet_key(remminafile, key);
-	rp_kwallet_store_password(kwkey, password);
-	g_free(kwkey);
+    TRACE_CALL( __func__ );
+    gchar *kwkey;
+    kwkey = build_kwallet_key( remminafile, key );
+    rp_kwallet_store_password( kwkey, password );
+    g_free( kwkey );
 }
 
-gchar*
-remmina_plugin_kwallet_get_password(RemminaFile *remminafile, const gchar *key)
+gchar *remmina_plugin_kwallet_get_password( RemminaFile *remminafile, const gchar *key )
 {
-	TRACE_CALL(__func__);
-	gchar *kwkey, *password;
+    TRACE_CALL( __func__ );
+    gchar *kwkey, *password;
 
-	kwkey = build_kwallet_key(remminafile, key);
-	password = rp_kwallet_get_password(kwkey);
-	g_free(kwkey);
+    kwkey = build_kwallet_key( remminafile, key );
+    password = rp_kwallet_get_password( kwkey );
+    g_free( kwkey );
 
-	return password;
+    return password;
 }
 
-void remmina_plugin_kwallet_delete_password(RemminaFile *remminafile, const gchar *key)
+void remmina_plugin_kwallet_delete_password( RemminaFile *remminafile, const gchar *key )
 {
-	TRACE_CALL(__func__);
-	gchar *kwkey;
-	kwkey = build_kwallet_key(remminafile, key);
-	rp_kwallet_delete_password(kwkey);
-	g_free(kwkey);
+    TRACE_CALL( __func__ );
+    gchar *kwkey;
+    kwkey = build_kwallet_key( remminafile, key );
+    rp_kwallet_delete_password( kwkey );
+    g_free( kwkey );
 }
 
 gboolean remmina_plugin_kwallet_init()
 {
-	/* Activates only when KDE is running */
-	const gchar *envvar;
+    /* Activates only when KDE is running */
+    const gchar *envvar;
 
-	envvar = g_environ_getenv(g_get_environ(), "XDG_CURRENT_DESKTOP");
-	if (!envvar || strcmp(envvar, "KDE") != 0)
-		return FALSE;
+    envvar = g_environ_getenv( g_get_environ(), "XDG_CURRENT_DESKTOP" );
+    if( !envvar || strcmp( envvar, "KDE" ) != 0 )
+        return FALSE;
 
-	return rp_kwallet_init();
-
+    return rp_kwallet_init();
 }
 
-static RemminaSecretPlugin remmina_plugin_kwallet =
-{ REMMINA_PLUGIN_TYPE_SECRET,
-  "kwallet",
-  N_("Secured password storage in KWallet"),
-  NULL,
-  VERSION,
-  1000,
-  remmina_plugin_kwallet_init,
-  remmina_plugin_kwallet_is_service_available,
-  remmina_plugin_kwallet_store_password,
-  remmina_plugin_kwallet_get_password,
-  remmina_plugin_kwallet_delete_password,
+static RemminaSecretPlugin remmina_plugin_kwallet = {
+    REMMINA_PLUGIN_TYPE_SECRET,
+    "kwallet",
+    N_( "Secured password storage in KWallet" ),
+    NULL,
+    VERSION,
+    1000,
+    remmina_plugin_kwallet_init,
+    remmina_plugin_kwallet_is_service_available,
+    remmina_plugin_kwallet_store_password,
+    remmina_plugin_kwallet_get_password,
+    remmina_plugin_kwallet_delete_password,
 };
 
-G_MODULE_EXPORT gboolean
-remmina_plugin_entry(RemminaPluginService *service)
+G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
 {
-	TRACE_CALL(__func__);
+    TRACE_CALL( __func__ );
 
-	/* This function should only register the secret plugin. No init action
+    /* This function should only register the secret plugin. No init action
 	 * should be performed here. Initialization will be done later
 	 * with remmina_plugin_xxx_init() . */
 
-	remmina_plugin_service = service;
-	if (!service->register_plugin((RemminaPlugin*)&remmina_plugin_kwallet)) {
-		return FALSE;
-	}
+    remmina_plugin_service = service;
+    if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin_kwallet ) )
+    {
+        return FALSE;
+    }
 
-	return TRUE;
-
+    return TRUE;
 }
-

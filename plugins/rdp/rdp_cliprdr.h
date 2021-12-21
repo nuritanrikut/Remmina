@@ -37,15 +37,14 @@
 
 #pragma once
 
-
 #include <freerdp/freerdp.h>
 #include "rdp_plugin.h"
 
-void remmina_rdp_clipboard_init(rfContext *rfi);
-void remmina_rdp_clipboard_free(rfContext *rfi);
-void remmina_rdp_cliprdr_init(rfContext *rfi, CliprdrClientContext *cliprdr);
-void remmina_rdp_channel_cliprdr_process(RemminaProtocolWidget *gp, wMessage *event);
-void remmina_rdp_event_process_clipboard(RemminaProtocolWidget *gp, RemminaPluginRdpUiObject *ui);
-CLIPRDR_FORMAT_LIST *remmina_rdp_cliprdr_get_client_format_list(RemminaProtocolWidget *gp);
-void remmina_rdp_cliprdr_detach_owner(RemminaProtocolWidget *gp);
-void remmina_rdp_clipboard_abort_client_format_data_request(rfContext *rfi);
+void remmina_rdp_clipboard_init( rfContext *rfi );
+void remmina_rdp_clipboard_free( rfContext *rfi );
+void remmina_rdp_cliprdr_init( rfContext *rfi, CliprdrClientContext *cliprdr );
+void remmina_rdp_channel_cliprdr_process( RemminaProtocolWidget *gp, wMessage *event );
+void remmina_rdp_event_process_clipboard( RemminaProtocolWidget *gp, RemminaPluginRdpUiObject *ui );
+CLIPRDR_FORMAT_LIST *remmina_rdp_cliprdr_get_client_format_list( RemminaProtocolWidget *gp );
+void remmina_rdp_cliprdr_detach_owner( RemminaProtocolWidget *gp );
+void remmina_rdp_clipboard_abort_client_format_data_request( rfContext *rfi );

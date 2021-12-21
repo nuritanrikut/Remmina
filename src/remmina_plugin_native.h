@@ -38,8 +38,8 @@
 
 G_BEGIN_DECLS
 
-typedef gboolean (*RemminaPluginMain)(gchar *name);
+typedef gboolean ( *RemminaPluginMain )( gchar *name );
 
-gboolean remmina_plugin_native_load(RemminaPluginService* service, const char* name);
+gboolean remmina_plugin_native_load( RemminaPluginService *service, const char *name );
 
 G_END_DECLS

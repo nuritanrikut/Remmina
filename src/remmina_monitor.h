@@ -40,18 +40,19 @@
 
 #include "remmina_file.h"
 
-typedef struct _RemminaMonitor {
-    GNetworkMonitor *		netmonitor;
-    gboolean			connected;
-    GSocketConnectable *	addr;
-    gboolean			reachable;
-    GHashTable *		server_status;
+typedef struct _RemminaMonitor
+{
+    GNetworkMonitor *netmonitor;
+    gboolean connected;
+    GSocketConnectable *addr;
+    gboolean reachable;
+    GHashTable *server_status;
 } RemminaMonitor;
 
 G_BEGIN_DECLS
 
-gboolean remmina_network_monitor_status (RemminaMonitor *rm_monitor);
-RemminaMonitor *remmina_network_monitor_new ();
-gchar *remmina_monitor_can_reach(RemminaFile *remminafile, RemminaMonitor *monitor);
+gboolean remmina_network_monitor_status( RemminaMonitor *rm_monitor );
+RemminaMonitor *remmina_network_monitor_new();
+gchar *remmina_monitor_can_reach( RemminaFile *remminafile, RemminaMonitor *monitor );
 
 G_END_DECLS

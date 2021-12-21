@@ -39,33 +39,33 @@
 #include "common/remmina_plugin.h"
 
 static RemminaPluginService *remmina_plugin_service = NULL;
-#define REMMINA_PLUGIN_DEBUG(fmt, ...) remmina_plugin_service->_remmina_debug(__func__, fmt, ##__VA_ARGS__)
+#define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )
 
-static void remmina_plugin_tool_init(RemminaProtocolWidget *gp)
+static void remmina_plugin_tool_init( RemminaProtocolWidget *gp )
 {
-	TRACE_CALL(__func__);
-	REMMINA_PLUGIN_DEBUG("[%s] Plugin init", PLUGIN_NAME);
+    TRACE_CALL( __func__ );
+    REMMINA_PLUGIN_DEBUG( "[%s] Plugin init", PLUGIN_NAME );
 }
 
-static gboolean remmina_plugin_tool_open_connection(RemminaProtocolWidget *gp)
+static gboolean remmina_plugin_tool_open_connection( RemminaProtocolWidget *gp )
 {
-	TRACE_CALL(__func__);
-	REMMINA_PLUGIN_DEBUG("[%s] Plugin open connection", PLUGIN_NAME);
+    TRACE_CALL( __func__ );
+    REMMINA_PLUGIN_DEBUG( "[%s] Plugin open connection", PLUGIN_NAME );
 
-	GtkDialog *dialog;
-	dialog = GTK_DIALOG(gtk_message_dialog_new(NULL, GTK_DIALOG_MODAL | GTK_DIALOG_USE_HEADER_BAR,
-			GTK_MESSAGE_INFO, GTK_BUTTONS_OK, PLUGIN_DESCRIPTION));
-	gtk_dialog_run(dialog);
-	gtk_widget_destroy(GTK_WIDGET(dialog));
-	return FALSE;
+    GtkDialog *dialog;
+    dialog = GTK_DIALOG( gtk_message_dialog_new(
+        NULL, GTK_DIALOG_MODAL | GTK_DIALOG_USE_HEADER_BAR, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, PLUGIN_DESCRIPTION ) );
+    gtk_dialog_run( dialog );
+    gtk_widget_destroy( GTK_WIDGET( dialog ) );
+    return FALSE;
 }
 
-static gboolean remmina_plugin_tool_close_connection(RemminaProtocolWidget *gp)
+static gboolean remmina_plugin_tool_close_connection( RemminaProtocolWidget *gp )
 {
-	TRACE_CALL(__func__);
-	REMMINA_PLUGIN_DEBUG("[%s] Plugin close connection", PLUGIN_NAME);
-	remmina_plugin_service->protocol_plugin_emit_signal(gp, "disconnect");
-	return FALSE;
+    TRACE_CALL( __func__ );
+    REMMINA_PLUGIN_DEBUG( "[%s] Plugin close connection", PLUGIN_NAME );
+    remmina_plugin_service->protocol_plugin_emit_signal( gp, "disconnect" );
+    return FALSE;
 }
 
 /* Array of RemminaProtocolSetting for basic settings.
@@ -85,46 +85,45 @@ static gboolean remmina_plugin_tool_close_connection(RemminaProtocolWidget *gp)
  *		gpointer value contains the value which should be validated,
  *		gpointer validator_data contains your passed data.
  */
-static const RemminaProtocolSetting remmina_plugin_tool_basic_settings[] =
-{
-	{ REMMINA_PROTOCOL_SETTING_TYPE_END, NULL, NULL, FALSE, NULL, NULL, NULL, NULL }
-};
+static const RemminaProtocolSetting remmina_plugin_tool_basic_settings[] = {
+    { REMMINA_PROTOCOL_SETTING_TYPE_END, NULL, NULL, FALSE, NULL, NULL, NULL, NULL } };
 
 /* Protocol plugin definition and features */
 static RemminaProtocolPlugin remmina_plugin = {
-	REMMINA_PLUGIN_TYPE_PROTOCOL,                   // Type
-	PLUGIN_NAME,                                    // Name
-	PLUGIN_DESCRIPTION,                             // Description
-	GETTEXT_PACKAGE,                                // Translation domain
-	PLUGIN_VERSION,                                 // Version number
-	PLUGIN_APPICON,                                 // Icon for normal connection
-	PLUGIN_APPICON,                                 // Icon for SSH connection
-	remmina_plugin_tool_basic_settings,             // Array for basic settings
-	NULL,                                           // Array for advanced settings
-	REMMINA_PROTOCOL_SSH_SETTING_NONE,              // SSH settings type
-	NULL,                                           // Array for available features
-	remmina_plugin_tool_init,                       // Plugin initialization
-	remmina_plugin_tool_open_connection,            // Plugin open connection
-	remmina_plugin_tool_close_connection,           // Plugin close connection
-	NULL,                                           // Query for available features
-	NULL,                                           // Call a feature
-	NULL,                                           // Send a keystroke
-	NULL,                                           // No screenshot support available
-	NULL,                                           // RCW map event
-	NULL                                            // RCW unmap event
+    REMMINA_PLUGIN_TYPE_PROTOCOL,         // Type
+    PLUGIN_NAME,                          // Name
+    PLUGIN_DESCRIPTION,                   // Description
+    GETTEXT_PACKAGE,                      // Translation domain
+    PLUGIN_VERSION,                       // Version number
+    PLUGIN_APPICON,                       // Icon for normal connection
+    PLUGIN_APPICON,                       // Icon for SSH connection
+    remmina_plugin_tool_basic_settings,   // Array for basic settings
+    NULL,                                 // Array for advanced settings
+    REMMINA_PROTOCOL_SSH_SETTING_NONE,    // SSH settings type
+    NULL,                                 // Array for available features
+    remmina_plugin_tool_init,             // Plugin initialization
+    remmina_plugin_tool_open_connection,  // Plugin open connection
+    remmina_plugin_tool_close_connection, // Plugin close connection
+    NULL,                                 // Query for available features
+    NULL,                                 // Call a feature
+    NULL,                                 // Send a keystroke
+    NULL,                                 // No screenshot support available
+    NULL,                                 // RCW map event
+    NULL                                  // RCW unmap event
 };
 
-G_MODULE_EXPORT gboolean remmina_plugin_entry(RemminaPluginService *service)
+G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
 {
-	TRACE_CALL(__func__);
-	remmina_plugin_service = service;
+    TRACE_CALL( __func__ );
+    remmina_plugin_service = service;
 
-	bindtextdomain(GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR);
-	bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+    bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
+    bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
 
-	if (!service->register_plugin((RemminaPlugin*)&remmina_plugin)) {
-		return FALSE;
-	}
+    if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin ) )
+    {
+        return FALSE;
+    }
 
-	return TRUE;
+    return TRUE;
 }

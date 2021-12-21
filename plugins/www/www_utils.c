@@ -46,83 +46,84 @@
 #include "remmina/remmina_trace_calls.h"
 
 /** Returns @c TRUE if @a ptr is @c NULL or @c *ptr is @c FALSE. */
-#define EMPTY(ptr) \
-	(!(ptr) || !*(ptr))
+#define EMPTY( ptr ) ( !( ptr ) || !*( ptr ) )
 
 /* Used to send desktop notifications */
-void www_utils_send_notification(const gchar *notification_id,
-				 const gchar *notification_title, const gchar *notification_message)
+void www_utils_send_notification( const gchar *notification_id,
+                                  const gchar *notification_title,
+                                  const gchar *notification_message )
 {
-	TRACE_CALL(__func__);
+    TRACE_CALL( __func__ );
 
-	GNotification *notification = g_notification_new(notification_title);
-	g_notification_set_body(notification, notification_message);
-#if GLIB_CHECK_VERSION(2, 42, 0)
-	g_notification_set_priority(notification, G_NOTIFICATION_PRIORITY_NORMAL);
+    GNotification *notification = g_notification_new( notification_title );
+    g_notification_set_body( notification, notification_message );
+#if GLIB_CHECK_VERSION( 2, 42, 0 )
+    g_notification_set_priority( notification, G_NOTIFICATION_PRIORITY_NORMAL );
 #endif
-	g_application_send_notification(g_application_get_default(), notification_id, notification);
-	g_object_unref(notification);
+    g_application_send_notification( g_application_get_default(), notification_id, notification );
+    g_object_unref( notification );
 }
 
-gint www_utils_strpos(const gchar *haystack, const gchar *needle)
+gint www_utils_strpos( const gchar *haystack, const gchar *needle )
 {
-	TRACE_CALL(__func__);
-	const gchar *sub;
+    TRACE_CALL( __func__ );
+    const gchar *sub;
 
-	if (!*needle)
-		return -1;
+    if( !*needle )
+        return -1;
 
-	sub = strstr(haystack, needle);
-	if (!sub)
-		return -1;
+    sub = strstr( haystack, needle );
+    if( !sub )
+        return -1;
 
-	return sub - haystack;
+    return sub - haystack;
 }
 
 /* end can be -1 for haystack->len.
  * returns: position of found text or -1.
  * (C) Taken from geany */
-gint www_utils_string_find(GString *haystack, gint start, gint end, const gchar *needle)
+gint www_utils_string_find( GString *haystack, gint start, gint end, const gchar *needle )
 {
-	TRACE_CALL(__func__);
-	gint pos;
+    TRACE_CALL( __func__ );
+    gint pos;
 
-	g_return_val_if_fail(haystack != NULL, -1);
-	if (haystack->len == 0)
-		return -1;
+    g_return_val_if_fail( haystack != NULL, -1 );
+    if( haystack->len == 0 )
+        return -1;
 
-	g_return_val_if_fail(start >= 0, -1);
-	if (start >= (gint)haystack->len)
-		return -1;
+    g_return_val_if_fail( start >= 0, -1 );
+    if( start >= (gint)haystack->len )
+        return -1;
 
-	g_return_val_if_fail(!EMPTY(needle), -1);
+    g_return_val_if_fail( !EMPTY( needle ), -1 );
 
-	if (end < 0)
-		end = haystack->len;
+    if( end < 0 )
+        end = haystack->len;
 
-	pos = www_utils_strpos(haystack->str + start, needle);
-	if (pos == -1)
-		return -1;
+    pos = www_utils_strpos( haystack->str + start, needle );
+    if( pos == -1 )
+        return -1;
 
-	pos += start;
-	if (pos >= end)
-		return -1;
-	return pos;
+    pos += start;
+    if( pos >= end )
+        return -1;
+    return pos;
 }
 
 /* Replaces @len characters from offset @a pos.
  * len can be -1 to replace the remainder of @a str.
  * returns: pos + strlen(replace).
  * (C) Taken from geany */
-gint www_utils_string_replace(GString *str, gint pos, gint len, const gchar *replace)
+gint www_utils_string_replace( GString *str, gint pos, gint len, const gchar *replace )
 {
-	TRACE_CALL(__func__);
-	g_string_erase(str, pos, len);
-	if (replace) {
-		g_string_insert(str, pos, replace);
-		pos += strlen(replace);
-	}
-	return pos;
+    TRACE_CALL( __func__ );
+    g_string_erase( str, pos, len );
+    if( replace )
+    {
+        g_string_insert( str, pos, replace );
+        pos += strlen( replace );
+    }
+    return pos;
 }
 
 /**
@@ -134,21 +135,22 @@ gint www_utils_string_replace(GString *str, gint pos, gint len, const gchar *rep
  *
  * @return Number of replacements made.
  **/
-guint www_utils_string_replace_all(GString *haystack, const gchar *needle, const gchar *replace)
+guint www_utils_string_replace_all( GString *haystack, const gchar *needle, const gchar *replace )
 {
-	TRACE_CALL(__func__);
-	guint count = 0;
-	gint pos = 0;
-	gsize needle_length = strlen(needle);
+    TRACE_CALL( __func__ );
+    guint count = 0;
+    gint pos = 0;
+    gsize needle_length = strlen( needle );
 
-	while (1) {
-		pos = www_utils_string_find(haystack, pos, -1, needle);
+    while( 1 )
+    {
+        pos = www_utils_string_find( haystack, pos, -1, needle );
 
-		if (pos == -1)
-			break;
+        if( pos == -1 )
+            break;
 
-		pos = www_utils_string_replace(haystack, pos, needle_length, replace);
-		count++;
-	}
-	return count;
+        pos = www_utils_string_replace( haystack, pos, needle_length, replace );
+        count++;
+    }
+    return count;
 }

@@ -37,10 +37,10 @@
 
 #pragma once
 #ifndef __PLUGIN_CONFIG_H
-#define __PLUGIN_CONFIG_H
+#    define __PLUGIN_CONFIG_H
 
-#define PLUGIN_NAME        "WWW"
-#define PLUGIN_DESCRIPTION N_("Remmina web-browser plugin")
-#define PLUGIN_VERSION     "0.1.0"
-#define PLUGIN_APPICON     "org.remmina.Remmina-www-symbolic"
+#    define PLUGIN_NAME "WWW"
+#    define PLUGIN_DESCRIPTION N_( "Remmina web-browser plugin" )
+#    define PLUGIN_VERSION "0.1.0"
+#    define PLUGIN_APPICON "org.remmina.Remmina-www-symbolic"
 #endif

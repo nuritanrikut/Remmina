@@ -34,5 +34,4 @@
 
 #pragma once
 
-void remmina_plugin_python_protocol_widget_init(void);
-
+void remmina_plugin_python_protocol_widget_init( void );

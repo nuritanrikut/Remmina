@@ -48,86 +48,90 @@
 
 #define SPAWN_TIMEOUT 10
 
-#define GET_OBJECT(object_name) gtk_builder_get_object(builder, object_name)
+#define GET_OBJECT( object_name ) gtk_builder_get_object( builder, object_name )
 
-static void wait_for_child(GPid pid, gint script_retval, gpointer data)
+static void wait_for_child( GPid pid, gint script_retval, gpointer data )
 {
-	PCon_Spinner *pcspinner = (PCon_Spinner*)data;
+    PCon_Spinner *pcspinner = (PCon_Spinner *)data;
 
-	gtk_spinner_stop(GTK_SPINNER(pcspinner->spinner));
-	gtk_widget_destroy(GTK_WIDGET(pcspinner->dialog));
-	g_spawn_close_pid(pid);
-	/* TODO At the moment background processes will fail to start before the
+    gtk_spinner_stop( GTK_SPINNER( pcspinner->spinner ) );
+    gtk_widget_destroy( GTK_WIDGET( pcspinner->dialog ) );
+    g_spawn_close_pid( pid );
+    /* TODO At the moment background processes will fail to start before the
 	 * remmina connection.
 	 * Adding a delay here could be a (not good) solution, or we should
 	 * monitor each child opened, but it could be quit tricky and messy */
 }
 
-GtkDialog* remmina_ext_exec_new(RemminaFile* remminafile, const char *remmina_ext_exec_type)
+GtkDialog *remmina_ext_exec_new( RemminaFile *remminafile, const char *remmina_ext_exec_type )
 {
-	TRACE_CALL(__func__);
-	GtkBuilder *builder;
-	PCon_Spinner *pcspinner;
-	GError *error = NULL;
-	char **argv;
-	gchar *cmd = NULL;
-	gchar pre[11];
-	gchar post[12];
-	GPid child_pid;
+    TRACE_CALL( __func__ );
+    GtkBuilder *builder;
+    PCon_Spinner *pcspinner;
+    GError *error = NULL;
+    char **argv;
+    gchar *cmd = NULL;
+    gchar pre[11];
+    gchar post[12];
+    GPid child_pid;
 
-	strcpy(pre, "precommand");
-	strcpy(post, "postcommand");
+    strcpy( pre, "precommand" );
+    strcpy( post, "postcommand" );
 
-	if (remmina_ext_exec_type != NULL && (
-				strcmp(remmina_ext_exec_type, pre) |
-				strcmp(remmina_ext_exec_type, post) )) {
-		cmd = g_strdup(remmina_file_get_string(remminafile, remmina_ext_exec_type));
-		g_debug("[%s] %s", remmina_ext_exec_type, cmd);
-	} else
-		return FALSE;
+    if( remmina_ext_exec_type != NULL
+        && ( strcmp( remmina_ext_exec_type, pre ) | strcmp( remmina_ext_exec_type, post ) ) )
+    {
+        cmd = g_strdup( remmina_file_get_string( remminafile, remmina_ext_exec_type ) );
+        g_debug( "[%s] %s", remmina_ext_exec_type, cmd );
+    }
+    else
+        return FALSE;
 
-	cmd = remmina_file_format_properties(remminafile, cmd);
-	g_debug("[%s] updated to: %s", remmina_ext_exec_type, cmd);
-	if (*cmd != 0) {
+    cmd = remmina_file_format_properties( remminafile, cmd );
+    g_debug( "[%s] updated to: %s", remmina_ext_exec_type, cmd );
+    if( *cmd != 0 )
+    {
+        pcspinner = g_new( PCon_Spinner, 1 );
+        builder =
+            remmina_public_gtk_builder_new_from_resource( "/org/remmina/Remmina/src/../data/ui/remmina_spinner.glade" );
+        pcspinner->dialog = GTK_DIALOG( gtk_builder_get_object( builder, "DialogSpinner" ) );
+        pcspinner->label_pleasewait = GTK_LABEL( GET_OBJECT( "label_pleasewait" ) );
+        pcspinner->spinner = GTK_WIDGET( GET_OBJECT( "spinner" ) );
+        pcspinner->button_cancel = GTK_BUTTON( GET_OBJECT( "button_cancel" ) );
+        /* Connect signals */
+        gtk_builder_connect_signals( builder, NULL );
 
-		pcspinner = g_new(PCon_Spinner, 1);
-		builder = remmina_public_gtk_builder_new_from_resource("/org/remmina/Remmina/src/../data/ui/remmina_spinner.glade");
-		pcspinner->dialog = GTK_DIALOG(gtk_builder_get_object(builder, "DialogSpinner"));
-		pcspinner->label_pleasewait = GTK_LABEL(GET_OBJECT("label_pleasewait"));
-		pcspinner->spinner = GTK_WIDGET(GET_OBJECT("spinner"));
-		pcspinner->button_cancel = GTK_BUTTON(GET_OBJECT("button_cancel"));
-		/* Connect signals */
-		gtk_builder_connect_signals(builder, NULL);
+        /* Exec a predefined command */
+        g_shell_parse_argv( cmd, NULL, &argv, &error );
 
-		/* Exec a predefined command */
-		g_shell_parse_argv(cmd, NULL, &argv, &error);
+        if( error )
+        {
+            g_warning( "%s\n", error->message );
+            g_error_free( error );
+        }
 
-		if (error) {
-			g_warning("%s\n", error->message);
-			g_error_free(error);
-		}
-
-		/* Consider using G_SPAWN_SEARCH_PATH_FROM_ENVP (from glib 2.38)*/
-		g_spawn_async(  NULL,                           // cwd
-			argv,                                   // argv
-			NULL,                                   // envp
-			G_SPAWN_SEARCH_PATH |
-			G_SPAWN_SEARCH_PATH_FROM_ENVP |
-			G_SPAWN_DO_NOT_REAP_CHILD,              // flags
-			NULL,                                   // child_setup
-			NULL,                                   // child_setup user data
-			&child_pid,                             // pid location
-			&error);                                // error
-		if (!error) {
-			gtk_spinner_start(GTK_SPINNER(pcspinner->spinner));
-			g_child_watch_add(child_pid, wait_for_child, (gpointer)pcspinner);
-			gtk_dialog_run(pcspinner->dialog);
-		}else  {
-			g_warning("Command %s exited with error: %s\n", cmd, error->message);
-			g_error_free(error);
-		}
-		g_strfreev(argv);
-		return (pcspinner->dialog);
-	}
-	return FALSE;
+        /* Consider using G_SPAWN_SEARCH_PATH_FROM_ENVP (from glib 2.38)*/
+        g_spawn_async( NULL,                                                                            // cwd
+                       argv,                                                                            // argv
+                       NULL,                                                                            // envp
+                       G_SPAWN_SEARCH_PATH | G_SPAWN_SEARCH_PATH_FROM_ENVP | G_SPAWN_DO_NOT_REAP_CHILD, // flags
+                       NULL,                                                                            // child_setup
+                       NULL,       // child_setup user data
+                       &child_pid, // pid location
+                       &error );   // error
+        if( !error )
+        {
+            gtk_spinner_start( GTK_SPINNER( pcspinner->spinner ) );
+            g_child_watch_add( child_pid, wait_for_child, (gpointer)pcspinner );
+            gtk_dialog_run( pcspinner->dialog );
+        }
+        else
+        {
+            g_warning( "Command %s exited with error: %s\n", cmd, error->message );
+            g_error_free( error );
+        }
+        g_strfreev( argv );
+        return ( pcspinner->dialog );
+    }
+    return FALSE;
 }

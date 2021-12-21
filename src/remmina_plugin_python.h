@@ -42,7 +42,7 @@ G_BEGIN_DECLS
  * @brief Initializes the Python plugin loaders.
  * @details This does not load any plugins but initializes globals and the Python engine itself.
  */
-void remmina_plugin_python_init(void);
+void remmina_plugin_python_init( void );
 
 /**
  * @brief Loads a plugin from the Remmina plugin folder with the given name.
@@ -52,6 +52,6 @@ void remmina_plugin_python_init(void);
  *
  * @return  TRUE on success, FALSE otherwise.
  */
-gboolean remmina_plugin_python_load(RemminaPluginService* service, const gchar* filename);
+gboolean remmina_plugin_python_load( RemminaPluginService *service, const gchar *filename );
 
 G_END_DECLS

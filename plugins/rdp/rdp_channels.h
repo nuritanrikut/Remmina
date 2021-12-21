@@ -33,7 +33,6 @@
  *
  */
 
-
 #pragma once
 
 #include <freerdp/freerdp.h>
@@ -47,8 +46,7 @@
 
 G_BEGIN_DECLS
 
-void remmina_rdp_OnChannelConnectedEventHandler(rdpContext *context, ChannelConnectedEventArgs *e);
-void remmina_rdp_OnChannelDisconnectedEventHandler(rdpContext *context, ChannelConnectedEventArgs *e);
-
+void remmina_rdp_OnChannelConnectedEventHandler( rdpContext *context, ChannelConnectedEventArgs *e );
+void remmina_rdp_OnChannelDisconnectedEventHandler( rdpContext *context, ChannelConnectedEventArgs *e );
 
 G_END_DECLS

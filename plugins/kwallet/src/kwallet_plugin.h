@@ -34,15 +34,15 @@
  */
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-int rp_kwallet_init(void);
-void rp_kwallet_store_password(const char *key, const char *password);
-char *rp_kwallet_get_password(const char *key);
-void rp_kwallet_delete_password(const char *key);
-int rp_kwallet_is_service_available(void);
-
+    int rp_kwallet_init( void );
+    void rp_kwallet_store_password( const char *key, const char *password );
+    char *rp_kwallet_get_password( const char *key );
+    void rp_kwallet_delete_password( const char *key );
+    int rp_kwallet_is_service_available( void );
 
 #ifdef __cplusplus
 }

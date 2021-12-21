@@ -65,12 +65,12 @@
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static void remmina_protocol_init_wrapper(RemminaProtocolWidget *gp)
+static void remmina_protocol_init_wrapper( RemminaProtocolWidget *gp )
 {
-	TRACE_CALL(__func__);
-    PyPlugin* py_plugin = remmina_plugin_python_module_get_plugin(gp);
+    TRACE_CALL( __func__ );
+    PyPlugin *py_plugin = remmina_plugin_python_module_get_plugin( gp );
     py_plugin->gp->gp = gp;
-    PyObject_CallMethod(py_plugin, "init", "O", py_plugin->gp);
+    PyObject_CallMethod( py_plugin, "init", "O", py_plugin->gp );
 }
 
 /**
@@ -79,12 +79,12 @@ static void remmina_protocol_init_wrapper(RemminaProtocolWidget *gp)
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static gboolean remmina_protocol_open_connection_wrapper(RemminaProtocolWidget *gp)
+static gboolean remmina_protocol_open_connection_wrapper( RemminaProtocolWidget *gp )
 {
-	TRACE_CALL(__func__);
-    remmina_plugin_manager_service.protocol_plugin_signal_connection_opened(gp);
-    PyPlugin* py_plugin = remmina_plugin_python_module_get_plugin(gp);
-    PyObject* result = PyObject_CallMethod(py_plugin, "open_connection", "O", py_plugin->gp);
+    TRACE_CALL( __func__ );
+    remmina_plugin_manager_service.protocol_plugin_signal_connection_opened( gp );
+    PyPlugin *py_plugin = remmina_plugin_python_module_get_plugin( gp );
+    PyObject *result = PyObject_CallMethod( py_plugin, "open_connection", "O", py_plugin->gp );
     return result == Py_True;
 }
 
@@ -94,11 +94,11 @@ static gboolean remmina_protocol_open_connection_wrapper(RemminaProtocolWidget *
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static gboolean remmina_protocol_close_connection_wrapper(RemminaProtocolWidget *gp)
+static gboolean remmina_protocol_close_connection_wrapper( RemminaProtocolWidget *gp )
 {
-	TRACE_CALL(__func__);
-    PyPlugin* py_plugin = remmina_plugin_python_module_get_plugin(gp);
-    PyObject* result = PyObject_CallMethod(py_plugin, "close_connection", "O", py_plugin->gp);
+    TRACE_CALL( __func__ );
+    PyPlugin *py_plugin = remmina_plugin_python_module_get_plugin( gp );
+    PyObject *result = PyObject_CallMethod( py_plugin, "close_connection", "O", py_plugin->gp );
     return result == Py_True;
 }
 
@@ -108,11 +108,13 @@ static gboolean remmina_protocol_close_connection_wrapper(RemminaProtocolWidget 
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static gboolean remmina_protocol_query_feature_wrapper(RemminaProtocolPlugin* plugin, RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature)
+static gboolean remmina_protocol_query_feature_wrapper( RemminaProtocolPlugin *plugin,
+                                                        RemminaProtocolWidget *gp,
+                                                        const RemminaProtocolFeature *feature )
 {
-	TRACE_CALL(__func__);
-    PyPlugin* py_plugin = remmina_plugin_python_module_get_plugin(gp);
-    PyObject* result = PyObject_CallMethod(py_plugin, "query_feature", "O", py_plugin->gp);
+    TRACE_CALL( __func__ );
+    PyPlugin *py_plugin = remmina_plugin_python_module_get_plugin( gp );
+    PyObject *result = PyObject_CallMethod( py_plugin, "query_feature", "O", py_plugin->gp );
     return result == Py_True;
 }
 
@@ -122,11 +124,13 @@ static gboolean remmina_protocol_query_feature_wrapper(RemminaProtocolPlugin* pl
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static void remmina_protocol_call_feature_wrapper(RemminaProtocolPlugin* plugin, RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature)
+static void remmina_protocol_call_feature_wrapper( RemminaProtocolPlugin *plugin,
+                                                   RemminaProtocolWidget *gp,
+                                                   const RemminaProtocolFeature *feature )
 {
-	TRACE_CALL(__func__);
-    PyPlugin* py_plugin = remmina_plugin_python_module_get_plugin(gp);
-    PyObject* result = PyObject_CallMethod(py_plugin, "call_feature", "O", py_plugin->gp);
+    TRACE_CALL( __func__ );
+    PyPlugin *py_plugin = remmina_plugin_python_module_get_plugin( gp );
+    PyObject *result = PyObject_CallMethod( py_plugin, "call_feature", "O", py_plugin->gp );
 }
 
 /**
@@ -135,11 +139,14 @@ static void remmina_protocol_call_feature_wrapper(RemminaProtocolPlugin* plugin,
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static void remmina_protocol_send_keytrokes_wrapper(RemminaProtocolPlugin* plugin, RemminaProtocolWidget *gp, const guint keystrokes[], const gint keylen)
+static void remmina_protocol_send_keytrokes_wrapper( RemminaProtocolPlugin *plugin,
+                                                     RemminaProtocolWidget *gp,
+                                                     const guint keystrokes[],
+                                                     const gint keylen )
 {
-	TRACE_CALL(__func__);
-    PyPlugin* py_plugin = remmina_plugin_python_module_get_plugin(gp);
-    PyObject* result = PyObject_CallMethod(py_plugin, "send_keystrokes", "O", py_plugin->gp);
+    TRACE_CALL( __func__ );
+    PyPlugin *py_plugin = remmina_plugin_python_module_get_plugin( gp );
+    PyObject *result = PyObject_CallMethod( py_plugin, "send_keystrokes", "O", py_plugin->gp );
 }
 
 /**
@@ -148,134 +155,147 @@ static void remmina_protocol_send_keytrokes_wrapper(RemminaProtocolPlugin* plugi
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static gboolean remmina_protocol_get_plugin_screenshot_wrapper(RemminaProtocolPlugin* plugin, RemminaProtocolWidget *gp, RemminaPluginScreenshotData *rpsd)
+static gboolean remmina_protocol_get_plugin_screenshot_wrapper( RemminaProtocolPlugin *plugin,
+                                                                RemminaProtocolWidget *gp,
+                                                                RemminaPluginScreenshotData *rpsd )
 {
-	TRACE_CALL(__func__);
-    PyPlugin* py_plugin = remmina_plugin_python_module_get_plugin(gp);
-    PyObject* result = PyObject_CallMethod(py_plugin, "get_plugin_screenshot", "O", py_plugin->gp);
+    TRACE_CALL( __func__ );
+    PyPlugin *py_plugin = remmina_plugin_python_module_get_plugin( gp );
+    PyObject *result = PyObject_CallMethod( py_plugin, "get_plugin_screenshot", "O", py_plugin->gp );
     return result == Py_True;
 }
 
-
-static long GetEnumOrDefault(PyObject* instance, gchar* constant_name, long def) {
-        PyObject* attr = PyObject_GetAttrString(instance, constant_name);
-        if (attr && PyLong_Check(attr)) {
-            return PyLong_AsLong(attr);
-        } else {
-            return def;
-        }
-}
-
-RemminaPlugin* remmina_plugin_python_create_protocol_plugin(PyObject* pluginInstance)
+static long GetEnumOrDefault( PyObject *instance, gchar *constant_name, long def )
 {
-        RemminaProtocolPlugin* remmina_plugin = (RemminaProtocolPlugin*)malloc(sizeof(RemminaProtocolPlugin));
-
-        if(!PyObject_HasAttrString(pluginInstance, "icon_name_ssh")) {
-            g_printerr("Error creating Remmina plugin. Python plugin instance is missing member: icon_name_ssh\n");
-            return NULL;
-        }
-        else if(!PyObject_HasAttrString(pluginInstance, "icon_name")) {
-            g_printerr("Error creating Remmina plugin. Python plugin instance is missing member: icon_name\n");
-            return NULL;
-        }
-        else if(!PyObject_HasAttrString(pluginInstance, "features")) {
-            g_printerr("Error creating Remmina plugin. Python plugin instance is missing member: features\n");
-            return NULL;
-        }
-        else if(!PyObject_HasAttrString(pluginInstance, "basic_settings")) {
-            g_printerr("Error creating Remmina plugin. Python plugin instance is missing member: basic_settings\n");
-            return NULL;
-        }
-        else if(!PyObject_HasAttrString(pluginInstance, "advanced_settings")) {
-            g_printerr("Error creating Remmina plugin. Python plugin instance is missing member: advanced_settings\n");
-            return NULL;
-        }
-        else if(!PyObject_HasAttrString(pluginInstance, "ssh_setting")) {
-            g_printerr("Error creating Remmina plugin. Python plugin instance is missing member: ssh_setting\n");
-            return NULL;
-        }
-
-        remmina_plugin->type = REMMINA_PLUGIN_TYPE_PROTOCOL;
-        remmina_plugin->name = PyUnicode_AsUTF8(PyObject_GetAttrString(pluginInstance, "name"));                                               // Name
-        remmina_plugin->description = PyUnicode_AsUTF8(PyObject_GetAttrString(pluginInstance, "description"));             // Description
-        remmina_plugin->domain = GETTEXT_PACKAGE;                                    // Translation domain
-        remmina_plugin->version = PyUnicode_AsUTF8(PyObject_GetAttrString(pluginInstance, "version"));                                           // Version number
-        remmina_plugin->icon_name = PyUnicode_AsUTF8(PyObject_GetAttrString(pluginInstance, "icon_name"));                         // Icon for normal connection
-        remmina_plugin->icon_name_ssh = PyUnicode_AsUTF8(PyObject_GetAttrString(pluginInstance, "icon_name_ssh"));                     // Icon for SSH connection
-
-        PyObject* basic_settings_list = PyObject_GetAttrString(pluginInstance, "basic_settings");
-        Py_ssize_t len = PyList_Size(basic_settings_list);
-        if (len) {
-            remmina_plugin->basic_settings = (RemminaProtocolSetting*)malloc(sizeof(RemminaProtocolSetting) * len);
-            memset(&remmina_plugin->basic_settings[len], 0, sizeof(RemminaProtocolSetting));
-
-            for (Py_ssize_t i = 0; i < len; ++i) {
-                RemminaProtocolSetting* dest = remmina_plugin->basic_settings + i;
-                ToRemminaProtocolSetting(dest, PyList_GetItem(basic_settings_list, i));
-            }
-        } else {
-            remmina_plugin->basic_settings = NULL;
-        }
-
-        PyObject* advanced_settings_list = PyObject_GetAttrString(pluginInstance, "advanced_settings");
-        len = PyList_Size(advanced_settings_list);
-        if (len) {
-            remmina_plugin->advanced_settings = (RemminaProtocolSetting*)malloc(sizeof(RemminaProtocolSetting) * (len+1));
-            memset(&remmina_plugin->advanced_settings[len], 0, sizeof(RemminaProtocolSetting));
-
-            for (Py_ssize_t i = 0; i < len; ++i) {
-                RemminaProtocolSetting* dest = remmina_plugin->advanced_settings + i;
-                ToRemminaProtocolSetting(dest, PyList_GetItem(advanced_settings_list, i));
-            }
-        } else {
-            remmina_plugin->advanced_settings = NULL;
-        }
-
-
-        PyObject* features_list = PyObject_GetAttrString(pluginInstance, "features");
-        len = PyList_Size(features_list);
-        if (len) {
-            remmina_plugin->features = (RemminaProtocolFeature*)malloc(sizeof(RemminaProtocolFeature) * (len+1));
-            memset(&remmina_plugin->features[len], 0, sizeof(RemminaProtocolFeature));
-
-            for (Py_ssize_t i = 0; i < len; ++i) {
-                RemminaProtocolFeature* dest = remmina_plugin->features + i;
-                ToRemminaProtocolFeature(dest, PyList_GetItem(features_list, i));
-            }
-        } else {
-            remmina_plugin->features = NULL;
-        }
-
-        remmina_plugin->ssh_setting = (RemminaProtocolSSHSetting)GetEnumOrDefault(pluginInstance, "ssh_setting", REMMINA_PROTOCOL_SSH_SETTING_NONE);
-
-        remmina_plugin->init = remmina_protocol_init_wrapper ;                             // Plugin initialization
-        remmina_plugin->open_connection = remmina_protocol_open_connection_wrapper ;       // Plugin open connection
-        remmina_plugin->close_connection = remmina_protocol_close_connection_wrapper ;     // Plugin close connection
-        remmina_plugin->query_feature = remmina_protocol_query_feature_wrapper ;           // Query for available features
-        remmina_plugin->call_feature = remmina_protocol_call_feature_wrapper ;             // Call a feature
-        remmina_plugin->send_keystrokes = remmina_protocol_send_keytrokes_wrapper;                                      // Send a keystroke
-        remmina_plugin->get_plugin_screenshot = remmina_protocol_get_plugin_screenshot_wrapper;                                // Screenshot support unavailable
-
-        return remmina_plugin;
+    PyObject *attr = PyObject_GetAttrString( instance, constant_name );
+    if( attr && PyLong_Check( attr ) )
+    {
+        return PyLong_AsLong( attr );
+    }
+    else
+    {
+        return def;
+    }
 }
 
-RemminaPlugin* remmina_plugin_python_create_entry_plugin(pluginInstance)
+RemminaPlugin *remmina_plugin_python_create_protocol_plugin( PyObject *pluginInstance )
 {
+    RemminaProtocolPlugin *remmina_plugin = (RemminaProtocolPlugin *)malloc( sizeof( RemminaProtocolPlugin ) );
 
-}
-RemminaPlugin* remmina_plugin_python_create_file_plugin(pluginInstance)
-{
+    if( !PyObject_HasAttrString( pluginInstance, "icon_name_ssh" ) )
+    {
+        g_printerr( "Error creating Remmina plugin. Python plugin instance is missing member: icon_name_ssh\n" );
+        return NULL;
+    }
+    else if( !PyObject_HasAttrString( pluginInstance, "icon_name" ) )
+    {
+        g_printerr( "Error creating Remmina plugin. Python plugin instance is missing member: icon_name\n" );
+        return NULL;
+    }
+    else if( !PyObject_HasAttrString( pluginInstance, "features" ) )
+    {
+        g_printerr( "Error creating Remmina plugin. Python plugin instance is missing member: features\n" );
+        return NULL;
+    }
+    else if( !PyObject_HasAttrString( pluginInstance, "basic_settings" ) )
+    {
+        g_printerr( "Error creating Remmina plugin. Python plugin instance is missing member: basic_settings\n" );
+        return NULL;
+    }
+    else if( !PyObject_HasAttrString( pluginInstance, "advanced_settings" ) )
+    {
+        g_printerr( "Error creating Remmina plugin. Python plugin instance is missing member: advanced_settings\n" );
+        return NULL;
+    }
+    else if( !PyObject_HasAttrString( pluginInstance, "ssh_setting" ) )
+    {
+        g_printerr( "Error creating Remmina plugin. Python plugin instance is missing member: ssh_setting\n" );
+        return NULL;
+    }
 
-}
-RemminaPlugin* remmina_plugin_python_create_tool_plugin(pluginInstance)
-{
+    remmina_plugin->type = REMMINA_PLUGIN_TYPE_PROTOCOL;
+    remmina_plugin->name = PyUnicode_AsUTF8( PyObject_GetAttrString( pluginInstance, "name" ) ); // Name
+    remmina_plugin->description =
+        PyUnicode_AsUTF8( PyObject_GetAttrString( pluginInstance, "description" ) ); // Description
+    remmina_plugin->domain = GETTEXT_PACKAGE;                                        // Translation domain
+    remmina_plugin->version = PyUnicode_AsUTF8( PyObject_GetAttrString( pluginInstance, "version" ) ); // Version number
+    remmina_plugin->icon_name =
+        PyUnicode_AsUTF8( PyObject_GetAttrString( pluginInstance, "icon_name" ) ); // Icon for normal connection
+    remmina_plugin->icon_name_ssh =
+        PyUnicode_AsUTF8( PyObject_GetAttrString( pluginInstance, "icon_name_ssh" ) ); // Icon for SSH connection
 
-}
-RemminaPlugin* remmina_plugin_python_create_pref_plugin(pluginInstance)
-{
+    PyObject *basic_settings_list = PyObject_GetAttrString( pluginInstance, "basic_settings" );
+    Py_ssize_t len = PyList_Size( basic_settings_list );
+    if( len )
+    {
+        remmina_plugin->basic_settings = (RemminaProtocolSetting *)malloc( sizeof( RemminaProtocolSetting ) * len );
+        memset( &remmina_plugin->basic_settings[len], 0, sizeof( RemminaProtocolSetting ) );
 
-}
-RemminaPlugin* remmina_plugin_python_create_secret_plugin(pluginInstance)
-{
+        for( Py_ssize_t i = 0; i < len; ++i )
+        {
+            RemminaProtocolSetting *dest = remmina_plugin->basic_settings + i;
+            ToRemminaProtocolSetting( dest, PyList_GetItem( basic_settings_list, i ) );
+        }
+    }
+    else
+    {
+        remmina_plugin->basic_settings = NULL;
+    }
 
+    PyObject *advanced_settings_list = PyObject_GetAttrString( pluginInstance, "advanced_settings" );
+    len = PyList_Size( advanced_settings_list );
+    if( len )
+    {
+        remmina_plugin->advanced_settings =
+            (RemminaProtocolSetting *)malloc( sizeof( RemminaProtocolSetting ) * ( len + 1 ) );
+        memset( &remmina_plugin->advanced_settings[len], 0, sizeof( RemminaProtocolSetting ) );
+
+        for( Py_ssize_t i = 0; i < len; ++i )
+        {
+            RemminaProtocolSetting *dest = remmina_plugin->advanced_settings + i;
+            ToRemminaProtocolSetting( dest, PyList_GetItem( advanced_settings_list, i ) );
+        }
+    }
+    else
+    {
+        remmina_plugin->advanced_settings = NULL;
+    }
+
+    PyObject *features_list = PyObject_GetAttrString( pluginInstance, "features" );
+    len = PyList_Size( features_list );
+    if( len )
+    {
+        remmina_plugin->features = (RemminaProtocolFeature *)malloc( sizeof( RemminaProtocolFeature ) * ( len + 1 ) );
+        memset( &remmina_plugin->features[len], 0, sizeof( RemminaProtocolFeature ) );
+
+        for( Py_ssize_t i = 0; i < len; ++i )
+        {
+            RemminaProtocolFeature *dest = remmina_plugin->features + i;
+            ToRemminaProtocolFeature( dest, PyList_GetItem( features_list, i ) );
+        }
+    }
+    else
+    {
+        remmina_plugin->features = NULL;
+    }
+
+    remmina_plugin->ssh_setting =
+        (RemminaProtocolSSHSetting)GetEnumOrDefault( pluginInstance, "ssh_setting", REMMINA_PROTOCOL_SSH_SETTING_NONE );
+
+    remmina_plugin->init = remmina_protocol_init_wrapper;                         // Plugin initialization
+    remmina_plugin->open_connection = remmina_protocol_open_connection_wrapper;   // Plugin open connection
+    remmina_plugin->close_connection = remmina_protocol_close_connection_wrapper; // Plugin close connection
+    remmina_plugin->query_feature = remmina_protocol_query_feature_wrapper;       // Query for available features
+    remmina_plugin->call_feature = remmina_protocol_call_feature_wrapper;         // Call a feature
+    remmina_plugin->send_keystrokes = remmina_protocol_send_keytrokes_wrapper;    // Send a keystroke
+    remmina_plugin->get_plugin_screenshot =
+        remmina_protocol_get_plugin_screenshot_wrapper; // Screenshot support unavailable
+
+    return remmina_plugin;
 }
+
+RemminaPlugin *remmina_plugin_python_create_entry_plugin( pluginInstance ) { }
+RemminaPlugin *remmina_plugin_python_create_file_plugin( pluginInstance ) { }
+RemminaPlugin *remmina_plugin_python_create_tool_plugin( pluginInstance ) { }
+RemminaPlugin *remmina_plugin_python_create_pref_plugin( pluginInstance ) { }
+RemminaPlugin *remmina_plugin_python_create_secret_plugin( pluginInstance ) { }

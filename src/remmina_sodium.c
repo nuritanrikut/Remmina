@@ -56,11 +56,11 @@
 
 #include <string.h>
 
-#if defined(__linux__)
-# include <fcntl.h>
-# include <unistd.h>
-# include <sys/ioctl.h>
-# include <linux/random.h>
+#if defined( __linux__ )
+#    include <fcntl.h>
+#    include <unistd.h>
+#    include <sys/ioctl.h>
+#    include <linux/random.h>
 #endif
 
 #include "config.h"
@@ -70,80 +70,89 @@
 #include "remmina_sodium.h"
 #if SODIUM_VERSION_INT >= 90200
 
-gchar *remmina_sodium_pwhash(const gchar *pass)
+gchar *remmina_sodium_pwhash( const gchar *pass )
 {
-	TRACE_CALL(__func__);
-	g_info("Generating passphrase (may take a while)...");
-	/* Create a random salt for the key derivation function */
-	unsigned char salt[crypto_pwhash_SALTBYTES] = { 0 };
-	randombytes_buf(salt, sizeof salt);
+    TRACE_CALL( __func__ );
+    g_info( "Generating passphrase (may take a while)..." );
+    /* Create a random salt for the key derivation function */
+    unsigned char salt[crypto_pwhash_SALTBYTES] = { 0 };
+    randombytes_buf( salt, sizeof salt );
 
-	/* Use argon2 to convert password to a full size key */
-	unsigned char key[crypto_secretbox_KEYBYTES];
-	if (crypto_pwhash(key, sizeof key, pass, strlen(pass), salt,
-			  crypto_pwhash_OPSLIMIT_INTERACTIVE,
-			  crypto_pwhash_MEMLIMIT_INTERACTIVE,
-			  crypto_pwhash_ALG_DEFAULT) != 0) {
-		g_error("%s - Out of memory!", __func__);
-		exit(1);
-	}
+    /* Use argon2 to convert password to a full size key */
+    unsigned char key[crypto_secretbox_KEYBYTES];
+    if( crypto_pwhash( key,
+                       sizeof key,
+                       pass,
+                       strlen( pass ),
+                       salt,
+                       crypto_pwhash_OPSLIMIT_INTERACTIVE,
+                       crypto_pwhash_MEMLIMIT_INTERACTIVE,
+                       crypto_pwhash_ALG_DEFAULT )
+        != 0 )
+    {
+        g_error( "%s - Out of memory!", __func__ );
+        exit( 1 );
+    }
 
-	g_info("%s - Password hashed", __func__);
-	return g_strdup((const char *)key);
+    g_info( "%s - Password hashed", __func__ );
+    return g_strdup( (const char *)key );
 }
 
-gchar *remmina_sodium_pwhash_str(const gchar *pass)
+gchar *remmina_sodium_pwhash_str( const gchar *pass )
 {
-	TRACE_CALL(__func__);
-	g_info("Generating passphrase (may take a while)...");
-	/* Create a random salt for the key derivation function */
-	unsigned char salt[crypto_pwhash_SALTBYTES] = { 0 };
-	randombytes_buf(salt, sizeof salt);
+    TRACE_CALL( __func__ );
+    g_info( "Generating passphrase (may take a while)..." );
+    /* Create a random salt for the key derivation function */
+    unsigned char salt[crypto_pwhash_SALTBYTES] = { 0 };
+    randombytes_buf( salt, sizeof salt );
 
-	/* Use argon2 to convert password to a full size key */
-	char key[crypto_pwhash_STRBYTES];
-	if (crypto_pwhash_str(key, pass, strlen(pass),
-			      crypto_pwhash_OPSLIMIT_INTERACTIVE,
-			      crypto_pwhash_MEMLIMIT_INTERACTIVE) != 0) {
-		g_error("%s - Out of memory!", __func__);
-		exit(1);
-	}
+    /* Use argon2 to convert password to a full size key */
+    char key[crypto_pwhash_STRBYTES];
+    if( crypto_pwhash_str(
+            key, pass, strlen( pass ), crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE )
+        != 0 )
+    {
+        g_error( "%s - Out of memory!", __func__ );
+        exit( 1 );
+    }
 
-	g_info("%s - Password hashed", __func__);
-	return g_strdup((const char *)key);
+    g_info( "%s - Password hashed", __func__ );
+    return g_strdup( (const char *)key );
 }
 
-gint remmina_sodium_pwhash_str_verify(const char *key, const char *pass)
+gint remmina_sodium_pwhash_str_verify( const char *key, const char *pass )
 {
-	TRACE_CALL(__func__);
+    TRACE_CALL( __func__ );
 
-	gint rc;
+    gint rc;
 
-	rc = crypto_pwhash_str_verify(key, pass, strlen(pass));
+    rc = crypto_pwhash_str_verify( key, pass, strlen( pass ) );
 
-	return rc;
+    return rc;
 }
 
-void remmina_sodium_init(void)
+void remmina_sodium_init( void )
 {
-	TRACE_CALL(__func__);
-#if defined(__linux__) && defined(RNDGETENTCNT)
-	int fd;
-	int c;
+    TRACE_CALL( __func__ );
+#    if defined( __linux__ ) && defined( RNDGETENTCNT )
+    int fd;
+    int c;
 
-	if ((fd = open("/dev/random", O_RDONLY)) != -1) {
-		if (ioctl(fd, RNDGETENTCNT, &c) == 0 && c < 160) {
-			g_printerr("This system doesn't provide enough entropy to quickly generate high-quality random numbers.\n"
-				   "Installing the rng-utils/rng-tools, jitterentropy or haveged packages may help.\n"
-				   "On virtualized Linux environments, also consider using virtio-rng.\n"
-				   "The service will not start until enough entropy has been collected.\n");
-		}
-		(void)close(fd);
-	}
-#endif
+    if( ( fd = open( "/dev/random", O_RDONLY ) ) != -1 )
+    {
+        if( ioctl( fd, RNDGETENTCNT, &c ) == 0 && c < 160 )
+        {
+            g_printerr( "This system doesn't provide enough entropy to quickly generate high-quality random numbers.\n"
+                        "Installing the rng-utils/rng-tools, jitterentropy or haveged packages may help.\n"
+                        "On virtualized Linux environments, also consider using virtio-rng.\n"
+                        "The service will not start until enough entropy has been collected.\n" );
+        }
+        (void)close( fd );
+    }
+#    endif
 
-	if (sodium_init() < 0)
-		g_critical("%s - Failed to initialize sodium, it is not safe to use", __func__);
+    if( sodium_init() < 0 )
+        g_critical( "%s - Failed to initialize sodium, it is not safe to use", __func__ );
 }
 
 #endif

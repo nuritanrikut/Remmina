@@ -40,51 +40,43 @@
 #include "remmina_scheduler.h"
 #include "remmina/remmina_trace_calls.h"
 
-static gboolean remmina_scheduler_periodic_check(gpointer user_data)
+static gboolean remmina_scheduler_periodic_check( gpointer user_data )
 {
-	TRACE_CALL(__func__);
-	rsSchedData *rssd = (rsSchedData *)user_data;
+    TRACE_CALL( __func__ );
+    rsSchedData *rssd = (rsSchedData *)user_data;
 
-	rssd->count++;
-	if (rssd->cb_func_ptr(rssd->cb_func_data) == G_SOURCE_REMOVE) {
-		g_free(rssd);
-		return G_SOURCE_REMOVE;
-	}
-	if (rssd->count <= 1) {
-		rssd->source = g_timeout_add_full(G_PRIORITY_LOW,
-						  rssd->interval,
-						  remmina_scheduler_periodic_check,
-						  rssd,
-						  NULL);
-		return G_SOURCE_REMOVE;
-	}
-	return G_SOURCE_CONTINUE;
+    rssd->count++;
+    if( rssd->cb_func_ptr( rssd->cb_func_data ) == G_SOURCE_REMOVE )
+    {
+        g_free( rssd );
+        return G_SOURCE_REMOVE;
+    }
+    if( rssd->count <= 1 )
+    {
+        rssd->source =
+            g_timeout_add_full( G_PRIORITY_LOW, rssd->interval, remmina_scheduler_periodic_check, rssd, NULL );
+        return G_SOURCE_REMOVE;
+    }
+    return G_SOURCE_CONTINUE;
 }
 
-void *remmina_scheduler_setup(GSourceFunc	cb,
-			      gpointer		cb_data,
-			      guint		first_interval,
-			      guint		interval)
+void *remmina_scheduler_setup( GSourceFunc cb, gpointer cb_data, guint first_interval, guint interval )
 {
-	TRACE_CALL(__func__);
-	rsSchedData *rssd;
-	rssd = g_malloc(sizeof(rsSchedData));
-	rssd->cb_func_ptr = cb;
-	rssd->cb_func_data = cb_data;
-	rssd->interval = interval;
-	rssd->count = 0;
-	rssd->source = g_timeout_add_full(G_PRIORITY_LOW,
-					  first_interval,
-					  remmina_scheduler_periodic_check,
-					  rssd,
-					  NULL);
-	return (void *)rssd;
+    TRACE_CALL( __func__ );
+    rsSchedData *rssd;
+    rssd = g_malloc( sizeof( rsSchedData ) );
+    rssd->cb_func_ptr = cb;
+    rssd->cb_func_data = cb_data;
+    rssd->interval = interval;
+    rssd->count = 0;
+    rssd->source = g_timeout_add_full( G_PRIORITY_LOW, first_interval, remmina_scheduler_periodic_check, rssd, NULL );
+    return (void *)rssd;
 }
 
-void remmina_schedluer_remove(void *s)
+void remmina_schedluer_remove( void *s )
 {
-	TRACE_CALL(__func__);
-	rsSchedData *rssd = (rsSchedData *)s;
-	g_source_remove(rssd->source);
-	g_free(rssd);
+    TRACE_CALL( __func__ );
+    rsSchedData *rssd = (rsSchedData *)s;
+    g_source_remove( rssd->source );
+    g_free( rssd );
 }

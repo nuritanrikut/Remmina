@@ -39,12 +39,12 @@ G_BEGIN_DECLS
 #include <sodium.h>
 #include <glib.h>
 
-#define SODIUM_VERSION_INT (SODIUM_LIBRARY_VERSION_MAJOR * 10000 + SODIUM_LIBRARY_VERSION_MINOR * 100)
+#define SODIUM_VERSION_INT ( SODIUM_LIBRARY_VERSION_MAJOR * 10000 + SODIUM_LIBRARY_VERSION_MINOR * 100 )
 #if SODIUM_VERSION_INT >= 90200
-void remmina_sodium_init(void);
-gchar *remmina_sodium_pwhash(const gchar *pass);
-gchar *remmina_sodium_pwhash_str(const gchar *pass);
-gint remmina_sodium_pwhash_str_verify(const char *key, const char *pass);
+void remmina_sodium_init( void );
+gchar *remmina_sodium_pwhash( const gchar *pass );
+gchar *remmina_sodium_pwhash_str( const gchar *pass );
+gint remmina_sodium_pwhash_str_verify( const char *key, const char *pass );
 #endif
 
 G_END_DECLS

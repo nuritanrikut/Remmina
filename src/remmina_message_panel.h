@@ -38,46 +38,62 @@
 
 G_BEGIN_DECLS
 
-#define REMMINA_TYPE_MESSAGE_PANEL             (remmina_message_panel_get_type())
-G_DECLARE_DERIVABLE_TYPE(RemminaMessagePanel, remmina_message_panel, REMMINA, MESSAGE_PANEL, GtkBox)
+#define REMMINA_TYPE_MESSAGE_PANEL ( remmina_message_panel_get_type() )
+G_DECLARE_DERIVABLE_TYPE( RemminaMessagePanel, remmina_message_panel, REMMINA, MESSAGE_PANEL, GtkBox )
 
-struct _RemminaMessagePanelClass {
-	GtkBoxClass	parent_class;
-	void		(*response) (RemminaMessagePanel *mp, gint response_id);
+struct _RemminaMessagePanelClass
+{
+    GtkBoxClass parent_class;
+    void ( *response )( RemminaMessagePanel *mp, gint response_id );
 };
 
-
 /* Widgets ID for dialog fields */
-enum {
-	REMMINA_MESSAGE_PANEL_USERNAME=1,
-	REMMINA_MESSAGE_PANEL_PASSWORD,
-	REMMINA_MESSAGE_PANEL_DOMAIN,
-	REMMINA_MESSAGE_PANEL_SAVEPASSWORD,
-	REMMINA_MESSAGE_PANEL_BUTTONTOFOCUS,
-	REMMINA_MESSAGE_PANEL_CACERTFILE,
-	REMMINA_MESSAGE_PANEL_CACRLFILE,
-	REMMINA_MESSAGE_PANEL_CLIENTCERTFILE,
-	REMMINA_MESSAGE_PANEL_CLIENTKEYFILE,
-	REMMINA_MESSAGE_PANEL_MAXWIDGETID
+enum
+{
+    REMMINA_MESSAGE_PANEL_USERNAME = 1,
+    REMMINA_MESSAGE_PANEL_PASSWORD,
+    REMMINA_MESSAGE_PANEL_DOMAIN,
+    REMMINA_MESSAGE_PANEL_SAVEPASSWORD,
+    REMMINA_MESSAGE_PANEL_BUTTONTOFOCUS,
+    REMMINA_MESSAGE_PANEL_CACERTFILE,
+    REMMINA_MESSAGE_PANEL_CACRLFILE,
+    REMMINA_MESSAGE_PANEL_CLIENTCERTFILE,
+    REMMINA_MESSAGE_PANEL_CLIENTKEYFILE,
+    REMMINA_MESSAGE_PANEL_MAXWIDGETID
 };
 
 /* Callback function type to receive buttons notification */
-typedef void (*RemminaMessagePanelCallback)(void *user_data, int button);
+typedef void ( *RemminaMessagePanelCallback )( void *user_data, int button );
 
-RemminaMessagePanel *remmina_message_panel_new(void);
-void remmina_message_panel_setup_progress(RemminaMessagePanel *mp, const gchar *message, RemminaMessagePanelCallback response_callback, gpointer response_callback_data);
-void remmina_message_panel_setup_message(RemminaMessagePanel *mp, const gchar *message, RemminaMessagePanelCallback response_callback, gpointer response_callback_data);
-void remmina_message_panel_setup_question(RemminaMessagePanel *mp, const gchar *message, RemminaMessagePanelCallback response_callback, gpointer response_callback_data);
-void remmina_message_panel_setup_auth(RemminaMessagePanel *mp, RemminaMessagePanelCallback response_callback, gpointer response_callback_data, const gchar *title, const gchar *password_prompt, unsigned flags);
-void remmina_message_panel_setup_auth_x509(RemminaMessagePanel *mp, RemminaMessagePanelCallback response_callback, gpointer response_callback_data);
-void remmina_message_panel_focus_auth_entry(RemminaMessagePanel *mp);
-void remmina_message_panel_field_set_string(RemminaMessagePanel *mp, int entryid, const gchar *text);
-gchar *remmina_message_panel_field_get_string(RemminaMessagePanel *mp, int entryid);
-void remmina_message_panel_field_set_switch(RemminaMessagePanel *mp, int entryid, gboolean state);
-gboolean remmina_message_panel_field_get_switch_state(RemminaMessagePanel *mp, int entryid);
-void remmina_message_panel_field_set_filename(RemminaMessagePanel *mp, int entryid, const gchar *filename);
-gchar *remmina_message_panel_field_get_filename(RemminaMessagePanel *mp, int entryid);
-void remmina_message_panel_response(RemminaMessagePanel *mp, gint response_id);
-
+RemminaMessagePanel *remmina_message_panel_new( void );
+void remmina_message_panel_setup_progress( RemminaMessagePanel *mp,
+                                           const gchar *message,
+                                           RemminaMessagePanelCallback response_callback,
+                                           gpointer response_callback_data );
+void remmina_message_panel_setup_message( RemminaMessagePanel *mp,
+                                          const gchar *message,
+                                          RemminaMessagePanelCallback response_callback,
+                                          gpointer response_callback_data );
+void remmina_message_panel_setup_question( RemminaMessagePanel *mp,
+                                           const gchar *message,
+                                           RemminaMessagePanelCallback response_callback,
+                                           gpointer response_callback_data );
+void remmina_message_panel_setup_auth( RemminaMessagePanel *mp,
+                                       RemminaMessagePanelCallback response_callback,
+                                       gpointer response_callback_data,
+                                       const gchar *title,
+                                       const gchar *password_prompt,
+                                       unsigned flags );
+void remmina_message_panel_setup_auth_x509( RemminaMessagePanel *mp,
+                                            RemminaMessagePanelCallback response_callback,
+                                            gpointer response_callback_data );
+void remmina_message_panel_focus_auth_entry( RemminaMessagePanel *mp );
+void remmina_message_panel_field_set_string( RemminaMessagePanel *mp, int entryid, const gchar *text );
+gchar *remmina_message_panel_field_get_string( RemminaMessagePanel *mp, int entryid );
+void remmina_message_panel_field_set_switch( RemminaMessagePanel *mp, int entryid, gboolean state );
+gboolean remmina_message_panel_field_get_switch_state( RemminaMessagePanel *mp, int entryid );
+void remmina_message_panel_field_set_filename( RemminaMessagePanel *mp, int entryid, const gchar *filename );
+gchar *remmina_message_panel_field_get_filename( RemminaMessagePanel *mp, int entryid );
+void remmina_message_panel_response( RemminaMessagePanel *mp, gint response_id );
 
 G_END_DECLS

@@ -40,10 +40,10 @@
 #pragma once
 
 G_BEGIN_DECLS
-gint remmina_utils_string_find(GString *haystack, gint start, gint end, const gchar *needle);
-gint remmina_utils_string_replace(GString *str, gint pos, gint len, const gchar *replace);
-guint remmina_utils_string_replace_all(GString *haystack, const gchar *needle, const gchar *replace);
-gchar *remmina_utils_string_strip(const gchar *s);
+gint remmina_utils_string_find( GString *haystack, gint start, gint end, const gchar *needle );
+gint remmina_utils_string_replace( GString *str, gint pos, gint len, const gchar *replace );
+guint remmina_utils_string_replace_all( GString *haystack, const gchar *needle, const gchar *replace );
+gchar *remmina_utils_string_strip( const gchar *s );
 
 gchar *remmina_utils_get_lang();
 const gchar *remmina_utils_get_kernel_name();
@@ -55,6 +55,6 @@ gchar *remmina_utils_get_lsb_release();
 gchar *remmina_utils_get_lsb_codename();
 GHashTable *remmina_utils_get_etc_release();
 const gchar *remmina_utils_get_os_info();
-gchar *remmina_sha1_file(const gchar *filename);
+gchar *remmina_sha1_file( const gchar *filename );
 gchar *remmina_gen_random_uuid();
 G_END_DECLS

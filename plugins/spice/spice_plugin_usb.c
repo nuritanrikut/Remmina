@@ -34,67 +34,58 @@
 
 #include "spice_plugin.h"
 
-static void remmina_plugin_spice_usb_connect_failed_cb(GObject *, SpiceUsbDevice *, GError *, RemminaProtocolWidget *);
+static void
+remmina_plugin_spice_usb_connect_failed_cb( GObject *, SpiceUsbDevice *, GError *, RemminaProtocolWidget * );
 
-void remmina_plugin_spice_select_usb_devices(RemminaProtocolWidget *gp)
+void remmina_plugin_spice_select_usb_devices( RemminaProtocolWidget *gp )
 {
-	TRACE_CALL(__func__);
+    TRACE_CALL( __func__ );
 
-	GtkWidget *dialog, *usb_device_widget;
-	RemminaPluginSpiceData *gpdata = GET_PLUGIN_DATA(gp);
+    GtkWidget *dialog, *usb_device_widget;
+    RemminaPluginSpiceData *gpdata = GET_PLUGIN_DATA( gp );
 
-	/*
+    /*
 	 * FIXME: Use the RemminaConnectionWindow as transient parent widget
 	 * (and add the GTK_DIALOG_DESTROY_WITH_PARENT flag) if it becomes
 	 * accessible from the Remmina plugin API.
 	 */
-	dialog = gtk_dialog_new_with_buttons(_("Select USB devices for redirection"),
-		NULL,
-		GTK_DIALOG_MODAL,
-		_("_Close"),
-		GTK_RESPONSE_ACCEPT,
-		NULL);
-	gtk_dialog_set_default_response(GTK_DIALOG(dialog), GTK_RESPONSE_ACCEPT);
+    dialog = gtk_dialog_new_with_buttons(
+        _( "Select USB devices for redirection" ), NULL, GTK_DIALOG_MODAL, _( "_Close" ), GTK_RESPONSE_ACCEPT, NULL );
+    gtk_dialog_set_default_response( GTK_DIALOG( dialog ), GTK_RESPONSE_ACCEPT );
 
-	usb_device_widget = spice_usb_device_widget_new(gpdata->session, NULL);
-	g_signal_connect(usb_device_widget,
-		"connect-failed",
-		G_CALLBACK(remmina_plugin_spice_usb_connect_failed_cb),
-		gp);
+    usb_device_widget = spice_usb_device_widget_new( gpdata->session, NULL );
+    g_signal_connect(
+        usb_device_widget, "connect-failed", G_CALLBACK( remmina_plugin_spice_usb_connect_failed_cb ), gp );
 
-	gtk_box_pack_start(GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dialog))),
-		usb_device_widget,
-		TRUE,
-		TRUE,
-		0);
-	gtk_widget_show_all(dialog);
-	gtk_dialog_run(GTK_DIALOG(dialog));
-	gtk_widget_destroy(dialog);
+    gtk_box_pack_start(
+        GTK_BOX( gtk_dialog_get_content_area( GTK_DIALOG( dialog ) ) ), usb_device_widget, TRUE, TRUE, 0 );
+    gtk_widget_show_all( dialog );
+    gtk_dialog_run( GTK_DIALOG( dialog ) );
+    gtk_widget_destroy( dialog );
 }
 
-static void remmina_plugin_spice_usb_connect_failed_cb(GObject *object, SpiceUsbDevice *usb_device, GError *error, RemminaProtocolWidget *gp)
+static void remmina_plugin_spice_usb_connect_failed_cb( GObject *object,
+                                                        SpiceUsbDevice *usb_device,
+                                                        GError *error,
+                                                        RemminaProtocolWidget *gp )
 {
-	TRACE_CALL(__func__);
+    TRACE_CALL( __func__ );
 
-	GtkWidget *dialog;
+    GtkWidget *dialog;
 
-	if (error->domain == G_IO_ERROR && error->code == G_IO_ERROR_CANCELLED) {
-		return;
-	}
+    if( error->domain == G_IO_ERROR && error->code == G_IO_ERROR_CANCELLED )
+    {
+        return;
+    }
 
-	/*
+    /*
 	 * FIXME: Use the RemminaConnectionWindow as transient parent widget
 	 * (and add the GTK_DIALOG_DESTROY_WITH_PARENT flag) if it becomes
 	 * accessible from the Remmina plugin API.
 	 */
-	dialog = gtk_message_dialog_new(NULL,
-		GTK_DIALOG_MODAL,
-		GTK_MESSAGE_ERROR,
-		GTK_BUTTONS_CLOSE,
-		_("USB redirection error"));
-	gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog),
-		"%s",
-		error->message);
-	gtk_dialog_run(GTK_DIALOG(dialog));
-	gtk_widget_destroy(dialog);
+    dialog = gtk_message_dialog_new(
+        NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _( "USB redirection error" ) );
+    gtk_message_dialog_format_secondary_text( GTK_MESSAGE_DIALOG( dialog ), "%s", error->message );
+    gtk_dialog_run( GTK_DIALOG( dialog ) );
+    gtk_widget_destroy( dialog );
 }

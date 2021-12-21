@@ -38,6 +38,6 @@
 
 G_BEGIN_DECLS
 
-void remmina_about_open(GtkWindow *parent);
+void remmina_about_open( GtkWindow *parent );
 
 G_END_DECLS

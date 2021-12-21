@@ -42,136 +42,143 @@
 #include "remmina_applet_menu_item.h"
 #include "remmina/remmina_trace_calls.h"
 
-G_DEFINE_TYPE( RemminaAppletMenuItem, remmina_applet_menu_item, GTK_TYPE_MENU_ITEM)
+G_DEFINE_TYPE( RemminaAppletMenuItem, remmina_applet_menu_item, GTK_TYPE_MENU_ITEM )
 
-#define IS_EMPTY(s) ((!s) || (s[0] == 0))
+#define IS_EMPTY( s ) ( ( !s ) || ( s[0] == 0 ) )
 
-static void remmina_applet_menu_item_destroy(RemminaAppletMenuItem* item, gpointer data)
+static void remmina_applet_menu_item_destroy( RemminaAppletMenuItem *item, gpointer data )
 {
-	TRACE_CALL(__func__);
-	g_free(item->filename);
-	g_free(item->name);
-	g_free(item->group);
-	g_free(item->protocol);
-	g_free(item->server);
+    TRACE_CALL( __func__ );
+    g_free( item->filename );
+    g_free( item->name );
+    g_free( item->group );
+    g_free( item->protocol );
+    g_free( item->server );
 }
 
-static void remmina_applet_menu_item_class_init(RemminaAppletMenuItemClass* klass)
+static void remmina_applet_menu_item_class_init( RemminaAppletMenuItemClass *klass )
 {
-	TRACE_CALL(__func__);
+    TRACE_CALL( __func__ );
 }
 
-static void remmina_applet_menu_item_init(RemminaAppletMenuItem* item)
+static void remmina_applet_menu_item_init( RemminaAppletMenuItem *item )
 {
-	TRACE_CALL(__func__);
-	item->filename = NULL;
-	item->name = NULL;
-	item->group = NULL;
-	item->protocol = NULL;
-	item->server = NULL;
-	item->ssh_tunnel_enabled = FALSE;
-	g_signal_connect(G_OBJECT(item), "destroy", G_CALLBACK(remmina_applet_menu_item_destroy), NULL);
+    TRACE_CALL( __func__ );
+    item->filename = NULL;
+    item->name = NULL;
+    item->group = NULL;
+    item->protocol = NULL;
+    item->server = NULL;
+    item->ssh_tunnel_enabled = FALSE;
+    g_signal_connect( G_OBJECT( item ), "destroy", G_CALLBACK( remmina_applet_menu_item_destroy ), NULL );
 }
 
-GtkWidget* remmina_applet_menu_item_new(RemminaAppletMenuItemType item_type, ...)
+GtkWidget *remmina_applet_menu_item_new( RemminaAppletMenuItemType item_type, ... )
 {
-	TRACE_CALL(__func__);
-	va_list ap;
-	RemminaAppletMenuItem* item;
-	GKeyFile* gkeyfile;
-	GtkWidget* widget;
+    TRACE_CALL( __func__ );
+    va_list ap;
+    RemminaAppletMenuItem *item;
+    GKeyFile *gkeyfile;
+    GtkWidget *widget;
 
-	va_start(ap, item_type);
+    va_start( ap, item_type );
 
-	item = REMMINA_APPLET_MENU_ITEM(g_object_new(REMMINA_TYPE_APPLET_MENU_ITEM, NULL));
+    item = REMMINA_APPLET_MENU_ITEM( g_object_new( REMMINA_TYPE_APPLET_MENU_ITEM, NULL ) );
 
-	item->item_type = item_type;
+    item->item_type = item_type;
 
-	switch (item_type) {
-	case REMMINA_APPLET_MENU_ITEM_FILE:
-		item->filename = g_strdup(va_arg(ap, const gchar*));
+    switch( item_type )
+    {
+        case REMMINA_APPLET_MENU_ITEM_FILE:
+            item->filename = g_strdup( va_arg( ap, const gchar * ) );
 
-		/* Load the file */
-		gkeyfile = g_key_file_new();
+            /* Load the file */
+            gkeyfile = g_key_file_new();
 
-		if (!g_key_file_load_from_file(gkeyfile, item->filename, G_KEY_FILE_NONE, NULL)) {
-			g_key_file_free(gkeyfile);
-			va_end(ap);
-			return NULL;
-		}
+            if( !g_key_file_load_from_file( gkeyfile, item->filename, G_KEY_FILE_NONE, NULL ) )
+            {
+                g_key_file_free( gkeyfile );
+                va_end( ap );
+                return NULL;
+            }
 
-		item->name = g_key_file_get_string(gkeyfile, "remmina", "name", NULL);
-		item->group = g_key_file_get_string(gkeyfile, "remmina", "group", NULL);
-		item->protocol = g_key_file_get_string(gkeyfile, "remmina", "protocol", NULL);
-		item->server = g_key_file_get_string(gkeyfile, "remmina", "server", NULL);
-		item->ssh_tunnel_enabled = g_key_file_get_boolean(gkeyfile, "remmina", "ssh_tunnel_enabled", NULL);
+            item->name = g_key_file_get_string( gkeyfile, "remmina", "name", NULL );
+            item->group = g_key_file_get_string( gkeyfile, "remmina", "group", NULL );
+            item->protocol = g_key_file_get_string( gkeyfile, "remmina", "protocol", NULL );
+            item->server = g_key_file_get_string( gkeyfile, "remmina", "server", NULL );
+            item->ssh_tunnel_enabled = g_key_file_get_boolean( gkeyfile, "remmina", "ssh_tunnel_enabled", NULL );
 
-		g_key_file_free(gkeyfile);
+            g_key_file_free( gkeyfile );
 
-		if (item->name == NULL) {
-			g_printf("WARNING: missing name= line in file %s. Skipping.\n", item->filename);
-			va_end(ap);
-			return NULL;
-		}
+            if( item->name == NULL )
+            {
+                g_printf( "WARNING: missing name= line in file %s. Skipping.\n", item->filename );
+                va_end( ap );
+                return NULL;
+            }
 
-		break;
+            break;
 
-	case REMMINA_APPLET_MENU_ITEM_DISCOVERED:
-		item->name = g_strdup(va_arg(ap, const gchar *));
-		item->group = g_strdup(_("Discovered"));
-		item->protocol = g_strdup("VNC");
-		break;
+        case REMMINA_APPLET_MENU_ITEM_DISCOVERED:
+            item->name = g_strdup( va_arg( ap, const gchar * ) );
+            item->group = g_strdup( _( "Discovered" ) );
+            item->protocol = g_strdup( "VNC" );
+            break;
 
-	case REMMINA_APPLET_MENU_ITEM_NEW:
-		item->name = g_strdup(_("New Connection"));
-		break;
-	}
+        case REMMINA_APPLET_MENU_ITEM_NEW:
+            item->name = g_strdup( _( "New Connection" ) );
+            break;
+    }
 
-	va_end(ap);
+    va_end( ap );
 
-	/* Create the label */
-	widget = gtk_label_new(item->name);
-	gtk_widget_show(widget);
-	gtk_widget_set_valign(widget, GTK_ALIGN_START);
-	gtk_widget_set_halign(widget, GTK_ALIGN_START);
-	gtk_container_add(GTK_CONTAINER(item), widget);
+    /* Create the label */
+    widget = gtk_label_new( item->name );
+    gtk_widget_show( widget );
+    gtk_widget_set_valign( widget, GTK_ALIGN_START );
+    gtk_widget_set_halign( widget, GTK_ALIGN_START );
+    gtk_container_add( GTK_CONTAINER( item ), widget );
 
-	if (item->server) {
-		gtk_widget_set_tooltip_text(GTK_WIDGET(item), item->server);
-	}
+    if( item->server )
+    {
+        gtk_widget_set_tooltip_text( GTK_WIDGET( item ), item->server );
+    }
 
-	return GTK_WIDGET(item);
+    return GTK_WIDGET( item );
 }
 
-gint remmina_applet_menu_item_compare(gconstpointer a, gconstpointer b, gpointer user_data)
+gint remmina_applet_menu_item_compare( gconstpointer a, gconstpointer b, gpointer user_data )
 {
-	TRACE_CALL(__func__);
-	gint cmp;
-	RemminaAppletMenuItem* itema;
-	RemminaAppletMenuItem* itemb;
+    TRACE_CALL( __func__ );
+    gint cmp;
+    RemminaAppletMenuItem *itema;
+    RemminaAppletMenuItem *itemb;
 
-	/* Passed in parameters are pointers to pointers */
-	itema = REMMINA_APPLET_MENU_ITEM(*((void**)a));
-	itemb = REMMINA_APPLET_MENU_ITEM(*((void**)b));
+    /* Passed in parameters are pointers to pointers */
+    itema = REMMINA_APPLET_MENU_ITEM( *( (void **)a ) );
+    itemb = REMMINA_APPLET_MENU_ITEM( *( (void **)b ) );
 
-	/* Put ungrouped items to the last */
-	if (IS_EMPTY(itema->group) && !IS_EMPTY(itemb->group))
-		return 1;
-	if (!IS_EMPTY(itema->group) && IS_EMPTY(itemb->group))
-		return -1;
+    /* Put ungrouped items to the last */
+    if( IS_EMPTY( itema->group ) && !IS_EMPTY( itemb->group ) )
+        return 1;
+    if( !IS_EMPTY( itema->group ) && IS_EMPTY( itemb->group ) )
+        return -1;
 
-	/* Put discovered items the last group */
-	if (itema->item_type == REMMINA_APPLET_MENU_ITEM_DISCOVERED && itemb->item_type != REMMINA_APPLET_MENU_ITEM_DISCOVERED)
-		return 1;
-	if (itema->item_type != REMMINA_APPLET_MENU_ITEM_DISCOVERED && itemb->item_type == REMMINA_APPLET_MENU_ITEM_DISCOVERED)
-		return -1;
+    /* Put discovered items the last group */
+    if( itema->item_type == REMMINA_APPLET_MENU_ITEM_DISCOVERED
+        && itemb->item_type != REMMINA_APPLET_MENU_ITEM_DISCOVERED )
+        return 1;
+    if( itema->item_type != REMMINA_APPLET_MENU_ITEM_DISCOVERED
+        && itemb->item_type == REMMINA_APPLET_MENU_ITEM_DISCOVERED )
+        return -1;
 
-	if (itema->item_type != REMMINA_APPLET_MENU_ITEM_DISCOVERED && !IS_EMPTY(itema->group)) {
-		cmp = g_strcmp0(itema->group, itemb->group);
+    if( itema->item_type != REMMINA_APPLET_MENU_ITEM_DISCOVERED && !IS_EMPTY( itema->group ) )
+    {
+        cmp = g_strcmp0( itema->group, itemb->group );
 
-		if (cmp != 0)
-			return cmp;
-	}
+        if( cmp != 0 )
+            return cmp;
+    }
 
-	return g_strcmp0(itema->name, itemb->name);
+    return g_strcmp0( itema->name, itemb->name );
 }

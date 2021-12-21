@@ -47,239 +47,277 @@
 #include "remmina_pref.h"
 #include "remmina/remmina_trace_calls.h"
 
-G_DEFINE_TYPE( RemminaAppletMenu, remmina_applet_menu, GTK_TYPE_MENU)
+G_DEFINE_TYPE( RemminaAppletMenu, remmina_applet_menu, GTK_TYPE_MENU )
 
-struct _RemminaAppletMenuPriv {
-	gboolean hide_count;
+struct _RemminaAppletMenuPriv
+{
+    gboolean hide_count;
 };
 
-enum {
-	LAUNCH_ITEM_SIGNAL, EDIT_ITEM_SIGNAL, LAST_SIGNAL
+enum
+{
+    LAUNCH_ITEM_SIGNAL,
+    EDIT_ITEM_SIGNAL,
+    LAST_SIGNAL
 };
 
-static guint remmina_applet_menu_signals[LAST_SIGNAL] =
-{ 0 };
+static guint remmina_applet_menu_signals[LAST_SIGNAL] = { 0 };
 
-static void remmina_applet_menu_destroy(RemminaAppletMenu *menu, gpointer data)
+static void remmina_applet_menu_destroy( RemminaAppletMenu *menu, gpointer data )
 {
-	TRACE_CALL(__func__);
-	g_free(menu->priv);
+    TRACE_CALL( __func__ );
+    g_free( menu->priv );
 }
 
-static void remmina_applet_menu_class_init(RemminaAppletMenuClass *klass)
+static void remmina_applet_menu_class_init( RemminaAppletMenuClass *klass )
 {
-	TRACE_CALL(__func__);
-	remmina_applet_menu_signals[LAUNCH_ITEM_SIGNAL] = g_signal_new("launch-item", G_TYPE_FROM_CLASS(klass),
-		G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION, G_STRUCT_OFFSET(RemminaAppletMenuClass, launch_item), NULL, NULL,
-		g_cclosure_marshal_VOID__OBJECT, G_TYPE_NONE, 1, G_TYPE_OBJECT);
-	remmina_applet_menu_signals[EDIT_ITEM_SIGNAL] = g_signal_new("edit-item", G_TYPE_FROM_CLASS(klass),
-		G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION, G_STRUCT_OFFSET(RemminaAppletMenuClass, edit_item), NULL, NULL,
-		g_cclosure_marshal_VOID__OBJECT, G_TYPE_NONE, 1, G_TYPE_OBJECT);
+    TRACE_CALL( __func__ );
+    remmina_applet_menu_signals[LAUNCH_ITEM_SIGNAL] =
+        g_signal_new( "launch-item",
+                      G_TYPE_FROM_CLASS( klass ),
+                      G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
+                      G_STRUCT_OFFSET( RemminaAppletMenuClass, launch_item ),
+                      NULL,
+                      NULL,
+                      g_cclosure_marshal_VOID__OBJECT,
+                      G_TYPE_NONE,
+                      1,
+                      G_TYPE_OBJECT );
+    remmina_applet_menu_signals[EDIT_ITEM_SIGNAL] = g_signal_new( "edit-item",
+                                                                  G_TYPE_FROM_CLASS( klass ),
+                                                                  G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
+                                                                  G_STRUCT_OFFSET( RemminaAppletMenuClass, edit_item ),
+                                                                  NULL,
+                                                                  NULL,
+                                                                  g_cclosure_marshal_VOID__OBJECT,
+                                                                  G_TYPE_NONE,
+                                                                  1,
+                                                                  G_TYPE_OBJECT );
 }
 
-static void remmina_applet_menu_init(RemminaAppletMenu *menu)
+static void remmina_applet_menu_init( RemminaAppletMenu *menu )
 {
-	TRACE_CALL(__func__);
-	menu->priv = g_new0(RemminaAppletMenuPriv, 1);
+    TRACE_CALL( __func__ );
+    menu->priv = g_new0( RemminaAppletMenuPriv, 1 );
 
-	g_signal_connect(G_OBJECT(menu), "destroy", G_CALLBACK(remmina_applet_menu_destroy), NULL);
+    g_signal_connect( G_OBJECT( menu ), "destroy", G_CALLBACK( remmina_applet_menu_destroy ), NULL );
 }
 
-static void remmina_applet_menu_on_item_activate(RemminaAppletMenuItem *menuitem, RemminaAppletMenu *menu)
+static void remmina_applet_menu_on_item_activate( RemminaAppletMenuItem *menuitem, RemminaAppletMenu *menu )
 {
-	TRACE_CALL(__func__);
-	g_signal_emit(G_OBJECT(menu), remmina_applet_menu_signals[LAUNCH_ITEM_SIGNAL], 0, menuitem);
+    TRACE_CALL( __func__ );
+    g_signal_emit( G_OBJECT( menu ), remmina_applet_menu_signals[LAUNCH_ITEM_SIGNAL], 0, menuitem );
 }
 
-static GtkWidget*
-remmina_applet_menu_add_group(GtkWidget *menu, const gchar *group, gint position, RemminaAppletMenuItem *menuitem,
-			      GtkWidget **groupmenuitem)
+static GtkWidget *remmina_applet_menu_add_group( GtkWidget *menu,
+                                                 const gchar *group,
+                                                 gint position,
+                                                 RemminaAppletMenuItem *menuitem,
+                                                 GtkWidget **groupmenuitem )
 {
-	TRACE_CALL(__func__);
-	GtkWidget *widget;
-	GtkWidget *submenu;
+    TRACE_CALL( __func__ );
+    GtkWidget *widget;
+    GtkWidget *submenu;
 
-	widget = gtk_menu_item_new_with_label(group);
-	gtk_widget_show(widget);
+    widget = gtk_menu_item_new_with_label( group );
+    gtk_widget_show( widget );
 
-	g_object_set_data_full(G_OBJECT(widget), "group", g_strdup(group), g_free);
-	g_object_set_data(G_OBJECT(widget), "count", GINT_TO_POINTER(0));
-	if (groupmenuitem) {
-		*groupmenuitem = widget;
-	}
-	if (position < 0) {
-		gtk_menu_shell_append(GTK_MENU_SHELL(menu), widget);
-	}else  {
-		gtk_menu_shell_insert(GTK_MENU_SHELL(menu), widget, position);
-	}
+    g_object_set_data_full( G_OBJECT( widget ), "group", g_strdup( group ), g_free );
+    g_object_set_data( G_OBJECT( widget ), "count", GINT_TO_POINTER( 0 ) );
+    if( groupmenuitem )
+    {
+        *groupmenuitem = widget;
+    }
+    if( position < 0 )
+    {
+        gtk_menu_shell_append( GTK_MENU_SHELL( menu ), widget );
+    }
+    else
+    {
+        gtk_menu_shell_insert( GTK_MENU_SHELL( menu ), widget, position );
+    }
 
-	submenu = gtk_menu_new();
-	gtk_widget_show(submenu);
-	gtk_menu_item_set_submenu(GTK_MENU_ITEM(widget), submenu);
+    submenu = gtk_menu_new();
+    gtk_widget_show( submenu );
+    gtk_menu_item_set_submenu( GTK_MENU_ITEM( widget ), submenu );
 
-	return submenu;
+    return submenu;
 }
 
-static void remmina_applet_menu_increase_group_count(GtkWidget *widget)
+static void remmina_applet_menu_increase_group_count( GtkWidget *widget )
 {
-	TRACE_CALL(__func__);
-	gint cnt;
-	gchar *s;
+    TRACE_CALL( __func__ );
+    gint cnt;
+    gchar *s;
 
-	cnt = GPOINTER_TO_INT(g_object_get_data(G_OBJECT(widget), "count")) + 1;
-	g_object_set_data(G_OBJECT(widget), "count", GINT_TO_POINTER(cnt));
-	s = g_strdup_printf("%s (%i)", (const gchar*)g_object_get_data(G_OBJECT(widget), "group"), cnt);
-	gtk_menu_item_set_label(GTK_MENU_ITEM(widget), s);
-	g_free(s);
+    cnt = GPOINTER_TO_INT( g_object_get_data( G_OBJECT( widget ), "count" ) ) + 1;
+    g_object_set_data( G_OBJECT( widget ), "count", GINT_TO_POINTER( cnt ) );
+    s = g_strdup_printf( "%s (%i)", (const gchar *)g_object_get_data( G_OBJECT( widget ), "group" ), cnt );
+    gtk_menu_item_set_label( GTK_MENU_ITEM( widget ), s );
+    g_free( s );
 }
 
-void remmina_applet_menu_register_item(RemminaAppletMenu *menu, RemminaAppletMenuItem *menuitem)
+void remmina_applet_menu_register_item( RemminaAppletMenu *menu, RemminaAppletMenuItem *menuitem )
 {
-	TRACE_CALL(__func__);
-	g_signal_connect(G_OBJECT(menuitem), "activate", G_CALLBACK(remmina_applet_menu_on_item_activate), menu);
+    TRACE_CALL( __func__ );
+    g_signal_connect( G_OBJECT( menuitem ), "activate", G_CALLBACK( remmina_applet_menu_on_item_activate ), menu );
 }
 
-void remmina_applet_menu_add_item(RemminaAppletMenu *menu, RemminaAppletMenuItem *menuitem)
+void remmina_applet_menu_add_item( RemminaAppletMenu *menu, RemminaAppletMenuItem *menuitem )
 {
-	TRACE_CALL(__func__);
-	GtkWidget *submenu;
-	GtkWidget *groupmenuitem;
-	GtkMenuItem *submenuitem;
-	gchar *s, *p1, *p2, *mstr;
-	GList *childs, *child;
-	gint position;
+    TRACE_CALL( __func__ );
+    GtkWidget *submenu;
+    GtkWidget *groupmenuitem;
+    GtkMenuItem *submenuitem;
+    gchar *s, *p1, *p2, *mstr;
+    GList *childs, *child;
+    gint position;
 
-	submenu = GTK_WIDGET(menu);
-	s = g_strdup(menuitem->group);
-	p1 = s;
-	p2 = p1 ? strchr(p1, '/') : NULL;
-	if (p2)
-		*p2++ = '\0';
-	while (p1 && p1[0]) {
-		groupmenuitem = NULL;
-		childs = gtk_container_get_children(GTK_CONTAINER(submenu));
-		position = -1;
-		for (child = g_list_first(childs); child; child = g_list_next(child)) {
-			if (!GTK_IS_MENU_ITEM(child->data))
-				continue;
-			position++;
-			submenuitem = GTK_MENU_ITEM(child->data);
-			if (gtk_menu_item_get_submenu(submenuitem)) {
-				mstr = (gchar*)g_object_get_data(G_OBJECT(submenuitem), "group");
-				if (g_strcmp0(p1, mstr) == 0) {
-					/* Found existing group menu */
-					submenu = gtk_menu_item_get_submenu(submenuitem);
-					groupmenuitem = GTK_WIDGET(submenuitem);
-					break;
-				}else  {
-					/* Redo comparison ignoring case and respecting international
+    submenu = GTK_WIDGET( menu );
+    s = g_strdup( menuitem->group );
+    p1 = s;
+    p2 = p1 ? strchr( p1, '/' ) : NULL;
+    if( p2 )
+        *p2++ = '\0';
+    while( p1 && p1[0] )
+    {
+        groupmenuitem = NULL;
+        childs = gtk_container_get_children( GTK_CONTAINER( submenu ) );
+        position = -1;
+        for( child = g_list_first( childs ); child; child = g_list_next( child ) )
+        {
+            if( !GTK_IS_MENU_ITEM( child->data ) )
+                continue;
+            position++;
+            submenuitem = GTK_MENU_ITEM( child->data );
+            if( gtk_menu_item_get_submenu( submenuitem ) )
+            {
+                mstr = (gchar *)g_object_get_data( G_OBJECT( submenuitem ), "group" );
+                if( g_strcmp0( p1, mstr ) == 0 )
+                {
+                    /* Found existing group menu */
+                    submenu = gtk_menu_item_get_submenu( submenuitem );
+                    groupmenuitem = GTK_WIDGET( submenuitem );
+                    break;
+                }
+                else
+                {
+                    /* Redo comparison ignoring case and respecting international
 					 * collation, to set menu sort order */
-					if (strcoll(p1, mstr) < 0) {
-						submenu = remmina_applet_menu_add_group(submenu, p1, position, menuitem,
-							&groupmenuitem);
-						break;
-					}
-				}
-			}else  {
-				submenu = remmina_applet_menu_add_group(submenu, p1, position, menuitem, &groupmenuitem);
-				break;
-			}
+                    if( strcoll( p1, mstr ) < 0 )
+                    {
+                        submenu = remmina_applet_menu_add_group( submenu, p1, position, menuitem, &groupmenuitem );
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                submenu = remmina_applet_menu_add_group( submenu, p1, position, menuitem, &groupmenuitem );
+                break;
+            }
+        }
 
-		}
+        if( !child )
+        {
+            submenu = remmina_applet_menu_add_group( submenu, p1, -1, menuitem, &groupmenuitem );
+        }
+        g_list_free( childs );
+        if( groupmenuitem && !menu->priv->hide_count )
+        {
+            remmina_applet_menu_increase_group_count( groupmenuitem );
+        }
+        p1 = p2;
+        p2 = p1 ? strchr( p1, '/' ) : NULL;
+        if( p2 )
+            *p2++ = '\0';
+    }
+    g_free( s );
 
-		if (!child) {
-			submenu = remmina_applet_menu_add_group(submenu, p1, -1, menuitem, &groupmenuitem);
-		}
-		g_list_free(childs);
-		if (groupmenuitem && !menu->priv->hide_count) {
-			remmina_applet_menu_increase_group_count(groupmenuitem);
-		}
-		p1 = p2;
-		p2 = p1 ? strchr(p1, '/') : NULL;
-		if (p2)
-			*p2++ = '\0';
-	}
-	g_free(s);
-
-	childs = gtk_container_get_children(GTK_CONTAINER(submenu));
-	position = -1;
-	for (child = g_list_first(childs); child; child = g_list_next(child)) {
-		if (!GTK_IS_MENU_ITEM(child->data))
-			continue;
-		position++;
-		submenuitem = GTK_MENU_ITEM(child->data);
-		if (gtk_menu_item_get_submenu(submenuitem))
-			continue;
-		if (!REMMINA_IS_APPLET_MENU_ITEM(submenuitem))
-			continue;
-		if (strcoll(menuitem->name, REMMINA_APPLET_MENU_ITEM(submenuitem)->name) <= 0) {
-			gtk_menu_shell_insert(GTK_MENU_SHELL(submenu), GTK_WIDGET(menuitem), position);
-			break;
-		}
-	}
-	if (!child) {
-		gtk_menu_shell_append(GTK_MENU_SHELL(submenu), GTK_WIDGET(menuitem));
-	}
-	g_list_free(childs);
-	remmina_applet_menu_register_item(menu, menuitem);
+    childs = gtk_container_get_children( GTK_CONTAINER( submenu ) );
+    position = -1;
+    for( child = g_list_first( childs ); child; child = g_list_next( child ) )
+    {
+        if( !GTK_IS_MENU_ITEM( child->data ) )
+            continue;
+        position++;
+        submenuitem = GTK_MENU_ITEM( child->data );
+        if( gtk_menu_item_get_submenu( submenuitem ) )
+            continue;
+        if( !REMMINA_IS_APPLET_MENU_ITEM( submenuitem ) )
+            continue;
+        if( strcoll( menuitem->name, REMMINA_APPLET_MENU_ITEM( submenuitem )->name ) <= 0 )
+        {
+            gtk_menu_shell_insert( GTK_MENU_SHELL( submenu ), GTK_WIDGET( menuitem ), position );
+            break;
+        }
+    }
+    if( !child )
+    {
+        gtk_menu_shell_append( GTK_MENU_SHELL( submenu ), GTK_WIDGET( menuitem ) );
+    }
+    g_list_free( childs );
+    remmina_applet_menu_register_item( menu, menuitem );
 }
 
-GtkWidget*
-remmina_applet_menu_new(void)
+GtkWidget *remmina_applet_menu_new( void )
 {
-	TRACE_CALL(__func__);
-	RemminaAppletMenu *menu;
+    TRACE_CALL( __func__ );
+    RemminaAppletMenu *menu;
 
-	menu = REMMINA_APPLET_MENU(g_object_new(REMMINA_TYPE_APPLET_MENU, NULL));
+    menu = REMMINA_APPLET_MENU( g_object_new( REMMINA_TYPE_APPLET_MENU, NULL ) );
 
-	return GTK_WIDGET(menu);
+    return GTK_WIDGET( menu );
 }
 
-void remmina_applet_menu_set_hide_count(RemminaAppletMenu *menu, gboolean hide_count)
+void remmina_applet_menu_set_hide_count( RemminaAppletMenu *menu, gboolean hide_count )
 {
-	TRACE_CALL(__func__);
-	menu->priv->hide_count = hide_count;
+    TRACE_CALL( __func__ );
+    menu->priv->hide_count = hide_count;
 }
 
-void remmina_applet_menu_populate(RemminaAppletMenu *menu)
+void remmina_applet_menu_populate( RemminaAppletMenu *menu )
 {
-	TRACE_CALL(__func__);
-	GtkWidget *menuitem;
-	gchar filename[MAX_PATH_LEN];
-	GDir *dir;
-	gchar *remmina_data_dir;
-	const gchar *name;
-	gint count = 0;
+    TRACE_CALL( __func__ );
+    GtkWidget *menuitem;
+    gchar filename[MAX_PATH_LEN];
+    GDir *dir;
+    gchar *remmina_data_dir;
+    const gchar *name;
+    gint count = 0;
 
-	gboolean new_ontop = remmina_pref.applet_new_ontop;
+    gboolean new_ontop = remmina_pref.applet_new_ontop;
 
-	remmina_data_dir = remmina_file_get_datadir();
-	dir = g_dir_open(remmina_data_dir, 0, NULL);
-	if (dir != NULL) {
-		/* Iterate all remote desktop profiles */
-		while ((name = g_dir_read_name(dir)) != NULL) {
-			if (!g_str_has_suffix(name, ".remmina"))
-				continue;
-			g_snprintf(filename, sizeof(filename), "%s/%s", remmina_data_dir, name);
+    remmina_data_dir = remmina_file_get_datadir();
+    dir = g_dir_open( remmina_data_dir, 0, NULL );
+    if( dir != NULL )
+    {
+        /* Iterate all remote desktop profiles */
+        while( ( name = g_dir_read_name( dir ) ) != NULL )
+        {
+            if( !g_str_has_suffix( name, ".remmina" ) )
+                continue;
+            g_snprintf( filename, sizeof( filename ), "%s/%s", remmina_data_dir, name );
 
-			menuitem = remmina_applet_menu_item_new(REMMINA_APPLET_MENU_ITEM_FILE, filename);
-			if (menuitem != NULL) {
-				remmina_applet_menu_add_item(menu, REMMINA_APPLET_MENU_ITEM(menuitem));
-				gtk_widget_show(menuitem);
-				count++;
-			}
-		}
-		g_dir_close(dir);
-		if (count > 0) {
-			/* Separator */
-			menuitem = gtk_separator_menu_item_new();
-			gtk_widget_show(menuitem);
-			if (new_ontop)
-				gtk_menu_shell_prepend(GTK_MENU_SHELL(menu), menuitem);
-			else
-				gtk_menu_shell_append(GTK_MENU_SHELL(menu), menuitem);
-		}
-	}
-	g_free(remmina_data_dir);
+            menuitem = remmina_applet_menu_item_new( REMMINA_APPLET_MENU_ITEM_FILE, filename );
+            if( menuitem != NULL )
+            {
+                remmina_applet_menu_add_item( menu, REMMINA_APPLET_MENU_ITEM( menuitem ) );
+                gtk_widget_show( menuitem );
+                count++;
+            }
+        }
+        g_dir_close( dir );
+        if( count > 0 )
+        {
+            /* Separator */
+            menuitem = gtk_separator_menu_item_new();
+            gtk_widget_show( menuitem );
+            if( new_ontop )
+                gtk_menu_shell_prepend( GTK_MENU_SHELL( menu ), menuitem );
+            else
+                gtk_menu_shell_append( GTK_MENU_SHELL( menu ), menuitem );
+        }
+    }
+    g_free( remmina_data_dir );
 }
-

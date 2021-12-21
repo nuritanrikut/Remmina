@@ -36,8 +36,8 @@
 #ifndef __PLUGIN_CONFIG_H
 #define __PLUGIN_CONFIG_H
 
-#define PLUGIN_NAME        "GVNC"
-#define PLUGIN_DESCRIPTION N_("Remmina VNC plugin for GNOME and KVM")
-#define PLUGIN_VERSION     "0.1b"
-#define PLUGIN_APPICON     "org.remmina.Remmina-gvnc-symbolic"
+#define PLUGIN_NAME "GVNC"
+#define PLUGIN_DESCRIPTION N_( "Remmina VNC plugin for GNOME and KVM" )
+#define PLUGIN_VERSION "0.1b"
+#define PLUGIN_APPICON "org.remmina.Remmina-gvnc-symbolic"
 #endif

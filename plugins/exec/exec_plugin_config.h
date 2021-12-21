@@ -37,7 +37,7 @@
 
 #pragma once
 
-#define PLUGIN_NAME        "EXEC"
-#define PLUGIN_DESCRIPTION N_("Execute a command")
-#define PLUGIN_VERSION     "1.0"
-#define PLUGIN_APPICON     "org.remmina.Remmina-tool-symbolic"
+#define PLUGIN_NAME "EXEC"
+#define PLUGIN_DESCRIPTION N_( "Execute a command" )
+#define PLUGIN_VERSION "1.0"
+#define PLUGIN_APPICON "org.remmina.Remmina-tool-symbolic"

@@ -37,31 +37,35 @@
 #pragma once
 
 #ifdef HAVE_LIBVTE
-#include <vte/vte.h>
+#    include <vte/vte.h>
 #endif
 
 G_BEGIN_DECLS
 
-void remmina_ssh_plugin_register(void);
+void remmina_ssh_plugin_register( void );
 
-typedef struct _RemminaProtocolSettingOpt {
-	RemminaProtocolSettingType	type;
-	const gchar *			name;
-	const gchar *			label;
-	gboolean			compact;
-	gpointer			opt1;
-	gpointer			opt2;
+typedef struct _RemminaProtocolSettingOpt
+{
+    RemminaProtocolSettingType type;
+    const gchar *name;
+    const gchar *label;
+    gboolean compact;
+    gpointer opt1;
+    gpointer opt2;
 } RemminaProtocolSettingOpt;
 
 /* For callback in main thread */
-#if defined (HAVE_LIBSSH) && defined (HAVE_LIBVTE)
-void remmina_plugin_ssh_vte_terminal_set_encoding_and_pty(VteTerminal *terminal, const char *codeset, int master, int slave);
-void remmina_plugin_ssh_vte_select_all(GtkMenuItem *menuitem, gpointer vte);
-void remmina_plugin_ssh_vte_copy_clipboard(GtkMenuItem *menuitem, gpointer vte);
-void remmina_plugin_ssh_vte_paste_clipboard(GtkMenuItem *menuitem, gpointer vte);
-void remmina_plugin_ssh_vte_decrease_font(GtkMenuItem *menuitem, gpointer vte);
-void remmina_plugin_ssh_vte_increase_font(GtkMenuItem *menuitem, gpointer vte);
-gboolean remmina_ssh_plugin_popup_menu(GtkWidget *widget, GdkEvent *event, GtkWidget *menu);
+#if defined( HAVE_LIBSSH ) && defined( HAVE_LIBVTE )
+void remmina_plugin_ssh_vte_terminal_set_encoding_and_pty( VteTerminal *terminal,
+                                                           const char *codeset,
+                                                           int master,
+                                                           int slave );
+void remmina_plugin_ssh_vte_select_all( GtkMenuItem *menuitem, gpointer vte );
+void remmina_plugin_ssh_vte_copy_clipboard( GtkMenuItem *menuitem, gpointer vte );
+void remmina_plugin_ssh_vte_paste_clipboard( GtkMenuItem *menuitem, gpointer vte );
+void remmina_plugin_ssh_vte_decrease_font( GtkMenuItem *menuitem, gpointer vte );
+void remmina_plugin_ssh_vte_increase_font( GtkMenuItem *menuitem, gpointer vte );
+gboolean remmina_ssh_plugin_popup_menu( GtkWidget *widget, GdkEvent *event, GtkWidget *menu );
 #endif
 
 G_END_DECLS

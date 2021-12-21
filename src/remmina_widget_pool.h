@@ -37,13 +37,13 @@
 
 G_BEGIN_DECLS
 
-typedef gboolean (*RemminaWidgetPoolForEachFunc)(GtkWidget *widget, gpointer data);
+typedef gboolean ( *RemminaWidgetPoolForEachFunc )( GtkWidget *widget, gpointer data );
 
-void remmina_widget_pool_init(void);
-void remmina_widget_pool_register(GtkWidget *widget);
-GtkWidget *remmina_widget_pool_find(GType type, const gchar *tag);
-GtkWidget *remmina_widget_pool_find_by_window(GType type, GdkWindow *window);
-gint remmina_widget_pool_foreach(RemminaWidgetPoolForEachFunc callback, gpointer data);
-gint remmina_widget_pool_count(void);
+void remmina_widget_pool_init( void );
+void remmina_widget_pool_register( GtkWidget *widget );
+GtkWidget *remmina_widget_pool_find( GType type, const gchar *tag );
+GtkWidget *remmina_widget_pool_find_by_window( GType type, GdkWindow *window );
+gint remmina_widget_pool_foreach( RemminaWidgetPoolForEachFunc callback, gpointer data );
+gint remmina_widget_pool_count( void );
 
 G_END_DECLS

@@ -37,7 +37,7 @@
 #include "config.h"
 #include <glib.h>
 #ifdef HAVE_LIBGCRYPT
-#include <gcrypt.h>
+#    include <gcrypt.h>
 #endif
 #include "remmina_pref.h"
 #include "remmina_crypt.h"
@@ -45,153 +45,153 @@
 
 #ifdef HAVE_LIBGCRYPT
 
-static gboolean remmina_crypt_init(gcry_cipher_hd_t *phd)
+static gboolean remmina_crypt_init( gcry_cipher_hd_t *phd )
 {
-	TRACE_CALL(__func__);
-	guchar* secret;
-	gcry_error_t err;
-	gsize secret_len;
+    TRACE_CALL( __func__ );
+    guchar *secret;
+    gcry_error_t err;
+    gsize secret_len;
 
-	secret = g_base64_decode(remmina_pref.secret, &secret_len);
+    secret = g_base64_decode( remmina_pref.secret, &secret_len );
 
-	if (secret_len < 32) {
-		g_debug("secret corrupted\n");
-		g_free(secret);
-		return FALSE;
-	}
+    if( secret_len < 32 )
+    {
+        g_debug( "secret corrupted\n" );
+        g_free( secret );
+        return FALSE;
+    }
 
-	err = gcry_cipher_open(phd, GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_CBC, 0);
+    err = gcry_cipher_open( phd, GCRY_CIPHER_3DES, GCRY_CIPHER_MODE_CBC, 0 );
 
-	if (err) {
-		g_debug("gcry_cipher_open failure: %s\n", gcry_strerror(err));
-		g_free(secret);
-		return FALSE;
-	}
+    if( err )
+    {
+        g_debug( "gcry_cipher_open failure: %s\n", gcry_strerror( err ) );
+        g_free( secret );
+        return FALSE;
+    }
 
-	err = gcry_cipher_setkey((*phd), secret, 24);
+    err = gcry_cipher_setkey( ( *phd ), secret, 24 );
 
-	if (err) {
-		g_debug("gcry_cipher_setkey failure: %s\n", gcry_strerror(err));
-		g_free(secret);
-		gcry_cipher_close((*phd));
-		return FALSE;
-	}
+    if( err )
+    {
+        g_debug( "gcry_cipher_setkey failure: %s\n", gcry_strerror( err ) );
+        g_free( secret );
+        gcry_cipher_close( ( *phd ) );
+        return FALSE;
+    }
 
-	err = gcry_cipher_setiv((*phd), secret + 24, 8);
+    err = gcry_cipher_setiv( ( *phd ), secret + 24, 8 );
 
-	if (err) {
-		g_debug("gcry_cipher_setiv failure: %s\n", gcry_strerror(err));
-		g_free(secret);
-		gcry_cipher_close((*phd));
-		return FALSE;
-	}
+    if( err )
+    {
+        g_debug( "gcry_cipher_setiv failure: %s\n", gcry_strerror( err ) );
+        g_free( secret );
+        gcry_cipher_close( ( *phd ) );
+        return FALSE;
+    }
 
-	g_free(secret);
+    g_free( secret );
 
-	return TRUE;
+    return TRUE;
 }
 
-gchar* remmina_crypt_encrypt(const gchar *str)
+gchar *remmina_crypt_encrypt( const gchar *str )
 {
-	TRACE_CALL(__func__);
-	guchar* buf;
-	gint buf_len;
-	gchar* result;
-	gcry_error_t err;
-	gcry_cipher_hd_t hd;
+    TRACE_CALL( __func__ );
+    guchar *buf;
+    gint buf_len;
+    gchar *result;
+    gcry_error_t err;
+    gcry_cipher_hd_t hd;
 
-	if (!str || str[0] == '\0')
-		return NULL;
+    if( !str || str[0] == '\0' )
+        return NULL;
 
-	if (!remmina_crypt_init(&hd))
-		return NULL;
+    if( !remmina_crypt_init( &hd ) )
+        return NULL;
 
-	buf_len = strlen(str);
-	/* Pack to 64bit block size, and make sure it’s always 0-terminated */
-	buf_len += 8 - buf_len % 8;
-	buf = (guchar*)g_malloc(buf_len);
-	memset(buf, 0, buf_len);
-	memcpy(buf, str, strlen(str));
+    buf_len = strlen( str );
+    /* Pack to 64bit block size, and make sure it’s always 0-terminated */
+    buf_len += 8 - buf_len % 8;
+    buf = (guchar *)g_malloc( buf_len );
+    memset( buf, 0, buf_len );
+    memcpy( buf, str, strlen( str ) );
 
-	err = gcry_cipher_encrypt(hd, buf, buf_len, NULL, 0);
+    err = gcry_cipher_encrypt( hd, buf, buf_len, NULL, 0 );
 
-	if (err) {
-		g_debug("gcry_cipher_encrypt failure: %s/%s\n",
-				gcry_strsource(err),
-				gcry_strerror(err));
-		g_free(buf);
-		gcry_cipher_close(hd);
-		return NULL;
-	}
+    if( err )
+    {
+        g_debug( "gcry_cipher_encrypt failure: %s/%s\n", gcry_strsource( err ), gcry_strerror( err ) );
+        g_free( buf );
+        gcry_cipher_close( hd );
+        return NULL;
+    }
 
-	result = g_base64_encode(buf, buf_len);
+    result = g_base64_encode( buf, buf_len );
 
-	g_free(buf);
-	gcry_cipher_close(hd);
+    g_free( buf );
+    gcry_cipher_close( hd );
 
-	return result;
+    return result;
 }
 
-gchar* remmina_crypt_decrypt(const gchar *str)
+gchar *remmina_crypt_decrypt( const gchar *str )
 {
-	TRACE_CALL(__func__);
-	guchar* buf;
-	gsize buf_len;
-	gcry_error_t err;
-	gcry_cipher_hd_t hd;
+    TRACE_CALL( __func__ );
+    guchar *buf;
+    gsize buf_len;
+    gcry_error_t err;
+    gcry_cipher_hd_t hd;
 
-	if (!str || str[0] == '\0')
-		return NULL;
+    if( !str || str[0] == '\0' )
+        return NULL;
 
-	if (!remmina_crypt_init(&hd))
-		return NULL;
+    if( !remmina_crypt_init( &hd ) )
+        return NULL;
 
-	buf = g_base64_decode(str, &buf_len);
+    buf = g_base64_decode( str, &buf_len );
 
-	/*
+    /*
 	g_debug ("%s base64 encoded as %p with length %lu",
 			str,
 			&buf,
 			buf_len);
 	*/
 
-	err = gcry_cipher_decrypt(
-			hd,	    // gcry_cipher_hd_t
-			buf,	    // guchar
-			buf_len,    // gsize
-			NULL,	    // NULL and 0 -> in place decrypt
-			0);
+    err = gcry_cipher_decrypt( hd,      // gcry_cipher_hd_t
+                               buf,     // guchar
+                               buf_len, // gsize
+                               NULL,    // NULL and 0 -> in place decrypt
+                               0 );
 
-	if (err) {
-		g_debug("gcry_cipher_decrypt failure: %s/%s\n",
-				gcry_strsource(err),
-				gcry_strerror(err));
-		g_free(buf);
-		gcry_cipher_close(hd);
-		return NULL;
-	}
+    if( err )
+    {
+        g_debug( "gcry_cipher_decrypt failure: %s/%s\n", gcry_strsource( err ), gcry_strerror( err ) );
+        g_free( buf );
+        gcry_cipher_close( hd );
+        return NULL;
+    }
 
-	gcry_cipher_close(hd);
+    gcry_cipher_close( hd );
 
-	/* Just in case */
-	buf[buf_len - 1] = '\0';
+    /* Just in case */
+    buf[buf_len - 1] = '\0';
 
-	return (gchar*)buf;
+    return (gchar *)buf;
 }
 
 #else
 
-gchar* remmina_crypt_encrypt(const gchar *str)
+gchar *remmina_crypt_encrypt( const gchar *str )
 {
-	TRACE_CALL(__func__);
-	return NULL;
+    TRACE_CALL( __func__ );
+    return NULL;
 }
 
-gchar* remmina_crypt_decrypt(const gchar *str)
+gchar *remmina_crypt_decrypt( const gchar *str )
 {
-	TRACE_CALL(__func__);
-	return NULL;
+    TRACE_CALL( __func__ );
+    return NULL;
 }
 
 #endif
-

@@ -38,114 +38,127 @@
 
 G_BEGIN_DECLS
 
-#define REMMINA_TYPE_FTP_CLIENT               (remmina_ftp_client_get_type())
-#define REMMINA_FTP_CLIENT(obj)               (G_TYPE_CHECK_INSTANCE_CAST((obj), REMMINA_TYPE_FTP_CLIENT, RemminaFTPClient))
-#define REMMINA_FTP_CLIENT_CLASS(klass)       (G_TYPE_CHECK_CLASS_CAST((klass), REMMINA_TYPE_FTP_CLIENT, RemminaFTPClientClass))
-#define REMMINA_IS_FTP_CLIENT(obj)            (G_TYPE_CHECK_INSTANCE_TYPE((obj), REMMINA_TYPE_FTP_CLIENT))
-#define REMMINA_IS_FTP_CLIENT_CLASS(klass)    (G_TYPE_CHECK_CLASS_TYPE((klass), REMMINA_TYPE_FTP_CLIENT))
-#define REMMINA_FTP_CLIENT_GET_CLASS(obj)     (G_TYPE_INSTANCE_GET_CLASS((obj), REMMINA_TYPE_FTP_CLIENT, RemminaFTPClientClass))
+#define REMMINA_TYPE_FTP_CLIENT ( remmina_ftp_client_get_type() )
+#define REMMINA_FTP_CLIENT( obj ) ( G_TYPE_CHECK_INSTANCE_CAST( ( obj ), REMMINA_TYPE_FTP_CLIENT, RemminaFTPClient ) )
+#define REMMINA_FTP_CLIENT_CLASS( klass ) \
+    ( G_TYPE_CHECK_CLASS_CAST( ( klass ), REMMINA_TYPE_FTP_CLIENT, RemminaFTPClientClass ) )
+#define REMMINA_IS_FTP_CLIENT( obj ) ( G_TYPE_CHECK_INSTANCE_TYPE( ( obj ), REMMINA_TYPE_FTP_CLIENT ) )
+#define REMMINA_IS_FTP_CLIENT_CLASS( klass ) ( G_TYPE_CHECK_CLASS_TYPE( ( klass ), REMMINA_TYPE_FTP_CLIENT ) )
+#define REMMINA_FTP_CLIENT_GET_CLASS( obj ) \
+    ( G_TYPE_INSTANCE_GET_CLASS( ( obj ), REMMINA_TYPE_FTP_CLIENT, RemminaFTPClientClass ) )
 
 typedef struct _RemminaFTPClientPriv RemminaFTPClientPriv;
 
-typedef struct _RemminaFTPClient {
-	GtkBox			vbox;
+typedef struct _RemminaFTPClient
+{
+    GtkBox vbox;
 
-	RemminaFTPClientPriv *	priv;
+    RemminaFTPClientPriv *priv;
 } RemminaFTPClient;
 
-typedef struct _RemminaFTPClientClass {
-	GtkBoxClass parent_class;
+typedef struct _RemminaFTPClientClass
+{
+    GtkBoxClass parent_class;
 
-	void (*open_dir)(RemminaFTPClient *client);
-	void (*new_task)(RemminaFTPClient *client);
-	void (*cancel_task)(RemminaFTPClient *client);
-	void (*delete_file)(RemminaFTPClient *client);
+    void ( *open_dir )( RemminaFTPClient *client );
+    void ( *new_task )( RemminaFTPClient *client );
+    void ( *cancel_task )( RemminaFTPClient *client );
+    void ( *delete_file )( RemminaFTPClient *client );
 } RemminaFTPClientClass;
 
-GType remmina_ftp_client_get_type(void)
-G_GNUC_CONST;
+GType remmina_ftp_client_get_type( void ) G_GNUC_CONST;
 
-enum {
-	REMMINA_FTP_FILE_TYPE_DIR, REMMINA_FTP_FILE_TYPE_FILE, REMMINA_FTP_FILE_N_TYPES,
+enum
+{
+    REMMINA_FTP_FILE_TYPE_DIR,
+    REMMINA_FTP_FILE_TYPE_FILE,
+    REMMINA_FTP_FILE_N_TYPES,
 };
 
-enum {
-	REMMINA_FTP_FILE_COLUMN_TYPE,
-	REMMINA_FTP_FILE_COLUMN_NAME,
-	REMMINA_FTP_FILE_COLUMN_SIZE,
-	REMMINA_FTP_FILE_COLUMN_USER,
-	REMMINA_FTP_FILE_COLUMN_GROUP,
-	REMMINA_FTP_FILE_COLUMN_PERMISSION,
-	REMMINA_FTP_FILE_COLUMN_NAME_SORT, /* Auto populate */
-	REMMINA_FTP_FILE_N_COLUMNS
+enum
+{
+    REMMINA_FTP_FILE_COLUMN_TYPE,
+    REMMINA_FTP_FILE_COLUMN_NAME,
+    REMMINA_FTP_FILE_COLUMN_SIZE,
+    REMMINA_FTP_FILE_COLUMN_USER,
+    REMMINA_FTP_FILE_COLUMN_GROUP,
+    REMMINA_FTP_FILE_COLUMN_PERMISSION,
+    REMMINA_FTP_FILE_COLUMN_NAME_SORT, /* Auto populate */
+    REMMINA_FTP_FILE_N_COLUMNS
 };
 
-enum {
-	REMMINA_FTP_TASK_TYPE_DOWNLOAD, REMMINA_FTP_TASK_TYPE_UPLOAD, REMMINA_FTP_TASK_N_TYPES
+enum
+{
+    REMMINA_FTP_TASK_TYPE_DOWNLOAD,
+    REMMINA_FTP_TASK_TYPE_UPLOAD,
+    REMMINA_FTP_TASK_N_TYPES
 };
 
-enum {
-	REMMINA_FTP_TASK_STATUS_WAIT,
-	REMMINA_FTP_TASK_STATUS_RUN,
-	REMMINA_FTP_TASK_STATUS_FINISH,
-	REMMINA_FTP_TASK_STATUS_ERROR,
-	REMMINA_FTP_TASK_N_STATUSES
+enum
+{
+    REMMINA_FTP_TASK_STATUS_WAIT,
+    REMMINA_FTP_TASK_STATUS_RUN,
+    REMMINA_FTP_TASK_STATUS_FINISH,
+    REMMINA_FTP_TASK_STATUS_ERROR,
+    REMMINA_FTP_TASK_N_STATUSES
 };
 
-enum {
-	REMMINA_FTP_TASK_COLUMN_TYPE,
-	REMMINA_FTP_TASK_COLUMN_NAME,
-	REMMINA_FTP_TASK_COLUMN_SIZE,
-	REMMINA_FTP_TASK_COLUMN_TASKID,
-	REMMINA_FTP_TASK_COLUMN_TASKTYPE,
-	REMMINA_FTP_TASK_COLUMN_REMOTEDIR,
-	REMMINA_FTP_TASK_COLUMN_LOCALDIR,
-	REMMINA_FTP_TASK_COLUMN_STATUS,
-	REMMINA_FTP_TASK_COLUMN_DONESIZE,
-	REMMINA_FTP_TASK_COLUMN_TOOLTIP,
-	REMMINA_FTP_TASK_N_COLUMNS
+enum
+{
+    REMMINA_FTP_TASK_COLUMN_TYPE,
+    REMMINA_FTP_TASK_COLUMN_NAME,
+    REMMINA_FTP_TASK_COLUMN_SIZE,
+    REMMINA_FTP_TASK_COLUMN_TASKID,
+    REMMINA_FTP_TASK_COLUMN_TASKTYPE,
+    REMMINA_FTP_TASK_COLUMN_REMOTEDIR,
+    REMMINA_FTP_TASK_COLUMN_LOCALDIR,
+    REMMINA_FTP_TASK_COLUMN_STATUS,
+    REMMINA_FTP_TASK_COLUMN_DONESIZE,
+    REMMINA_FTP_TASK_COLUMN_TOOLTIP,
+    REMMINA_FTP_TASK_N_COLUMNS
 };
 
-typedef struct _RemminaFTPTask {
-	/* Read-only */
-	gint			type;
-	gchar *			name;
-	gint			taskid;
-	gint			tasktype;
-	gchar *			remotedir;
-	gchar *			localdir;
-	GtkTreeRowReference *	rowref;
-	/* Updatable */
-	gfloat			size;
-	gint			status;
-	gfloat			donesize;
-	gchar *			tooltip;
+typedef struct _RemminaFTPTask
+{
+    /* Read-only */
+    gint type;
+    gchar *name;
+    gint taskid;
+    gint tasktype;
+    gchar *remotedir;
+    gchar *localdir;
+    GtkTreeRowReference *rowref;
+    /* Updatable */
+    gfloat size;
+    gint status;
+    gfloat donesize;
+    gchar *tooltip;
 } RemminaFTPTask;
 
-GtkWidget *remmina_ftp_client_new(void);
+GtkWidget *remmina_ftp_client_new( void );
 
-void remmina_ftp_client_save_state(RemminaFTPClient *client, RemminaFile *remminafile);
-void remmina_ftp_client_load_state(RemminaFTPClient *client, RemminaFile *remminafile);
+void remmina_ftp_client_save_state( RemminaFTPClient *client, RemminaFile *remminafile );
+void remmina_ftp_client_load_state( RemminaFTPClient *client, RemminaFile *remminafile );
 
-void remmina_ftp_client_set_show_hidden(RemminaFTPClient *client, gboolean show_hidden);
-void remmina_ftp_client_clear_file_list(RemminaFTPClient *client);
+void remmina_ftp_client_set_show_hidden( RemminaFTPClient *client, gboolean show_hidden );
+void remmina_ftp_client_clear_file_list( RemminaFTPClient *client );
 /* column, value, …, -1 */
-void remmina_ftp_client_add_file(RemminaFTPClient *client, ...);
+void remmina_ftp_client_add_file( RemminaFTPClient *client, ... );
 /* Set the current directory. Should be called by opendir signal handler */
-void remmina_ftp_client_set_dir(RemminaFTPClient *client, const gchar *dir);
+void remmina_ftp_client_set_dir( RemminaFTPClient *client, const gchar *dir );
 /* Get the current directory as newly allocated string */
-gchar *remmina_ftp_client_get_dir(RemminaFTPClient *client);
+gchar *remmina_ftp_client_get_dir( RemminaFTPClient *client );
 /* Get the next waiting task */
-RemminaFTPTask *remmina_ftp_client_get_waiting_task(RemminaFTPClient *client);
+RemminaFTPTask *remmina_ftp_client_get_waiting_task( RemminaFTPClient *client );
 /* Update the task */
-void remmina_ftp_client_update_task(RemminaFTPClient *client, RemminaFTPTask *task);
+void remmina_ftp_client_update_task( RemminaFTPClient *client, RemminaFTPTask *task );
 /* Free the RemminaFTPTask object */
-void remmina_ftp_task_free(RemminaFTPTask *task);
+void remmina_ftp_task_free( RemminaFTPTask *task );
 /* Get/Set Set overwrite_all status */
-void remmina_ftp_client_set_overwrite_status(RemminaFTPClient *client, gboolean status);
-gboolean remmina_ftp_client_get_overwrite_status(RemminaFTPClient *client);
+void remmina_ftp_client_set_overwrite_status( RemminaFTPClient *client, gboolean status );
+gboolean remmina_ftp_client_get_overwrite_status( RemminaFTPClient *client );
 /* Get/Set Set resume_all status */
-void remmina_ftp_client_set_resume_status(RemminaFTPClient *client, gboolean status);
-gboolean remmina_ftp_client_get_resume_status(RemminaFTPClient *client);
+void remmina_ftp_client_set_resume_status( RemminaFTPClient *client, gboolean status );
+gboolean remmina_ftp_client_get_resume_status( RemminaFTPClient *client );
 
 G_END_DECLS

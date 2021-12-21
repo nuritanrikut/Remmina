@@ -45,38 +45,40 @@
 
 gboolean remmina_sysinfo_is_appindicator_available()
 {
-	/* Check if we have an appindicator available (which uses
+    /* Check if we have an appindicator available (which uses
 	 * DBUS KDE StatusNotifier)
 	 */
 
-	TRACE_CALL(__func__);
-	GDBusConnection *con;
-	GVariant *v;
-	GError *error;
-	gboolean available;
+    TRACE_CALL( __func__ );
+    GDBusConnection *con;
+    GVariant *v;
+    GError *error;
+    gboolean available;
 
-	available = FALSE;
-	con = g_bus_get_sync(G_BUS_TYPE_SESSION, NULL, NULL);
-	if (con) {
-		error = NULL;
-		v = g_dbus_connection_call_sync(con,
-			"org.kde.StatusNotifierWatcher",
-			"/StatusNotifierWatcher",
-			"org.freedesktop.DBus.Introspectable",
-			"Introspect",
-			NULL,
-			NULL,
-			G_DBUS_CALL_FLAGS_NONE,
-			-1,
-			NULL,
-			&error);
-		if (v) {
-			available = TRUE;
-			g_variant_unref(v);
-		}
-		g_object_unref(con);
-	}
-	return available;
+    available = FALSE;
+    con = g_bus_get_sync( G_BUS_TYPE_SESSION, NULL, NULL );
+    if( con )
+    {
+        error = NULL;
+        v = g_dbus_connection_call_sync( con,
+                                         "org.kde.StatusNotifierWatcher",
+                                         "/StatusNotifierWatcher",
+                                         "org.freedesktop.DBus.Introspectable",
+                                         "Introspect",
+                                         NULL,
+                                         NULL,
+                                         G_DBUS_CALL_FLAGS_NONE,
+                                         -1,
+                                         NULL,
+                                         &error );
+        if( v )
+        {
+            available = TRUE;
+            g_variant_unref( v );
+        }
+        g_object_unref( con );
+    }
+    return available;
 }
 
 /**
@@ -86,40 +88,44 @@ gboolean remmina_sysinfo_is_appindicator_available()
  */
 gchar *remmina_sysinfo_get_gnome_shell_version()
 {
-	TRACE_CALL(__func__);
-	GDBusConnection *con;
-	GDBusProxy *p;
-	GVariant *v;
-	GError *error;
-	gsize sz;
-	gchar *ret;
+    TRACE_CALL( __func__ );
+    GDBusConnection *con;
+    GDBusProxy *p;
+    GVariant *v;
+    GError *error;
+    gsize sz;
+    gchar *ret;
 
-	ret = NULL;
+    ret = NULL;
 
-	con = g_bus_get_sync(G_BUS_TYPE_SESSION, NULL, NULL);
-	if (con) {
-		error = NULL;
-		p = g_dbus_proxy_new_sync(con,
-			G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS | G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
-			NULL,
-			"org.gnome.Shell",
-			"/org/gnome/Shell",
-			"org.gnome.Shell",
-			NULL,
-			&error);
-		if (p) {
-			v = g_dbus_proxy_get_cached_property(p, "ShellVersion");
-			if (v) {
-				if (g_variant_is_of_type(v, G_VARIANT_TYPE_STRING)) {
-					ret = g_strdup(g_variant_get_string(v, &sz));
-				}
-				g_variant_unref(v);
-			}
-			g_object_unref(p);
-		}
-		g_object_unref(con);
-	}
-	return ret;
+    con = g_bus_get_sync( G_BUS_TYPE_SESSION, NULL, NULL );
+    if( con )
+    {
+        error = NULL;
+        p = g_dbus_proxy_new_sync( con,
+                                   G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS | G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
+                                   NULL,
+                                   "org.gnome.Shell",
+                                   "/org/gnome/Shell",
+                                   "org.gnome.Shell",
+                                   NULL,
+                                   &error );
+        if( p )
+        {
+            v = g_dbus_proxy_get_cached_property( p, "ShellVersion" );
+            if( v )
+            {
+                if( g_variant_is_of_type( v, G_VARIANT_TYPE_STRING ) )
+                {
+                    ret = g_strdup( g_variant_get_string( v, &sz ) );
+                }
+                g_variant_unref( v );
+            }
+            g_object_unref( p );
+        }
+        g_object_unref( con );
+    }
+    return ret;
 }
 
 /**
@@ -130,27 +136,37 @@ gchar *remmina_sysinfo_get_gnome_shell_version()
  */
 gchar *remmina_sysinfo_get_wm_name()
 {
-	TRACE_CALL(__func__);
-	const gchar *xdg_current_desktop;
-	const gchar *gdmsession;
-	gchar *ret;
+    TRACE_CALL( __func__ );
+    const gchar *xdg_current_desktop;
+    const gchar *gdmsession;
+    gchar *ret;
 
-	xdg_current_desktop = g_environ_getenv(g_get_environ(), "XDG_CURRENT_DESKTOP");
-	gdmsession = g_environ_getenv(g_get_environ(), "GDMSESSION");
+    xdg_current_desktop = g_environ_getenv( g_get_environ(), "XDG_CURRENT_DESKTOP" );
+    gdmsession = g_environ_getenv( g_get_environ(), "GDMSESSION" );
 
-	if (!xdg_current_desktop || xdg_current_desktop[0] == '\0') {
-		if (!gdmsession || gdmsession[0] == '\0') {
-			ret = NULL;
-		}else {
-			ret = g_strdup_printf("%s", gdmsession);
-		}
-	}else if (!gdmsession || gdmsession[0] == '\0') {
-		ret = g_strdup_printf("%s", xdg_current_desktop);
-		return ret;
-	}else if (g_strcmp0(xdg_current_desktop,gdmsession) == 0) {
-		ret = g_strdup_printf("%s", xdg_current_desktop);
-	}else {
-		ret = g_strdup_printf("%s %s", xdg_current_desktop, gdmsession);
-	}
-	return ret;
+    if( !xdg_current_desktop || xdg_current_desktop[0] == '\0' )
+    {
+        if( !gdmsession || gdmsession[0] == '\0' )
+        {
+            ret = NULL;
+        }
+        else
+        {
+            ret = g_strdup_printf( "%s", gdmsession );
+        }
+    }
+    else if( !gdmsession || gdmsession[0] == '\0' )
+    {
+        ret = g_strdup_printf( "%s", xdg_current_desktop );
+        return ret;
+    }
+    else if( g_strcmp0( xdg_current_desktop, gdmsession ) == 0 )
+    {
+        ret = g_strdup_printf( "%s", xdg_current_desktop );
+    }
+    else
+    {
+        ret = g_strdup_printf( "%s %s", xdg_current_desktop, gdmsession );
+    }
+    return ret;
 }

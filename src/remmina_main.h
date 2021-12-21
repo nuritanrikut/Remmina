@@ -44,95 +44,97 @@
 
 typedef struct _RemminaMainPriv RemminaMainPriv;
 
-typedef struct _RemminaMain {
-	GtkBuilder *		builder;
-	GtkWindow *		window;
-	/* Menu widgets */
-	GtkMenu *		menu_popup;
-	GtkMenuButton *		menu_header_button;
-	GtkMenu *		menu_popup_full;
-	GtkRadioMenuItem *	menuitem_view_mode_list;
-	GtkRadioMenuItem *	menuitem_view_mode_tree;
-	GtkMenuItem *		menuitem_connection_quit;
-	/* Button new */
-	GtkButton *		button_new;
-	GtkButton *		button_make_default;
-	/* Search bar objects */
-	GtkToggleButton *	search_toggle;
-	GtkSwitch *		switch_dark_mode;
-	GtkToggleButton *	view_toggle_button;
-	GtkToggleButton *	ustats_toggle;
-	GtkSearchBar *		search_bar;
-	/* Quick connect objects */
-	GtkBox *		box_quick_connect;
-	GtkComboBoxText *	combo_quick_connect_protocol;
-	GtkEntry *		entry_quick_connect_server;
-	GtkButton *		button_quick_connect;
-	/* Other widgets */
-	GtkTreeView *		tree_files_list;
-	GtkTreeViewColumn *	column_files_list_name;
-	GtkTreeViewColumn *	column_files_list_group;
-	GtkTreeViewColumn *	column_files_list_server;
-	GtkTreeViewColumn *	column_files_list_plugin;
-	GtkTreeViewColumn *	column_files_list_date;
-	GtkStatusbar *		statusbar_main;
-	GtkWidget *		network_icon;
-	/* Non widget objects */
-	GtkAccelGroup *		accelgroup_shortcuts;
-	RemminaMainPriv *	priv;
-	RemminaMonitor *	monitor;
+typedef struct _RemminaMain
+{
+    GtkBuilder *builder;
+    GtkWindow *window;
+    /* Menu widgets */
+    GtkMenu *menu_popup;
+    GtkMenuButton *menu_header_button;
+    GtkMenu *menu_popup_full;
+    GtkRadioMenuItem *menuitem_view_mode_list;
+    GtkRadioMenuItem *menuitem_view_mode_tree;
+    GtkMenuItem *menuitem_connection_quit;
+    /* Button new */
+    GtkButton *button_new;
+    GtkButton *button_make_default;
+    /* Search bar objects */
+    GtkToggleButton *search_toggle;
+    GtkSwitch *switch_dark_mode;
+    GtkToggleButton *view_toggle_button;
+    GtkToggleButton *ustats_toggle;
+    GtkSearchBar *search_bar;
+    /* Quick connect objects */
+    GtkBox *box_quick_connect;
+    GtkComboBoxText *combo_quick_connect_protocol;
+    GtkEntry *entry_quick_connect_server;
+    GtkButton *button_quick_connect;
+    /* Other widgets */
+    GtkTreeView *tree_files_list;
+    GtkTreeViewColumn *column_files_list_name;
+    GtkTreeViewColumn *column_files_list_group;
+    GtkTreeViewColumn *column_files_list_server;
+    GtkTreeViewColumn *column_files_list_plugin;
+    GtkTreeViewColumn *column_files_list_date;
+    GtkStatusbar *statusbar_main;
+    GtkWidget *network_icon;
+    /* Non widget objects */
+    GtkAccelGroup *accelgroup_shortcuts;
+    RemminaMainPriv *priv;
+    RemminaMonitor *monitor;
 } RemminaMain;
 
-struct _RemminaMainPriv {
-	GtkTreeModel *		file_model;
-	GtkTreeModel *		file_model_filter;
-	GtkTreeModel *		file_model_sort;
+struct _RemminaMainPriv
+{
+    GtkTreeModel *file_model;
+    GtkTreeModel *file_model_filter;
+    GtkTreeModel *file_model_sort;
 
-	gboolean		initialized;
+    gboolean initialized;
 
-	gchar *			selected_filename;
-	gchar *			selected_name;
-	gboolean		override_view_file_mode_to_list;
-	RemminaStringArray *	expanded_group;
+    gchar *selected_filename;
+    gchar *selected_name;
+    gboolean override_view_file_mode_to_list;
+    RemminaStringArray *expanded_group;
 };
 
 G_BEGIN_DECLS
 
 /* Create the remminamain struct and the remmina main Remmina window */
-GtkWidget *remmina_main_new(void);
+GtkWidget *remmina_main_new( void );
 /* Get the current main GTK window or NULL if not initialized */
-GtkWindow *remmina_main_get_window(void);
+GtkWindow *remmina_main_get_window( void );
 
-void remmina_main_update_file_datetime(RemminaFile *file);
+void remmina_main_update_file_datetime( RemminaFile *file );
 
-void remmina_main_destroy(void);
-void remmina_main_on_destroy_event(void);
-void remmina_main_save_before_destroy(void);
+void remmina_main_destroy( void );
+void remmina_main_on_destroy_event( void );
+void remmina_main_save_before_destroy( void );
 
-void remmina_main_show_warning_dialog(const gchar *message);
-void remmina_main_on_action_application_about(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_application_news(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_application_default(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_application_mpchange(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_application_plugins(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_application_dark_theme(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_application_preferences(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_application_quit(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_connection_connect(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_connection_copy(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_connection_delete(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_connection_edit(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_connection_external_tools(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_connection_new(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_help_community(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_help_debug(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_help_donations(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_help_homepage(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_help_wiki(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_tools_export(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_tools_import(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_expand(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_collapse(GSimpleAction *action, GVariant *param, gpointer data);
-void remmina_main_on_action_search_toggle(GSimpleAction *action, GVariant *param, gpointer data);
+void remmina_main_show_warning_dialog( const gchar *message );
+void remmina_main_on_action_application_about( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_application_news( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_application_default( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_application_mpchange( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_application_plugins( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_application_dark_theme( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_application_preferences( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_application_quit( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_connection_connect( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_connection_copy( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_connection_delete( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_connection_edit( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_connection_external_tools( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_connection_new( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_help_community( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_help_debug( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_help_donations( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_help_homepage( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_help_wiki( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_tools_export( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_tools_import( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_expand( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_collapse( GSimpleAction *action, GVariant *param, gpointer data );
+void remmina_main_on_action_search_toggle( GSimpleAction *action, GVariant *param, gpointer data );
 
 G_END_DECLS
