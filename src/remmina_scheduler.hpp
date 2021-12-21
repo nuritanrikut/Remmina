@@ -43,8 +43,8 @@ typedef struct
     guint count;
 } rsSchedData;
 
-G_BEGIN_DECLS
+
 
 void *remmina_scheduler_setup( GSourceFunc cb, gpointer cb_data, guint first_interval, guint interval );
 
-G_END_DECLS
+

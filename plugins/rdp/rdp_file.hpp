@@ -35,11 +35,9 @@
 
 #pragma once
 
-G_BEGIN_DECLS
 
-gboolean remmina_rdp_file_import_test( const gchar *from_file );
-RemminaFile *remmina_rdp_file_import( const gchar *from_file );
-gboolean remmina_rdp_file_export_test( RemminaFile *remminafile );
-gboolean remmina_rdp_file_export( RemminaFile *remminafile, const gchar *to_file );
+int remmina_rdp_file_import_test( const char *from_file );
+RemminaFile *remmina_rdp_file_import( const char *from_file );
+int remmina_rdp_file_export_test( RemminaFile *remminafile );
+int remmina_rdp_file_export( RemminaFile *remminafile, const char *to_file );
 
-G_END_DECLS

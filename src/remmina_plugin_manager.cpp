@@ -44,21 +44,21 @@
 
 #include <gdk/gdkx.h>
 
-#include "remmina_public.h"
-#include "remmina_file_manager.h"
-#include "remmina_pref.h"
-#include "remmina_protocol_widget.h"
-#include "remmina_log.h"
-#include "remmina_widget_pool.h"
-#include "rcw.h"
-#include "remmina_plugin_manager.h"
-#include "remmina_plugin_native.h"
+#include "remmina_public.hpp"
+#include "remmina_file_manager.hpp"
+#include "remmina_pref.hpp"
+#include "remmina_protocol_widget.hpp"
+#include "remmina_log.hpp"
+#include "remmina_widget_pool.hpp"
+#include "rcw.hpp"
+#include "remmina_plugin_manager.hpp"
+#include "remmina_plugin_native.hpp"
 #ifdef WITH_PYTHONLIBS
-#    include "remmina_plugin_python.h"
+#    include "remmina_plugin_python.hpp"
 #endif
-#include "remmina_public.h"
-#include "remmina_masterthread_exec.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_public.hpp"
+#include "remmina_masterthread_exec.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 static GPtrArray *remmina_plugin_table = NULL;
 
@@ -68,7 +68,7 @@ static GHashTable *encrypted_settings_cache = NULL;
 /* There can be only one secret plugin loaded */
 static RemminaSecretPlugin *remmina_secret_plugin = NULL;
 
-static const gchar *remmina_plugin_type_name[] =
+static const char *remmina_plugin_type_name[] =
     { N_( "Protocol" ), N_( "Entry" ), N_( "File" ), N_( "Tool" ), N_( "Preference" ), N_( "Secret" ), NULL };
 
 static gint remmina_plugin_manager_compare_func( RemminaPlugin **a, RemminaPlugin **b )
@@ -79,7 +79,7 @@ static gint remmina_plugin_manager_compare_func( RemminaPlugin **a, RemminaPlugi
 
 static void htdestroy( gpointer ht )
 {
-    g_hash_table_unref( ht );
+    g_hash_table_unref( static_cast<GHashTable*>(ht) );
 }
 
 static void init_settings_cache( RemminaPlugin *plugin )
@@ -99,7 +99,7 @@ static void init_settings_cache( RemminaPlugin *plugin )
     if( encrypted_settings_cache == NULL )
         encrypted_settings_cache = g_hash_table_new_full( g_str_hash, g_str_equal, g_free, htdestroy );
 
-    if( !( pht = g_hash_table_lookup( encrypted_settings_cache, plugin->name ) ) )
+    if( !( pht = static_cast<GHashTable*>(g_hash_table_lookup( encrypted_settings_cache, plugin->name ) )) )
     {
         pht = g_hash_table_new_full( g_str_hash, g_str_equal, g_free, NULL );
         g_hash_table_insert( encrypted_settings_cache, g_strdup( plugin->name ), pht );
@@ -143,7 +143,7 @@ static void init_settings_cache( RemminaPlugin *plugin )
     }
 }
 
-static gboolean remmina_plugin_manager_register_plugin( RemminaPlugin *plugin )
+static int remmina_plugin_manager_register_plugin( RemminaPlugin *plugin )
 {
     TRACE_CALL( __func__ );
     if( plugin->type == REMMINA_PLUGIN_TYPE_SECRET )
@@ -161,11 +161,11 @@ static gboolean remmina_plugin_manager_register_plugin( RemminaPlugin *plugin )
     return TRUE;
 }
 
-gboolean remmina_gtksocket_available()
+int remmina_gtksocket_available()
 {
     GdkDisplayManager *dm;
     GdkDisplay *d;
-    gboolean available;
+    bool available;
 
     dm = gdk_display_manager_get();
     d = gdk_display_manager_get_default_display( dm );
@@ -276,7 +276,7 @@ const char *get_filename_ext( const char *filename )
     return dot + 1;
 }
 
-static void remmina_plugin_manager_load_plugin( const gchar *name )
+static void remmina_plugin_manager_load_plugin( const char *name )
 {
     const char *ext = get_filename_ext( name );
 
@@ -316,8 +316,8 @@ void remmina_plugin_manager_init()
 {
     TRACE_CALL( __func__ );
     GDir *dir;
-    const gchar *name, *ptr;
-    gchar *fullpath;
+    const char *name, *ptr;
+    char *fullpath;
     RemminaPlugin *plugin;
     RemminaSecretPlugin *sp;
     int i;
@@ -388,13 +388,13 @@ void remmina_plugin_manager_init()
     g_slist_free( secret_plugins );
 }
 
-gboolean remmina_plugin_manager_loader_supported( const char *filetype )
+int remmina_plugin_manager_loader_supported( const char *filetype )
 {
     TRACE_CALL( __func__ );
     return g_str_equal( "py", filetype ) || g_str_equal( G_MODULE_SUFFIX, filetype );
 }
 
-RemminaPlugin *remmina_plugin_manager_get_plugin( RemminaPluginType type, const gchar *name )
+RemminaPlugin *remmina_plugin_manager_get_plugin( RemminaPluginType type, const char *name )
 {
     TRACE_CALL( __func__ );
     RemminaPlugin *plugin;
@@ -411,7 +411,7 @@ RemminaPlugin *remmina_plugin_manager_get_plugin( RemminaPluginType type, const 
     return NULL;
 }
 
-const gchar *remmina_plugin_manager_get_canonical_setting_name( const RemminaProtocolSetting *setting )
+const char *remmina_plugin_manager_get_canonical_setting_name( const RemminaProtocolSetting *setting )
 {
     if( setting->name == NULL )
     {
@@ -437,7 +437,7 @@ void remmina_plugin_manager_for_each_plugin( RemminaPluginType type, RemminaPlug
         plugin = (RemminaPlugin *)g_ptr_array_index( remmina_plugin_table, i );
         if( plugin->type == type )
         {
-            func( (gchar *)plugin->name, plugin, data );
+            func( (char *)plugin->name, plugin, data );
         }
     }
 }
@@ -448,7 +448,7 @@ void remmina_plugin_manager_for_each_plugin( RemminaPluginType type, RemminaPlug
  ** @todo Investigate to use only GListStore and than pass the elements to be shown to 2 separate
  *       functions
  * WARNING: GListStore is supported only from GLib 2.44 */
-static gboolean remmina_plugin_manager_show_for_each_stdout( RemminaPlugin *plugin )
+static int remmina_plugin_manager_show_for_each_stdout( RemminaPlugin *plugin )
 {
     TRACE_CALL( __func__ );
 
@@ -467,7 +467,7 @@ void remmina_plugin_manager_show_stdout()
     g_ptr_array_foreach( remmina_plugin_table, (GFunc)remmina_plugin_manager_show_for_each_stdout, NULL );
 }
 
-static gboolean remmina_plugin_manager_show_for_each( RemminaPlugin *plugin, GtkListStore *store )
+static int remmina_plugin_manager_show_for_each( RemminaPlugin *plugin, GtkListStore *store )
 {
     TRACE_CALL( __func__ );
     GtkTreeIter iter;
@@ -542,7 +542,7 @@ void remmina_plugin_manager_show( GtkWindow *parent )
     gtk_widget_show( dialog );
 }
 
-RemminaFilePlugin *remmina_plugin_manager_get_import_file_handler( const gchar *file )
+RemminaFilePlugin *remmina_plugin_manager_get_import_file_handler( const char *file )
 {
     TRACE_CALL( __func__ );
     RemminaFilePlugin *plugin;
@@ -588,8 +588,8 @@ RemminaSecretPlugin *remmina_plugin_manager_get_secret_plugin( void )
     return remmina_secret_plugin;
 }
 
-gboolean remmina_plugin_manager_query_feature_by_type( RemminaPluginType ptype,
-                                                       const gchar *name,
+int remmina_plugin_manager_query_feature_by_type( RemminaPluginType ptype,
+                                                       const char *name,
                                                        RemminaProtocolFeatureType ftype )
 {
     TRACE_CALL( __func__ );
@@ -611,7 +611,7 @@ gboolean remmina_plugin_manager_query_feature_by_type( RemminaPluginType ptype,
     return FALSE;
 }
 
-gboolean remmina_plugin_manager_is_encrypted_setting( RemminaProtocolPlugin *pp, const char *setting )
+int remmina_plugin_manager_is_encrypted_setting( RemminaProtocolPlugin *pp, const char *setting )
 {
     TRACE_CALL( __func__ );
     GHashTable *pht;
@@ -619,7 +619,7 @@ gboolean remmina_plugin_manager_is_encrypted_setting( RemminaProtocolPlugin *pp,
     if( encrypted_settings_cache == NULL )
         return FALSE;
 
-    if( !( pht = g_hash_table_lookup( encrypted_settings_cache, pp->name ) ) )
+    if( !( pht = static_cast<GHashTable*>(g_hash_table_lookup( encrypted_settings_cache, pp->name )) ) )
         return FALSE;
 
     if( !g_hash_table_lookup( pht, setting ) )

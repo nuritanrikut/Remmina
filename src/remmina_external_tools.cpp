@@ -36,32 +36,32 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 #include <stdlib.h>
-#include "remmina/types.h"
-#include "remmina_public.h"
-#include "remmina_external_tools.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina/types.hpp"
+#include "remmina_public.hpp"
+#include "remmina_external_tools.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
-static gboolean
-remmina_external_tools_launcher( const gchar *filename, const gchar *scriptname, const gchar *shortname );
+static int
+remmina_external_tools_launcher( const char *filename, const char *scriptname, const char *shortname );
 
 static void view_popup_menu_onDoSomething( GtkWidget *menuitem, gpointer userdata )
 {
     TRACE_CALL( __func__ );
-    gchar *remminafilename = g_object_get_data( G_OBJECT( menuitem ), "remminafilename" );
-    gchar *scriptfilename = g_object_get_data( G_OBJECT( menuitem ), "scriptfilename" );
-    gchar *scriptshortname = g_object_get_data( G_OBJECT( menuitem ), "scriptshortname" );
+    char *remminafilename = static_cast<char*>(g_object_get_data( G_OBJECT( menuitem ), "remminafilename" ));
+    char *scriptfilename = static_cast<char*>(g_object_get_data( G_OBJECT( menuitem ), "scriptfilename" ));
+    char *scriptshortname = static_cast<char*>(g_object_get_data( G_OBJECT( menuitem ), "scriptshortname" ));
 
     remmina_external_tools_launcher( remminafilename, scriptfilename, scriptshortname );
 }
 
-gboolean remmina_external_tools_from_filename( RemminaMain *remminamain, gchar *remminafilename )
+int remmina_external_tools_from_filename( RemminaMain *remminamain, char *remminafilename )
 {
     TRACE_CALL( __func__ );
     GtkWidget *menu, *menuitem;
-    gchar dirname[MAX_PATH_LEN];
-    gchar filename[MAX_PATH_LEN];
+    char dirname[MAX_PATH_LEN];
+    char filename[MAX_PATH_LEN];
     GDir *dir;
-    const gchar *name;
+    const char *name;
 
     strcpy( dirname, REMMINA_RUNTIME_EXTERNAL_TOOLS_DIR );
     dir = g_dir_open( dirname, 0, NULL );
@@ -100,15 +100,15 @@ gboolean remmina_external_tools_from_filename( RemminaMain *remminamain, gchar *
     return TRUE;
 }
 
-static gboolean
-remmina_external_tools_launcher( const gchar *filename, const gchar *scriptname, const gchar *shortname )
+static int
+remmina_external_tools_launcher( const char *filename, const char *scriptname, const char *shortname )
 {
     TRACE_CALL( __func__ );
     RemminaFile *remminafile;
     const char *env_format = "%s=%s";
     char *env;
     size_t envstrlen;
-    gchar launcher[MAX_PATH_LEN];
+    char launcher[MAX_PATH_LEN];
 
     g_snprintf( launcher, MAX_PATH_LEN, "%s/launcher.sh", REMMINA_RUNTIME_EXTERNAL_TOOLS_DIR );
 
@@ -116,7 +116,7 @@ remmina_external_tools_launcher( const gchar *filename, const gchar *scriptname,
     if( !remminafile )
         return FALSE;
     GHashTableIter iter;
-    const gchar *key, *value;
+    const char *key, *value;
     g_hash_table_iter_init( &iter, remminafile->settings );
     while( g_hash_table_iter_next( &iter, (gpointer *)&key, (gpointer *)&value ) )
     {
@@ -155,7 +155,7 @@ remmina_external_tools_launcher( const gchar *filename, const gchar *scriptname,
     }
 
     const size_t cmdlen = strlen( launcher ) + strlen( scriptname ) + 2;
-    gchar *cmd = (gchar *)malloc( cmdlen );
+    char *cmd = (char *)malloc( cmdlen );
     g_snprintf( cmd, cmdlen, "%s %s", launcher, scriptname );
     system( cmd );
     free( cmd );

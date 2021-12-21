@@ -33,7 +33,7 @@
  */
 
 /**
- * @file remmina_sodium.c
+ * @file remmina_sodium.cpp
  * @brief Remmina encryption functions,
  * @author Antenore Gatta
  * @date 31 Mar 2019
@@ -44,7 +44,7 @@
  *
  * @code
  *
- *  gchar *test = remmina_sodium_pwhash("Password test");
+ *  char *test = remmina_sodium_pwhash("Password test");
  *  g_free(test);
  *  test = remmina_sodium_pwhash_str("Password Test");
  *  g_free(test);
@@ -65,12 +65,12 @@
 
 #include "config.h"
 #include <glib.h>
-#include "remmina/remmina_trace_calls.h"
+#include "remmina/remmina_trace_calls.hpp"
 
-#include "remmina_sodium.h"
+#include "remmina_sodium.hpp"
 #if SODIUM_VERSION_INT >= 90200
 
-gchar *remmina_sodium_pwhash( const gchar *pass )
+char *remmina_sodium_pwhash( const char *pass )
 {
     TRACE_CALL( __func__ );
     g_info( "Generating passphrase (may take a while)..." );
@@ -98,7 +98,7 @@ gchar *remmina_sodium_pwhash( const gchar *pass )
     return g_strdup( (const char *)key );
 }
 
-gchar *remmina_sodium_pwhash_str( const gchar *pass )
+char *remmina_sodium_pwhash_str( const char *pass )
 {
     TRACE_CALL( __func__ );
     g_info( "Generating passphrase (may take a while)..." );

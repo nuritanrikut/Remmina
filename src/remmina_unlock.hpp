@@ -46,18 +46,18 @@ typedef struct _RemminaUnlockDialog
     GtkButton *button_unlock;
     GtkButton *button_unlock_cancel;
 
-    gboolean unlock_init;
+    bool unlock_init;
 
     gint retval;
 } RemminaUnlockDialog;
 
 extern GTimer *timer;
-extern gboolean isinit;
+extern bool isinit;
 
 #endif
 
-G_BEGIN_DECLS
+
 
 gint remmina_unlock_new( GtkWindow *parent );
 
-G_END_DECLS
+

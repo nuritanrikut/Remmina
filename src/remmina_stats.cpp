@@ -33,7 +33,7 @@
  */
 
 /**
- * @file remmina_stats.c
+ * @file remmina_stats.cpp
  * @brief Remmina usage statistics module.
  * @author Antenore Gatta and Giovanni Panozzo
  * @date 12 Feb 2018
@@ -143,16 +143,16 @@
 #include <glib/gstdio.h>
 #include <gtk/gtk.h>
 
-#include "remmina.h"
-#include "remmina_file.h"
-#include "remmina_file_manager.h"
-#include "remmina_icon.h"
-#include "remmina_log.h"
-#include "remmina_pref.h"
-#include "remmina_sysinfo.h"
-#include "remmina_utils.h"
-#include "remmina/remmina_trace_calls.h"
-#include "remmina_plugin_manager.h"
+#include "remmina.hpp"
+#include "remmina_file.hpp"
+#include "remmina_file_manager.hpp"
+#include "remmina_icon.hpp"
+#include "remmina_log.hpp"
+#include "remmina_pref.hpp"
+#include "remmina_sysinfo.hpp"
+#include "remmina_utils.hpp"
+#include "remmina/remmina_trace_calls.hpp"
+#include "remmina_plugin_manager.hpp"
 
 #ifdef GDK_WINDOWING_WAYLAND
 #    include <gdk/gdkwayland.h>
@@ -160,16 +160,16 @@
 #ifdef GDK_WINDOWING_X11
 #    include <gdk/gdkx.h>
 #endif
-#include "remmina_stats.h"
+#include "remmina_stats.hpp"
 
 struct ProfilesData
 {
     GHashTable *proto_count;
     GHashTable *proto_date;
-    const gchar *protocol; /** Key in the proto_count hash table.*/
-    const gchar *pdatestr; /** Date in string format in the proto_date hash table. */
+    const char *protocol; /** Key in the proto_count hash table.*/
+    const char *pdatestr; /** Date in string format in the proto_date hash table. */
     gint pcount;
-    gchar datestr;
+    char datestr;
 };
 
 JsonNode *remmina_stats_get_os_info()
@@ -178,16 +178,16 @@ JsonNode *remmina_stats_get_os_info()
     JsonBuilder *b;
     JsonNode *r;
 
-    gchar *kernel_name;
-    gchar *kernel_release;
-    gchar *kernel_arch;
-    gchar *id;
-    gchar *description;
+    char *kernel_name;
+    char *kernel_release;
+    char *kernel_arch;
+    char *id;
+    char *description;
     GHashTable *etc_release;
-    gchar *release;
-    gchar *codename;
+    char *release;
+    char *codename;
     GHashTableIter iter;
-    gchar *key, *value;
+    char *key, *value;
 
     /** @warning this function is usually executed on a dedicated thread,
 	 * not on the main thread */
@@ -285,7 +285,7 @@ JsonNode *remmina_stats_get_os_info()
     {
         json_builder_begin_object( b );
         g_hash_table_iter_init( &iter, etc_release );
-        while( g_hash_table_iter_next( &iter, (gpointer)&key, (gpointer)&value ) )
+        while( g_hash_table_iter_next( &iter, (gpointer *)&key, (gpointer *)&value ) )
         {
             json_builder_set_member_name( b, key );
             json_builder_add_string_value( b, value );
@@ -321,7 +321,7 @@ JsonNode *remmina_stats_get_user_env()
     JsonBuilder *b;
     JsonNode *r;
 
-    gchar *language;
+    char *language;
 
     language = remmina_utils_get_lang();
 
@@ -342,7 +342,7 @@ JsonNode *remmina_stats_get_version()
     TRACE_CALL( __func__ );
     JsonBuilder *b;
     JsonNode *r;
-    gchar *flatpak_info;
+    char *flatpak_info;
 
     /** @warning this function is usually executed on a dedicated thread,
 	 * not on the main thread */
@@ -411,7 +411,7 @@ JsonNode *remmina_stats_get_gtk_backend()
     TRACE_CALL( __func__ );
     JsonNode *r;
     GdkDisplay *disp;
-    gchar *bkend;
+    const char *bkend;
 
     /** @warning this function is usually executed on a dedicated thread,
 	 * not on the main thread
@@ -446,8 +446,8 @@ JsonNode *remmina_stats_get_wm_name()
     TRACE_CALL( __func__ );
     JsonBuilder *b;
     JsonNode *r;
-    gchar *wmver;
-    gchar *wmname;
+    char *wmver;
+    char *wmname;
 
     b = json_builder_new();
     json_builder_begin_object( b );
@@ -496,7 +496,7 @@ JsonNode *remmina_stats_get_indicator()
     TRACE_CALL( __func__ );
     JsonBuilder *b;
     JsonNode *r;
-    gboolean sni; /** Support for StatusNotifier or AppIndicator */
+    bool sni; /** Support for StatusNotifier or AppIndicator */
 
     b = json_builder_new();
     json_builder_begin_object( b );
@@ -556,8 +556,8 @@ static void remmina_profiles_get_data( RemminaFile *remminafile, gpointer user_d
     gint count = 0;
     gpointer pcount, kpo;
     gpointer pdate;
-    gchar *hday, *hmonth, *hyear;
-    gchar *pday, *pmonth, *pyear;
+    char *hday, *hmonth, *hyear;
+    char *pday, *pmonth, *pyear;
 
     GDateTime *prof_gdate;  /** Source date -> from profile */
     GDateTime *pdata_gdate; /** Destination date -> The date in the pdata structure */
@@ -567,7 +567,7 @@ static void remmina_profiles_get_data( RemminaFile *remminafile, gpointer user_d
 
     pdata->protocol = remmina_file_get_string( remminafile, "protocol" );
     //pdata->pdatestr = remmina_file_get_string(remminafile, "last_success");
-    const gchar *last_success = remmina_file_get_string( remminafile, "last_success" );
+    const char *last_success = remmina_file_get_string( remminafile, "last_success" );
     g_debug( "%s date %s", pdata->protocol, last_success );
 
     prof_gdate = pdata_gdate = NULL;
@@ -598,9 +598,9 @@ static void remmina_profiles_get_data( RemminaFile *remminafile, gpointer user_d
         if( g_hash_table_lookup_extended( pdata->proto_date, pdata->protocol, NULL, &pdate ) )
         {
             pdata_gdate = NULL;
-            if( pdate && strlen( pdate ) >= 6 )
+            if( pdate && strlen( (const char *)pdate ) >= 6 )
             {
-                pdata->pdatestr = g_strdup( pdate );
+                pdata->pdatestr = g_strdup( (const char *)pdate );
                 hyear = g_strdup_printf( "%.4s", (char *)pdate );
                 hmonth = g_strdup_printf( "%.2s", (char *)pdate + 4 );
                 hday = g_strdup_printf( "%.2s", (char *)pdate + 6 );
@@ -698,7 +698,7 @@ JsonNode *remmina_stats_get_profiles()
 
     JsonBuilder *b;
     JsonNode *r;
-    gchar *s;
+    char *s;
 
     gint profiles_count;
     GHashTableIter pcountiter, pdateiter;
@@ -706,7 +706,7 @@ JsonNode *remmina_stats_get_profiles()
     gpointer pdatekey, pdatevalue;
 
     struct ProfilesData *pdata;
-    pdata = g_malloc0( sizeof( struct ProfilesData ) );
+    pdata = static_cast<ProfilesData*>(g_malloc0( sizeof( struct ProfilesData ) ));
 
     b = json_builder_new();
     json_builder_begin_object( b );
@@ -728,19 +728,19 @@ JsonNode *remmina_stats_get_profiles()
     g_hash_table_iter_init( &pcountiter, pdata->proto_count );
     while( g_hash_table_iter_next( &pcountiter, &pcountkey, &pcountvalue ) )
     {
-        json_builder_set_member_name( b, (gchar *)pcountkey );
+        json_builder_set_member_name( b, (char *)pcountkey );
         json_builder_add_int_value( b, GPOINTER_TO_INT( pcountvalue ) );
     }
 
     g_hash_table_iter_init( &pdateiter, pdata->proto_date );
     while( g_hash_table_iter_next( &pdateiter, &pdatekey, &pdatevalue ) )
     {
-        s = g_strdup_printf( "DATE_%s", (gchar *)pdatekey );
+        s = g_strdup_printf( "DATE_%s", (char *)pdatekey );
         g_debug( "Protocol date label: %s", s );
         json_builder_set_member_name( b, s );
         g_free( s );
-        json_builder_add_string_value( b, (gchar *)pdatevalue );
-        g_debug( "Protocol date: %s", (gchar *)pdatevalue );
+        json_builder_add_string_value( b, (char *)pdatevalue );
+        g_debug( "Protocol date: %s", (char *)pdatevalue );
     }
 
     json_builder_end_object( b );

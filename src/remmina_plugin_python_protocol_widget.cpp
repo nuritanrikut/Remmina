@@ -33,7 +33,7 @@
  */
 
 /**
- * @file remmina_plugin_python_protocol_widget.c
+ * @file remmina_plugin_python_protocol_widget.cpp
  * @brief Implementation of the Protocol Widget API.
  * @author Mathias Winterhalter
  * @date 19.11.2020
@@ -87,18 +87,18 @@
 #include <gtk/gtk.h>
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
-#include <structmember.h>
+#include <structmember.hpp>
 
 #include "config.h"
 #include "pygobject.h"
-#include "remmina_plugin_manager.h"
-#include "remmina/plugin.h"
-#include "remmina_protocol_widget.h"
-#include "remmina_file.h"
-#include "remmina_plugin_python_remmina.h"
-#include "remmina_plugin_python_remmina_file.h"
+#include "remmina_plugin_manager.hpp"
+#include "remmina/plugin.hpp"
+#include "remmina_protocol_widget.hpp"
+#include "remmina_file.hpp"
+#include "remmina_plugin_python_remmina.hpp"
+#include "remmina_plugin_python_remmina_file.hpp"
 
-#include "remmina_plugin_python_protocol_widget.h"
+#include "remmina_plugin_python_protocol_widget.hpp"
 
 // -- Python Type -> RemminaWidget
 
@@ -336,7 +336,7 @@ static PyObject *protocol_widget_set_error( PyRemminaProtocolWidget *self, PyObj
 
     if( var_msg && PyUnicode_Check( var_msg ) )
     {
-        gchar *msg = PyUnicode_AsUTF8( var_msg );
+        char *msg = PyUnicode_AsUTF8( var_msg );
         remmina_protocol_widget_set_error( self->gp, msg );
     }
     else
@@ -404,7 +404,7 @@ static PyObject *protocol_widget_start_direct_tunnel( PyRemminaProtocolWidget *s
     SELF_CHECK();
 
     gint default_port;
-    gboolean port_plus;
+    bool port_plus;
 
     if( args && PyArg_ParseTuple( args, "ii", &default_port, &port_plus ) )
     {
@@ -436,7 +436,7 @@ static PyObject *protocol_widget_start_reverse_tunnel( PyRemminaProtocolWidget *
     return Py_None;
 }
 
-static gboolean xport_tunnel_init( RemminaProtocolWidget *gp, gint remotedisplay, const gchar *server, gint port )
+static int xport_tunnel_init( RemminaProtocolWidget *gp, gint remotedisplay, const char *server, gint port )
 {
     PyPlugin *plugin = remmina_plugin_python_module_get_plugin( gp );
     PyObject *result = PyObject_CallMethod( plugin, "xport_tunnel_init", "Oisi", gp, remotedisplay, server, port );
@@ -519,7 +519,7 @@ static PyObject *protocol_widget_panel_auth( PyRemminaProtocolWidget *self, PyOb
     SELF_CHECK();
 
     gint pflags = 0;
-    gchar *title, default_username, default_password, default_domain, password_prompt;
+    char *title, default_username, default_password, default_domain, password_prompt;
 
     if( PyArg_ParseTuple(
             args, "isssss", &pflags, &title, &default_username, &default_password, &default_domain, &password_prompt ) )
@@ -535,7 +535,7 @@ static PyObject *protocol_widget_panel_auth( PyRemminaProtocolWidget *self, PyOb
         else
         {
             remmina_protocol_widget_panel_auth(
-                self->gp, pflags, title, default_username, default_password, default_domain, password_prompt );
+                self->gp, static_cast<RemminaMessagePanelFlags>(pflags), title, default_username, default_password, default_domain, password_prompt );
         }
     }
     else
@@ -551,7 +551,7 @@ static PyObject *protocol_widget_panel_new_certificate( PyRemminaProtocolWidget 
 {
     TRACE_CALL( __func__ );
     SELF_CHECK();
-    gchar *subject, issuer, fingerprint;
+    char *subject, issuer, fingerprint;
 
     if( PyArg_ParseTuple( args, "sss", &subject, &issuer, &fingerprint ) )
     {
@@ -569,7 +569,7 @@ static PyObject *protocol_widget_panel_changed_certificate( PyRemminaProtocolWid
 {
     TRACE_CALL( __func__ );
     SELF_CHECK();
-    gchar *subject, issuer, new_fingerprint, old_fingerprint;
+    char *subject, issuer, new_fingerprint, old_fingerprint;
 
     if( PyArg_ParseTuple( args, "sss", &subject, &issuer, &new_fingerprint, &old_fingerprint ) )
     {
@@ -715,8 +715,8 @@ static PyObject *protocol_widget_ssh_exec( PyRemminaProtocolWidget *self, PyObje
 {
     TRACE_CALL( __func__ );
     SELF_CHECK();
-    gboolean wait;
-    gchar *cmd;
+    bool wait;
+    char *cmd;
 
     if( PyArg_ParseTuple( args, "ps", &wait, &cmd ) )
     {
@@ -730,14 +730,14 @@ static PyObject *protocol_widget_ssh_exec( PyRemminaProtocolWidget *self, PyObje
     return Py_None;
 }
 
-static gboolean _on_send_callback_wrapper( RemminaProtocolWidget *gp, const gchar *text )
+static int _on_send_callback_wrapper( RemminaProtocolWidget *gp, const char *text )
 {
     PyPlugin *plugin = remmina_plugin_python_module_get_plugin( gp );
     PyObject *result = PyObject_CallMethod( plugin, "on_send", "Os", gp, text );
     return PyObject_IsTrue( result );
 }
 
-static gboolean _on_destroy_callback_wrapper( RemminaProtocolWidget *gp )
+static int _on_destroy_callback_wrapper( RemminaProtocolWidget *gp )
 {
     PyPlugin *plugin = remmina_plugin_python_module_get_plugin( gp );
     PyObject *result = PyObject_CallMethod( plugin, "on_destroy", "O", gp );
@@ -776,7 +776,7 @@ static PyObject *protocol_widget_chat_receive( PyRemminaProtocolWidget *self, Py
 {
     TRACE_CALL( __func__ );
     SELF_CHECK();
-    gchar *text;
+    char *text;
 
     if( PyArg_ParseTuple( args, "s", &text ) )
     {
@@ -795,7 +795,7 @@ static PyObject *protocol_widget_send_keys_signals( PyRemminaProtocolWidget *sel
 {
     TRACE_CALL( __func__ );
     SELF_CHECK();
-    gchar *keyvals;
+    char *keyvals;
     int length;
     GdkEventType event_type;
 

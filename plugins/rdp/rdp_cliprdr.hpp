@@ -38,7 +38,7 @@
 #pragma once
 
 #include <freerdp/freerdp.h>
-#include "rdp_plugin.h"
+#include "rdp_plugin.hpp"
 
 void remmina_rdp_clipboard_init( rfContext *rfi );
 void remmina_rdp_clipboard_free( rfContext *rfi );

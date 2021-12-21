@@ -39,11 +39,11 @@
 
 #include <gtk/gtk.h>
 
-#include "remmina_masterthread_exec.h"
+#include "remmina_masterthread_exec.hpp"
 
 static pthread_t gMainThreadID;
 
-static gboolean remmina_masterthread_exec_callback( RemminaMTExecData *d )
+static int remmina_masterthread_exec_callback( RemminaMTExecData *d )
 {
     /* This function is called on main GTK Thread via gdk_threads_add_idlde()
 	 * from remmina_masterthread_exec_and_wait() */
@@ -52,55 +52,55 @@ static gboolean remmina_masterthread_exec_callback( RemminaMTExecData *d )
     {
         switch( d->func )
         {
-            case FUNC_INIT_SAVE_CRED:
+            case remmina_masterthread_exec_data::FUNC_INIT_SAVE_CRED:
                 remmina_protocol_widget_save_cred( d->p.init_save_creds.gp );
                 break;
-            case FUNC_CHAT_RECEIVE:
+            case remmina_masterthread_exec_data::FUNC_CHAT_RECEIVE:
                 remmina_protocol_widget_chat_receive( d->p.chat_receive.gp, d->p.chat_receive.text );
                 break;
-            case FUNC_FILE_GET_STRING:
+            case remmina_masterthread_exec_data::FUNC_FILE_GET_STRING:
                 d->p.file_get_string.retval =
                     remmina_file_get_string( d->p.file_get_string.remminafile, d->p.file_get_string.setting );
                 break;
-            case FUNC_GTK_LABEL_SET_TEXT:
+            case remmina_masterthread_exec_data::FUNC_GTK_LABEL_SET_TEXT:
                 gtk_label_set_text( d->p.gtk_label_set_text.label, d->p.gtk_label_set_text.str );
                 break;
-            case FUNC_FTP_CLIENT_UPDATE_TASK:
+            case remmina_masterthread_exec_data::FUNC_FTP_CLIENT_UPDATE_TASK:
                 remmina_ftp_client_update_task( d->p.ftp_client_update_task.client, d->p.ftp_client_update_task.task );
                 break;
-            case FUNC_FTP_CLIENT_GET_WAITING_TASK:
+            case remmina_masterthread_exec_data::FUNC_FTP_CLIENT_GET_WAITING_TASK:
                 d->p.ftp_client_get_waiting_task.retval =
                     remmina_ftp_client_get_waiting_task( d->p.ftp_client_get_waiting_task.client );
                 break;
-            case FUNC_PROTOCOLWIDGET_EMIT_SIGNAL:
+            case remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_EMIT_SIGNAL:
                 remmina_protocol_widget_emit_signal( d->p.protocolwidget_emit_signal.gp,
                                                      d->p.protocolwidget_emit_signal.signal_name );
                 break;
-            case FUNC_PROTOCOLWIDGET_MPPROGRESS:
+            case remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_MPPROGRESS:
                 d->p.protocolwidget_mpprogress.ret_mp =
                     remmina_protocol_widget_mpprogress( d->p.protocolwidget_mpprogress.cnnobj,
                                                         d->p.protocolwidget_mpprogress.message,
                                                         d->p.protocolwidget_mpprogress.response_callback,
                                                         d->p.protocolwidget_mpprogress.response_callback_data );
                 break;
-            case FUNC_PROTOCOLWIDGET_MPDESTROY:
+            case remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_MPDESTROY:
                 remmina_protocol_widget_mpdestroy( d->p.protocolwidget_mpdestroy.cnnobj,
                                                    d->p.protocolwidget_mpdestroy.mp );
                 break;
-            case FUNC_PROTOCOLWIDGET_MPSHOWRETRY:
+            case remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_MPSHOWRETRY:
                 remmina_protocol_widget_panel_show_retry( d->p.protocolwidget_mpshowretry.gp );
                 break;
-            case FUNC_PROTOCOLWIDGET_PANELSHOWLISTEN:
+            case remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_PANELSHOWLISTEN:
                 remmina_protocol_widget_panel_show_listen( d->p.protocolwidget_panelshowlisten.gp,
                                                            d->p.protocolwidget_panelshowlisten.port );
                 break;
-            case FUNC_SFTP_CLIENT_CONFIRM_RESUME:
+            case remmina_masterthread_exec_data::FUNC_SFTP_CLIENT_CONFIRM_RESUME:
 #ifdef HAVE_LIBSSH
                 d->p.sftp_client_confirm_resume.retval = remmina_sftp_client_confirm_resume(
                     d->p.sftp_client_confirm_resume.client, d->p.sftp_client_confirm_resume.path );
 #endif
                 break;
-            case FUNC_VTE_TERMINAL_SET_ENCODING_AND_PTY:
+            case remmina_masterthread_exec_data::FUNC_VTE_TERMINAL_SET_ENCODING_AND_PTY:
 #if defined( HAVE_LIBSSH ) && defined( HAVE_LIBVTE )
                 remmina_plugin_ssh_vte_terminal_set_encoding_and_pty( d->p.vte_terminal_set_encoding_and_pty.terminal,
                                                                       d->p.vte_terminal_set_encoding_and_pty.codeset,
@@ -124,7 +124,7 @@ static gboolean remmina_masterthread_exec_callback( RemminaMTExecData *d )
 
 static void remmina_masterthread_exec_cleanup_handler( gpointer data )
 {
-    RemminaMTExecData *d = data;
+    RemminaMTExecData *d = static_cast<RemminaMTExecData*>(data);
 
     d->cancelled = TRUE;
 }
@@ -151,7 +151,7 @@ void remmina_masterthread_exec_save_main_thread_id()
     gMainThreadID = pthread_self();
 }
 
-gboolean remmina_masterthread_exec_is_main_thread()
+int remmina_masterthread_exec_is_main_thread()
 {
     return pthread_equal( gMainThreadID, pthread_self() ) != 0;
 }

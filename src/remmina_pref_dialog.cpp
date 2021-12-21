@@ -41,18 +41,18 @@
 #if defined( HAVE_LIBSSH ) && defined( HAVE_LIBVTE )
 #    include <vte/vte.h>
 #endif
-#include "remmina_log.h"
-#include "remmina_file_manager.h"
-#include "remmina_sodium.h"
-#include "remmina_public.h"
-#include "remmina_string_list.h"
-#include "remmina_widget_pool.h"
-#include "remmina_key_chooser.h"
-#include "remmina_plugin_manager.h"
-#include "remmina_icon.h"
-#include "remmina_pref.h"
-#include "remmina_pref_dialog.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_log.hpp"
+#include "remmina_file_manager.hpp"
+#include "remmina_sodium.hpp"
+#include "remmina_public.hpp"
+#include "remmina_string_list.hpp"
+#include "remmina_widget_pool.hpp"
+#include "remmina_key_chooser.hpp"
+#include "remmina_plugin_manager.hpp"
+#include "remmina_icon.hpp"
+#include "remmina_pref.hpp"
+#include "remmina_pref_dialog.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 static RemminaPrefDialog *remmina_pref_dialog;
 
@@ -73,7 +73,7 @@ void remmina_pref_dialog_on_key_chooser( GtkWidget *widget, gpointer user_data )
     arguments = remmina_key_chooser_new( GTK_WINDOW( remmina_pref_dialog->dialog ), FALSE );
     if( arguments->response != GTK_RESPONSE_CANCEL && arguments->response != GTK_RESPONSE_DELETE_EVENT )
     {
-        gchar *val = remmina_key_chooser_get_value( arguments->keyval, arguments->state );
+        char *val = remmina_key_chooser_get_value( arguments->keyval, arguments->state );
         gtk_button_set_label( GTK_BUTTON( widget ), val );
         g_free( val );
     }
@@ -101,9 +101,9 @@ void remmina_pref_on_button_resolutions_clicked( GtkWidget *widget, gpointer use
 void remmina_pref_on_color_scheme_selected( GtkWidget *widget, gpointer user_data )
 {
     TRACE_CALL( __func__ );
-    gchar *sourcepath;
-    gchar *remmina_dir;
-    gchar *destpath;
+    char *sourcepath;
+    char *remmina_dir;
+    char *destpath;
     GFile *source;
     GFile *destination;
 
@@ -168,9 +168,9 @@ void remmina_prefdiag_unlock_repwd_on_changed( GtkEditable *editable, RemminaPre
 {
     TRACE_CALL( __func__ );
     GtkCssProvider *provider;
-    const gchar *color;
-    const gchar *password;
-    const gchar *repassword;
+    const char *color;
+    const char *password;
+    const char *repassword;
 
     provider = gtk_css_provider_new();
 
@@ -216,9 +216,9 @@ void remmina_pref_dialog_on_close_clicked( GtkWidget *widget, RemminaPrefDialog 
 void remmina_pref_on_dialog_destroy( GtkWidget *widget, gpointer user_data )
 {
     TRACE_CALL( __func__ );
-    gboolean b;
+    bool b;
     GdkRGBA color;
-    gboolean rebuild_remmina_icon = FALSE;
+    bool rebuild_remmina_icon = FALSE;
 
     remmina_pref.datadir_path =
         gtk_file_chooser_get_filename( remmina_pref_dialog->filechooserbutton_options_datadir_path );
@@ -428,7 +428,7 @@ void remmina_pref_on_dialog_destroy( GtkWidget *widget, gpointer user_data )
     remmina_pref_dialog->dialog = NULL;
 }
 
-static gboolean remmina_pref_dialog_add_pref_plugin( gchar *name, RemminaPlugin *plugin, gpointer user_data )
+static int remmina_pref_dialog_add_pref_plugin( char *name, RemminaPlugin *plugin, gpointer user_data )
 {
     TRACE_CALL( __func__ );
     RemminaPrefPlugin *pref_plugin;
@@ -461,7 +461,7 @@ void remmina_pref_dialog_vte_font_on_toggled( GtkSwitch *widget, RemminaPrefDial
 void remmina_pref_dialog_disable_tray_icon_on_toggled( GtkWidget *widget, RemminaPrefDialog *dialog )
 {
     TRACE_CALL( __func__ );
-    gboolean b;
+    bool b;
 
     b = !gtk_toggle_button_get_active( GTK_TOGGLE_BUTTON( widget ) );
 
@@ -471,7 +471,7 @@ void remmina_pref_dialog_disable_tray_icon_on_toggled( GtkWidget *widget, Remmin
 /* Helper function for remmina_pref_dialog_init() */
 static void remmina_pref_dialog_set_button_label( GtkButton *button, guint keyval )
 {
-    gchar *val;
+    char *val;
 
     val = remmina_key_chooser_get_value( keyval, 0 );
     gtk_button_set_label( button, val );
@@ -482,7 +482,7 @@ static void remmina_pref_dialog_set_button_label( GtkButton *button, guint keyva
 static void remmina_pref_dialog_init( void )
 {
     TRACE_CALL( __func__ );
-    gchar buf[100];
+    char buf[100];
     GdkRGBA color;
 
 #if !defined( HAVE_LIBSSH ) || !defined( HAVE_LIBVTE )
@@ -759,7 +759,9 @@ static void remmina_pref_dialog_init( void )
     g_signal_connect(
         G_OBJECT( remmina_pref_dialog->dialog ), "destroy", G_CALLBACK( remmina_pref_on_dialog_destroy ), NULL );
 
-    g_object_set_data( G_OBJECT( remmina_pref_dialog->dialog ), "tag", "remmina-pref-dialog" );
+    g_object_set_data( G_OBJECT( remmina_pref_dialog->dialog ),
+                       "tag",
+                       static_cast<void *>( const_cast<char *>( "remmina-pref-dialog" ) ) );
     remmina_widget_pool_register( GTK_WIDGET( remmina_pref_dialog->dialog ) );
 }
 
@@ -906,12 +908,12 @@ GtkWidget *remmina_pref_dialog_new( gint default_tab, GtkWindow *parent )
     remmina_pref_dialog->colorbutton_color15 = GTK_COLOR_BUTTON( GET_OBJECT( "colorbutton_color15" ) );
 #if defined( HAVE_LIBSSH ) && defined( HAVE_LIBVTE )
 #    if VTE_CHECK_VERSION( 0, 38, 0 )
-    const gchar *remmina_dir;
-    gchar *destpath;
+    const char *remmina_dir;
+    char *destpath;
     remmina_dir = g_build_path( "/", g_get_user_config_dir(), "remmina", NULL );
     destpath = g_strdup_printf( "%s/remmina.colors", remmina_dir );
     remmina_pref_dialog->button_term_cs = GTK_FILE_CHOOSER( GET_OBJECT( "button_term_cs" ) );
-    const gchar *fc_tooltip_text =
+    const char *fc_tooltip_text =
         g_strconcat( _( "Picking a terminal colouring file replaces the file: " ),
                      "\n",
                      destpath,
@@ -939,7 +941,7 @@ GtkWidget *remmina_pref_dialog_new( gint default_tab, GtkWindow *parent )
     gtk_accel_group_connect( accel_group,
                              GDK_KEY_Q,
                              GDK_CONTROL_MASK,
-                             0,
+                             static_cast<GtkAccelFlags>( 0 ),
                              g_cclosure_new_swap( G_CALLBACK( remmina_pref_dialog_on_action_close ), NULL, NULL ) );
 
     /* Connect signals */

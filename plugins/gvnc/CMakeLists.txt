@@ -31,9 +31,9 @@
 # files in the program, then also delete it here.
 
 set(REMMINA_PLUGIN_GVNC_SRCS
-    gvnc_plugin_config.h
-    gvnc_plugin.h
-    gvnc_plugin.c
+    gvnc_plugin_config.hpp
+    gvnc_plugin.hpp
+    gvnc_plugin.cpp
     )
 
 add_library(remmina-plugin-gvnc ${REMMINA_PLUGIN_GVNC_SRCS})

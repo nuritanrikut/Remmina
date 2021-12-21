@@ -37,9 +37,9 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include "remmina_about.h"
-#include "remmina_public.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_about.hpp"
+#include "remmina_public.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 /* Show the about dialog from the file ui/remmina_about.glade */
 void remmina_about_open( GtkWindow *parent )

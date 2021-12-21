@@ -35,7 +35,7 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 #define REMMINA_TYPE_APPLET_MENU ( remmina_applet_menu_get_type() )
 #define REMMINA_APPLET_MENU( obj ) \
@@ -76,7 +76,7 @@ GType remmina_applet_menu_get_type( void ) G_GNUC_CONST;
 void remmina_applet_menu_register_item( RemminaAppletMenu *menu, RemminaAppletMenuItem *menuitem );
 void remmina_applet_menu_add_item( RemminaAppletMenu *menu, RemminaAppletMenuItem *menuitem );
 GtkWidget *remmina_applet_menu_new( void );
-void remmina_applet_menu_set_hide_count( RemminaAppletMenu *menu, gboolean hide_count );
+void remmina_applet_menu_set_hide_count( RemminaAppletMenu *menu, bool hide_count );
 void remmina_applet_menu_populate( RemminaAppletMenu *menu );
 
-G_END_DECLS
+

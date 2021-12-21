@@ -34,14 +34,14 @@
  *
  */
 
-#include "common/remmina_plugin.h"
-#include "rdp_plugin.h"
-#include "rdp_file.h"
+#include "common/remmina_plugin.hpp"
+#include "rdp_plugin.hpp"
+#include "rdp_file.hpp"
 
-gboolean remmina_rdp_file_import_test( const gchar *from_file )
+int remmina_rdp_file_import_test( const char *from_file )
 {
     TRACE_CALL( __func__ );
-    gchar *ext;
+    const char *ext;
 
     ext = strrchr( from_file, '.' );
 
@@ -59,7 +59,7 @@ gboolean remmina_rdp_file_import_test( const gchar *from_file )
     return FALSE;
 }
 
-static void remmina_rdp_file_import_field( RemminaFile *remminafile, const gchar *key, const gchar *value )
+static void remmina_rdp_file_import_field( RemminaFile *remminafile, const char *key, const char *value )
 {
     TRACE_CALL( __func__ );
     if( g_strcmp0( key, "desktopwidth" ) == 0 )
@@ -157,9 +157,9 @@ static void remmina_rdp_file_import_field( RemminaFile *remminafile, const gchar
 static RemminaFile *remmina_rdp_file_import_channel( GIOChannel *channel )
 {
     TRACE_CALL( __func__ );
-    gchar *p;
-    const gchar *enc;
-    gchar *line = NULL;
+    char *p;
+    const char *enc;
+    char *line = NULL;
     GError *error = NULL;
     gsize bytes_read = 0;
     RemminaFile *remminafile;
@@ -172,7 +172,7 @@ static RemminaFile *remmina_rdp_file_import_channel( GIOChannel *channel )
     }
 
     /* Try to detect the UTF-16 encoding */
-    if( g_io_channel_read_chars( channel, (gchar *)magic, 2, &bytes_read, &error ) != G_IO_STATUS_NORMAL )
+    if( g_io_channel_read_chars( channel, (char *)magic, 2, &bytes_read, &error ) != G_IO_STATUS_NORMAL )
     {
         g_print( "g_io_channel_read_chars: %s\n", error->message );
         return NULL;
@@ -234,7 +234,7 @@ static RemminaFile *remmina_rdp_file_import_channel( GIOChannel *channel )
     return remminafile;
 }
 
-RemminaFile *remmina_rdp_file_import( const gchar *from_file )
+RemminaFile *remmina_rdp_file_import( const char *from_file )
 {
     TRACE_CALL( __func__ );
     GIOChannel *channel;
@@ -255,7 +255,7 @@ RemminaFile *remmina_rdp_file_import( const gchar *from_file )
     return remminafile;
 }
 
-gboolean remmina_rdp_file_export_test( RemminaFile *remminafile )
+int remmina_rdp_file_export_test( RemminaFile *remminafile )
 {
     TRACE_CALL( __func__ );
     if( g_strcmp0( remmina_plugin_service->file_get_string( remminafile, "protocol" ), "RDP" ) == 0 )
@@ -264,10 +264,10 @@ gboolean remmina_rdp_file_export_test( RemminaFile *remminafile )
     return FALSE;
 }
 
-gboolean remmina_rdp_file_export_channel( RemminaFile *remminafile, FILE *fp )
+int remmina_rdp_file_export_channel( RemminaFile *remminafile, FILE *fp )
 {
     TRACE_CALL( __func__ );
-    const gchar *cs;
+    const char *cs;
     int w, h;
 
     fprintf( fp, "screen mode id:i:2\r\n" );
@@ -337,14 +337,13 @@ gboolean remmina_rdp_file_export_channel( RemminaFile *remminafile, FILE *fp )
     return TRUE;
 }
 
-gboolean remmina_rdp_file_export( RemminaFile *remminafile, const gchar *to_file )
+int remmina_rdp_file_export( RemminaFile *remminafile, const char *to_file )
 {
     TRACE_CALL( __func__ );
     FILE *fp;
-    gchar *p;
-    gboolean ret;
+    bool ret;
 
-    p = strrchr( to_file, '.' );
+    const char *p = strrchr( to_file, '.' );
 
     if( p && ( g_strcmp0( p + 1, "rdp" ) == 0 || g_strcmp0( p + 1, "RDP" ) == 0 ) )
         p = g_strdup( to_file );
@@ -356,11 +355,11 @@ gboolean remmina_rdp_file_export( RemminaFile *remminafile, const gchar *to_file
     if( fp == NULL )
     {
         g_print( "Failed to export %s\n", p );
-        g_free( p );
+        g_free( const_cast<char *>( p ) );
         return FALSE;
     }
 
-    g_free( p );
+    g_free( const_cast<char *>( p ) );
     ret = remmina_rdp_file_export_channel( remminafile, fp );
     fclose( fp );
 

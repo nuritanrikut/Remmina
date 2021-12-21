@@ -35,13 +35,13 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 void remmina_icon_init( void );
-gboolean remmina_icon_is_autostart( void );
-void remmina_icon_set_autostart( gboolean autostart );
+int remmina_icon_is_autostart( void );
+void remmina_icon_set_autostart( bool autostart );
 void remmina_icon_populate_menu( void );
 void remmina_icon_destroy( void );
-gboolean remmina_icon_is_available( void );
+int remmina_icon_is_available( void );
 
-G_END_DECLS
+

@@ -35,7 +35,6 @@
 
 #pragma once
 
-G_BEGIN_DECLS
 
 #define REMMINA_TYPE_TP_HANDLER ( remmina_tp_handler_get_type() )
 #define REMMINA_TP_HANDLER( obj ) ( G_TYPE_CHECK_INSTANCE_CAST( ( obj ), REMMINA_TYPE_TP_HANDLER, RemminaTpHandler ) )
@@ -58,4 +57,3 @@ typedef struct _RemminaTpHandlerClass
 
 RemminaTpHandler *remmina_tp_handler_new( void );
 
-G_END_DECLS

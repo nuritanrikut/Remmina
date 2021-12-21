@@ -37,11 +37,11 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include "config.h"
-#include "remmina_public.h"
-#include "remmina_widget_pool.h"
-#include "remmina_message_panel.h"
-#include "remmina_masterthread_exec.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_public.hpp"
+#include "remmina_widget_pool.hpp"
+#include "remmina_message_panel.hpp"
+#include "remmina_masterthread_exec.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 typedef struct
 {
@@ -60,20 +60,20 @@ enum
 
 static guint messagepanel_signals[LAST_SIGNAL];
 
-static const gchar btn_response_key[] = "btn_response";
+static const char btn_response_key[] = "btn_response";
 
 static void remmina_message_panel_init( RemminaMessagePanel *mp )
 {
     TRACE_CALL( __func__ );
 }
 
-static void remmina_message_panel_class_init( RemminaMessagePanelClass *class )
+static void remmina_message_panel_class_init( RemminaMessagePanelClass *klass )
 {
     TRACE_CALL( __func__ );
-    // class->transform_text = my_app_label_real_transform_text;
+    // klass->transform_text = my_app_label_real_transform_text;
 
     messagepanel_signals[RESPONSE] = g_signal_new( "response",
-                                                   G_OBJECT_CLASS_TYPE( class ),
+                                                   G_OBJECT_CLASS_TYPE( klass ),
                                                    G_SIGNAL_RUN_LAST,
                                                    G_STRUCT_OFFSET( RemminaMessagePanelClass, response ),
                                                    NULL,
@@ -92,7 +92,7 @@ RemminaMessagePanel *remmina_message_panel_new()
     mp = (RemminaMessagePanel *)g_object_new(
         REMMINA_TYPE_MESSAGE_PANEL, "orientation", GTK_ORIENTATION_VERTICAL, "spacing", 0, NULL );
 
-    priv = remmina_message_panel_get_instance_private( mp );
+    priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     priv->response_callback = NULL;
     priv->response_callback_data = NULL;
@@ -109,7 +109,7 @@ static void remmina_message_panel_button_clicked_callback( GtkButton *button, gp
 {
     TRACE_CALL( __func__ );
     RemminaMessagePanel *mp = (RemminaMessagePanel *)user_data;
-    RemminaMessagePanelPrivate *priv = remmina_message_panel_get_instance_private( mp );
+    RemminaMessagePanelPrivate *priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     gint btn_data;
 
@@ -121,7 +121,7 @@ static void remmina_message_panel_button_clicked_callback( GtkButton *button, gp
 }
 
 void remmina_message_panel_setup_progress( RemminaMessagePanel *mp,
-                                           const gchar *message,
+                                           const char *message,
                                            RemminaMessagePanelCallback response_callback,
                                            gpointer response_callback_data )
 {
@@ -134,7 +134,7 @@ void remmina_message_panel_setup_progress( RemminaMessagePanel *mp,
     TRACE_CALL( __func__ );
     GtkBox *hbox;
     GtkWidget *w;
-    RemminaMessagePanelPrivate *priv = remmina_message_panel_get_instance_private( mp );
+    RemminaMessagePanelPrivate *priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     if( !remmina_masterthread_exec_is_main_thread() )
     {
@@ -172,7 +172,7 @@ void remmina_message_panel_setup_progress( RemminaMessagePanel *mp,
 }
 
 void remmina_message_panel_setup_message( RemminaMessagePanel *mp,
-                                          const gchar *message,
+                                          const char *message,
                                           RemminaMessagePanelCallback response_callback,
                                           gpointer response_callback_data )
 {
@@ -185,7 +185,7 @@ void remmina_message_panel_setup_message( RemminaMessagePanel *mp,
     TRACE_CALL( __func__ );
     GtkBox *hbox;
     GtkWidget *w;
-    RemminaMessagePanelPrivate *priv = remmina_message_panel_get_instance_private( mp );
+    RemminaMessagePanelPrivate *priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     if( !remmina_masterthread_exec_is_main_thread() )
     {
@@ -214,7 +214,7 @@ void remmina_message_panel_setup_message( RemminaMessagePanel *mp,
 }
 
 void remmina_message_panel_setup_question( RemminaMessagePanel *mp,
-                                           const gchar *message,
+                                           const char *message,
                                            RemminaMessagePanelCallback response_callback,
                                            gpointer response_callback_data )
 {
@@ -230,7 +230,7 @@ void remmina_message_panel_setup_question( RemminaMessagePanel *mp,
     GtkWidget *grid;
     GtkWidget *bbox;
     GtkWidget *w;
-    RemminaMessagePanelPrivate *priv = remmina_message_panel_get_instance_private( mp );
+    RemminaMessagePanelPrivate *priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     if( !remmina_masterthread_exec_is_main_thread() )
     {
@@ -289,8 +289,8 @@ void remmina_message_panel_setup_question( RemminaMessagePanel *mp,
 void remmina_message_panel_setup_auth( RemminaMessagePanel *mp,
                                        RemminaMessagePanelCallback response_callback,
                                        gpointer response_callback_data,
-                                       const gchar *title,
-                                       const gchar *password_prompt,
+                                       const char *title,
+                                       const char *password_prompt,
                                        unsigned flags )
 {
     TRACE_CALL( __func__ );
@@ -305,7 +305,7 @@ void remmina_message_panel_setup_auth( RemminaMessagePanel *mp,
     GtkWidget *button_cancel;
     int grid_row;
 
-    RemminaMessagePanelPrivate *priv = remmina_message_panel_get_instance_private( mp );
+    RemminaMessagePanelPrivate *priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     if( !remmina_masterthread_exec_is_main_thread() )
     {
@@ -518,7 +518,7 @@ void remmina_message_panel_setup_auth_x509( RemminaMessagePanel *mp,
     GtkWidget *clientkey_file;
     int grid_row;
 
-    RemminaMessagePanelPrivate *priv = remmina_message_panel_get_instance_private( mp );
+    RemminaMessagePanelPrivate *priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     if( !remmina_masterthread_exec_is_main_thread() )
     {
@@ -548,7 +548,7 @@ void remmina_message_panel_setup_auth_x509( RemminaMessagePanel *mp,
     gtk_grid_attach( GTK_GRID( grid ), widget, 0, grid_row, 3, 1 );
     grid_row++;
 
-    const gchar *lbl_cacert = _( "CA Certificate File" );
+    const char *lbl_cacert = _( "CA Certificate File" );
     widget = gtk_label_new( lbl_cacert );
     gtk_widget_set_halign( GTK_WIDGET( widget ), GTK_ALIGN_START );
     gtk_widget_set_valign( GTK_WIDGET( widget ), GTK_ALIGN_CENTER );
@@ -570,7 +570,7 @@ void remmina_message_panel_setup_auth_x509( RemminaMessagePanel *mp,
     gtk_grid_attach( GTK_GRID( grid ), cacert_file, 1, grid_row, 2, 1 );
     grid_row++;
 
-    const gchar *lbl_cacrl = _( "CA CRL File" );
+    const char *lbl_cacrl = _( "CA CRL File" );
     widget = gtk_label_new( lbl_cacrl );
     gtk_widget_set_halign( GTK_WIDGET( widget ), GTK_ALIGN_START );
     gtk_widget_set_valign( GTK_WIDGET( widget ), GTK_ALIGN_CENTER );
@@ -592,7 +592,7 @@ void remmina_message_panel_setup_auth_x509( RemminaMessagePanel *mp,
     gtk_grid_attach( GTK_GRID( grid ), cacrl_file, 1, grid_row, 2, 1 );
     grid_row++;
 
-    const gchar *lbl_clicert = _( "Client Certificate File" );
+    const char *lbl_clicert = _( "Client Certificate File" );
     widget = gtk_label_new( lbl_clicert );
     gtk_widget_set_halign( GTK_WIDGET( widget ), GTK_ALIGN_START );
     gtk_widget_set_valign( GTK_WIDGET( widget ), GTK_ALIGN_CENTER );
@@ -614,7 +614,7 @@ void remmina_message_panel_setup_auth_x509( RemminaMessagePanel *mp,
     gtk_grid_attach( GTK_GRID( grid ), clientcert_file, 1, grid_row, 2, 1 );
     grid_row++;
 
-    const gchar *lbl_clikey = _( "Client Certificate Key" );
+    const char *lbl_clikey = _( "Client Certificate Key" );
     widget = gtk_label_new( lbl_clikey );
     gtk_widget_set_halign( GTK_WIDGET( widget ), GTK_ALIGN_START );
     gtk_widget_set_valign( GTK_WIDGET( widget ), GTK_ALIGN_CENTER );
@@ -683,11 +683,11 @@ void remmina_message_panel_focus_auth_entry( RemminaMessagePanel *mp )
 
     RemminaMessagePanelPrivate *priv;
     GtkWidget *w;
-    const gchar *username;
+    const char *username;
 
     if( mp == NULL )
         return;
-    priv = remmina_message_panel_get_instance_private( mp );
+    priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     /* Activate default button */
     w = priv->w[REMMINA_MESSAGE_PANEL_BUTTONTOFOCUS];
@@ -714,13 +714,13 @@ void remmina_message_panel_focus_auth_entry( RemminaMessagePanel *mp )
     gtk_widget_grab_focus( w );
 }
 
-void remmina_message_panel_field_set_string( RemminaMessagePanel *mp, int entryid, const gchar *text )
+void remmina_message_panel_field_set_string( RemminaMessagePanel *mp, int entryid, const char *text )
 {
     RemminaMessagePanelPrivate *priv;
 
     if( mp == NULL )
         return;
-    priv = remmina_message_panel_get_instance_private( mp );
+    priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     if( priv->w[entryid] == NULL )
         return;
@@ -730,7 +730,7 @@ void remmina_message_panel_field_set_string( RemminaMessagePanel *mp, int entryi
     gtk_entry_set_text( GTK_ENTRY( priv->w[entryid] ), text != NULL ? text : "" );
 }
 
-gchar *remmina_message_panel_field_get_string( RemminaMessagePanel *mp, int entryid )
+char *remmina_message_panel_field_get_string( RemminaMessagePanel *mp, int entryid )
 {
     TRACE_CALL( __func__ );
 
@@ -738,7 +738,7 @@ gchar *remmina_message_panel_field_get_string( RemminaMessagePanel *mp, int entr
 
     if( mp == NULL )
         return NULL;
-    priv = remmina_message_panel_get_instance_private( mp );
+    priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     if( priv->w[entryid] == NULL )
         return NULL;
@@ -748,7 +748,7 @@ gchar *remmina_message_panel_field_get_string( RemminaMessagePanel *mp, int entr
     return g_strdup( gtk_entry_get_text( GTK_ENTRY( priv->w[entryid] ) ) );
 }
 
-void remmina_message_panel_field_set_switch( RemminaMessagePanel *mp, int entryid, gboolean state )
+void remmina_message_panel_field_set_switch( RemminaMessagePanel *mp, int entryid, bool state )
 {
     TRACE_CALL( __func__ );
 
@@ -756,7 +756,7 @@ void remmina_message_panel_field_set_switch( RemminaMessagePanel *mp, int entryi
 
     if( mp == NULL )
         return;
-    priv = remmina_message_panel_get_instance_private( mp );
+    priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     if( priv->w[entryid] == NULL )
         return;
@@ -766,7 +766,7 @@ void remmina_message_panel_field_set_switch( RemminaMessagePanel *mp, int entryi
     gtk_switch_set_state( GTK_SWITCH( priv->w[entryid] ), state );
 }
 
-gboolean remmina_message_panel_field_get_switch_state( RemminaMessagePanel *mp, int entryid )
+int remmina_message_panel_field_get_switch_state( RemminaMessagePanel *mp, int entryid )
 {
     TRACE_CALL( __func__ );
 
@@ -774,7 +774,7 @@ gboolean remmina_message_panel_field_get_switch_state( RemminaMessagePanel *mp, 
 
     if( mp == NULL )
         return FALSE;
-    priv = remmina_message_panel_get_instance_private( mp );
+    priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     if( priv->w[entryid] == NULL )
         return FALSE;
@@ -784,7 +784,7 @@ gboolean remmina_message_panel_field_get_switch_state( RemminaMessagePanel *mp, 
     return gtk_switch_get_state( GTK_SWITCH( priv->w[entryid] ) );
 }
 
-void remmina_message_panel_field_set_filename( RemminaMessagePanel *mp, int entryid, const gchar *filename )
+void remmina_message_panel_field_set_filename( RemminaMessagePanel *mp, int entryid, const char *filename )
 {
     TRACE_CALL( __func__ );
 
@@ -792,7 +792,7 @@ void remmina_message_panel_field_set_filename( RemminaMessagePanel *mp, int entr
 
     if( mp == NULL )
         return;
-    priv = remmina_message_panel_get_instance_private( mp );
+    priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
     if( priv->w[entryid] == NULL )
         return;
     if( !G_TYPE_CHECK_INSTANCE_TYPE( priv->w[entryid], gtk_file_chooser_button_get_type() ) )
@@ -801,7 +801,7 @@ void remmina_message_panel_field_set_filename( RemminaMessagePanel *mp, int entr
     gtk_file_chooser_set_filename( GTK_FILE_CHOOSER( priv->w[entryid] ), filename );
 }
 
-gchar *remmina_message_panel_field_get_filename( RemminaMessagePanel *mp, int entryid )
+char *remmina_message_panel_field_get_filename( RemminaMessagePanel *mp, int entryid )
 {
     TRACE_CALL( __func__ );
 
@@ -809,7 +809,7 @@ gchar *remmina_message_panel_field_get_filename( RemminaMessagePanel *mp, int en
 
     if( mp == NULL )
         return NULL;
-    priv = remmina_message_panel_get_instance_private( mp );
+    priv = static_cast<RemminaMessagePanelPrivate*>(remmina_message_panel_get_instance_private( mp ));
 
     if( priv->w[entryid] == NULL )
         return NULL;

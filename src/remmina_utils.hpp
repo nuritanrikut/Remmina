@@ -33,28 +33,28 @@
  */
 
 /**
- *  @file: remmina_utils.h
+ *  @file: remmina_utils.hpp
  *  General utility functions, non-GTK related.
  */
 
 #pragma once
 
-G_BEGIN_DECLS
-gint remmina_utils_string_find( GString *haystack, gint start, gint end, const gchar *needle );
-gint remmina_utils_string_replace( GString *str, gint pos, gint len, const gchar *replace );
-guint remmina_utils_string_replace_all( GString *haystack, const gchar *needle, const gchar *replace );
-gchar *remmina_utils_string_strip( const gchar *s );
 
-gchar *remmina_utils_get_lang();
-const gchar *remmina_utils_get_kernel_name();
-const gchar *remmina_utils_get_kernel_release();
-const gchar *remmina_utils_get_kernel_arch();
-gchar *remmina_utils_get_lsb_id();
-gchar *remmina_utils_get_lsb_description();
-gchar *remmina_utils_get_lsb_release();
-gchar *remmina_utils_get_lsb_codename();
+gint remmina_utils_string_find( GString *haystack, gint start, gint end, const char *needle );
+gint remmina_utils_string_replace( GString *str, gint pos, gint len, const char *replace );
+guint remmina_utils_string_replace_all( GString *haystack, const char *needle, const char *replace );
+char *remmina_utils_string_strip( const char *s );
+
+char *remmina_utils_get_lang();
+const char *remmina_utils_get_kernel_name();
+const char *remmina_utils_get_kernel_release();
+const char *remmina_utils_get_kernel_arch();
+char *remmina_utils_get_lsb_id();
+char *remmina_utils_get_lsb_description();
+char *remmina_utils_get_lsb_release();
+char *remmina_utils_get_lsb_codename();
 GHashTable *remmina_utils_get_etc_release();
-const gchar *remmina_utils_get_os_info();
-gchar *remmina_sha1_file( const gchar *filename );
-gchar *remmina_gen_random_uuid();
-G_END_DECLS
+const char *remmina_utils_get_os_info();
+char *remmina_sha1_file( const char *filename );
+char *remmina_gen_random_uuid();
+

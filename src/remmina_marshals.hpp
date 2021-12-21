@@ -37,7 +37,7 @@
 
 #include <glib-object.h>
 
-G_BEGIN_DECLS
+
 
 /* BOOLEAN:INT (remminamarshals.list:4) */
 extern void remmina_marshal_BOOLEAN__INT( GClosure *closure,
@@ -55,6 +55,6 @@ extern void remmina_marshal_BOOLEAN__INT_STRING( GClosure *closure,
                                                  gpointer invocation_hint,
                                                  gpointer marshal_data );
 
-G_END_DECLS
+
 
 #endif /* __remmina_marshal_MARSHAL_H__ */

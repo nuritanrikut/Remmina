@@ -40,11 +40,11 @@
 
 #ifdef HAVE_LIBSSH
 
-#    include "remmina_file.h"
-#    include "remmina_ftp_client.h"
-#    include "remmina_ssh.h"
+#    include "remmina_file.hpp"
+#    include "remmina_ftp_client.hpp"
+#    include "remmina_ssh.hpp"
 
-G_BEGIN_DECLS
+
 
 #    define REMMINA_TYPE_SFTP_CLIENT ( remmina_sftp_client_get_type() )
 #    define REMMINA_SFTP_CLIENT( obj ) \
@@ -64,7 +64,7 @@ typedef struct _RemminaSFTPClient
 
     pthread_t thread;
     gint taskid;
-    gboolean thread_abort;
+    bool thread_abort;
     RemminaProtocolWidget *gp;
 } RemminaSFTPClient;
 
@@ -78,8 +78,8 @@ GType remmina_sftp_client_get_type( void ) G_GNUC_CONST;
 RemminaSFTPClient *remmina_sftp_client_new();
 
 void remmina_sftp_client_open( RemminaSFTPClient *client, RemminaSFTP *sftp );
-gint remmina_sftp_client_confirm_resume( RemminaSFTPClient *client, const gchar *path );
+gint remmina_sftp_client_confirm_resume( RemminaSFTPClient *client, const char *path );
 
-G_END_DECLS
+
 
 #endif /* HAVE_LIBSSH */

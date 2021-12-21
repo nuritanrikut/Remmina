@@ -34,9 +34,9 @@
 
 #pragma once
 
-#include "remmina/plugin.h"
+#include "remmina/plugin.hpp"
 
-G_BEGIN_DECLS
+
 
 /**
  * @brief Initializes the Python plugin loaders.
@@ -52,6 +52,6 @@ void remmina_plugin_python_init( void );
  *
  * @return  TRUE on success, FALSE otherwise.
  */
-gboolean remmina_plugin_python_load( RemminaPluginService *service, const gchar *filename );
+int remmina_plugin_python_load( RemminaPluginService *service, const char *filename );
 
-G_END_DECLS
+

@@ -36,11 +36,11 @@
 
 #pragma once
 
-#include "remmina_file.h"
-#include "remmina_monitor.h"
+#include "remmina_file.hpp"
+#include "remmina_monitor.hpp"
 #include <gtk/gtk.h>
 
-#include "remmina_string_array.h"
+#include "remmina_string_array.hpp"
 
 typedef struct _RemminaMainPriv RemminaMainPriv;
 
@@ -90,15 +90,13 @@ struct _RemminaMainPriv
     GtkTreeModel *file_model_filter;
     GtkTreeModel *file_model_sort;
 
-    gboolean initialized;
+    bool initialized;
 
-    gchar *selected_filename;
-    gchar *selected_name;
-    gboolean override_view_file_mode_to_list;
+    char *selected_filename;
+    char *selected_name;
+    bool override_view_file_mode_to_list;
     RemminaStringArray *expanded_group;
 };
-
-G_BEGIN_DECLS
 
 /* Create the remminamain struct and the remmina main Remmina window */
 GtkWidget *remmina_main_new( void );
@@ -108,10 +106,13 @@ GtkWindow *remmina_main_get_window( void );
 void remmina_main_update_file_datetime( RemminaFile *file );
 
 void remmina_main_destroy( void );
-void remmina_main_on_destroy_event( void );
+extern "C"
+{
+    void remmina_main_on_destroy_event( void );
+}
 void remmina_main_save_before_destroy( void );
 
-void remmina_main_show_warning_dialog( const gchar *message );
+void remmina_main_show_warning_dialog( const char *message );
 void remmina_main_on_action_application_about( GSimpleAction *action, GVariant *param, gpointer data );
 void remmina_main_on_action_application_news( GSimpleAction *action, GVariant *param, gpointer data );
 void remmina_main_on_action_application_default( GSimpleAction *action, GVariant *param, gpointer data );
@@ -136,5 +137,3 @@ void remmina_main_on_action_tools_import( GSimpleAction *action, GVariant *param
 void remmina_main_on_action_expand( GSimpleAction *action, GVariant *param, gpointer data );
 void remmina_main_on_action_collapse( GSimpleAction *action, GVariant *param, gpointer data );
 void remmina_main_on_action_search_toggle( GSimpleAction *action, GVariant *param, gpointer data );
-
-G_END_DECLS

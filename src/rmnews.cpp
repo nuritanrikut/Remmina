@@ -33,7 +33,7 @@
  */
 
 #include "config.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina/remmina_trace_calls.hpp"
 
 #include <fcntl.h>
 #include <gio/gdesktopappinfo.h>
@@ -48,16 +48,16 @@
 #include <sys/types.h>
 #include <time.h>
 
-#include "remmina.h"
-#include "remmina_main.h"
-#include "remmina_log.h"
-#include "remmina_pref.h"
-#include "remmina_public.h"
-#include "remmina_sodium.h"
-#include "remmina_utils.h"
-#include "remmina_scheduler.h"
-#include "remmina_sysinfo.h"
-#include "rmnews.h"
+#include "remmina.hpp"
+#include "remmina_main.hpp"
+#include "remmina_log.hpp"
+#include "remmina_pref.hpp"
+#include "remmina_public.hpp"
+#include "remmina_sodium.hpp"
+#include "remmina_utils.hpp"
+#include "remmina_scheduler.hpp"
+#include "remmina_sysinfo.hpp"
+#include "rmnews.hpp"
 
 #define ARR_SIZE( arr ) ( sizeof( ( arr ) ) / sizeof( ( arr[0] ) ) )
 /* Neas file buffer */
@@ -75,9 +75,9 @@ static RemminaNewsDialog *rmnews_news_dialog;
 #define GET_OBJ( object_name ) gtk_builder_get_object( rmnews_news_dialog->builder, object_name )
 
 static SoupSession *session;
-static const gchar *output_file_path = NULL;
+static const char *output_file_path = NULL;
 
-static const gchar *supported_mime_types[] = { "x-scheme-handler/rdp",
+static const char *supported_mime_types[] = { "x-scheme-handler/rdp",
                                                "x-scheme-handler/spice",
                                                "x-scheme-handler/vnc",
                                                "x-scheme-handler/remmina",
@@ -107,7 +107,7 @@ void rmnews_defaultcl_on_click()
     g_autoptr( GError ) error = NULL;
     GDesktopAppInfo *desktop_info;
     GAppInfo *info = NULL;
-    g_autofree gchar *id = g_strconcat( REMMINA_APP_ID, ".desktop", NULL );
+    g_autofree char *id = g_strconcat( REMMINA_APP_ID, ".desktop", NULL );
     int i;
 
     desktop_info = g_desktop_app_info_new( id );
@@ -129,10 +129,10 @@ void rmnews_defaultcl_on_click()
     }
 }
 
-static gchar *rmnews_get_file_contents( gchar *path )
+static char *rmnews_get_file_contents( char *path )
 {
     gsize size;
-    gchar *content;
+    char *content;
 
     if( g_file_get_contents( path, &content, &size, NULL ) )
     {
@@ -157,7 +157,7 @@ static void rmnews_close_clicked( GtkButton *btn, gpointer user_data )
     rmnews_news_dialog = NULL;
 }
 
-static gboolean rmnews_dialog_deleted( GtkButton *btn, gpointer user_data )
+static int rmnews_dialog_deleted( GtkButton *btn, gpointer user_data )
 {
     TRACE_CALL( __func__ );
     gtk_widget_destroy( GTK_WIDGET( rmnews_news_dialog->dialog ) );
@@ -197,7 +197,7 @@ void rmnews_show_news( GtkWindow *parent )
 
     if( remmina_pref.periodic_news_permitted == 1 )
     {
-        gchar *contents = rmnews_get_file_contents( g_strdup( output_file_path ) );
+        char *contents = rmnews_get_file_contents( g_strdup( output_file_path ) );
         if( contents )
         {
             gtk_label_set_markup( rmnews_news_dialog->rmnews_label, contents );
@@ -230,8 +230,8 @@ static void rmnews_get_url_cb( SoupSession *session, SoupMessage *msg, gpointer 
     const char *header;
     SoupBuffer *sb;
     FILE *output_file = NULL;
-    gchar *filesha = NULL;
-    gchar *filesha_after = NULL;
+    const char *filesha = NULL;
+    const char *filesha_after = NULL;
     GDateTime *gdt;
     gint64 unixts;
 
@@ -334,7 +334,7 @@ static void rmnews_get_url_cb( SoupSession *session, SoupMessage *msg, gpointer 
                 REMMINA_DEBUG( "periodic_rmnews_last_get set to %ld", remmina_pref.periodic_rmnews_last_get );
                 REMMINA_DEBUG( "Saving preferences" );
                 remmina_pref_save();
-                g_free( filesha );
+                g_free( const_cast<char*>(filesha) );
                 filesha = NULL;
                 return;
             }
@@ -377,7 +377,7 @@ static void rmnews_get_url_cb( SoupSession *session, SoupMessage *msg, gpointer 
             /* Increase counter with number of successful GETs */
             remmina_pref.periodic_rmnews_get_count = remmina_pref.periodic_rmnews_get_count + 1;
             remmina_pref_save();
-            g_free( filesha );
+            g_free( const_cast<char*>(filesha) );
             filesha = NULL;
         }
     }
@@ -390,14 +390,14 @@ static void rmnews_get_url_cb( SoupSession *session, SoupMessage *msg, gpointer 
  * @return a string
  * @warning The returned string must be freed with g_free.
  */
-gchar *rmnews_get_uid()
+char *rmnews_get_uid()
 {
     TRACE_CALL( __func__ );
     GChecksum *chs;
-    const gchar *uname, *hname;
-    const gchar *uid_suffix;
-    gchar *uid_prefix;
-    gchar *uid;
+    const char *uname, *hname;
+    const char *uid_suffix;
+    char *uid_prefix;
+    char *uid;
 
     /* This code is very similar to remmina_stats_get_uid() */
 
@@ -445,11 +445,11 @@ void rmnews_get_news()
 
     SoupLogger *logger = NULL;
     int fd;
-    gchar *uid;
-    gchar mage[20], gcount[20];
+    char *uid;
+    char mage[20], gcount[20];
     struct stat sb;
 
-    gchar *cachedir = g_build_path( "/", g_get_user_cache_dir(), REMMINA_APP_ID, NULL );
+    char *cachedir = g_build_path( "/", g_get_user_cache_dir(), REMMINA_APP_ID, NULL );
     gint d = g_mkdir_with_parents( cachedir, 0750 );
     if( d < 0 )
         output_file_path = RMNEWS_OUTPUT;
@@ -488,7 +488,7 @@ void rmnews_get_news()
     }
 
     REMMINA_DEBUG( "Gathering news" );
-    session = g_object_new( SOUP_TYPE_SESSION,
+    session = static_cast<SoupSession*>(g_object_new( SOUP_TYPE_SESSION,
                             SOUP_SESSION_ADD_FEATURE_BY_TYPE,
                             SOUP_TYPE_CONTENT_DECODER,
                             SOUP_SESSION_ADD_FEATURE_BY_TYPE,
@@ -497,13 +497,13 @@ void rmnews_get_news()
                             "get ",
                             SOUP_SESSION_ACCEPT_LANGUAGE_AUTO,
                             TRUE,
-                            NULL );
+                            NULL ));
     /* TODO: Catch log level and set SOUP_LOGGER_LOG_MINIMAL or more */
     logger = soup_logger_new( SOUP_LOGGER_LOG_NONE, -1 );
     soup_session_add_feature( session, SOUP_SESSION_FEATURE( logger ) );
     g_object_unref( logger );
 
-    gchar *lang = remmina_utils_get_lang();
+    char *lang = remmina_utils_get_lang();
     REMMINA_DEBUG( "Language %s", lang );
 
     uid = rmnews_get_uid();
@@ -532,7 +532,7 @@ void rmnews_get_news()
     g_object_unref( session );
 }
 
-static gboolean rmnews_periodic_check( gpointer user_data )
+static int rmnews_periodic_check( gpointer user_data )
 {
     TRACE_CALL( __func__ );
     GDateTime *gdt;

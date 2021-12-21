@@ -35,9 +35,9 @@
  *
  */
 
-#include "exec_plugin_config.h"
+#include "exec_plugin_config.hpp"
 
-#include "common/remmina_plugin.h"
+#include "common/remmina_plugin.hpp"
 
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
@@ -65,9 +65,9 @@ static void cb_child_watch( GPid pid, gint status )
     g_spawn_close_pid( pid );
 }
 
-static gboolean cb_out_watch( GIOChannel *channel, GIOCondition cond, RemminaProtocolWidget *gp )
+static int cb_out_watch( GIOChannel *channel, GIOCondition cond, RemminaProtocolWidget *gp )
 {
-    gchar *string;
+    char *string;
     gsize size;
 
     RemminaPluginExecData *gpdata = GET_PLUGIN_DATA( gp );
@@ -85,9 +85,9 @@ static gboolean cb_out_watch( GIOChannel *channel, GIOCondition cond, RemminaPro
     return TRUE;
 }
 
-static gboolean cb_err_watch( GIOChannel *channel, GIOCondition cond, RemminaProtocolWidget *gp )
+static int cb_err_watch( GIOChannel *channel, GIOCondition cond, RemminaProtocolWidget *gp )
 {
-    gchar *string;
+    char *string;
     gsize size;
 
     RemminaPluginExecData *gpdata = GET_PLUGIN_DATA( gp );
@@ -131,13 +131,13 @@ static void remmina_plugin_exec_init( RemminaProtocolWidget *gp )
     gtk_widget_show_all( gpdata->sw );
 }
 
-static gboolean remmina_plugin_exec_run( RemminaProtocolWidget *gp )
+static int remmina_plugin_exec_run( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     RemminaFile *remminafile;
-    const gchar *cmd;
-    gchar *stdout_buffer;
-    gchar *stderr_buffer;
+    const char *cmd;
+    char *stdout_buffer;
+    char *stderr_buffer;
     char **argv;
     GError *error = NULL;
     GPid child_pid;
@@ -169,17 +169,18 @@ static gboolean remmina_plugin_exec_run( RemminaProtocolWidget *gp )
     if( remmina_plugin_service->file_get_int( remminafile, "runasync", FALSE ) )
     {
         REMMINA_PLUGIN_DEBUG( "[%s] Run Async", PLUGIN_NAME );
-        g_spawn_async_with_pipes( NULL,
-                                  argv,
-                                  NULL,
-                                  G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH_FROM_ENVP | G_SPAWN_SEARCH_PATH,
-                                  NULL,
-                                  NULL,
-                                  &child_pid,
-                                  NULL,
-                                  &child_stdout,
-                                  &child_stderr,
-                                  &error );
+        g_spawn_async_with_pipes(
+            NULL,
+            argv,
+            NULL,
+            static_cast<GSpawnFlags>( G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH_FROM_ENVP | G_SPAWN_SEARCH_PATH ),
+            NULL,
+            NULL,
+            &child_pid,
+            NULL,
+            &child_stdout,
+            &child_stderr,
+            &error );
         if( error != NULL )
         {
             gtk_text_buffer_set_text( gpdata->log_buffer, error->message, -1 );
@@ -193,8 +194,8 @@ static gboolean remmina_plugin_exec_run( RemminaProtocolWidget *gp )
         out_ch = g_io_channel_unix_new( child_stdout );
         err_ch = g_io_channel_unix_new( child_stderr );
         /* Add watches to channels */
-        g_io_add_watch( out_ch, G_IO_IN | G_IO_HUP, (GIOFunc)cb_out_watch, gp );
-        g_io_add_watch( err_ch, G_IO_IN | G_IO_HUP, (GIOFunc)cb_err_watch, gp );
+        g_io_add_watch( out_ch, static_cast<GIOCondition>( G_IO_IN | G_IO_HUP ), (GIOFunc)cb_out_watch, gp );
+        g_io_add_watch( err_ch, static_cast<GIOCondition>( G_IO_IN | G_IO_HUP ), (GIOFunc)cb_err_watch, gp );
     }
     else
     {
@@ -220,7 +221,7 @@ static gboolean remmina_plugin_exec_run( RemminaProtocolWidget *gp )
         g_spawn_sync( NULL, // CWD or NULL
                       argv,
                       NULL, // ENVP or NULL
-                      G_SPAWN_SEARCH_PATH | G_SPAWN_SEARCH_PATH_FROM_ENVP,
+                      static_cast<GSpawnFlags>( G_SPAWN_SEARCH_PATH | G_SPAWN_SEARCH_PATH_FROM_ENVP ),
                       NULL,
                       NULL,
                       &stdout_buffer, // STDOUT
@@ -246,7 +247,7 @@ static gboolean remmina_plugin_exec_run( RemminaProtocolWidget *gp )
     return TRUE;
 }
 
-static gboolean remmina_plugin_exec_close( RemminaProtocolWidget *gp )
+static int remmina_plugin_exec_close( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     REMMINA_PLUGIN_DEBUG( "[%s] Plugin close", PLUGIN_NAME );
@@ -265,9 +266,9 @@ static gboolean remmina_plugin_exec_close( RemminaProtocolWidget *gp )
  * g) Validation data pointer, will be passed to the validation callback method.
  * h) Validation callback method (Can be NULL. Every entry will be valid then.)
  *		use following prototype:
- *		gboolean mysetting_validator_method(gpointer key, gpointer value,
+ *		bool mysetting_validator_method(gpointer key, gpointer value,
  *						    gpointer validator_data);
- *		gpointer key is a gchar* containing the setting's name,
+ *		gpointer key is a char* containing the setting's name,
  *		gpointer value contains the value which should be validated,
  *		gpointer validator_data contains your passed data.
  */
@@ -300,18 +301,21 @@ static RemminaProtocolPlugin remmina_plugin = {
     NULL                                // RCW unmap event
 };
 
-G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
+extern "C"
 {
-    TRACE_CALL( __func__ );
-    remmina_plugin_service = service;
-
-    bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
-    bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
-
-    if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin ) )
+    G_MODULE_EXPORT int remmina_plugin_entry( RemminaPluginService *service )
     {
-        return FALSE;
-    }
+        TRACE_CALL( __func__ );
+        remmina_plugin_service = service;
 
-    return TRUE;
+        bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
+        bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
+
+        if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin ) )
+        {
+            return FALSE;
+        }
+
+        return TRUE;
+    }
 }

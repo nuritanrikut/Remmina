@@ -39,25 +39,25 @@
 #include <stdlib.h>
 
 #include "config.h"
-#include "remmina_sodium.h"
-#include "remmina.h"
-#include "remmina_exec.h"
-#include "remmina_file_manager.h"
-#include "remmina_icon.h"
-#include "remmina_main.h"
-#include "remmina_masterthread_exec.h"
-#include "remmina_plugin_manager.h"
-#include "remmina_plugin_native.h"
+#include "remmina_sodium.hpp"
+#include "remmina.hpp"
+#include "remmina_exec.hpp"
+#include "remmina_file_manager.hpp"
+#include "remmina_icon.hpp"
+#include "remmina_main.hpp"
+#include "remmina_masterthread_exec.hpp"
+#include "remmina_plugin_manager.hpp"
+#include "remmina_plugin_native.hpp"
 #ifdef WITH_PYTHONLIBS
-#    include "remmina_plugin_python.h"
+#    include "remmina_plugin_python.hpp"
 #endif
-#include "remmina_pref.h"
-#include "remmina_public.h"
-#include "remmina_sftp_plugin.h"
-#include "remmina_ssh_plugin.h"
-#include "remmina_widget_pool.h"
-#include "remmina/remmina_trace_calls.h"
-#include "rmnews.h"
+#include "remmina_pref.hpp"
+#include "remmina_public.hpp"
+#include "remmina_sftp_plugin.hpp"
+#include "remmina_ssh_plugin.hpp"
+#include "remmina_widget_pool.hpp"
+#include "remmina/remmina_trace_calls.hpp"
+#include "rmnews.hpp"
 
 #ifdef HAVE_ERRNO_H
 #    include <errno.h>
@@ -76,7 +76,7 @@ static int gcrypt_thread_initialized = 0;
 #    endif /* !GCRYPT_VERSION_NUMBER */
 #endif     /* HAVE_LIBGCRYPT */
 
-gboolean kioskmode;
+bool kioskmode;
 
 static GOptionEntry remmina_options[] = {
     // TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
@@ -165,13 +165,13 @@ static gint remmina_on_command_line( GApplication *app, GApplicationCommandLine 
     TRACE_CALL( __func__ );
 
     gint status = 0;
-    gboolean executed = FALSE;
+    bool executed = FALSE;
     GVariantDict *opts;
-    gchar *str;
-    const gchar **files;
-    const gchar **remaining_args;
-    gchar *protocol;
-    gchar *server;
+    char *str;
+    const char **files;
+    const char **remaining_args;
+    char *protocol;
+    char *server;
 
 #if SODIUM_VERSION_INT >= 90200
     remmina_sodium_init();
@@ -321,8 +321,8 @@ static gint remmina_on_local_cmdline( GApplication *app, GVariantDict *opts, gpo
     TRACE_CALL( __func__ );
 
     int status = -1;
-    gchar *str;
-    gchar **settings;
+    char *str;
+    char **settings;
 
     /* Here you handle any command line options that you want to be executed
 	 * in the local instance (the non-unique instance) */
@@ -368,7 +368,7 @@ int main( int argc, char *argv[] )
 {
     TRACE_CALL( __func__ );
     GtkApplication *app;
-    const gchar *app_id;
+    const char *app_id;
     int status;
 
     g_unsetenv( "GDK_CORE_DEVICE_EVENTS" );
@@ -424,13 +424,13 @@ int main( int argc, char *argv[] )
     remmina_plugin_manager_init();
 
     app_id = g_application_id_is_valid( REMMINA_APP_ID ) ? REMMINA_APP_ID : NULL;
-    app = gtk_application_new( app_id, G_APPLICATION_HANDLES_COMMAND_LINE | G_APPLICATION_CAN_OVERRIDE_APP_ID );
+    app = gtk_application_new( app_id, static_cast<GApplicationFlags>(G_APPLICATION_HANDLES_COMMAND_LINE | G_APPLICATION_CAN_OVERRIDE_APP_ID) );
 #if !GTK_CHECK_VERSION( 4, 0, 0 ) /* This is not needed anymore starting from GTK 4 */
     g_set_prgname( app_id );
 #endif
     g_application_add_main_option_entries( G_APPLICATION( app ), remmina_options );
 #if GLIB_CHECK_VERSION( 2, 56, 0 )
-    gchar *summary = g_strdup_printf( "%s %s", app_id, VERSION );
+    char *summary = g_strdup_printf( "%s %s", app_id, VERSION );
     g_application_set_option_context_summary( G_APPLICATION( app ), summary );
     g_free( summary );
     // TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal

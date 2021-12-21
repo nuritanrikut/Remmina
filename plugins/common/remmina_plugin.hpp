@@ -40,7 +40,7 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n-lib.h>
 #include <glib/gstdio.h>
-#include <remmina/plugin.h>
+#include <remmina/plugin.hpp>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -64,7 +64,7 @@
 #ifdef HAVE_ERRNO_H
 #    include <errno.h>
 #endif
-#include "remmina/remmina_trace_calls.h"
+#include "remmina/remmina_trace_calls.hpp"
 
 typedef void ( *PThreadCleanupFunc )( void * );
 
@@ -86,7 +86,7 @@ typedef void ( *PThreadCleanupFunc )( void * );
     { \
         gint i; \
         gint display = 0; \
-        gchar fn[200]; \
+        char fn[200]; \
         for( i = 1; i < MAX_X_DISPLAY_NUMBER; i++ ) \
         { \
             g_snprintf( fn, sizeof( fn ), X_UNIX_SOCKET, i ); \

@@ -38,7 +38,7 @@
 
 #include <glib.h>
 
-G_BEGIN_DECLS
+
 
 typedef struct _RemminaFile RemminaFile;
 
@@ -77,10 +77,9 @@ typedef struct _RemminaPluginScreenshotData
 
 typedef struct _RemminaProtocolWidgetClass RemminaProtocolWidgetClass;
 typedef struct _RemminaProtocolWidget RemminaProtocolWidget;
-typedef gpointer RemminaTunnelInitFunc;
-typedef gboolean ( *RemminaXPortTunnelInitFunc )( RemminaProtocolWidget *gp,
+typedef int ( *RemminaXPortTunnelInitFunc )( RemminaProtocolWidget *gp,
                                                   gint remotedisplay,
-                                                  const gchar *server,
+                                                  const char *server,
                                                   gint port );
 
 typedef enum
@@ -106,8 +105,8 @@ typedef enum
 typedef struct _RemminaProtocolSetting
 {
     RemminaProtocolSettingType type;
-    const gchar *name;
-    const gchar *label;
+    const char *name;
+    const char *label;
     gboolean compact;
     gpointer opt1;
     gpointer opt2;
@@ -156,4 +155,4 @@ typedef enum
 
 } RemminaMessagePanelFlags;
 
-G_END_DECLS
+

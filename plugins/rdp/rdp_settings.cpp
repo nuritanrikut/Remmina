@@ -34,13 +34,13 @@
  *
  */
 
-#include "rdp_plugin.h"
-#include "rdp_settings.h"
+#include "rdp_plugin.hpp"
+#include "rdp_settings.hpp"
 #include <freerdp/locale/keyboard.h>
 
 static guint keyboard_layout = 0;
 static guint rdp_keyboard_layout = 0;
-static gchar *rdp_keyboard_remapping_list = NULL;
+static char *rdp_keyboard_remapping_list = NULL;
 
 static void remmina_rdp_settings_kbd_init( void )
 {
@@ -57,7 +57,7 @@ static void remmina_rdp_settings_kbd_init( void )
 void remmina_rdp_settings_init( void )
 {
     TRACE_CALL( __func__ );
-    gchar *value;
+    char *value;
 
     value = remmina_plugin_service->pref_get_value( "rdp_keyboard_layout" );
 
@@ -138,7 +138,7 @@ static void remmina_rdp_settings_grid_class_init( RemminaPluginRdpsetGridClass *
 static void remmina_rdp_settings_grid_destroy( GtkWidget *widget, gpointer data )
 {
     TRACE_CALL( __func__ );
-    gchar *s;
+    char *s;
     guint new_layout;
     GtkTreeIter iter;
     RemminaPluginRdpsetGrid *grid;
@@ -216,7 +216,7 @@ static void remmina_rdp_settings_grid_load_layout( RemminaPluginRdpsetGrid *grid
 {
     TRACE_CALL( __func__ );
     gint i;
-    gchar *s;
+    char *s;
     GtkTreeIter iter;
     RDP_KEYBOARD_LAYOUT *layouts;
 
@@ -281,7 +281,7 @@ static void remmina_rdp_settings_grid_load_desktoporientation_combo( RemminaPlug
 static void remmina_rdp_settings_grid_load_quality( RemminaPluginRdpsetGrid *grid )
 {
     TRACE_CALL( __func__ );
-    gchar *value;
+    char *value;
     GtkTreeIter iter;
 
     gtk_list_store_append( grid->quality_store, &iter );
@@ -342,7 +342,7 @@ static void remmina_rdp_settings_quality_on_changed( GtkComboBox *widget, Remmin
     guint v;
     guint i = 0;
     GtkTreeIter iter;
-    gboolean sensitive;
+    bool sensitive;
 
     if( gtk_combo_box_get_active_iter( GTK_COMBO_BOX( grid->quality_combo ), &iter ) )
     {
@@ -406,7 +406,7 @@ static void remmina_rdp_settings_set_combo_active_item( GtkComboBox *combo, int 
     GtkTreeIter iter;
     int i;
     GtkTreeModel *m;
-    gboolean valid;
+    bool valid;
 
     m = gtk_combo_box_get_model( combo );
     if( !m )
@@ -425,7 +425,7 @@ static void remmina_rdp_settings_set_combo_active_item( GtkComboBox *combo, int 
 static void remmina_rdp_settings_grid_init( RemminaPluginRdpsetGrid *grid )
 {
     TRACE_CALL( __func__ );
-    gchar *s;
+    char *s;
     GtkWidget *widget;
     GtkCellRenderer *renderer;
     int desktopOrientation, desktopScaleFactor, deviceScaleFactor;
@@ -726,7 +726,7 @@ void remmina_rdp_settings_get_orientation_scale_prefs( int *desktopOrientation,
     /* See https://msdn.microsoft.com/en-us/library/cc240510.aspx */
 
     int orientation, dpsf, desf;
-    gchar *s;
+    char *s;
 
     *desktopOrientation = *desktopScaleFactor = *deviceScaleFactor = 0;
 

@@ -21,104 +21,104 @@ msgstr ""
 "X-Generator: Weblate 4.10\n"
 "X-Launchpad-Export-Date: 2014-09-20 14:24+0000\n"
 
-#: src/remmina_sftp_plugin.c:310 src/remmina_sftp_plugin.c:354
-#: src/remmina_protocol_widget.c:1677 src/remmina_protocol_widget.c:1696
-#: src/remmina_file_editor.c:1101 src/remmina_file_editor.c:1222
-#: src/remmina_ssh_plugin.c:1361 plugins/rdp/rdp_plugin.c:2760
-#: plugins/www/www_plugin.c:895 plugins/x2go/x2go_plugin.c:3198
+#: src/remmina_sftp_plugin.cpp:310 src/remmina_sftp_plugin.cpp:354
+#: src/remmina_protocol_widget.cpp:1677 src/remmina_protocol_widget.cpp:1696
+#: src/remmina_file_editor.cpp:1101 src/remmina_file_editor.cpp:1222
+#: src/remmina_ssh_plugin.cpp:1361 plugins/rdp/rdp_plugin.cpp:2760
+#: plugins/www/www_plugin.cpp:895 plugins/x2go/x2go_plugin.cpp:3198
 #: data/ui/remmina_mpc.glade:236 data/ui/remmina_preferences.glade:1646
 #: data/ui/remmina_unlock.glade:116
 #, fuzzy
 msgid "Password"
 msgstr "ಗುಪ್ತಪದ (ಪಾಸ್ ವರ್ಡ್)"
 
-#: src/remmina_sftp_plugin.c:311 src/remmina_sftp_plugin.c:356
-#: src/remmina_file_editor.c:1102 src/remmina_ssh_plugin.c:1362
-#: src/remmina_ssh_plugin.c:1473
+#: src/remmina_sftp_plugin.cpp:311 src/remmina_sftp_plugin.cpp:356
+#: src/remmina_file_editor.cpp:1102 src/remmina_ssh_plugin.cpp:1362
+#: src/remmina_ssh_plugin.cpp:1473
 #, fuzzy
 msgid "SSH identity file"
 msgstr "ಎಸ್.ಎಸ್.ಎಚ್ ಗುರುತಿನ ಫೈಲ್"
 
-#: src/remmina_sftp_plugin.c:312 src/remmina_file_editor.c:1103
-#: src/remmina_ssh_plugin.c:1363
+#: src/remmina_sftp_plugin.cpp:312 src/remmina_file_editor.cpp:1103
+#: src/remmina_ssh_plugin.cpp:1363
 #, fuzzy
 msgid "SSH agent"
 msgstr "ಎಸ್.ಎಸ್.ಎಚ್ ಏಜೆಂಟ್"
 
-#: src/remmina_sftp_plugin.c:313 src/remmina_file_editor.c:1104
-#: src/remmina_ssh_plugin.c:1364
+#: src/remmina_sftp_plugin.cpp:313 src/remmina_file_editor.cpp:1104
+#: src/remmina_ssh_plugin.cpp:1364
 #, fuzzy
 msgid "Public key (automatic)"
 msgstr "ಸಾರ್ವಜನಿಕ ಕೀಲಿ (ಸ್ವಯಂಚಾಲಿತ)"
 
-#: src/remmina_sftp_plugin.c:314 src/remmina_file_editor.c:1105
-#: src/remmina_ssh_plugin.c:1365
+#: src/remmina_sftp_plugin.cpp:314 src/remmina_file_editor.cpp:1105
+#: src/remmina_ssh_plugin.cpp:1365
 #, fuzzy
 msgid "Kerberos (GSSAPI)"
 msgstr "ಕೆರ್ಬರ್ರೋಸ್ (ಜಿಎಸ್ಎಸ್ಎಪಿಐ)"
 
-#: src/remmina_sftp_plugin.c:323
+#: src/remmina_sftp_plugin.cpp:323
 #, fuzzy
 msgid "Show Hidden Files"
 msgstr "ಹುದುಗಿಟ್ಟ ಫೈಲ್ ಗಳನ್ನು ತೋರಿಸು"
 
-#: src/remmina_sftp_plugin.c:325
+#: src/remmina_sftp_plugin.cpp:325
 msgid "Overwrite all files"
 msgstr "ತಿದ್ದಿ ಬರೆಯಿರಿ"
 
-#: src/remmina_sftp_plugin.c:327
+#: src/remmina_sftp_plugin.cpp:327
 #, fuzzy
 msgid "Resume all file transfers"
 msgstr "ಎಲ್ಲಾ ಫೈಲ್ ವರ್ಗಾವಣೆಗಳನ್ನು ಪುನರಾರಂಭಿಸಿ"
 
-#: src/remmina_sftp_plugin.c:328 src/remmina_protocol_widget.c:284
+#: src/remmina_sftp_plugin.cpp:328 src/remmina_protocol_widget.cpp:284
 #, fuzzy
 msgid "Connect via SSH from a new terminal"
 msgstr "ಹೊಸ ಟರ್ಮಿನಲ್ ನಿಂದ ಎಸ್ ಎಸ್ ಎಚ್ ಮೂಲಕ ಸಂಪರ್ಕಿಸು"
 
-#: src/remmina_sftp_plugin.c:353 src/remmina_message_panel.c:330
-#: src/remmina_file_editor.c:1216 src/remmina_ssh_plugin.c:1471
-#: plugins/rdp/rdp_plugin.c:2759 plugins/vnc/vnc_plugin.c:1997
-#: plugins/vnc/vnc_plugin.c:2009 plugins/www/www_plugin.c:894
-#: plugins/x2go/x2go_plugin.c:475 plugins/x2go/x2go_plugin.c:3197
+#: src/remmina_sftp_plugin.cpp:353 src/remmina_message_panel.cpp:330
+#: src/remmina_file_editor.cpp:1216 src/remmina_ssh_plugin.cpp:1471
+#: plugins/rdp/rdp_plugin.cpp:2759 plugins/vnc/vnc_plugin.cpp:1997
+#: plugins/vnc/vnc_plugin.cpp:2009 plugins/www/www_plugin.cpp:894
+#: plugins/x2go/x2go_plugin.cpp:475 plugins/x2go/x2go_plugin.cpp:3197
 #: data/ui/remmina_mpc.glade:144
 #, fuzzy
 msgid "Username"
 msgstr "ಬಳಕೆದಾರಹೆಸರು"
 
-#: src/remmina_sftp_plugin.c:355 src/remmina_file_editor.c:1207
-#: src/remmina_ssh_plugin.c:1470
+#: src/remmina_sftp_plugin.cpp:355 src/remmina_file_editor.cpp:1207
+#: src/remmina_ssh_plugin.cpp:1470
 #, fuzzy
 msgid "Authentication type"
 msgstr "ದೃಢೀಕರಣ ಪ್ರಕಾರ"
 
-#: src/remmina_sftp_plugin.c:357 src/remmina_file_editor.c:1240
-#: src/remmina_ssh_plugin.c:1477
+#: src/remmina_sftp_plugin.cpp:357 src/remmina_file_editor.cpp:1240
+#: src/remmina_ssh_plugin.cpp:1477
 #, fuzzy
 msgid "Password to unlock private key"
 msgstr "ಖಾಸಗಿ ಕೀಲಿಯನ್ನು ಅನ್ ಲಾಕ್ ಮಾಡಲು ಪಾಸ್ ವರ್ಡ್"
 
-#: src/remmina_sftp_plugin.c:358 src/remmina_ssh_plugin.c:1508
+#: src/remmina_sftp_plugin.cpp:358 src/remmina_ssh_plugin.cpp:1508
 #, fuzzy
 msgid "SSH Proxy Command"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಪ್ರಾಕ್ಸಿ ಆದೇಶ"
 
-#: src/remmina_sftp_plugin.c:367
+#: src/remmina_sftp_plugin.cpp:367
 #, fuzzy
 msgid "SFTP - Secure File Transfer"
 msgstr "ಎಸ್ ಎಫ್ ಟಿಪಿ - ಸುರಕ್ಷಿತ ಫೈಲ್ ವರ್ಗಾವಣೆ"
 
-#: src/remmina_log.c:129
+#: src/remmina_log.cpp:129
 #, fuzzy
 msgid "Remmina debugging window"
 msgstr "ರೆಮ್ಮಿನಾ ಮುಖ್ಯ ವಿಂಡೋ ತೆರೆಯಿರಿ"
 
-#: src/remmina_log.c:133
+#: src/remmina_log.cpp:133
 #, fuzzy
 msgid "Paste sytem info in the Remmina debugging window"
 msgstr "ರೆಮ್ಮಿನಾ ಮುಖ್ಯ ವಿಂಡೋ ತೆರೆಯಿರಿ"
 
-#: src/remmina_log.c:153
+#: src/remmina_log.cpp:153
 msgid ""
 "This window can help you find connection problems.\n"
 "You can stop and start the logging at any moment using the On/Off switch.\n"
@@ -128,166 +128,166 @@ msgid ""
 "Remmina/-/wikis/Usage/Remmina-debugging\n"
 msgstr ""
 
-#: src/remmina_plugin_manager.c:73 src/remmina_file_editor.c:1951
+#: src/remmina_plugin_manager.cpp:73 src/remmina_file_editor.cpp:1951
 #, fuzzy
 msgid "Protocol"
 msgstr "ಪ್ರೊಟೋಕಾಲ್"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Entry"
 msgstr "ನಮೂದು"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "File"
 msgstr "ಫೈಲ್"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Tool"
 msgstr "ಸಾಧನ"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Preference"
 msgstr "ಆದ್ಯತೆಗಳು"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Secret"
 msgstr "ರಹಸ್ಯ"
 
-#: src/remmina_plugin_manager.c:462 data/ui/remmina_main.glade:305
+#: src/remmina_plugin_manager.cpp:462 data/ui/remmina_main.glade:305
 #, fuzzy
 msgid "Plugins"
 msgstr "ಪ್ಲಗಿನ್ ಗಳು"
 
-#: src/remmina_plugin_manager.c:462 src/remmina_message_panel.c:452
-#: src/remmina_message_panel.c:621 src/remmina_file_editor.c:242
+#: src/remmina_plugin_manager.cpp:462 src/remmina_message_panel.cpp:452
+#: src/remmina_message_panel.cpp:621 src/remmina_file_editor.cpp:242
 #, fuzzy
 msgid "_OK"
 msgstr "_OK"
 
-#: src/remmina_plugin_manager.c:480 src/remmina_file_editor.c:1908
+#: src/remmina_plugin_manager.cpp:480 src/remmina_file_editor.cpp:1908
 #: data/ui/remmina_main.glade:442
 #, fuzzy
 msgid "Name"
 msgstr "ಹೆಸರು"
 
-#: src/remmina_plugin_manager.c:486
+#: src/remmina_plugin_manager.cpp:486
 #, fuzzy
 msgid "Type"
 msgstr "ಬಗೆ"
 
-#: src/remmina_plugin_manager.c:492
+#: src/remmina_plugin_manager.cpp:492
 #, fuzzy
 msgid "Description"
 msgstr "ವಿವರಣೆ"
 
-#: src/remmina_plugin_manager.c:498
+#: src/remmina_plugin_manager.cpp:498
 #, fuzzy
 msgid "Version"
 msgstr "ಆವೃತ್ತಿ"
 
-#: src/remmina_chat_window.c:178
+#: src/remmina_chat_window.cpp:178
 #, fuzzy, c-format
 msgid "Chat with %s"
 msgstr "[ಎಕ್ಸ್10ಎಕ್ಸ್] ಜೊತೆ ಚಾಟ್ ಮಾಡಿ"
 
-#: src/remmina_chat_window.c:230
+#: src/remmina_chat_window.cpp:230
 #, fuzzy
 msgid "_Send"
 msgstr "_Send"
 
-#: src/remmina_chat_window.c:240
+#: src/remmina_chat_window.cpp:240
 #, fuzzy
 msgid "_Clear"
 msgstr "_Clear"
 
-#: src/remmina_applet_menu_item.c:121
+#: src/remmina_applet_menu_item.cpp:121
 #, fuzzy
 msgid "Discovered"
 msgstr "ಪತ್ತೆ"
 
-#: src/remmina_applet_menu_item.c:126
+#: src/remmina_applet_menu_item.cpp:126
 #, fuzzy
 msgid "New Connection"
 msgstr "ಹೊಸ ಸಂಪರ್ಕ"
 
-#: src/remmina_key_chooser.h:38
+#: src/remmina_key_chooser.hpp:38
 #, fuzzy
 msgid "Shift+"
 msgstr "ಶಿಫ್ಟ್+"
 
-#: src/remmina_key_chooser.h:39
+#: src/remmina_key_chooser.hpp:39
 #, fuzzy
 msgid "Ctrl+"
 msgstr "ಕ್.ಟಿ.ಆರ್.ಎಲ್+"
 
-#: src/remmina_key_chooser.h:40
+#: src/remmina_key_chooser.hpp:40
 #, fuzzy
 msgid "Alt+"
 msgstr "At+"
 
-#: src/remmina_key_chooser.h:41
+#: src/remmina_key_chooser.hpp:41
 #, fuzzy
 msgid "Super+"
 msgstr "ಸೂಪರ್+"
 
-#: src/remmina_key_chooser.h:42
+#: src/remmina_key_chooser.hpp:42
 #, fuzzy
 msgid "Hyper+"
 msgstr "ಹೈಪರ್+"
 
-#: src/remmina_key_chooser.h:43
+#: src/remmina_key_chooser.hpp:43
 #, fuzzy
 msgid "Meta+"
 msgstr "ಮೆಟಾ+"
 
-#: src/remmina_key_chooser.h:44
+#: src/remmina_key_chooser.hpp:44
 #, fuzzy
 msgid "<None>"
 msgstr "<None>"
 
-#: src/remmina_pref_dialog.c:91 src/remmina_file_editor.c:528
+#: src/remmina_pref_dialog.cpp:91 src/remmina_file_editor.cpp:528
 #, fuzzy
 msgid "Resolutions"
 msgstr "ನಿರ್ಣಯಗಳು"
 
-#: src/remmina_pref_dialog.c:91 src/remmina_file_editor.c:528
+#: src/remmina_pref_dialog.cpp:91 src/remmina_file_editor.cpp:528
 #, fuzzy
 msgid "Configure the available resolutions"
 msgstr "ಲಭ್ಯವಿರುವ ನಿರ್ಣಯಗಳನ್ನು ಸಂರಚಿಸಿ"
 
-#: src/remmina_pref_dialog.c:143
+#: src/remmina_pref_dialog.cpp:143
 #, fuzzy
 msgid "Recent lists cleared."
 msgstr "ಇತ್ತೀಚಿನ ಪಟ್ಟಿಗಳನ್ನು ತೆರವುಗೊಳಿಸಲಾಗಿದೆ."
 
-#: src/remmina_pref_dialog.c:155 src/rcw.c:2028
+#: src/remmina_pref_dialog.cpp:155 src/rcw.cpp:2028
 #: data/ui/remmina_preferences.glade:169 data/ui/remmina_preferences.glade:179
 #, fuzzy
 msgid "Keystrokes"
 msgstr "ಕೀಸ್ಟ್ರೋಕ್ ಗಳು"
 
-#: src/remmina_pref_dialog.c:155
+#: src/remmina_pref_dialog.cpp:155
 #, fuzzy
 msgid "Configure the keystrokes"
 msgstr "ಕೀಸ್ಟ್ರೋಕ್ ಗಳನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಿ"
 
 #. TRANSLATORS: Do not translate libsodium, is the name of a library
-#: src/remmina_pref_dialog.c:482
+#: src/remmina_pref_dialog.cpp:482
 #, fuzzy
 msgid "libsodium >= 1.9.0 is required to use master password"
 msgstr "ಮಾಸ್ಟರ್ ಪಾಸ್ ವರ್ಡ್ ಬಳಸಲು ಲಿಬ್ಸೋಡಿಯಂ >= 1.9.0 ಅಗತ್ಯವಿದೆ"
 
-#: src/remmina_pref_dialog.c:805
+#: src/remmina_pref_dialog.cpp:805
 #, fuzzy
 msgid "Picking a terminal colouring file replaces the file: "
 msgstr "ಟರ್ಮಿನಲ್ ಕಲರಿಂಗ್ ಫೈಲ್ ಅನ್ನು ಆರಿಸುವುದು ಫೈಲ್ ಅನ್ನು ಬದಲಿಸುತ್ತದೆ: "
 
-#: src/remmina_pref_dialog.c:809
+#: src/remmina_pref_dialog.cpp:809
 #, fuzzy
 msgid ""
 "This file contains the “Custom” terminal colour scheme selectable from the "
@@ -297,12 +297,12 @@ msgstr ""
 "ಈ ಫೈಲ್ ಟರ್ಮಿನಲ್ ಸಂಪರ್ಕಗಳ \"ಸುಧಾರಿತ\" ಟ್ಯಾಬ್ ನಿಂದ ಆಯ್ಕೆ ಮಾಡಬಹುದಾದ \"ಕಸ್ಟಮ್\" ಟರ್ಮಿನಲ್ "
 "ಕಲರ್ ಸ್ಕೀಮ್ ಅನ್ನು ಒಳಗೊಂಡಿದೆ ಮತ್ತು ಸೆಟ್ಟಿಂಗ್ ಗಳಲ್ಲಿ \"ಟರ್ಮಿನಲ್\" ಟ್ಯಾಬ್ ನಲ್ಲಿ ಸಂಪಾದಿಸಬಹುದು."
 
-#: src/remmina_message_panel.c:163 data/ui/remmina_mpc.glade:46
+#: src/remmina_message_panel.cpp:163 data/ui/remmina_mpc.glade:46
 #: data/ui/remmina_unlock.glade:46
 msgid "Cancel"
 msgstr "ತ್ಯಜಿಸು"
 
-#: src/remmina_message_panel.c:199 data/ui/remmina_snap_info_dialog.glade:28
+#: src/remmina_message_panel.cpp:199 data/ui/remmina_snap_info_dialog.glade:28
 #: data/ui/remmina_string_list.glade:8 data/ui/remmina_string_list.glade:9
 #: data/ui/remmina_string_list.glade:63 data/ui/remmina_news.glade:33
 #: data/ui/remmina_preferences.glade:2593
@@ -310,204 +310,204 @@ msgstr "ತ್ಯಜಿಸು"
 msgid "Close"
 msgstr "ಮುಚ್ಚಿ"
 
-#: src/remmina_message_panel.c:260
+#: src/remmina_message_panel.cpp:260
 #, fuzzy
 msgid "Yes"
 msgstr "ಸರಿ"
 
-#: src/remmina_message_panel.c:267
+#: src/remmina_message_panel.cpp:267
 #, fuzzy
 msgid "No"
 msgstr "ಇಲ್ಲ"
 
-#: src/remmina_message_panel.c:391 plugins/rdp/rdp_plugin.c:2761
+#: src/remmina_message_panel.cpp:391 plugins/rdp/rdp_plugin.cpp:2761
 #: data/ui/remmina_mpc.glade:172
 #, fuzzy
 msgid "Domain"
 msgstr "ಡೊಮೇನ್"
 
-#: src/remmina_message_panel.c:420
+#: src/remmina_message_panel.cpp:420
 #, fuzzy
 msgid "Save password"
 msgstr "ಪಾಸ್ ವರ್ಡ್ ಉಳಿಸಿ"
 
-#: src/remmina_message_panel.c:457 src/remmina_message_panel.c:629
-#: src/remmina_sftp_client.c:947 src/remmina_file_editor.c:241
-#: src/remmina_file_editor.c:1783 plugins/spice/spice_plugin_file_transfer.c:84
+#: src/remmina_message_panel.cpp:457 src/remmina_message_panel.cpp:629
+#: src/remmina_sftp_client.cpp:947 src/remmina_file_editor.cpp:241
+#: src/remmina_file_editor.cpp:1783 plugins/spice/spice_plugin_file_transfer.cpp:84
 #: data/ui/remmina_key_chooser.glade:8 data/ui/remmina_key_chooser.glade:9
 #: data/ui/remmina_spinner.glade:8 data/ui/remmina_spinner.glade:9
 #, fuzzy
 msgid "_Cancel"
 msgstr "ರದ್ದುಗೊಳಿಸಿ (_C)"
 
-#: src/remmina_message_panel.c:513
+#: src/remmina_message_panel.cpp:513
 #, fuzzy
 msgid "Enter certificate authentication files"
 msgstr "ಪ್ರಮಾಣಪತ್ರ ದೃಢೀಕರಣ ಫೈಲ್ ಗಳನ್ನು ನಮೂದಿಸಿ"
 
-#: src/remmina_message_panel.c:525
+#: src/remmina_message_panel.cpp:525
 #, fuzzy
 msgid "CA Certificate File"
 msgstr "ಸಿಎ ಪ್ರಮಾಣಪತ್ರ ಫೈಲ್"
 
-#: src/remmina_message_panel.c:547
+#: src/remmina_message_panel.cpp:547
 #, fuzzy
 msgid "CA CRL File"
 msgstr "ಸಿಎ ಸಿಆರ್ ಎಲ್ ಫೈಲ್"
 
-#: src/remmina_message_panel.c:569
+#: src/remmina_message_panel.cpp:569
 #, fuzzy
 msgid "Client Certificate File"
 msgstr "ಕ್ಲೈಂಟ್ ಪ್ರಮಾಣಪತ್ರ ಫೈಲ್"
 
-#: src/remmina_message_panel.c:591
+#: src/remmina_message_panel.cpp:591
 #, fuzzy
 msgid "Client Certificate Key"
 msgstr "ಕ್ಲೈಂಟ್ ಪ್ರಮಾಣಪತ್ರ ಕೀಲಿ"
 
-#: src/rcw.c:655
+#: src/rcw.cpp:655
 #, fuzzy, c-format
 msgid ""
 "Are you sure you want to close %i active connections in the current window?"
 msgstr ""
 "ಪ್ರಸ್ತುತ ವಿಂಡೋದಲ್ಲಿ [ಎಕ್ಸ್31ಎಕ್ಸ್] ಸಕ್ರಿಯ ಸಂಪರ್ಕಗಳನ್ನು ಮುಚ್ಚಲು ನೀವು ಖಚಿತವಾಗಿರುವಿರಾ?"
 
-#: src/rcw.c:1399
+#: src/rcw.cpp:1399
 #, fuzzy
 msgid "Viewport fullscreen mode"
 msgstr "ಪೂರ್ಣಪರದೆ ಮೋಡ್ ವೀಕ್ಷಿಸಿ"
 
-#: src/rcw.c:1407 data/ui/remmina_preferences.glade:578
+#: src/rcw.cpp:1407 data/ui/remmina_preferences.glade:578
 #, fuzzy
 msgid "Scrolled fullscreen"
 msgstr "ಸ್ಕ್ರಾಲ್ ಮಾಡಿದ ಪೂರ್ಣಪರದೆ"
 
-#: src/rcw.c:1493
+#: src/rcw.cpp:1493
 #, fuzzy
 msgid "Keep aspect ratio when scaled"
 msgstr "ಸ್ಕೇಲ್ ಮಾಡಿದಾಗ ಆಕಾರ ಅನುಪಾತವನ್ನು ಇರಿಸಿ"
 
-#: src/rcw.c:1501
+#: src/rcw.cpp:1501
 #, fuzzy
 msgid "Fill client window when scaled"
 msgstr "ಸ್ಕೇಲ್ ಮಾಡಿದಾಗ ಕ್ಲೈಂಟ್ ವಿಂಡೋ ಭರ್ತಿ ಮಾಡಿ"
 
-#: src/rcw.c:2049
+#: src/rcw.cpp:2049
 #, fuzzy
 msgid "Send clipboard content as keystrokes"
 msgstr "ಕ್ಲಿಪ್ ಬೋರ್ಡ್ ವಿಷಯವನ್ನು ಕೀಸ್ಟ್ರೋಕ್ ಗಳಾಗಿ ಕಳುಹಿಸಿ"
 
-#: src/rcw.c:2155
+#: src/rcw.cpp:2155
 #, fuzzy
 msgid "Turn off scaling to avoid screenshot distortion."
 msgstr "ಸ್ಕ್ರೀನ್ ಶಾಟ್ ವಿರೂಪಗೊಳಿಸುವುದನ್ನು ತಪ್ಪಿಸಲು ಸ್ಕೇಲಿಂಗ್ ಆಫ್ ಮಾಡಿ."
 
-#: src/rcw.c:2215 plugins/www/www_plugin.c:855
+#: src/rcw.cpp:2215 plugins/www/www_plugin.cpp:855
 #, fuzzy
 msgid "Screenshot taken"
 msgstr "ಸ್ಕ್ರೀನ್ ಶಾಟ್ ತೆಗೆದುಕೊಳ್ಳಲಾಗಿದೆ"
 
-#: src/rcw.c:2298
+#: src/rcw.cpp:2298
 #, fuzzy
 msgid "_Menu"
 msgstr "_Menu"
 
-#: src/rcw.c:2299
+#: src/rcw.cpp:2299
 #, fuzzy
 msgid "Menu"
 msgstr "ಸಲಹಾಕಾರ"
 
-#: src/rcw.c:2308
+#: src/rcw.cpp:2308
 #, fuzzy
 msgid "Open the Remmina main window"
 msgstr "ರೆಮ್ಮಿನಾ ಮುಖ್ಯ ವಿಂಡೋ ತೆರೆಯಿರಿ"
 
-#: src/rcw.c:2318
+#: src/rcw.cpp:2318
 #, fuzzy
 msgid "Duplicate current connection"
 msgstr "ನಕಲಿ ಪ್ರಸ್ತುತ ಸಂಪರ್ಕ"
 
-#: src/rcw.c:2335
+#: src/rcw.cpp:2335
 #, fuzzy
 msgid "Resize the window to fit in remote resolution"
 msgstr "ರಿಮೋಟ್ ರೆಸಲ್ಯೂಶನ್ ನಲ್ಲಿ ಹೊಂದಿಕೊಳ್ಳಲು ವಿಂಡೋವನ್ನು ಮರುಗಾತ್ರಗೊಳಿಸಿ"
 
-#: src/rcw.c:2346
+#: src/rcw.cpp:2346
 #, fuzzy
 msgid "Toggle fullscreen mode"
 msgstr "ಪೂರ್ಣಪರದೆ ಮೋಡ್ ಅನ್ನು ಟಾಗಲ್ ಮಾಡು"
 
-#: src/rcw.c:2392 data/ui/remmina_preferences.glade:1303
+#: src/rcw.cpp:2392 data/ui/remmina_preferences.glade:1303
 #: data/ui/remmina_preferences.glade:1313
 #, fuzzy
 msgid "Multi monitor"
 msgstr "ಮಲ್ಟಿ ಮಾನಿಟರ್"
 
-#: src/rcw.c:2408
+#: src/rcw.cpp:2408
 #, fuzzy
 msgid "Toggle dynamic resolution update"
 msgstr "ಕ್ರಿಯಾತ್ಮಕ ರೆಸಲ್ಯೂಶನ್ ನವೀಕರಣವನ್ನು ಟಾಗಲ್"
 
-#: src/rcw.c:2418
+#: src/rcw.cpp:2418
 #, fuzzy
 msgid "Toggle scaled mode"
 msgstr "ಸ್ಕೇಲ್ ಮಾಡಿದ ಮೋಡ್ ಟಾಗಲ್"
 
-#: src/rcw.c:2458 data/ui/remmina_preferences.glade:1037
+#: src/rcw.cpp:2458 data/ui/remmina_preferences.glade:1037
 #, fuzzy
 msgid "Switch tab pages"
 msgstr "ಟ್ಯಾಬ್ ಪುಟಗಳನ್ನು ಬದಲಿಸು"
 
-#: src/rcw.c:2468
+#: src/rcw.cpp:2468
 #, fuzzy
 msgid "Grab all keyboard events"
 msgstr "ಎಲ್ಲಾ ಕೀಬೋರ್ಡ್ ಘಟನೆಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ"
 
-#: src/rcw.c:2478
+#: src/rcw.cpp:2478
 #, fuzzy
 msgid "Preferences"
 msgstr "ಆದ್ಯತೆಗಳು"
 
-#: src/rcw.c:2487
+#: src/rcw.cpp:2487
 #, fuzzy
 msgid "_Tools"
 msgstr "ಉಪಕರಣಗಳು (_T)"
 
-#: src/rcw.c:2488 data/ui/remmina_main.glade:207
+#: src/rcw.cpp:2488 data/ui/remmina_main.glade:207
 #, fuzzy
 msgid "Tools"
 msgstr "ಸಾಧನಗಳು"
 
-#: src/rcw.c:2501 data/ui/remmina_preferences.glade:1238
+#: src/rcw.cpp:2501 data/ui/remmina_preferences.glade:1238
 #: data/ui/remmina_preferences.glade:1248
 #, fuzzy
 msgid "Screenshot"
 msgstr "ಸ್ಕ್ರೀನ್ ಶಾಟ್"
 
-#: src/rcw.c:2515 data/ui/remmina_preferences.glade:1145
+#: src/rcw.cpp:2515 data/ui/remmina_preferences.glade:1145
 #, fuzzy
 msgid "Minimize window"
 msgstr "ವಿಂಡೋ ವನ್ನು ಕಡಿಮೆ ಮಾಡಿ"
 
-#: src/rcw.c:2525 data/ui/remmina_preferences.glade:1176
+#: src/rcw.cpp:2525 data/ui/remmina_preferences.glade:1176
 #, fuzzy
 msgid "Disconnect"
 msgstr "ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಿ"
 
-#: src/rcw.c:4298
+#: src/rcw.cpp:4298
 #, fuzzy, c-format
 msgid "The file “%s” is corrupted, unreadable, or could not be found."
 msgstr "ಫೈಲ್ \"[ಎಕ್ಸ್10ಎಕ್ಸ್]\" ಭ್ರಷ್ಟವಾಗಿದೆ, ಓದಲಾಗದು, ಅಥವಾ ಸಿಗಲಿಲ್ಲ."
 
 #. TRANSLATORS: This should be a link to the Remmina wiki page:
 #. TRANSLATORS: 'GtkSocket feature is not available'.
-#: src/rcw.c:4372
+#: src/rcw.cpp:4372
 msgid ""
 "https://gitlab.com/Remmina/Remmina/-/wikis/GtkSocket-feature-is-not-"
 "available-in-a-Wayland-session"
 msgstr ""
 
-#: src/rcw.c:4509
+#: src/rcw.cpp:4509
 #, fuzzy
 msgid ""
 "Warning: This plugin requires GtkSocket, but this feature is unavailable in "
@@ -516,7 +516,7 @@ msgstr "ಎಚ್ಚರಿಕೆ: ಈ ಪ್ಲಗ್ ಇನ್ ಗೆ ಜಿಟ
 
 #. TRANSLATORS: This should be a link to the Remmina wiki page:
 #. 'GtkSocket feature is not available'.
-#: src/rcw.c:4515
+#: src/rcw.cpp:4515
 msgid ""
 "Plugins relying on GtkSocket can't run in a Wayland session.\n"
 "For more info and a possible workaround, please visit the Remmina wiki at:\n"
@@ -525,32 +525,32 @@ msgid ""
 "available-in-a-Wayland-session"
 msgstr ""
 
-#: src/rcw.c:4529
+#: src/rcw.cpp:4529
 #, fuzzy
 msgid "Open in web browser"
 msgstr "ಮುಖ್ಯ ವಿಂಡೋ ತೆರೆಯಿರಿ"
 
-#: src/remmina_mpchange.c:234
+#: src/remmina_mpchange.cpp:234
 #, fuzzy
 msgid "The passwords do not match"
 msgstr "ಪಾಸ್ ವರ್ಡ್ ಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ"
 
-#: src/remmina_mpchange.c:244
+#: src/remmina_mpchange.cpp:244
 #, fuzzy
 msgid "Resetting passwords, please wait…"
 msgstr "ಪಾಸ್ ವರ್ಡ್ ಗಳನ್ನು ಮರುಹೊಂದಿಸುವುದು, ದಯವಿಟ್ಟು ಕಾಯಿರಿ…"
 
-#: src/remmina_mpchange.c:327
+#: src/remmina_mpchange.cpp:327
 #, fuzzy
 msgid "The multi password changer requires a secrecy plugin.\n"
 msgstr "ಮಲ್ಟಿ ಪಾಸ್ ವರ್ಡ್ ಚೇಂಜರ್ ಗೆ ರಹಸ್ಯ ಪ್ಲಗ್ ಇನ್ ಅಗತ್ಯವಿದೆ.\n"
 
-#: src/remmina_mpchange.c:330
+#: src/remmina_mpchange.cpp:330
 #, fuzzy
 msgid "The multi password changer requires a secrecy service.\n"
 msgstr "ಮಲ್ಟಿ ಪಾಸ್ ವರ್ಡ್ ಚೇಂಜರ್ ಗೆ ರಹಸ್ಯ ಸೇವೆಯ ಅಗತ್ಯವಿದೆ.\n"
 
-#: src/remmina_mpchange.c:409
+#: src/remmina_mpchange.cpp:409
 #, fuzzy, c-format
 msgid "%d password changed."
 msgid_plural "%d passwords changed."
@@ -558,13 +558,13 @@ msgstr[0] "[ಎಕ್ಸ್0ಎಕ್ಸ್] ಪಾಸ್ ವರ್ಡ್ ಬದ
 msgstr[1] ""
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:84
+#: src/remmina.cpp:84
 #, fuzzy
 msgid "Show 'About'"
 msgstr "'ಬಗ್ಗೆ' ತೋರಿಸು"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:86
+#: src/remmina.cpp:86
 #, fuzzy
 msgid ""
 "Connect either to a desktop described in a file (.remmina or a filetype "
@@ -573,13 +573,13 @@ msgstr ""
 "ಫೈಲ್ ನಲ್ಲಿ ವಿವರಿಸಲಾದ ಡೆಸ್ಕ್ ಟಾಪ್ ಗೆ (.ರೆಮ್ಮಿನಾ ಅಥವಾ ಪ್ಲಗಿನ್ ಬೆಂಬಲಿತ ಫೈಲ್ ಟೈಪ್) ಅಥವಾ "
 "ಬೆಂಬಲಿತ ಯುಆರ್ ಐ (ಆರ್ ಡಿಪಿ, ವಿಎನ್ ಸಿ, ಎಸ್ ಎಸ್ ಎಚ್ ಅಥವಾ ಸ್ಪೈಸ್) ಗೆ ಸಂಪರ್ಕಿಸಿ"
 
-#: src/remmina.c:86 src/remmina.c:88 src/remmina.c:90
+#: src/remmina.cpp:86 src/remmina.cpp:88 src/remmina.cpp:90
 #, fuzzy
 msgid "FILE"
 msgstr "ಫೈಲ್"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:88
+#: src/remmina.cpp:88
 #, fuzzy
 msgid ""
 "Connect to a desktop described in a file (.remmina or a filetype supported "
@@ -589,7 +589,7 @@ msgstr ""
 "ಬೆಂಬಲಿತವಾದ ಪ್ರಕಾರ)"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:90
+#: src/remmina.cpp:90
 #, fuzzy
 msgid ""
 "Edit desktop connection described in file (.remmina or a filetype supported "
@@ -599,89 +599,89 @@ msgstr ""
 "ಬೆಂಬಲಿತವಾದ ಪ್ರಕಾರ)"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:93
+#: src/remmina.cpp:93
 #, fuzzy
 msgid "Start in kiosk mode"
 msgstr "ಕಿಯೋಸ್ಕ್ ಮೋಡ್ ನಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:95
+#: src/remmina.cpp:95
 #, fuzzy
 msgid "Create new connection profile"
 msgstr "ಹೊಸ ಸಂಪರ್ಕ ಪ್ರೊಫೈಲ್ ರಚಿಸಿ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:97
+#: src/remmina.cpp:97
 #, fuzzy
 msgid "Show preferences"
 msgstr "ಆದ್ಯತೆಗಳನ್ನು ತೋರಿಸು"
 
-#: src/remmina.c:97
+#: src/remmina.cpp:97
 #, fuzzy
 msgid "TABINDEX"
 msgstr "TATAMಇಸಿ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:104
+#: src/remmina.cpp:104
 #, fuzzy
 msgid "Quit"
 msgstr "ತೊರೆಯಿರಿ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:106
+#: src/remmina.cpp:106
 #, fuzzy
 msgid "Use default server name (for --new)"
 msgstr "ಡೀಫಾಲ್ಟ್ ಸರ್ವರ್ ಹೆಸರು ಬಳಸಿ (--ಹೊಸದಕ್ಕೆ)"
 
-#: src/remmina.c:106
+#: src/remmina.cpp:106
 #, fuzzy
 msgid "SERVER"
 msgstr "ಸರ್ವರ್"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:108
+#: src/remmina.cpp:108
 #, fuzzy
 msgid "Use default protocol (for --new)"
 msgstr "ಡೀಫಾಲ್ಟ್ ಪ್ರೊಟೋಕಾಲ್ ಬಳಸಿ (--ಹೊಸದಕ್ಕೆ)"
 
-#: src/remmina.c:108
+#: src/remmina.cpp:108
 #, fuzzy
 msgid "PROTOCOL"
 msgstr "ಪ್ರೊಟೋಕಾಲ್"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:110
+#: src/remmina.cpp:110
 #, fuzzy
 msgid "Start in tray"
 msgstr "ಟ್ರೇನಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:112
+#: src/remmina.cpp:112
 #, fuzzy
 msgid "Show the application version"
 msgstr "ಅಪ್ಲಿಕೇಶನ್ ಆವೃತ್ತಿಯನ್ನು ತೋರಿಸು"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:114
+#: src/remmina.cpp:114
 #, fuzzy
 msgid "Show version of the application and its plugins"
 msgstr "ಅಪ್ಲಿಕೇಶನ್ ನ ಆವೃತ್ತಿ ಮತ್ತು ಅದರ ಪ್ಲಗಿನ್ ಗಳನ್ನು ತೋರಿಸು"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:116
+#: src/remmina.cpp:116
 #, fuzzy
 msgid "Modify connection profile (requires --set-option)"
 msgstr "ಸಂಪರ್ಕ ಪ್ರೊಫೈಲ್ ಮಾರ್ಪಡಿಸು (--ಸೆಟ್-ಆಯ್ಕೆ ಅಗತ್ಯವಿದೆ)"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:118
+#: src/remmina.cpp:118
 #, fuzzy
 msgid "Set one or more profile settings, to be used with --update-profile"
 msgstr ""
 "ಒಂದು ಅಥವಾ ಹೆಚ್ಚು ಪ್ರೊಫೈಲ್ ಸೆಟ್ಟಿಂಗ್ ಗಳನ್ನು ಹೊಂದಿಸಿ, ಇದನ್ನು --ನವೀಕರಣ-ಪ್ರೊಫೈಲ್ ನೊಂದಿಗೆ "
 "ಬಳಸಬೇಕು"
 
-#: src/remmina.c:119
+#: src/remmina.cpp:119
 #, fuzzy
 msgid "Encrypt a password"
 msgstr "ಪಾಸ್ ವರ್ಡ್ ಗೂಢಲಿಪೀಕರಿಸು"
@@ -690,7 +690,7 @@ msgstr "ಪಾಸ್ ವರ್ಡ್ ಗೂಢಲಿಪೀಕರಿಸು"
 #. * This link should point to a resource explaining how to get Remmina
 #. * to log more verbose statements.
 #.
-#: src/remmina.c:334
+#: src/remmina.cpp:334
 msgid ""
 "Remmina does not log all output statements. Turn on more verbose output by "
 "using \"G_MESSAGES_DEBUG=all\" as an environment variable.\n"
@@ -699,12 +699,12 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:388
+#: src/remmina.cpp:388
 #, fuzzy
 msgid "- or protocol://username:encryptedpassword@host:port"
 msgstr "- ಅಥವಾ ಪ್ರೊಟೋಕಾಲ್://ಬಳಕೆದಾರಹೆಸರು:encryptedpassword@host:ಪೋರ್ಟ್"
 
-#: src/remmina.c:391
+#: src/remmina.cpp:391
 #, fuzzy
 msgid ""
 "Examples:\n"
@@ -771,199 +771,199 @@ msgstr ""
 "ಟಿಒ/ಎಫ್ ಯು.ಎಫ್.ಯು.ರೆಮ್ಮಿನಾ --ಸೆಟ್-ಆಯ್ಕೆ ಬಳಕೆದಾರ ಹೆಸರು --ಸೆಟ್-ಆಯ್ಕೆ "
 "resolution_mode=2 --ಸೆಟ್-ಆಯ್ಕೆ ಪಾಸ್ ವರ್ಡ್\n"
 
-#: src/remmina_public.c:345
+#: src/remmina_public.cpp:345
 #, fuzzy, c-format
 msgid "Address is too long for UNIX socket_path: %s"
 msgstr "ಯುಎನ್ ಐಎಕ್ಸ್ socket_path ವಿಳಾಸವು ತುಂಬಾ ಉದ್ದವಾಗಿದೆ: [ಎಕ್ಸ್42ಎಕ್ಸ್]"
 
-#: src/remmina_public.c:355
+#: src/remmina_public.cpp:355
 #, fuzzy, c-format
 msgid "Creating UNIX socket failed: %s"
 msgstr "ಯುಎನ್ಐಎಕ್ಸ್ ಸಾಕೆಟ್ ರಚಿಸುವುದು ವಿಫಲವಾಗಿದೆ: [ಎಕ್ಸ್29ಎಕ್ಸ್]"
 
-#: src/remmina_public.c:361
+#: src/remmina_public.cpp:361
 #, fuzzy, c-format
 msgid "Connecting to UNIX socket failed: %s"
 msgstr "ಯುಎನ್ಐಎಕ್ಸ್ ಸಾಕೆಟ್ ಗೆ ಸಂಪರ್ಕಿಸುವುದು ವಿಫಲವಾಗಿದೆ: [ಎಕ್ಸ್34ಎಕ್ಸ್]"
 
-#: src/remmina_public.c:631
+#: src/remmina_public.cpp:631
 #, fuzzy
 msgid "Please enter format 'widthxheight'."
 msgstr "ದಯವಿಟ್ಟು 'ಅಗಲದ ಎತ್ತರ' ಸ್ವರೂಪ ನಮೂದಿಸಿ."
 
-#: src/remmina_public.c:653
+#: src/remmina_public.cpp:653
 #, fuzzy
 msgid "Change security settings"
 msgstr "ಭದ್ರತಾ ಸೆಟ್ಟಿಂಗ್ ಗಳನ್ನು ಬದಲಿಸಿ"
 
 #. TRANSLATORS: translator-credits should be replaced with a formatted list of translators in your own language
-#: src/remmina_about.c:54
+#: src/remmina_about.cpp:54
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Yogesh K S(ಯೋಗೇಶ್) https://launchpad.net/~yogesh-k-s"
 
-#: src/remmina_ftp_client.c:389
+#: src/remmina_ftp_client.cpp:389
 #, fuzzy
 msgid "Choose download location"
 msgstr "ಡೌನ್ ಲೋಡ್ ಸ್ಥಾನವನ್ನು ಆಯ್ಕೆಮಾಡಿ"
 
-#: src/remmina_ftp_client.c:529
+#: src/remmina_ftp_client.cpp:529
 #, fuzzy
 msgid "Are you sure to delete the selected files on server?"
 msgstr "ಸರ್ವರ್ ನಲ್ಲಿ ಆಯ್ಕೆಮಾಡಿದ ಫೈಲ್ ಗಳನ್ನು ನೀವು ಅಳಿಸುವುದು ಖಚಿತವೆ?"
 
-#: src/remmina_ftp_client.c:586
+#: src/remmina_ftp_client.cpp:586
 #, fuzzy
 msgid "Choose a file to upload"
 msgstr "ಅಪ್ ಲೋಡ್ ಮಾಡಲು ಫೈಲ್ ಆಯ್ಕೆಮಾಡಿ"
 
-#: src/remmina_ftp_client.c:593
+#: src/remmina_ftp_client.cpp:593
 #, fuzzy
 msgid "Upload folder"
 msgstr "ಫೋಲ್ಡರ್ ಅಪ್ ಲೋಡ್ ಮಾಡಿ"
 
-#: src/remmina_ftp_client.c:649 src/remmina_ftp_client.c:763
+#: src/remmina_ftp_client.cpp:649 src/remmina_ftp_client.cpp:763
 msgid "Download"
 msgstr "ಇಳಿಸು"
 
-#: src/remmina_ftp_client.c:656 src/remmina_ftp_client.c:770
+#: src/remmina_ftp_client.cpp:656 src/remmina_ftp_client.cpp:770
 #, fuzzy
 msgid "Upload"
 msgstr "ಅಪ್ ಲೋಡ್ ಮಾಡಿ"
 
-#: src/remmina_ftp_client.c:663
+#: src/remmina_ftp_client.cpp:663
 #, fuzzy
 msgid "_Delete"
 msgstr "ಅಳಿಸಿ (_D)"
 
-#: src/remmina_ftp_client.c:748
+#: src/remmina_ftp_client.cpp:748
 #, fuzzy
 msgid "Home"
 msgstr "ಮನೆ"
 
-#: src/remmina_ftp_client.c:749
+#: src/remmina_ftp_client.cpp:749
 #, fuzzy
 msgid "Go to home folder"
 msgstr "ಹೋಮ್ ಫೋಲ್ಡರ್ ಗೆ ಹೋಗಿ"
 
-#: src/remmina_ftp_client.c:753
+#: src/remmina_ftp_client.cpp:753
 #, fuzzy
 msgid "Up"
 msgstr "ಅಪ್"
 
-#: src/remmina_ftp_client.c:754
+#: src/remmina_ftp_client.cpp:754
 #, fuzzy
 msgid "Go to parent folder"
 msgstr "ಪೋಷಕ ಫೋಲ್ಡರ್ ಗೆ ಹೋಗಿ"
 
-#: src/remmina_ftp_client.c:758 plugins/rdp/rdp_plugin.c:2851
-#: plugins/vnc/vnc_plugin.c:2050
+#: src/remmina_ftp_client.cpp:758 plugins/rdp/rdp_plugin.cpp:2851
+#: plugins/vnc/vnc_plugin.cpp:2050
 #, fuzzy
 msgid "Refresh"
 msgstr "ರಿಫ್ರೆಶ್"
 
-#: src/remmina_ftp_client.c:759
+#: src/remmina_ftp_client.cpp:759
 #, fuzzy
 msgid "Refresh current folder"
 msgstr "ಪ್ರಸ್ತುತ ಫೋಲ್ಡರ್ ತಾಜಾಮಾಡಿ"
 
-#: src/remmina_ftp_client.c:764
+#: src/remmina_ftp_client.cpp:764
 #, fuzzy
 msgid "Download from server"
 msgstr "ಸರ್ವರ್ ನಿಂದ ಡೌನ್ ಲೋಡ್ ಮಾಡಿ"
 
-#: src/remmina_ftp_client.c:771
+#: src/remmina_ftp_client.cpp:771
 #, fuzzy
 msgid "Upload to server"
 msgstr "ಸರ್ವರ್ ಗೆ ಅಪ್ ಲೋಡ್ ಮಾಡಿ"
 
-#: src/remmina_ftp_client.c:775 data/ui/remmina_main.glade:197
+#: src/remmina_ftp_client.cpp:775 data/ui/remmina_main.glade:197
 #, fuzzy
 msgid "Delete"
 msgstr "ಅಳಿಸು"
 
-#: src/remmina_ftp_client.c:776
+#: src/remmina_ftp_client.cpp:776
 #, fuzzy
 msgid "Delete files on server"
 msgstr "ಸರ್ವರ್ ನಲ್ಲಿ ಫೈಲ್ ಗಳನ್ನು ಅಳಿಸು"
 
-#: src/remmina_ftp_client.c:905 src/remmina_ftp_client.c:974
+#: src/remmina_ftp_client.cpp:905 src/remmina_ftp_client.cpp:974
 #, fuzzy
 msgid "Filename"
 msgstr "ಫೈಲ್ ಹೆಸರು"
 
-#: src/remmina_ftp_client.c:918 src/remmina_ftp_client.c:1003
+#: src/remmina_ftp_client.cpp:918 src/remmina_ftp_client.cpp:1003
 #, fuzzy
 msgid "Size"
 msgstr "ಗಾತ್ರ"
 
-#: src/remmina_ftp_client.c:926
+#: src/remmina_ftp_client.cpp:926
 #, fuzzy
 msgid "User"
 msgstr "ಬಳಕೆದಾರ"
 
-#: src/remmina_ftp_client.c:932 src/remmina_file_editor.c:1933
+#: src/remmina_ftp_client.cpp:932 src/remmina_file_editor.cpp:1933
 #: data/ui/remmina_mpc.glade:115 data/ui/remmina_main.glade:464
 #, fuzzy
 msgid "Group"
 msgstr "ಸಮೂಹ"
 
-#: src/remmina_ftp_client.c:938
+#: src/remmina_ftp_client.cpp:938
 #, fuzzy
 msgid "Permission"
 msgstr "ಅನುಮತಿಗಳು"
 
-#: src/remmina_ftp_client.c:990 plugins/rdp/rdp_plugin.c:2648
+#: src/remmina_ftp_client.cpp:990 plugins/rdp/rdp_plugin.cpp:2648
 #, fuzzy
 msgid "Remote"
 msgstr "ದೂರ"
 
-#: src/remmina_ftp_client.c:997 plugins/rdp/rdp_plugin.c:2647
+#: src/remmina_ftp_client.cpp:997 plugins/rdp/rdp_plugin.cpp:2647
 #, fuzzy
 msgid "Local"
 msgstr "ಲೋಕಲ್"
 
-#: src/remmina_ftp_client.c:1011
+#: src/remmina_ftp_client.cpp:1011
 #, fuzzy
 msgid "Progress"
 msgstr "ಪ್ರಗತಿ"
 
-#: src/remmina_protocol_widget.c:291 src/remmina_ssh_plugin.c:829
-#: src/remmina_ssh_plugin.c:1446
+#: src/remmina_protocol_widget.cpp:291 src/remmina_ssh_plugin.cpp:829
+#: src/remmina_ssh_plugin.cpp:1446
 #, fuzzy
 msgid "Open SFTP transfer…"
 msgstr "ಎಸ್ ಎಫ್ ಟಿಪಿ ವರ್ಗಾವಣೆ ತೆರೆಯಿರಿ…"
 
-#: src/remmina_protocol_widget.c:320
+#: src/remmina_protocol_widget.cpp:320
 #, fuzzy
 msgid "Executing external commands…"
 msgstr "ಬಾಹ್ಯ ಆದೇಶಗಳನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸುತ್ತಿದೆ…"
 
 #. TRANSLATORS: “%s” is a placeholder for the connection profile name
-#: src/remmina_protocol_widget.c:328
+#: src/remmina_protocol_widget.cpp:328
 #, fuzzy, c-format
 msgid "Connecting to “%s”…"
 msgstr "\"[ಎಕ್ಸ್15ಎಕ್ಸ್]\"ಗೆ ಸಂಪರ್ಕಪಡಿಸುತ್ತಿದೆ…"
 
 #. TRANSLATORS: “%s” is a placeholder for an hostname or an IP address.
-#: src/remmina_protocol_widget.c:916 src/remmina_protocol_widget.c:1101
+#: src/remmina_protocol_widget.cpp:916 src/remmina_protocol_widget.cpp:1101
 #, fuzzy, c-format
 msgid "Connecting to “%s” via SSH…"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಮೂಲಕ \"[ಎಕ್ಸ್15ಎಕ್ಸ್]\" ಗೆ ಸಂಪರ್ಕಿಸುತ್ತಿದೆ…"
 
 #. TRANSLATORS: “%i” is a placeholder for a TCP port number.
-#: src/remmina_protocol_widget.c:1165
+#: src/remmina_protocol_widget.cpp:1165
 #, fuzzy, c-format
 msgid "Awaiting incoming SSH connection on port %i…"
 msgstr "ಪೋರ್ಟ್ ನಲ್ಲಿ ಒಳಬರುವ ಎಸ್ ಎಸ್ ಎಚ್ ಸಂಪರ್ಕಕ್ಕಾಗಿ ಕಾಯುತ್ತಿದೆ [ಎಕ್ಸ್41ಎಕ್ಸ್]…"
 
-#: src/remmina_protocol_widget.c:1218
+#: src/remmina_protocol_widget.cpp:1218
 #, fuzzy, c-format
 msgid "The “%s” command is not available on the SSH server."
 msgstr "\"[ಎಕ್ಸ್5ಎಕ್ಸ್]\" ಆದೇಶವು ಎಸ್ಎಸ್ಎಚ್ ಸರ್ವರ್ ನಲ್ಲಿ ಲಭ್ಯವಿಲ್ಲ."
 
-#: src/remmina_protocol_widget.c:1223
+#: src/remmina_protocol_widget.cpp:1223
 #, fuzzy, c-format
 msgid "Could not run the “%s” command on the SSH server (status = %i)."
 msgstr ""
@@ -971,221 +971,221 @@ msgstr ""
 "[ಎಕ್ಸ್59ಎಕ್ಸ್])."
 
 #. TRANSLATORS: %s is a placeholder for an error message
-#: src/remmina_protocol_widget.c:1231
+#: src/remmina_protocol_widget.cpp:1231
 #, fuzzy, c-format
 msgid "Could not run command. %s"
 msgstr "ಆದೇಶ ಚಲಾಯಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್23ಎಕ್ಸ್]"
 
 #. TRANSLATORS: “%s” is a placeholder for a hostname or IP address.
-#: src/remmina_protocol_widget.c:1301
+#: src/remmina_protocol_widget.cpp:1301
 #, fuzzy, c-format
 msgid "Connecting to %s via SSH…"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಮೂಲಕ [ಎಕ್ಸ್14ಎಕ್ಸ್] ಗೆ ಸಂಪರ್ಕಿಸುತ್ತಿದೆ…"
 
-#: src/remmina_protocol_widget.c:1695
+#: src/remmina_protocol_widget.cpp:1695
 #, fuzzy
 msgid "Type in SSH username and password."
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಬಳಕೆದಾರ ಹೆಸರು ಮತ್ತು ಪಾಸ್ ವರ್ಡ್ ನಲ್ಲಿ ಬೆರಳಚ್ಚಿಸಿ."
 
-#: src/remmina_protocol_widget.c:1750 src/remmina_protocol_widget.c:1782
+#: src/remmina_protocol_widget.cpp:1750 src/remmina_protocol_widget.cpp:1782
 #, fuzzy
 msgid "Fingerprint automatically accepted"
 msgstr "ಫಿಂಗರ್ ಪ್ರಿಂಟ್ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸ್ವೀಕರಿಸಲಾಗಿದೆ"
 
 #. TRANSLATORS: The user is asked to verify a new SSL certificate.
-#: src/remmina_protocol_widget.c:1758
+#: src/remmina_protocol_widget.cpp:1758
 #, fuzzy
 msgid "Certificate details:"
 msgstr "ಪ್ರಮಾಣಪತ್ರ ವಿವರಗಳು:"
 
 #. TRANSLATORS: An SSL certificate subject is usually the remote server the user connect to.
-#: src/remmina_protocol_widget.c:1760 src/remmina_protocol_widget.c:1792
+#: src/remmina_protocol_widget.cpp:1760 src/remmina_protocol_widget.cpp:1792
 #, fuzzy
 msgid "Subject:"
 msgstr "ವಿಷಯ:"
 
 #. TRANSLATORS: The name or email of the entity that have issued the SSL certificate
-#: src/remmina_protocol_widget.c:1762 src/remmina_protocol_widget.c:1794
+#: src/remmina_protocol_widget.cpp:1762 src/remmina_protocol_widget.cpp:1794
 #, fuzzy
 msgid "Issuer:"
 msgstr "ವಿತರಕ:"
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1764
+#: src/remmina_protocol_widget.cpp:1764
 #, fuzzy
 msgid "Fingerprint:"
 msgstr "ಫಿಂಗರ್ ಪ್ರಿಂಟ್:"
 
 #. TRANSLATORS: The user is asked to accept or refuse a new SSL certificate.
-#: src/remmina_protocol_widget.c:1766
+#: src/remmina_protocol_widget.cpp:1766
 #, fuzzy
 msgid "Accept certificate?"
 msgstr "ಪ್ರಮಾಣಪತ್ರ ಸ್ವೀಕರಿಸಬೇಕೆ?"
 
 #. TRANSLATORS: The user is asked to verify a new SSL certificate.
-#: src/remmina_protocol_widget.c:1790
+#: src/remmina_protocol_widget.cpp:1790
 #, fuzzy
 msgid "The certificate changed! Details:"
 msgstr "ಪ್ರಮಾಣಪತ್ರ ಬದಲಾಯಿತು! ವಿವರಗಳು:"
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1796
+#: src/remmina_protocol_widget.cpp:1796
 #, fuzzy
 msgid "Old fingerprint:"
 msgstr "ಹಳೆಯ ಫಿಂಗರ್ ಪ್ರಿಂಟ್:"
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1798
+#: src/remmina_protocol_widget.cpp:1798
 #, fuzzy
 msgid "New fingerprint:"
 msgstr "ಹೊಸ ಫಿಂಗರ್ ಪ್ರಿಂಟ್:"
 
 #. TRANSLATORS: The user is asked to accept or refuse a new SSL certificate.
-#: src/remmina_protocol_widget.c:1800
+#: src/remmina_protocol_widget.cpp:1800
 #, fuzzy
 msgid "Accept changed certificate?"
 msgstr "ಬದಲಾದ ಪ್ರಮಾಣಪತ್ರ ವನ್ನು ಸ್ವೀಕರಿಸಬೇಕೆ?"
 
 #. TRANSLATORS: “%i” is a placeholder for a port number. “%s”  is a placeholder for a protocol name (VNC).
-#: src/remmina_protocol_widget.c:1943
+#: src/remmina_protocol_widget.cpp:1943
 #, fuzzy, c-format
 msgid "Listening on port %i for an incoming %s connection…"
 msgstr "ಒಳಬರುವ [ಎಕ್ಸ್37ಎಕ್ಸ್] ಸಂಪರ್ಕಕ್ಕಾಗಿ ಪೋರ್ಟ್ [ಎಕ್ಸ್18ಎಕ್ಸ್] ನಲ್ಲಿ ಕೇಳುತ್ತಿದೆ…"
 
-#: src/remmina_protocol_widget.c:1968
+#: src/remmina_protocol_widget.cpp:1968
 #, fuzzy
 msgid "Could not authenticate, attempting reconnection…"
 msgstr "ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ, ಮರುಸಂಪರ್ಕ ಪ್ರಯತ್ನಿಸಲು…"
 
-#: src/remmina_protocol_widget.c:2030 src/remmina_file_editor.c:436
-#: src/remmina_file_editor.c:1172 data/ui/remmina_main.glade:478
+#: src/remmina_protocol_widget.cpp:2030 src/remmina_file_editor.cpp:436
+#: src/remmina_file_editor.cpp:1172 data/ui/remmina_main.glade:478
 #, fuzzy
 msgid "Server"
 msgstr "ಸರ್ವರ್"
 
 #. TRANSLATORS: “%s” is a placeholder for a protocol name, like “RDP”.
-#: src/remmina_protocol_widget.c:2048
+#: src/remmina_protocol_widget.cpp:2048
 #, fuzzy, c-format
 msgid "Install the %s protocol plugin first."
 msgstr "ಮೊದಲು [ಎಕ್ಸ್12ಎಕ್ಸ್] ಪ್ರೊಟೋಕಾಲ್ ಪ್ಲಗಿನ್ ಅನ್ನು ಸ್ಥಾಪಿಸಿ."
 
-#: src/remmina_ssh.c:236
+#: src/remmina_ssh.cpp:236
 #, fuzzy, c-format
 msgid "Could not authenticate with TOTP/OTP/2FA. %s"
 msgstr "TTP/ಒಟಿಪಿ/2ಎಫ್ ಎ ಜೊತೆ ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್42ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:295 src/remmina_ssh.c:676
+#: src/remmina_ssh.cpp:295 src/remmina_ssh.cpp:676
 #, fuzzy, c-format
 msgid "Could not authenticate with SSH password. %s"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಪಾಸ್ ವರ್ಡ್ ನೊಂದಿಗೆ ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್42ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:322 src/remmina_ssh.c:389
+#: src/remmina_ssh.cpp:322 src/remmina_ssh.cpp:389
 #, fuzzy
 msgid "No saved SSH passphrase supplied. Asking user to enter it."
 msgstr ""
 "ಉಳಿಸಿದ ಎಸ್ ಎಸ್ ಎಚ್ ಪಾಸ್ ಫ್ರೇಸ್ ಪೂರೈಸಿಲ್ಲ. ಅದನ್ನು ನಮೂದಿಸುವಂತೆ ಬಳಕೆದಾರನಿಗೆ ಕೇಳುವುದು."
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:327 src/remmina_ssh.c:368 src/remmina_ssh.c:394
-#: src/remmina_ssh.c:433 src/remmina_ssh.c:746
+#: src/remmina_ssh.cpp:327 src/remmina_ssh.cpp:368 src/remmina_ssh.cpp:394
+#: src/remmina_ssh.cpp:433 src/remmina_ssh.cpp:746
 #, fuzzy, c-format
 msgid "Could not authenticate with public SSH key. %s"
 msgstr "ಸಾರ್ವಜನಿಕ ಎಸ್ ಎಸ್ ಎಚ್ ಕೀಲಿಯೊಂದಿಗೆ ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್44ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:336
+#: src/remmina_ssh.cpp:336
 #, fuzzy, c-format
 msgid "SSH certificate cannot be imported. %s"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಪ್ರಮಾಣಪತ್ರವನ್ನು ಆಮದು ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ. [ಎಕ್ಸ್36ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:345
+#: src/remmina_ssh.cpp:345
 #, fuzzy, c-format
 msgid "SSH certificate cannot be copied into the private SSH key. %s"
 msgstr ""
 "ಎಸ್ ಎಸ್ ಎಚ್ ಪ್ರಮಾಣಪತ್ರವನ್ನು ಖಾಸಗಿ ಎಸ್ ಎಸ್ ಎಚ್ ಕೀಲಿಯಲ್ಲಿ ನಕಲು ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ. [ಎಕ್ಸ್59ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:355
+#: src/remmina_ssh.cpp:355
 #, fuzzy, c-format
 msgid "Could not authenticate using SSH certificate. %s"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಪ್ರಮಾಣಪತ್ರ ಬಳಸಿ ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್46ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:369
+#: src/remmina_ssh.cpp:369
 #, fuzzy
 msgid "SSH identity file not selected."
 msgstr "ಎಸ್ಎಸ್ಎಚ್ ಗುರುತಿನ ಫೈಲ್ ಆಯ್ಕೆಯಾಗಿಲ್ಲ."
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:380
+#: src/remmina_ssh.cpp:380
 #, fuzzy, c-format
 msgid "Public SSH key cannot be imported. %s"
 msgstr "ಸಾರ್ವಜನಿಕ ಎಸ್ ಎಸ್ ಎಚ್ ಕೀಲಿಯನ್ನು ಆಮದು ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ. [ಎಕ್ಸ್35ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:478
+#: src/remmina_ssh.cpp:478
 #, fuzzy, c-format
 msgid "Could not authenticate automatically with public SSH key. %s"
 msgstr ""
 "ಸಾರ್ವಜನಿಕ ಎಸ್ ಎಸ್ ಎಚ್ ಕೀಲಿಯೊಂದಿಗೆ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. "
 "[ಎಕ್ಸ್58ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:523
+#: src/remmina_ssh.cpp:523
 #, fuzzy, c-format
 msgid "Could not authenticate automatically with SSH agent. %s"
 msgstr ""
 "ಎಸ್ ಎಸ್ ಎಚ್ ಏಜೆಂಟ್ ನೊಂದಿಗೆ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್53ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:569 src/remmina_ssh.c:856
+#: src/remmina_ssh.cpp:569 src/remmina_ssh.cpp:856
 #, fuzzy, c-format
 msgid "Could not authenticate with SSH GSSAPI/Kerberos. %s"
 msgstr ""
 "ಎಸ್ ಎಸ್ ಎಚ್ ಜಿಎಸ್ಎಸ್ಎಪಿಐ/ಕೆರ್ಬರ್ರೋಸ್ ಅವರೊಂದಿಗೆ ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್49ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:598
+#: src/remmina_ssh.cpp:598
 #, fuzzy
 msgid "The public SSH key changed!"
 msgstr "ಸಾರ್ವಜನಿಕ ಎಸ್ ಎಸ್ ಎಚ್ ಕೀಲಿ ಬದಲಾಗಿದೆ!"
 
-#: src/remmina_ssh.c:711
+#: src/remmina_ssh.cpp:711
 #, fuzzy, c-format
 msgid "Could not authenticate with keyboard-interactive. %s"
 msgstr "ಕೀಲಿಮಣೆ-ಸಂವಾದಾತ್ಮಕದೊಂದಿಗೆ ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್50ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:813
+#: src/remmina_ssh.cpp:813
 #, fuzzy, c-format
 msgid "Could not authenticate with automatic public SSH key. %s"
 msgstr ""
 "ಸ್ವಯಂಚಾಲಿತ ಸಾರ್ವಜನಿಕ ಎಸ್ಎಸ್ಎಚ್ ಕೀಲಿಯೊಂದಿಗೆ ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್54ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:921
+#: src/remmina_ssh.cpp:921
 #, fuzzy, c-format
 msgid "Could not fetch the server's public SSH key. %s"
 msgstr "ಸರ್ವರ್ ನ ಸಾರ್ವಜನಿಕ ಎಸ್ ಎಸ್ ಎಚ್ ಕೀಲಿಯನ್ನು ತರಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್45ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:928
+#: src/remmina_ssh.cpp:928
 #, fuzzy, c-format
 msgid "Could not fetch public SSH key. %s"
 msgstr "ಸಾರ್ವಜನಿಕ ಎಸ್ ಎಸ್ ಎಚ್ ಕೀಲಿಯನ್ನು ತರಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್32ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:936
+#: src/remmina_ssh.cpp:936
 #, fuzzy, c-format
 msgid "Could not fetch checksum of the public SSH key. %s"
 msgstr "ಸಾರ್ವಜನಿಕ ಎಸ್ ಎಸ್ ಎಚ್ ಕೀಲಿಯ ಚೆಕ್ ಸಮ್ ಅನ್ನು ಪಡೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್48ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:949
+#: src/remmina_ssh.cpp:949
 #, fuzzy
 msgid "The server is unknown. The public key fingerprint is:"
 msgstr "ಸರ್ವರ್ ತಿಳಿದಿಲ್ಲ. ಸಾರ್ವಜನಿಕ ಕೀ ಫಿಂಗರ್ ಪ್ರಿಂಟ್ ಹೀಗಿದೆ:"
 
-#: src/remmina_ssh.c:951 src/remmina_ssh.c:957
+#: src/remmina_ssh.cpp:951 src/remmina_ssh.cpp:957
 #, fuzzy
 msgid "Do you trust the new public key?"
 msgstr "ಹೊಸ ಸಾರ್ವಜನಿಕ ಕೀಲಿಯನ್ನು ನೀವು ನಂಬುತ್ತೀರಾ?"
 
-#: src/remmina_ssh.c:954
+#: src/remmina_ssh.cpp:954
 #, fuzzy
 msgid ""
 "Warning: The server has changed its public key. This means you are either "
@@ -1197,196 +1197,196 @@ msgstr ""
 "ಅಥವಾ ನಿರ್ವಾಹಕನು ಕೀಲಿಯನ್ನು ಬದಲಾಯಿಸಿದನು. ಹೊಸ ಸಾರ್ವಜನಿಕ ಕೀ ಫಿಂಗರ್ ಪ್ರಿಂಟ್ ಹೀಗಿದೆ:"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:979
+#: src/remmina_ssh.cpp:979
 #, fuzzy, c-format
 msgid "Could not check list of known SSH hosts. %s"
 msgstr "ತಿಳಿದಿರುವ ಎಸ್ ಎಸ್ ಎಚ್ ಆತಿಥೇಯರ ಪಟ್ಟಿಯನ್ನು ಪರಿಶೀಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್41ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:988
+#: src/remmina_ssh.cpp:988
 #, fuzzy
 msgid "SSH password"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಪಾಸ್ ವರ್ಡ್"
 
-#: src/remmina_ssh.c:995 src/remmina_ssh.c:1039
+#: src/remmina_ssh.cpp:995 src/remmina_ssh.cpp:1039
 #, fuzzy
 msgid "SSH private key passphrase"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಖಾಸಗಿ ಕೀ ಪಾಸ್ ಫ್ರೇಸ್"
 
-#: src/remmina_ssh.c:1000
+#: src/remmina_ssh.cpp:1000
 #, fuzzy
 msgid "SSH Kerberos/GSSAPI"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಕೆರ್ಬರ್ರೋಸ್/ಜಿಎಸ್ಎಸ್ಎಪಿಐ"
 
-#: src/remmina_ssh.c:1005
+#: src/remmina_ssh.cpp:1005
 #, fuzzy
 msgid "Enter TOTP/OTP/2FA code"
 msgstr "TTP/ಒಟಿಪಿ/2ಎಫ್ ಎ ಕೋಡ್ ನಮೂದಿಸಿ"
 
-#: src/remmina_ssh.c:1035 src/remmina_ssh.c:1061
+#: src/remmina_ssh.cpp:1035 src/remmina_ssh.cpp:1061
 #, fuzzy
 msgid "SSH tunnel credentials"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಸುರಂಗ ರುಜುವಾತುಗಳು"
 
-#: src/remmina_ssh.c:1035 src/remmina_ssh.c:1061
+#: src/remmina_ssh.cpp:1035 src/remmina_ssh.cpp:1061
 #, fuzzy
 msgid "SSH credentials"
 msgstr "ಎಸ್.ಎಸ್.ಎಚ್ ರುಜುವಾತುಗಳು"
 
-#: src/remmina_ssh.c:1112
+#: src/remmina_ssh.cpp:1112
 #, fuzzy
 msgid "Keyboard interactive login, TOTP/OTP/2FA"
 msgstr "ಕೀಬೋರ್ಡ್ ಸಂವಾದಾತ್ಮಕ ಲಾಗಿನ್, ಟಿಒಟಿಪಿ/ಒಟಿಪಿ/2ಎಫ್ ಎ"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1337
+#: src/remmina_ssh.cpp:1337
 #, fuzzy, c-format
 msgid "Could not start SSH session. %s"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಸೆಷನ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್29ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1735
+#: src/remmina_ssh.cpp:1735
 #, fuzzy, c-format
 msgid "Could not create channel. %s"
 msgstr "ಚಾನಲ್ ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್26ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1746
+#: src/remmina_ssh.cpp:1746
 #, fuzzy, c-format
 msgid "Could not connect to SSH tunnel. %s"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಸುರಂಗಕ್ಕೆ ಸಂಪರ್ಕ ಸಾಧಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್33ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1816 src/remmina_ssh.c:1837 src/remmina_ssh.c:1846
+#: src/remmina_ssh.cpp:1816 src/remmina_ssh.cpp:1837 src/remmina_ssh.cpp:1846
 #, fuzzy, c-format
 msgid "Could not request port forwarding. %s"
 msgstr "ಪೋರ್ಟ್ ಫಾರ್ವರ್ಡ್ ಮಾಡಲು ವಿನಂತಿಸಲಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್35ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:1876
+#: src/remmina_ssh.cpp:1876
 #, fuzzy
 msgid "The server did not respond."
 msgstr "ಸರ್ವರ್ ಪ್ರತಿಕ್ರಿಯಿಸಲಿಲ್ಲ."
 
-#: src/remmina_ssh.c:1916
+#: src/remmina_ssh.cpp:1916
 #, fuzzy, c-format
 msgid "Cannot connect to local port %i."
 msgstr "ಸ್ಥಳೀಯ ಪೋರ್ಟ್ [ಎಕ್ಸ್29ಎಕ್ಸ್] ಗೆ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ."
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1965
+#: src/remmina_ssh.cpp:1965
 #, fuzzy, c-format
 msgid "Could not write to SSH channel. %s"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಚಾನೆಲ್ ಗೆ ಬರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್32ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1972
+#: src/remmina_ssh.cpp:1972
 #, fuzzy, c-format
 msgid "Could not read from tunnel listening socket. %s"
 msgstr "ಸುರಂಗ ಆಲಿಸುವ ಸಾಕೆಟ್ ನಿಂದ ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್45ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1992
+#: src/remmina_ssh.cpp:1992
 #, fuzzy, c-format
 msgid "Could not poll SSH channel. %s"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಚಾನೆಲ್ ಅನ್ನು ಪೋಲ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್28ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1999
+#: src/remmina_ssh.cpp:1999
 #, fuzzy, c-format
 msgid "Could not read SSH channel in a non-blocking way. %s"
 msgstr "ತಡೆರಹಿತ ರೀತಿಯಲ್ಲಿ ಎಸ್ ಎಸ್ ಎಚ್ ಚಾನೆಲ್ ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್50ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2018
+#: src/remmina_ssh.cpp:2018
 #, fuzzy, c-format
 msgid "Could not send data to tunnel listening socket. %s"
 msgstr "ಸುರಂಗ ಆಲಿಸುವ ಸಾಕೆಟ್ ಗೆ ಡೇಟಾವನ್ನು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್48ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:2120
+#: src/remmina_ssh.cpp:2120
 #, fuzzy
 msgid "Assign a destination port."
 msgstr "ಗಮ್ಯಸ್ಥಾನ ಬಂದರನ್ನು ನಿಯೋಜಿಸಿ."
 
-#: src/remmina_ssh.c:2127
+#: src/remmina_ssh.cpp:2127
 #, fuzzy
 msgid "Could not create socket."
 msgstr "ಸಾಕೆಟ್ ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
-#: src/remmina_ssh.c:2137
+#: src/remmina_ssh.cpp:2137
 #, fuzzy
 msgid "Could not bind server socket to local port."
 msgstr "ಸರ್ವರ್ ಸಾಕೆಟ್ ಅನ್ನು ಸ್ಥಳೀಯ ಪೋರ್ಟ್ ಗೆ ಬಂಧಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
-#: src/remmina_ssh.c:2143
+#: src/remmina_ssh.cpp:2143
 #, fuzzy
 msgid "Could not listen to local port."
 msgstr "ಸ್ಥಳೀಯ ಬಂದರನ್ನು ಕೇಳಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
 #. TRANSLATORS: Do not translate pthread
-#: src/remmina_ssh.c:2153 src/remmina_ssh.c:2170 src/remmina_ssh.c:2188
+#: src/remmina_ssh.cpp:2153 src/remmina_ssh.cpp:2170 src/remmina_ssh.cpp:2188
 #, fuzzy
 msgid "Could not start pthread."
 msgstr "ಪ್ಥ್ರೆಡ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2280
+#: src/remmina_ssh.cpp:2280
 #, fuzzy, c-format
 msgid "Could not create SFTP session. %s"
 msgstr "ಎಸ್ ಎಫ್ ಟಿಪಿ ಸೆಷನ್ ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್31ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2285
+#: src/remmina_ssh.cpp:2285
 #, fuzzy, c-format
 msgid "Could not start SFTP session. %s"
 msgstr "ಎಸ್ ಎಫ್ ಟಿಪಿ ಸೆಷನ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್30ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2379
+#: src/remmina_ssh.cpp:2379
 #, fuzzy, c-format
 msgid "Could not open channel. %s"
 msgstr "ಚಾನಲ್ ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್24ಎಕ್ಸ್]"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2394
+#: src/remmina_ssh.cpp:2394
 #, fuzzy, c-format
 msgid "Could not request shell. %s"
 msgstr "ಶೆಲ್ ಅನ್ನು ವಿನಂತಿಸಲಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್25ಎಕ್ಸ್]"
 
-#: src/remmina_ssh.c:2523
+#: src/remmina_ssh.cpp:2523
 #, fuzzy
 msgid "Could not create PTY device."
 msgstr "PTವೈ ಸಾಧನವನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
-#: src/remmina_exec.c:478
+#: src/remmina_exec.cpp:478
 #, fuzzy, c-format
 msgid "Plugin %s is not registered."
 msgstr "ಪ್ಲಗಿನ್ [ಎಕ್ಸ್7ಎಕ್ಸ್] ನೋಂದಣಿಯಾಗಿಲ್ಲ."
 
-#: src/remmina_main.c:685
+#: src/remmina_main.cpp:685
 #, fuzzy
 msgid "The latest successful connection attempt, or a pre-computed date"
 msgstr "ಇತ್ತೀಚಿನ ಯಶಸ್ವಿ ಸಂಪರ್ಕ ಪ್ರಯತ್ನ, ಅಥವಾ ಮೊದಲೇ ಲೆಕ್ಕಹಾಕಿದ ದಿನಾಂಕ"
 
-#: src/remmina_main.c:687
+#: src/remmina_main.cpp:687
 #, c-format
 msgid "Total %i item."
 msgid_plural "Total %i items."
 msgstr[0] "ಒಟ್ಟು %i ವಸ್ತುಗಳು"
 msgstr[1] "ಒಟ್ಟು %i ವಸ್ತುಗಳು"
 
-#: src/remmina_main.c:695
+#: src/remmina_main.cpp:695
 msgid "Network status: fully online"
 msgstr ""
 
-#: src/remmina_main.c:698
+#: src/remmina_main.cpp:698
 msgid "Network status: offline"
 msgstr ""
 
-#: src/remmina_main.c:902
+#: src/remmina_main.cpp:902
 #, fuzzy, c-format
 msgid "Are you sure you want to delete “%s”?"
 msgstr "ನೀವು ಖಚಿತವಾಗಿಯೂ \"%s\" ಅನ್ನು ಅಳಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
-#: src/remmina_main.c:1026
+#: src/remmina_main.cpp:1026
 #, c-format
 msgid ""
 "Unable to import:\n"
@@ -1395,112 +1395,112 @@ msgstr ""
 "ಆಮದು ಮಾಡಲಾಗುತ್ತಿಲ್ಲ:\n"
 "%s"
 
-#: src/remmina_main.c:1052 data/ui/remmina_main.glade:285
+#: src/remmina_main.cpp:1052 data/ui/remmina_main.glade:285
 msgid "Import"
 msgstr "ಆಮದು ಮಾಡು"
 
-#: src/remmina_main.c:1075 src/remmina_file_editor.c:1791
+#: src/remmina_main.cpp:1075 src/remmina_file_editor.cpp:1791
 #, fuzzy
 msgid "_Save"
 msgstr "ಉಳಿಸಿ (_S)"
 
-#: src/remmina_main.c:1081
+#: src/remmina_main.cpp:1081
 msgid "This protocol does not support exporting."
 msgstr "ಈ ಪ್ರೊಟೋಕೊಲ್ ನಿರ್ಯಾತಮಾಡಲು ಸಪೋರ್ಟ್ ಮಾಡುವುದಿಲ್ಲ"
 
-#: src/remmina_main.c:1401
+#: src/remmina_main.cpp:1401
 msgid "Remmina Remote Desktop Client"
 msgstr "ರೆಮ್ಮಿನ ದೂರದ ಗಣಕತೆರೆ"
 
-#: src/remmina_main.c:1403
+#: src/remmina_main.cpp:1403
 #, fuzzy
 msgid "Remmina Kiosk"
 msgstr "ರೆಮ್ಮಿನಾ ಕಿಯೋಸ್ಕ್"
 
 #. TRANSLATORS: The placeholder %s is a directory path
-#: src/remmina_sftp_client.c:173
+#: src/remmina_sftp_client.cpp:173
 #, fuzzy, c-format
 msgid "Could not create the folder “%s”."
 msgstr "ಫೋಲ್ಡರ್ ಅನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ \"[ಎಕ್ಸ್29ಎಕ್ಸ್]\"."
 
 #. TRANSLATORS: The placeholder %s is a file path
-#: src/remmina_sftp_client.c:181 src/remmina_sftp_client.c:202
+#: src/remmina_sftp_client.cpp:181 src/remmina_sftp_client.cpp:202
 #, fuzzy, c-format
 msgid "Could not create the file “%s”."
 msgstr "ಫೈಲ್ ಅನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ \"[ಎಕ್ಸ್ 27ಎಕ್ಸ್]\"."
 
 #. TRANSLATORS: The placeholders %s are a file path, and an error message.
-#: src/remmina_sftp_client.c:220
+#: src/remmina_sftp_client.cpp:220
 #, fuzzy, c-format
 msgid "Could not open the file “%s” on the server. %s"
 msgstr "ಸರ್ವರ್ ನಲ್ಲಿ ಫೈಲ್ \"[ಎಕ್ಸ್ 25ಎಕ್ಸ್]\" ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್44ಎಕ್ಸ್]"
 
-#: src/remmina_sftp_client.c:242
+#: src/remmina_sftp_client.cpp:242
 #, fuzzy, c-format
 msgid "Could not save the file “%s”."
 msgstr "ಫೈಲ್ ಅನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ \"[ಎಕ್ಸ್ 25ಎಕ್ಸ್]\"."
 
-#: src/remmina_sftp_client.c:281 src/remmina_sftp_client.c:698
-#: src/remmina_sftp_client.c:761
+#: src/remmina_sftp_client.cpp:281 src/remmina_sftp_client.cpp:698
+#: src/remmina_sftp_client.cpp:761
 #, fuzzy, c-format
 msgid "Could not open the folder “%s”. %s"
 msgstr "ಫೋಲ್ಡರ್ ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ \"[ಎಕ್ಸ್27ಎಕ್ಸ್]\". [ಎಕ್ಸ್32ಎಕ್ಸ್]"
 
-#: src/remmina_sftp_client.c:385
+#: src/remmina_sftp_client.cpp:385
 #, fuzzy, c-format
 msgid "Could not create the folder “%s” on the server. %s"
 msgstr "ಸರ್ವರ್ ನಲ್ಲಿ \"[ಎಕ್ಸ್29ಎಕ್ಸ್]\" ಫೋಲ್ಡರ್ ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್48ಎಕ್ಸ್]"
 
-#: src/remmina_sftp_client.c:413 src/remmina_sftp_client.c:435
+#: src/remmina_sftp_client.cpp:413 src/remmina_sftp_client.cpp:435
 #, fuzzy, c-format
 msgid "Could not create the file “%s” on the server. %s"
 msgstr "ಸರ್ವರ್ ನಲ್ಲಿ \"[ಎಕ್ಸ್ 27ಎಕ್ಸ್]\" ಫೈಲ್ ಅನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್46ಎಕ್ಸ್]"
 
-#: src/remmina_sftp_client.c:456
+#: src/remmina_sftp_client.cpp:456
 #, fuzzy, c-format
 msgid "Could not open the file “%s”."
 msgstr "ಫೈಲ್ ಅನ್ನು ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ \"[ಎಕ್ಸ್ 25ಎಕ್ಸ್]\"."
 
-#: src/remmina_sftp_client.c:476
+#: src/remmina_sftp_client.cpp:476
 #, fuzzy, c-format
 msgid "Could not write to the file “%s” on the server. %s"
 msgstr "ಸರ್ವರ್ ನಲ್ಲಿರುವ ಫೈಲ್ ಗೆ \"[ಎಕ್ಸ್ 29ಎಕ್ಸ್]\" ಬರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್48ಎಕ್ಸ್]"
 
-#: src/remmina_sftp_client.c:716
+#: src/remmina_sftp_client.cpp:716
 #, fuzzy, c-format
 msgid "Could not read from the folder. %s"
 msgstr "ಫೋಲ್ಡರ್ ನಿಂದ ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್32ಎಕ್ಸ್]"
 
-#: src/remmina_sftp_client.c:823
+#: src/remmina_sftp_client.cpp:823
 #, fuzzy
 msgid "Are you sure you want to cancel the file transfer in progress?"
 msgstr "ನೀವು ಖಚಿತವಾಗಿ ಫೈಲ್ ವರ್ಗಾವಣೆಯನ್ನು ರದ್ದುಮಾಡಲು ಬಯಸುತ್ತೀರಾ?"
 
-#: src/remmina_sftp_client.c:857
+#: src/remmina_sftp_client.cpp:857
 #, fuzzy, c-format
 msgid "Could not delete “%s”. %s"
 msgstr "\"[ಎಕ್ಸ್18ಎಕ್ಸ್]] ಅಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್23ಎಕ್ಸ್]"
 
-#: src/remmina_sftp_client.c:942
+#: src/remmina_sftp_client.cpp:942
 #, fuzzy
 msgid "The file exists already"
 msgstr "ಫೈಲ್ ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ"
 
-#: src/remmina_sftp_client.c:945
+#: src/remmina_sftp_client.cpp:945
 #, fuzzy
 msgid "Resume"
 msgstr "ಮುಂದುವರಿಸಿ"
 
-#: src/remmina_sftp_client.c:946
+#: src/remmina_sftp_client.cpp:946
 msgid "Overwrite"
 msgstr "ತಿದ್ದಿ ಬರೆಯಿರಿ"
 
-#: src/remmina_sftp_client.c:964
+#: src/remmina_sftp_client.cpp:964
 #, fuzzy
 msgid "The following file already exists in the target folder:"
 msgstr "ಈ ಕೆಳಗಿನ ಫೈಲ್ ಈಗಾಗಲೇ ಟಾರ್ಗೆಟ್ ಫೋಲ್ಡರ್ ನಲ್ಲಿ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ:"
 
-#: src/remmina_file_editor.c:61
+#: src/remmina_file_editor.cpp:61
 #, fuzzy
 msgid ""
 "<big>Supported formats\n"
@@ -1517,7 +1517,7 @@ msgstr ""
 "• ಐಡಿ:ಪುನರಾವರ್ತಿತ ಐಡಿ ಸಂಖ್ಯೆ\n"
 "• unix:///path/socket.sock[ಎಕ್ಸ್121ಎಕ್ಸ್]"
 
-#: src/remmina_file_editor.c:70
+#: src/remmina_file_editor.cpp:70
 #, fuzzy
 msgid ""
 "<big>• command in PATH args %h\n"
@@ -1547,7 +1547,7 @@ msgstr ""
 "ಚಲಿಸಬೇಡಿ.\n"
 "[ಎಕ್ಸ್472ಎಕ್ಸ್]"
 
-#: src/remmina_file_editor.c:84
+#: src/remmina_file_editor.cpp:84
 #, fuzzy
 msgid ""
 "<big>Supported formats\n"
@@ -1560,149 +1560,149 @@ msgstr ""
 "• ಸರ್ವರ್[:p ಯೋರ್ಟ್]\n"
 "• username@server[:p ಯೋರ್ಟ್] (ಎಸ್ಎಸ್ಎಚ್ ಪ್ರೊಟೋಕಾಲ್ ಮಾತ್ರ)[ಎಕ್ಸ್92ಎಕ್ಸ್]"
 
-#: src/remmina_file_editor.c:162
+#: src/remmina_file_editor.cpp:162
 #, fuzzy
 msgid "Input is invalid."
 msgstr "ಇನ್ ಪುಟ್ ಅಮಾನ್ಯವಾಗಿದೆ."
 
-#: src/remmina_file_editor.c:239
+#: src/remmina_file_editor.cpp:239
 #, fuzzy
 msgid "Choose a Remote Desktop Server"
 msgstr "ರಿಮೋಟ್ ಡೆಸ್ಕ್ ಟಾಪ್ ಸರ್ವರ್ ಆಯ್ಕೆಮಾಡಿ"
 
-#: src/remmina_file_editor.c:460
+#: src/remmina_file_editor.cpp:460
 #, fuzzy, c-format
 msgid "Browse the network to find a %s server"
 msgstr "[ಎಕ್ಸ್29ಎಕ್ಸ್] ಸರ್ವರ್ ಹುಡುಕಲು ನೆಟ್ವರ್ಕ್ ಬ್ರೌಸ್ ಮಾಡಿ"
 
-#: src/remmina_file_editor.c:564
+#: src/remmina_file_editor.cpp:564
 #, fuzzy
 msgid "Resolution"
 msgstr "ರೆಸಲ್ಯೂಶನ್"
 
-#: src/remmina_file_editor.c:571
+#: src/remmina_file_editor.cpp:571
 #, fuzzy
 msgid "Use initial window size"
 msgstr "ಆರಂಭಿಕ ವಿಂಡೋ ಗಾತ್ರಬಳಸಿ"
 
-#: src/remmina_file_editor.c:575
+#: src/remmina_file_editor.cpp:575
 #, fuzzy
 msgid "Use client resolution"
 msgstr "ಕ್ಲೈಂಟ್ ರೆಸಲ್ಯೂಶನ್ ಬಳಸಿ"
 
-#: src/remmina_file_editor.c:586 src/remmina_file_editor.c:1152
+#: src/remmina_file_editor.cpp:586 src/remmina_file_editor.cpp:1152
 #, fuzzy
 msgid "Custom"
 msgstr "ಕಸ್ಟಮ್"
 
-#: src/remmina_file_editor.c:945
+#: src/remmina_file_editor.cpp:945
 #, fuzzy
 msgid "Keyboard mapping"
 msgstr "ಕೀಲಿಮಣೆ ಮ್ಯಾಪಿಂಗ್"
 
-#: src/remmina_file_editor.c:1072
+#: src/remmina_file_editor.cpp:1072
 #, fuzzy
 msgid "Behavior"
 msgstr "ವರ್ತನೆ"
 
-#: src/remmina_file_editor.c:1075
+#: src/remmina_file_editor.cpp:1075
 #, fuzzy
 msgid "Execute a Command"
 msgstr "ಆದೇಶ ಕಾರ್ಯಗತಗೊಳಿಸು"
 
-#: src/remmina_file_editor.c:1079
+#: src/remmina_file_editor.cpp:1079
 #, fuzzy
 msgid "Before connecting"
 msgstr "ಸಂಪರ್ಕಿಸುವ ಮೊದಲು"
 
-#: src/remmina_file_editor.c:1081
+#: src/remmina_file_editor.cpp:1081
 #, fuzzy
 msgid "command %h %u %t %U %p %g --option"
 msgstr "ಆದೇಶ %ಎಚ್ %ಯು %t %A %p %g --ಆಯ್ಕೆ"
 
-#: src/remmina_file_editor.c:1086
+#: src/remmina_file_editor.cpp:1086
 #, fuzzy
 msgid "After connecting"
 msgstr "ಸಂಪರ್ಕಿಸಿದ ನಂತರ"
 
-#: src/remmina_file_editor.c:1088
+#: src/remmina_file_editor.cpp:1088
 #, fuzzy
 msgid "/path/to/command -opt1 arg %h %u %t -opt2 %U %p %g"
 msgstr "/ಪಥ/ದಿಂದ/ಆದೇಶ -ಆಯ್ಕೆ1 ಆರ್ಗ್ %ಎಚ್ %ಯು %T -ಆಯ್ಕೆ2 %ಯು %p %g"
 
-#: src/remmina_file_editor.c:1092
+#: src/remmina_file_editor.cpp:1092
 #, fuzzy
 msgid "Start-up"
 msgstr "ಸ್ಟಾರ್ಟ್-ಅಪ್"
 
-#: src/remmina_file_editor.c:1095
+#: src/remmina_file_editor.cpp:1095
 #, fuzzy
 msgid "Auto-start this profile"
 msgstr "ಈ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಸ್ವಯಂ-ಪ್ರಾರಂಭಿಸಿ"
 
-#: src/remmina_file_editor.c:1125
+#: src/remmina_file_editor.cpp:1125
 #, fuzzy
 msgid "SSH Tunnel"
 msgstr "ಎಸ್.ಎಸ್.ಎಚ್ ಸುರಂಗ"
 
-#: src/remmina_file_editor.c:1126
+#: src/remmina_file_editor.cpp:1126
 #, fuzzy
 msgid "Enable SSH tunnel"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಸುರಂಗವನ್ನು ಕ್ರಿಯಾತ್ಮಕಗೊಳಿಸಿ"
 
-#: src/remmina_file_editor.c:1133
+#: src/remmina_file_editor.cpp:1133
 #, fuzzy
 msgid "Tunnel via loopback address"
 msgstr "ಲೂಪ್ ಬ್ಯಾಕ್ ವಿಳಾಸದ ಮೂಲಕ ಸುರಂಗ"
 
-#: src/remmina_file_editor.c:1143
+#: src/remmina_file_editor.cpp:1143
 #, fuzzy, c-format
 msgid "Same server at port %i"
 msgstr "ಪೋರ್ಟ್ ನಲ್ಲಿ ಅದೇ ಸರ್ವರ್ [ಎಕ್ಸ್ 20ಎಕ್ಸ್]"
 
-#: src/remmina_file_editor.c:1193 plugins/rdp/rdp_plugin.c:2805
+#: src/remmina_file_editor.cpp:1193 plugins/rdp/rdp_plugin.cpp:2805
 #, fuzzy
 msgid "Start-up path"
 msgstr "ಸ್ಟಾರ್ಟ್-ಅಪ್ ಹಾದಿ"
 
-#: src/remmina_file_editor.c:1202
+#: src/remmina_file_editor.cpp:1202
 #, fuzzy
 msgid "SSH Authentication"
 msgstr "ಎಸ್.ಎಸ್.ಎಚ್ ದೃಢೀಕರಣ"
 
-#: src/remmina_file_editor.c:1229
+#: src/remmina_file_editor.cpp:1229
 #, fuzzy
 msgid "SSH private key file"
 msgstr "ಎಸ್.ಎಸ್.ಎಚ್ ಖಾಸಗಿ ಕೀ ಫೈಲ್"
 
-#: src/remmina_file_editor.c:1235 src/remmina_ssh_plugin.c:1475
+#: src/remmina_file_editor.cpp:1235 src/remmina_ssh_plugin.cpp:1475
 #, fuzzy
 msgid "SSH certificate file"
 msgstr "ಎಸ್.ಎಸ್.ಎಚ್ ಪ್ರಮಾಣಪತ್ರ ಫೈಲ್"
 
-#: src/remmina_file_editor.c:1293
+#: src/remmina_file_editor.cpp:1293
 #, fuzzy
 msgid "Basic"
 msgstr "ಮೂಲ"
 
-#: src/remmina_file_editor.c:1299
+#: src/remmina_file_editor.cpp:1299
 #, fuzzy
 msgid "Advanced"
 msgstr "ಸುಧಾರಿತ"
 
-#: src/remmina_file_editor.c:1310
+#: src/remmina_file_editor.cpp:1310
 #, fuzzy
 msgid "Notes"
 msgstr "ಟಿಪ್ಪಣಿಗಳು"
 
-#: src/remmina_file_editor.c:1438
+#: src/remmina_file_editor.cpp:1438
 #, fuzzy, c-format
 msgid "(%s: %i): Can't validate setting '%s' since 'value' or 'gfe' are NULL!"
 msgstr ""
 "([ಎಕ್ಸ್1ಎಕ್ಸ್]: [ಎಕ್ಸ್5ಎಕ್ಸ್]): 'ಮೌಲ್ಯ' ಅಥವಾ 'ಜಿಎಫ್ಇ' ಶೂನ್ಯವಾಗಿರುವುದರಿಂದ ಸೆಟ್ಟಿಂಗ್ "
 "'[ಎಕ್ಸ್34ಎಕ್ಸ್]] ಅನ್ನು ಮೌಲ್ಯೀಕರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ!"
 
-#: src/remmina_file_editor.c:1441
+#: src/remmina_file_editor.cpp:1441
 #, fuzzy, c-format
 msgid ""
 "(%s: %i): Can't validate user input since 'setting_name_to_validate', "
@@ -1712,123 +1712,123 @@ msgstr ""
 "ಶೂನ್ಯವಾಗಿರುವುದರಿಂದ ಬಳಕೆದಾರರ ಇನ್ ಪುಟ್ ಅನ್ನು ಮೌಲ್ಯೀಕರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ!"
 
 #. TRANSLATORS: Meta-error. Shouldn't be visible.
-#: src/remmina_file_editor.c:1445 plugins/x2go/x2go_plugin.c:2394
-#: plugins/x2go/x2go_plugin.c:3023
+#: src/remmina_file_editor.cpp:1445 plugins/x2go/x2go_plugin.cpp:2394
+#: plugins/x2go/x2go_plugin.cpp:3023
 #, fuzzy
 msgid "Internal error."
 msgstr "ಆಂತರಿಕ ದೋಷ."
 
-#: src/remmina_file_editor.c:1667 src/remmina_file_editor.c:1703
-#: src/remmina_file_editor.c:1724 src/remmina_file_editor.c:1747
+#: src/remmina_file_editor.cpp:1667 src/remmina_file_editor.cpp:1703
+#: src/remmina_file_editor.cpp:1724 src/remmina_file_editor.cpp:1747
 #, fuzzy, c-format
 msgid "Couldn't validate user input. %s"
 msgstr "ಬಳಕೆದಾರರ ಇನ್ ಪುಟ್ ಅನ್ನು ಪ್ರಮಾಣೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. [ಎಕ್ಸ್30ಎಕ್ಸ್]"
 
-#: src/remmina_file_editor.c:1691
+#: src/remmina_file_editor.cpp:1691
 #, fuzzy
 msgid "Default settings saved."
 msgstr "ಡೀಫಾಲ್ಟ್ ಸೆಟ್ಟಿಂಗ್ ಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ."
 
-#: src/remmina_file_editor.c:1781
+#: src/remmina_file_editor.cpp:1781
 #, fuzzy
 msgid "Remote Connection Profile"
 msgstr "ರಿಮೋಟ್ ಕನೆಕ್ಷನ್ ಪ್ರೊಫೈಲ್"
 
-#: src/remmina_file_editor.c:1787
+#: src/remmina_file_editor.cpp:1787
 #, fuzzy
 msgid "Save as Default"
 msgstr "ಡೀಫಾಲ್ಟ್ ಆಗಿ ಉಳಿಸು"
 
-#: src/remmina_file_editor.c:1788
+#: src/remmina_file_editor.cpp:1788
 #, fuzzy
 msgid "Use the current settings as the default for all new connection profiles"
 msgstr "ಎಲ್ಲಾ ಹೊಸ ಸಂಪರ್ಕ ಪ್ರೊಫೈಲ್ ಗಳಿಗೆ ಪ್ರಸ್ತುತ ಸೆಟ್ಟಿಂಗ್ ಗಳನ್ನು ಡೀಫಾಲ್ಟ್ ಆಗಿ ಬಳಸಿ"
 
-#: src/remmina_file_editor.c:1796 data/ui/remmina_main.glade:160
+#: src/remmina_file_editor.cpp:1796 data/ui/remmina_main.glade:160
 #, fuzzy
 msgid "Connect"
 msgstr "ಸಂಪರ್ಕಿಸಿ"
 
-#: src/remmina_file_editor.c:1799
+#: src/remmina_file_editor.cpp:1799
 #, fuzzy
 msgid "_Save and Connect"
 msgstr "_Save ಮತ್ತು ಸಂಪರ್ಕಿಸು"
 
-#: src/remmina_file_editor.c:1922
+#: src/remmina_file_editor.cpp:1922
 #, fuzzy
 msgid "Quick Connect"
 msgstr "ತ್ವರಿತ ಸಂಪರ್ಕ"
 
-#: src/remmina_file_editor.c:1946
+#: src/remmina_file_editor.cpp:1946
 #, fuzzy, c-format
 msgid "Use '%s' as subgroup delimiter"
 msgstr "'[ಎಕ್ಸ್5ಎಕ್ಸ್]' ಅನ್ನು ಉಪಸಮೂಹ ಡಿಲಿಮಿಟರ್ ಆಗಿ ಬಳಸಿ"
 
-#: src/remmina_file_editor.c:2012 src/remmina_file_editor.c:2030
+#: src/remmina_file_editor.cpp:2012 src/remmina_file_editor.cpp:2030
 #, fuzzy, c-format
 msgid "Could not find the file “%s”."
 msgstr "ಫೈಲ್ ಅನ್ನು ಹುಡುಕಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ \"[ಎಕ್ಸ್ 25ಎಕ್ಸ್]\"."
 
 #. TRANSLATORS: This is a message that pops up when an external Remmina plugin tries to set the window resolution using a legacy parameter.
 #. TRANSLATORS: This is a message that pop-up when an external Remmina plugin tries to set the windows resolution using a legacy parameter.
-#: src/remmina_file.c:451 src/remmina_file.c:497
+#: src/remmina_file.cpp:451 src/remmina_file.cpp:497
 #, fuzzy
 msgid ""
 "Using the «resolution» parameter in the Remmina preferences file is "
 "deprecated.\n"
 msgstr "ರೆಮ್ಮಿನ ಆದ್ಯತೆಗಳ ಫೈಲ್ ನಲ್ಲಿ «ರೆಸಲ್ಯೂಶನ್» ನಿಯತಾಂಕವನ್ನು ಅಪಪ್ರದಗೊಳಿಸಲಾಗಿದೆ.\n"
 
-#: src/remmina_icon.c:137
+#: src/remmina_icon.cpp:137
 #, fuzzy
 msgid "Open Main Window"
 msgstr "ಮುಖ್ಯ ವಿಂಡೋ ತೆರೆಯಿರಿ"
 
-#: src/remmina_icon.c:142 data/ui/remmina_main.glade:254
+#: src/remmina_icon.cpp:142 data/ui/remmina_main.glade:254
 #, fuzzy
 msgid "_Preferences"
 msgstr "ಆದ್ಯತೆಗಳು"
 
-#: src/remmina_icon.c:147
+#: src/remmina_icon.cpp:147
 #, fuzzy
 msgid "_About"
 msgstr "ಬಗ್ಗೆ (_A)"
 
-#: src/remmina_icon.c:157
+#: src/remmina_icon.cpp:157
 #, fuzzy
 msgid "Enable Service Discovery"
 msgstr "ಸೇವಾ ಆವಿಷ್ಕಾರಕ್ರಿಯಾತ್ಮಕಗೊಳಿಸು"
 
-#: src/remmina_icon.c:169 data/ui/remmina_main.glade:404
+#: src/remmina_icon.cpp:169 data/ui/remmina_main.glade:404
 #, fuzzy
 msgid "_Quit"
 msgstr "ನಿರ್ಗಮಿಸು (_Q)"
 
 #. TRANSLATORS: Applet name as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
 #. TRANSLATORS: Applet Name as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
-#: src/remmina_icon.c:295 src/remmina_icon.c:447
+#: src/remmina_icon.cpp:295 src/remmina_icon.cpp:447
 #, fuzzy
 msgid "Remmina Applet"
 msgstr "ರೆಮ್ಮಿನಾ ಆಪಲ್ಟ್"
 
 #. TRANSLATORS: Applet comment/description as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
-#: src/remmina_icon.c:297 src/remmina_icon.c:449
+#: src/remmina_icon.cpp:297 src/remmina_icon.cpp:449
 #, fuzzy
 msgid "Connect to remote desktops through the applet menu"
 msgstr "ಆಪಲ್ಟ್ ಮೆನು ಮೂಲಕ ದೂರದ ಡೆಸ್ಕ್ ಟಾಪ್ ಗಳಿಗೆ ಸಂಪರ್ಕಿಸಿ"
 
-#: src/remmina_icon.c:361
+#: src/remmina_icon.cpp:361
 #, fuzzy
 msgid "StatusNotifier/Appindicator support in “"
 msgstr "ಸ್ಥಿತಿಅಧಿಸೂಚಕ/ಅಪ್ಇಂಡಿಕೇಟರ್ ಬೆಂಬಲ \""
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:368
+#: src/remmina_icon.cpp:368
 #, fuzzy, c-format
 msgid "%s your desktop does support it"
 msgstr "[ಎಕ್ಸ್0ಎಕ್ಸ್] ನಿಮ್ಮ ಡೆಸ್ಕ್ ಟಾಪ್ ಅದನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:370
+#: src/remmina_icon.cpp:370
 #, fuzzy, c-format
 msgid "%s and Remmina has built-in (compiled) support for libappindicator."
 msgstr ""
@@ -1836,7 +1836,7 @@ msgstr ""
 "ಹೊಂದಿದೆ."
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:373
+#: src/remmina_icon.cpp:373
 #, fuzzy, c-format
 msgid ""
 "%s not supported natively by your Desktop Environment. libappindicator will "
@@ -1846,7 +1846,7 @@ msgstr ""
 "ಜಿಟಿಕೆಸ್ಟೇಟಸ್ಐಕಾನ್ /ಎಕ್ಸ್ ಎಂಬೆಡ್ ಗೆ ಹಿಂತಿರುಗಲು ಪ್ರಯತ್ನಿಸುತ್ತದೆ"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:377
+#: src/remmina_icon.cpp:377
 #, fuzzy, c-format
 msgid "%s You may need to install, and use XApp Status Applet"
 msgstr ""
@@ -1854,13 +1854,13 @@ msgstr ""
 "ಬಳಸಬೇಕಾಗಬಹುದು"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:380
+#: src/remmina_icon.cpp:380
 #, fuzzy, c-format
 msgid "%s You may need to install, and use KStatusNotifierItem"
 msgstr "[ಎಕ್ಸ್0ಎಕ್ಸ್] ನೀವು ಸ್ಥಾಪಿಸಬೇಕಾಗಬಹುದು, ಮತ್ತು ಕೆTATATATAPtatPtat"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:383
+#: src/remmina_icon.cpp:383
 #, fuzzy, c-format
 msgid "%s You may need to install, and use XEmbed SNI Proxy"
 msgstr ""
@@ -1868,7 +1868,7 @@ msgstr ""
 "ಬಳಸಬೇಕಾಗಬಹುದು"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:386
+#: src/remmina_icon.cpp:386
 #, fuzzy, c-format
 msgid "%s You may need to install, and use Gnome Shell Extension Appindicator"
 msgstr ""
@@ -1876,127 +1876,127 @@ msgstr ""
 "ಬಳಸಬೇಕಾಗಬಹುದು"
 
 #. TRANSLATORS: %s is a placeholder for an error message
-#: src/remmina_ssh_plugin.c:539
+#: src/remmina_ssh_plugin.cpp:539
 #, fuzzy, c-format
 msgid "Error: %s"
 msgstr "ದೋಷ: [ಎಕ್ಸ್7ಎಕ್ಸ್]"
 
-#: src/remmina_ssh_plugin.c:556
+#: src/remmina_ssh_plugin.cpp:556
 #, fuzzy
 msgid "Terminal content saved in"
 msgstr "ಇದರಲ್ಲಿ ಉಳಿಸಲಾದ ಟರ್ಮಿನಲ್ ವಿಷಯ"
 
-#: src/remmina_ssh_plugin.c:822
+#: src/remmina_ssh_plugin.cpp:822
 #, fuzzy
 msgid "Select All (host+A)"
 msgstr "ಎಲ್ಲ ಆಯ್ಕೆಮಾಡಿ (ಹೋಸ್ಟ್+A)"
 
-#: src/remmina_ssh_plugin.c:823
+#: src/remmina_ssh_plugin.cpp:823
 #, fuzzy
 msgid "Copy (host+C)"
 msgstr "ನಕಲಿಸು (ಹೋಸ್ಟ್+ಸಿ)"
 
-#: src/remmina_ssh_plugin.c:824
+#: src/remmina_ssh_plugin.cpp:824
 #, fuzzy
 msgid "Paste (host+V)"
 msgstr "ಅಂಟಿಸು (ಹೋಸ್ಟ್+ವಿ)"
 
-#: src/remmina_ssh_plugin.c:825
+#: src/remmina_ssh_plugin.cpp:825
 #, fuzzy
 msgid "Save session to file"
 msgstr "ಫೈಲ್ ಗೆ ಸೆಷನ್ ಉಳಿಸು"
 
-#: src/remmina_ssh_plugin.c:826
+#: src/remmina_ssh_plugin.cpp:826
 #, fuzzy
 msgid "Increase font size (host+Page Up)"
 msgstr "ಫಾಂಟ್ ಗಾತ್ರ ಹೆಚ್ಚಿಸಿ (ಹೋಸ್ಟ್+ಪುಟ ಮೇಲೆ)"
 
-#: src/remmina_ssh_plugin.c:827
+#: src/remmina_ssh_plugin.cpp:827
 #, fuzzy
 msgid "Decrease font size (host+Page Down)"
 msgstr "ಫಾಂಟ್ ಗಾತ್ರ ವನ್ನು ಕಡಿಮೆ ಮಾಡಿ (ಹೋಸ್ಟ್+ಪುಟ ಕೆಳಗೆ)"
 
-#: src/remmina_ssh_plugin.c:828
+#: src/remmina_ssh_plugin.cpp:828
 #, fuzzy
 msgid "Find text (host+G)"
 msgstr "ಪಠ್ಯ ಹುಡುಕಿ (ಹೋಸ್ಟ್+G)"
 
-#: src/remmina_ssh_plugin.c:1440 data/ui/remmina_main.glade:177
+#: src/remmina_ssh_plugin.cpp:1440 data/ui/remmina_main.glade:177
 #, fuzzy
 msgid "Copy"
 msgstr "ನಕಲಿಸಿ"
 
-#: src/remmina_ssh_plugin.c:1440
+#: src/remmina_ssh_plugin.cpp:1440
 #, fuzzy
 msgid "_Copy"
 msgstr "ನಕಲಿಸಿ (_C)"
 
-#: src/remmina_ssh_plugin.c:1441
+#: src/remmina_ssh_plugin.cpp:1441
 #, fuzzy
 msgid "Paste"
 msgstr "ಅಂಟಿಸು"
 
-#: src/remmina_ssh_plugin.c:1441
+#: src/remmina_ssh_plugin.cpp:1441
 #, fuzzy
 msgid "_Paste"
 msgstr "ಅಂಟಿಸಿ (_P)"
 
-#: src/remmina_ssh_plugin.c:1442
+#: src/remmina_ssh_plugin.cpp:1442
 #, fuzzy
 msgid "Select all"
 msgstr "ಎಲ್ಲಾ ಆಯ್ಕೆಮಾಡಿ"
 
-#: src/remmina_ssh_plugin.c:1442
+#: src/remmina_ssh_plugin.cpp:1442
 #, fuzzy
 msgid "_Select all"
 msgstr "ಎಲ್ಲವನ್ನೂ ಆಯ್ಕೆ ಮಾಡಿ (_S)"
 
-#: src/remmina_ssh_plugin.c:1443
+#: src/remmina_ssh_plugin.cpp:1443
 #, fuzzy
 msgid "Increase font size"
 msgstr "ಫಾಂಟ್ ಗಾತ್ರ ಹೆಚ್ಚಿಸಿ"
 
-#: src/remmina_ssh_plugin.c:1443
+#: src/remmina_ssh_plugin.cpp:1443
 #, fuzzy
 msgid "_Increase font size"
 msgstr "_Increase ಫಾಂಟ್ ಗಾತ್ರ"
 
-#: src/remmina_ssh_plugin.c:1444
+#: src/remmina_ssh_plugin.cpp:1444
 #, fuzzy
 msgid "Decrease font size"
 msgstr "ಫಾಂಟ್ ಗಾತ್ರ ವನ್ನು ಕಡಿಮೆ ಮಾಡಿ"
 
-#: src/remmina_ssh_plugin.c:1444
+#: src/remmina_ssh_plugin.cpp:1444
 #, fuzzy
 msgid "_Decrease font size"
 msgstr "_Decrease ಫಾಂಟ್ ಗಾತ್ರ"
 
-#: src/remmina_ssh_plugin.c:1445
+#: src/remmina_ssh_plugin.cpp:1445
 #, fuzzy
 msgid "Find text"
 msgstr "ಪಠ್ಯ ಹುಡುಕಿ"
 
-#: src/remmina_ssh_plugin.c:1445
+#: src/remmina_ssh_plugin.cpp:1445
 #, fuzzy
 msgid "_Find text"
 msgstr "ಪಠ್ಯ_Find"
 
-#: src/remmina_ssh_plugin.c:1472 plugins/spice/spice_plugin.c:674
-#: plugins/vnc/vnc_plugin.c:1998 plugins/vnc/vnc_plugin.c:2010
+#: src/remmina_ssh_plugin.cpp:1472 plugins/spice/spice_plugin.cpp:674
+#: plugins/vnc/vnc_plugin.cpp:1998 plugins/vnc/vnc_plugin.cpp:2010
 #, fuzzy
 msgid "User password"
 msgstr "ಬಳಕೆದಾರ ಪಾಸ್ ವರ್ಡ್"
 
-#: src/remmina_ssh_plugin.c:1478
+#: src/remmina_ssh_plugin.cpp:1478
 msgid "Opening command"
 msgstr ""
 
-#: src/remmina_ssh_plugin.c:1479
+#: src/remmina_ssh_plugin.cpp:1479
 #, fuzzy
 msgid "Start-up background program"
 msgstr "ಸ್ಟಾರ್ಟ್-ಅಪ್ ಪ್ರೋಗ್ರಾಂ"
 
-#: src/remmina_ssh_plugin.c:1484
+#: src/remmina_ssh_plugin.cpp:1484
 #, fuzzy
 msgid ""
 "The filename can use the following placeholders:\n"
@@ -2020,255 +2020,255 @@ msgstr ""
 "  • %ಡಿ ಯನ್ನು ಸ್ಥಳೀಯ ದಿನಾಂಕ ಮತ್ತು ಸಮಯದೊಂದಿಗೆ ಐಎಸ್ಒ 8601 ಸ್ವರೂಪದಲ್ಲಿ ಬದಲಿಯಾಗಿ "
 "ಮಾಡಲಾಗಿದೆ\n"
 
-#: src/remmina_ssh_plugin.c:1506
+#: src/remmina_ssh_plugin.cpp:1506
 #, fuzzy
 msgid "Terminal colour scheme"
 msgstr "ಟರ್ಮಿನಲ್ ಕಲರ್ ಸ್ಕೀಮ್"
 
-#: src/remmina_ssh_plugin.c:1507
+#: src/remmina_ssh_plugin.cpp:1507
 #, fuzzy
 msgid "Character set"
 msgstr "ಅಕ್ಷರ ಸೆಟ್"
 
-#: src/remmina_ssh_plugin.c:1509
+#: src/remmina_ssh_plugin.cpp:1509
 #, fuzzy
 msgid "KEX (Key Exchange) algorithms"
 msgstr "ಕೆಇಎಕ್ಸ್ (ಕೀ ಎಕ್ಸ್ ಚೇಂಜ್) ಕ್ರಮಾವಳಿಗಳು"
 
-#: src/remmina_ssh_plugin.c:1510
+#: src/remmina_ssh_plugin.cpp:1510
 #, fuzzy
 msgid "Symmetric cipher client to server"
 msgstr "ಸರ್ವರ್ ಗೆ ಸಮರೂಪದ ಸೈಫರ್ ಕ್ಲೈಂಟ್"
 
-#: src/remmina_ssh_plugin.c:1511
+#: src/remmina_ssh_plugin.cpp:1511
 #, fuzzy
 msgid "Preferred server host key types"
 msgstr "ಆದ್ಯತೆಯ ಸರ್ವರ್ ಹೋಸ್ಟ್ ಕೀಲಿ ಪ್ರಕಾರಗಳು"
 
-#: src/remmina_ssh_plugin.c:1512
+#: src/remmina_ssh_plugin.cpp:1512
 #, fuzzy
 msgid "Folder for SSH session log"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಸೆಷನ್ ಲಾಗ್ ಗಾಗಿ ಫೋಲ್ಡರ್"
 
-#: src/remmina_ssh_plugin.c:1513
+#: src/remmina_ssh_plugin.cpp:1513
 #, fuzzy
 msgid "Filename for SSH session log"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಸೆಷನ್ ಲಾಗ್ ಗಾಗಿ ಫೈಲ್ ಹೆಸರು"
 
-#: src/remmina_ssh_plugin.c:1514
+#: src/remmina_ssh_plugin.cpp:1514
 #, fuzzy
 msgid "Log SSH session when exiting Remmina"
 msgstr "ರೆಮ್ಮಿನಾದಿಂದ ನಿರ್ಗಮಿಸುವಾಗ ಎಸ್ ಎಸ್ ಎಚ್ ಸೆಷನ್ ಲಾಗ್ ಮಾಡಿ"
 
-#: src/remmina_ssh_plugin.c:1515
+#: src/remmina_ssh_plugin.cpp:1515
 #, fuzzy
 msgid "Log SSH session asynchronously"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಸೆಷನ್ ಅನ್ನು ಅಸಿಂಕ್ರೋನಸ್ ಆಗಿ ಲಾಗ್ ಮಾಡಿ"
 
-#: src/remmina_ssh_plugin.c:1515
+#: src/remmina_ssh_plugin.cpp:1515
 #, fuzzy
 msgid "Saving the session asynchronously may have a notable performance impact"
 msgstr ""
 "ಸೆಷನ್ ಅನ್ನು ಅಸಿಂಕ್ರೊನಸ್ ಆಗಿ ಉಳಿಸುವುದು ಗಮನಾರ್ಹ ಕಾರ್ಯಕ್ಷಮತೆಯ ಪರಿಣಾಮವನ್ನು ಬೀರಬಹುದು"
 
-#: src/remmina_ssh_plugin.c:1516
+#: src/remmina_ssh_plugin.cpp:1516
 #, fuzzy
 msgid "Audible terminal bell"
 msgstr "ಆಡಿಬಲ್ ಟರ್ಮಿನಲ್ ಗಂಟೆ"
 
-#: src/remmina_ssh_plugin.c:1517
+#: src/remmina_ssh_plugin.cpp:1517
 #, fuzzy
 msgid "SSH compression"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ ಸಂಕೋಚನ"
 
-#: src/remmina_ssh_plugin.c:1518
+#: src/remmina_ssh_plugin.cpp:1518
 #, fuzzy
 msgid "Don't remember passwords"
 msgstr "ಪಾಸ್ ವರ್ಡ್ ಗಳನ್ನು ನೆನಪಿಲ್ಲ"
 
-#: src/remmina_ssh_plugin.c:1519
+#: src/remmina_ssh_plugin.cpp:1519
 #, fuzzy
 msgid "Strict host key checking"
 msgstr "ಕಟ್ಟುನಿಟ್ಟಾದ ಹೋಸ್ಟ್ ಕೀ ಚೆಕ್ಕಿಂಗ್"
 
-#: src/remmina_ssh_plugin.c:1533
+#: src/remmina_ssh_plugin.cpp:1533
 #, fuzzy
 msgid "SSH - Secure Shell"
 msgstr "ಎಸ್ ಎಸ್ ಎಚ್ - ಸುರಕ್ಷಿತ ಶೆಲ್"
 
-#: plugins/kwallet/src/kwallet_plugin_main.c:118
+#: plugins/kwallet/src/kwallet_plugin_main.cpp:118
 #, fuzzy
 msgid "Secured password storage in KWallet"
 msgstr "ಕವಾಲೆಟ್ ನಲ್ಲಿ ಸುರಕ್ಷಿತ ಪಾಸ್ ವರ್ಡ್ ಸಂಗ್ರಹಣೆ"
 
-#: plugins/rdp/rdp_settings.c:217
+#: plugins/rdp/rdp_settings.cpp:217
 #, fuzzy
 msgid "<Auto-detect>"
 msgstr "<Auto-detect>"
 
-#: plugins/rdp/rdp_settings.c:249
+#: plugins/rdp/rdp_settings.cpp:249
 #, fuzzy
 msgid "<Not set>"
 msgstr "<ಸೆಟ್ ಮಾಡಿಲ್ಲ>"
 
-#: plugins/rdp/rdp_settings.c:280
+#: plugins/rdp/rdp_settings.cpp:280
 #, fuzzy
 msgid "<Choose a quality level to edit…>"
 msgstr "<ಸಂಪಾದಿಸಲು ಗುಣಮಟ್ಟದ ಮಟ್ಟವನ್ನು ಆಯ್ಕೆಮಾಡಿ...>"
 
-#: plugins/rdp/rdp_settings.c:282 plugins/rdp/rdp_plugin.c:2622
-#: plugins/vnc/vnc_plugin.c:1947
+#: plugins/rdp/rdp_settings.cpp:282 plugins/rdp/rdp_plugin.cpp:2622
+#: plugins/vnc/vnc_plugin.cpp:1947
 #, fuzzy
 msgid "Poor (fastest)"
 msgstr "ಕಳಪೆ (ವೇಗದ)"
 
-#: plugins/rdp/rdp_settings.c:284 plugins/rdp/rdp_plugin.c:2623
-#: plugins/vnc/vnc_plugin.c:1946
+#: plugins/rdp/rdp_settings.cpp:284 plugins/rdp/rdp_plugin.cpp:2623
+#: plugins/vnc/vnc_plugin.cpp:1946
 #, fuzzy
 msgid "Medium"
 msgstr "ಮಾದ್ಯಮ"
 
-#: plugins/rdp/rdp_settings.c:286 plugins/rdp/rdp_plugin.c:2624
-#: plugins/vnc/vnc_plugin.c:1944
+#: plugins/rdp/rdp_settings.cpp:286 plugins/rdp/rdp_plugin.cpp:2624
+#: plugins/vnc/vnc_plugin.cpp:1944
 #, fuzzy
 msgid "Good"
 msgstr "ಒಳ್ಳೆಯದು"
 
-#: plugins/rdp/rdp_settings.c:288 plugins/rdp/rdp_plugin.c:2625
-#: plugins/vnc/vnc_plugin.c:1945
+#: plugins/rdp/rdp_settings.cpp:288 plugins/rdp/rdp_plugin.cpp:2625
+#: plugins/vnc/vnc_plugin.cpp:1945
 #, fuzzy
 msgid "Best (slowest)"
 msgstr "ಅತ್ಯುತ್ತಮ (ನಿಧಾನ)"
 
-#: plugins/rdp/rdp_settings.c:427
+#: plugins/rdp/rdp_settings.cpp:427
 #, fuzzy
 msgid "Keyboard layout"
 msgstr "ಕೀಲಿಮಣೆ ವಿನ್ಯಾಸ"
 
-#: plugins/rdp/rdp_settings.c:457
+#: plugins/rdp/rdp_settings.cpp:457
 #, fuzzy
 msgid "Use client keyboard mapping"
 msgstr "ಕ್ಲೈಂಟ್ ಕೀಬೋರ್ಡ್ ಮ್ಯಾಪಿಂಗ್ ಬಳಸಿ"
 
-#: plugins/rdp/rdp_settings.c:468
+#: plugins/rdp/rdp_settings.cpp:468
 #, fuzzy
 msgid "Keyboard scancode remapping"
 msgstr "ಕೀಲಿಮಣೆ ಸ್ಕ್ಯಾನ್ ಕೋಡ್ ರೀಮ್ಯಾಪಿಂಗ್"
 
-#: plugins/rdp/rdp_settings.c:483
+#: plugins/rdp/rdp_settings.cpp:483
 #, fuzzy
 msgid "List of key=value,… pairs to remap scancodes. E.g. 0x56=0x29,0x29=0x56"
 msgstr ""
 "ಕೀಲಿ=ಮೌಲ್ಯದ ಪಟ್ಟಿ,... ಸ್ಕ್ಯಾನ್ ಕೋಡ್ ಗಳನ್ನು ಮರುಮ್ಯಾಪ್ ಮಾಡಲು ಜೋಡಿಗಳು. ಉದಾ: "
 "0x56=0x29,0x29=0x56"
 
-#: plugins/rdp/rdp_settings.c:486
+#: plugins/rdp/rdp_settings.cpp:486
 #, fuzzy
 msgid "FreeRDP > 2.3.0 is required to map scancodes"
 msgstr "ಸ್ಕ್ಯಾನ್ ಕೋಡ್ ಗಳನ್ನು ಮ್ಯಾಪ್ ಮಾಡಲು 2.3.0 > ಫ್ರೀಆರ್ ಡಿಪಿ ಅಗತ್ಯವಿದೆ"
 
-#: plugins/rdp/rdp_settings.c:494
+#: plugins/rdp/rdp_settings.cpp:494
 #, fuzzy
 msgid "Quality settings"
 msgstr "ಗುಣಮಟ್ಟದ ಸೆಟ್ಟಿಂಗ್ ಗಳು"
 
-#: plugins/rdp/rdp_settings.c:517
+#: plugins/rdp/rdp_settings.cpp:517
 #, fuzzy
 msgid "Wallpaper"
 msgstr "ವಾಲ್ ಪೇಪರ್"
 
-#: plugins/rdp/rdp_settings.c:525
+#: plugins/rdp/rdp_settings.cpp:525
 #, fuzzy
 msgid "Window drag"
 msgstr "ವಿಂಡೋ ಎಳೆಯಿರಿ"
 
-#: plugins/rdp/rdp_settings.c:532
+#: plugins/rdp/rdp_settings.cpp:532
 #, fuzzy
 msgid "Menu animation"
 msgstr "ಮೆನು ಅನಿಮೇಶನ್"
 
-#: plugins/rdp/rdp_settings.c:540
+#: plugins/rdp/rdp_settings.cpp:540
 msgid "Theme"
 msgstr "ಥೀಮ್"
 
-#: plugins/rdp/rdp_settings.c:547
+#: plugins/rdp/rdp_settings.cpp:547
 #, fuzzy
 msgid "Cursor shadow"
 msgstr "ಕರ್ಸರ್ ಛಾಯೆ"
 
-#: plugins/rdp/rdp_settings.c:555
+#: plugins/rdp/rdp_settings.cpp:555
 #, fuzzy
 msgid "Cursor blinking"
 msgstr "ಕರ್ಸರ್ ಮಿನುಗುವುದು"
 
-#: plugins/rdp/rdp_settings.c:562
+#: plugins/rdp/rdp_settings.cpp:562
 #, fuzzy
 msgid "Font smoothing"
 msgstr "ಫಾಂಟ್ ನಯಗೊಳಿಸುವ"
 
-#: plugins/rdp/rdp_settings.c:570
+#: plugins/rdp/rdp_settings.cpp:570
 #, fuzzy
 msgid "Composition"
 msgstr "ಸಂಯೋಜನೆ"
 
-#: plugins/rdp/rdp_settings.c:580
+#: plugins/rdp/rdp_settings.cpp:580
 #, fuzzy
 msgid "Remote scale factor"
 msgstr "ರಿಮೋಟ್ ಸ್ಕೇಲ್ ಅಂಶ"
 
-#: plugins/rdp/rdp_settings.c:595
+#: plugins/rdp/rdp_settings.cpp:595
 #, fuzzy
 msgid "Desktop scale factor %"
 msgstr "ಡೆಸ್ಕ್ ಟಾಪ್ ಸ್ಕೇಲ್ ಫ್ಯಾಕ್ಟರ್ %"
 
-#: plugins/rdp/rdp_settings.c:607
+#: plugins/rdp/rdp_settings.cpp:607
 #, fuzzy
 msgid "Device scale factor %"
 msgstr "ಸಾಧನ ಮಾಪನ ಅಂಶ %"
 
-#: plugins/rdp/rdp_settings.c:630
+#: plugins/rdp/rdp_settings.cpp:630
 #, fuzzy
 msgid "Desktop orientation"
 msgstr "ಡೆಸ್ಕ್ ಟಾಪ್ ಓರಿಯೆಂಟೇಶನ್"
 
-#: plugins/rdp/rdp_settings.c:650
+#: plugins/rdp/rdp_settings.cpp:650
 #, fuzzy
 msgid "Input device settings"
 msgstr "ಇನ್ ಪುಟ್ ಸಾಧನ ಸೆಟ್ಟಿಂಗ್ ಗಳು"
 
-#: plugins/rdp/rdp_settings.c:658 plugins/rdp/rdp_plugin.c:2766
-#: plugins/vnc/vnc_plugin.c:2030
+#: plugins/rdp/rdp_settings.cpp:658 plugins/rdp/rdp_plugin.cpp:2766
+#: plugins/vnc/vnc_plugin.cpp:2030
 #, fuzzy
 msgid "Disable smooth scrolling"
 msgstr "ನಯವಾದ ಸ್ಕ್ರಾಲಿಂಗ್ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
 
-#: plugins/rdp/rdp_settings.c:669
+#: plugins/rdp/rdp_settings.cpp:669
 #, fuzzy
 msgid "General settings"
 msgstr "ಸಾಮಾನ್ಯ ಸೆಟ್ಟಿಂಗ್ ಗಳು"
 
-#: plugins/rdp/rdp_settings.c:676 plugins/rdp/rdp_plugin.c:2819
+#: plugins/rdp/rdp_settings.cpp:676 plugins/rdp/rdp_plugin.cpp:2819
 #, fuzzy
 msgid "Reconnect attempts number"
 msgstr "ಪ್ರಯತ್ನಗಳ ಸಂಖ್ಯೆಯನ್ನು ಮರುಸಂಪರ್ಕಿಸು"
 
-#: plugins/rdp/rdp_settings.c:689 plugins/rdp/rdp_plugin.c:2819
+#: plugins/rdp/rdp_settings.cpp:689 plugins/rdp/rdp_plugin.cpp:2819
 #, fuzzy
 msgid ""
 "The maximum number of reconnect attempts upon an RDP disconnect (default: 20)"
 msgstr "ಆರ್ ಡಿಪಿ ಸಂಪರ್ಕ ಕಡಿತದ ಮೇಲೆ ಮರುಸಂಪರ್ಕಪ್ರಯತ್ನಗಳ ಗರಿಷ್ಠ ಸಂಖ್ಯೆ (ಡೀಫಾಲ್ಟ್: 20)"
 
-#: plugins/rdp/rdp_plugin.c:771 plugins/rdp/rdp_plugin.c:836
+#: plugins/rdp/rdp_plugin.cpp:771 plugins/rdp/rdp_plugin.cpp:836
 #, fuzzy
 msgid "Enter RDP authentication credentials"
 msgstr "ಆರ್ ಡಿಪಿ ದೃಢೀಕರಣ ರುಜುವಾತುಗಳನ್ನು ನಮೂದಿಸಿ"
 
-#: plugins/rdp/rdp_plugin.c:844
+#: plugins/rdp/rdp_plugin.cpp:844
 #, fuzzy
 msgid "Enter RDP gateway authentication credentials"
 msgstr "ಆರ್ ಡಿಪಿ ಗೇಟ್ ವೇ ದೃಢೀಕರಣ ರುಜುವಾತುಗಳನ್ನು ನಮೂದಿಸಿ"
 
-#: plugins/rdp/rdp_plugin.c:2153
+#: plugins/rdp/rdp_plugin.cpp:2153
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2277,7 +2277,7 @@ msgstr ""
 "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ \"[ಎಕ್ಸ್33ಎಕ್ಸ್]\" ಅನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.\n"
 "ಖಾತೆ ಲಾಕ್ ಔಟ್ ಆಗಿದೆ."
 
-#: plugins/rdp/rdp_plugin.c:2160
+#: plugins/rdp/rdp_plugin.cpp:2160
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2286,7 +2286,7 @@ msgstr ""
 "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ \"[ಎಕ್ಸ್33ಎಕ್ಸ್]\" ಅನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.\n"
 "ಖಾತೆ ಅವಧಿ ಮುಗಿದಿದೆ."
 
-#: plugins/rdp/rdp_plugin.c:2167
+#: plugins/rdp/rdp_plugin.cpp:2167
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2295,7 +2295,7 @@ msgstr ""
 "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ \"[ಎಕ್ಸ್33ಎಕ್ಸ್]\" ಅನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.\n"
 "ಪಾಸ್ ವರ್ಡ್ ಅವಧಿ ಮೀರಿದೆ."
 
-#: plugins/rdp/rdp_plugin.c:2174
+#: plugins/rdp/rdp_plugin.cpp:2174
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2304,7 +2304,7 @@ msgstr ""
 "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ \"[ಎಕ್ಸ್33ಎಕ್ಸ್]\" ಅನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.\n"
 "ಖಾತೆ ನಿಷ್ಕ್ರಿಯಗೊಂಡಿದೆ."
 
-#: plugins/rdp/rdp_plugin.c:2180
+#: plugins/rdp/rdp_plugin.cpp:2180
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2313,7 +2313,7 @@ msgstr ""
 "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ \"[ಎಕ್ಸ್33ಎಕ್ಸ್]\" ಅನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.\n"
 "ಸಾಕಷ್ಟು ಬಳಕೆದಾರ ಸವಲತ್ತುಗಳು ಇಲ್ಲ."
 
-#: plugins/rdp/rdp_plugin.c:2188
+#: plugins/rdp/rdp_plugin.cpp:2188
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2322,7 +2322,7 @@ msgstr ""
 "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ \"[ಎಕ್ಸ್33ಎಕ್ಸ್]\" ಅನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.\n"
 "ಖಾತೆ ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ."
 
-#: plugins/rdp/rdp_plugin.c:2196
+#: plugins/rdp/rdp_plugin.cpp:2196
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2331,17 +2331,17 @@ msgstr ""
 "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ \"[ಎಕ್ಸ್33ಎಕ್ಸ್]\" ಅನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.\n"
 "ಸಂಪರ್ಕಿಸುವ ಮೊದಲು ಬಳಕೆದಾರ ಪಾಸ್ ವರ್ಡ್ ಬದಲಿಸಿ."
 
-#: plugins/rdp/rdp_plugin.c:2201
+#: plugins/rdp/rdp_plugin.cpp:2201
 #, fuzzy, c-format
 msgid "Lost connection to the RDP server “%s”."
 msgstr "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ ಗೆ ಕಳೆದುಹೋದ ಸಂಪರ್ಕ \"[ಎಕ್ಸ್35ಎಕ್ಸ್]\"."
 
-#: plugins/rdp/rdp_plugin.c:2204
+#: plugins/rdp/rdp_plugin.cpp:2204
 #, fuzzy, c-format
 msgid "Could not find the address for the RDP server “%s”."
 msgstr "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ ಗೆ ವಿಳಾಸವನ್ನು ಹುಡುಕಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ \"[ಎಕ್ಸ್47ಎಕ್ಸ್]\"."
 
-#: plugins/rdp/rdp_plugin.c:2208
+#: plugins/rdp/rdp_plugin.cpp:2208
 #, fuzzy, c-format
 msgid ""
 "Could not connect to the RDP server “%s” via TLS. See the DEBUG traces from "
@@ -2351,7 +2351,7 @@ msgstr ""
 "ಸರ್ವರ್ ಸಾಮಾನ್ಯ Tಎಲ್ಎಸ್ ಆವೃತ್ತಿಯನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ ಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ."
 
 #. TRANSLATORS: the placeholder may be either an IP/FQDN or a server hostname
-#: plugins/rdp/rdp_plugin.c:2212
+#: plugins/rdp/rdp_plugin.cpp:2212
 #, fuzzy, c-format
 msgid ""
 "Unable to establish a connection to the RDP server “%s”. Check “Security "
@@ -2360,17 +2360,17 @@ msgstr ""
 "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ ಗೆ ಸಂಪರ್ಕವನ್ನು ಸ್ಥಾಪಿಸಲು ಅಸಮರ್ಥವಾಗಿದೆ \"[ಎಕ್ಸ್52ಎಕ್ಸ್]\". \"ಭದ್ರತಾ "
 "ಶಿಷ್ಟಾಚಾರ ಸಮಾಲೋಚನೆ\" ಪರಿಶೀಲಿಸಿ."
 
-#: plugins/rdp/rdp_plugin.c:2220
+#: plugins/rdp/rdp_plugin.cpp:2220
 #, fuzzy, c-format
 msgid "Cannot connect to the RDP server “%s”."
 msgstr "ಆರ್ ಡಿಪಿ ಸರ್ವರ್ ಗೆ ಸಂಪರ್ಕಪಡಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ \"[ಎಕ್ಸ್34ಎಕ್ಸ್]\"."
 
-#: plugins/rdp/rdp_plugin.c:2223
+#: plugins/rdp/rdp_plugin.cpp:2223
 #, fuzzy
 msgid "Could not start libfreerdp-gdi."
 msgstr "ಲಿಬ್ಫ್ರೀರ್ಡ್ಪ್-ಗ್ಡಿಯನ್ನು ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
-#: plugins/rdp/rdp_plugin.c:2226
+#: plugins/rdp/rdp_plugin.cpp:2226
 #, fuzzy, c-format
 msgid ""
 "You requested a H.264 GFX mode for the server “%s”, but your libfreerdp does "
@@ -2380,12 +2380,12 @@ msgstr ""
 "ನಿಮ್ಮ ಲಿಬ್ಫ್ರೀರ್ಡ್ಪ್ ಎಚ್.264 ಅನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ. ದಯವಿಟ್ಟು Aವಿಸಿ ಯೇತರ ಬಣ್ಣದ ಡೆಪ್ತ್ "
 "ಸೆಟ್ಟಿಂಗ್ ಬಳಸಿ."
 
-#: plugins/rdp/rdp_plugin.c:2233
+#: plugins/rdp/rdp_plugin.cpp:2233
 #, fuzzy, c-format
 msgid "The “%s” server refused the connection."
 msgstr "\"[ಎಕ್ಸ್5ಎಕ್ಸ್]\" ಸರ್ವರ್ ಸಂಪರ್ಕವನ್ನು ನಿರಾಕರಿಸಿತು."
 
-#: plugins/rdp/rdp_plugin.c:2238
+#: plugins/rdp/rdp_plugin.cpp:2238
 #, fuzzy, c-format
 msgid ""
 "The Remote Desktop Gateway “%s” denied the user “%s\\%s” access due to "
@@ -2394,143 +2394,143 @@ msgstr ""
 "ರಿಮೋಟ್ ಡೆಸ್ಕ್ ಟಾಪ್ ಗೇಟ್ ವೇ \"[ಎಕ್ಸ್28ಎಕ್ಸ್]\" ಬಳಕೆದಾರನಿಗೆ \"[ಎಕ್ಸ್49ಎಕ್ಸ್]\\[ಎಕ್ಸ್52ಎಕ್ಸ್]] "
 "\" ನೀತಿಯಿಂದಾಗಿ ಪ್ರವೇಶವನ್ನು ನಿರಾಕರಿಸಿತು."
 
-#: plugins/rdp/rdp_plugin.c:2248
+#: plugins/rdp/rdp_plugin.cpp:2248
 #, fuzzy, c-format
 msgid "Cannot connect to the “%s” RDP server."
 msgstr "\"[ಎಕ್ಸ್23ಎಕ್ಸ್]\" ಆರ್ ಡಿಪಿ ಸರ್ವರ್ ಗೆ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ."
 
-#: plugins/rdp/rdp_plugin.c:2591
+#: plugins/rdp/rdp_plugin.cpp:2591
 #, fuzzy
 msgid "Automatic (32 bpp) (Server chooses its best format)"
 msgstr "ಸ್ವಯಂಚಾಲಿತ (32 ಬಿಪಿಪಿ) (ಸರ್ವರ್ ತನ್ನ ಅತ್ಯುತ್ತಮ ಸ್ವರೂಪವನ್ನು ಆಯ್ಕೆ ಮಾಡುತ್ತದೆ)"
 
-#: plugins/rdp/rdp_plugin.c:2592
+#: plugins/rdp/rdp_plugin.cpp:2592
 #, fuzzy
 msgid "GFX AVC444 (32 bpp)"
 msgstr "GPTAP44 (32 PP)"
 
-#: plugins/rdp/rdp_plugin.c:2593
+#: plugins/rdp/rdp_plugin.cpp:2593
 #, fuzzy
 msgid "GFX AVC420 (32 bpp)"
 msgstr "GPTAP420 (32 PP)"
 
-#: plugins/rdp/rdp_plugin.c:2594
+#: plugins/rdp/rdp_plugin.cpp:2594
 #, fuzzy
 msgid "GFX RFX (32 bpp)"
 msgstr "GPTAM (32 PP)"
 
-#: plugins/rdp/rdp_plugin.c:2595
+#: plugins/rdp/rdp_plugin.cpp:2595
 #, fuzzy
 msgid "GFX RFX Progressive (32 bpp)"
 msgstr "GPTAM PP ಪ್ರೋಗ್ರೆಸ್ಸಿವ್ (32 ಬಿಪಿಪಿ)"
 
-#: plugins/rdp/rdp_plugin.c:2596
+#: plugins/rdp/rdp_plugin.cpp:2596
 #, fuzzy
 msgid "RemoteFX (32 bpp)"
 msgstr "ರಿಮೋಟ್ ಎಫ್ ಎಕ್ಸ್ (32 ಬಿಪಿಪಿ)"
 
-#: plugins/rdp/rdp_plugin.c:2597 plugins/vnc/vnc_plugin.c:1935
+#: plugins/rdp/rdp_plugin.cpp:2597 plugins/vnc/vnc_plugin.cpp:1935
 #, fuzzy
 msgid "True colour (32 bpp)"
 msgstr "ನಿಜವಾದ ಬಣ್ಣ (32 ಬಿಪಿಪಿ)"
 
-#: plugins/rdp/rdp_plugin.c:2598
+#: plugins/rdp/rdp_plugin.cpp:2598
 #, fuzzy
 msgid "True colour (24 bpp)"
 msgstr "ನಿಜವಾದ ಬಣ್ಣ (24 ಬಿಪಿಪಿ)"
 
-#: plugins/rdp/rdp_plugin.c:2599 plugins/vnc/vnc_plugin.c:1936
+#: plugins/rdp/rdp_plugin.cpp:2599 plugins/vnc/vnc_plugin.cpp:1936
 #, fuzzy
 msgid "High colour (16 bpp)"
 msgstr "ಅಧಿಕ ಬಣ್ಣ (16 ಬಿಪಿಪಿ)"
 
-#: plugins/rdp/rdp_plugin.c:2600
+#: plugins/rdp/rdp_plugin.cpp:2600
 #, fuzzy
 msgid "High colour (15 bpp)"
 msgstr "ಅಧಿಕ ಬಣ್ಣ (15 ಬಿಪಿಪಿ)"
 
-#: plugins/rdp/rdp_plugin.c:2601 plugins/vnc/vnc_plugin.c:1937
+#: plugins/rdp/rdp_plugin.cpp:2601 plugins/vnc/vnc_plugin.cpp:1937
 #, fuzzy
 msgid "256 colours (8 bpp)"
 msgstr "256 ಬಣ್ಣಗಳು (8 ಬಿಪಿಪಿ)"
 
-#: plugins/rdp/rdp_plugin.c:2632 data/ui/remmina_preferences.glade:612
+#: plugins/rdp/rdp_plugin.cpp:2632 data/ui/remmina_preferences.glade:612
 #, fuzzy
 msgid "None"
 msgstr "ಯಾವುದೂ ಇಲ್ಲ"
 
-#: plugins/rdp/rdp_plugin.c:2633
+#: plugins/rdp/rdp_plugin.cpp:2633
 #, fuzzy
 msgid "Auto-detect"
 msgstr "ಸ್ವಯಂ-ಪತ್ತೆ"
 
-#: plugins/rdp/rdp_plugin.c:2634
+#: plugins/rdp/rdp_plugin.cpp:2634
 #, fuzzy
 msgid "Modem"
 msgstr "ಮೊಡೆಮ್"
 
-#: plugins/rdp/rdp_plugin.c:2635
+#: plugins/rdp/rdp_plugin.cpp:2635
 #, fuzzy
 msgid "Low performance broadband"
 msgstr "ಕಡಿಮೆ ಕಾರ್ಯಕ್ಷಮತೆ ಬ್ರಾಡ್ ಬ್ಯಾಂಡ್"
 
-#: plugins/rdp/rdp_plugin.c:2636
+#: plugins/rdp/rdp_plugin.cpp:2636
 #, fuzzy
 msgid "Satellite"
 msgstr "ಉಪಗ್ರಹ"
 
-#: plugins/rdp/rdp_plugin.c:2637
+#: plugins/rdp/rdp_plugin.cpp:2637
 #, fuzzy
 msgid "High performance broadband"
 msgstr "ಉನ್ನತ ಕಾರ್ಯಕ್ಷಮತೆ ಬ್ರಾಡ್ ಬ್ಯಾಂಡ್"
 
-#: plugins/rdp/rdp_plugin.c:2638
+#: plugins/rdp/rdp_plugin.cpp:2638
 #, fuzzy
 msgid "WAN"
 msgstr "ವಾನ್"
 
-#: plugins/rdp/rdp_plugin.c:2639
+#: plugins/rdp/rdp_plugin.cpp:2639
 #, fuzzy
 msgid "LAN"
 msgstr "ಲ್ಯಾನ್"
 
-#: plugins/rdp/rdp_plugin.c:2646 plugins/spice/spice_plugin.c:635
+#: plugins/rdp/rdp_plugin.cpp:2646 plugins/spice/spice_plugin.cpp:635
 #: data/ui/remmina_preferences.glade:648
 #, fuzzy
 msgid "Off"
 msgstr "ಆರಿಸಿ"
 
-#: plugins/rdp/rdp_plugin.c:2655
+#: plugins/rdp/rdp_plugin.cpp:2655
 #, fuzzy
 msgid "Automatic negotiation"
 msgstr "ಸ್ವಯಂಚಾಲಿತ ಸಮಾಲೋಚನೆ"
 
-#: plugins/rdp/rdp_plugin.c:2656
+#: plugins/rdp/rdp_plugin.cpp:2656
 #, fuzzy
 msgid "NLA protocol security"
 msgstr "ಎನ್ ಎಲ್ ಎ ಪ್ರೊಟೋಕಾಲ್ ಭದ್ರತೆ"
 
-#: plugins/rdp/rdp_plugin.c:2657
+#: plugins/rdp/rdp_plugin.cpp:2657
 #, fuzzy
 msgid "TLS protocol security"
 msgstr "TTಎಲ್ಎಸ್ ಪ್ರೊಟೋಕಾಲ್ ಭದ್ರತೆ"
 
-#: plugins/rdp/rdp_plugin.c:2658
+#: plugins/rdp/rdp_plugin.cpp:2658
 #, fuzzy
 msgid "RDP protocol security"
 msgstr "ಆರ್ ಡಿಪಿ ಪ್ರೊಟೋಕಾಲ್ ಭದ್ರತೆ"
 
-#: plugins/rdp/rdp_plugin.c:2659
+#: plugins/rdp/rdp_plugin.cpp:2659
 #, fuzzy
 msgid "NLA extended protocol security"
 msgstr "ಎನ್ ಎಲ್ ಎ ವಿಸ್ತರಿತ ಪ್ರೊಟೋಕಾಲ್ ಭದ್ರತೆ"
 
-#: plugins/rdp/rdp_plugin.c:2672
+#: plugins/rdp/rdp_plugin.cpp:2672
 #, fuzzy
 msgid "2600 (Windows XP), 7601 (Windows Vista/7), 9600 (Windows 8 and newer)"
 msgstr "2600 (ವಿಂಡೋಸ್ ಎಕ್ಸ್ ಪಿ), 7601 (ವಿಂಡೋಸ್ ವಿಸ್ಟಾ/7), 9600 (ವಿಂಡೋಸ್ 8 ಮತ್ತು ಹೊಸ)"
 
-#: plugins/rdp/rdp_plugin.c:2675
+#: plugins/rdp/rdp_plugin.cpp:2675
 #, fuzzy
 msgid ""
 "Used i.a. by terminal services in a smart card channel to distinguish client "
@@ -2548,7 +2548,7 @@ msgstr ""
 "ಕೌಂಟ್() • >= 7065: ವಿಂಡೋಸ್ 8 ಮತ್ತು ಹೊಸ: ಎಸ್ ಕಾರ್ಡ್ ಗೆಟ್ ರೀಡರ್ ಐಕಾನ್(),\n"
 "    ಎಸ್ ಕಾರ್ಡ್ ಗೆಟ್ ಸಾಧನಪ್ರಕಾರ()"
 
-#: plugins/rdp/rdp_plugin.c:2683
+#: plugins/rdp/rdp_plugin.cpp:2683
 #, fuzzy
 msgid ""
 "Options for redirection of audio input:\n"
@@ -2567,7 +2567,7 @@ msgstr ""
 "  • ಸಿಸ್:ಓಎಸ್ಎಸ್,ದೇವ್:1,ಸ್ವರೂಪ:1\n"
 "  • ಸಿಸ್:ಅಲ್ಸಾ"
 
-#: plugins/rdp/rdp_plugin.c:2692
+#: plugins/rdp/rdp_plugin.cpp:2692
 #, fuzzy
 msgid ""
 "Options for redirection of audio output:\n"
@@ -2586,7 +2586,7 @@ msgstr ""
 "  • ಸಿಸ್:ಓಎಸ್ಎಸ್,ದೇವ್:1,ಸ್ವರೂಪ:1\n"
 "  • ಸಿಸ್:ಅಲ್ಸಾ"
 
-#: plugins/rdp/rdp_plugin.c:2702
+#: plugins/rdp/rdp_plugin.cpp:2702
 #, fuzzy
 msgid ""
 "Options for redirection of USB device:\n"
@@ -2599,7 +2599,7 @@ msgstr ""
 "  • ಆಟೋ\n"
 "  • ಐಡಿ:054ಸೆ:0268#4669:6ಇ6ಬಿ,ಆಡ್ರ್:04:0ಸೆ"
 
-#: plugins/rdp/rdp_plugin.c:2708
+#: plugins/rdp/rdp_plugin.cpp:2708
 #, fuzzy
 msgid ""
 "Advanced setting for high latency links:\n"
@@ -2610,7 +2610,7 @@ msgstr ""
 "ಸಂಪರ್ಕ ಟೈಮ್ ಔಟ್ ಅನ್ನು ಸರಿಹೊಂದಿಸುತ್ತದೆ. ನಿಮ್ಮ ಸಂಪರ್ಕಸಮಯಗಳು ಹೊರಗೆ ಇದ್ದರೆ ಬಳಸಿ.\n"
 "ಗರಿಷ್ಠ ಮೌಲ್ಯ600000 mm (10 ನಿಮಿಷಗಳು).\n"
 
-#: plugins/rdp/rdp_plugin.c:2713
+#: plugins/rdp/rdp_plugin.cpp:2713
 #, fuzzy
 msgid ""
 "Performance optimisations based on the network connection type:\n"
@@ -2621,7 +2621,7 @@ msgstr ""
 "ಸ್ವಯಂ ಪತ್ತೆ ಯನ್ನು ಬಳಸಲು ಸಲಹೆ ನೀಡಲಾಗುತ್ತದೆ.\n"
 "\"ಸ್ವಯಂ-ಪತ್ತೆ\" ವಿಫಲವಾದರೆ, ಪಟ್ಟಿಯಲ್ಲಿ ಅತ್ಯಂತ ಸೂಕ್ತವಾದ ಆಯ್ಕೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ.\n"
 
-#: plugins/rdp/rdp_plugin.c:2718
+#: plugins/rdp/rdp_plugin.cpp:2718
 #, fuzzy
 msgid ""
 "Comma-separated list of monitor IDs and desktop orientations:\n"
@@ -2646,7 +2646,7 @@ msgstr ""
 "  • 270 (ಭಾವಚಿತ್ರ ವನ್ನು ಫ್ಲಿಪ್ ಮಾಡಲಾಗಿದೆ)\n"
 "\n"
 
-#: plugins/rdp/rdp_plugin.c:2730
+#: plugins/rdp/rdp_plugin.cpp:2730
 #, fuzzy
 msgid ""
 "Redirect directory <path> as named share <name>.\n"
@@ -2667,170 +2667,170 @@ msgstr ""
 "  • ಹಾಟ್ ಪ್ಲಗ್,*\n"
 "\n"
 
-#: plugins/rdp/rdp_plugin.c:2762 plugins/spice/spice_plugin.c:677
+#: plugins/rdp/rdp_plugin.cpp:2762 plugins/spice/spice_plugin.cpp:677
 #, fuzzy
 msgid "Share folder"
 msgstr "ಫೋಲ್ಡರ್ ಹಂಚಿಕೊಳ್ಳಿ"
 
-#: plugins/rdp/rdp_plugin.c:2762
+#: plugins/rdp/rdp_plugin.cpp:2762
 #, fuzzy
 msgid "Use “Redirect directory” in the advanced tab for multiple directories"
 msgstr "ಬಹು ಡೈರೆಕ್ಟರಿಗಳಿಗಾಗಿ ಸುಧಾರಿತ ಟ್ಯಾಬ್ ನಲ್ಲಿ \"ರೀಡೈರೆಕ್ಟ್ ಡೈರೆಕ್ಟರಿ\" ಬಳಸಿ"
 
-#: plugins/rdp/rdp_plugin.c:2763
+#: plugins/rdp/rdp_plugin.cpp:2763
 #, fuzzy
 msgid "Restricted admin mode"
 msgstr "ನಿರ್ಬಂಧಿತ ಅಡ್ಮಿನ್ ಮೋಡ್"
 
-#: plugins/rdp/rdp_plugin.c:2764
+#: plugins/rdp/rdp_plugin.cpp:2764
 #, fuzzy
 msgid "Password hash"
 msgstr "ಪಾಸ್ ವರ್ಡ್ ಹ್ಯಾಶ್"
 
-#: plugins/rdp/rdp_plugin.c:2764
+#: plugins/rdp/rdp_plugin.cpp:2764
 #, fuzzy
 msgid "Restricted admin mode password hash"
 msgstr "ನಿರ್ಬಂಧಿತ ಅಡ್ಮಿನ್ ಮೋಡ್ ಪಾಸ್ ವರ್ಡ್ ಹ್ಯಾಶ್"
 
-#: plugins/rdp/rdp_plugin.c:2765
+#: plugins/rdp/rdp_plugin.cpp:2765
 #, fuzzy
 msgid "Left-handed mouse support"
 msgstr "ಎಡಗೈ ಮೌಸ್ ಬೆಂಬಲ"
 
-#: plugins/rdp/rdp_plugin.c:2765
+#: plugins/rdp/rdp_plugin.cpp:2765
 #, fuzzy
 msgid "Swap left and right mouse buttons for left-handed mouse support"
 msgstr "ಎಡಗೈ ಮೌಸ್ ಬೆಂಬಲಕ್ಕಾಗಿ ಎಡ ಮತ್ತು ಬಲ ಮೌಸ್ ಬಟನ್ ಗಳನ್ನು ವಿನಿಮಯ ಮಾಡಿ"
 
-#: plugins/rdp/rdp_plugin.c:2767
+#: plugins/rdp/rdp_plugin.cpp:2767
 #, fuzzy
 msgid "Enable multi monitor"
 msgstr "ಬಹು ಮಾನಿಟರ್ ಕ್ರಿಯಾತ್ಮಕಗೊಳಿಸು"
 
-#: plugins/rdp/rdp_plugin.c:2768
+#: plugins/rdp/rdp_plugin.cpp:2768
 #, fuzzy
 msgid "Span screen over multiple monitors"
 msgstr "ಬಹು ಮಾನಿಟರ್ ಗಳ ಮೇಲೆ ಪರದೆಯನ್ನು ಸ್ಪ್ಯಾನ್ ಮಾಡು"
 
-#: plugins/rdp/rdp_plugin.c:2769
+#: plugins/rdp/rdp_plugin.cpp:2769
 #, fuzzy
 msgid "List monitor IDs"
 msgstr "ಮಾನಿಟರ್ ಐಡಿಗಳನ್ನು ಪಟ್ಟಿ ಮಾಡಿ"
 
-#: plugins/rdp/rdp_plugin.c:2771 plugins/vnc/vnc_plugin.c:1999
-#: plugins/vnc/vnc_plugin.c:2011 plugins/gvnc/gvnc_plugin.c:849
+#: plugins/rdp/rdp_plugin.cpp:2771 plugins/vnc/vnc_plugin.cpp:1999
+#: plugins/vnc/vnc_plugin.cpp:2011 plugins/gvnc/gvnc_plugin.cpp:849
 #, fuzzy
 msgid "Colour depth"
 msgstr "ಬಣ್ಣದ ಆಳ"
 
-#: plugins/rdp/rdp_plugin.c:2772
+#: plugins/rdp/rdp_plugin.cpp:2772
 #, fuzzy
 msgid "Network connection type"
 msgstr "ನೆಟ್ವರ್ಕ್ ಸಂಪರ್ಕ ಪ್ರಕಾರ"
 
-#: plugins/rdp/rdp_plugin.c:2788 plugins/vnc/vnc_plugin.c:2000
-#: plugins/vnc/vnc_plugin.c:2012
+#: plugins/rdp/rdp_plugin.cpp:2788 plugins/vnc/vnc_plugin.cpp:2000
+#: plugins/vnc/vnc_plugin.cpp:2012
 #, fuzzy
 msgid "Quality"
 msgstr "ಗುಣಮಟ್ಟ"
 
-#: plugins/rdp/rdp_plugin.c:2789
+#: plugins/rdp/rdp_plugin.cpp:2789
 #, fuzzy
 msgid "Security protocol negotiation"
 msgstr "ಭದ್ರತಾ ಪ್ರೊಟೋಕಾಲ್ ಸಂಧಾನ"
 
-#: plugins/rdp/rdp_plugin.c:2790
+#: plugins/rdp/rdp_plugin.cpp:2790
 #, fuzzy
 msgid "Gateway transport type"
 msgstr "ಗೇಟ್ ವೇ ಸಾರಿಗೆ ಪ್ರಕಾರ"
 
-#: plugins/rdp/rdp_plugin.c:2791
+#: plugins/rdp/rdp_plugin.cpp:2791
 #, fuzzy
 msgid "FreeRDP log level"
 msgstr "ಫ್ರೀಆರ್ ಡಿಪಿ ಲಾಗ್ ಹಂತ"
 
-#: plugins/rdp/rdp_plugin.c:2792
+#: plugins/rdp/rdp_plugin.cpp:2792
 #, fuzzy
 msgid "FreeRDP log filters"
 msgstr "ಫ್ರೀಆರ್ ಡಿಪಿ ಲಾಗ್ ಫಿಲ್ಟರ್ ಗಳು"
 
-#: plugins/rdp/rdp_plugin.c:2792
+#: plugins/rdp/rdp_plugin.cpp:2792
 #, fuzzy
 msgid "tag:level[,tag:level[,…]]"
 msgstr "ಟ್ಯಾಗ್:ಹಂತ[,ಟ್ಯಾಗ್:ಹಂತ[,...]]"
 
-#: plugins/rdp/rdp_plugin.c:2793
+#: plugins/rdp/rdp_plugin.cpp:2793
 #, fuzzy
 msgid "Audio output mode"
 msgstr "ಆಡಿಯೋ ಔಟ್ ಪುಟ್ ಮೋಡ್"
 
-#: plugins/rdp/rdp_plugin.c:2794
+#: plugins/rdp/rdp_plugin.cpp:2794
 #, fuzzy
 msgid "Redirect local audio output"
 msgstr "ಸ್ಥಳೀಯ ಆಡಿಯೋ ಔಟ್ ಪುಟ್ ಅನ್ನು ಮರುನಿರ್ದೇಶಿಸುವುದು"
 
-#: plugins/rdp/rdp_plugin.c:2795
+#: plugins/rdp/rdp_plugin.cpp:2795
 #, fuzzy
 msgid "Redirect local microphone"
 msgstr "ಸ್ಥಳೀಯ ಮೈಕ್ರೊಫೋನ್ ಅನ್ನು ಮರುನಿರ್ದೇಶಿಸುವುದು"
 
-#: plugins/rdp/rdp_plugin.c:2796
+#: plugins/rdp/rdp_plugin.cpp:2796
 #, fuzzy
 msgid "Connection timeout in ms"
 msgstr "Ma"
 
-#: plugins/rdp/rdp_plugin.c:2797
+#: plugins/rdp/rdp_plugin.cpp:2797
 #, fuzzy
 msgid "Remote Desktop Gateway server"
 msgstr "ರಿಮೋಟ್ ಡೆಸ್ಕ್ ಟಾಪ್ ಗೇಟ್ ವೇ ಸರ್ವರ್"
 
-#: plugins/rdp/rdp_plugin.c:2798
+#: plugins/rdp/rdp_plugin.cpp:2798
 #, fuzzy
 msgid "Remote Desktop Gateway username"
 msgstr "ರಿಮೋಟ್ ಡೆಸ್ಕ್ ಟಾಪ್ ಗೇಟ್ ವೇ ಬಳಕೆದಾರ ಹೆಸರು"
 
-#: plugins/rdp/rdp_plugin.c:2799
+#: plugins/rdp/rdp_plugin.cpp:2799
 #, fuzzy
 msgid "Remote Desktop Gateway password"
 msgstr "ರಿಮೋಟ್ ಡೆಸ್ಕ್ ಟಾಪ್ ಗೇಟ್ ವೇ ಪಾಸ್ ವರ್ಡ್"
 
-#: plugins/rdp/rdp_plugin.c:2800
+#: plugins/rdp/rdp_plugin.cpp:2800
 #, fuzzy
 msgid "Remote Desktop Gateway domain"
 msgstr "ರಿಮೋಟ್ ಡೆಸ್ಕ್ ಟಾಪ್ ಗೇಟ್ ವೇ ಡೊಮೇನ್"
 
-#: plugins/rdp/rdp_plugin.c:2801
+#: plugins/rdp/rdp_plugin.cpp:2801
 #, fuzzy
 msgid "Redirect directory"
 msgstr "ಡೈರೆಕ್ಟರಿಯನ್ನು ಮರುನಿರ್ದೇಶಿಸುವುದು"
 
-#: plugins/rdp/rdp_plugin.c:2802
+#: plugins/rdp/rdp_plugin.cpp:2802
 #, fuzzy
 msgid "Client name"
 msgstr "ಕ್ಲೈಂಟ್ ಹೆಸರು"
 
-#: plugins/rdp/rdp_plugin.c:2803
+#: plugins/rdp/rdp_plugin.cpp:2803
 #, fuzzy
 msgid "Client build"
 msgstr "ಕ್ಲೈಂಟ್ ನಿರ್ಮಾಣ"
 
-#: plugins/rdp/rdp_plugin.c:2804
+#: plugins/rdp/rdp_plugin.cpp:2804
 #, fuzzy
 msgid "Start-up program"
 msgstr "ಸ್ಟಾರ್ಟ್-ಅಪ್ ಪ್ರೋಗ್ರಾಂ"
 
-#: plugins/rdp/rdp_plugin.c:2806
+#: plugins/rdp/rdp_plugin.cpp:2806
 #, fuzzy
 msgid "Load balance info"
 msgstr "ಸಮತೋಲನ ಮಾಹಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡಿ"
 
 #. TRANSLATORS: Do not use typographic quotation marks, these must stay as "double quote", also know as “Typewriter ("programmer's") quote, ambidextrous.”
-#: plugins/rdp/rdp_plugin.c:2808
+#: plugins/rdp/rdp_plugin.cpp:2808
 #, fuzzy
 msgid "Override printer drivers"
 msgstr "ಮುದ್ರಕ ಡ್ರೈವರ್ ಗಳನ್ನು ಅತಿಕ್ರಮಿಸುತ್ತದೆ"
 
-#: plugins/rdp/rdp_plugin.c:2808
+#: plugins/rdp/rdp_plugin.cpp:2808
 #, fuzzy
 msgid ""
 "\"Samsung_CLX-3300_Series\":\"Samsung CLX-3300 Series PS\";\"Canon MF410\":"
@@ -2839,398 +2839,398 @@ msgstr ""
 "\"Samsung_CLX-3300_Series\"ಸ್ಯಾಮ್ ಸಂಗ್ ಸಿಎಲ್ಎಕ್ಸ್-3300 ಸರಣಿ ಪಿಎಸ್\";\" ಕ್ಯಾನನ್ "
 "ಎಂಎಫ್410\"ಕ್ಯಾನನ್ ಎಂಎಫ್410 ಸರಣಿ ಯುಎಫ್ಆರ್ ಐ\""
 
-#: plugins/rdp/rdp_plugin.c:2809
+#: plugins/rdp/rdp_plugin.cpp:2809
 #, fuzzy
 msgid "USB device redirection"
 msgstr "ಯುಎಸ್ ಬಿ ಸಾಧನ ಮರುನಿರ್ದೇಶನ"
 
-#: plugins/rdp/rdp_plugin.c:2810
+#: plugins/rdp/rdp_plugin.cpp:2810
 #, fuzzy
 msgid "Local serial name"
 msgstr "ಸ್ಥಳೀಯ ಸೀರಿಯಲ್ ಹೆಸರು"
 
-#: plugins/rdp/rdp_plugin.c:2810
+#: plugins/rdp/rdp_plugin.cpp:2810
 #, fuzzy
 msgid "COM1, COM2, etc."
 msgstr "ಕಾಂ1, ಕಾಂ2, ಇತ್ಯಾದಿ."
 
-#: plugins/rdp/rdp_plugin.c:2811
+#: plugins/rdp/rdp_plugin.cpp:2811
 #, fuzzy
 msgid "Local serial driver"
 msgstr "ಸ್ಥಳೀಯ ಸರಣಿ ಚಾಲಕ"
 
-#: plugins/rdp/rdp_plugin.c:2811
+#: plugins/rdp/rdp_plugin.cpp:2811
 #, fuzzy
 msgid "Serial"
 msgstr "ಸೀರಿಯಲ್"
 
-#: plugins/rdp/rdp_plugin.c:2812
+#: plugins/rdp/rdp_plugin.cpp:2812
 #, fuzzy
 msgid "Local serial path"
 msgstr "ಸ್ಥಳೀಯ ಸರಣಿ ಮಾರ್ಗ"
 
-#: plugins/rdp/rdp_plugin.c:2812
+#: plugins/rdp/rdp_plugin.cpp:2812
 #, fuzzy
 msgid "/dev/ttyS0, /dev/ttyS1, etc."
 msgstr "/ದೇವ್/ಟಿಟಿಎಸ್0, /ದೇವ್/ಟಿಟಿಎಸ್1, ಇತ್ಯಾದಿ."
 
-#: plugins/rdp/rdp_plugin.c:2813
+#: plugins/rdp/rdp_plugin.cpp:2813
 #, fuzzy
 msgid "Local parallel name"
 msgstr "ಸ್ಥಳೀಯ ಸಮಾನಾಂತರ ಹೆಸರು"
 
-#: plugins/rdp/rdp_plugin.c:2814
+#: plugins/rdp/rdp_plugin.cpp:2814
 #, fuzzy
 msgid "Local parallel device"
 msgstr "ಸ್ಥಳೀಯ ಸಮಾನಾಂತರ ಸಾಧನ"
 
-#: plugins/rdp/rdp_plugin.c:2815
+#: plugins/rdp/rdp_plugin.cpp:2815
 #, fuzzy
 msgid "Name of smart card"
 msgstr "ಸ್ಮಾರ್ಟ್ ಕಾರ್ಡ್ ಹೆಸರು"
 
-#: plugins/rdp/rdp_plugin.c:2816
+#: plugins/rdp/rdp_plugin.cpp:2816
 #, fuzzy
 msgid "Dynamic virtual channel"
 msgstr "ಡೈನಾಮಿಕ್ ವರ್ಚುವಲ್ ಚಾನೆಲ್"
 
-#: plugins/rdp/rdp_plugin.c:2816 plugins/rdp/rdp_plugin.c:2817
+#: plugins/rdp/rdp_plugin.cpp:2816 plugins/rdp/rdp_plugin.cpp:2817
 #, fuzzy
 msgid "<channel>[,<options>]"
 msgstr "<channel>[,<options>]"
 
-#: plugins/rdp/rdp_plugin.c:2817
+#: plugins/rdp/rdp_plugin.cpp:2817
 #, fuzzy
 msgid "Static virtual channel"
 msgstr "ಸ್ಥಿರ ವರ್ಚುವಲ್ ಚಾನೆಲ್"
 
-#: plugins/rdp/rdp_plugin.c:2818
+#: plugins/rdp/rdp_plugin.cpp:2818
 #, fuzzy
 msgid "TCP redirection"
 msgstr "TP ಮರುನಿರ್ದೇಶನ"
 
-#: plugins/rdp/rdp_plugin.c:2818
+#: plugins/rdp/rdp_plugin.cpp:2818
 #, fuzzy
 msgid "/PATH/TO/rdp2tcp"
 msgstr "/PAT/TAT/TAP2TP"
 
-#: plugins/rdp/rdp_plugin.c:2820
+#: plugins/rdp/rdp_plugin.cpp:2820
 #, fuzzy
 msgid "Prefer IPv6 AAAA record over IPv4 A record"
 msgstr "ಐಪಿವಿ4 ಗಿಂತ ಐಪಿವಿ6 ಎಎಎಎ ದಾಖಲೆಯನ್ನು ಆದ್ಯತೆ ನೀಡಿ ಒಂದು ದಾಖಲೆ"
 
-#: plugins/rdp/rdp_plugin.c:2821
+#: plugins/rdp/rdp_plugin.cpp:2821
 #, fuzzy
 msgid "Share printers"
 msgstr "ಮುದ್ರಕಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ"
 
-#: plugins/rdp/rdp_plugin.c:2822
+#: plugins/rdp/rdp_plugin.cpp:2822
 #, fuzzy
 msgid "Share serial ports"
 msgstr "ಸರಣಿ ಪೋರ್ಟ್ ಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ"
 
-#: plugins/rdp/rdp_plugin.c:2823
+#: plugins/rdp/rdp_plugin.cpp:2823
 #, fuzzy
 msgid "(SELinux) permissive mode for serial ports"
 msgstr "(ಎಸ್ಇಲಿನಕ್ಸ್) ಸೀರಿಯಲ್ ಪೋರ್ಟ್ ಗಳಿಗೆ ಅನುಮತಿಸುವ ಮೋಡ್"
 
-#: plugins/rdp/rdp_plugin.c:2824
+#: plugins/rdp/rdp_plugin.cpp:2824
 #, fuzzy
 msgid "Share parallel ports"
 msgstr "ಸಮಾನಾಂತರ ಪೋರ್ಟ್ ಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ"
 
-#: plugins/rdp/rdp_plugin.c:2825
+#: plugins/rdp/rdp_plugin.cpp:2825
 #, fuzzy
 msgid "Share a smart card"
 msgstr "ಸ್ಮಾರ್ಟ್ ಕಾರ್ಡ್ ಹಂಚಿಕೊಳ್ಳಿ"
 
-#: plugins/rdp/rdp_plugin.c:2826 plugins/vnc/vnc_plugin.c:2035
+#: plugins/rdp/rdp_plugin.cpp:2826 plugins/vnc/vnc_plugin.cpp:2035
 #, fuzzy
 msgid "Turn off clipboard sync"
 msgstr "ಕ್ಲಿಪ್ ಬೋರ್ಡ್ ಸಿಂಕ್ ಆಫ್ ಮಾಡಿ"
 
-#: plugins/rdp/rdp_plugin.c:2827
+#: plugins/rdp/rdp_plugin.cpp:2827
 #, fuzzy
 msgid "Ignore certificate"
 msgstr "ಪ್ರಮಾಣಪತ್ರ ವನ್ನು ಕಡೆಗಣಿಸಿ"
 
-#: plugins/rdp/rdp_plugin.c:2828
+#: plugins/rdp/rdp_plugin.cpp:2828
 #, fuzzy
 msgid "Use the old license workflow"
 msgstr "ಹಳೆಯ ಪರವಾನಗಿ ಕಾರ್ಯಹರಿವನ್ನು ಬಳಸಿ"
 
-#: plugins/rdp/rdp_plugin.c:2828
+#: plugins/rdp/rdp_plugin.cpp:2828
 #, fuzzy
 msgid "It disables CAL and hwId is set to 0"
 msgstr "ಇದು ಸಿಎಎಲ್ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ ಮತ್ತು ಎಚ್ ವೈಐಡಿಯನ್ನು 0 ಗೆ ಹೊಂದಿಸಲಾಗಿದೆ"
 
-#: plugins/rdp/rdp_plugin.c:2829 plugins/spice/spice_plugin.c:702
-#: plugins/vnc/vnc_plugin.c:2031 plugins/www/www_plugin.c:919
-#: plugins/gvnc/gvnc_plugin.c:867
+#: plugins/rdp/rdp_plugin.cpp:2829 plugins/spice/spice_plugin.cpp:702
+#: plugins/vnc/vnc_plugin.cpp:2031 plugins/www/www_plugin.cpp:919
+#: plugins/gvnc/gvnc_plugin.cpp:867
 #, fuzzy
 msgid "Forget passwords after use"
 msgstr "ಬಳಸಿದ ನಂತರ ಪಾಸ್ ವರ್ಡ್ ಗಳನ್ನು ಮರೆತುಬಿಡಿ"
 
-#: plugins/rdp/rdp_plugin.c:2830
+#: plugins/rdp/rdp_plugin.cpp:2830
 #, fuzzy
 msgid "Attach to console (2003/2003 R2)"
 msgstr "ಕನ್ಸೋಲ್ ಗೆ ಲಗತ್ತಿಸಿ (2003/2003 ಆರ್ 2)"
 
-#: plugins/rdp/rdp_plugin.c:2831
+#: plugins/rdp/rdp_plugin.cpp:2831
 #, fuzzy
 msgid "Turn off fast-path"
 msgstr "ಫಾಸ್ಟ್-ಪಾತ್ ಆಫ್ ಮಾಡಿ"
 
-#: plugins/rdp/rdp_plugin.c:2832
+#: plugins/rdp/rdp_plugin.cpp:2832
 #, fuzzy
 msgid "Server detection using Remote Desktop Gateway"
 msgstr "ರಿಮೋಟ್ ಡೆಸ್ಕ್ ಟಾಪ್ ಗೇಟ್ ವೇ ಬಳಸಿ ಸರ್ವರ್ ಪತ್ತೆ"
 
-#: plugins/rdp/rdp_plugin.c:2834
+#: plugins/rdp/rdp_plugin.cpp:2834
 #, fuzzy
 msgid "Use system proxy settings"
 msgstr "ಸಿಸ್ಟಂ ಪ್ರಾಕ್ಸಿ ಸೆಟ್ಟಿಂಗ್ ಗಳನ್ನು ಬಳಸಿ"
 
-#: plugins/rdp/rdp_plugin.c:2836
+#: plugins/rdp/rdp_plugin.cpp:2836
 #, fuzzy
 msgid "Turn off automatic reconnection"
 msgstr "ಸ್ವಯಂಚಾಲಿತ ಮರುಸಂಪರ್ಕವನ್ನು ಆಫ್ ಮಾಡಿ"
 
-#: plugins/rdp/rdp_plugin.c:2837
+#: plugins/rdp/rdp_plugin.cpp:2837
 #, fuzzy
 msgid "Relax order checks"
 msgstr "ಆರ್ಡರ್ ಚೆಕ್ ಗಳನ್ನು ಸಡಿಲಗೊಳಿಸಿ"
 
-#: plugins/rdp/rdp_plugin.c:2838
+#: plugins/rdp/rdp_plugin.cpp:2838
 #, fuzzy
 msgid "Glyph cache"
 msgstr "ಗ್ಲಿಫ್ ಕ್ಯಾಶ್"
 
-#: plugins/rdp/rdp_plugin.c:2839
+#: plugins/rdp/rdp_plugin.cpp:2839
 #, fuzzy
 msgid "Enable multitransport protocol (UDP)"
 msgstr "ಬಹುಸಾರಿಗೆ ಪ್ರೊಟೋಕಾಲ್ ಕ್ರಿಯಾತ್ಮಕಗೊಳಿಸು (ಯುಡಿಪಿ)"
 
-#: plugins/rdp/rdp_plugin.c:2839
+#: plugins/rdp/rdp_plugin.cpp:2839
 #, fuzzy
 msgid "Using the UDP protocol may improve performance"
 msgstr "ಯುಡಿಪಿ ಪ್ರೊಟೋಕಾಲ್ ಬಳಸುವುದರಿಂದ ಕಾರ್ಯಕ್ಷಮತೆ ಸುಧಾರಿಸಬಹುದು"
 
-#: plugins/rdp/rdp_plugin.c:2840
+#: plugins/rdp/rdp_plugin.cpp:2840
 #, fuzzy
 msgid "Use base credentials for gateway too"
 msgstr "ಗೇಟ್ ವೇಗೂ ಮೂಲ ರುಜುವಾತುಗಳನ್ನು ಬಳಸಿ"
 
-#: plugins/rdp/rdp_plugin.c:2842
+#: plugins/rdp/rdp_plugin.cpp:2842
 #, fuzzy
 msgid "Enable Gateway websockets support"
 msgstr "ಗೇಟ್ ವೇ ವೆಬ್ ಸಾಕೆಟ್ ಗಳ ಬೆಂಬಲವನ್ನು ಕ್ರಿಯಾತ್ಮಕಗೊಳಿಸು"
 
-#: plugins/rdp/rdp_plugin.c:2855 plugins/spice/spice_plugin.c:715
-#: plugins/vnc/vnc_plugin.c:2052
+#: plugins/rdp/rdp_plugin.cpp:2855 plugins/spice/spice_plugin.cpp:715
+#: plugins/vnc/vnc_plugin.cpp:2052
 #, fuzzy
 msgid "Send Ctrl+Alt+Delete"
 msgstr "ಕಳುಹಿಸು Ttt0+At+ಅಳಿಸು"
 
-#: plugins/rdp/rdp_plugin.c:2868
+#: plugins/rdp/rdp_plugin.cpp:2868
 #, fuzzy
 msgid "RDP - Remote Desktop Protocol"
 msgstr "ಆರ್ ಡಿಪಿ - ರಿಮೋಟ್ ಡೆಸ್ಕ್ ಟಾಪ್ ಪ್ರೊಟೋಕಾಲ್"
 
-#: plugins/rdp/rdp_plugin.c:2893
+#: plugins/rdp/rdp_plugin.cpp:2893
 #, fuzzy
 msgid "RDP - RDP File Handler"
 msgstr "ಆರ್ ಡಿಪಿ - ಆರ್ ಡಿಪಿ ಫೈಲ್ ಹ್ಯಾಂಡ್ಲರ್"
 
-#: plugins/rdp/rdp_plugin.c:2908
+#: plugins/rdp/rdp_plugin.cpp:2908
 #, fuzzy
 msgid "RDP - Preferences"
 msgstr "ಆರ್ ಡಿಪಿ - ಆದ್ಯತೆಗಳು"
 
-#: plugins/rdp/rdp_plugin.c:2961
+#: plugins/rdp/rdp_plugin.cpp:2961
 #, fuzzy
 msgid "Export connection in Windows .rdp file format"
 msgstr "ವಿಂಡೋಸ್ .ಆರ್ ಡಿಪಿ ಫೈಲ್ ಸ್ವರೂಪದಲ್ಲಿ ಸಂಪರ್ಕ ರಫ್ತು ಮಾಡಿ"
 
-#: plugins/rdp/rdp_event.c:344
+#: plugins/rdp/rdp_event.cpp:344
 #, fuzzy, c-format
 msgid "Reconnection attempt %d of %d…"
 msgstr "[ಎಕ್ಸ್27ಎಕ್ಸ್] ನ ಮರುಸಂಪರ್ಕ ಪ್ರಯತ್ನ [ಎಕ್ಸ್21ಎಕ್ಸ್]…"
 
-#: plugins/spice/spice_plugin_file_transfer.c:82
+#: plugins/spice/spice_plugin_file_transfer.cpp:82
 #, fuzzy
 msgid "File Transfers"
 msgstr "ಫೈಲ್ ವರ್ಗಾವಣೆಗಳು"
 
-#: plugins/spice/spice_plugin_file_transfer.c:219
+#: plugins/spice/spice_plugin_file_transfer.cpp:219
 #, fuzzy
 msgid "Transfer error"
 msgstr "ವರ್ಗಾವಣೆ ದೋಷ"
 
-#: plugins/spice/spice_plugin_file_transfer.c:220
+#: plugins/spice/spice_plugin_file_transfer.cpp:220
 #, fuzzy, c-format
 msgid "%s: %s"
 msgstr "[ಎಕ್ಸ್0ಎಕ್ಸ್]: [ಎಕ್ಸ್4ಎಕ್ಸ್]"
 
-#: plugins/spice/spice_plugin_file_transfer.c:223
+#: plugins/spice/spice_plugin_file_transfer.cpp:223
 #, fuzzy
 msgid "Transfer completed"
 msgstr "ವರ್ಗಾವಣೆ ಪೂರ್ಣಗೊಂಡಿದೆ"
 
-#: plugins/spice/spice_plugin_file_transfer.c:224
+#: plugins/spice/spice_plugin_file_transfer.cpp:224
 #, fuzzy, c-format
 msgid "The %s file has been transferred"
 msgstr "[ಎಕ್ಸ್4ಎಕ್ಸ್] ಫೈಲ್ ವರ್ಗಾವಣೆಯಾಗಿದೆ"
 
-#: plugins/spice/spice_plugin.c:351
+#: plugins/spice/spice_plugin.cpp:351
 #, fuzzy
 msgid "Enter SPICE password"
 msgstr "ಸ್ಪೈಸ್ ಪಾಸ್ ವರ್ಡ್ ನಮೂದಿಸಿ"
 
-#: plugins/spice/spice_plugin.c:386
+#: plugins/spice/spice_plugin.cpp:386
 #, fuzzy, c-format
 msgid "Disconnected from the SPICE server “%s”."
 msgstr "ಸ್ಪೈಸ್ ಸರ್ವರ್ ನಿಂದ ಸಂಪರ್ಕ ಕಡಿತಗೊಳಿಸಲಾಗಿದೆ \"[ಎಕ್ಸ್36ಎಕ್ಸ್]\"."
 
-#: plugins/spice/spice_plugin.c:402
+#: plugins/spice/spice_plugin.cpp:402
 #, fuzzy
 msgid "TLS connection error."
 msgstr "TTM ಸಂಪರ್ಕ ದೋಷ."
 
-#: plugins/spice/spice_plugin.c:408
+#: plugins/spice/spice_plugin.cpp:408
 #, fuzzy
 msgid "Connection to the SPICE server dropped."
 msgstr "ಸ್ಪೈಸ್ ಸರ್ವರ್ ಗೆ ಸಂಪರ್ಕ ವು ಇಳಿಯಿತು."
 
-#: plugins/spice/spice_plugin.c:616 plugins/spice/spice_plugin.c:634
+#: plugins/spice/spice_plugin.cpp:616 plugins/spice/spice_plugin.cpp:634
 #, fuzzy
 msgid "Default"
 msgstr "ಪೂರ್ವನಿಯೋಜಿತ"
 
-#: plugins/spice/spice_plugin.c:636
+#: plugins/spice/spice_plugin.cpp:636
 #, fuzzy
 msgid "Auto GLZ"
 msgstr "ಸ್ವಯಂ GTA"
 
-#: plugins/spice/spice_plugin.c:637
+#: plugins/spice/spice_plugin.cpp:637
 #, fuzzy
 msgid "Auto LZ"
 msgstr "ಸ್ವಯಂ ಎಲ್.ಝಡ್"
 
-#: plugins/spice/spice_plugin.c:650
+#: plugins/spice/spice_plugin.cpp:650
 #, fuzzy
 msgid "Disable video overlay if videos are not displayed properly.\n"
 msgstr "ವೀಡಿಯೊಗಳನ್ನು ಸರಿಯಾಗಿ ಪ್ರದರ್ಶಿಸದಿದ್ದರೆ ವೀಡಿಯೊ ಓವರ್ ಲೇಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ.\n"
 
-#: plugins/spice/spice_plugin.c:675
+#: plugins/spice/spice_plugin.cpp:675
 #, fuzzy
 msgid "Use TLS encryption"
 msgstr "ಟಿಎಲ್ಎಸ್ ಗೂಢಲಿಪೀಕರಣ ಬಳಸಿ"
 
-#: plugins/spice/spice_plugin.c:676
+#: plugins/spice/spice_plugin.cpp:676
 #, fuzzy
 msgid "Server CA certificate"
 msgstr "ಸರ್ವರ್ ಸಿಎ ಪ್ರಮಾಣಪತ್ರ"
 
-#: plugins/spice/spice_plugin.c:694
+#: plugins/spice/spice_plugin.cpp:694
 #, fuzzy
 msgid "Preferred video codec"
 msgstr "ಆದ್ಯತೆಯ ವೀಡಿಯೊ ಕೋಡೆಕ್"
 
-#: plugins/spice/spice_plugin.c:695
+#: plugins/spice/spice_plugin.cpp:695
 #, fuzzy
 msgid "Turn off GStreamer overlay"
 msgstr "Gಸ್ಟ್ರೀಮರ್ ಓವರ್ ಲೇ ಆಫ್ ಮಾಡಿ"
 
-#: plugins/spice/spice_plugin.c:698
+#: plugins/spice/spice_plugin.cpp:698
 #, fuzzy
 msgid "Preferred image compression"
 msgstr "ಆದ್ಯತೆಯ ಇಮೇಜ್ ಸಂಕೋಚನ"
 
-#: plugins/spice/spice_plugin.c:701 plugins/spice/spice_plugin.c:714
-#: plugins/gvnc/gvnc_plugin.c:866 plugins/gvnc/gvnc_plugin.c:880
+#: plugins/spice/spice_plugin.cpp:701 plugins/spice/spice_plugin.cpp:714
+#: plugins/gvnc/gvnc_plugin.cpp:866 plugins/gvnc/gvnc_plugin.cpp:880
 #, fuzzy
 msgid "No clipboard sync"
 msgstr "ಕ್ಲಿಪ್ ಬೋರ್ಡ್ ಸಿಂಕ್ ಇಲ್ಲ"
 
-#: plugins/spice/spice_plugin.c:703 plugins/gvnc/gvnc_plugin.c:869
+#: plugins/spice/spice_plugin.cpp:703 plugins/gvnc/gvnc_plugin.cpp:869
 #, fuzzy
 msgid "Enable audio channel"
 msgstr "ಆಡಿಯೋ ಚಾನಲ್ ಕ್ರಿಯಾತ್ಮಕಗೊಳಿಸು"
 
-#: plugins/spice/spice_plugin.c:704
+#: plugins/spice/spice_plugin.cpp:704
 #, fuzzy
 msgid "Share smart card"
 msgstr "ಸ್ಮಾರ್ಟ್ ಕಾರ್ಡ್ ಹಂಚಿಕೊಳ್ಳಿ"
 
-#: plugins/spice/spice_plugin.c:705 plugins/spice/spice_plugin.c:713
-#: plugins/vnc/vnc_plugin.c:2037 plugins/vnc/vnc_plugin.c:2048
-#: plugins/gvnc/gvnc_plugin.c:870 plugins/gvnc/gvnc_plugin.c:879
+#: plugins/spice/spice_plugin.cpp:705 plugins/spice/spice_plugin.cpp:713
+#: plugins/vnc/vnc_plugin.cpp:2037 plugins/vnc/vnc_plugin.cpp:2048
+#: plugins/gvnc/gvnc_plugin.cpp:870 plugins/gvnc/gvnc_plugin.cpp:879
 #, fuzzy
 msgid "View only"
 msgstr "ಮಾತ್ರ ವೀಕ್ಷಿಸಿ"
 
-#: plugins/spice/spice_plugin.c:716 plugins/spice/spice_plugin_usb.c:51
+#: plugins/spice/spice_plugin.cpp:716 plugins/spice/spice_plugin_usb.cpp:51
 #, fuzzy
 msgid "Select USB devices for redirection"
 msgstr "ಮರುನಿರ್ದೇಶನಕ್ಕಾಗಿ ಯುಎಸ್ ಬಿ ಸಾಧನಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ"
 
-#: plugins/spice/spice_plugin.c:727
+#: plugins/spice/spice_plugin.cpp:727
 #, fuzzy
 msgid "SPICE - Simple Protocol for Independent Computing Environments"
 msgstr "ಸ್ಪೈಸ್ - ಸ್ವತಂತ್ರ ಕಂಪ್ಯೂಟಿಂಗ್ ಪರಿಸರಗಳಿಗೆ ಸರಳ ಪ್ರೊಟೋಕಾಲ್"
 
-#: plugins/spice/spice_plugin_usb.c:54
+#: plugins/spice/spice_plugin_usb.cpp:54
 #, fuzzy
 msgid "_Close"
 msgstr "ಮುಚ್ಚು (_C)"
 
-#: plugins/spice/spice_plugin_usb.c:94
+#: plugins/spice/spice_plugin_usb.cpp:94
 #, fuzzy
 msgid "USB redirection error"
 msgstr "ಯುಎಸ್ ಬಿ ಮರುನಿರ್ದೇಶನ ದೋಷ"
 
-#: plugins/vnc/vnc_plugin.c:789
+#: plugins/vnc/vnc_plugin.cpp:789
 #, fuzzy
 msgid "Enter VNC password"
 msgstr "ವಿಎನ್ ಸಿ ಪಾಸ್ ವರ್ಡ್ ನಮೂದಿಸಿ"
 
-#: plugins/vnc/vnc_plugin.c:842 plugins/gvnc/gvnc_plugin.c:539
+#: plugins/vnc/vnc_plugin.cpp:842 plugins/gvnc/gvnc_plugin.cpp:539
 #, fuzzy
 msgid "Enter VNC authentication credentials"
 msgstr "ವಿಎನ್ ಸಿ ದೃಢೀಕರಣ ರುಜುವಾತುಗಳನ್ನು ನಮೂದಿಸಿ"
 
-#: plugins/vnc/vnc_plugin.c:950
+#: plugins/vnc/vnc_plugin.cpp:950
 #, fuzzy
 msgid "Unable to connect to VNC server"
 msgstr "ವಿಎನ್ ಸಿ ಸರ್ವರ್ ಗೆ ಸಂಪರ್ಕಿಸಲು ಅಸಮರ್ಥವಾಗಿದೆ"
 
-#: plugins/vnc/vnc_plugin.c:951
+#: plugins/vnc/vnc_plugin.cpp:951
 #, fuzzy, c-format
 msgid "Couldn’t convert '%s' to host address"
 msgstr "'[ಎಕ್ಸ್18ಎಕ್ಸ್]' ಅನ್ನು ಹೋಸ್ಟ್ ವಿಳಾಸಕ್ಕೆ ಪರಿವರ್ತಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ"
 
-#: plugins/vnc/vnc_plugin.c:952
+#: plugins/vnc/vnc_plugin.cpp:952
 #, fuzzy, c-format
 msgid "VNC connection failed: %s"
 msgstr "ವಿಎನ್ ಸಿ ಸಂಪರ್ಕ ವಿಫಲವಾಗಿದೆ: [ಎಕ್ಸ್ 23ಎಕ್ಸ್]"
 
-#: plugins/vnc/vnc_plugin.c:953
+#: plugins/vnc/vnc_plugin.cpp:953
 #, fuzzy
 msgid "Your connection has been rejected."
 msgstr "ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ತಿರಸ್ಕರಿಸಲಾಗಿದೆ."
 
-#: plugins/vnc/vnc_plugin.c:980
+#: plugins/vnc/vnc_plugin.cpp:980
 #, fuzzy, c-format
 msgid "The VNC server requested an unknown authentication method. %s"
 msgstr "ವಿಎನ್ ಸಿ ಸರ್ವರ್ ಅಜ್ಞಾತ ದೃಢೀಕರಣ ವಿಧಾನವನ್ನು ವಿನಂತಿಸಿತು. [ಎಕ್ಸ್59ಎಕ್ಸ್]"
 
-#: plugins/vnc/vnc_plugin.c:982
+#: plugins/vnc/vnc_plugin.cpp:982
 #, fuzzy
 msgid "Please retry after turning on encryption for this profile."
 msgstr "ಈ ಪ್ರೊಫೈಲ್ ಗಾಗಿ ಗೂಢಲಿಪೀಕರಣವನ್ನು ಆನ್ ಮಾಡಿದ ನಂತರ ದಯವಿಟ್ಟು ಮರುಪ್ರಯತ್ನಿಸಿ."
 
-#: plugins/vnc/vnc_plugin.c:1952
+#: plugins/vnc/vnc_plugin.cpp:1952
 #, fuzzy
 msgid ""
 "Connect to VNC using a repeater:\n"
@@ -3249,7 +3249,7 @@ msgstr ""
 "    ಪುನರಾವರ್ತಿತ, ಉದಾ. ಎಕ್ಸ್11ವಿಎನ್ ಸಿಯೊಂದಿಗೆ:\n"
 "    ಎಕ್ಸ್11ವಿಎನ್ ಸಿ -ರಿಪೀಟರ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಿ=ಐಡಿ:123456789+10.10.10.12:5500"
 
-#: plugins/vnc/vnc_plugin.c:1961
+#: plugins/vnc/vnc_plugin.cpp:1961
 #, fuzzy
 msgid ""
 "Listening for remote VNC connection:\n"
@@ -3266,7 +3266,7 @@ msgstr ""
 "    ರೆಮ್ಮಿನಾ, ಉದಾ. ಎಕ್ಸ್11ವಿಎನ್ ಸಿಯೊಂದಿಗೆ:\n"
 "    ಎಕ್ಸ್11ವಿಎನ್ ಸಿ -ಪ್ರದರ್ಶನ :0 -ಸಂಪರ್ಕ 192.168.1.36:8888"
 
-#: plugins/vnc/vnc_plugin.c:1969
+#: plugins/vnc/vnc_plugin.cpp:1969
 msgid ""
 "Override pre-set VNC encodings:\n"
 "\n"
@@ -3279,149 +3279,149 @@ msgid ""
 "corre rre raw”"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:1996
+#: plugins/vnc/vnc_plugin.cpp:1996
 #, fuzzy
 msgid "Repeater"
 msgstr "ಪುನರಾವರ್ತಿತ"
 
-#: plugins/vnc/vnc_plugin.c:2008
+#: plugins/vnc/vnc_plugin.cpp:2008
 #, fuzzy
 msgid "Listen on port"
 msgstr "ಪೋರ್ಟ್ ನಲ್ಲಿ ಆಲಿಸಿ"
 
-#: plugins/vnc/vnc_plugin.c:2028
+#: plugins/vnc/vnc_plugin.cpp:2028
 msgid "Override pre-set VNC encodings"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:2029
+#: plugins/vnc/vnc_plugin.cpp:2029
 msgid "Force tight encoding"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:2029
+#: plugins/vnc/vnc_plugin.cpp:2029
 msgid "Enabling this may help when the remote desktop looks scrambled"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:2032 plugins/gvnc/gvnc_plugin.c:868
+#: plugins/vnc/vnc_plugin.cpp:2032 plugins/gvnc/gvnc_plugin.cpp:868
 #, fuzzy
 msgid "Ignore remote bell messages"
 msgstr "ರಿಮೋಟ್ ಬೆಲ್ ಸಂದೇಶಗಳನ್ನು ಕಡೆಗಣಿಸಿ"
 
-#: plugins/vnc/vnc_plugin.c:2033 plugins/vnc/vnc_plugin.c:2049
+#: plugins/vnc/vnc_plugin.cpp:2033 plugins/vnc/vnc_plugin.cpp:2049
 #, fuzzy
 msgid "Prevent local interaction on the server"
 msgstr "ಸರ್ವರ್ ನಲ್ಲಿ ಸ್ಥಳೀಯ ಸಂವಹನವನ್ನು ತಡೆಗಟ್ಟಿ"
 
-#: plugins/vnc/vnc_plugin.c:2034
+#: plugins/vnc/vnc_plugin.cpp:2034
 #, fuzzy
 msgid "Show remote cursor"
 msgstr "ರಿಮೋಟ್ ಕರ್ಸರ್ ತೋರಿಸು"
 
-#: plugins/vnc/vnc_plugin.c:2036
+#: plugins/vnc/vnc_plugin.cpp:2036
 #, fuzzy
 msgid "Turn off encryption"
 msgstr "ಗೂಢಲಿಪೀಕರಣ ವನ್ನು ಆಫ್ ಮಾಡಿ"
 
-#: plugins/vnc/vnc_plugin.c:2051
+#: plugins/vnc/vnc_plugin.cpp:2051
 #, fuzzy
 msgid "Open Chat…"
 msgstr "ಚಾಟ್ ತೆರೆಯಿರಿ…"
 
-#: plugins/vnc/vnc_plugin.h:41
+#: plugins/vnc/vnc_plugin.hpp:41
 #, fuzzy
 msgid "Remmina VNC Plugin"
 msgstr "ರೆಮ್ಮಿನಾ ವಿಎನ್ ಸಿ ಪ್ಲಗಿನ್"
 
-#: plugins/vnc/vnc_plugin.h:46
+#: plugins/vnc/vnc_plugin.hpp:46
 #, fuzzy
 msgid "Remmina VNC listener Plugin"
 msgstr "ರೆಮ್ಮಿನಾ ವಿಎನ್ ಸಿ ಕೇಳುಗ ಪ್ಲಗಿನ್"
 
-#: plugins/www/www_config.h:43
+#: plugins/www/www_config.hpp:43
 #, fuzzy
 msgid "Remmina web-browser plugin"
 msgstr "ರೆಮ್ಮಿನಾ ವೆಬ್-ಬ್ರೌಸರ್ ಪ್ಲಗಿನ್"
 
-#: plugins/www/www_plugin.c:98
+#: plugins/www/www_plugin.cpp:98
 #, fuzzy
 msgid "File downloaded"
 msgstr "ಫೈಲ್ ಡೌನ್ ಲೋಡ್ ಮಾಡಲಾಗಿದೆ"
 
-#: plugins/www/www_plugin.c:581
+#: plugins/www/www_plugin.cpp:581
 #, fuzzy
 msgid "Enter WWW authentication credentials"
 msgstr "GATTTAT"
 
-#: plugins/www/www_plugin.c:893
+#: plugins/www/www_plugin.cpp:893
 #, fuzzy
 msgid "URL"
 msgstr "URL"
 
-#: plugins/www/www_plugin.c:893
+#: plugins/www/www_plugin.cpp:893
 #, fuzzy
 msgid "http://address or https://address"
 msgstr "http://address ಅಥವಾ https://address"
 
-#: plugins/www/www_plugin.c:910
+#: plugins/www/www_plugin.cpp:910
 #, fuzzy
 msgid "User agent"
 msgstr "ಬಳಕೆದಾರ ಏಜೆಂಟ್"
 
-#: plugins/www/www_plugin.c:911
+#: plugins/www/www_plugin.cpp:911
 #, fuzzy
 msgid "Proxy URL"
 msgstr "ಪ್ರಾಕ್ಸಿ ಯು.ಆರ್.ಎಲ್."
 
-#: plugins/www/www_plugin.c:911
+#: plugins/www/www_plugin.cpp:911
 #, fuzzy
 msgid "E.g. https://example.org, socks://mysocks:1080"
 msgstr "ಉದಾ: https://example.org, socks://mysocks:1080"
 
-#: plugins/www/www_plugin.c:912
+#: plugins/www/www_plugin.cpp:912
 #, fuzzy
 msgid "Turn on Java support"
 msgstr "ಜಾವಾ ಬೆಂಬಲವನ್ನು ಆನ್ ಮಾಡಿ"
 
-#: plugins/www/www_plugin.c:913
+#: plugins/www/www_plugin.cpp:913
 #, fuzzy
 msgid "Turn on smooth scrolling"
 msgstr "ನಯವಾದ ಸ್ಕ್ರಾಲಿಂಗ್ ಆನ್ ಮಾಡಿ"
 
-#: plugins/www/www_plugin.c:914
+#: plugins/www/www_plugin.cpp:914
 #, fuzzy
 msgid "Turn on spatial navigation"
 msgstr "ಸ್ಪೇಶಿಯಲ್ ನ್ಯಾವಿಗೇಶನ್ ಆನ್ ಮಾಡಿ"
 
-#: plugins/www/www_plugin.c:915
+#: plugins/www/www_plugin.cpp:915
 #, fuzzy
 msgid "Turn on plugin support"
 msgstr "ಪ್ಲಗಿನ್ ಬೆಂಬಲಆನ್ ಮಾಡಿ"
 
-#: plugins/www/www_plugin.c:916
+#: plugins/www/www_plugin.cpp:916
 #, fuzzy
 msgid "Turn on WebGL support"
 msgstr "ವೆಬ್ ಜಿಎಲ್ ಬೆಂಬಲವನ್ನು ಆನ್ ಮಾಡಿ"
 
-#: plugins/www/www_plugin.c:917
+#: plugins/www/www_plugin.cpp:917
 #, fuzzy
 msgid "Turn on HTML5 audio support"
 msgstr "TMTM5 ಆಡಿಯೋ ಬೆಂಬಲವನ್ನು ಆನ್ ಮಾಡಿ"
 
-#: plugins/www/www_plugin.c:918
+#: plugins/www/www_plugin.cpp:918
 #, fuzzy
 msgid "Ignore TLS errors"
 msgstr "ಟಿಎಲ್ಎಸ್ ದೋಷಗಳನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ"
 
-#: plugins/www/www_plugin.c:921
+#: plugins/www/www_plugin.cpp:921
 #, fuzzy
 msgid "Turn on Web Inspector"
 msgstr "ವೆಬ್ ಇನ್ಸ್ ಪೆಕ್ಟರ್ ಆನ್ ಮಾಡಿ"
 
-#: plugins/exec/exec_plugin.c:160
+#: plugins/exec/exec_plugin.cpp:160
 #, fuzzy
 msgid "You did not set any command to be executed"
 msgstr "ನೀವು ಕಾರ್ಯಗತಗೊಳಿಸಲು ಯಾವುದೇ ಆದೇಶವನ್ನು ಹೊಂದಿಸಲಿಲ್ಲ"
 
-#: plugins/exec/exec_plugin.c:206
+#: plugins/exec/exec_plugin.cpp:206
 #, fuzzy
 msgid ""
 "Warning: Running a command synchronously may cause Remmina not to respond.\n"
@@ -3430,284 +3430,284 @@ msgstr ""
 "ಎಚ್ಚರಿಕೆ: ಆದೇಶವನ್ನು ಸಿಂಕ್ರೊನಸ್ ಆಗಿ ಚಲಾಯಿಸುವುದರಿಂದ ರೆಮ್ಮಿನಾ ಪ್ರತಿಕ್ರಿಯಿಸುವುದಿಲ್ಲ.\n"
 "ನೀವು ನಿಜವಾಗಿಯೂ ಮುಂದುವರಿಯಲು ಬಯಸುವಿರಾ?"
 
-#: plugins/exec/exec_plugin.c:274
+#: plugins/exec/exec_plugin.cpp:274
 #, fuzzy
 msgid "Command"
 msgstr "ಆದೇಶ"
 
-#: plugins/exec/exec_plugin.c:275
+#: plugins/exec/exec_plugin.cpp:275
 #, fuzzy
 msgid "Asynchronous execution"
 msgstr "ಅಸಿಂಕ್ರೋನಸ್ ಮರಣದಂಡನೆ"
 
-#: plugins/exec/exec_plugin_config.h:41
+#: plugins/exec/exec_plugin_config.hpp:41
 #, fuzzy
 msgid "Execute a command"
 msgstr "ಆದೇಶ ಕಾರ್ಯಗತಗೊಳಿಸು"
 
-#: plugins/tool_hello_world/plugin_config.h:40
+#: plugins/tool_hello_world/plugin_config.hpp:40
 #, fuzzy
 msgid "Hello, World!"
 msgstr "ನಮಸ್ಕಾರ, ಜಗತ್ತು!"
 
-#: plugins/secret/src/glibsecret_plugin.c:188
+#: plugins/secret/src/glibsecret_plugin.cpp:188
 #, fuzzy
 msgid "Secured password storage in the GNOME keyring"
 msgstr "GMAMM ಕೀಲಿಯಲ್ಲಿ ಸುರಕ್ಷಿತ ಪಾಸ್ ವರ್ಡ್ ಸಂಗ್ರಹ"
 
-#: plugins/x2go/x2go_plugin.c:67
+#: plugins/x2go/x2go_plugin.cpp:67
 #, c-format
 msgid ""
 "The command-line feature '%s' is not available! Attempting to start PyHoca-"
 "CLI without using this feature…"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:289 plugins/x2go/x2go_plugin.c:421
-#: plugins/x2go/x2go_plugin.c:510 plugins/x2go/x2go_plugin.c:617
-#: plugins/x2go/x2go_plugin.c:707 plugins/x2go/x2go_plugin.c:719
-#: plugins/x2go/x2go_plugin.c:728 plugins/x2go/x2go_plugin.c:754
-#: plugins/x2go/x2go_plugin.c:763 plugins/x2go/x2go_plugin.c:782
-#: plugins/x2go/x2go_plugin.c:832 plugins/x2go/x2go_plugin.c:898
-#: plugins/x2go/x2go_plugin.c:909 plugins/x2go/x2go_plugin.c:917
-#: plugins/x2go/x2go_plugin.c:1031 plugins/x2go/x2go_plugin.c:1047
-#: plugins/x2go/x2go_plugin.c:1112 plugins/x2go/x2go_plugin.c:1140
-#: plugins/x2go/x2go_plugin.c:1289 plugins/x2go/x2go_plugin.c:1651
-#: plugins/x2go/x2go_plugin.c:1685 plugins/x2go/x2go_plugin.c:1781
-#: plugins/x2go/x2go_plugin.c:2075 plugins/x2go/x2go_plugin.c:2875
-#: plugins/x2go/x2go_plugin.c:3088 plugins/x2go/x2go_plugin.c:3093
-#: plugins/x2go/x2go_plugin.c:3098 plugins/x2go/x2go_plugin.c:3103
-#: plugins/x2go/x2go_plugin.c:3118 plugins/x2go/x2go_plugin.c:3123
-#: plugins/x2go/x2go_plugin.c:3128 plugins/x2go/x2go_plugin.c:3133
+#: plugins/x2go/x2go_plugin.cpp:289 plugins/x2go/x2go_plugin.cpp:421
+#: plugins/x2go/x2go_plugin.cpp:510 plugins/x2go/x2go_plugin.cpp:617
+#: plugins/x2go/x2go_plugin.cpp:707 plugins/x2go/x2go_plugin.cpp:719
+#: plugins/x2go/x2go_plugin.cpp:728 plugins/x2go/x2go_plugin.cpp:754
+#: plugins/x2go/x2go_plugin.cpp:763 plugins/x2go/x2go_plugin.cpp:782
+#: plugins/x2go/x2go_plugin.cpp:832 plugins/x2go/x2go_plugin.cpp:898
+#: plugins/x2go/x2go_plugin.cpp:909 plugins/x2go/x2go_plugin.cpp:917
+#: plugins/x2go/x2go_plugin.cpp:1031 plugins/x2go/x2go_plugin.cpp:1047
+#: plugins/x2go/x2go_plugin.cpp:1112 plugins/x2go/x2go_plugin.cpp:1140
+#: plugins/x2go/x2go_plugin.cpp:1289 plugins/x2go/x2go_plugin.cpp:1651
+#: plugins/x2go/x2go_plugin.cpp:1685 plugins/x2go/x2go_plugin.cpp:1781
+#: plugins/x2go/x2go_plugin.cpp:2075 plugins/x2go/x2go_plugin.cpp:2875
+#: plugins/x2go/x2go_plugin.cpp:3088 plugins/x2go/x2go_plugin.cpp:3093
+#: plugins/x2go/x2go_plugin.cpp:3098 plugins/x2go/x2go_plugin.cpp:3103
+#: plugins/x2go/x2go_plugin.cpp:3118 plugins/x2go/x2go_plugin.cpp:3123
+#: plugins/x2go/x2go_plugin.cpp:3128 plugins/x2go/x2go_plugin.cpp:3133
 #, fuzzy, c-format
 msgid "Internal error: %s"
 msgstr "ಆಂತರಿಕ ದೋಷ: "
 
-#: plugins/x2go/x2go_plugin.c:290 plugins/x2go/x2go_plugin.c:422
-#: plugins/x2go/x2go_plugin.c:511 plugins/x2go/x2go_plugin.c:1290
+#: plugins/x2go/x2go_plugin.cpp:290 plugins/x2go/x2go_plugin.cpp:422
+#: plugins/x2go/x2go_plugin.cpp:511 plugins/x2go/x2go_plugin.cpp:1290
 msgid "Parameter 'custom_data' is not initialized!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:303
+#: plugins/x2go/x2go_plugin.cpp:303
 #, fuzzy
 msgid "Broken `DialogData`! Aborting…"
 msgstr "ಮುರಿದ 'ಸಂವಾದಡೇಟಾ'! ಅಬಾರ್ಟಿಂಗ್…"
 
-#: plugins/x2go/x2go_plugin.c:307
+#: plugins/x2go/x2go_plugin.cpp:307
 #, fuzzy
 msgid "Can't retrieve `DialogData`! Aborting…"
 msgstr "'ಸಂವಾದ ಡೇಟಾ' ಹಿಂಪಡೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ! ಅಬಾರ್ಟಿಂಗ್…"
 
-#: plugins/x2go/x2go_plugin.c:469
+#: plugins/x2go/x2go_plugin.cpp:469
 #, fuzzy
 #| msgid "Display"
 msgid "X Display"
 msgstr "ಪ್ರದರ್ಶಿಸಿ"
 
-#: plugins/x2go/x2go_plugin.c:470
+#: plugins/x2go/x2go_plugin.cpp:470
 #, fuzzy
 msgid "Status"
 msgstr "ಕಡತದ ಸ್ಥಿತಿ"
 
-#: plugins/x2go/x2go_plugin.c:471
+#: plugins/x2go/x2go_plugin.cpp:471
 #, fuzzy
 msgid "Session ID"
 msgstr "ಅನುಮತಿಗಳು"
 
-#: plugins/x2go/x2go_plugin.c:472
+#: plugins/x2go/x2go_plugin.cpp:472
 msgid "Create date"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:473
+#: plugins/x2go/x2go_plugin.cpp:473
 msgid "Suspended since"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:474
+#: plugins/x2go/x2go_plugin.cpp:474
 msgid "Agent PID"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:476
+#: plugins/x2go/x2go_plugin.cpp:476
 #, fuzzy
 msgid "Hostname"
 msgstr "ಬಳಕೆದಾರಹೆಸರು"
 
-#: plugins/x2go/x2go_plugin.c:477
+#: plugins/x2go/x2go_plugin.cpp:477
 msgid "Cookie"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:478
+#: plugins/x2go/x2go_plugin.cpp:478
 msgid "Graphic port"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:479
+#: plugins/x2go/x2go_plugin.cpp:479
 msgid "SND port"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:480
+#: plugins/x2go/x2go_plugin.cpp:480
 #, fuzzy
 msgid "SSHFS port"
 msgstr "ಸ್ಥಳೀಯ ಎಸ್.ಎಸ್.ಎಚ್. ಬಂದರು"
 
-#: plugins/x2go/x2go_plugin.c:481
+#: plugins/x2go/x2go_plugin.cpp:481
 msgid "Visible"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:520
+#: plugins/x2go/x2go_plugin.cpp:520
 #, fuzzy
 msgid "Couldn't retrieve valid `DialogData` or `sessions_list`! Aborting…"
 msgstr "'ಸಂವಾದ ಡೇಟಾ' ಹಿಂಪಡೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ! ಅಬಾರ್ಟಿಂಗ್…"
 
 #. TRANSLATORS: Stick to x2goclient's translation for terminate.
-#: plugins/x2go/x2go_plugin.c:529
+#: plugins/x2go/x2go_plugin.cpp:529
 #, fuzzy
 msgid "_Terminate"
 msgstr "ಟರ್ಮಿನಲ್"
 
 #. TRANSLATORS: Stick to x2goclient's translation for resume.
-#: plugins/x2go/x2go_plugin.c:532
+#: plugins/x2go/x2go_plugin.cpp:532
 #, fuzzy
 msgid "_Resume"
 msgstr "ಮುಂದುವರಿಸಿ"
 
-#: plugins/x2go/x2go_plugin.c:534
+#: plugins/x2go/x2go_plugin.cpp:534
 #, fuzzy
 msgid "_New"
 msgstr "ಹೊಸ (_N)"
 
 #. TRANSLATORS: Tooltip for terminating button inside Session-Chooser-Dialog.
 #. TRANSLATORS: Please stick to X2GoClient's way of translating.
-#: plugins/x2go/x2go_plugin.c:543
+#: plugins/x2go/x2go_plugin.cpp:543
 msgid "Terminating X2Go sessions can take a moment."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:618 plugins/x2go/x2go_plugin.c:620
+#: plugins/x2go/x2go_plugin.cpp:618 plugins/x2go/x2go_plugin.cpp:620
 #, c-format
 msgid "Unknown property '%i'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:708 plugins/x2go/x2go_plugin.c:755
+#: plugins/x2go/x2go_plugin.cpp:708 plugins/x2go/x2go_plugin.cpp:755
 msgid "Couldn't find child GtkTreeView of session chooser dialog."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:720
+#: plugins/x2go/x2go_plugin.cpp:720
 msgid ""
 "Neither the 'dialog' nor 'treeview' parameters are initialized! At least one "
 "of them must be given."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:729
+#: plugins/x2go/x2go_plugin.cpp:729
 msgid ""
 "Could not obtain \"GtkTreeModelFilter*\" of the session chooser dialog, for "
 "unknown reason."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:764
+#: plugins/x2go/x2go_plugin.cpp:764
 msgid "Couldn't get currently selected row (session)!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:783
+#: plugins/x2go/x2go_plugin.cpp:783
 #, c-format
 msgid ""
 "Exactly one session should be selectable but '%i' rows (sessions) are "
 "selected."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:833
+#: plugins/x2go/x2go_plugin.cpp:833
 msgid "Failed to fill 'GtkTreeIter'."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:899
+#: plugins/x2go/x2go_plugin.cpp:899
 msgid "parameter 'argv' is 'NULL'."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:910
+#: plugins/x2go/x2go_plugin.cpp:910
 msgid "parameter 'error' is 'NULL'."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:918
+#: plugins/x2go/x2go_plugin.cpp:918
 msgid "parameter 'env' is either invalid or uninitialized."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:934 plugins/x2go/x2go_plugin.c:2376
+#: plugins/x2go/x2go_plugin.cpp:934 plugins/x2go/x2go_plugin.cpp:2376
 #, fuzzy
 msgid "Started PyHoca-CLI with the following arguments:"
 msgstr "ಈ ಕೆಳಗಿನ ವಾದಗಳೊಂದಿಗೆ ಪೈಹೋಸಾ-ಸಿಎಲ್ಐ ಅನ್ನು ಪ್ರಾರಂಭಿಸಿದೆ:"
 
-#: plugins/x2go/x2go_plugin.c:962
+#: plugins/x2go/x2go_plugin.cpp:962
 msgid ""
 "The necessary PyHoca-CLI process has encountered a internet connection "
 "problem."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:972
+#: plugins/x2go/x2go_plugin.cpp:972
 #, fuzzy, c-format
 msgid ""
 "Could not start PyHoca-CLI:\n"
 "%s"
 msgstr "ಪೈಹೋಸಾ-ಸಿಎಲ್ಐ ([ಎಕ್ಸ್28ಎಕ್ಸ್]] ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ): '[ಎಕ್ಸ್34ಎಕ್ಸ್]'"
 
-#: plugins/x2go/x2go_plugin.c:983
+#: plugins/x2go/x2go_plugin.cpp:983
 #, c-format
 msgid ""
 "An unknown error occured while trying to start PyHoca-CLI. Exit code: %i"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:990
+#: plugins/x2go/x2go_plugin.cpp:990
 #, c-format
 msgid ""
 "An unknown error occured while trying to start PyHoca-CLI. Exit code: %i. "
 "Error: '%s'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1032
+#: plugins/x2go/x2go_plugin.cpp:1032
 msgid "Neither the 'path' nor 'dialog' parameters are initialized."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1048
+#: plugins/x2go/x2go_plugin.cpp:1048
 msgid "GtkTreePath 'path' describes a non-existing row!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1113
+#: plugins/x2go/x2go_plugin.cpp:1113
 msgid "Parameter 'custom_data' is not fully initialized!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1141 plugins/x2go/x2go_plugin.c:1782
-#: plugins/x2go/x2go_plugin.c:2076
+#: plugins/x2go/x2go_plugin.cpp:1141 plugins/x2go/x2go_plugin.cpp:1782
+#: plugins/x2go/x2go_plugin.cpp:2076
 #, fuzzy
 msgid "'Invalid connection data.'"
 msgstr "ಹಂಚಿದ ಸಂಪರ್ಕ"
 
-#: plugins/x2go/x2go_plugin.c:1218
+#: plugins/x2go/x2go_plugin.cpp:1218
 #, fuzzy, c-format
 msgid ""
 "An error occured while trying to terminate X2Go session '%s':\n"
 "%s"
 msgstr "ಎಕ್ಸ್2ಗೋ ಸೆಷನ್ ಪ್ರಾರಂಭಿಸುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ…"
 
-#: plugins/x2go/x2go_plugin.c:1230 plugins/x2go/x2go_plugin.c:1594
+#: plugins/x2go/x2go_plugin.cpp:1230 plugins/x2go/x2go_plugin.cpp:1594
 #, fuzzy
 msgid "An error occured."
 msgstr "ದೋಷ ಸಂಭವಿಸಿದೆ."
 
-#: plugins/x2go/x2go_plugin.c:1330 plugins/x2go/x2go_plugin.c:1345
+#: plugins/x2go/x2go_plugin.cpp:1330 plugins/x2go/x2go_plugin.cpp:1345
 msgid "Couldn't get session ID from session chooser dialog."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1337
+#: plugins/x2go/x2go_plugin.cpp:1337
 #, c-format
 msgid "Resuming session: '%s'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1352
+#: plugins/x2go/x2go_plugin.cpp:1352
 #, c-format
 msgid "Terminating session: '%s'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1586
+#: plugins/x2go/x2go_plugin.cpp:1586
 #, fuzzy
 msgid "PyHoca-CLI exited unexpectedly. This connection will now be closed."
 msgstr "ಪೈಹೋಸಾ-ಸಿಎಲ್ಐ ಅನಿರೀಕ್ಷಿತವಾಗಿ ನಿರ್ಗಮಿಸಿತು. ಈ ಸಂಪರ್ಕವನ್ನು ಈಗ ಮುಚ್ಚಲಾಗುವುದು."
 
-#: plugins/x2go/x2go_plugin.c:1595
+#: plugins/x2go/x2go_plugin.cpp:1595
 #, fuzzy
 msgid ""
 "The necessary child process 'pyhoca-cli' stopped unexpectedly.\n"
@@ -3718,17 +3718,17 @@ msgstr ""
 "ಸಂಭಾವ್ಯ ದೋಷಗಳಿಗಾಗಿ ದಯವಿಟ್ಟು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಸೆಟ್ಟಿಂಗ್ ಗಳು ಮತ್ತು ಪೈಹೋಸಾ-ಸಿಎಲ್ಐ ನ ಔಟ್ ಪುಟ್ "
 "ಅನ್ನು ಪರಿಶೀಲಿಸಿ. ರಿಮೋಟ್ ಸರ್ವರ್ ತಲುಪಬಹುದಾದಂತೆ ಯೂ ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ."
 
-#: plugins/x2go/x2go_plugin.c:1638
+#: plugins/x2go/x2go_plugin.cpp:1638
 #, fuzzy
 msgid "Can't save empty username!"
 msgstr "ಖಾಲಿ ಬಳಕೆದಾರ ಹೆಸರನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ!"
 
-#: plugins/x2go/x2go_plugin.c:1652
+#: plugins/x2go/x2go_plugin.cpp:1652
 #, fuzzy
 msgid "Could not save new credentials."
 msgstr "ಆಂತರಿಕ ದೋಷ: ಹೊಸ ರುಜುವಾತುಗಳನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
-#: plugins/x2go/x2go_plugin.c:1655
+#: plugins/x2go/x2go_plugin.cpp:1655
 #, fuzzy
 msgid ""
 "An error occured while trying to save new credentials: 's_password' or "
@@ -3737,103 +3737,103 @@ msgstr ""
 "ಹೊಸ ರುಜುವಾತುಗಳನ್ನು ಉಳಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿರುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ: 's_password' ಅಥವಾ "
 "'s_username' ತಂತಿಗಳನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ."
 
-#: plugins/x2go/x2go_plugin.c:1686
+#: plugins/x2go/x2go_plugin.cpp:1686
 msgid "Parameter 'default_username' is uninitialized."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1715
+#: plugins/x2go/x2go_plugin.cpp:1715
 #, fuzzy
 msgid "Enter X2Go credentials"
 msgstr "ಎಕ್ಸ್2ಗೋ ರುಜುವಾತುಗಳನ್ನು ನಮೂದಿಸಿ"
 
-#: plugins/x2go/x2go_plugin.c:1912
+#: plugins/x2go/x2go_plugin.cpp:1912
 msgid ""
 "Couldn't parse the output of PyHoca-CLI's --list-sessions option. Creating a "
 "new session now."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1951
+#: plugins/x2go/x2go_plugin.cpp:1951
 msgid "Couldn't allocate enough memory!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1961
+#: plugins/x2go/x2go_plugin.cpp:1961
 #, c-format
 msgid "Found already existing X2Go session with ID: '%s'"
 msgstr ""
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2004
+#: plugins/x2go/x2go_plugin.cpp:2004
 msgid "Suspended"
 msgstr ""
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2007
+#: plugins/x2go/x2go_plugin.cpp:2007
 #, fuzzy
 msgid "Running"
 msgstr "ಚಾಲನೆಯಲ್ಲಿದೆ"
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2010
+#: plugins/x2go/x2go_plugin.cpp:2010
 #, fuzzy
 msgid "Terminated"
 msgstr "ಟರ್ಮಿನಲ್"
 
-#: plugins/x2go/x2go_plugin.c:2043
+#: plugins/x2go/x2go_plugin.cpp:2043
 msgid ""
 "Could not find any sessions on remote machine. Creating a new session now."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2098
+#: plugins/x2go/x2go_plugin.cpp:2098
 #, fuzzy
 msgid "Choose a session to resume:"
 msgstr "ಅಪ್ ಲೋಡ್ ಮಾಡಲು ಫೈಲ್ ಆಯ್ಕೆಮಾಡಿ"
 
-#: plugins/x2go/x2go_plugin.c:2141
+#: plugins/x2go/x2go_plugin.cpp:2141
 #, fuzzy
 msgid "Waiting for user to select a session…"
 msgstr "ಸೆಷನ್ ನ ವಿಂಡೋ ತೋರಿಸಲು ಪೈಹೋಸಾ-ಸಿಎಲ್ಐ ಗಾಗಿ ಕಾಯುತ್ತಿದೆ…"
 
-#: plugins/x2go/x2go_plugin.c:2149
+#: plugins/x2go/x2go_plugin.cpp:2149
 msgid "No session was selected. Creating a new one."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2197
+#: plugins/x2go/x2go_plugin.cpp:2197
 #, c-format
 msgid "A non-critical error happened: %s"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2202
+#: plugins/x2go/x2go_plugin.cpp:2202
 #, c-format
 msgid "User chose to resume session with ID: '%s'"
 msgstr ""
 
 #. TRANSLATORS: Please stick to X2GoClient's way of translating.
-#: plugins/x2go/x2go_plugin.c:2223
+#: plugins/x2go/x2go_plugin.cpp:2223
 #, c-format
 msgid "Resuming session '%s'…"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2354
+#: plugins/x2go/x2go_plugin.cpp:2354
 #, fuzzy
 msgid "DPI setting is out of bounds. Please adjust it in profile settings."
 msgstr "ಡಿಪಿಐ ಸೆಟ್ಟಿಂಗ್ ಮಿತಿಮೀರಿದೆ. ದಯವಿಟ್ಟು ಅದನ್ನು ಪ್ರೊಫೈಲ್ ಸೆಟ್ಟಿಂಗ್ ಗಳಲ್ಲಿ ಹೊಂದಿಸಿ."
 
-#: plugins/x2go/x2go_plugin.c:2396
+#: plugins/x2go/x2go_plugin.cpp:2396
 #, fuzzy
 msgid "An error occured while starting an X2Go session…"
 msgstr "ಎಕ್ಸ್2ಗೋ ಸೆಷನ್ ಪ್ರಾರಂಭಿಸುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ…"
 
-#: plugins/x2go/x2go_plugin.c:2404
+#: plugins/x2go/x2go_plugin.cpp:2404
 #, fuzzy
 msgid "Could not start X2Go session."
 msgstr "ಎಕ್ಸ್2ಗೋ ಸೆಷನ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
-#: plugins/x2go/x2go_plugin.c:2405
+#: plugins/x2go/x2go_plugin.cpp:2405
 #, fuzzy, c-format
 msgid "Could not start PyHoca-CLI (%i): '%s'"
 msgstr "ಪೈಹೋಸಾ-ಸಿಎಲ್ಐ ([ಎಕ್ಸ್28ಎಕ್ಸ್]] ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ): '[ಎಕ್ಸ್34ಎಕ್ಸ್]'"
 
-#: plugins/x2go/x2go_plugin.c:2520
+#: plugins/x2go/x2go_plugin.cpp:2520
 #, fuzzy
 msgid ""
 "Couldn't get PyHoca-CLI's command-line features. This indicates it is either "
@@ -3844,7 +3844,7 @@ msgstr ""
 "ಹಳೆಯದಾಗಿದೆ, ಅಥವಾ ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ ಎಂದು ಸೂಚಿಸುತ್ತದೆ. ಸದ್ಯಕ್ಕೆ ಹಳೆಯ ಸೀಮಿತ ವೈಶಿಷ್ಟ್ಯಗಳ "
 "ಗುಂಪನ್ನು ಬಳಸಲಾಗುತ್ತದೆ."
 
-#: plugins/x2go/x2go_plugin.c:2529
+#: plugins/x2go/x2go_plugin.cpp:2529
 #, fuzzy
 msgid ""
 "Could not parse PyHoca-CLI's command-line features. Using a limited feature-"
@@ -3853,47 +3853,47 @@ msgstr ""
 "ಪೈಹೋಸಾ-ಸಿಎಲ್ಐ ನ ಆದೇಶ-ಸಾಲು ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಪಾರ್ಸ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಸದ್ಯಕ್ಕೆ ಸೀಮಿತ "
 "ವೈಶಿಷ್ಟ್ಯ-ಸೆಟ್ ಅನ್ನು ಬಳಸುವುದು."
 
-#: plugins/x2go/x2go_plugin.c:2535
+#: plugins/x2go/x2go_plugin.cpp:2535
 #, fuzzy
 msgid "Retrieved the following PyHoca-CLI command-line features:"
 msgstr "ಈ ಕೆಳಗಿನ ಪೈಹೋಸಾ-ಸಿಎಲ್ಐ ಆದೇಶ-ಸಾಲು ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಮರಳಿ ಪಡೆಯಲಾಗಿದೆ:"
 
-#: plugins/x2go/x2go_plugin.c:2543
+#: plugins/x2go/x2go_plugin.cpp:2543
 #, fuzzy, c-format
 msgid "Available feature[%i]: '%s'"
 msgstr "ಲಭ್ಯವಿರುವ ವೈಶಿಷ್ಟ್ಯ[[ಎಕ್ಸ್18ಎಕ್ಸ್]]: '[ಎಕ್ಸ್24ಎಕ್ಸ್]'"
 
-#: plugins/x2go/x2go_plugin.c:2648
+#: plugins/x2go/x2go_plugin.cpp:2648
 #, fuzzy
 msgid "Could not open X11 DISPLAY."
 msgstr "ಎಕ್ಸ್11 ಡಿಸ್ ಪ್ಲೇ ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
 
-#: plugins/x2go/x2go_plugin.c:2688
+#: plugins/x2go/x2go_plugin.cpp:2688
 #, fuzzy
 msgid "Waiting for window of X2Go Agent to appear…"
 msgstr "ಎಕ್ಸ್2ಗೋ ಏಜೆಂಟ್ ನ ವಿಂಡೋ ಕಾಣಿಸಿಕೊಳ್ಳಲು ಕಾಯುತ್ತಿದೆ…"
 
-#: plugins/x2go/x2go_plugin.c:2714
+#: plugins/x2go/x2go_plugin.cpp:2714
 #, fuzzy
 msgid "Waiting for PyHoca-CLI to show the session's window…"
 msgstr "ಸೆಷನ್ ನ ವಿಂಡೋ ತೋರಿಸಲು ಪೈಹೋಸಾ-ಸಿಎಲ್ಐ ಗಾಗಿ ಕಾಯುತ್ತಿದೆ…"
 
-#: plugins/x2go/x2go_plugin.c:2765
+#: plugins/x2go/x2go_plugin.cpp:2765
 #, fuzzy
 msgid "No X2Go session window appeared. Something went wrong…"
 msgstr "ಯಾವುದೇ ಎಕ್ಸ್2ಗೋ ಸೆಷನ್ ವಿಂಡೋ ಕಾಣಿಸಿಕೊಂಡಿಲ್ಲ. ಏನೋ ತಪ್ಪಾಗಿದೆ…"
 
-#: plugins/x2go/x2go_plugin.c:2876
+#: plugins/x2go/x2go_plugin.cpp:2876
 #, fuzzy
 msgid "RemminaProtocolWidget* gp is 'NULL'!"
 msgstr "ಆಂತರಿಕ ದೋಷ: ರೆಮ್ಮಿನಾಪ್ರೊಟೋಕಾಲ್ ವಿಡ್ಗೆಟ್* ಜಿಪಿ ಶೂನ್ಯ!"
 
-#: plugins/x2go/x2go_plugin.c:2897
+#: plugins/x2go/x2go_plugin.cpp:2897
 #, fuzzy, c-format
 msgid "The %s protocol is unavailable because GtkSocket only works under X.org"
 msgstr "[ಎಕ್ಸ್4ಎಕ್ಸ್] ಪ್ರೊಟೋಕಾಲ್ ಅಲಭ್ಯವಾಗಿದೆ ಏಕೆಂದರೆ ಜಿಟಿಕೆಸಾಕೆಟ್ ಕೇವಲ X.org"
 
-#: plugins/x2go/x2go_plugin.c:2906
+#: plugins/x2go/x2go_plugin.cpp:2906
 #, fuzzy
 msgid "Could not initialize pthread. Falling back to non-threaded mode…"
 msgstr "ಪ್ಥ್ರೆಡ್ ಅನ್ನು ಆರಂಭಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಥ್ರೆಡ್ ಮಾಡದ ಮೋಡ್ ಗೆ ಹಿಂತಿರುಗುವುದು…"
@@ -3906,7 +3906,7 @@ msgstr "ಪ್ಥ್ರೆಡ್ ಅನ್ನು ಆರಂಭಗೊಳಿಸಲ�
 #. your language.
 #. (Except your listing-grammar differs from english.)
 #. 'value1' and 'value2'
-#: plugins/x2go/x2go_plugin.c:2949 plugins/x2go/x2go_plugin.c:2967
+#: plugins/x2go/x2go_plugin.cpp:2949 plugins/x2go/x2go_plugin.cpp:2967
 #, fuzzy, c-format
 msgid "%sand '%s'"
 msgstr "[ಎಕ್ಸ್0ಎಕ್ಸ್]]ಮತ್ತು '[ಎಕ್ಸ್7ಎಕ್ಸ್]'"
@@ -3917,7 +3917,7 @@ msgstr "[ಎಕ್ಸ್0ಎಕ್ಸ್]]ಮತ್ತು '[ಎಕ್ಸ್7ಎ�
 #. TRANSLATORS: Presumably you just want to leave it english.
 #. (Except your listing-grammar differs from english.)
 #. 'value1' and 'value2'
-#: plugins/x2go/x2go_plugin.c:2954 plugins/x2go/x2go_plugin.c:2972
+#: plugins/x2go/x2go_plugin.cpp:2954 plugins/x2go/x2go_plugin.cpp:2972
 #, fuzzy, c-format
 msgid "%s'%s' "
 msgstr "[ಎಕ್ಸ್0ಎಕ್ಸ್]'[ಎಕ್ಸ್3ಎಕ್ಸ್]' "
@@ -3925,133 +3925,133 @@ msgstr "[ಎಕ್ಸ್0ಎಕ್ಸ್]'[ಎಕ್ಸ್3ಎಕ್ಸ್]' "
 #. TRANSLATORS: Presumably you just want to leave it english.
 #. (Except your listing-grammar differs from english.)
 #. 'value1', 'value2', 'valueN-1' and 'valueN'
-#: plugins/x2go/x2go_plugin.c:2959
+#: plugins/x2go/x2go_plugin.cpp:2959
 #, fuzzy, c-format
 msgid "%s'%s', "
 msgstr "[ಎಕ್ಸ್0ಎಕ್ಸ್]'[ಎಕ್ಸ್3ಎಕ್ಸ್]', "
 
-#: plugins/x2go/x2go_plugin.c:2998
+#: plugins/x2go/x2go_plugin.cpp:2998
 #, fuzzy
 msgid "Invalid validation data in ProtocolSettings array!"
 msgstr "ಪ್ರೊಟೋಕಾಲ್ ಸೆಟ್ಟಿಂಗ್ ಗಳ ಸರಣಿಯಲ್ಲಿ ಅಮಾನ್ಯ ಪ್ರಮಾಣೀಕರಣ ಡೇಟಾ!"
 
-#: plugins/x2go/x2go_plugin.c:3013 plugins/x2go/x2go_plugin.c:3078
+#: plugins/x2go/x2go_plugin.cpp:3013 plugins/x2go/x2go_plugin.cpp:3078
 #, fuzzy
 msgid "Validation data in ProtocolSettings array is invalid!"
 msgstr "ಪ್ರೊಟೋಕಾಲ್ ಸೆಟ್ಟಿಂಗ್ ಗಳ ಸರಣಿಯಲ್ಲಿ ಪ್ರಮಾಣೀಕರಣ ಡೇಟಾ ಅಮಾನ್ಯವಾಗಿದೆ!"
 
-#: plugins/x2go/x2go_plugin.c:3022
+#: plugins/x2go/x2go_plugin.cpp:3022
 msgid "Parameters 'key' or 'value' are 'NULL'!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:3040
+#: plugins/x2go/x2go_plugin.cpp:3040
 #, fuzzy, c-format
 msgid "Allowed values are %s."
 msgstr "ಅನುಮತಿಸಿದ ಮೌಲ್ಯಗಳು [ಎಕ್ಸ್19ಎಕ್ಸ್]."
 
-#: plugins/x2go/x2go_plugin.c:3042
+#: plugins/x2go/x2go_plugin.cpp:3042
 #, fuzzy, c-format
 msgid "The only allowed value is '%s'."
 msgstr "ಅನುಮತಿಸಿದ ಏಕೈಕ ಮೌಲ್ಯವೆಂದರೆ '[ಎಕ್ಸ್27ಎಕ್ಸ್]'."
 
-#: plugins/x2go/x2go_plugin.c:3089
+#: plugins/x2go/x2go_plugin.cpp:3089
 #, fuzzy
 msgid "The lower limit is not a valid integer!"
 msgstr "ಕಡಿಮೆ ಮಿತಿಯು ಮಾನ್ಯ ಪೂರ್ಣಾಂಕವಲ್ಲ!"
 
-#: plugins/x2go/x2go_plugin.c:3094
+#: plugins/x2go/x2go_plugin.cpp:3094
 #, fuzzy
 msgid "The lower limit is too high!"
 msgstr "ಕಡಿಮೆ ಮಿತಿ ತುಂಬಾ ಹೆಚ್ಚಾಗಿದೆ!"
 
-#: plugins/x2go/x2go_plugin.c:3099
+#: plugins/x2go/x2go_plugin.cpp:3099
 #, fuzzy
 msgid "The lower limit is too low!"
 msgstr "ಕಡಿಮೆ ಮಿತಿ ತುಂಬಾ ಕಡಿಮೆ!"
 
-#: plugins/x2go/x2go_plugin.c:3104 plugins/x2go/x2go_plugin.c:3134
-#: plugins/x2go/x2go_plugin.c:3154
+#: plugins/x2go/x2go_plugin.cpp:3104 plugins/x2go/x2go_plugin.cpp:3134
+#: plugins/x2go/x2go_plugin.cpp:3154
 #, fuzzy
 msgid "Something unknown went wrong."
 msgstr "ಏನೋ ತಪ್ಪಾಗಿದೆ"
 
-#: plugins/x2go/x2go_plugin.c:3109 plugins/x2go/x2go_plugin.c:3139
-#: plugins/x2go/x2go_plugin.c:3158
+#: plugins/x2go/x2go_plugin.cpp:3109 plugins/x2go/x2go_plugin.cpp:3139
+#: plugins/x2go/x2go_plugin.cpp:3158
 #, fuzzy
 msgid "Please check the RemminaProtocolSetting array for possible errors."
 msgstr "ಸಂಭವನೀಯ ದೋಷಗಳಿಗಾಗಿ ದಯವಿಟ್ಟು ರೆಮ್ಮಿನಾಪ್ರೊಟೋಕಾಲ್ ಸೆಟ್ಟಿಂಗ್ ಸರಣಿಯನ್ನು ಪರಿಶೀಲಿಸಿ."
 
-#: plugins/x2go/x2go_plugin.c:3119
+#: plugins/x2go/x2go_plugin.cpp:3119
 #, fuzzy
 msgid "The upper limit is not a valid integer!"
 msgstr "ಗರಿಷ್ಠ ಮಿತಿಯು ಮಾನ್ಯ ಪೂರ್ಣಾಂಕವಲ್ಲ!"
 
-#: plugins/x2go/x2go_plugin.c:3124
+#: plugins/x2go/x2go_plugin.cpp:3124
 #, fuzzy
 msgid "The upper limit is too high!"
 msgstr "ಗರಿಷ್ಠ ಮಿತಿ ತುಂಬಾ ಹೆಚ್ಚಾಗಿದೆ!"
 
-#: plugins/x2go/x2go_plugin.c:3129
+#: plugins/x2go/x2go_plugin.cpp:3129
 #, fuzzy
 msgid "The upper limit is too low!"
 msgstr "ಗರಿಷ್ಠ ಮಿತಿ ತುಂಬಾ ಕಡಿಮೆ!"
 
-#: plugins/x2go/x2go_plugin.c:3149
+#: plugins/x2go/x2go_plugin.cpp:3149
 #, fuzzy
 msgid "The input is not a valid integer!"
 msgstr "ಇನ್ ಪುಟ್ ಮಾನ್ಯ ಪೂರ್ಣಾಂಕವಲ್ಲ!"
 
-#: plugins/x2go/x2go_plugin.c:3151 plugins/x2go/x2go_plugin.c:3170
+#: plugins/x2go/x2go_plugin.cpp:3151 plugins/x2go/x2go_plugin.cpp:3170
 #, fuzzy, c-format
 msgid "Input must be a number between %i and %i."
 msgstr "ಇನ್ ಪುಟ್ [ಎಕ್ಸ್31ಎಕ್ಸ್] ಮತ್ತು [ಎಕ್ಸ್38ಎಕ್ಸ್] ನಡುವೆ ಒಂದು ಸಂಖ್ಯೆಇರಬೇಕು."
 
-#: plugins/x2go/x2go_plugin.c:3199
+#: plugins/x2go/x2go_plugin.cpp:3199
 #, fuzzy
 msgid "Startup program"
 msgstr "ಪ್ರಾರಂಭ ಪ್ರೋಗ್ರಾಂ"
 
-#: plugins/x2go/x2go_plugin.c:3201
+#: plugins/x2go/x2go_plugin.cpp:3201
 #, fuzzy
 msgid "Which command should be executed after creating the X2Go session?"
 msgstr "ಎಕ್ಸ್2ಗೋ ಸೆಷನ್ ರಚಿಸಿದ ನಂತರ ಯಾವ ಆದೇಶವನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಬೇಕು?"
 
-#: plugins/x2go/x2go_plugin.c:3203
+#: plugins/x2go/x2go_plugin.cpp:3203
 #, fuzzy
 msgid "Keyboard Layout (auto)"
 msgstr "ಕೀಲಿಮಣೆ ಲೇಔಟ್ (ಸ್ವಯಂ)"
 
-#: plugins/x2go/x2go_plugin.c:3204
+#: plugins/x2go/x2go_plugin.cpp:3204
 #, fuzzy
 msgid "Keyboard type (auto)"
 msgstr "ಕೀಲಿಮಣೆ ಪ್ರಕಾರ (ಸ್ವಯಂ)"
 
-#: plugins/x2go/x2go_plugin.c:3205
+#: plugins/x2go/x2go_plugin.cpp:3205
 #, fuzzy
 msgid "Audio support"
 msgstr "ಆಡಿಯೋ ಬೆಂಬಲ"
 
-#: plugins/x2go/x2go_plugin.c:3207
+#: plugins/x2go/x2go_plugin.cpp:3207
 #, fuzzy
 msgid "The sound system of the X2Go server (default: 'pulse')."
 msgstr "ಎಕ್ಸ್2ಗೋ ಸರ್ವರ್ ನ ಧ್ವನಿ ವ್ಯವಸ್ಥೆ (ಡೀಫಾಲ್ಟ್: 'ಪಲ್ಸ್')."
 
-#: plugins/x2go/x2go_plugin.c:3210
+#: plugins/x2go/x2go_plugin.cpp:3210
 #, fuzzy
 msgid "Clipboard direction"
 msgstr "ಕ್ಲಿಪ್ ಬೋರ್ಡ್ ನಿರ್ದೇಶನ"
 
-#: plugins/x2go/x2go_plugin.c:3212
+#: plugins/x2go/x2go_plugin.cpp:3212
 #, fuzzy
 msgid "Which direction should clipboard content be copied? (default: 'both')."
 msgstr "ಕ್ಲಿಪ್ ಬೋರ್ಡ್ ವಿಷಯವನ್ನು ಯಾವ ದಿಕ್ಕಿನಲ್ಲಿ ನಕಲು ಮಾಡಬೇಕು? (ಪೂರ್ವನಿಯೋಜಿತ: 'ಎರಡೂ')."
 
-#: plugins/x2go/x2go_plugin.c:3216
+#: plugins/x2go/x2go_plugin.cpp:3216
 #, fuzzy
 msgid "DPI resolution"
 msgstr "ಡಿಪಿಐ ರೆಸಲ್ಯೂಶನ್"
 
-#: plugins/x2go/x2go_plugin.c:3217
+#: plugins/x2go/x2go_plugin.cpp:3217
 #, fuzzy
 msgid ""
 "Launch session with a specific resolution (in dots per inch). Must be "
@@ -4060,82 +4060,82 @@ msgstr ""
 "ನಿರ್ದಿಷ್ಟ ರೆಸಲ್ಯೂಶನ್ ನೊಂದಿಗೆ ಸೆಷನ್ ಅನ್ನು ಪ್ರಾರಂಭಿಸಿ (ಪ್ರತಿ ಇಂಚಕ್ಕೆ ಚುಕ್ಕೆಗಳಲ್ಲಿ). 20 "
 "ರಿಂದ 400 ರ ನಡುವೆ ಇರಬೇಕು."
 
-#: plugins/x2go/x2go_plugin.c:3261
+#: plugins/x2go/x2go_plugin.cpp:3261
 #, fuzzy
 msgid "X2Go plugin loaded."
 msgstr "ಎಕ್ಸ್2ಗೋ ಪ್ಲಗಿನ್ ಲೋಡ್ ಮಾಡಲಾಗಿದೆ."
 
-#: plugins/x2go/x2go_plugin.h:43
+#: plugins/x2go/x2go_plugin.hpp:43
 #, fuzzy
 msgid "X2Go - Launch an X2Go session"
 msgstr "ಎಕ್ಸ್2ಗೋ - ಎಕ್ಸ್2ಗೋ ಸೆಷನ್ ಪ್ರಾರಂಭಿಸಿ"
 
-#: plugins/gvnc/gvnc_plugin_config.h:40
+#: plugins/gvnc/gvnc_plugin_config.hpp:40
 #, fuzzy
 msgid "Remmina VNC plugin for GNOME and KVM"
 msgstr "GMM ಮತ್ತು ಕೆವಿಎಂಗಾಗಿ ರೆಮ್ಮಿನಾ ವಿಎನ್ ಸಿ ಪ್ಲಗಿನ್"
 
-#: plugins/gvnc/gvnc_plugin.c:477
+#: plugins/gvnc/gvnc_plugin.cpp:477
 #, fuzzy, c-format
 msgid "Unsupported authentication type %u"
 msgstr "ಬೆಂಬಲಿಸದ ದೃಢೀಕರಣ ಪ್ರಕಾರ [ಎಕ್ಸ್32ಎಕ್ಸ್]"
 
-#: plugins/gvnc/gvnc_plugin.c:489
+#: plugins/gvnc/gvnc_plugin.cpp:489
 #, fuzzy, c-format
 msgid "Authentication failure: %s"
 msgstr "ದೃಢೀಕರಣ ವೈಫಲ್ಯ: [ಎಕ್ಸ್24ಎಕ್ಸ್]"
 
-#: plugins/gvnc/gvnc_plugin.c:820
+#: plugins/gvnc/gvnc_plugin.cpp:820
 #, fuzzy
 msgid "Use server settings"
 msgstr "ಸರ್ವರ್ ಸೆಟ್ಟಿಂಗ್ ಗಳನ್ನು ಬಳಸಿ"
 
-#: plugins/gvnc/gvnc_plugin.c:821
+#: plugins/gvnc/gvnc_plugin.cpp:821
 #, fuzzy
 msgid "True colour (24 bits)"
 msgstr "ನಿಜವಾದ ಬಣ್ಣ (24 ಬಿಟ್ ಗಳು)"
 
-#: plugins/gvnc/gvnc_plugin.c:822
+#: plugins/gvnc/gvnc_plugin.cpp:822
 #, fuzzy
 msgid "High colour (16 bits)"
 msgstr "ಹೆಚ್ಚಿನ ಬಣ್ಣ (16 ಬಿಟ್ ಗಳು)"
 
-#: plugins/gvnc/gvnc_plugin.c:823
+#: plugins/gvnc/gvnc_plugin.cpp:823
 #, fuzzy
 msgid "Low colour (8 bits)"
 msgstr "ಕಡಿಮೆ ಬಣ್ಣ (8 ಬಿಟ್ ಗಳು)"
 
-#: plugins/gvnc/gvnc_plugin.c:824
+#: plugins/gvnc/gvnc_plugin.cpp:824
 #, fuzzy
 msgid "Ultra low colour (3 bits)"
 msgstr "ಅಲ್ಟ್ರಾ ಕಡಿಮೆ ಬಣ್ಣ (3 ಬಿಟ್ ಗಳು)"
 
-#: plugins/gvnc/gvnc_plugin.c:848
+#: plugins/gvnc/gvnc_plugin.cpp:848
 #, fuzzy
 msgid "VNC password"
 msgstr "ವಿಎನ್ ಸಿ ಪಾಸ್ ವರ್ಡ್"
 
-#: plugins/gvnc/gvnc_plugin.c:850
+#: plugins/gvnc/gvnc_plugin.cpp:850
 #, fuzzy
 msgid "Use JPEG Compression"
 msgstr "PPAG ಸಂಕೋಚನ ಬಳಸಿ"
 
-#: plugins/gvnc/gvnc_plugin.c:850
+#: plugins/gvnc/gvnc_plugin.cpp:850
 #, fuzzy
 msgid "This might not work on all VNC servers"
 msgstr "ಇದು ಎಲ್ಲಾ ವಿಎನ್ ಸಿ ಸರ್ವರ್ ಗಳಲ್ಲಿ ಕೆಲಸ ಮಾಡದಿರಬಹುದು"
 
-#: plugins/gvnc/gvnc_plugin.c:851
+#: plugins/gvnc/gvnc_plugin.cpp:851
 #, fuzzy
 msgid "Enable GTK-VNC debug"
 msgstr "ಜಿಟಿಕೆ-ವಿಎನ್ ಸಿ ದೋಷಮುಕ್ತಗೊಳಿಸು ಸಕ್ರಿಯಗೊಳಿಸು"
 
-#: plugins/gvnc/gvnc_plugin.c:871
+#: plugins/gvnc/gvnc_plugin.cpp:871
 #, fuzzy
 msgid "Shared connection"
 msgstr "ಹಂಚಿದ ಸಂಪರ್ಕ"
 
-#: plugins/gvnc/gvnc_plugin.c:871
+#: plugins/gvnc/gvnc_plugin.cpp:871
 #, fuzzy
 msgid ""
 "If the server should try to share the desktop by leaving other clients "
@@ -4144,92 +4144,92 @@ msgstr ""
 "ಸರ್ವರ್ ಇತರ ಕ್ಲೈಂಟ್ ಗಳನ್ನು ಸಂಪರ್ಕಿತವಾಗಿ ಬಿಟ್ಟು ಡೆಸ್ಕ್ ಟಾಪ್ ಅನ್ನು ಹಂಚಿಕೊಳ್ಳಲು "
 "ಪ್ರಯತ್ನಿಸಬೇಕಾದರೆ"
 
-#: plugins/gvnc/gvnc_plugin.c:881
+#: plugins/gvnc/gvnc_plugin.cpp:881
 #, fuzzy
 msgid "Send Ctrl+Alt+_Del"
 msgstr "ಕಳುಹಿಸು Tttam+At+_Del"
 
-#: plugins/gvnc/gvnc_plugin.c:882
+#: plugins/gvnc/gvnc_plugin.cpp:882
 #, fuzzy
 msgid "Send Ctrl+Alt+_Backspace"
 msgstr "ಕಳುಹಿಸು Tttಆರ್ಲ್+Aat+_Backspace"
 
-#: plugins/gvnc/gvnc_plugin.c:883
+#: plugins/gvnc/gvnc_plugin.cpp:883
 #, fuzzy
 msgid "Send Ctrl+Alt+_F1"
 msgstr "ಕಳುಹಿಸು Tttಆರ್ಲ್+Aat+_F1"
 
-#: plugins/gvnc/gvnc_plugin.c:884
+#: plugins/gvnc/gvnc_plugin.cpp:884
 #, fuzzy
 msgid "Send Ctrl+Alt+_F2"
 msgstr "ಕಳುಹಿಸು Tttam+At+_F2"
 
-#: plugins/gvnc/gvnc_plugin.c:885
+#: plugins/gvnc/gvnc_plugin.cpp:885
 #, fuzzy
 msgid "Send Ctrl+Alt+_F3"
 msgstr "ಕಳುಹಿಸು Tttಆರ್ಲ್+Aat+_F3"
 
-#: plugins/gvnc/gvnc_plugin.c:886
+#: plugins/gvnc/gvnc_plugin.cpp:886
 #, fuzzy
 msgid "Send Ctrl+Alt+_F4"
 msgstr "ಕಳುಹಿಸು Tttಆರ್ಲ್+At+_F4"
 
-#: plugins/gvnc/gvnc_plugin.c:887
+#: plugins/gvnc/gvnc_plugin.cpp:887
 #, fuzzy
 msgid "Send Ctrl+Alt+_F5"
 msgstr "ಕಳುಹಿಸು Tttma+At+_F5"
 
-#: plugins/gvnc/gvnc_plugin.c:888
+#: plugins/gvnc/gvnc_plugin.cpp:888
 #, fuzzy
 msgid "Send Ctrl+Alt+_F6"
 msgstr "ಕಳುಹಿಸು Tttಆರ್ಲ್+Aat+_F6"
 
-#: plugins/gvnc/gvnc_plugin.c:889
+#: plugins/gvnc/gvnc_plugin.cpp:889
 #, fuzzy
 msgid "Send Ctrl+Alt+_F7"
 msgstr "ಕಳುಹಿಸು Tttam+At+_F7"
 
-#: plugins/gvnc/gvnc_plugin.c:890
+#: plugins/gvnc/gvnc_plugin.cpp:890
 #, fuzzy
 msgid "Send Ctrl+Alt+_F8"
 msgstr "ಕಳುಹಿಸು Tttam+At+_F8"
 
-#: plugins/gvnc/gvnc_plugin.c:891
+#: plugins/gvnc/gvnc_plugin.cpp:891
 #, fuzzy
 msgid "Send Ctrl+Alt+_F9"
 msgstr "ಕಳುಹಿಸು Tttam+At+_F9"
 
-#: plugins/gvnc/gvnc_plugin.c:892
+#: plugins/gvnc/gvnc_plugin.cpp:892
 #, fuzzy
 msgid "Send Ctrl+Alt+_F10"
 msgstr "ಕಳುಹಿಸು Tttam+At+_F10"
 
-#: plugins/gvnc/gvnc_plugin.c:893
+#: plugins/gvnc/gvnc_plugin.cpp:893
 #, fuzzy
 msgid "Send Ctrl+Alt+_F11"
 msgstr "ಕಳುಹಿಸು Tttam+At+_F11"
 
-#: plugins/gvnc/gvnc_plugin.c:894
+#: plugins/gvnc/gvnc_plugin.cpp:894
 #, fuzzy
 msgid "Send Ctrl+Alt+_F12"
 msgstr "ಕಳುಹಿಸು Tttam+At+_F12"
 
-#: plugins/gvnc/gvnc_plugin.c:896
+#: plugins/gvnc/gvnc_plugin.cpp:896
 #, fuzzy
 msgid "Reboot remote host"
 msgstr "ರಿಮೋಟ್ ಹೋಸ್ಟ್ ರೀಬೂಟ್ ಮಾಡು"
 
-#: plugins/gvnc/gvnc_plugin.c:897
+#: plugins/gvnc/gvnc_plugin.cpp:897
 #, fuzzy
 msgid "Reset remote host (hard reboot)"
 msgstr "ರಿಮೋಟ್ ಹೋಸ್ಟ್ ಮರುಹೊಂದಿಸು (ಹಾರ್ಡ್ ರೀಬೂಟ್)"
 
-#: plugins/gvnc/gvnc_plugin.c:898
+#: plugins/gvnc/gvnc_plugin.cpp:898
 #, fuzzy
 msgid "Shutdown remote host"
 msgstr "ರಿಮೋಟ್ ಹೋಸ್ಟ್ ಮುಚ್ಚು"
 
-#: plugins/telepathy/telepathy_channel_handler.c:237
+#: plugins/telepathy/telepathy_channel_handler.cpp:237
 #, fuzzy, c-format
 msgid ""
 "%s wants to share their desktop.\n"
@@ -4238,12 +4238,12 @@ msgstr ""
 "[ಎಕ್ಸ್0ಎಕ್ಸ್] ತಮ್ಮ ಡೆಸ್ಕ್ ಟಾಪ್ ಅನ್ನು ಹಂಚಿಕೊಳ್ಳಲು ಬಯಸುತ್ತಾರೆ.\n"
 "ನೀವು ಸ್ವೀಕರಿಸುತ್ತೀರಾ?"
 
-#: plugins/telepathy/telepathy_channel_handler.c:240
+#: plugins/telepathy/telepathy_channel_handler.cpp:240
 #, fuzzy
 msgid "Desktop sharing invitation"
 msgstr "ಡೆಸ್ಕ್ ಟಾಪ್ ಹಂಚಿಕೆ ಆಹ್ವಾನ"
 
-#: plugins/telepathy/telepathy_plugin.c:57
+#: plugins/telepathy/telepathy_plugin.cpp:57
 #, fuzzy
 msgid "Telepathy - Desktop Sharing"
 msgstr "ಟೆಲಿಪತಿ - ಡೆಸ್ಕ್ ಟಾಪ್ ಹಂಚಿಕೆ"

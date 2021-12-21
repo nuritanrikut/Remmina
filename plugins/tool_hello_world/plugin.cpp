@@ -34,9 +34,9 @@
  *
  */
 
-#include "plugin_config.h"
+#include "plugin_config.hpp"
 
-#include "common/remmina_plugin.h"
+#include "common/remmina_plugin.hpp"
 
 static RemminaPluginService *remmina_plugin_service = NULL;
 #define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )
@@ -47,7 +47,7 @@ static void remmina_plugin_tool_init( RemminaProtocolWidget *gp )
     REMMINA_PLUGIN_DEBUG( "[%s] Plugin init", PLUGIN_NAME );
 }
 
-static gboolean remmina_plugin_tool_open_connection( RemminaProtocolWidget *gp )
+static int remmina_plugin_tool_open_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     REMMINA_PLUGIN_DEBUG( "[%s] Plugin open connection", PLUGIN_NAME );
@@ -60,7 +60,7 @@ static gboolean remmina_plugin_tool_open_connection( RemminaProtocolWidget *gp )
     return FALSE;
 }
 
-static gboolean remmina_plugin_tool_close_connection( RemminaProtocolWidget *gp )
+static int remmina_plugin_tool_close_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     REMMINA_PLUGIN_DEBUG( "[%s] Plugin close connection", PLUGIN_NAME );
@@ -79,9 +79,9 @@ static gboolean remmina_plugin_tool_close_connection( RemminaProtocolWidget *gp 
  * g) Validation data pointer, will be passed to the validation callback method.
  * h) Validation callback method (Can be NULL. Every entry will be valid then.)
  *		use following prototype:
- *		gboolean mysetting_validator_method(gpointer key, gpointer value,
+ *		bool mysetting_validator_method(gpointer key, gpointer value,
  *						    gpointer validator_data);
- *		gpointer key is a gchar* containing the setting's name,
+ *		gpointer key is a char* containing the setting's name,
  *		gpointer value contains the value which should be validated,
  *		gpointer validator_data contains your passed data.
  */
@@ -112,18 +112,21 @@ static RemminaProtocolPlugin remmina_plugin = {
     NULL                                  // RCW unmap event
 };
 
-G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
+extern "C"
 {
-    TRACE_CALL( __func__ );
-    remmina_plugin_service = service;
-
-    bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
-    bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
-
-    if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin ) )
+    G_MODULE_EXPORT int remmina_plugin_entry( RemminaPluginService *service )
     {
-        return FALSE;
-    }
+        TRACE_CALL( __func__ );
+        remmina_plugin_service = service;
 
-    return TRUE;
+        bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
+        bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
+
+        if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin ) )
+        {
+            return FALSE;
+        }
+
+        return TRUE;
+    }
 }

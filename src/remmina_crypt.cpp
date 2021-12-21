@@ -39,13 +39,13 @@
 #ifdef HAVE_LIBGCRYPT
 #    include <gcrypt.h>
 #endif
-#include "remmina_pref.h"
-#include "remmina_crypt.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_pref.hpp"
+#include "remmina_crypt.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 #ifdef HAVE_LIBGCRYPT
 
-static gboolean remmina_crypt_init( gcry_cipher_hd_t *phd )
+static int remmina_crypt_init( gcry_cipher_hd_t *phd )
 {
     TRACE_CALL( __func__ );
     guchar *secret;
@@ -95,12 +95,12 @@ static gboolean remmina_crypt_init( gcry_cipher_hd_t *phd )
     return TRUE;
 }
 
-gchar *remmina_crypt_encrypt( const gchar *str )
+char *remmina_crypt_encrypt( const char *str )
 {
     TRACE_CALL( __func__ );
     guchar *buf;
     gint buf_len;
-    gchar *result;
+    char *result;
     gcry_error_t err;
     gcry_cipher_hd_t hd;
 
@@ -135,7 +135,7 @@ gchar *remmina_crypt_encrypt( const gchar *str )
     return result;
 }
 
-gchar *remmina_crypt_decrypt( const gchar *str )
+char *remmina_crypt_decrypt( const char *str )
 {
     TRACE_CALL( __func__ );
     guchar *buf;
@@ -177,18 +177,18 @@ gchar *remmina_crypt_decrypt( const gchar *str )
     /* Just in case */
     buf[buf_len - 1] = '\0';
 
-    return (gchar *)buf;
+    return (char *)buf;
 }
 
 #else
 
-gchar *remmina_crypt_encrypt( const gchar *str )
+char *remmina_crypt_encrypt( const char *str )
 {
     TRACE_CALL( __func__ );
     return NULL;
 }
 
-gchar *remmina_crypt_decrypt( const gchar *str )
+char *remmina_crypt_decrypt( const char *str )
 {
     TRACE_CALL( __func__ );
     return NULL;

@@ -43,15 +43,15 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 #include <gio/gio.h>
-#include "remmina/remmina_trace_calls.h"
+#include "remmina/remmina_trace_calls.hpp"
 
 /** Returns @c TRUE if @a ptr is @c NULL or @c *ptr is @c FALSE. */
 #define EMPTY( ptr ) ( !( ptr ) || !*( ptr ) )
 
 /* Used to send desktop notifications */
-void www_utils_send_notification( const gchar *notification_id,
-                                  const gchar *notification_title,
-                                  const gchar *notification_message )
+void www_utils_send_notification( const char *notification_id,
+                                  const char *notification_title,
+                                  const char *notification_message )
 {
     TRACE_CALL( __func__ );
 
@@ -64,10 +64,10 @@ void www_utils_send_notification( const gchar *notification_id,
     g_object_unref( notification );
 }
 
-gint www_utils_strpos( const gchar *haystack, const gchar *needle )
+gint www_utils_strpos( const char *haystack, const char *needle )
 {
     TRACE_CALL( __func__ );
-    const gchar *sub;
+    const char *sub;
 
     if( !*needle )
         return -1;
@@ -82,7 +82,7 @@ gint www_utils_strpos( const gchar *haystack, const gchar *needle )
 /* end can be -1 for haystack->len.
  * returns: position of found text or -1.
  * (C) Taken from geany */
-gint www_utils_string_find( GString *haystack, gint start, gint end, const gchar *needle )
+gint www_utils_string_find( GString *haystack, gint start, gint end, const char *needle )
 {
     TRACE_CALL( __func__ );
     gint pos;
@@ -114,7 +114,7 @@ gint www_utils_string_find( GString *haystack, gint start, gint end, const gchar
  * len can be -1 to replace the remainder of @a str.
  * returns: pos + strlen(replace).
  * (C) Taken from geany */
-gint www_utils_string_replace( GString *str, gint pos, gint len, const gchar *replace )
+gint www_utils_string_replace( GString *str, gint pos, gint len, const char *replace )
 {
     TRACE_CALL( __func__ );
     g_string_erase( str, pos, len );
@@ -135,7 +135,7 @@ gint www_utils_string_replace( GString *str, gint pos, gint len, const gchar *re
  *
  * @return Number of replacements made.
  **/
-guint www_utils_string_replace_all( GString *haystack, const gchar *needle, const gchar *replace )
+guint www_utils_string_replace_all( GString *haystack, const char *needle, const char *replace )
 {
     TRACE_CALL( __func__ );
     guint count = 0;

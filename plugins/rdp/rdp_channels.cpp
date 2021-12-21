@@ -33,10 +33,10 @@
  *
  */
 
-#include "rdp_plugin.h"
-#include "rdp_cliprdr.h"
-#include "rdp_channels.h"
-#include "rdp_event.h"
+#include "rdp_plugin.hpp"
+#include "rdp_cliprdr.hpp"
+#include "rdp_channels.hpp"
+#include "rdp_event.hpp"
 
 #include <freerdp/freerdp.h>
 #include <freerdp/channels/channels.h>

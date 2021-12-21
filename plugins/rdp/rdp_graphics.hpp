@@ -35,6 +35,6 @@
 
 #pragma once
 
-#include "rdp_plugin.h"
+#include "rdp_plugin.hpp"
 
 void rf_register_graphics( rdpGraphics *graphics );

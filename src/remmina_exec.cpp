@@ -39,25 +39,25 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <stdlib.h>
-#include "remmina.h"
-#include "remmina_main.h"
-#include "remmina_log.h"
-#include "remmina_pref.h"
-#include "remmina_widget_pool.h"
-#include "remmina_unlock.h"
-#include "remmina_pref_dialog.h"
-#include "remmina_file.h"
-#include "remmina_file_manager.h"
-#include "remmina_file_editor.h"
-#include "rcw.h"
-#include "remmina_about.h"
-#include "remmina_plugin_manager.h"
-#include "remmina_exec.h"
-#include "remmina/remmina_trace_calls.h"
-#include "remmina_file_manager.h"
-#include "remmina_crypt.h"
+#include "remmina.hpp"
+#include "remmina_main.hpp"
+#include "remmina_log.hpp"
+#include "remmina_pref.hpp"
+#include "remmina_widget_pool.hpp"
+#include "remmina_unlock.hpp"
+#include "remmina_pref_dialog.hpp"
+#include "remmina_file.hpp"
+#include "remmina_file_manager.hpp"
+#include "remmina_file_editor.hpp"
+#include "rcw.hpp"
+#include "remmina_about.hpp"
+#include "remmina_plugin_manager.hpp"
+#include "remmina_exec.hpp"
+#include "remmina/remmina_trace_calls.hpp"
+#include "remmina_file_manager.hpp"
+#include "remmina_crypt.hpp"
 
-#include "remmina_icon.h"
+#include "remmina_icon.hpp"
 
 #ifdef SNAP_BUILD
 #    define ISSNAP "- SNAP Build -"
@@ -65,7 +65,7 @@
 #    define ISSNAP "-"
 #endif
 
-static gboolean cb_closewidget( GtkWidget *widget, gpointer data )
+static int cb_closewidget( GtkWidget *widget, gpointer data )
 {
     TRACE_CALL( __func__ );
     /* The correct way to close a rcw is to send
@@ -76,13 +76,13 @@ static gboolean cb_closewidget( GtkWidget *widget, gpointer data )
     return TRUE;
 }
 
-const gchar *remmina_exec_get_build_config( void )
+const char *remmina_exec_get_build_config( void )
 {
-    static const gchar build_config[] = "Build configuration: " BUILD_CONFIG "\n"
-                                        "Build type:          " BUILD_TYPE "\n"
-                                        "CFLAGS:              " CFLAGS "\n"
-                                        "Compiler:            " COMPILER_ID ", " COMPILER_VERSION "\n"
-                                        "Target architecture: " TARGET_ARCH "\n";
+    static const char build_config[] = "Build configuration: " BUILD_CONFIG "\n"
+                                       "Build type:          " BUILD_TYPE "\n"
+                                       "CFLAGS:              " CFLAGS "\n"
+                                       "Compiler:            " COMPILER_ID ", " COMPILER_VERSION "\n"
+                                       "Target architecture: " TARGET_ARCH "\n";
     return build_config;
 }
 
@@ -108,7 +108,7 @@ void remmina_exec_exitremmina()
     g_application_quit( g_application_get_default() );
 }
 
-static gboolean disable_rcw_delete_confirm_cb( GtkWidget *widget, gpointer data )
+static int disable_rcw_delete_confirm_cb( GtkWidget *widget, gpointer data )
 {
     TRACE_CALL( __func__ );
     RemminaConnectionWindow *rcw;
@@ -164,15 +164,15 @@ static void newline_remove( char *s )
 /* used for commandline parameter --update-profile X --set-option Y --set-option Z
  * return a status code for exit()
  */
-int remmina_exec_set_setting( gchar *profilefilename, gchar **settings )
+int remmina_exec_set_setting( char *profilefilename, char **settings )
 {
     RemminaFile *remminafile;
     int i;
-    gchar **tk, *value;
+    char **tk, *value;
     char *line = NULL;
     size_t len = 0;
     ssize_t read;
-    gboolean abort = FALSE;
+    bool abort = FALSE;
 
     remminafile = remmina_file_manager_load_file( profilefilename );
 
@@ -228,25 +228,25 @@ static void remmina_exec_autostart_cb( RemminaFile *remminafile, gpointer user_d
     }
 }
 
-static void remmina_exec_connect( const gchar *data )
+static void remmina_exec_connect( const char *data )
 {
     TRACE_CALL( __func__ );
 
-    gchar *protocol;
-    gchar **protocolserver;
-    gchar *server;
+    const char *protocol;
+    char **protocolserver;
+    char *server;
     RemminaFile *remminafile;
-    gchar **userat;
-    gchar **userpass;
-    gchar *user;
-    gchar *password;
-    gchar **domainuser;
-    gchar **serverquery;
-    gchar **querystring;
-    gchar **querystringpart;
-    gchar **querystringpartkv;
-    gchar *value;
-    gchar *temp;
+    char **userat;
+    char **userpass;
+    char *user;
+    char *password;
+    char **domainuser;
+    char **serverquery;
+    char **querystring;
+    char **querystringpart;
+    char **querystringpartkv;
+    char *value;
+    char *temp;
     GError *error = NULL;
 
     protocol = NULL;
@@ -261,7 +261,7 @@ static void remmina_exec_connect( const gchar *data )
 
     if( strncmp( "file://", data, 6 ) == 0 )
     {
-        gchar *filename = g_filename_from_uri( data, NULL, &error );
+        char *filename = g_filename_from_uri( data, NULL, &error );
         if( filename != NULL )
         {
             rcw_open_from_filename( filename );
@@ -395,12 +395,12 @@ static void remmina_exec_connect( const gchar *data )
     rcw_open_from_file( remminafile );
 }
 
-void remmina_exec_command( RemminaCommandType command, const gchar *data )
+void remmina_exec_command( RemminaCommandType command, const char *data )
 {
     TRACE_CALL( __func__ );
-    gchar *s1;
-    gchar *s2;
-    gchar *temp;
+    char *s1;
+    char *s2;
+    char *temp;
     GtkWidget *widget;
     GtkWindow *mainwindow;
     GtkWidget *prefdialog;
@@ -446,14 +446,15 @@ void remmina_exec_command( RemminaCommandType command, const gchar *data )
             break;
 
         case REMMINA_COMMAND_NEW:
-            s1 = ( data ? strchr( data, ',' ) : NULL );
+            s1 = data ? g_strdup( data ) : NULL;
+            s1 = ( s1 ? strchr( s1, ',' ) : NULL );
             if( s1 )
             {
                 s1 = g_strdup( data );
                 s2 = strchr( s1, ',' );
                 *s2++ = '\0';
                 widget = remmina_file_editor_new_full( s2, s1 );
-                g_free( s1 );
+                g_free( static_cast<void *>( s1 ) );
             }
             else
             {

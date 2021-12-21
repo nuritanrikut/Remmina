@@ -34,12 +34,12 @@
 
 #pragma once
 
-#include "remmina_plugin_manager.h"
+#include "remmina_plugin_manager.hpp"
 
-G_BEGIN_DECLS
 
-typedef gboolean ( *RemminaPluginMain )( gchar *name );
 
-gboolean remmina_plugin_native_load( RemminaPluginService *service, const char *name );
+typedef int ( *RemminaPluginMain )( char *name );
 
-G_END_DECLS
+int remmina_plugin_native_load( RemminaPluginService *service, const char *name );
+
+

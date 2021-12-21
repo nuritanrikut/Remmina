@@ -36,7 +36,7 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 #define REMMINA_TYPE_FILE_EDITOR ( remmina_file_editor_get_type() )
 #define REMMINA_FILE_EDITOR( obj ) \
@@ -68,11 +68,11 @@ GType remmina_file_editor_get_type( void ) G_GNUC_CONST;
 GtkWidget *remmina_file_editor_new_from_file( RemminaFile *remminafile );
 /* Create new file */
 GtkWidget *remmina_file_editor_new( void );
-GtkWidget *remmina_file_editor_new_full( const gchar *server, const gchar *protocol );
-GtkWidget *remmina_file_editor_new_copy( const gchar *filename );
+GtkWidget *remmina_file_editor_new_full( const char *server, const char *protocol );
+GtkWidget *remmina_file_editor_new_copy( const char *filename );
 /* Open existing file */
-GtkWidget *remmina_file_editor_new_from_filename( const gchar *filename );
+GtkWidget *remmina_file_editor_new_from_filename( const char *filename );
 void remmina_file_editor_check_profile( RemminaFileEditor *gfe );
 void remmina_file_editor_file_save( RemminaFileEditor *gfe );
 
-G_END_DECLS
+

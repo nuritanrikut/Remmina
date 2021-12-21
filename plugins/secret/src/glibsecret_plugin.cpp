@@ -34,28 +34,29 @@
  */
 
 #include "config.h"
-#include "glibsecret_plugin.h"
+#include "glibsecret_plugin.hpp"
 #include <gtk/gtk.h>
 #include <glib.h>
 #include <glib/gi18n-lib.h>
 #include <glib/gstdio.h>
 #include <libsecret/secret.h>
-#include <remmina/plugin.h>
+#include <remmina/plugin.hpp>
 
 static RemminaPluginService *remmina_plugin_service = NULL;
 #define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )
 
-static SecretSchema remmina_file_secret_schema = {
-    "org.remmina.Password",
-    SECRET_SCHEMA_NONE,
-    { { "filename", SECRET_SCHEMA_ATTRIBUTE_STRING }, { "key", SECRET_SCHEMA_ATTRIBUTE_STRING }, { NULL, 0 } } };
+static SecretSchema remmina_file_secret_schema = { "org.remmina.Password",
+                                                   SECRET_SCHEMA_NONE,
+                                                   { { "filename", SECRET_SCHEMA_ATTRIBUTE_STRING },
+                                                     { "key", SECRET_SCHEMA_ATTRIBUTE_STRING },
+                                                     { NULL, SECRET_SCHEMA_ATTRIBUTE_STRING } } };
 
 #ifdef LIBSECRET_VERSION_0_18
 static SecretService *secretservice;
 static SecretCollection *defaultcollection;
 #endif
 
-gboolean remmina_plugin_glibsecret_is_service_available()
+int remmina_plugin_glibsecret_is_service_available()
 {
 #ifdef LIBSECRET_VERSION_0_18
     if( secretservice && defaultcollection )
@@ -75,7 +76,7 @@ static void remmina_plugin_glibsecret_unlock_secret_service()
 
     GError *error = NULL;
     GList *objects, *ul;
-    gchar *lbl;
+    char *lbl;
 
     if( secretservice && defaultcollection )
     {
@@ -93,12 +94,12 @@ static void remmina_plugin_glibsecret_unlock_secret_service()
     return;
 }
 
-void remmina_plugin_glibsecret_store_password( RemminaFile *remminafile, const gchar *key, const gchar *password )
+void remmina_plugin_glibsecret_store_password( RemminaFile *remminafile, const char *key, const char *password )
 {
     TRACE_CALL( __func__ );
     GError *r = NULL;
-    const gchar *path;
-    gchar *s;
+    const char *path;
+    char *s;
 
     path = remmina_plugin_service->file_get_path( remminafile );
     s = g_strdup_printf( "Remmina: %s - %s", remmina_plugin_service->file_get_string( remminafile, "name" ), key );
@@ -125,13 +126,13 @@ void remmina_plugin_glibsecret_store_password( RemminaFile *remminafile, const g
     }
 }
 
-gchar *remmina_plugin_glibsecret_get_password( RemminaFile *remminafile, const gchar *key )
+char *remmina_plugin_glibsecret_get_password( RemminaFile *remminafile, const char *key )
 {
     TRACE_CALL( __func__ );
     GError *r = NULL;
-    const gchar *path;
-    gchar *password;
-    gchar *p;
+    const char *path;
+    char *password;
+    char *p;
 
     path = remmina_plugin_service->file_get_path( remminafile );
     password = secret_password_lookup_sync( &remmina_file_secret_schema, NULL, &r, "filename", path, "key", key, NULL );
@@ -148,11 +149,11 @@ gchar *remmina_plugin_glibsecret_get_password( RemminaFile *remminafile, const g
     }
 }
 
-void remmina_plugin_glibsecret_delete_password( RemminaFile *remminafile, const gchar *key )
+void remmina_plugin_glibsecret_delete_password( RemminaFile *remminafile, const char *key )
 {
     TRACE_CALL( __func__ );
     GError *r = NULL;
-    const gchar *path;
+    const char *path;
 
     path = remmina_plugin_service->file_get_path( remminafile );
     secret_password_clear_sync( &remmina_file_secret_schema, NULL, &r, "filename", path, "key", key, NULL );
@@ -162,7 +163,7 @@ void remmina_plugin_glibsecret_delete_password( RemminaFile *remminafile, const 
         REMMINA_PLUGIN_DEBUG( "password “%s” cannot be deleted for file %s", key, path );
 }
 
-gboolean remmina_plugin_glibsecret_init()
+int remmina_plugin_glibsecret_init()
 {
 #ifdef LIBSECRET_VERSION_0_18
     GError *error;
@@ -208,20 +209,23 @@ static RemminaSecretPlugin remmina_plugin_glibsecret = { REMMINA_PLUGIN_TYPE_SEC
                                                          remmina_plugin_glibsecret_get_password,
                                                          remmina_plugin_glibsecret_delete_password };
 
-G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
+extern "C"
 {
-    TRACE_CALL( __func__ );
+    G_MODULE_EXPORT int remmina_plugin_entry( RemminaPluginService *service )
+    {
+        TRACE_CALL( __func__ );
 
-    /* This function should only register the secret plugin. No init action
+        /* This function should only register the secret plugin. No init action
 	 * should be performed here. Initialization will be done later
 	 * with remmina_plugin_xxx_init() . */
 
-    remmina_plugin_service = service;
+        remmina_plugin_service = service;
 
-    if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin_glibsecret ) )
-    {
-        return FALSE;
+        if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin_glibsecret ) )
+        {
+            return FALSE;
+        }
+
+        return TRUE;
     }
-
-    return TRUE;
 }

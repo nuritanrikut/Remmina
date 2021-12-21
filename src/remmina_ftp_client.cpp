@@ -41,13 +41,13 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 #include "config.h"
-#include "remmina_public.h"
-#include "remmina_pref.h"
-#include "remmina_marshals.h"
-#include "remmina_file.h"
-#include "remmina_ftp_client.h"
-#include "remmina_masterthread_exec.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_public.hpp"
+#include "remmina_pref.hpp"
+#include "remmina_marshals.hpp"
+#include "remmina_file.hpp"
+#include "remmina_ftp_client.hpp"
+#include "remmina_masterthread_exec.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 /* -------------------- RemminaCellRendererPixbuf ----------------------- */
 /* A tiny cell renderer that extends the default pixbuf cell render to accept activation */
@@ -78,13 +78,13 @@ G_DEFINE_TYPE( RemminaCellRendererPixbuf, remmina_cell_renderer_pixbuf, GTK_TYPE
 
 static guint remmina_cell_renderer_pixbuf_signals[1] = { 0 };
 
-static gboolean remmina_cell_renderer_pixbuf_activate( GtkCellRenderer *renderer,
-                                                       GdkEvent *event,
-                                                       GtkWidget *widget,
-                                                       const gchar *path,
-                                                       const GdkRectangle *background_area,
-                                                       const GdkRectangle *cell_area,
-                                                       GtkCellRendererState flags )
+static int remmina_cell_renderer_pixbuf_activate( GtkCellRenderer *renderer,
+                                                  GdkEvent *event,
+                                                  GtkWidget *widget,
+                                                  const char *path,
+                                                  const GdkRectangle *background_area,
+                                                  const GdkRectangle *cell_area,
+                                                  GtkCellRendererState flags )
 {
     TRACE_CALL( __func__ );
     g_signal_emit( G_OBJECT( renderer ), remmina_cell_renderer_pixbuf_signals[0], 0, path );
@@ -98,16 +98,17 @@ static void remmina_cell_renderer_pixbuf_class_init( RemminaCellRendererPixbufCl
 
     renderer_class->activate = remmina_cell_renderer_pixbuf_activate;
 
-    remmina_cell_renderer_pixbuf_signals[0] = g_signal_new( "activate",
-                                                            G_TYPE_FROM_CLASS( klass ),
-                                                            G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
-                                                            G_STRUCT_OFFSET( RemminaCellRendererPixbufClass, activate ),
-                                                            NULL,
-                                                            NULL,
-                                                            g_cclosure_marshal_VOID__STRING,
-                                                            G_TYPE_NONE,
-                                                            1,
-                                                            G_TYPE_STRING );
+    remmina_cell_renderer_pixbuf_signals[0] =
+        g_signal_new( "activate",
+                      G_TYPE_FROM_CLASS( klass ),
+                      static_cast<GSignalFlags>( G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION ),
+                      G_STRUCT_OFFSET( RemminaCellRendererPixbufClass, activate ),
+                      NULL,
+                      NULL,
+                      g_cclosure_marshal_VOID__STRING,
+                      G_TYPE_NONE,
+                      1,
+                      G_TYPE_STRING );
 }
 
 static void remmina_cell_renderer_pixbuf_init( RemminaCellRendererPixbuf *renderer )
@@ -151,18 +152,18 @@ struct _RemminaFTPClientPriv
     GtkTreeModel *file_list_filter;
     GtkTreeModel *file_list_sort;
     GtkWidget *file_list_view;
-    gboolean file_list_show_hidden;
+    bool file_list_show_hidden;
 
     GtkTreeModel *task_list_model;
     GtkWidget *task_list_view;
 
-    gchar *current_directory;
-    gchar *working_directory;
+    char *current_directory;
+    char *working_directory;
 
     GtkWidget *file_action_widgets[10];
-    gboolean sensitive;
-    gboolean overwrite_all;
-    gboolean resume_all;
+    bool sensitive;
+    bool overwrite_all;
+    bool resume_all;
 };
 
 static gint remmina_ftp_client_taskid = 1;
@@ -181,29 +182,31 @@ static guint remmina_ftp_client_signals[LAST_SIGNAL] = { 0 };
 static void remmina_ftp_client_class_init( RemminaFTPClientClass *klass )
 {
     TRACE_CALL( __func__ );
-    remmina_ftp_client_signals[OPEN_DIR_SIGNAL] = g_signal_new( "open-dir",
-                                                                G_TYPE_FROM_CLASS( klass ),
-                                                                G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
-                                                                G_STRUCT_OFFSET( RemminaFTPClientClass, open_dir ),
-                                                                NULL,
-                                                                NULL,
-                                                                g_cclosure_marshal_VOID__STRING,
-                                                                G_TYPE_NONE,
-                                                                1,
-                                                                G_TYPE_STRING );
-    remmina_ftp_client_signals[NEW_TASK_SIGNAL] = g_signal_new( "new-task",
-                                                                G_TYPE_FROM_CLASS( klass ),
-                                                                G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
-                                                                G_STRUCT_OFFSET( RemminaFTPClientClass, new_task ),
-                                                                NULL,
-                                                                NULL,
-                                                                g_cclosure_marshal_VOID__VOID,
-                                                                G_TYPE_NONE,
-                                                                0 );
+    remmina_ftp_client_signals[OPEN_DIR_SIGNAL] =
+        g_signal_new( "open-dir",
+                      G_TYPE_FROM_CLASS( klass ),
+                      static_cast<GSignalFlags>( G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION ),
+                      G_STRUCT_OFFSET( RemminaFTPClientClass, open_dir ),
+                      NULL,
+                      NULL,
+                      g_cclosure_marshal_VOID__STRING,
+                      G_TYPE_NONE,
+                      1,
+                      G_TYPE_STRING );
+    remmina_ftp_client_signals[NEW_TASK_SIGNAL] =
+        g_signal_new( "new-task",
+                      G_TYPE_FROM_CLASS( klass ),
+                      static_cast<GSignalFlags>( G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION ),
+                      G_STRUCT_OFFSET( RemminaFTPClientClass, new_task ),
+                      NULL,
+                      NULL,
+                      g_cclosure_marshal_VOID__VOID,
+                      G_TYPE_NONE,
+                      0 );
     remmina_ftp_client_signals[CANCEL_TASK_SIGNAL] =
         g_signal_new( "cancel-task",
                       G_TYPE_FROM_CLASS( klass ),
-                      G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
+                      static_cast<GSignalFlags>( G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION ),
                       G_STRUCT_OFFSET( RemminaFTPClientClass, cancel_task ),
                       NULL,
                       NULL,
@@ -214,7 +217,7 @@ static void remmina_ftp_client_class_init( RemminaFTPClientClass *klass )
     remmina_ftp_client_signals[DELETE_FILE_SIGNAL] =
         g_signal_new( "delete-file",
                       G_TYPE_FROM_CLASS( klass ),
-                      G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
+                      static_cast<GSignalFlags>( G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION ),
                       G_STRUCT_OFFSET( RemminaFTPClientClass, delete_file ),
                       NULL,
                       NULL,
@@ -287,7 +290,7 @@ static void remmina_ftp_client_cell_data_progress_pixbuf( GtkTreeViewColumn *col
     }
 }
 
-static gchar *remmina_ftp_client_size_to_str( gfloat size )
+static char *remmina_ftp_client_size_to_str( gfloat size )
 {
     TRACE_CALL( __func__ );
 
@@ -302,7 +305,7 @@ static void remmina_ftp_client_cell_data_size( GtkTreeViewColumn *col,
 {
     TRACE_CALL( __func__ );
     gfloat size;
-    gchar *str;
+    char *str;
 
     gtk_tree_model_get( model, iter, REMMINA_FTP_FILE_COLUMN_SIZE, &size, -1 );
 
@@ -320,7 +323,7 @@ static void remmina_ftp_client_cell_data_permission( GtkTreeViewColumn *col,
 {
     TRACE_CALL( __func__ );
     gint permission;
-    gchar buf[11];
+    char buf[11];
 
     gtk_tree_model_get( model, iter, REMMINA_FTP_FILE_COLUMN_PERMISSION, &permission, -1 );
 
@@ -348,7 +351,7 @@ static void remmina_ftp_client_cell_data_size_progress( GtkTreeViewColumn *col,
     TRACE_CALL( __func__ );
     gint status;
     gfloat size, donesize;
-    gchar *strsize, *strdonesize, *str;
+    char *strsize, *strdonesize, *str;
 
     gtk_tree_model_get( model,
                         iter,
@@ -418,7 +421,7 @@ static void remmina_ftp_client_cell_data_progress( GtkTreeViewColumn *col,
     g_object_set( renderer, "value", progress, NULL );
 }
 
-static void remmina_ftp_client_open_dir( RemminaFTPClient *client, const gchar *dir )
+static void remmina_ftp_client_open_dir( RemminaFTPClient *client, const char *dir )
 {
     TRACE_CALL( __func__ );
     BUSY_CURSOR
@@ -446,7 +449,7 @@ static void remmina_ftp_client_dir_on_changed( GtkWidget *widget, RemminaFTPClie
     }
 }
 
-static void remmina_ftp_client_set_file_action_sensitive( RemminaFTPClient *client, gboolean sensitive )
+static void remmina_ftp_client_set_file_action_sensitive( RemminaFTPClient *client, bool sensitive )
 {
     TRACE_CALL( __func__ );
     gint i;
@@ -467,12 +470,12 @@ static void remmina_ftp_client_file_selection_on_changed( GtkTreeSelection *sele
     g_list_free( list );
 }
 
-static gchar *remmina_ftp_client_get_download_dir( RemminaFTPClient *client )
+static char *remmina_ftp_client_get_download_dir( RemminaFTPClient *client )
 {
     TRACE_CALL( __func__ );
     RemminaFTPClientPriv *priv = (RemminaFTPClientPriv *)client->priv;
     GtkWidget *dialog;
-    gchar *localdir = NULL;
+    char *localdir = NULL;
 
     dialog = gtk_file_chooser_dialog_new( _( "Choose download location" ),
                                           GTK_WINDOW( gtk_widget_get_toplevel( GTK_WIDGET( client ) ) ),
@@ -496,14 +499,14 @@ static gchar *remmina_ftp_client_get_download_dir( RemminaFTPClient *client )
     return localdir;
 }
 
-static void remmina_ftp_client_download( RemminaFTPClient *client, GtkTreeIter *piter, const gchar *localdir )
+static void remmina_ftp_client_download( RemminaFTPClient *client, GtkTreeIter *piter, const char *localdir )
 {
     TRACE_CALL( __func__ );
     RemminaFTPClientPriv *priv = (RemminaFTPClientPriv *)client->priv;
     GtkListStore *store = GTK_LIST_STORE( priv->task_list_model );
     GtkTreeIter iter;
     gint type;
-    gchar *name;
+    char *name;
     gfloat size;
 
     gtk_tree_model_get( priv->file_list_sort,
@@ -546,18 +549,18 @@ static void remmina_ftp_client_download( RemminaFTPClient *client, GtkTreeIter *
     g_signal_emit( G_OBJECT( client ), remmina_ftp_client_signals[NEW_TASK_SIGNAL], 0 );
 }
 
-static gboolean remmina_ftp_client_task_list_on_query_tooltip( GtkWidget *widget,
-                                                               gint x,
-                                                               gint y,
-                                                               gboolean keyboard_tip,
-                                                               GtkTooltip *tooltip,
-                                                               RemminaFTPClient *client )
+static int remmina_ftp_client_task_list_on_query_tooltip( GtkWidget *widget,
+                                                          gint x,
+                                                          gint y,
+                                                          bool keyboard_tip,
+                                                          GtkTooltip *tooltip,
+                                                          RemminaFTPClient *client )
 {
     TRACE_CALL( __func__ );
     RemminaFTPClientPriv *priv = (RemminaFTPClientPriv *)client->priv;
     GtkTreeIter iter;
     GtkTreePath *path = NULL;
-    gchar *tmp;
+    char *tmp;
 
     if( !gtk_tree_view_get_tooltip_context(
             GTK_TREE_VIEW( priv->task_list_view ), &x, &y, keyboard_tip, NULL, &path, &iter ) )
@@ -602,7 +605,7 @@ static void remmina_ftp_client_action_download( GObject *object, RemminaFTPClien
     TRACE_CALL( __func__ );
     RemminaFTPClientPriv *priv = (RemminaFTPClientPriv *)client->priv;
     GtkTreeSelection *selection;
-    gchar *localdir;
+    char *localdir;
     GList *list, *list_iter;
     GtkTreeIter iter;
 
@@ -640,10 +643,10 @@ static void remmina_ftp_client_action_delete( GObject *object, RemminaFTPClient 
     GList *list, *list_iter;
     GtkTreeIter iter;
     gint type;
-    gchar *name;
-    gchar *path;
+    char *name;
+    char *path;
     gint response;
-    gboolean ret = TRUE;
+    bool ret = TRUE;
 
     selection = gtk_tree_view_get_selection( GTK_TREE_VIEW( priv->file_list_view ) );
     if( !selection )
@@ -710,8 +713,8 @@ static void remmina_ftp_client_action_upload( GObject *object, RemminaFTPClient 
     gint type;
     GSList *files = NULL;
     GSList *element;
-    gchar *path;
-    gchar *dir, *name;
+    char *path;
+    char *dir, *name;
     struct stat st;
 
     dialog = gtk_file_chooser_dialog_new( _( "Choose a file to upload" ),
@@ -746,7 +749,7 @@ static void remmina_ftp_client_action_upload( GObject *object, RemminaFTPClient 
 
     for( element = files; element; element = element->next )
     {
-        path = (gchar *)element->data;
+        path = (char *)element->data;
 
         if( g_stat( path, &st ) < 0 )
             continue;
@@ -831,7 +834,7 @@ static void remmina_ftp_client_popup_menu( RemminaFTPClient *client, GdkEventBut
 #endif
 }
 
-static gboolean
+static int
 remmina_ftp_client_file_list_on_button_press( GtkWidget *widget, GdkEventButton *event, RemminaFTPClient *client )
 {
     TRACE_CALL( __func__ );
@@ -839,8 +842,8 @@ remmina_ftp_client_file_list_on_button_press( GtkWidget *widget, GdkEventButton 
     GList *list;
     GtkTreeIter iter;
     gint type;
-    gchar *name;
-    gchar *localdir;
+    char *name;
+    char *localdir;
 
     if( event->button == 3 )
     {
@@ -884,14 +887,14 @@ remmina_ftp_client_file_list_on_button_press( GtkWidget *widget, GdkEventButton 
 }
 
 static void
-remmina_ftp_client_task_list_cell_on_activate( GtkCellRenderer *renderer, gchar *path, RemminaFTPClient *client )
+remmina_ftp_client_task_list_cell_on_activate( GtkCellRenderer *renderer, char *path, RemminaFTPClient *client )
 {
     TRACE_CALL( __func__ );
     RemminaFTPClientPriv *priv = (RemminaFTPClientPriv *)client->priv;
     GtkTreeIter iter;
     GtkTreePath *treepath;
     gint taskid;
-    gboolean ret = FALSE;
+    bool ret = FALSE;
 
     treepath = gtk_tree_path_new_from_string( path );
     gtk_tree_model_get_iter( priv->task_list_model, &iter, treepath );
@@ -956,19 +959,18 @@ static GtkWidget *remmina_ftp_client_create_toolbar( RemminaFTPClient *client )
     return box;
 }
 
-void remmina_ftp_client_set_show_hidden( RemminaFTPClient *client, gboolean show_hidden )
+void remmina_ftp_client_set_show_hidden( RemminaFTPClient *client, bool show_hidden )
 {
     TRACE_CALL( __func__ );
     client->priv->file_list_show_hidden = show_hidden;
     gtk_tree_model_filter_refilter( GTK_TREE_MODEL_FILTER( client->priv->file_list_filter ) );
 }
 
-static gboolean
-remmina_ftp_client_filter_visible_func( GtkTreeModel *model, GtkTreeIter *iter, RemminaFTPClient *client )
+static int remmina_ftp_client_filter_visible_func( GtkTreeModel *model, GtkTreeIter *iter, RemminaFTPClient *client )
 {
     TRACE_CALL( __func__ );
-    gchar *name;
-    gboolean result = TRUE;
+    char *name;
+    bool result = TRUE;
 
     if( client->priv->file_list_show_hidden )
         return TRUE;
@@ -983,28 +985,28 @@ remmina_ftp_client_filter_visible_func( GtkTreeModel *model, GtkTreeIter *iter, 
 }
 
 /* Set the overwrite_all status */
-void remmina_ftp_client_set_overwrite_status( RemminaFTPClient *client, gboolean status )
+void remmina_ftp_client_set_overwrite_status( RemminaFTPClient *client, bool status )
 {
     TRACE_CALL( __func__ );
     client->priv->overwrite_all = status;
 }
 
 /* Get the overwrite_all status */
-gboolean remmina_ftp_client_get_overwrite_status( RemminaFTPClient *client )
+int remmina_ftp_client_get_overwrite_status( RemminaFTPClient *client )
 {
     TRACE_CALL( __func__ );
     return client->priv->overwrite_all;
 }
 
 /* Set the resume status */
-void remmina_ftp_client_set_resume_status( RemminaFTPClient *client, gboolean status )
+void remmina_ftp_client_set_resume_status( RemminaFTPClient *client, bool status )
 {
     TRACE_CALL( __func__ );
     client->priv->resume_all = status;
 }
 
 /* Get the resume status */
-gboolean remmina_ftp_client_get_resume_status( RemminaFTPClient *client )
+int remmina_ftp_client_get_resume_status( RemminaFTPClient *client )
 {
     TRACE_CALL( __func__ );
     return client->priv->resume_all;
@@ -1299,8 +1301,8 @@ void remmina_ftp_client_add_file( RemminaFTPClient *client, ... )
     GtkTreeIter iter;
     va_list args;
     gint type;
-    gchar *name;
-    gchar *ptr;
+    char *name;
+    char *ptr;
 
     va_start( args, client );
     gtk_list_store_append( store, &iter );
@@ -1316,14 +1318,14 @@ void remmina_ftp_client_add_file( RemminaFTPClient *client, ... )
     g_free( name );
 }
 
-void remmina_ftp_client_set_dir( RemminaFTPClient *client, const gchar *dir )
+void remmina_ftp_client_set_dir( RemminaFTPClient *client, const char *dir )
 {
     TRACE_CALL( __func__ );
     RemminaFTPClientPriv *priv = (RemminaFTPClientPriv *)client->priv;
     GtkTreeModel *model;
     GtkTreeIter iter;
-    gboolean ret;
-    gchar *t;
+    bool ret;
+    char *t;
 
     if( priv->current_directory && g_strcmp0( priv->current_directory, dir ) == 0 )
         return;
@@ -1348,7 +1350,7 @@ void remmina_ftp_client_set_dir( RemminaFTPClient *client, const gchar *dir )
     priv->current_directory = g_strdup( dir );
 }
 
-gchar *remmina_ftp_client_get_dir( RemminaFTPClient *client )
+char *remmina_ftp_client_get_dir( RemminaFTPClient *client )
 {
     TRACE_CALL( __func__ );
     RemminaFTPClientPriv *priv = (RemminaFTPClientPriv *)client->priv;
@@ -1370,7 +1372,7 @@ RemminaFTPTask *remmina_ftp_client_get_waiting_task( RemminaFTPClient *client )
         RemminaMTExecData *d;
         RemminaFTPTask *retval;
         d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = FUNC_FTP_CLIENT_GET_WAITING_TASK;
+        d->func = remmina_masterthread_exec_data::FUNC_FTP_CLIENT_GET_WAITING_TASK;
         d->p.ftp_client_get_waiting_task.client = client;
         remmina_masterthread_exec_and_wait( d );
         retval = d->p.ftp_client_get_waiting_task.retval;
@@ -1411,7 +1413,7 @@ RemminaFTPTask *remmina_ftp_client_get_waiting_task( RemminaFTPClient *client )
             path = gtk_tree_model_get_path( priv->task_list_model, &iter );
             task.rowref = gtk_tree_row_reference_new( priv->task_list_model, path );
             gtk_tree_path_free( path );
-            return (RemminaFTPTask *)g_memdup( &task, sizeof( RemminaFTPTask ) );
+            return (RemminaFTPTask *)g_memdup2( &task, sizeof( RemminaFTPTask ) );
         }
         if( !gtk_tree_model_iter_next( priv->task_list_model, &iter ) )
             break;
@@ -1432,8 +1434,8 @@ void remmina_ftp_client_update_task( RemminaFTPClient *client, RemminaFTPTask *t
     {
         /* Allow the execution of this function from a non main thread */
         RemminaMTExecData *d;
-        d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = FUNC_FTP_CLIENT_UPDATE_TASK;
+        d = static_cast<RemminaMTExecData *>(g_malloc( sizeof( RemminaMTExecData ) ));
+        d->func = remmina_masterthread_exec_data::FUNC_FTP_CLIENT_UPDATE_TASK;
         d->p.ftp_client_update_task.client = client;
         d->p.ftp_client_update_task.task = task;
         remmina_masterthread_exec_and_wait( d );

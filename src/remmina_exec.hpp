@@ -35,7 +35,7 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 typedef enum
 {
@@ -61,10 +61,10 @@ typedef enum
     REMMINA_CONDEXIT_ONMAINWINDELETE = 2
 } RemminaCondExitType;
 
-void remmina_exec_command( RemminaCommandType command, const gchar *data );
+void remmina_exec_command( RemminaCommandType command, const char *data );
 void remmina_exec_exitremmina( void );
 void remmina_application_condexit( RemminaCondExitType why );
 
-int remmina_exec_set_setting( gchar *profilefilename, gchar **settings );
+int remmina_exec_set_setting( char *profilefilename, char **settings );
 
-G_END_DECLS
+

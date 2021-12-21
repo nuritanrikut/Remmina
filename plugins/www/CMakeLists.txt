@@ -32,11 +32,11 @@
 
 
 set(REMMINA_PLUGIN_WWW_SRCS
-	www_utils.c
-	www_utils.h
-        www_config.h
-        www_plugin.c
-        www_plugin.h
+	www_utils.cpp
+	www_utils.hpp
+    www_config.hpp
+    www_plugin.cpp
+    www_plugin.hpp
 )
 
 add_library(remmina-plugin-www MODULE ${REMMINA_PLUGIN_WWW_SRCS})

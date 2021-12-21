@@ -36,14 +36,14 @@
 #include <gtk/gtk.h>
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
-#include <structmember.h>
+#include <structmember.hpp>
 
 #include "config.h"
-#include "remmina_plugin_manager.h"
-#include "remmina/plugin.h"
-#include "remmina_protocol_widget.h"
+#include "remmina_plugin_manager.hpp"
+#include "remmina/plugin.hpp"
+#include "remmina_protocol_widget.hpp"
 
-#include "remmina_plugin_python_remmina.h"
+#include "remmina_plugin_python_remmina.hpp"
 
 /**
  * @brief Holds pairs of Python and Remmina plugin instances (PyPlugin).
@@ -53,7 +53,7 @@ GPtrArray *remmina_plugin_registry = NULL;
 /**
  *
  */
-gboolean remmina_plugin_python_check_mandatory_member( PyObject *instance, const gchar *member );
+int remmina_plugin_python_check_mandatory_member( PyObject *instance, const char *member );
 
 /**
  * @brief Wraps the log_printf function of RemminaPluginService.
@@ -306,9 +306,9 @@ static PyMethodDef remmina_python_module_type_methods[] = {
 typedef struct
 {
     PyObject_HEAD RemminaProtocolSettingType settingType;
-    gchar *name;
-    gchar *label;
-    gboolean compact;
+    char *name;
+    char *label;
+    bool compact;
     PyObject *opt1;
     PyObject *opt2;
 } PyRemminaProtocolSetting;
@@ -552,7 +552,7 @@ void remmina_plugin_python_module_init( void )
     }
 }
 
-gboolean remmina_plugin_python_check_mandatory_member( PyObject *instance, const gchar *member )
+int remmina_plugin_python_check_mandatory_member( PyObject *instance, const char *member )
 {
     if( PyObject_HasAttrString( instance, member ) )
         return TRUE;
@@ -594,9 +594,9 @@ static PyObject *remmina_register_plugin_wrapper( PyObject *self, PyObject *plug
 
         /* Protocol plugin definition and features */
         RemminaPlugin *remmina_plugin = NULL;
-        gboolean is_protocol_plugin = FALSE;
+        bool is_protocol_plugin = FALSE;
 
-        const gchar *pluginType = PyUnicode_AsUTF8( PyObject_GetAttrString( plugin_instance, "type" ) );
+        const char *pluginType = PyUnicode_AsUTF8( PyObject_GetAttrString( plugin_instance, "type" ) );
 
         if( g_str_equal( pluginType, "protocol" ) )
         {
@@ -745,10 +745,10 @@ static PyObject *remmina_protocol_widget_get_profile_remote_width_wrapper( PyObj
     return Py_None;
 }
 
-static gboolean remmina_plugin_equal( gconstpointer lhs, gconstpointer rhs )
+static int remmina_plugin_equal( gconstpointer lhs, gconstpointer rhs )
 {
     if( lhs && ( (PyPlugin *)lhs )->generic_plugin && rhs )
-        return g_str_equal( ( (PyPlugin *)lhs )->generic_plugin->name, ( (gchar *)rhs ) );
+        return g_str_equal( ( (PyPlugin *)lhs )->generic_plugin->name, ( (char *)rhs ) );
     else
         return lhs == rhs;
 }
@@ -790,7 +790,7 @@ static void GetGeneric( PyObject *field, gpointer *target )
         }
         else
         {
-            gchar *tmp = g_malloc( sizeof( char ) * ( len + 1 ) );
+            char *tmp = g_malloc( sizeof( char ) * ( len + 1 ) );
             *( tmp + len ) = 0;
             memcpy( tmp, PyUnicode_AsUTF8( field ), len );
             *target = tmp;

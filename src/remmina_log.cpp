@@ -36,12 +36,12 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include "remmina_public.h"
-#include "remmina_log.h"
-#include "remmina_stats.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_public.hpp"
+#include "remmina_log.hpp"
+#include "remmina_stats.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
-gboolean logstart;
+bool logstart;
 
 /***** Define the log window GUI *****/
 #define REMMINA_TYPE_LOG_WINDOW ( remmina_log_window_get_type() )
@@ -82,7 +82,7 @@ void remmina_log_stats()
         json_generator_set_pretty( g, TRUE );
         json_generator_set_root( g, n );
         json_node_unref( n );
-        g_autofree gchar *s = json_generator_to_data( g, NULL ); // s=serialized stats
+        g_autofree char *s = json_generator_to_data( g, NULL ); // s=serialized stats
         REMMINA_DEBUG( "STATS: JSON data%s\n", s );
         g_object_unref( g );
     }
@@ -163,13 +163,13 @@ void remmina_log_start( void )
            "https://gitlab.com/Remmina/Remmina/-/wikis/Usage/Remmina-debugging\n" ) );
 }
 
-gboolean remmina_log_running( void )
+int remmina_log_running( void )
 {
     TRACE_CALL( __func__ );
     return ( log_window != NULL );
 }
 
-static gboolean remmina_log_scroll_to_end( gpointer data )
+static int remmina_log_scroll_to_end( gpointer data )
 {
     TRACE_CALL( __func__ );
     GtkTextIter iter;
@@ -183,7 +183,7 @@ static gboolean remmina_log_scroll_to_end( gpointer data )
     return FALSE;
 }
 
-static gboolean remmina_log_print_real( gpointer data )
+static int remmina_log_print_real( gpointer data )
 {
     TRACE_CALL( __func__ );
     GtkTextIter iter;
@@ -191,7 +191,7 @@ static gboolean remmina_log_print_real( gpointer data )
     if( log_window && logstart )
     {
         gtk_text_buffer_get_end_iter( REMMINA_LOG_WINDOW( log_window )->log_buffer, &iter );
-        gtk_text_buffer_insert( REMMINA_LOG_WINDOW( log_window )->log_buffer, &iter, (const gchar *)data, -1 );
+        gtk_text_buffer_insert( REMMINA_LOG_WINDOW( log_window )->log_buffer, &iter, (const char *)data, -1 );
         IDLE_ADD( remmina_log_scroll_to_end, NULL );
     }
     g_free( data );
@@ -200,7 +200,7 @@ static gboolean remmina_log_print_real( gpointer data )
 
 // Only prints into Remmina's own debug window. (Not stdout!)
 // See _remmina_{debug, info, error, critical, warning}
-void remmina_log_print( const gchar *text )
+void remmina_log_print( const char *text )
 {
     TRACE_CALL( __func__ );
     if( !log_window )
@@ -209,12 +209,12 @@ void remmina_log_print( const gchar *text )
     IDLE_ADD( remmina_log_print_real, g_strdup( text ) );
 }
 
-void _remmina_info( const gchar *fmt, ... )
+void _remmina_info( const char *fmt, ... )
 {
     TRACE_CALL( __func__ );
 
     va_list args;
-    g_autofree gchar *text;
+    g_autofree char *text;
     va_start( args, fmt );
     text = g_strdup_vprintf( fmt, args );
     va_end( args );
@@ -222,9 +222,9 @@ void _remmina_info( const gchar *fmt, ... )
     // always appends newline
     g_info( "%s", text );
 
-    g_autofree gchar *buf_tmp = g_strconcat( text, "\n", NULL );
+    g_autofree char *buf_tmp = g_strconcat( text, "\n", NULL );
     /* freed in remmina_log_print_real */
-    gchar *bufn = g_strconcat( "(INFO) - ", buf_tmp, NULL );
+    char *bufn = g_strconcat( "(INFO) - ", buf_tmp, NULL );
 
     if( !log_window )
     {
@@ -234,12 +234,12 @@ void _remmina_info( const gchar *fmt, ... )
     IDLE_ADD( remmina_log_print_real, bufn );
 }
 
-void _remmina_message( const gchar *fmt, ... )
+void _remmina_message( const char *fmt, ... )
 {
     TRACE_CALL( __func__ );
 
     va_list args;
-    g_autofree gchar *text;
+    g_autofree char *text;
     va_start( args, fmt );
     text = g_strdup_vprintf( fmt, args );
     va_end( args );
@@ -252,9 +252,9 @@ void _remmina_message( const gchar *fmt, ... )
         return;
     }
 
-    g_autofree gchar *buf_tmp = g_strconcat( text, "\n", NULL );
+    g_autofree char *buf_tmp = g_strconcat( text, "\n", NULL );
     /* freed in remmina_log_print_real */
-    gchar *bufn = g_strconcat( "(MESSAGE) - ", buf_tmp, NULL );
+    char *bufn = g_strconcat( "(MESSAGE) - ", buf_tmp, NULL );
 
     IDLE_ADD( remmina_log_print_real, bufn );
 }
@@ -264,17 +264,17 @@ void _remmina_message( const gchar *fmt, ... )
  * The string will be visible in the terminal if G_MESSAGES_DEBUG=all
  * Variadic function of REMMINA_DEBUG
  */
-void _remmina_debug( const gchar *fun, const gchar *fmt, ... )
+void _remmina_debug( const char *fun, const char *fmt, ... )
 {
     TRACE_CALL( __func__ );
 
     va_list args;
-    gchar *text;
+    char *text;
     va_start( args, fmt );
     text = g_strdup_vprintf( fmt, args );
     va_end( args );
 
-    g_autofree gchar *buf = g_strconcat( "(", fun, ") - ", text, NULL );
+    g_autofree char *buf = g_strconcat( "(", fun, ") - ", text, NULL );
     g_free( text );
 
     // always appends newline
@@ -285,24 +285,24 @@ void _remmina_debug( const gchar *fun, const gchar *fmt, ... )
         return;
     }
 
-    g_autofree gchar *buf_tmp = g_strconcat( buf, "\n", NULL );
+    g_autofree char *buf_tmp = g_strconcat( buf, "\n", NULL );
     /* freed in remmina_log_print_real */
-    gchar *bufn = g_strconcat( "(DEBUG) - ", buf_tmp, NULL );
+    char *bufn = g_strconcat( "(DEBUG) - ", buf_tmp, NULL );
 
     IDLE_ADD( remmina_log_print_real, bufn );
 }
 
-void _remmina_warning( const gchar *fun, const gchar *fmt, ... )
+void _remmina_warning( const char *fun, const char *fmt, ... )
 {
     TRACE_CALL( __func__ );
 
     va_list args;
-    gchar *text;
+    char *text;
     va_start( args, fmt );
     text = g_strdup_vprintf( fmt, args );
     va_end( args );
 
-    g_autofree gchar *buf = g_strconcat( "(", fun, ") - ", text, NULL );
+    g_autofree char *buf = g_strconcat( "(", fun, ") - ", text, NULL );
     g_free( text );
 
     // always appends newline
@@ -313,26 +313,26 @@ void _remmina_warning( const gchar *fun, const gchar *fmt, ... )
         return;
     }
 
-    g_autofree gchar *buf_tmp = g_strconcat( buf, "\n", NULL );
+    g_autofree char *buf_tmp = g_strconcat( buf, "\n", NULL );
     /* freed in remmina_log_print_real */
-    gchar *bufn = g_strconcat( "(WARN) - ", buf_tmp, NULL );
+    char *bufn = g_strconcat( "(WARN) - ", buf_tmp, NULL );
 
     IDLE_ADD( remmina_log_print_real, bufn );
 }
 
 // !!! Calling this function will crash Remmina !!!
 // !!! purposefully and send a trap signal !!!
-void _remmina_error( const gchar *fun, const gchar *fmt, ... )
+void _remmina_error( const char *fun, const char *fmt, ... )
 {
     TRACE_CALL( __func__ );
 
     va_list args;
-    gchar *text;
+    char *text;
     va_start( args, fmt );
     text = g_strdup_vprintf( fmt, args );
     va_end( args );
 
-    g_autofree gchar *buf = g_strconcat( "(", fun, ") - ", text, NULL );
+    g_autofree char *buf = g_strconcat( "(", fun, ") - ", text, NULL );
     g_free( text );
 
     // always appends newline
@@ -343,24 +343,24 @@ void _remmina_error( const gchar *fun, const gchar *fmt, ... )
         return;
     }
 
-    g_autofree gchar *buf_tmp = g_strconcat( buf, "\n", NULL );
+    g_autofree char *buf_tmp = g_strconcat( buf, "\n", NULL );
     /* freed in remmina_log_print_real */
-    gchar *bufn = g_strconcat( "(ERROR) - ", buf_tmp, NULL );
+    char *bufn = g_strconcat( "(ERROR) - ", buf_tmp, NULL );
 
     IDLE_ADD( remmina_log_print_real, bufn );
 }
 
-void _remmina_critical( const gchar *fun, const gchar *fmt, ... )
+void _remmina_critical( const char *fun, const char *fmt, ... )
 {
     TRACE_CALL( __func__ );
 
     va_list args;
-    gchar *text;
+    char *text;
     va_start( args, fmt );
     text = g_strdup_vprintf( fmt, args );
     va_end( args );
 
-    g_autofree gchar *buf = g_strconcat( "(", fun, ") - ", text, NULL );
+    g_autofree char *buf = g_strconcat( "(", fun, ") - ", text, NULL );
     g_free( text );
 
     // always appends newline
@@ -371,20 +371,20 @@ void _remmina_critical( const gchar *fun, const gchar *fmt, ... )
         return;
     }
 
-    g_autofree gchar *buf_tmp = g_strconcat( buf, "\n", NULL );
+    g_autofree char *buf_tmp = g_strconcat( buf, "\n", NULL );
     /* freed in remmina_log_print_real */
-    gchar *bufn = g_strconcat( "(CRIT) - ", buf_tmp, NULL );
+    char *bufn = g_strconcat( "(CRIT) - ", buf_tmp, NULL );
 
     IDLE_ADD( remmina_log_print_real, bufn );
 }
 
 // Only prints into Remmina's own debug window. (Not stdout!)
 // See _remmina_{message, info, debug warning, error, critical}
-void remmina_log_printf( const gchar *fmt, ... )
+void remmina_log_printf( const char *fmt, ... )
 {
     TRACE_CALL( __func__ );
     va_list args;
-    gchar *text;
+    char *text;
 
     if( !log_window )
         return;
@@ -396,7 +396,7 @@ void remmina_log_printf( const gchar *fmt, ... )
     IDLE_ADD( remmina_log_print_real, text );
 }
 
-static gboolean remmina_log_on_keypress( GtkWidget *widget, GdkEvent *event, gpointer user_data )
+static int remmina_log_on_keypress( GtkWidget *widget, GdkEvent *event, gpointer user_data )
 {
     TRACE_CALL( __func__ );
 

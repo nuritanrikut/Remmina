@@ -1,6 +1,6 @@
-# Use glib-genmarshal to generate remminamarshals.h and remminamarshals.c:
-# $ glib-genmarshal --header --prefix=remmina_marshal remminamarshals.list > remminamarshals.h
-# $ glib-genmarshal --body --prefix=remmina_marshal remminamarshals.list > remminamarshals.c
+# Use glib-genmarshal to generate remminamarshals.hpp and remminamarshals.cpp:
+# $ glib-genmarshal --header --prefix=remmina_marshal remminamarshals.list > remminamarshals.hpp
+# $ glib-genmarshal --body --prefix=remmina_marshal remminamarshals.list > remminamarshals.cpp
 BOOLEAN:INT
 BOOLEAN:INT,STRING
 

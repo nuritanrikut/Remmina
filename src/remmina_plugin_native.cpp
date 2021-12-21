@@ -41,25 +41,25 @@
 
 #include <gdk/gdkx.h>
 
-#include "remmina_public.h"
-#include "remmina_file_manager.h"
-#include "remmina_pref.h"
-#include "remmina_protocol_widget.h"
-#include "remmina_log.h"
-#include "remmina_widget_pool.h"
-#include "rcw.h"
-#include "remmina_public.h"
-#include "remmina_plugin_native.h"
-#include "remmina_masterthread_exec.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_public.hpp"
+#include "remmina_file_manager.hpp"
+#include "remmina_pref.hpp"
+#include "remmina_protocol_widget.hpp"
+#include "remmina_log.hpp"
+#include "remmina_widget_pool.hpp"
+#include "rcw.hpp"
+#include "remmina_public.hpp"
+#include "remmina_plugin_native.hpp"
+#include "remmina_masterthread_exec.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
-gboolean remmina_plugin_native_load( RemminaPluginService *service, const char *name )
+int remmina_plugin_native_load( RemminaPluginService *service, const char *name )
 {
     TRACE_CALL( __func__ );
     GModule *module;
     RemminaPluginEntryFunc entry;
 
-    module = g_module_open( name, G_MODULE_BIND_LAZY | G_MODULE_BIND_LOCAL );
+    module = g_module_open( name, static_cast<GModuleFlags>(G_MODULE_BIND_LAZY | G_MODULE_BIND_LOCAL) );
 
     if( !module )
     {

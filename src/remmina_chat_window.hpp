@@ -35,7 +35,7 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 #define REMMINA_TYPE_CHAT_WINDOW ( remmina_chat_window_get_type() )
 #define REMMINA_CHAT_WINDOW( obj ) \
@@ -64,7 +64,7 @@ typedef struct _RemminaChatWindowClass
 
 GType remmina_chat_window_get_type( void ) G_GNUC_CONST;
 
-GtkWidget *remmina_chat_window_new( GtkWindow *parent, const gchar *chat_with );
-void remmina_chat_window_receive( RemminaChatWindow *window, const gchar *name, const gchar *text );
+GtkWidget *remmina_chat_window_new( GtkWindow *parent, const char *chat_with );
+void remmina_chat_window_receive( RemminaChatWindow *window, const char *name, const char *text );
 
-G_END_DECLS
+

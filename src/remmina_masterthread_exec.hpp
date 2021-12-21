@@ -35,10 +35,10 @@
  */
 
 #include <pthread.h>
-#include "remmina_protocol_widget.h"
-#include "remmina_sftp_client.h"
-#include "remmina_ftp_client.h"
-#include "remmina_ssh_plugin.h"
+#include "remmina_protocol_widget.hpp"
+#include "remmina_sftp_client.hpp"
+#include "remmina_ftp_client.hpp"
+#include "remmina_ssh_plugin.hpp"
 
 typedef struct remmina_masterthread_exec_data
 {
@@ -64,7 +64,7 @@ typedef struct remmina_masterthread_exec_data
         struct
         {
             GtkLabel *label;
-            const gchar *str;
+            const char *str;
         } gtk_label_set_text;
         struct
         {
@@ -73,13 +73,13 @@ typedef struct remmina_masterthread_exec_data
         struct
         {
             RemminaProtocolWidget *gp;
-            const gchar *text;
+            const char *text;
         } chat_receive;
         struct
         {
             RemminaFile *remminafile;
-            const gchar *setting;
-            const gchar *retval;
+            const char *setting;
+            const char *retval;
         } file_get_string;
         struct
         {
@@ -94,12 +94,12 @@ typedef struct remmina_masterthread_exec_data
         struct
         {
             RemminaProtocolWidget *gp;
-            const gchar *signal_name;
+            const char *signal_name;
         } protocolwidget_emit_signal;
         struct
         {
             RemminaConnectionObject *cnnobj;
-            const gchar *message;
+            const char *message;
             RemminaMessagePanelCallback response_callback;
             gpointer response_callback_data;
             RemminaMessagePanel *ret_mp;
@@ -122,7 +122,7 @@ typedef struct remmina_masterthread_exec_data
         struct
         {
             RemminaSFTPClient *client;
-            const gchar *path;
+            const char *path;
             gint retval;
         } sftp_client_confirm_resume;
 #endif
@@ -141,11 +141,11 @@ typedef struct remmina_masterthread_exec_data
     pthread_mutex_t pt_mutex;
     pthread_cond_t pt_cond;
     /* Flag to catch cancellations */
-    gboolean cancelled;
-    gboolean complete;
+    bool cancelled;
+    bool complete;
 } RemminaMTExecData;
 
 void remmina_masterthread_exec_and_wait( RemminaMTExecData *d );
 
 void remmina_masterthread_exec_save_main_thread_id( void );
-gboolean remmina_masterthread_exec_is_main_thread( void );
+int remmina_masterthread_exec_is_main_thread( void );

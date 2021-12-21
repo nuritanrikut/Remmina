@@ -35,12 +35,10 @@
 
 #pragma once
 
-G_BEGIN_DECLS
 
-void remmina_tp_channel_handler_new( const gchar *account_path,
-                                     const gchar *connection_path,
-                                     const gchar *channel_path,
+void remmina_tp_channel_handler_new( const char *account_path,
+                                     const char *connection_path,
+                                     const char *channel_path,
                                      GHashTable *channel_properties,
                                      DBusGMethodInvocation *context );
 
-G_END_DECLS

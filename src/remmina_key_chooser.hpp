@@ -47,17 +47,17 @@ typedef struct _RemminaKeyChooserArguments
 {
     guint keyval;
     guint state;
-    gboolean use_modifiers;
+    bool use_modifiers;
     gint response;
 } RemminaKeyChooserArguments;
 
-G_BEGIN_DECLS
+
 
 /* Show a key chooser dialog and return the keyval for the selected key */
-RemminaKeyChooserArguments *remmina_key_chooser_new( GtkWindow *parent_window, gboolean use_modifiers );
+RemminaKeyChooserArguments *remmina_key_chooser_new( GtkWindow *parent_window, bool use_modifiers );
 /* Get the uppercase character value of a keyval */
-gchar *remmina_key_chooser_get_value( guint keyval, guint state );
+char *remmina_key_chooser_get_value( guint keyval, guint state );
 /* Get the keyval of a (lowercase) character value */
-guint remmina_key_chooser_get_keyval( const gchar *value );
+guint remmina_key_chooser_get_keyval( const char *value );
 
-G_END_DECLS
+

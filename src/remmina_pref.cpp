@@ -46,22 +46,22 @@
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 
-#include "remmina_sodium.h"
+#include "remmina_sodium.hpp"
 
-#include "remmina_public.h"
-#include "remmina_string_array.h"
-#include "remmina_pref.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_public.hpp"
+#include "remmina_string_array.hpp"
+#include "remmina_pref.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
-const gchar *default_resolutions = "640x480,800x600,1024x768,1152x864,1280x960,1400x1050";
-const gchar *default_keystrokes = "Send hello world§hello world\\n";
+const char *default_resolutions = "640x480,800x600,1024x768,1152x864,1280x960,1400x1050";
+const char *default_keystrokes = "Send hello world§hello world\\n";
 
-gchar *remmina_keymap_file;
+char *remmina_keymap_file;
 static GHashTable *remmina_keymap_table = NULL;
 
 /* We could customize this further if there are more requirements */
-static const gchar *default_keymap_data =
-    "# Please check gdk/gdkkeysyms.h for a full list of all key names or hex key values\n"
+static const char *default_keymap_data =
+    "# Please check gdk/gdkkeysyms.hpp for a full list of all key names or hex key values\n"
     "\n"
     "[Map Meta Keys]\n"
     "Super_L = Meta_L\n"
@@ -75,7 +75,7 @@ static void remmina_pref_gen_secret( void )
     guchar s[32];
     gint i;
     GKeyFile *gkeyfile;
-    g_autofree gchar *content = NULL;
+    g_autofree char *content = NULL;
     gsize length;
 
     for( i = 0; i < 32; i++ )
@@ -91,7 +91,7 @@ static void remmina_pref_gen_secret( void )
     g_key_file_free( gkeyfile );
 }
 
-static guint remmina_pref_get_keyval_from_str( const gchar *str )
+static guint remmina_pref_get_keyval_from_str( const char *str )
 {
     TRACE_CALL( __func__ );
     guint k;
@@ -110,12 +110,12 @@ static void remmina_pref_init_keymap( void )
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
-    gchar **groups;
-    gchar **gptr;
-    gchar **keys;
-    gchar **kptr;
+    char **groups;
+    char **gptr;
+    char **keys;
+    char **kptr;
     gsize nkeys;
-    g_autofree gchar *value = NULL;
+    g_autofree char *value = NULL;
     guint *table;
     guint *tableptr;
     guint k1, k2;
@@ -166,11 +166,11 @@ static void remmina_pref_init_keymap( void )
 }
 
 /** @todo remmina_pref_file_do_copy and remmina_file_manager_do_copy to remmina_files_copy */
-static gboolean remmina_pref_file_do_copy( const char *src_path, const char *dst_path )
+static int remmina_pref_file_do_copy( const char *src_path, const char *dst_path )
 {
     GFile *src = g_file_new_for_path( src_path ), *dst = g_file_new_for_path( dst_path );
     /* We don’t overwrite the target if it exists, because overwrite is not set */
-    const gboolean ok = g_file_copy( src, dst, G_FILE_COPY_NONE, NULL, NULL, NULL, NULL );
+    const bool ok = g_file_copy( src, dst, G_FILE_COPY_NONE, NULL, NULL, NULL, NULL );
 
     g_object_unref( dst );
     g_object_unref( src );
@@ -180,35 +180,35 @@ static gboolean remmina_pref_file_do_copy( const char *src_path, const char *dst
 
 void remmina_pref_file_load_colors( GKeyFile *gkeyfile, RemminaColorPref *color_pref )
 {
-    const struct
+    struct
     {
         const char *name;
-        char **setting;
-        char *fallback;
+        const char *setting;
+        const char *fallback;
     } colors[] = {
-        { "background", &color_pref->background, "#d5ccba" },
-        { "cursor", &color_pref->cursor, "#45373c" },
-        { "cursor_foreground", &color_pref->cursor_foreground, "#d5ccba" },
-        { "highlight", &color_pref->highlight, "#45373c" },
-        { "highlight_foreground", &color_pref->highlight_foreground, "#d5ccba" },
-        { "colorBD", &color_pref->colorBD, "#45373c" },
-        { "foreground", &color_pref->foreground, "#45373c" },
-        { "color0", &color_pref->color0, "#20111b" },
-        { "color1", &color_pref->color1, "#be100e" },
-        { "color2", &color_pref->color2, "#858162" },
-        { "color3", &color_pref->color3, "#eaa549" },
-        { "color4", &color_pref->color4, "#426a79" },
-        { "color5", &color_pref->color5, "#97522c" },
-        { "color6", &color_pref->color6, "#989a9c" },
-        { "color7", &color_pref->color7, "#968c83" },
-        { "color8", &color_pref->color8, "#5e5252" },
-        { "color9", &color_pref->color9, "#be100e" },
-        { "color10", &color_pref->color10, "#858162" },
-        { "color11", &color_pref->color11, "#eaa549" },
-        { "color12", &color_pref->color12, "#426a79" },
-        { "color13", &color_pref->color13, "#97522c" },
-        { "color14", &color_pref->color14, "#989a9c" },
-        { "color15", &color_pref->color15, "#d5ccba" },
+        { "background", color_pref->background, "#d5ccba" },
+        { "cursor", color_pref->cursor, "#45373c" },
+        { "cursor_foreground", color_pref->cursor_foreground, "#d5ccba" },
+        { "highlight", color_pref->highlight, "#45373c" },
+        { "highlight_foreground", color_pref->highlight_foreground, "#d5ccba" },
+        { "colorBD", color_pref->colorBD, "#45373c" },
+        { "foreground", color_pref->foreground, "#45373c" },
+        { "color0", color_pref->color0, "#20111b" },
+        { "color1", color_pref->color1, "#be100e" },
+        { "color2", color_pref->color2, "#858162" },
+        { "color3", color_pref->color3, "#eaa549" },
+        { "color4", color_pref->color4, "#426a79" },
+        { "color5", color_pref->color5, "#97522c" },
+        { "color6", color_pref->color6, "#989a9c" },
+        { "color7", color_pref->color7, "#968c83" },
+        { "color8", color_pref->color8, "#5e5252" },
+        { "color9", color_pref->color9, "#be100e" },
+        { "color10", color_pref->color10, "#858162" },
+        { "color11", color_pref->color11, "#eaa549" },
+        { "color12", color_pref->color12, "#426a79" },
+        { "color13", color_pref->color13, "#97522c" },
+        { "color14", color_pref->color14, "#989a9c" },
+        { "color15", color_pref->color15, "#d5ccba" },
     };
 
     int i;
@@ -216,9 +216,9 @@ void remmina_pref_file_load_colors( GKeyFile *gkeyfile, RemminaColorPref *color_
     for( i = 0; i < ( sizeof( colors ) / sizeof( colors[0] ) ); i++ )
     {
         if( g_key_file_has_key( gkeyfile, "ssh_colors", colors[i].name, NULL ) )
-            *colors[i].setting = g_key_file_get_string( gkeyfile, "ssh_colors", colors[i].name, NULL );
+            colors[i].setting = g_key_file_get_string( gkeyfile, "ssh_colors", colors[i].name, NULL );
         else
-            *colors[i].setting = colors[i].fallback;
+            colors[i].setting = colors[i].fallback;
     }
 }
 
@@ -226,12 +226,12 @@ void remmina_pref_init( void )
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
-    gchar *remmina_dir;
-    const gchar *filename = "remmina.pref";
-    const gchar *colors_filename = "remmina.colors";
-    g_autofree gchar *remmina_colors_file = NULL;
+    char *remmina_dir;
+    const char *filename = "remmina.pref";
+    const char *colors_filename = "remmina.colors";
+    g_autofree char *remmina_colors_file = NULL;
     GDir *dir;
-    const gchar *legacy = ".remmina";
+    const char *legacy = ".remmina";
     int i;
 
     remmina_dir = g_build_path( "/", g_get_user_config_dir(), "remmina", NULL );
@@ -250,7 +250,7 @@ void remmina_pref_init( void )
     }
 
     /* /usr/local/etc/remmina */
-    const gchar *const *dirs = g_get_system_config_dirs();
+    const char *const *dirs = g_get_system_config_dirs();
 
     g_free( remmina_dir ), remmina_dir = NULL;
     for( i = 0; dirs[i] != NULL; ++i )
@@ -760,7 +760,7 @@ void remmina_pref_init( void )
     remmina_pref_init_keymap();
 }
 
-gboolean remmina_pref_is_rw( void )
+int remmina_pref_is_rw( void )
 {
     TRACE_CALL( __func__ );
     if( access( remmina_pref_file, W_OK ) == 0 )
@@ -770,7 +770,7 @@ gboolean remmina_pref_is_rw( void )
     return FALSE;
 }
 
-gboolean remmina_pref_save( void )
+int remmina_pref_save( void )
 {
     TRACE_CALL( __func__ );
 
@@ -781,7 +781,7 @@ gboolean remmina_pref_save( void )
     }
     GKeyFile *gkeyfile;
     GError *error = NULL;
-    g_autofree gchar *content = NULL;
+    g_autofree char *content = NULL;
     gsize length;
 
     gkeyfile = g_key_file_new();
@@ -963,14 +963,14 @@ gboolean remmina_pref_save( void )
     return TRUE;
 }
 
-void remmina_pref_add_recent( const gchar *protocol, const gchar *server )
+void remmina_pref_add_recent( const char *protocol, const char *server )
 {
     TRACE_CALL( __func__ );
     RemminaStringArray *array;
     GKeyFile *gkeyfile;
-    gchar key[20];
-    g_autofree gchar *val = NULL;
-    g_autofree gchar *content = NULL;
+    char key[20];
+    g_autofree char *val = NULL;
+    g_autofree char *content = NULL;
     gsize length;
 
     if( remmina_pref.recent_maximum <= 0 || server == NULL || server[0] == 0 )
@@ -1001,12 +1001,12 @@ void remmina_pref_add_recent( const gchar *protocol, const gchar *server )
     g_key_file_free( gkeyfile );
 }
 
-gchar *remmina_pref_get_recent( const gchar *protocol )
+char *remmina_pref_get_recent( const char *protocol )
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
-    gchar key[20];
-    gchar *val = NULL;
+    char key[20];
+    char *val = NULL;
 
     gkeyfile = g_key_file_new();
 
@@ -1024,9 +1024,9 @@ void remmina_pref_clear_recent( void )
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
-    gchar **keys;
+    char **keys;
     gint i;
-    g_autofree gchar *content = NULL;
+    g_autofree char *content = NULL;
     gsize length;
 
     gkeyfile = g_key_file_new();
@@ -1047,7 +1047,7 @@ void remmina_pref_clear_recent( void )
     g_key_file_free( gkeyfile );
 }
 
-guint *remmina_pref_keymap_get_table( const gchar *keymap )
+guint *remmina_pref_keymap_get_table( const char *keymap )
 {
     TRACE_CALL( __func__ );
 
@@ -1057,7 +1057,7 @@ guint *remmina_pref_keymap_get_table( const gchar *keymap )
     return (guint *)g_hash_table_lookup( remmina_keymap_table, keymap );
 }
 
-guint remmina_pref_keymap_get_keyval( const gchar *keymap, guint keyval )
+guint remmina_pref_keymap_get_keyval( const char *keymap, guint keyval )
 {
     TRACE_CALL( __func__ );
     guint *table;
@@ -1075,24 +1075,24 @@ guint remmina_pref_keymap_get_keyval( const gchar *keymap, guint keyval )
     return keyval;
 }
 
-gchar **remmina_pref_keymap_groups( void )
+char **remmina_pref_keymap_groups( void )
 {
     TRACE_CALL( __func__ );
     GList *list;
     guint len;
-    gchar **keys;
+    char **keys;
     guint i;
 
     list = g_hash_table_get_keys( remmina_keymap_table );
     len = g_list_length( list );
 
-    keys = g_new0( gchar *, ( len + 1 ) * 2 + 1 );
+    keys = g_new0( char *, ( len + 1 ) * 2 + 1 );
     keys[0] = g_strdup( "" );
     keys[1] = g_strdup( "" );
     for( i = 0; i < len; i++ )
     {
-        keys[( i + 1 ) * 2] = g_strdup( (gchar *)g_list_nth_data( list, i ) );
-        keys[( i + 1 ) * 2 + 1] = g_strdup( (gchar *)g_list_nth_data( list, i ) );
+        keys[( i + 1 ) * 2] = g_strdup( (char *)g_list_nth_data( list, i ) );
+        keys[( i + 1 ) * 2 + 1] = g_strdup( (char *)g_list_nth_data( list, i ) );
     }
     g_list_free( list );
 
@@ -1114,7 +1114,7 @@ gint remmina_pref_get_ssh_loglevel( void )
     return remmina_pref.ssh_loglevel;
 }
 
-gboolean remmina_pref_get_ssh_parseconfig( void )
+int remmina_pref_get_ssh_parseconfig( void )
 {
     TRACE_CALL( __func__ );
     return remmina_pref.ssh_parseconfig;
@@ -1150,11 +1150,11 @@ gint remmina_pref_get_ssh_tcp_usrtimeout( void )
     return remmina_pref.ssh_tcp_usrtimeout;
 }
 
-void remmina_pref_set_value( const gchar *key, const gchar *value )
+void remmina_pref_set_value( const char *key, const char *value )
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
-    gchar *content;
+    char *content;
     gsize length;
 
     gkeyfile = g_key_file_new();
@@ -1167,11 +1167,11 @@ void remmina_pref_set_value( const gchar *key, const gchar *value )
     g_free( content );
 }
 
-gchar *remmina_pref_get_value( const gchar *key )
+char *remmina_pref_get_value( const char *key )
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
-    gchar *value = NULL;
+    char *value = NULL;
 
     gkeyfile = g_key_file_new();
     g_key_file_load_from_file( gkeyfile, remmina_pref_file, G_KEY_FILE_NONE, NULL );
@@ -1181,11 +1181,11 @@ gchar *remmina_pref_get_value( const gchar *key )
     return value;
 }
 
-gboolean remmina_pref_get_boolean( const gchar *key )
+int remmina_pref_get_boolean( const char *key )
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
-    gboolean value;
+    bool value;
 
     gkeyfile = g_key_file_new();
     g_key_file_load_from_file( gkeyfile, remmina_pref_file, G_KEY_FILE_NONE, NULL );

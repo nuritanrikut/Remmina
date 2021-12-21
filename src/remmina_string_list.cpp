@@ -37,9 +37,9 @@
 #include <gtk/gtk.h>
 #include <string.h>
 #include "config.h"
-#include "remmina_public.h"
-#include "remmina_string_list.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_public.hpp"
+#include "remmina_string_list.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 static RemminaStringList *string_list;
 
@@ -58,11 +58,11 @@ void remmina_string_list_update_buttons_state( void )
 }
 
 /* Check the text inserted in the list */
-void remmina_string_list_on_cell_edited( GtkCellRendererText *cell, const gchar *path_string, const gchar *new_text )
+void remmina_string_list_on_cell_edited( GtkCellRendererText *cell, const char *path_string, const char *new_text )
 {
     TRACE_CALL( __func__ );
-    gchar *text;
-    gchar *error;
+    char *text;
+    char *error;
     GtkTreePath *path = gtk_tree_path_new_from_string( path_string );
     GtkTreeIter iter;
 
@@ -183,12 +183,12 @@ void remmina_string_list_on_action_remove( GtkWidget *widget, gpointer user_data
 }
 
 /* Load a string list by splitting a string value */
-void remmina_string_list_set_text( const gchar *text, const gboolean clear_data )
+void remmina_string_list_set_text( const char *text, const bool clear_data )
 {
     TRACE_CALL( __func__ );
     GtkTreeIter iter;
-    gchar **items;
-    gchar **values;
+    char **items;
+    char **values;
     gint i;
     /* Clear the data before to load new items */
     if( clear_data )
@@ -217,15 +217,15 @@ void remmina_string_list_set_text( const gchar *text, const gboolean clear_data 
 }
 
 /* Get a string value representing the string list */
-gchar *remmina_string_list_get_text( void )
+char *remmina_string_list_get_text( void )
 {
     TRACE_CALL( __func__ );
     GString *str;
     GtkTreeIter iter;
-    gboolean first;
-    gboolean ret;
-    const gchar *item_description;
-    const gchar *item_value;
+    bool first;
+    bool ret;
+    const char *item_description;
+    const char *item_value;
 
     str = g_string_new( NULL );
     first = TRUE;
@@ -275,7 +275,7 @@ void remmina_string_list_set_validation_func( RemminaStringListValidationFunc fu
 }
 
 /* Set the dialog titles */
-void remmina_string_list_set_titles( gchar *title1, gchar *title2 )
+void remmina_string_list_set_titles( char *title1, char *title2 )
 {
     /* Set dialog titlebar */
     gtk_window_set_title( GTK_WINDOW( string_list->dialog ), ( title1 && strlen( title1 ) > 0 ) ? title1 : "" );
@@ -303,7 +303,7 @@ static void remmina_string_list_init( void )
 }
 
 /* RemminaStringList instance */
-GtkDialog *remmina_string_list_new( gboolean two_columns, const gchar *fields_separator )
+GtkDialog *remmina_string_list_new( bool two_columns, const char *fields_separator )
 {
     TRACE_CALL( __func__ );
     string_list = g_new0( RemminaStringList, 1 );

@@ -1544,7 +1544,7 @@ full screen window placement with multiple monitors [\#124](https://github.com/F
 
 - Remmina windows open behind other desktop windows [\#691](https://github.com/FreeRDP/Remmina/issues/691)
 - Indicator menu gone? [\#688](https://github.com/FreeRDP/Remmina/issues/688)
-- fatal error: gst/gstconfig.h: No such file or directory [\#678](https://github.com/FreeRDP/Remmina/issues/678)
+- fatal error: gst/gstconfig.hpp: No such file or directory [\#678](https://github.com/FreeRDP/Remmina/issues/678)
 - remmina in gnome wayland \_XInternAtom\(\): remmina killed by SIGSEGV [\#677](https://github.com/FreeRDP/Remmina/issues/677)
 - remmina\_rdp\_cliprdr\_monitor\_ready\(\): remmina killed by SIGSEGV [\#676](https://github.com/FreeRDP/Remmina/issues/676)
 - remmina\_rdp\_event\_release\_key\(\): remmina killed by SIGSEGV [\#675](https://github.com/FreeRDP/Remmina/issues/675)
@@ -1744,7 +1744,7 @@ full screen window placement with multiple monitors [\#124](https://github.com/F
 - Remmina Crashes During RDP Session when Context Menu Item Clicked [\#418](https://github.com/FreeRDP/Remmina/issues/418)
 - Host key change not indicated in Remmina GUI [\#407](https://github.com/FreeRDP/Remmina/issues/407)
 - Copy/paste inop Windows to Mint 17 [\#404](https://github.com/FreeRDP/Remmina/issues/404)
-- remmina/src/remmina\_ssh\_plugin.h should also check for HAVE\_LIBVTE [\#394](https://github.com/FreeRDP/Remmina/issues/394)
+- remmina/src/remmina\_ssh\_plugin.hpp should also check for HAVE\_LIBVTE [\#394](https://github.com/FreeRDP/Remmina/issues/394)
 - I have to click on "Resize the window to fit remote resolution" to see my RDP session. [\#387](https://github.com/FreeRDP/Remmina/issues/387)
 - "Protocol plugin RDP is not installed."/The Application Not Recognizing the RDP Plugin  [\#249](https://github.com/FreeRDP/Remmina/issues/249)
 

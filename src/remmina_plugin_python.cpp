@@ -33,7 +33,7 @@
  */
 
 /**
- * @file remmina_plugin_python.c
+ * @file remmina_plugin_python.cpp
  * @brief Remmina Python plugin loader.
  * @author Mathias Winterhalter
  * @date 14.10.2020
@@ -44,7 +44,7 @@
  *
  * For the communication between Remmina and Python the python module called 'remmina'
  * is initialized and loaded into the environment of the plugin script
- * (@see remmina_plugin_python_module.c).
+ * (@see remmina_plugin_python_module.cpp).
  *
  * @see http://www.remmina.org/wp for more information.
  */
@@ -52,13 +52,13 @@
 #include <gtk/gtk.h>
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
-#include <structmember.h>
+#include <structmember.hpp>
 
 #include "config.h"
-#include "remmina/remmina_trace_calls.h"
-#include "remmina_plugin_python.h"
-#include "remmina_plugin_python_module.h"
-#include "remmina_plugin_python_protocol_widget.h"
+#include "remmina/remmina_trace_calls.hpp"
+#include "remmina_plugin_python.hpp"
+#include "remmina_plugin_python_module.hpp"
+#include "remmina_plugin_python_protocol_widget.hpp"
 
 /**
  * @brief Extracts the filename without extension from a path.
@@ -88,11 +88,11 @@ void remmina_plugin_python_init( void )
     remmina_plugin_python_protocol_widget_init();
 }
 
-gboolean remmina_plugin_python_load( RemminaPluginService *service, const gchar *name )
+int remmina_plugin_python_load( RemminaPluginService *service, const char *name )
 {
     TRACE_CALL( __FUNC__ );
 
-    gchar *filename = NULL;
+    char *filename = NULL;
     if( basename_no_ext( name, &filename ) == 0 )
     {
         g_printerr( "[%s:%s]: %s can not extract filename from name!\n", __FILE__, __LINE__, name );

@@ -38,7 +38,7 @@
 #include <stdarg.h>
 #include <glib.h>
 
-G_BEGIN_DECLS
+
 
 #define REMMINA_INFO( fmt, ... ) _remmina_info( fmt, ##__VA_ARGS__ )
 #define REMMINA_MESSAGE( fmt, ... ) _remmina_message( fmt, ##__VA_ARGS__ )
@@ -48,14 +48,14 @@ G_BEGIN_DECLS
 #define REMMINA_CRITICAL( fmt, ... ) _remmina_critical( __func__, fmt, ##__VA_ARGS__ )
 
 void remmina_log_start( void );
-gboolean remmina_log_running( void );
-void remmina_log_print( const gchar *text );
-void _remmina_info( const gchar *fmt, ... );
-void _remmina_message( const gchar *fmt, ... );
-void _remmina_debug( const gchar *fun, const gchar *fmt, ... );
-void _remmina_warning( const gchar *fun, const gchar *fmt, ... );
-void _remmina_error( const gchar *fun, const gchar *fmt, ... );
-void _remmina_critical( const gchar *fun, const gchar *fmt, ... );
-void remmina_log_printf( const gchar *fmt, ... );
+int remmina_log_running( void );
+void remmina_log_print( const char *text );
+void _remmina_info( const char *fmt, ... );
+void _remmina_message( const char *fmt, ... );
+void _remmina_debug( const char *fun, const char *fmt, ... );
+void _remmina_warning( const char *fun, const char *fmt, ... );
+void _remmina_error( const char *fun, const char *fmt, ... );
+void _remmina_critical( const char *fun, const char *fmt, ... );
+void remmina_log_printf( const char *fmt, ... );
 
-G_END_DECLS
+

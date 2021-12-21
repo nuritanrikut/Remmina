@@ -37,25 +37,25 @@
 #include <glib-object.h>
 #include <gobject/gvaluecollector.h>
 
-#include "remmina/types.h"
+#include "remmina/types.hpp"
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 struct _RemminaFile
 {
-    gchar *filename;
+    char *filename;
     // @todo Add a cache file with content remminafile->filename = last_success
-    gchar *statefile;
+    char *statefile;
     GHashTable *settings;
     GHashTable *states;
     GHashTable *spsettings;
-    gboolean prevent_saving;
+    bool prevent_saving;
 };
 
 /**
- * used in remmina_ssh.c and remmina_ssh_plugin.c
+ * used in remmina_ssh.cpp and remmina_ssh_plugin.cpp
  *
  * #define SSH_AUTH_METHOD_UNKNOWN     0x0000u
  * #define SSH_AUTH_METHOD_NONE        0x0001u
@@ -80,30 +80,30 @@ enum
 
 /* Create a empty .remmina file */
 RemminaFile *remmina_file_new( void );
-RemminaFile *remmina_file_copy( const gchar *filename );
+RemminaFile *remmina_file_copy( const char *filename );
 void remmina_file_generate_filename( RemminaFile *remminafile );
-void remmina_file_set_filename( RemminaFile *remminafile, const gchar *filename );
+void remmina_file_set_filename( RemminaFile *remminafile, const char *filename );
 void remmina_file_set_statefile( RemminaFile *remminafile );
 void remmina_file_state_last_success( RemminaFile *remminafile );
-const gchar *remmina_file_get_filename( RemminaFile *remminafile );
-const gchar *remmina_file_get_statefile( RemminaFile *remminafile );
+const char *remmina_file_get_filename( RemminaFile *remminafile );
+const char *remmina_file_get_statefile( RemminaFile *remminafile );
 /* Load a new .remmina file and return the allocated RemminaFile object */
-RemminaFile *remmina_file_load( const gchar *filename );
+RemminaFile *remmina_file_load( const char *filename );
 /* Settings get/set functions */
-void remmina_file_set_string( RemminaFile *remminafile, const gchar *setting, const gchar *value );
-void remmina_file_set_string_ref( RemminaFile *remminafile, const gchar *setting, gchar *value );
-const gchar *remmina_file_get_string( RemminaFile *remminafile, const gchar *setting );
-gchar *remmina_file_get_secret( RemminaFile *remminafile, const gchar *setting );
-gchar *remmina_file_format_properties( RemminaFile *remminafile, const gchar *setting );
-void remmina_file_set_int( RemminaFile *remminafile, const gchar *setting, gint value );
-gint remmina_file_get_int( RemminaFile *remminafile, const gchar *setting, gint default_value );
-void remmina_file_store_secret_plugin_password( RemminaFile *remminafile, const gchar *key, const gchar *value );
-gboolean remmina_file_remove_key( RemminaFile *remminafile, const gchar *setting );
-void remmina_file_set_state( RemminaFile *remminafile, const gchar *setting, const gchar *value );
-const gchar *remmina_file_get_state( RemminaFile *remminafile, const gchar *setting );
-void remmina_file_set_state_int( RemminaFile *remminafile, const gchar *setting, gint value );
-gint remmina_file_get_state_int( RemminaFile *remminafile, const gchar *setting, gint default_value );
-gdouble remmina_file_get_state_double( RemminaFile *remminafile, const gchar *setting, gdouble default_value );
+void remmina_file_set_string( RemminaFile *remminafile, const char *setting, const char *value );
+void remmina_file_set_string_ref( RemminaFile *remminafile, const char *setting, char *value );
+const char *remmina_file_get_string( RemminaFile *remminafile, const char *setting );
+char *remmina_file_get_secret( RemminaFile *remminafile, const char *setting );
+char *remmina_file_format_properties( RemminaFile *remminafile, const char *setting );
+void remmina_file_set_int( RemminaFile *remminafile, const char *setting, gint value );
+gint remmina_file_get_int( RemminaFile *remminafile, const char *setting, gint default_value );
+void remmina_file_store_secret_plugin_password( RemminaFile *remminafile, const char *key, const char *value );
+int remmina_file_remove_key( RemminaFile *remminafile, const char *setting );
+void remmina_file_set_state( RemminaFile *remminafile, const char *setting, const char *value );
+const char *remmina_file_get_state( RemminaFile *remminafile, const char *setting );
+void remmina_file_set_state_int( RemminaFile *remminafile, const char *setting, gint value );
+gint remmina_file_get_state_int( RemminaFile *remminafile, const char *setting, gint default_value );
+gdouble remmina_file_get_state_double( RemminaFile *remminafile, const char *setting, gdouble default_value );
 /* Create or overwrite the .remmina file */
 void remmina_file_save( RemminaFile *remminafile );
 /* Free the RemminaFile object */
@@ -111,17 +111,17 @@ void remmina_file_free( RemminaFile *remminafile );
 /* Duplicate a RemminaFile object */
 RemminaFile *remmina_file_dup( RemminaFile *remminafile );
 /* Get the protocol icon name */
-const gchar *remmina_file_get_icon_name( RemminaFile *remminafile );
+const char *remmina_file_get_icon_name( RemminaFile *remminafile );
 /* Duplicate a temporary RemminaFile and change the protocol */
-RemminaFile *remmina_file_dup_temp_protocol( RemminaFile *remminafile, const gchar *new_protocol );
+RemminaFile *remmina_file_dup_temp_protocol( RemminaFile *remminafile, const char *new_protocol );
 /* Delete a .remmina file */
-void remmina_file_delete( const gchar *filename );
+void remmina_file_delete( const char *filename );
 /* Delete a "password" field and save into .remmina file */
 void remmina_file_unsave_passwords( RemminaFile *remminafile );
 /* Function used to update the atime and mtime of a given remmina file, partially
  * taken from suckless sbase */
-gchar *remmina_file_get_datetime( RemminaFile *remminafile );
+char *remmina_file_get_datetime( RemminaFile *remminafile );
 /* Function used to update the atime and mtime of a given remmina file */
 void remmina_file_touch( RemminaFile *remminafile );
 
-G_END_DECLS
+

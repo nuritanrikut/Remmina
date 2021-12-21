@@ -33,10 +33,10 @@
  */
 
 #include "config.h"
-#include "remmina_monitor.h"
-#include "remmina_log.h"
-#include "remmina_public.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_monitor.hpp"
+#include "remmina_log.hpp"
+#include "remmina_public.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 RemminaMonitor *rm_monitor;
 
@@ -44,12 +44,12 @@ static void remmina_monitor_can_reach_cb( GNetworkMonitor *netmonitor, GAsyncRes
 {
     g_autoptr( GError ) error = NULL;
 
-    gchar *status = NULL;
+    char *status = NULL;
 
-    gboolean is_reachable = g_network_monitor_can_reach_finish( netmonitor, result, &error );
+    bool is_reachable = g_network_monitor_can_reach_finish( netmonitor, result, &error );
 
-    const gchar *addr_tostr = g_strdup( g_socket_connectable_to_string( monitor->addr ) );
-    //gchar *value = (gchar *)g_hash_table_lookup (monitor->server_status, addr_tostr);
+    const char *addr_tostr = g_strdup( g_socket_connectable_to_string( monitor->addr ) );
+    //char *value = (char *)g_hash_table_lookup (monitor->server_status, addr_tostr);
 
     if( is_reachable )
     {
@@ -77,17 +77,17 @@ static void remmina_monitor_can_reach_cb( GNetworkMonitor *netmonitor, GAsyncRes
     g_free( status );
 }
 
-gchar *remmina_monitor_can_reach( RemminaFile *remminafile, RemminaMonitor *monitor )
+char *remmina_monitor_can_reach( RemminaFile *remminafile, RemminaMonitor *monitor )
 {
     TRACE_CALL( __func__ );
 
-    const gchar *server;
-    const gchar *ssh_tunnel_server;
-    const gchar *addr_tostr;
-    gchar *status = NULL;
-    gchar *ssh_tunnel_host, *srv_host;
+    const char *server;
+    const char *ssh_tunnel_server;
+    const char *addr_tostr;
+    char *status = NULL;
+    char *ssh_tunnel_host, *srv_host;
     gint netmonit, srv_port, ssh_tunnel_port;
-    const gchar *protocol;
+    const char *protocol;
     gint default_port = 0;
 
     if( !remminafile )
@@ -167,7 +167,7 @@ gchar *remmina_monitor_can_reach( RemminaFile *remminafile, RemminaMonitor *moni
                 monitor->netmonitor, monitor->addr, NULL, (GAsyncReadyCallback)remmina_monitor_can_reach_cb, monitor );
         }
 
-        status = (gchar *)g_hash_table_lookup( monitor->server_status, addr_tostr );
+        status = (char *)g_hash_table_lookup( monitor->server_status, addr_tostr );
         //if (!status)
         //g_hash_table_insert (monitor->server_status, g_strdup(addr_tostr), "offline");
     }
@@ -184,11 +184,11 @@ gchar *remmina_monitor_can_reach( RemminaFile *remminafile, RemminaMonitor *moni
     //g_free(dest), dest = NULL;
 }
 
-gboolean remmina_network_monitor_status( RemminaMonitor *rm_monitor )
+GNetworkConnectivity remmina_network_monitor_status( RemminaMonitor *rm_monitor )
 {
     TRACE_CALL( __func__ );
 
-    gboolean status = g_network_monitor_get_connectivity( rm_monitor->netmonitor );
+    GNetworkConnectivity status = g_network_monitor_get_connectivity( rm_monitor->netmonitor );
 
     rm_monitor->server_status =
         g_hash_table_new_full( g_str_hash, g_str_equal, (GDestroyNotify)g_free, (GDestroyNotify)g_free );

@@ -37,11 +37,11 @@
 
 #pragma once
 
-G_BEGIN_DECLS
-gint www_utils_string_find( GString *haystack, gint start, gint end, const gchar *needle );
-gint www_utils_string_replace( GString *str, gint pos, gint len, const gchar *replace );
-guint www_utils_string_replace_all( GString *haystack, const gchar *needle, const gchar *replace );
-void www_utils_send_notification( const gchar *notification_id,
-                                  const gchar *notification_title,
-                                  const gchar *notification_message );
-G_END_DECLS
+
+gint www_utils_string_find( GString *haystack, gint start, gint end, const char *needle );
+gint www_utils_string_replace( GString *str, gint pos, gint len, const char *replace );
+guint www_utils_string_replace_all( GString *haystack, const char *needle, const char *replace );
+void www_utils_send_notification( const char *notification_id,
+                                  const char *notification_title,
+                                  const char *notification_message );
+

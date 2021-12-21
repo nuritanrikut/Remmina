@@ -35,7 +35,7 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 typedef struct
 {
@@ -47,4 +47,4 @@ typedef struct
 
 GtkDialog *remmina_ext_exec_new( RemminaFile *remminafile, const char *remmina_ext_exec_type );
 
-G_END_DECLS
+

@@ -32,14 +32,14 @@
  *
  */
 
-#include "rdp_plugin.h"
-#include "rdp_monitor.h"
+#include "rdp_plugin.hpp"
+#include "rdp_monitor.hpp"
 
 /** @ToDo Utility functions should be moved somewhere else */
-gint remmina_rdp_utils_strpos( const gchar *haystack, const gchar *needle )
+gint remmina_rdp_utils_strpos( const char *haystack, const char *needle )
 {
     TRACE_CALL( __func__ );
-    const gchar *sub;
+    const char *sub;
 
     if( !*needle )
         return -1;
@@ -51,7 +51,7 @@ gint remmina_rdp_utils_strpos( const gchar *haystack, const gchar *needle )
     return sub - haystack;
 }
 
-/* https://github.com/adlocode/xfwm4/blob/1d21be9ffc0fa1cea91905a07d1446c5227745f4/common/xfwm-common.c */
+/* https://github.com/adlocode/xfwm4/blob/1d21be9ffc0fa1cea91905a07d1446c5227745f4/common/xfwm-common.cpp */
 
 /**
  * Set the MonitorIDs, the maxwidth and maxheight
@@ -64,22 +64,22 @@ gint remmina_rdp_utils_strpos( const gchar *haystack, const gchar *needle )
  *
  *   The origin must be 0,0
  */
-void remmina_rdp_monitor_get( rfContext *rfi, gchar **monitorids, guint32 *maxwidth, guint32 *maxheight )
+void remmina_rdp_monitor_get( rfContext *rfi, char **monitorids, guint32 *maxwidth, guint32 *maxheight )
 {
     TRACE_CALL( __func__ );
 
     GdkDisplay *display;
     GdkMonitor *monitor;
-    gboolean has_custom_monitors = FALSE;
+    bool has_custom_monitors = FALSE;
 
-    gboolean primary_found = FALSE;
+    bool primary_found = FALSE;
 
     gint n_monitors;
     gint scale;
     gint index = 0;
     gint count = 0;
 
-    static gchar buffer[256];
+    static char buffer[256];
 
     GdkRectangle geometry = { 0, 0, 0, 0 };
     GdkRectangle tempgeom = { 0, 0, 0, 0 };
@@ -114,7 +114,7 @@ void remmina_rdp_monitor_get( rfContext *rfi, gchar **monitorids, guint32 *maxwi
         if( has_custom_monitors )
         {
             REMMINA_PLUGIN_DEBUG( "We have custom monitors" );
-            gchar itoc[10];
+            char itoc[10];
             sprintf( itoc, "%d", i );
             ;
             if( remmina_rdp_utils_strpos( *monitorids, itoc ) < 0 )

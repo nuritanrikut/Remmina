@@ -40,11 +40,11 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#include "remmina_utils.h"
-#include "remmina_file.h"
-#include "remmina_ext_exec.h"
-#include "remmina_public.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_utils.hpp"
+#include "remmina_file.hpp"
+#include "remmina_ext_exec.hpp"
+#include "remmina_public.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 #define SPAWN_TIMEOUT 10
 
@@ -70,9 +70,9 @@ GtkDialog *remmina_ext_exec_new( RemminaFile *remminafile, const char *remmina_e
     PCon_Spinner *pcspinner;
     GError *error = NULL;
     char **argv;
-    gchar *cmd = NULL;
-    gchar pre[11];
-    gchar post[12];
+    char *cmd = NULL;
+    char pre[11];
+    char post[12];
     GPid child_pid;
 
     strcpy( pre, "precommand" );
@@ -111,14 +111,15 @@ GtkDialog *remmina_ext_exec_new( RemminaFile *remminafile, const char *remmina_e
         }
 
         /* Consider using G_SPAWN_SEARCH_PATH_FROM_ENVP (from glib 2.38)*/
-        g_spawn_async( NULL,                                                                            // cwd
-                       argv,                                                                            // argv
-                       NULL,                                                                            // envp
-                       G_SPAWN_SEARCH_PATH | G_SPAWN_SEARCH_PATH_FROM_ENVP | G_SPAWN_DO_NOT_REAP_CHILD, // flags
-                       NULL,                                                                            // child_setup
-                       NULL,       // child_setup user data
-                       &child_pid, // pid location
-                       &error );   // error
+        g_spawn_async( NULL, // cwd
+                       argv, // argv
+                       NULL, // envp
+                       static_cast<GSpawnFlags>( G_SPAWN_SEARCH_PATH | G_SPAWN_SEARCH_PATH_FROM_ENVP
+                                                 | G_SPAWN_DO_NOT_REAP_CHILD ), // flags
+                       NULL,                                                    // child_setup
+                       NULL,                                                    // child_setup user data
+                       &child_pid,                                              // pid location
+                       &error );                                                // error
         if( !error )
         {
             gtk_spinner_start( GTK_SPINNER( pcspinner->spinner ) );

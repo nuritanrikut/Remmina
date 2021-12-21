@@ -35,18 +35,18 @@
  */
 
 #include "config.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina/remmina_trace_calls.hpp"
 
 #ifdef HAVE_LIBSSH
 
 #    include <gtk/gtk.h>
 #    include <glib/gi18n.h>
-#    include "remmina_public.h"
-#    include "remmina_sftp_client.h"
-#    include "remmina_plugin_manager.h"
-#    include "remmina_ssh.h"
-#    include "remmina_protocol_widget.h"
-#    include "remmina_sftp_plugin.h"
+#    include "remmina_public.hpp"
+#    include "remmina_sftp_client.hpp"
+#    include "remmina_plugin_manager.hpp"
+#    include "remmina_ssh.hpp"
+#    include "remmina_protocol_widget.hpp"
+#    include "remmina_sftp_plugin.hpp"
 
 #    define REMMINA_PLUGIN_SFTP_FEATURE_PREF_SHOW_HIDDEN 1
 #    define REMMINA_PLUGIN_SFTP_FEATURE_PREF_OVERWRITE_ALL 2
@@ -66,9 +66,9 @@ typedef struct _RemminaPluginSftpData
 
 static RemminaPluginService *remmina_plugin_service = NULL;
 
-gboolean remmina_plugin_sftp_start_direct_tunnel( RemminaProtocolWidget *gp, char **phost, int *pport )
+int remmina_plugin_sftp_start_direct_tunnel( RemminaProtocolWidget *gp, char **phost, int *pport )
 {
-    gchar *hostport;
+    char *hostport;
 
     hostport = remmina_plugin_service->protocol_plugin_start_direct_tunnel( gp, 22, FALSE );
     if( hostport == NULL )
@@ -90,10 +90,10 @@ static gpointer remmina_plugin_sftp_main_thread( gpointer data )
     RemminaFile *remminafile;
     RemminaSSH *ssh;
     RemminaSFTP *sftp = NULL;
-    gboolean cont = FALSE;
+    bool cont = FALSE;
     gint ret;
-    const gchar *cs;
-    gchar *host;
+    const char *cs;
+    char *host;
     int port;
 
     pthread_setcancelstate( PTHREAD_CANCEL_ENABLE, NULL );
@@ -109,7 +109,7 @@ static gpointer remmina_plugin_sftp_main_thread( gpointer data )
     if( !remmina_plugin_sftp_start_direct_tunnel( gp, &host, &port ) )
         return NULL;
 
-    ssh = g_object_get_data( G_OBJECT( gp ), "user-data" );
+    ssh = static_cast<RemminaSSH*>(g_object_get_data( G_OBJECT( gp ), "user-data" ));
     if( ssh )
     {
         /* Create SFTP connection based on existing SSH session */
@@ -229,7 +229,7 @@ static void remmina_plugin_sftp_init( RemminaProtocolWidget *gp )
     g_signal_connect( G_OBJECT( gpdata->client ), "realize", G_CALLBACK( remmina_plugin_sftp_client_on_realize ), gp );
 }
 
-static gboolean remmina_plugin_sftp_open_connection( RemminaProtocolWidget *gp )
+static int remmina_plugin_sftp_open_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     RemminaPluginSftpData *gpdata = GET_PLUGIN_DATA( gp );
@@ -252,7 +252,7 @@ static gboolean remmina_plugin_sftp_open_connection( RemminaProtocolWidget *gp )
     return TRUE;
 }
 
-static gboolean remmina_plugin_sftp_close_connection( RemminaProtocolWidget *gp )
+static int remmina_plugin_sftp_close_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     RemminaPluginSftpData *gpdata = GET_PLUGIN_DATA( gp );
@@ -275,7 +275,7 @@ static gboolean remmina_plugin_sftp_close_connection( RemminaProtocolWidget *gp 
     return FALSE;
 }
 
-static gboolean remmina_plugin_sftp_query_feature( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature )
+static int remmina_plugin_sftp_query_feature( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature )
 {
     TRACE_CALL( __func__ );
     return TRUE;
@@ -323,7 +323,7 @@ static void remmina_plugin_sftp_call_feature( RemminaProtocolWidget *gp, const R
     }
 }
 
-static gpointer ssh_auth[] = { "0",
+static const char* ssh_auth[] = { "0",
                                N_( "Password" ),
                                "1",
                                N_( "SSH identity file" ),
@@ -341,22 +341,22 @@ static const RemminaProtocolFeature remmina_plugin_sftp_features[] = {
     { REMMINA_PROTOCOL_FEATURE_TYPE_PREF,
       REMMINA_PLUGIN_SFTP_FEATURE_PREF_SHOW_HIDDEN,
       GINT_TO_POINTER( REMMINA_PROTOCOL_FEATURE_PREF_CHECK ),
-      "showhidden",
-      N_( "Show Hidden Files" ) },
+      static_cast<void*>(const_cast<char*>("showhidden")),
+      N_( const_cast<char*>("Show Hidden Files") ) },
     { REMMINA_PROTOCOL_FEATURE_TYPE_PREF,
       REMMINA_PLUGIN_SFTP_FEATURE_PREF_OVERWRITE_ALL,
       GINT_TO_POINTER( REMMINA_PROTOCOL_FEATURE_PREF_CHECK ),
-      REMMINA_PLUGIN_SFTP_FEATURE_PREF_OVERWRITE_ALL_KEY,
-      N_( "Overwrite all files" ) },
+      const_cast<char*>(REMMINA_PLUGIN_SFTP_FEATURE_PREF_OVERWRITE_ALL_KEY),
+      static_cast<void*>(const_cast<char*>(N_( "Overwrite all files" ))) },
     { REMMINA_PROTOCOL_FEATURE_TYPE_PREF,
       REMMINA_PLUGIN_SFTP_FEATURE_PREF_RESUME_ALL,
       GINT_TO_POINTER( REMMINA_PROTOCOL_FEATURE_PREF_CHECK ),
-      REMMINA_PLUGIN_SFTP_FEATURE_PREF_RESUME_ALL_KEY,
-      N_( "Resume all file transfers" ) },
+      const_cast<char*>(REMMINA_PLUGIN_SFTP_FEATURE_PREF_RESUME_ALL_KEY),
+      static_cast<void*>(const_cast<char*>(N_( "Resume all file transfers" ))) },
     { REMMINA_PROTOCOL_FEATURE_TYPE_TOOL,
       REMMINA_PROTOCOL_FEATURE_TOOL_SSH,
-      N_( "Connect via SSH from a new terminal" ),
-      "utilities-terminal",
+      N_( const_cast<char*>("Connect via SSH from a new terminal") ),
+      static_cast<void*>(const_cast<char*>("utilities-terminal")),
       NULL },
     { REMMINA_PROTOCOL_FEATURE_TYPE_END, 0, NULL, NULL, NULL } };
 
@@ -371,14 +371,14 @@ static const RemminaProtocolFeature remmina_plugin_sftp_features[] = {
  * g) Validation data pointer, will be passed to the validation callback method.
  * h) Validation callback method (Can be NULL. Every entry will be valid then.)
  *		use following prototype:
- *		gboolean mysetting_validator_method(gpointer key, gpointer value,
+ *		bool mysetting_validator_method(gpointer key, gpointer value,
  *						    gpointer validator_data);
- *		gpointer key is a gchar* containing the setting's name,
+ *		gpointer key is a char* containing the setting's name,
  *		gpointer value contains the value which should be validated,
  *		gpointer validator_data contains your passed data.
  */
 static const RemminaProtocolSetting remmina_sftp_basic_settings[] = {
-    { REMMINA_PROTOCOL_SETTING_TYPE_SERVER, "server", NULL, FALSE, "_sftp-ssh._tcp", NULL, NULL, NULL },
+    { REMMINA_PROTOCOL_SETTING_TYPE_SERVER, "server", NULL, FALSE, const_cast<char*>("_sftp-ssh._tcp"), NULL, NULL, NULL },
     { REMMINA_PROTOCOL_SETTING_TYPE_TEXT, "username", N_( "Username" ), FALSE, NULL, NULL, NULL, NULL },
     { REMMINA_PROTOCOL_SETTING_TYPE_PASSWORD, "password", N_( "Password" ), FALSE, NULL, NULL, NULL, NULL },
     { REMMINA_PROTOCOL_SETTING_TYPE_SELECT,

@@ -36,7 +36,7 @@
  */
 
 #include <glib-object.h>
-#include "remmina/remmina_trace_calls.h"
+#include "remmina/remmina_trace_calls.hpp"
 
 #ifdef G_ENABLE_DEBUG
 #    define g_marshal_value_peek_boolean( v ) g_value_get_boolean( v )
@@ -91,11 +91,11 @@ void remmina_marshal_BOOLEAN__INT( GClosure *closure,
                                    gpointer marshal_data )
 {
     TRACE_CALL( __func__ );
-    typedef gboolean ( *GMarshalFunc_BOOLEAN__INT )( gpointer data1, gint arg_1, gpointer data2 );
-    register GMarshalFunc_BOOLEAN__INT callback;
-    register GCClosure *cc = (GCClosure *)closure;
-    register gpointer data1, data2;
-    gboolean v_return;
+    typedef int ( *GMarshalFunc_BOOLEAN__INT )( gpointer data1, gint arg_1, gpointer data2 );
+    GMarshalFunc_BOOLEAN__INT callback;
+    GCClosure *cc = (GCClosure *)closure;
+    gpointer data1, data2;
+    bool v_return;
 
     g_return_if_fail( return_value != NULL );
     g_return_if_fail( n_param_values == 2 );
@@ -126,12 +126,11 @@ void remmina_marshal_BOOLEAN__INT_STRING( GClosure *closure,
                                           gpointer marshal_data )
 {
     TRACE_CALL( __func__ );
-    typedef gboolean ( *GMarshalFunc_BOOLEAN__INT_STRING )(
-        gpointer data1, gint arg_1, gpointer arg_2, gpointer data2 );
-    register GMarshalFunc_BOOLEAN__INT_STRING callback;
-    register GCClosure *cc = (GCClosure *)closure;
-    register gpointer data1, data2;
-    gboolean v_return;
+    typedef int ( *GMarshalFunc_BOOLEAN__INT_STRING )( gpointer data1, gint arg_1, gpointer arg_2, gpointer data2 );
+    GMarshalFunc_BOOLEAN__INT_STRING callback;
+    GCClosure *cc = (GCClosure *)closure;
+    gpointer data1, data2;
+    bool v_return;
 
     g_return_if_fail( return_value != NULL );
     g_return_if_fail( n_param_values == 3 );

@@ -18,105 +18,105 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.10\n"
 
-#: src/remmina_sftp_plugin.c:310 src/remmina_sftp_plugin.c:354
-#: src/remmina_protocol_widget.c:1677 src/remmina_protocol_widget.c:1696
-#: src/remmina_file_editor.c:1101 src/remmina_file_editor.c:1222
-#: src/remmina_ssh_plugin.c:1361 plugins/rdp/rdp_plugin.c:2760
-#: plugins/www/www_plugin.c:895 plugins/x2go/x2go_plugin.c:3198
+#: src/remmina_sftp_plugin.cpp:310 src/remmina_sftp_plugin.cpp:354
+#: src/remmina_protocol_widget.cpp:1677 src/remmina_protocol_widget.cpp:1696
+#: src/remmina_file_editor.cpp:1101 src/remmina_file_editor.cpp:1222
+#: src/remmina_ssh_plugin.cpp:1361 plugins/rdp/rdp_plugin.cpp:2760
+#: plugins/www/www_plugin.cpp:895 plugins/x2go/x2go_plugin.cpp:3198
 #: data/ui/remmina_mpc.glade:236 data/ui/remmina_preferences.glade:1646
 #: data/ui/remmina_unlock.glade:116
 #, fuzzy
 msgid "Password"
 msgstr "पासवर्ड"
 
-#: src/remmina_sftp_plugin.c:311 src/remmina_sftp_plugin.c:356
-#: src/remmina_file_editor.c:1102 src/remmina_ssh_plugin.c:1362
-#: src/remmina_ssh_plugin.c:1473
+#: src/remmina_sftp_plugin.cpp:311 src/remmina_sftp_plugin.cpp:356
+#: src/remmina_file_editor.cpp:1102 src/remmina_ssh_plugin.cpp:1362
+#: src/remmina_ssh_plugin.cpp:1473
 #, fuzzy
 msgid "SSH identity file"
 msgstr "एसएसएच पहचान फ़ाइल"
 
-#: src/remmina_sftp_plugin.c:312 src/remmina_file_editor.c:1103
-#: src/remmina_ssh_plugin.c:1363
+#: src/remmina_sftp_plugin.cpp:312 src/remmina_file_editor.cpp:1103
+#: src/remmina_ssh_plugin.cpp:1363
 #, fuzzy
 msgid "SSH agent"
 msgstr "एसएसएच एजेंट"
 
-#: src/remmina_sftp_plugin.c:313 src/remmina_file_editor.c:1104
-#: src/remmina_ssh_plugin.c:1364
+#: src/remmina_sftp_plugin.cpp:313 src/remmina_file_editor.cpp:1104
+#: src/remmina_ssh_plugin.cpp:1364
 #, fuzzy
 msgid "Public key (automatic)"
 msgstr "सार्वजनिक कुंजी (स्वचालित)"
 
-#: src/remmina_sftp_plugin.c:314 src/remmina_file_editor.c:1105
-#: src/remmina_ssh_plugin.c:1365
+#: src/remmina_sftp_plugin.cpp:314 src/remmina_file_editor.cpp:1105
+#: src/remmina_ssh_plugin.cpp:1365
 #, fuzzy
 msgid "Kerberos (GSSAPI)"
 msgstr "केरबेरोस (जीएसएसएपीआई)"
 
-#: src/remmina_sftp_plugin.c:323
+#: src/remmina_sftp_plugin.cpp:323
 #, fuzzy
 msgid "Show Hidden Files"
 msgstr "छिपी हुई फाइलें दिखाएं"
 
-#: src/remmina_sftp_plugin.c:325
+#: src/remmina_sftp_plugin.cpp:325
 #, fuzzy
 msgid "Overwrite all files"
 msgstr "सभी फाइलों को ओवरराइट करें"
 
-#: src/remmina_sftp_plugin.c:327
+#: src/remmina_sftp_plugin.cpp:327
 #, fuzzy
 msgid "Resume all file transfers"
 msgstr "सभी फ़ाइल स्थानान्तरण फिर से शुरू करें"
 
-#: src/remmina_sftp_plugin.c:328 src/remmina_protocol_widget.c:284
+#: src/remmina_sftp_plugin.cpp:328 src/remmina_protocol_widget.cpp:284
 #, fuzzy
 msgid "Connect via SSH from a new terminal"
 msgstr "एक नए टर्मिनल से एसएसएच के माध्यम से कनेक्ट"
 
-#: src/remmina_sftp_plugin.c:353 src/remmina_message_panel.c:330
-#: src/remmina_file_editor.c:1216 src/remmina_ssh_plugin.c:1471
-#: plugins/rdp/rdp_plugin.c:2759 plugins/vnc/vnc_plugin.c:1997
-#: plugins/vnc/vnc_plugin.c:2009 plugins/www/www_plugin.c:894
-#: plugins/x2go/x2go_plugin.c:475 plugins/x2go/x2go_plugin.c:3197
+#: src/remmina_sftp_plugin.cpp:353 src/remmina_message_panel.cpp:330
+#: src/remmina_file_editor.cpp:1216 src/remmina_ssh_plugin.cpp:1471
+#: plugins/rdp/rdp_plugin.cpp:2759 plugins/vnc/vnc_plugin.cpp:1997
+#: plugins/vnc/vnc_plugin.cpp:2009 plugins/www/www_plugin.cpp:894
+#: plugins/x2go/x2go_plugin.cpp:475 plugins/x2go/x2go_plugin.cpp:3197
 #: data/ui/remmina_mpc.glade:144
 #, fuzzy
 msgid "Username"
 msgstr "उपयोगकर्ता नाम"
 
-#: src/remmina_sftp_plugin.c:355 src/remmina_file_editor.c:1207
-#: src/remmina_ssh_plugin.c:1470
+#: src/remmina_sftp_plugin.cpp:355 src/remmina_file_editor.cpp:1207
+#: src/remmina_ssh_plugin.cpp:1470
 #, fuzzy
 msgid "Authentication type"
 msgstr "प्रमाणीकरण पद्धति का उपयोग"
 
-#: src/remmina_sftp_plugin.c:357 src/remmina_file_editor.c:1240
-#: src/remmina_ssh_plugin.c:1477
+#: src/remmina_sftp_plugin.cpp:357 src/remmina_file_editor.cpp:1240
+#: src/remmina_ssh_plugin.cpp:1477
 #, fuzzy
 msgid "Password to unlock private key"
 msgstr "निजी कुंजी अनलॉक करने के लिए पासवर्ड"
 
-#: src/remmina_sftp_plugin.c:358 src/remmina_ssh_plugin.c:1508
+#: src/remmina_sftp_plugin.cpp:358 src/remmina_ssh_plugin.cpp:1508
 #, fuzzy
 msgid "SSH Proxy Command"
 msgstr "एसएसएच प्रॉक्सी कमांड"
 
-#: src/remmina_sftp_plugin.c:367
+#: src/remmina_sftp_plugin.cpp:367
 #, fuzzy
 msgid "SFTP - Secure File Transfer"
 msgstr "SFTP - सुरक्षित फ़ाइल स्थानांतरण"
 
-#: src/remmina_log.c:129
+#: src/remmina_log.cpp:129
 #, fuzzy
 msgid "Remmina debugging window"
 msgstr "रेम्मीना मुख्य खिड़की खोलें"
 
-#: src/remmina_log.c:133
+#: src/remmina_log.cpp:133
 #, fuzzy
 msgid "Paste sytem info in the Remmina debugging window"
 msgstr "रेम्मीना मुख्य खिड़की खोलें"
 
-#: src/remmina_log.c:153
+#: src/remmina_log.cpp:153
 msgid ""
 "This window can help you find connection problems.\n"
 "You can stop and start the logging at any moment using the On/Off switch.\n"
@@ -126,164 +126,164 @@ msgid ""
 "Remmina/-/wikis/Usage/Remmina-debugging\n"
 msgstr ""
 
-#: src/remmina_plugin_manager.c:73 src/remmina_file_editor.c:1951
+#: src/remmina_plugin_manager.cpp:73 src/remmina_file_editor.cpp:1951
 #, fuzzy
 msgid "Protocol"
 msgstr "प्रोटोकॉल"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Entry"
 msgstr "प्रवेश"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "File"
 msgstr "फ़ाइल"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 msgid "Tool"
 msgstr ""
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Preference"
 msgstr "प्राथमिकताएं"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Secret"
 msgstr "गुप्त"
 
-#: src/remmina_plugin_manager.c:462 data/ui/remmina_main.glade:305
+#: src/remmina_plugin_manager.cpp:462 data/ui/remmina_main.glade:305
 #, fuzzy
 msgid "Plugins"
 msgstr "प्लगइन"
 
-#: src/remmina_plugin_manager.c:462 src/remmina_message_panel.c:452
-#: src/remmina_message_panel.c:621 src/remmina_file_editor.c:242
+#: src/remmina_plugin_manager.cpp:462 src/remmina_message_panel.cpp:452
+#: src/remmina_message_panel.cpp:621 src/remmina_file_editor.cpp:242
 msgid "_OK"
 msgstr ""
 
-#: src/remmina_plugin_manager.c:480 src/remmina_file_editor.c:1908
+#: src/remmina_plugin_manager.cpp:480 src/remmina_file_editor.cpp:1908
 #: data/ui/remmina_main.glade:442
 #, fuzzy
 msgid "Name"
 msgstr "नाम"
 
-#: src/remmina_plugin_manager.c:486
+#: src/remmina_plugin_manager.cpp:486
 #, fuzzy
 msgid "Type"
 msgstr "प्रकार"
 
-#: src/remmina_plugin_manager.c:492
+#: src/remmina_plugin_manager.cpp:492
 #, fuzzy
 msgid "Description"
 msgstr "वर्णन"
 
-#: src/remmina_plugin_manager.c:498
+#: src/remmina_plugin_manager.cpp:498
 #, fuzzy
 msgid "Version"
 msgstr "संस्करण"
 
-#: src/remmina_chat_window.c:178
+#: src/remmina_chat_window.cpp:178
 #, fuzzy, c-format
 msgid "Chat with %s"
 msgstr "%s के साथ चैट करें"
 
-#: src/remmina_chat_window.c:230
+#: src/remmina_chat_window.cpp:230
 #, fuzzy
 msgid "_Send"
 msgstr "_Send"
 
-#: src/remmina_chat_window.c:240
+#: src/remmina_chat_window.cpp:240
 #, fuzzy
 msgid "_Clear"
 msgstr "_Clear"
 
-#: src/remmina_applet_menu_item.c:121
+#: src/remmina_applet_menu_item.cpp:121
 #, fuzzy
 msgid "Discovered"
 msgstr "खोजा गया"
 
-#: src/remmina_applet_menu_item.c:126
+#: src/remmina_applet_menu_item.cpp:126
 #, fuzzy
 msgid "New Connection"
 msgstr "नया कनेक्शन"
 
-#: src/remmina_key_chooser.h:38
+#: src/remmina_key_chooser.hpp:38
 #, fuzzy
 msgid "Shift+"
 msgstr "शिफ्ट +"
 
-#: src/remmina_key_chooser.h:39
+#: src/remmina_key_chooser.hpp:39
 #, fuzzy
 msgid "Ctrl+"
 msgstr "सीटीआरएल+"
 
-#: src/remmina_key_chooser.h:40
+#: src/remmina_key_chooser.hpp:40
 #, fuzzy
 msgid "Alt+"
 msgstr "ऑल्ट+"
 
-#: src/remmina_key_chooser.h:41
+#: src/remmina_key_chooser.hpp:41
 #, fuzzy
 msgid "Super+"
 msgstr "सुपर +"
 
-#: src/remmina_key_chooser.h:42
+#: src/remmina_key_chooser.hpp:42
 #, fuzzy
 msgid "Hyper+"
 msgstr "हाइपर +"
 
-#: src/remmina_key_chooser.h:43
+#: src/remmina_key_chooser.hpp:43
 #, fuzzy
 msgid "Meta+"
 msgstr "मेटा +"
 
-#: src/remmina_key_chooser.h:44
+#: src/remmina_key_chooser.hpp:44
 #, fuzzy
 msgid "<None>"
 msgstr "<None>"
 
-#: src/remmina_pref_dialog.c:91 src/remmina_file_editor.c:528
+#: src/remmina_pref_dialog.cpp:91 src/remmina_file_editor.cpp:528
 #, fuzzy
 msgid "Resolutions"
 msgstr "संकल्प"
 
-#: src/remmina_pref_dialog.c:91 src/remmina_file_editor.c:528
+#: src/remmina_pref_dialog.cpp:91 src/remmina_file_editor.cpp:528
 #, fuzzy
 msgid "Configure the available resolutions"
 msgstr "उपलब्ध संकल्पों को कॉन्फ़िगर करें"
 
-#: src/remmina_pref_dialog.c:143
+#: src/remmina_pref_dialog.cpp:143
 #, fuzzy
 msgid "Recent lists cleared."
 msgstr "हाल ही में सूचियों को मंजूरी दे दी ।"
 
-#: src/remmina_pref_dialog.c:155 src/rcw.c:2028
+#: src/remmina_pref_dialog.cpp:155 src/rcw.cpp:2028
 #: data/ui/remmina_preferences.glade:169 data/ui/remmina_preferences.glade:179
 #, fuzzy
 msgid "Keystrokes"
 msgstr "कीस्ट्रोक्स"
 
-#: src/remmina_pref_dialog.c:155
+#: src/remmina_pref_dialog.cpp:155
 #, fuzzy
 msgid "Configure the keystrokes"
 msgstr "कीस्ट्रोक को कॉन्फ़िगर करें"
 
 #. TRANSLATORS: Do not translate libsodium, is the name of a library
-#: src/remmina_pref_dialog.c:482
+#: src/remmina_pref_dialog.cpp:482
 #, fuzzy
 msgid "libsodium >= 1.9.0 is required to use master password"
 msgstr "लिसोडियम > = 1.9.0 मास्टर पासवर्ड का उपयोग करने के लिए आवश्यक है"
 
-#: src/remmina_pref_dialog.c:805
+#: src/remmina_pref_dialog.cpp:805
 #, fuzzy
 msgid "Picking a terminal colouring file replaces the file: "
 msgstr "टर्मिनल कलरिंग फ़ाइल ़ उठाना फ़ाइल की जगह जाता है: "
 
-#: src/remmina_pref_dialog.c:809
+#: src/remmina_pref_dialog.cpp:809
 #, fuzzy
 msgid ""
 "This file contains the “Custom” terminal colour scheme selectable from the "
@@ -293,13 +293,13 @@ msgstr ""
 "इस फ़ाइल में टर्मिनल कनेक्शन के \"उन्नत\" टैब से चयनित \"कस्टम\" टर्मिनल रंग योजना और "
 "सेटिंग्स में \"टर्मिनल\" टैब में संपादन योग्य है।"
 
-#: src/remmina_message_panel.c:163 data/ui/remmina_mpc.glade:46
+#: src/remmina_message_panel.cpp:163 data/ui/remmina_mpc.glade:46
 #: data/ui/remmina_unlock.glade:46
 #, fuzzy
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: src/remmina_message_panel.c:199 data/ui/remmina_snap_info_dialog.glade:28
+#: src/remmina_message_panel.cpp:199 data/ui/remmina_snap_info_dialog.glade:28
 #: data/ui/remmina_string_list.glade:8 data/ui/remmina_string_list.glade:9
 #: data/ui/remmina_string_list.glade:63 data/ui/remmina_news.glade:33
 #: data/ui/remmina_preferences.glade:2593
@@ -307,203 +307,203 @@ msgstr "रद्द करें"
 msgid "Close"
 msgstr "बंद करे"
 
-#: src/remmina_message_panel.c:260
+#: src/remmina_message_panel.cpp:260
 #, fuzzy
 msgid "Yes"
 msgstr "हाँ"
 
-#: src/remmina_message_panel.c:267
+#: src/remmina_message_panel.cpp:267
 #, fuzzy
 msgid "No"
 msgstr "नहीं"
 
-#: src/remmina_message_panel.c:391 plugins/rdp/rdp_plugin.c:2761
+#: src/remmina_message_panel.cpp:391 plugins/rdp/rdp_plugin.cpp:2761
 #: data/ui/remmina_mpc.glade:172
 #, fuzzy
 msgid "Domain"
 msgstr "डोमेन"
 
-#: src/remmina_message_panel.c:420
+#: src/remmina_message_panel.cpp:420
 #, fuzzy
 msgid "Save password"
 msgstr "पासवर्ड सहेजें"
 
-#: src/remmina_message_panel.c:457 src/remmina_message_panel.c:629
-#: src/remmina_sftp_client.c:947 src/remmina_file_editor.c:241
-#: src/remmina_file_editor.c:1783 plugins/spice/spice_plugin_file_transfer.c:84
+#: src/remmina_message_panel.cpp:457 src/remmina_message_panel.cpp:629
+#: src/remmina_sftp_client.cpp:947 src/remmina_file_editor.cpp:241
+#: src/remmina_file_editor.cpp:1783 plugins/spice/spice_plugin_file_transfer.cpp:84
 #: data/ui/remmina_key_chooser.glade:8 data/ui/remmina_key_chooser.glade:9
 #: data/ui/remmina_spinner.glade:8 data/ui/remmina_spinner.glade:9
 #, fuzzy
 msgid "_Cancel"
 msgstr "_रद्द करें"
 
-#: src/remmina_message_panel.c:513
+#: src/remmina_message_panel.cpp:513
 #, fuzzy
 msgid "Enter certificate authentication files"
 msgstr "प्रमाण पत्र प्रमाणीकरण फाइलें दर्ज करें"
 
-#: src/remmina_message_panel.c:525
+#: src/remmina_message_panel.cpp:525
 #, fuzzy
 msgid "CA Certificate File"
 msgstr "सीए सर्टिफिकेट फाइल"
 
-#: src/remmina_message_panel.c:547
+#: src/remmina_message_panel.cpp:547
 #, fuzzy
 msgid "CA CRL File"
 msgstr "सीए सीआरएल फाइल"
 
-#: src/remmina_message_panel.c:569
+#: src/remmina_message_panel.cpp:569
 #, fuzzy
 msgid "Client Certificate File"
 msgstr "क्लाइंट सर्टिफिकेट फाइल"
 
-#: src/remmina_message_panel.c:591
+#: src/remmina_message_panel.cpp:591
 #, fuzzy
 msgid "Client Certificate Key"
 msgstr "क्लाइंट सर्टिफिकेट कुंजी"
 
-#: src/rcw.c:655
+#: src/rcw.cpp:655
 #, fuzzy, c-format
 msgid ""
 "Are you sure you want to close %i active connections in the current window?"
 msgstr "क्या आप सुनिश्चित हैं कि आप वर्तमान विंडो में %i सक्रिय कनेक्शन बंद करना चाहते हैं?"
 
-#: src/rcw.c:1399
+#: src/rcw.cpp:1399
 #, fuzzy
 msgid "Viewport fullscreen mode"
 msgstr "व्यूपोर्ट फुलस्क्रीन मोड"
 
-#: src/rcw.c:1407 data/ui/remmina_preferences.glade:578
+#: src/rcw.cpp:1407 data/ui/remmina_preferences.glade:578
 #, fuzzy
 msgid "Scrolled fullscreen"
 msgstr "स्क्रॉल फुलस्क्रीन"
 
-#: src/rcw.c:1493
+#: src/rcw.cpp:1493
 #, fuzzy
 msgid "Keep aspect ratio when scaled"
 msgstr "स्केल होने पर आस्पेक्ट रेशियो रखें"
 
-#: src/rcw.c:1501
+#: src/rcw.cpp:1501
 #, fuzzy
 msgid "Fill client window when scaled"
 msgstr "स्केल होने पर क्लाइंट विंडो भरें"
 
-#: src/rcw.c:2049
+#: src/rcw.cpp:2049
 #, fuzzy
 msgid "Send clipboard content as keystrokes"
 msgstr "क्लिपबोर्ड सामग्री को कीस्ट्रोक के रूप में भेजें"
 
-#: src/rcw.c:2155
+#: src/rcw.cpp:2155
 #, fuzzy
 msgid "Turn off scaling to avoid screenshot distortion."
 msgstr "स्क्रीनशॉट विरूपण से बचने के लिए स्केलिंग बंद करें।"
 
-#: src/rcw.c:2215 plugins/www/www_plugin.c:855
+#: src/rcw.cpp:2215 plugins/www/www_plugin.cpp:855
 #, fuzzy
 msgid "Screenshot taken"
 msgstr "स्क्रीनशॉट लिया गया"
 
-#: src/rcw.c:2298
+#: src/rcw.cpp:2298
 #, fuzzy
 msgid "_Menu"
 msgstr "_Menu"
 
-#: src/rcw.c:2299
+#: src/rcw.cpp:2299
 #, fuzzy
 msgid "Menu"
 msgstr "मेन्यू"
 
-#: src/rcw.c:2308
+#: src/rcw.cpp:2308
 #, fuzzy
 msgid "Open the Remmina main window"
 msgstr "रेम्मीना मुख्य खिड़की खोलें"
 
-#: src/rcw.c:2318
+#: src/rcw.cpp:2318
 #, fuzzy
 msgid "Duplicate current connection"
 msgstr "डुप्लिकेट वर्तमान कनेक्शन"
 
-#: src/rcw.c:2335
+#: src/rcw.cpp:2335
 #, fuzzy
 msgid "Resize the window to fit in remote resolution"
 msgstr "रिमोट रिज़ॉल्यूशन में फिट होने के लिए विंडो का आकार आकार दें"
 
-#: src/rcw.c:2346
+#: src/rcw.cpp:2346
 #, fuzzy
 msgid "Toggle fullscreen mode"
 msgstr "टॉगल फुलस्क्रीन मोड"
 
-#: src/rcw.c:2392 data/ui/remmina_preferences.glade:1303
+#: src/rcw.cpp:2392 data/ui/remmina_preferences.glade:1303
 #: data/ui/remmina_preferences.glade:1313
 #, fuzzy
 msgid "Multi monitor"
 msgstr "मल्टी मॉनिटर"
 
-#: src/rcw.c:2408
+#: src/rcw.cpp:2408
 #, fuzzy
 msgid "Toggle dynamic resolution update"
 msgstr "टॉगल डायनेमिक रेजोल्यूशन अपडेट"
 
-#: src/rcw.c:2418
+#: src/rcw.cpp:2418
 #, fuzzy
 msgid "Toggle scaled mode"
 msgstr "टॉगल स्केल्ड मोड"
 
-#: src/rcw.c:2458 data/ui/remmina_preferences.glade:1037
+#: src/rcw.cpp:2458 data/ui/remmina_preferences.glade:1037
 #, fuzzy
 msgid "Switch tab pages"
 msgstr "टैब पेज स्विच करें"
 
-#: src/rcw.c:2468
+#: src/rcw.cpp:2468
 #, fuzzy
 msgid "Grab all keyboard events"
 msgstr "सभी कीबोर्ड घटनाओं को पकड़ो"
 
-#: src/rcw.c:2478
+#: src/rcw.cpp:2478
 #, fuzzy
 msgid "Preferences"
 msgstr "प्राथमिकताएं"
 
-#: src/rcw.c:2487
+#: src/rcw.cpp:2487
 #, fuzzy
 msgid "_Tools"
 msgstr "_टूल्स"
 
-#: src/rcw.c:2488 data/ui/remmina_main.glade:207
+#: src/rcw.cpp:2488 data/ui/remmina_main.glade:207
 #, fuzzy
 msgid "Tools"
 msgstr "उपकरण"
 
-#: src/rcw.c:2501 data/ui/remmina_preferences.glade:1238
+#: src/rcw.cpp:2501 data/ui/remmina_preferences.glade:1238
 #: data/ui/remmina_preferences.glade:1248
 #, fuzzy
 msgid "Screenshot"
 msgstr "स्क्रीनशॉट"
 
-#: src/rcw.c:2515 data/ui/remmina_preferences.glade:1145
+#: src/rcw.cpp:2515 data/ui/remmina_preferences.glade:1145
 #, fuzzy
 msgid "Minimize window"
 msgstr "खिड़की को कम से कम करें"
 
-#: src/rcw.c:2525 data/ui/remmina_preferences.glade:1176
+#: src/rcw.cpp:2525 data/ui/remmina_preferences.glade:1176
 #, fuzzy
 msgid "Disconnect"
 msgstr "विलगन"
 
-#: src/rcw.c:4298
+#: src/rcw.cpp:4298
 #, fuzzy, c-format
 msgid "The file “%s” is corrupted, unreadable, or could not be found."
 msgstr "फ़ाइल \"%s\" भ्रष्ट, अपठनीय है, या नहीं पाया जा सकता है ।"
 
 #. TRANSLATORS: This should be a link to the Remmina wiki page:
 #. TRANSLATORS: 'GtkSocket feature is not available'.
-#: src/rcw.c:4372
+#: src/rcw.cpp:4372
 msgid ""
 "https://gitlab.com/Remmina/Remmina/-/wikis/GtkSocket-feature-is-not-"
 "available-in-a-Wayland-session"
 msgstr ""
 
-#: src/rcw.c:4509
+#: src/rcw.cpp:4509
 #, fuzzy
 msgid ""
 "Warning: This plugin requires GtkSocket, but this feature is unavailable in "
@@ -513,7 +513,7 @@ msgstr ""
 
 #. TRANSLATORS: This should be a link to the Remmina wiki page:
 #. 'GtkSocket feature is not available'.
-#: src/rcw.c:4515
+#: src/rcw.cpp:4515
 msgid ""
 "Plugins relying on GtkSocket can't run in a Wayland session.\n"
 "For more info and a possible workaround, please visit the Remmina wiki at:\n"
@@ -522,32 +522,32 @@ msgid ""
 "available-in-a-Wayland-session"
 msgstr ""
 
-#: src/rcw.c:4529
+#: src/rcw.cpp:4529
 #, fuzzy
 msgid "Open in web browser"
 msgstr "मुख्य खिड़की खोलें"
 
-#: src/remmina_mpchange.c:234
+#: src/remmina_mpchange.cpp:234
 #, fuzzy
 msgid "The passwords do not match"
 msgstr "पासवर्ड मेल नहीं खाते हैं।"
 
-#: src/remmina_mpchange.c:244
+#: src/remmina_mpchange.cpp:244
 #, fuzzy
 msgid "Resetting passwords, please wait…"
 msgstr "पासवर्ड रीसेट करें, कृपया प्रतीक्षा करें …"
 
-#: src/remmina_mpchange.c:327
+#: src/remmina_mpchange.cpp:327
 #, fuzzy
 msgid "The multi password changer requires a secrecy plugin.\n"
 msgstr "मल्टी पासवर्ड चेंजर के लिए गोपनीयता प्लगइन की आवश्यकता होती है।\n"
 
-#: src/remmina_mpchange.c:330
+#: src/remmina_mpchange.cpp:330
 #, fuzzy
 msgid "The multi password changer requires a secrecy service.\n"
 msgstr "मल्टी पासवर्ड चेंजर के लिए गोपनीयता सेवा की आवश्यकता होती है।\n"
 
-#: src/remmina_mpchange.c:409
+#: src/remmina_mpchange.cpp:409
 #, fuzzy, c-format
 msgid "%d password changed."
 msgid_plural "%d passwords changed."
@@ -555,13 +555,13 @@ msgstr[0] "%d पासवर्ड बदल गया।"
 msgstr[1] ""
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:84
+#: src/remmina.cpp:84
 #, fuzzy
 msgid "Show 'About'"
 msgstr "'के बारे में' दिखाएं"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:86
+#: src/remmina.cpp:86
 #, fuzzy
 msgid ""
 "Connect either to a desktop described in a file (.remmina or a filetype "
@@ -570,13 +570,13 @@ msgstr ""
 "या तो किसी फ़ाइल में वर्णित डेस्कटॉप से कनेक्ट करें (.रेममिना या प्लगइन द्वारा समर्थित "
 "फाइलटाइप) या समर्थित उड़ी (आरडीपी, वीएनसी, एसएसएच या स्पाइस)"
 
-#: src/remmina.c:86 src/remmina.c:88 src/remmina.c:90
+#: src/remmina.cpp:86 src/remmina.cpp:88 src/remmina.cpp:90
 #, fuzzy
 msgid "FILE"
 msgstr "रेती"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:88
+#: src/remmina.cpp:88
 #, fuzzy
 msgid ""
 "Connect to a desktop described in a file (.remmina or a filetype supported "
@@ -584,7 +584,7 @@ msgid ""
 msgstr "फ़ाइल में वर्णित डेस्कटॉप से कनेक्ट करें (.रेममिना या प्लगइन द्वारा समर्थित एक प्रकार)"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:90
+#: src/remmina.cpp:90
 #, fuzzy
 msgid ""
 "Edit desktop connection described in file (.remmina or a filetype supported "
@@ -593,88 +593,88 @@ msgstr ""
 "फ़ाइल में वर्णित डेस्कटॉप कनेक्शन को संपादित करें (.रेममिना या प्लगइन द्वारा समर्थित प्रकार)"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:93
+#: src/remmina.cpp:93
 #, fuzzy
 msgid "Start in kiosk mode"
 msgstr "कियोस्क मोड में शुरू करें"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:95
+#: src/remmina.cpp:95
 #, fuzzy
 msgid "Create new connection profile"
 msgstr "नया कनेक्शन प्रोफाइल बनाएं"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:97
+#: src/remmina.cpp:97
 #, fuzzy
 msgid "Show preferences"
 msgstr "प्राथमिकताएं दिखाएं"
 
-#: src/remmina.c:97
+#: src/remmina.cpp:97
 #, fuzzy
 msgid "TABINDEX"
 msgstr "ताबिंदेस"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:104
+#: src/remmina.cpp:104
 #, fuzzy
 msgid "Quit"
 msgstr "बंद करें"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:106
+#: src/remmina.cpp:106
 #, fuzzy
 msgid "Use default server name (for --new)"
 msgstr "डिफ़ॉल्ट सर्वर नाम का उपयोग करें (--नए के लिए)"
 
-#: src/remmina.c:106
+#: src/remmina.cpp:106
 #, fuzzy
 msgid "SERVER"
 msgstr "सर्वर"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:108
+#: src/remmina.cpp:108
 #, fuzzy
 msgid "Use default protocol (for --new)"
 msgstr "डिफ़ॉल्ट प्रोटोकॉल का उपयोग करें (--नए के लिए)"
 
-#: src/remmina.c:108
+#: src/remmina.cpp:108
 #, fuzzy
 msgid "PROTOCOL"
 msgstr "प्रोटोकॉल"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:110
+#: src/remmina.cpp:110
 #, fuzzy
 msgid "Start in tray"
 msgstr "ट्रे में शुरू करें"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:112
+#: src/remmina.cpp:112
 #, fuzzy
 msgid "Show the application version"
 msgstr "आवेदन संस्करण दिखाएं"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:114
+#: src/remmina.cpp:114
 #, fuzzy
 msgid "Show version of the application and its plugins"
 msgstr "आवेदन और उसके प्लगइन्स का संस्करण दिखाएं"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:116
+#: src/remmina.cpp:116
 #, fuzzy
 msgid "Modify connection profile (requires --set-option)"
 msgstr "कनेक्शन प्रोफ़ाइल को संशोधित करें (--सेट-विकल्प की आवश्यकता है)"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:118
+#: src/remmina.cpp:118
 #, fuzzy
 msgid "Set one or more profile settings, to be used with --update-profile"
 msgstr ""
 "एक या एक से अधिक प्रोफ़ाइल सेटिंग्स सेट करें, --अपडेट-प्रोफाइल के साथ उपयोग की जाने वाली"
 
-#: src/remmina.c:119
+#: src/remmina.cpp:119
 #, fuzzy
 msgid "Encrypt a password"
 msgstr "पासवर्ड को एन्क्रिप्ट करना"
@@ -683,7 +683,7 @@ msgstr "पासवर्ड को एन्क्रिप्ट करना
 #. * This link should point to a resource explaining how to get Remmina
 #. * to log more verbose statements.
 #.
-#: src/remmina.c:334
+#: src/remmina.cpp:334
 msgid ""
 "Remmina does not log all output statements. Turn on more verbose output by "
 "using \"G_MESSAGES_DEBUG=all\" as an environment variable.\n"
@@ -692,12 +692,12 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:388
+#: src/remmina.cpp:388
 #, fuzzy
 msgid "- or protocol://username:encryptedpassword@host:port"
 msgstr "- या प्रोटोकॉल://उपयोगकर्ता नाम: encryptedpassword@host: पोर्ट"
 
-#: src/remmina.c:391
+#: src/remmina.cpp:391
 #, fuzzy
 msgid ""
 "Examples:\n"
@@ -763,413 +763,413 @@ msgstr ""
 "गूंज \"उपयोगकर्ता नाम\\ napassword\" | रेम्मिना--अपडेट-प्रोफाइल/पाथ/TO/FOO.remmina--"
 "सेट-ऑप्शन यूजरनेम--सेट-ऑप्शन resolution_mode = 2--सेट-ऑप्शन पासवर्ड\n"
 
-#: src/remmina_public.c:345
+#: src/remmina_public.cpp:345
 #, fuzzy, c-format
 msgid "Address is too long for UNIX socket_path: %s"
 msgstr "पता UNIX socket_path के लिए बहुत लंबा है: %s"
 
-#: src/remmina_public.c:355
+#: src/remmina_public.cpp:355
 #, fuzzy, c-format
 msgid "Creating UNIX socket failed: %s"
 msgstr "UNIX सॉकेट बनाना विफल: %s"
 
-#: src/remmina_public.c:361
+#: src/remmina_public.cpp:361
 #, fuzzy, c-format
 msgid "Connecting to UNIX socket failed: %s"
 msgstr "UNIX सॉकेट से कनेक्ट करने में विफल रहा: %s"
 
-#: src/remmina_public.c:631
+#: src/remmina_public.cpp:631
 #, fuzzy
 msgid "Please enter format 'widthxheight'."
 msgstr "कृपया प्रारूप 'चौड़ाई' दर्ज करें।"
 
-#: src/remmina_public.c:653
+#: src/remmina_public.cpp:653
 #, fuzzy
 msgid "Change security settings"
 msgstr "सुरक्षा सेटिंग बदलें"
 
 #. TRANSLATORS: translator-credits should be replaced with a formatted list of translators in your own language
-#: src/remmina_about.c:54
+#: src/remmina_about.cpp:54
 #, fuzzy
 msgid "translator-credits"
 msgstr "Hemish (hemish04082005)"
 
-#: src/remmina_ftp_client.c:389
+#: src/remmina_ftp_client.cpp:389
 #, fuzzy
 msgid "Choose download location"
 msgstr "डाउनलोड स्थान चुनें"
 
-#: src/remmina_ftp_client.c:529
+#: src/remmina_ftp_client.cpp:529
 #, fuzzy
 msgid "Are you sure to delete the selected files on server?"
 msgstr "क्या आप सर्वर पर चयनित फ़ाइलों को हटाना सुनिश्चित कर रहे हैं?"
 
-#: src/remmina_ftp_client.c:586
+#: src/remmina_ftp_client.cpp:586
 #, fuzzy
 msgid "Choose a file to upload"
 msgstr "अपलोड करने के लिए एक फ़ाइल चुनें"
 
-#: src/remmina_ftp_client.c:593
+#: src/remmina_ftp_client.cpp:593
 #, fuzzy
 msgid "Upload folder"
 msgstr "फ़ोल्डर अपलोड करें"
 
-#: src/remmina_ftp_client.c:649 src/remmina_ftp_client.c:763
+#: src/remmina_ftp_client.cpp:649 src/remmina_ftp_client.cpp:763
 #, fuzzy
 msgid "Download"
 msgstr "डाउनलोड"
 
-#: src/remmina_ftp_client.c:656 src/remmina_ftp_client.c:770
+#: src/remmina_ftp_client.cpp:656 src/remmina_ftp_client.cpp:770
 #, fuzzy
 msgid "Upload"
 msgstr "अपलोड"
 
-#: src/remmina_ftp_client.c:663
+#: src/remmina_ftp_client.cpp:663
 #, fuzzy
 msgid "_Delete"
 msgstr "_मिटाएं"
 
-#: src/remmina_ftp_client.c:748
+#: src/remmina_ftp_client.cpp:748
 #, fuzzy
 msgid "Home"
 msgstr "Home"
 
-#: src/remmina_ftp_client.c:749
+#: src/remmina_ftp_client.cpp:749
 #, fuzzy
 msgid "Go to home folder"
 msgstr "घर फ़ोल्डर पर जाएं"
 
-#: src/remmina_ftp_client.c:753
+#: src/remmina_ftp_client.cpp:753
 #, fuzzy
 msgid "Up"
 msgstr "ऊपर"
 
-#: src/remmina_ftp_client.c:754
+#: src/remmina_ftp_client.cpp:754
 #, fuzzy
 msgid "Go to parent folder"
 msgstr "मूल फ़ोल्डर पे जाय."
 
-#: src/remmina_ftp_client.c:758 plugins/rdp/rdp_plugin.c:2851
-#: plugins/vnc/vnc_plugin.c:2050
+#: src/remmina_ftp_client.cpp:758 plugins/rdp/rdp_plugin.cpp:2851
+#: plugins/vnc/vnc_plugin.cpp:2050
 #, fuzzy
 msgid "Refresh"
 msgstr "रीफ़्रेश करें"
 
-#: src/remmina_ftp_client.c:759
+#: src/remmina_ftp_client.cpp:759
 #, fuzzy
 msgid "Refresh current folder"
 msgstr "ताज़ा वर्तमान फ़ोल्डर"
 
-#: src/remmina_ftp_client.c:764
+#: src/remmina_ftp_client.cpp:764
 #, fuzzy
 msgid "Download from server"
 msgstr "सर्वर से डाउनलोड करें"
 
-#: src/remmina_ftp_client.c:771
+#: src/remmina_ftp_client.cpp:771
 #, fuzzy
 msgid "Upload to server"
 msgstr "सर्वर पर अपलोड करें"
 
-#: src/remmina_ftp_client.c:775 data/ui/remmina_main.glade:197
+#: src/remmina_ftp_client.cpp:775 data/ui/remmina_main.glade:197
 #, fuzzy
 msgid "Delete"
 msgstr "डिलीट करें"
 
-#: src/remmina_ftp_client.c:776
+#: src/remmina_ftp_client.cpp:776
 #, fuzzy
 msgid "Delete files on server"
 msgstr "सर्वर पर फ़ाइलों को हटाएं"
 
-#: src/remmina_ftp_client.c:905 src/remmina_ftp_client.c:974
+#: src/remmina_ftp_client.cpp:905 src/remmina_ftp_client.cpp:974
 #, fuzzy
 msgid "Filename"
 msgstr "फिलेनामे"
 
-#: src/remmina_ftp_client.c:918 src/remmina_ftp_client.c:1003
+#: src/remmina_ftp_client.cpp:918 src/remmina_ftp_client.cpp:1003
 #, fuzzy
 msgid "Size"
 msgstr "आकार"
 
-#: src/remmina_ftp_client.c:926
+#: src/remmina_ftp_client.cpp:926
 #, fuzzy
 msgid "User"
 msgstr "यूज़र"
 
-#: src/remmina_ftp_client.c:932 src/remmina_file_editor.c:1933
+#: src/remmina_ftp_client.cpp:932 src/remmina_file_editor.cpp:1933
 #: data/ui/remmina_mpc.glade:115 data/ui/remmina_main.glade:464
 #, fuzzy
 msgid "Group"
 msgstr "समूह"
 
-#: src/remmina_ftp_client.c:938
+#: src/remmina_ftp_client.cpp:938
 #, fuzzy
 msgid "Permission"
 msgstr "अनुमतियाँ"
 
-#: src/remmina_ftp_client.c:990 plugins/rdp/rdp_plugin.c:2648
+#: src/remmina_ftp_client.cpp:990 plugins/rdp/rdp_plugin.cpp:2648
 #, fuzzy
 msgid "Remote"
 msgstr "बेमिलनसार"
 
-#: src/remmina_ftp_client.c:997 plugins/rdp/rdp_plugin.c:2647
+#: src/remmina_ftp_client.cpp:997 plugins/rdp/rdp_plugin.cpp:2647
 #, fuzzy
 msgid "Local"
 msgstr "लोकल"
 
-#: src/remmina_ftp_client.c:1011
+#: src/remmina_ftp_client.cpp:1011
 #, fuzzy
 msgid "Progress"
 msgstr "प्रगति"
 
-#: src/remmina_protocol_widget.c:291 src/remmina_ssh_plugin.c:829
-#: src/remmina_ssh_plugin.c:1446
+#: src/remmina_protocol_widget.cpp:291 src/remmina_ssh_plugin.cpp:829
+#: src/remmina_ssh_plugin.cpp:1446
 #, fuzzy
 msgid "Open SFTP transfer…"
 msgstr "खुला एसएफटीपी ट्रांसफर…"
 
-#: src/remmina_protocol_widget.c:320
+#: src/remmina_protocol_widget.cpp:320
 #, fuzzy
 msgid "Executing external commands…"
 msgstr "बाहरी आदेशों को निष्पादित करना …"
 
 #. TRANSLATORS: “%s” is a placeholder for the connection profile name
-#: src/remmina_protocol_widget.c:328
+#: src/remmina_protocol_widget.cpp:328
 #, fuzzy, c-format
 msgid "Connecting to “%s”…"
 msgstr "\"%s से कनेक्ट करना…"
 
 #. TRANSLATORS: “%s” is a placeholder for an hostname or an IP address.
-#: src/remmina_protocol_widget.c:916 src/remmina_protocol_widget.c:1101
+#: src/remmina_protocol_widget.cpp:916 src/remmina_protocol_widget.cpp:1101
 #, fuzzy, c-format
 msgid "Connecting to “%s” via SSH…"
 msgstr "एसएसएच के माध्यम से \"%s\" से कनेक्ट करना …"
 
 #. TRANSLATORS: “%i” is a placeholder for a TCP port number.
-#: src/remmina_protocol_widget.c:1165
+#: src/remmina_protocol_widget.cpp:1165
 #, fuzzy, c-format
 msgid "Awaiting incoming SSH connection on port %i…"
 msgstr "बंदरगाह पर आने वाले एसएसएच कनेक्शन का इंतजार %i…"
 
-#: src/remmina_protocol_widget.c:1218
+#: src/remmina_protocol_widget.cpp:1218
 #, fuzzy, c-format
 msgid "The “%s” command is not available on the SSH server."
 msgstr "\"%s\" कमांड एसएसएच सर्वर पर उपलब्ध नहीं है।"
 
-#: src/remmina_protocol_widget.c:1223
+#: src/remmina_protocol_widget.cpp:1223
 #, fuzzy, c-format
 msgid "Could not run the “%s” command on the SSH server (status = %i)."
 msgstr "एसएसएच सर्वर पर \"%s\" कमांड नहीं चला सका (स्थिति = %i) ।"
 
 #. TRANSLATORS: %s is a placeholder for an error message
-#: src/remmina_protocol_widget.c:1231
+#: src/remmina_protocol_widget.cpp:1231
 #, fuzzy, c-format
 msgid "Could not run command. %s"
 msgstr "कमान नहीं चला सके। %s"
 
 #. TRANSLATORS: “%s” is a placeholder for a hostname or IP address.
-#: src/remmina_protocol_widget.c:1301
+#: src/remmina_protocol_widget.cpp:1301
 #, fuzzy, c-format
 msgid "Connecting to %s via SSH…"
 msgstr "एसएसएच के माध्यम से %s से कनेक्ट करना …"
 
-#: src/remmina_protocol_widget.c:1695
+#: src/remmina_protocol_widget.cpp:1695
 #, fuzzy
 msgid "Type in SSH username and password."
 msgstr "एसएसएच यूजरनेम और पासवर्ड में टाइप करें।"
 
-#: src/remmina_protocol_widget.c:1750 src/remmina_protocol_widget.c:1782
+#: src/remmina_protocol_widget.cpp:1750 src/remmina_protocol_widget.cpp:1782
 #, fuzzy
 msgid "Fingerprint automatically accepted"
 msgstr "फिंगरप्रिंट स्वचालित रूप से स्वीकार किए जाते हैं"
 
 #. TRANSLATORS: The user is asked to verify a new SSL certificate.
-#: src/remmina_protocol_widget.c:1758
+#: src/remmina_protocol_widget.cpp:1758
 #, fuzzy
 msgid "Certificate details:"
 msgstr "प्रमाण पत्र विवरण:"
 
 #. TRANSLATORS: An SSL certificate subject is usually the remote server the user connect to.
-#: src/remmina_protocol_widget.c:1760 src/remmina_protocol_widget.c:1792
+#: src/remmina_protocol_widget.cpp:1760 src/remmina_protocol_widget.cpp:1792
 #, fuzzy
 msgid "Subject:"
 msgstr "विषय:"
 
 #. TRANSLATORS: The name or email of the entity that have issued the SSL certificate
-#: src/remmina_protocol_widget.c:1762 src/remmina_protocol_widget.c:1794
+#: src/remmina_protocol_widget.cpp:1762 src/remmina_protocol_widget.cpp:1794
 #, fuzzy
 msgid "Issuer:"
 msgstr "जारीकर्ता:"
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1764
+#: src/remmina_protocol_widget.cpp:1764
 #, fuzzy
 msgid "Fingerprint:"
 msgstr "उंगली का निशान:"
 
 #. TRANSLATORS: The user is asked to accept or refuse a new SSL certificate.
-#: src/remmina_protocol_widget.c:1766
+#: src/remmina_protocol_widget.cpp:1766
 #, fuzzy
 msgid "Accept certificate?"
 msgstr "प्रमाण पत्र स्वीकार करें?"
 
 #. TRANSLATORS: The user is asked to verify a new SSL certificate.
-#: src/remmina_protocol_widget.c:1790
+#: src/remmina_protocol_widget.cpp:1790
 #, fuzzy
 msgid "The certificate changed! Details:"
 msgstr "प्रमाण पत्र बदल गया! ब्यौरा:"
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1796
+#: src/remmina_protocol_widget.cpp:1796
 #, fuzzy
 msgid "Old fingerprint:"
 msgstr "पुराने फिंगरप्रिंट:"
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1798
+#: src/remmina_protocol_widget.cpp:1798
 #, fuzzy
 msgid "New fingerprint:"
 msgstr "नई फिंगरप्रिंट:"
 
 #. TRANSLATORS: The user is asked to accept or refuse a new SSL certificate.
-#: src/remmina_protocol_widget.c:1800
+#: src/remmina_protocol_widget.cpp:1800
 #, fuzzy
 msgid "Accept changed certificate?"
 msgstr "बदला हुआ प्रमाण पत्र स्वीकार करें?"
 
 #. TRANSLATORS: “%i” is a placeholder for a port number. “%s”  is a placeholder for a protocol name (VNC).
-#: src/remmina_protocol_widget.c:1943
+#: src/remmina_protocol_widget.cpp:1943
 #, fuzzy, c-format
 msgid "Listening on port %i for an incoming %s connection…"
 msgstr "एक आने वाली %s कनेक्शन के लिए पोर्ट %i पर सुन रहा है…"
 
-#: src/remmina_protocol_widget.c:1968
+#: src/remmina_protocol_widget.cpp:1968
 #, fuzzy
 msgid "Could not authenticate, attempting reconnection…"
 msgstr "प्रमाणित नहीं कर सका, पुनर्संबंध का प्रयास …"
 
-#: src/remmina_protocol_widget.c:2030 src/remmina_file_editor.c:436
-#: src/remmina_file_editor.c:1172 data/ui/remmina_main.glade:478
+#: src/remmina_protocol_widget.cpp:2030 src/remmina_file_editor.cpp:436
+#: src/remmina_file_editor.cpp:1172 data/ui/remmina_main.glade:478
 #, fuzzy
 msgid "Server"
 msgstr "सर्वर"
 
 #. TRANSLATORS: “%s” is a placeholder for a protocol name, like “RDP”.
-#: src/remmina_protocol_widget.c:2048
+#: src/remmina_protocol_widget.cpp:2048
 #, fuzzy, c-format
 msgid "Install the %s protocol plugin first."
 msgstr "पहले %s प्रोटोकॉल प्लगइन स्थापित करें।"
 
-#: src/remmina_ssh.c:236
+#: src/remmina_ssh.cpp:236
 #, fuzzy, c-format
 msgid "Could not authenticate with TOTP/OTP/2FA. %s"
 msgstr "TOTP/OTP/2FA के साथ प्रमाणित नहीं कर सका । %s"
 
-#: src/remmina_ssh.c:295 src/remmina_ssh.c:676
+#: src/remmina_ssh.cpp:295 src/remmina_ssh.cpp:676
 #, fuzzy, c-format
 msgid "Could not authenticate with SSH password. %s"
 msgstr "एसएसएच पासवर्ड से प्रमाणित नहीं कर सका। %s"
 
-#: src/remmina_ssh.c:322 src/remmina_ssh.c:389
+#: src/remmina_ssh.cpp:322 src/remmina_ssh.cpp:389
 #, fuzzy
 msgid "No saved SSH passphrase supplied. Asking user to enter it."
 msgstr ""
 "कोई बचाया एसएसएच पासवाधे की आपूर्ति की । उपयोगकर्ता को इसे दर्ज करने के लिए कह रहे हैं।"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:327 src/remmina_ssh.c:368 src/remmina_ssh.c:394
-#: src/remmina_ssh.c:433 src/remmina_ssh.c:746
+#: src/remmina_ssh.cpp:327 src/remmina_ssh.cpp:368 src/remmina_ssh.cpp:394
+#: src/remmina_ssh.cpp:433 src/remmina_ssh.cpp:746
 #, fuzzy, c-format
 msgid "Could not authenticate with public SSH key. %s"
 msgstr "सार्वजनिक एसएसएच कुंजी के साथ प्रमाणित नहीं कर सका। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:336
+#: src/remmina_ssh.cpp:336
 #, fuzzy, c-format
 msgid "SSH certificate cannot be imported. %s"
 msgstr "एसएसएच प्रमाण पत्र आयात नहीं किया जा सकता है। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:345
+#: src/remmina_ssh.cpp:345
 #, fuzzy, c-format
 msgid "SSH certificate cannot be copied into the private SSH key. %s"
 msgstr "एसएसएच प्रमाण पत्र को निजी एसएसएच कुंजी में कॉपी नहीं किया जा सकता है। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:355
+#: src/remmina_ssh.cpp:355
 #, fuzzy, c-format
 msgid "Could not authenticate using SSH certificate. %s"
 msgstr "एसएसएच प्रमाण पत्र का उपयोग कर प्रमाणित नहीं कर सका। %s"
 
-#: src/remmina_ssh.c:369
+#: src/remmina_ssh.cpp:369
 #, fuzzy
 msgid "SSH identity file not selected."
 msgstr "एसएसएच पहचान फ़ाइल का चयन नहीं किया गया है।"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:380
+#: src/remmina_ssh.cpp:380
 #, fuzzy, c-format
 msgid "Public SSH key cannot be imported. %s"
 msgstr "सार्वजनिक एसएसएच कुंजी का आयात नहीं किया जा सकता है। %s"
 
-#: src/remmina_ssh.c:478
+#: src/remmina_ssh.cpp:478
 #, fuzzy, c-format
 msgid "Could not authenticate automatically with public SSH key. %s"
 msgstr "सार्वजनिक एसएसएच कुंजी के साथ स्वचालित रूप से प्रमाणित नहीं कर सका। %s"
 
-#: src/remmina_ssh.c:523
+#: src/remmina_ssh.cpp:523
 #, fuzzy, c-format
 msgid "Could not authenticate automatically with SSH agent. %s"
 msgstr "एसएसएच एजेंट के साथ स्वचालित रूप से प्रमाणित नहीं कर सका। %s"
 
-#: src/remmina_ssh.c:569 src/remmina_ssh.c:856
+#: src/remmina_ssh.cpp:569 src/remmina_ssh.cpp:856
 #, fuzzy, c-format
 msgid "Could not authenticate with SSH GSSAPI/Kerberos. %s"
 msgstr "एसएसएच जीएसएसएपीआई/केर्बेरोस के साथ प्रमाणित नहीं कर सका । %s"
 
-#: src/remmina_ssh.c:598
+#: src/remmina_ssh.cpp:598
 #, fuzzy
 msgid "The public SSH key changed!"
 msgstr "सार्वजनिक एसएसएच कुंजी बदल गया!"
 
-#: src/remmina_ssh.c:711
+#: src/remmina_ssh.cpp:711
 #, fuzzy, c-format
 msgid "Could not authenticate with keyboard-interactive. %s"
 msgstr "कीबोर्ड-इंटरेक्टिव के साथ प्रमाणित नहीं कर सका। %s"
 
-#: src/remmina_ssh.c:813
+#: src/remmina_ssh.cpp:813
 #, fuzzy, c-format
 msgid "Could not authenticate with automatic public SSH key. %s"
 msgstr "स्वचालित सार्वजनिक एसएसएच कुंजी के साथ प्रमाणित नहीं कर सका। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:921
+#: src/remmina_ssh.cpp:921
 #, fuzzy, c-format
 msgid "Could not fetch the server's public SSH key. %s"
 msgstr "सर्वर की पब्लिक एसएसएच की चाबी नहीं ला सके। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:928
+#: src/remmina_ssh.cpp:928
 #, fuzzy, c-format
 msgid "Could not fetch public SSH key. %s"
 msgstr "सार्वजनिक एसएसएच चाबी नहीं ला सके। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:936
+#: src/remmina_ssh.cpp:936
 #, fuzzy, c-format
 msgid "Could not fetch checksum of the public SSH key. %s"
 msgstr "सार्वजनिक एसएसएच कुंजी का चेकसम नहीं ला सका। %s"
 
-#: src/remmina_ssh.c:949
+#: src/remmina_ssh.cpp:949
 #, fuzzy
 msgid "The server is unknown. The public key fingerprint is:"
 msgstr "सर्वर अज्ञात है। सार्वजनिक कुंजी फिंगरप्रिंट है:"
 
-#: src/remmina_ssh.c:951 src/remmina_ssh.c:957
+#: src/remmina_ssh.cpp:951 src/remmina_ssh.cpp:957
 #, fuzzy
 msgid "Do you trust the new public key?"
 msgstr "क्या आप नई सार्वजनिक कुंजी पर भरोसा करते हैं?"
 
-#: src/remmina_ssh.c:954
+#: src/remmina_ssh.cpp:954
 #, fuzzy
 msgid ""
 "Warning: The server has changed its public key. This means you are either "
@@ -1181,195 +1181,195 @@ msgstr ""
 "या प्रशासक ने चाबी बदल दी है। नई सार्वजनिक कुंजी फिंगरप्रिंट है:"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:979
+#: src/remmina_ssh.cpp:979
 #, fuzzy, c-format
 msgid "Could not check list of known SSH hosts. %s"
 msgstr "ज्ञात एसएसएच मेजबानों की सूची की जांच नहीं कर सका। %s"
 
-#: src/remmina_ssh.c:988
+#: src/remmina_ssh.cpp:988
 #, fuzzy
 msgid "SSH password"
 msgstr "एसएसएच पासवर्ड"
 
-#: src/remmina_ssh.c:995 src/remmina_ssh.c:1039
+#: src/remmina_ssh.cpp:995 src/remmina_ssh.cpp:1039
 #, fuzzy
 msgid "SSH private key passphrase"
 msgstr "एसएसएच प्राइवेट की पासवानेस"
 
-#: src/remmina_ssh.c:1000
+#: src/remmina_ssh.cpp:1000
 #, fuzzy
 msgid "SSH Kerberos/GSSAPI"
 msgstr "एसएसएच केर्बेरोस/जीएसएसएपीआई"
 
-#: src/remmina_ssh.c:1005
+#: src/remmina_ssh.cpp:1005
 #, fuzzy
 msgid "Enter TOTP/OTP/2FA code"
 msgstr "TOTP/OTP/2FA कोड दर्ज करें"
 
-#: src/remmina_ssh.c:1035 src/remmina_ssh.c:1061
+#: src/remmina_ssh.cpp:1035 src/remmina_ssh.cpp:1061
 #, fuzzy
 msgid "SSH tunnel credentials"
 msgstr "एसएसएच सुरंग साख"
 
-#: src/remmina_ssh.c:1035 src/remmina_ssh.c:1061
+#: src/remmina_ssh.cpp:1035 src/remmina_ssh.cpp:1061
 #, fuzzy
 msgid "SSH credentials"
 msgstr "एसएसएच क्रेडेंशियल्स"
 
-#: src/remmina_ssh.c:1112
+#: src/remmina_ssh.cpp:1112
 #, fuzzy
 msgid "Keyboard interactive login, TOTP/OTP/2FA"
 msgstr "कीबोर्ड इंटरैक्टिव लॉगिन, TOTP/OTP/2FA"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1337
+#: src/remmina_ssh.cpp:1337
 #, fuzzy, c-format
 msgid "Could not start SSH session. %s"
 msgstr "एसएसएच सत्र शुरू नहीं कर सका। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1735
+#: src/remmina_ssh.cpp:1735
 #, fuzzy, c-format
 msgid "Could not create channel. %s"
 msgstr "चैनल नहीं बना सके। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1746
+#: src/remmina_ssh.cpp:1746
 #, fuzzy, c-format
 msgid "Could not connect to SSH tunnel. %s"
 msgstr "एसएसएच टनल से नहीं जुड़ सके। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1816 src/remmina_ssh.c:1837 src/remmina_ssh.c:1846
+#: src/remmina_ssh.cpp:1816 src/remmina_ssh.cpp:1837 src/remmina_ssh.cpp:1846
 #, fuzzy, c-format
 msgid "Could not request port forwarding. %s"
 msgstr "पोर्ट फॉरवर्डिंग का अनुरोध नहीं कर सके। %s"
 
-#: src/remmina_ssh.c:1876
+#: src/remmina_ssh.cpp:1876
 #, fuzzy
 msgid "The server did not respond."
 msgstr "सर्वर ने कोई जवाब नहीं दिया।"
 
-#: src/remmina_ssh.c:1916
+#: src/remmina_ssh.cpp:1916
 #, fuzzy, c-format
 msgid "Cannot connect to local port %i."
 msgstr "स्थानीय बंदरगाह %i से कनेक्ट नहीं कर सकते।"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1965
+#: src/remmina_ssh.cpp:1965
 #, fuzzy, c-format
 msgid "Could not write to SSH channel. %s"
 msgstr "एसएसएच चैनल को नहीं लिख सके। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1972
+#: src/remmina_ssh.cpp:1972
 #, fuzzy, c-format
 msgid "Could not read from tunnel listening socket. %s"
 msgstr "टनल से सॉकेट सुन नहीं पढ़ सके। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1992
+#: src/remmina_ssh.cpp:1992
 #, fuzzy, c-format
 msgid "Could not poll SSH channel. %s"
 msgstr "एसएसएच चैनल का चुनाव नहीं कर सके। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1999
+#: src/remmina_ssh.cpp:1999
 #, fuzzy, c-format
 msgid "Could not read SSH channel in a non-blocking way. %s"
 msgstr "एसएसएच चैनल को नॉन ब्लॉकिंग तरीके से नहीं पढ़ सके। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2018
+#: src/remmina_ssh.cpp:2018
 #, fuzzy, c-format
 msgid "Could not send data to tunnel listening socket. %s"
 msgstr "टनल सुन सॉकेट को डाटा नहीं भेज सके। %s"
 
-#: src/remmina_ssh.c:2120
+#: src/remmina_ssh.cpp:2120
 #, fuzzy
 msgid "Assign a destination port."
 msgstr "एक गंतव्य बंदरगाह आवंटित करें।"
 
-#: src/remmina_ssh.c:2127
+#: src/remmina_ssh.cpp:2127
 #, fuzzy
 msgid "Could not create socket."
 msgstr "सॉकेट नहीं बना सके।"
 
-#: src/remmina_ssh.c:2137
+#: src/remmina_ssh.cpp:2137
 #, fuzzy
 msgid "Could not bind server socket to local port."
 msgstr "सर्वर सॉकेट को स्थानीय बंदरगाह पर नहीं बांध सके।"
 
-#: src/remmina_ssh.c:2143
+#: src/remmina_ssh.cpp:2143
 #, fuzzy
 msgid "Could not listen to local port."
 msgstr "लोकल पोर्ट की बात नहीं सुन सके।"
 
 #. TRANSLATORS: Do not translate pthread
-#: src/remmina_ssh.c:2153 src/remmina_ssh.c:2170 src/remmina_ssh.c:2188
+#: src/remmina_ssh.cpp:2153 src/remmina_ssh.cpp:2170 src/remmina_ssh.cpp:2188
 #, fuzzy
 msgid "Could not start pthread."
 msgstr "पीटीरेड शुरू नहीं कर सके।"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2280
+#: src/remmina_ssh.cpp:2280
 #, fuzzy, c-format
 msgid "Could not create SFTP session. %s"
 msgstr "एसएफटीपी सत्र नहीं बना सके। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2285
+#: src/remmina_ssh.cpp:2285
 #, fuzzy, c-format
 msgid "Could not start SFTP session. %s"
 msgstr "एसएफटीपी सत्र शुरू नहीं कर सका। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2379
+#: src/remmina_ssh.cpp:2379
 #, fuzzy, c-format
 msgid "Could not open channel. %s"
 msgstr "चैनल नहीं खोल सके। %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2394
+#: src/remmina_ssh.cpp:2394
 #, fuzzy, c-format
 msgid "Could not request shell. %s"
 msgstr "खोल का अनुरोध नहीं कर सका। %s"
 
-#: src/remmina_ssh.c:2523
+#: src/remmina_ssh.cpp:2523
 #, fuzzy
 msgid "Could not create PTY device."
 msgstr "पीटीवाई डिवाइस नहीं बना सके।"
 
-#: src/remmina_exec.c:478
+#: src/remmina_exec.cpp:478
 #, fuzzy, c-format
 msgid "Plugin %s is not registered."
 msgstr "प्लगइन %s पंजीकृत नहीं है।"
 
-#: src/remmina_main.c:685
+#: src/remmina_main.cpp:685
 msgid "The latest successful connection attempt, or a pre-computed date"
 msgstr ""
 
-#: src/remmina_main.c:687
+#: src/remmina_main.cpp:687
 #, fuzzy, c-format
 msgid "Total %i item."
 msgid_plural "Total %i items."
 msgstr[0] "कुल %i आइटम।"
 msgstr[1] ""
 
-#: src/remmina_main.c:695
+#: src/remmina_main.cpp:695
 msgid "Network status: fully online"
 msgstr ""
 
-#: src/remmina_main.c:698
+#: src/remmina_main.cpp:698
 msgid "Network status: offline"
 msgstr ""
 
-#: src/remmina_main.c:902
+#: src/remmina_main.cpp:902
 #, fuzzy, c-format
 msgid "Are you sure you want to delete “%s”?"
 msgstr "क्या आप सचमुच \"%s\" को मिटाना चाहते हैं?"
 
-#: src/remmina_main.c:1026
+#: src/remmina_main.cpp:1026
 #, fuzzy, c-format
 msgid ""
 "Unable to import:\n"
@@ -1378,116 +1378,116 @@ msgstr ""
 "आयात करने में असमर्थ:\n"
 "%s"
 
-#: src/remmina_main.c:1052 data/ui/remmina_main.glade:285
+#: src/remmina_main.cpp:1052 data/ui/remmina_main.glade:285
 #, fuzzy
 msgid "Import"
 msgstr "आयात"
 
-#: src/remmina_main.c:1075 src/remmina_file_editor.c:1791
+#: src/remmina_main.cpp:1075 src/remmina_file_editor.cpp:1791
 #, fuzzy
 msgid "_Save"
 msgstr "_सहेजें"
 
-#: src/remmina_main.c:1081
+#: src/remmina_main.cpp:1081
 #, fuzzy
 msgid "This protocol does not support exporting."
 msgstr "यह प्रोटोकॉल निर्यात का समर्थन नहीं करता है।"
 
-#: src/remmina_main.c:1401
+#: src/remmina_main.cpp:1401
 #, fuzzy
 msgid "Remmina Remote Desktop Client"
 msgstr "रेममिना रिमोट डेस्कटॉप क्लाइंट"
 
-#: src/remmina_main.c:1403
+#: src/remmina_main.cpp:1403
 #, fuzzy
 msgid "Remmina Kiosk"
 msgstr "रेम्मीना कियोस्क"
 
 #. TRANSLATORS: The placeholder %s is a directory path
-#: src/remmina_sftp_client.c:173
+#: src/remmina_sftp_client.cpp:173
 #, fuzzy, c-format
 msgid "Could not create the folder “%s”."
 msgstr "फ़ोल्डर \"%s\" नहीं बना सका।"
 
 #. TRANSLATORS: The placeholder %s is a file path
-#: src/remmina_sftp_client.c:181 src/remmina_sftp_client.c:202
+#: src/remmina_sftp_client.cpp:181 src/remmina_sftp_client.cpp:202
 #, fuzzy, c-format
 msgid "Could not create the file “%s”."
 msgstr "फ़ाइल \"%s\" नहीं बना सका।"
 
 #. TRANSLATORS: The placeholders %s are a file path, and an error message.
-#: src/remmina_sftp_client.c:220
+#: src/remmina_sftp_client.cpp:220
 #, fuzzy, c-format
 msgid "Could not open the file “%s” on the server. %s"
 msgstr "सर्वर पर फ़ाइल \"%s\" नहीं खोल सका। %s"
 
-#: src/remmina_sftp_client.c:242
+#: src/remmina_sftp_client.cpp:242
 #, fuzzy, c-format
 msgid "Could not save the file “%s”."
 msgstr "फ़ाइल को \"%s\" नहीं बचा सका।"
 
-#: src/remmina_sftp_client.c:281 src/remmina_sftp_client.c:698
-#: src/remmina_sftp_client.c:761
+#: src/remmina_sftp_client.cpp:281 src/remmina_sftp_client.cpp:698
+#: src/remmina_sftp_client.cpp:761
 #, fuzzy, c-format
 msgid "Could not open the folder “%s”. %s"
 msgstr "फ़ोल्डर \"%s\" नहीं खोल सका। %s"
 
-#: src/remmina_sftp_client.c:385
+#: src/remmina_sftp_client.cpp:385
 #, fuzzy, c-format
 msgid "Could not create the folder “%s” on the server. %s"
 msgstr "सर्वर पर फ़ोल्डर \"%s\" नहीं बना सका। %s"
 
-#: src/remmina_sftp_client.c:413 src/remmina_sftp_client.c:435
+#: src/remmina_sftp_client.cpp:413 src/remmina_sftp_client.cpp:435
 #, fuzzy, c-format
 msgid "Could not create the file “%s” on the server. %s"
 msgstr "सर्वर पर फ़ाइल \"%s\" नहीं बना सका। %s"
 
-#: src/remmina_sftp_client.c:456
+#: src/remmina_sftp_client.cpp:456
 #, fuzzy, c-format
 msgid "Could not open the file “%s”."
 msgstr "फ़ाइल \"%s\" नहीं खोल सका।"
 
-#: src/remmina_sftp_client.c:476
+#: src/remmina_sftp_client.cpp:476
 #, fuzzy, c-format
 msgid "Could not write to the file “%s” on the server. %s"
 msgstr "सर्वर पर फ़ाइल \"%s\" को नहीं लिख सका। %s"
 
-#: src/remmina_sftp_client.c:716
+#: src/remmina_sftp_client.cpp:716
 #, fuzzy, c-format
 msgid "Could not read from the folder. %s"
 msgstr "फोल्डर से पढ़ नहीं पाए। %s"
 
-#: src/remmina_sftp_client.c:823
+#: src/remmina_sftp_client.cpp:823
 #, fuzzy
 msgid "Are you sure you want to cancel the file transfer in progress?"
 msgstr "क्या आप सुनिश्चित हैं कि आप प्रगति में फ़ाइल हस्तांतरण को रद्द करना चाहते हैं?"
 
-#: src/remmina_sftp_client.c:857
+#: src/remmina_sftp_client.cpp:857
 #, fuzzy, c-format
 msgid "Could not delete “%s”. %s"
 msgstr "\"%s\" को हटा नहीं सका। %s"
 
-#: src/remmina_sftp_client.c:942
+#: src/remmina_sftp_client.cpp:942
 #, fuzzy
 msgid "The file exists already"
 msgstr "फाइल पहले से मौजूद है"
 
-#: src/remmina_sftp_client.c:945
+#: src/remmina_sftp_client.cpp:945
 #, fuzzy
 msgid "Resume"
 msgstr "दुबारा आरम्भ करना"
 
-#: src/remmina_sftp_client.c:946
+#: src/remmina_sftp_client.cpp:946
 #, fuzzy
 msgid "Overwrite"
 msgstr "ऊपर लिखना"
 
-#: src/remmina_sftp_client.c:964
+#: src/remmina_sftp_client.cpp:964
 #, fuzzy
 msgid "The following file already exists in the target folder:"
 msgstr "निम्नलिखित फ़ाइल पहले से ही लक्ष्य फ़ोल्डर में मौजूद है:"
 
-#: src/remmina_file_editor.c:61
+#: src/remmina_file_editor.cpp:61
 #, fuzzy
 msgid ""
 "<big>Supported formats\n"
@@ -1504,7 +1504,7 @@ msgstr ""
 "• आईडी: रिपीटर आईडी नंबर\n"
 "• unix:///path/socket.sock </big>"
 
-#: src/remmina_file_editor.c:70
+#: src/remmina_file_editor.cpp:70
 #, fuzzy
 msgid ""
 "<big>• command in PATH args %h\n"
@@ -1532,7 +1532,7 @@ msgstr ""
 "यदि आप चाहते हैं कि कनेक्ट करने से पहले कमांड निष्पादित किया जाए तो पृष्ठभूमि में न चलें।\n"
 "</big>"
 
-#: src/remmina_file_editor.c:84
+#: src/remmina_file_editor.cpp:84
 #, fuzzy
 msgid ""
 "<big>Supported formats\n"
@@ -1545,147 +1545,147 @@ msgstr ""
 "• सर्वर [:p ओर्ट]\n"
 "• username@server [:p ort] (केवल एसएसएच प्रोटोकॉल) </big>"
 
-#: src/remmina_file_editor.c:162
+#: src/remmina_file_editor.cpp:162
 #, fuzzy
 msgid "Input is invalid."
 msgstr "इनपुट अमान्य है।"
 
-#: src/remmina_file_editor.c:239
+#: src/remmina_file_editor.cpp:239
 #, fuzzy
 msgid "Choose a Remote Desktop Server"
 msgstr "एक रिमोट डेस्कटॉप सर्वर चुनें"
 
-#: src/remmina_file_editor.c:460
+#: src/remmina_file_editor.cpp:460
 #, fuzzy, c-format
 msgid "Browse the network to find a %s server"
 msgstr "एक %s सर्वर खोजने के लिए नेटवर्क ब्राउज़ करें"
 
-#: src/remmina_file_editor.c:564
+#: src/remmina_file_editor.cpp:564
 #, fuzzy
 msgid "Resolution"
 msgstr "Resolution"
 
-#: src/remmina_file_editor.c:571
+#: src/remmina_file_editor.cpp:571
 #, fuzzy
 msgid "Use initial window size"
 msgstr "प्रारंभिक विंडो आकार का उपयोग करें"
 
-#: src/remmina_file_editor.c:575
+#: src/remmina_file_editor.cpp:575
 #, fuzzy
 msgid "Use client resolution"
 msgstr "क्लाइंट रिज़ॉल्यूशन का उपयोग करें"
 
-#: src/remmina_file_editor.c:586 src/remmina_file_editor.c:1152
+#: src/remmina_file_editor.cpp:586 src/remmina_file_editor.cpp:1152
 #, fuzzy
 msgid "Custom"
 msgstr "कस्टम"
 
-#: src/remmina_file_editor.c:945
+#: src/remmina_file_editor.cpp:945
 #, fuzzy
 msgid "Keyboard mapping"
 msgstr "कीबोर्ड मैपिंग"
 
-#: src/remmina_file_editor.c:1072
+#: src/remmina_file_editor.cpp:1072
 #, fuzzy
 msgid "Behavior"
 msgstr "व्यवहार"
 
-#: src/remmina_file_editor.c:1075
+#: src/remmina_file_editor.cpp:1075
 #, fuzzy
 msgid "Execute a Command"
 msgstr "एक कमांड निष्पादित करें"
 
-#: src/remmina_file_editor.c:1079
+#: src/remmina_file_editor.cpp:1079
 #, fuzzy
 msgid "Before connecting"
 msgstr "कनेक्ट करने से पहले"
 
-#: src/remmina_file_editor.c:1081
+#: src/remmina_file_editor.cpp:1081
 #, fuzzy
 msgid "command %h %u %t %U %p %g --option"
 msgstr "कमांड %h%u%t%U%p%g-option"
 
-#: src/remmina_file_editor.c:1086
+#: src/remmina_file_editor.cpp:1086
 #, fuzzy
 msgid "After connecting"
 msgstr "कनेक्ट करने के बाद"
 
-#: src/remmina_file_editor.c:1088
+#: src/remmina_file_editor.cpp:1088
 #, fuzzy
 msgid "/path/to/command -opt1 arg %h %u %t -opt2 %U %p %g"
 msgstr "/पाथ/टू/कमांड-ऑप्ट1 एआरजी %h%u%t-opt2%U%p%g"
 
-#: src/remmina_file_editor.c:1092
+#: src/remmina_file_editor.cpp:1092
 #, fuzzy
 msgid "Start-up"
 msgstr "शुरू"
 
-#: src/remmina_file_editor.c:1095
+#: src/remmina_file_editor.cpp:1095
 #, fuzzy
 msgid "Auto-start this profile"
 msgstr "ऑटो-इस प्रोफ़ाइल शुरू"
 
-#: src/remmina_file_editor.c:1125
+#: src/remmina_file_editor.cpp:1125
 #, fuzzy
 msgid "SSH Tunnel"
 msgstr "SSH टनल"
 
-#: src/remmina_file_editor.c:1126
+#: src/remmina_file_editor.cpp:1126
 #, fuzzy
 msgid "Enable SSH tunnel"
 msgstr "एसएसएच सुरंग को सक्षम"
 
-#: src/remmina_file_editor.c:1133
+#: src/remmina_file_editor.cpp:1133
 #, fuzzy
 msgid "Tunnel via loopback address"
 msgstr "लूपबैक पते के माध्यम से सुरंग"
 
-#: src/remmina_file_editor.c:1143
+#: src/remmina_file_editor.cpp:1143
 #, fuzzy, c-format
 msgid "Same server at port %i"
 msgstr "बंदरगाह पर एक ही सर्वर %i"
 
-#: src/remmina_file_editor.c:1193 plugins/rdp/rdp_plugin.c:2805
+#: src/remmina_file_editor.cpp:1193 plugins/rdp/rdp_plugin.cpp:2805
 #, fuzzy
 msgid "Start-up path"
 msgstr "स्टार्ट-अप पथ"
 
-#: src/remmina_file_editor.c:1202
+#: src/remmina_file_editor.cpp:1202
 #, fuzzy
 msgid "SSH Authentication"
 msgstr "एसएसएच प्रमाणीकरण"
 
-#: src/remmina_file_editor.c:1229
+#: src/remmina_file_editor.cpp:1229
 #, fuzzy
 msgid "SSH private key file"
 msgstr "एसएसएच प्राइवेट कुंजी फाइल"
 
-#: src/remmina_file_editor.c:1235 src/remmina_ssh_plugin.c:1475
+#: src/remmina_file_editor.cpp:1235 src/remmina_ssh_plugin.cpp:1475
 #, fuzzy
 msgid "SSH certificate file"
 msgstr "एसएसएच प्रमाण पत्र फाइल"
 
-#: src/remmina_file_editor.c:1293
+#: src/remmina_file_editor.cpp:1293
 #, fuzzy
 msgid "Basic"
 msgstr "मूल"
 
-#: src/remmina_file_editor.c:1299
+#: src/remmina_file_editor.cpp:1299
 #, fuzzy
 msgid "Advanced"
 msgstr "उन्नत"
 
-#: src/remmina_file_editor.c:1310
+#: src/remmina_file_editor.cpp:1310
 #, fuzzy
 msgid "Notes"
 msgstr "टिप्पणियाँ"
 
-#: src/remmina_file_editor.c:1438
+#: src/remmina_file_editor.cpp:1438
 #, fuzzy, c-format
 msgid "(%s: %i): Can't validate setting '%s' since 'value' or 'gfe' are NULL!"
 msgstr "(%s: %i): 'मूल्य' या 'जीएफई' के बाद से सेटिंग को मान्य नहीं कर सकते हैं!"
 
-#: src/remmina_file_editor.c:1441
+#: src/remmina_file_editor.cpp:1441
 #, fuzzy, c-format
 msgid ""
 "(%s: %i): Can't validate user input since 'setting_name_to_validate', "
@@ -1695,127 +1695,127 @@ msgstr ""
 "इनपुट को मान्य नहीं कर सकते हैं शून्य हैं!"
 
 #. TRANSLATORS: Meta-error. Shouldn't be visible.
-#: src/remmina_file_editor.c:1445 plugins/x2go/x2go_plugin.c:2394
-#: plugins/x2go/x2go_plugin.c:3023
+#: src/remmina_file_editor.cpp:1445 plugins/x2go/x2go_plugin.cpp:2394
+#: plugins/x2go/x2go_plugin.cpp:3023
 #, fuzzy
 msgid "Internal error."
 msgstr "आंतरिक त्रुटि।"
 
-#: src/remmina_file_editor.c:1667 src/remmina_file_editor.c:1703
-#: src/remmina_file_editor.c:1724 src/remmina_file_editor.c:1747
+#: src/remmina_file_editor.cpp:1667 src/remmina_file_editor.cpp:1703
+#: src/remmina_file_editor.cpp:1724 src/remmina_file_editor.cpp:1747
 #, fuzzy, c-format
 msgid "Couldn't validate user input. %s"
 msgstr "उपयोगकर्ता इनपुट को मान्य नहीं कर सका। %s"
 
-#: src/remmina_file_editor.c:1691
+#: src/remmina_file_editor.cpp:1691
 #, fuzzy
 msgid "Default settings saved."
 msgstr "डिफ़ॉल्ट सेटिंग्स सेव किया गया।"
 
-#: src/remmina_file_editor.c:1781
+#: src/remmina_file_editor.cpp:1781
 #, fuzzy
 msgid "Remote Connection Profile"
 msgstr "रिमोट कनेक्शन प्रोफाइल"
 
-#: src/remmina_file_editor.c:1787
+#: src/remmina_file_editor.cpp:1787
 #, fuzzy
 msgid "Save as Default"
 msgstr "डिफ़ॉल्ट के रूप में सहेजें"
 
-#: src/remmina_file_editor.c:1788
+#: src/remmina_file_editor.cpp:1788
 #, fuzzy
 msgid "Use the current settings as the default for all new connection profiles"
 msgstr "सभी नए कनेक्शन प्रोफाइल के लिए डिफ़ॉल्ट के रूप में वर्तमान सेटिंग्स का उपयोग करें"
 
-#: src/remmina_file_editor.c:1796 data/ui/remmina_main.glade:160
+#: src/remmina_file_editor.cpp:1796 data/ui/remmina_main.glade:160
 #, fuzzy
 msgid "Connect"
 msgstr "कनेक्ट"
 
-#: src/remmina_file_editor.c:1799
+#: src/remmina_file_editor.cpp:1799
 #, fuzzy
 msgid "_Save and Connect"
 msgstr "_Save और कनेक्ट"
 
-#: src/remmina_file_editor.c:1922
+#: src/remmina_file_editor.cpp:1922
 #, fuzzy
 msgid "Quick Connect"
 msgstr "क्विक कनेक्ट"
 
-#: src/remmina_file_editor.c:1946
+#: src/remmina_file_editor.cpp:1946
 #, fuzzy, c-format
 msgid "Use '%s' as subgroup delimiter"
 msgstr "उपसमूह परिसीमन के रूप में '%s' का उपयोग करें"
 
-#: src/remmina_file_editor.c:2012 src/remmina_file_editor.c:2030
+#: src/remmina_file_editor.cpp:2012 src/remmina_file_editor.cpp:2030
 #, fuzzy, c-format
 msgid "Could not find the file “%s”."
 msgstr "फ़ाइल \"%s\" नहीं मिल सका।"
 
 #. TRANSLATORS: This is a message that pops up when an external Remmina plugin tries to set the window resolution using a legacy parameter.
 #. TRANSLATORS: This is a message that pop-up when an external Remmina plugin tries to set the windows resolution using a legacy parameter.
-#: src/remmina_file.c:451 src/remmina_file.c:497
+#: src/remmina_file.cpp:451 src/remmina_file.cpp:497
 msgid ""
 "Using the «resolution» parameter in the Remmina preferences file is "
 "deprecated.\n"
 msgstr ""
 
-#: src/remmina_icon.c:137
+#: src/remmina_icon.cpp:137
 #, fuzzy
 msgid "Open Main Window"
 msgstr "मुख्य खिड़की खोलें"
 
-#: src/remmina_icon.c:142 data/ui/remmina_main.glade:254
+#: src/remmina_icon.cpp:142 data/ui/remmina_main.glade:254
 #, fuzzy
 msgid "_Preferences"
 msgstr "वरीयतायें"
 
-#: src/remmina_icon.c:147
+#: src/remmina_icon.cpp:147
 #, fuzzy
 msgid "_About"
 msgstr "_के बारे में"
 
-#: src/remmina_icon.c:157
+#: src/remmina_icon.cpp:157
 #, fuzzy
 msgid "Enable Service Discovery"
 msgstr "सेवा खोज को सक्षम"
 
-#: src/remmina_icon.c:169 data/ui/remmina_main.glade:404
+#: src/remmina_icon.cpp:169 data/ui/remmina_main.glade:404
 #, fuzzy
 msgid "_Quit"
 msgstr "_छोड़ दें"
 
 #. TRANSLATORS: Applet name as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
 #. TRANSLATORS: Applet Name as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
-#: src/remmina_icon.c:295 src/remmina_icon.c:447
+#: src/remmina_icon.cpp:295 src/remmina_icon.cpp:447
 #, fuzzy
 msgid "Remmina Applet"
 msgstr "रेम्मीना एपेट"
 
 #. TRANSLATORS: Applet comment/description as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
-#: src/remmina_icon.c:297 src/remmina_icon.c:449
+#: src/remmina_icon.cpp:297 src/remmina_icon.cpp:449
 #, fuzzy
 msgid "Connect to remote desktops through the applet menu"
 msgstr "ऐप्ट मेनू के माध्यम से रिमोट डेस्कटॉप से कनेक्ट करें"
 
-#: src/remmina_icon.c:361
+#: src/remmina_icon.cpp:361
 msgid "StatusNotifier/Appindicator support in “"
 msgstr ""
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:368
+#: src/remmina_icon.cpp:368
 #, c-format
 msgid "%s your desktop does support it"
 msgstr ""
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:370
+#: src/remmina_icon.cpp:370
 #, c-format
 msgid "%s and Remmina has built-in (compiled) support for libappindicator."
 msgstr ""
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:373
+#: src/remmina_icon.cpp:373
 #, c-format
 msgid ""
 "%s not supported natively by your Desktop Environment. libappindicator will "
@@ -1823,151 +1823,151 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:377
+#: src/remmina_icon.cpp:377
 #, c-format
 msgid "%s You may need to install, and use XApp Status Applet"
 msgstr ""
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:380
+#: src/remmina_icon.cpp:380
 #, c-format
 msgid "%s You may need to install, and use KStatusNotifierItem"
 msgstr ""
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:383
+#: src/remmina_icon.cpp:383
 #, c-format
 msgid "%s You may need to install, and use XEmbed SNI Proxy"
 msgstr ""
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:386
+#: src/remmina_icon.cpp:386
 #, c-format
 msgid "%s You may need to install, and use Gnome Shell Extension Appindicator"
 msgstr ""
 
 #. TRANSLATORS: %s is a placeholder for an error message
-#: src/remmina_ssh_plugin.c:539
+#: src/remmina_ssh_plugin.cpp:539
 #, fuzzy, c-format
 msgid "Error: %s"
 msgstr "त्रुटि : %s"
 
-#: src/remmina_ssh_plugin.c:556
+#: src/remmina_ssh_plugin.cpp:556
 #, fuzzy
 msgid "Terminal content saved in"
 msgstr "टर्मिनल सामग्री में सहेजा गया"
 
-#: src/remmina_ssh_plugin.c:822
+#: src/remmina_ssh_plugin.cpp:822
 #, fuzzy
 msgid "Select All (host+A)"
 msgstr "सभी का चयन करें (मेजबान +ए)"
 
-#: src/remmina_ssh_plugin.c:823
+#: src/remmina_ssh_plugin.cpp:823
 #, fuzzy
 msgid "Copy (host+C)"
 msgstr "कॉपी (मेजबान+C)"
 
-#: src/remmina_ssh_plugin.c:824
+#: src/remmina_ssh_plugin.cpp:824
 #, fuzzy
 msgid "Paste (host+V)"
 msgstr "पेस्ट (मेजबान +V)"
 
-#: src/remmina_ssh_plugin.c:825
+#: src/remmina_ssh_plugin.cpp:825
 #, fuzzy
 msgid "Save session to file"
 msgstr "फाइल करने के लिए सत्र सहेजें"
 
-#: src/remmina_ssh_plugin.c:826
+#: src/remmina_ssh_plugin.cpp:826
 #, fuzzy
 msgid "Increase font size (host+Page Up)"
 msgstr "फ़ॉन्ट आकार बढ़ाएं (होस्ट + पेज अप)"
 
-#: src/remmina_ssh_plugin.c:827
+#: src/remmina_ssh_plugin.cpp:827
 #, fuzzy
 msgid "Decrease font size (host+Page Down)"
 msgstr "फ़ॉन्ट आकार में कमी (होस्ट + पेज डाउन)"
 
-#: src/remmina_ssh_plugin.c:828
+#: src/remmina_ssh_plugin.cpp:828
 #, fuzzy
 msgid "Find text (host+G)"
 msgstr "पाठ खोजें (मेजबान +जी)"
 
-#: src/remmina_ssh_plugin.c:1440 data/ui/remmina_main.glade:177
+#: src/remmina_ssh_plugin.cpp:1440 data/ui/remmina_main.glade:177
 #, fuzzy
 msgid "Copy"
 msgstr "कॉपी"
 
-#: src/remmina_ssh_plugin.c:1440
+#: src/remmina_ssh_plugin.cpp:1440
 #, fuzzy
 msgid "_Copy"
 msgstr "_कॉपी करें"
 
-#: src/remmina_ssh_plugin.c:1441
+#: src/remmina_ssh_plugin.cpp:1441
 #, fuzzy
 msgid "Paste"
 msgstr "पेस्ट"
 
-#: src/remmina_ssh_plugin.c:1441
+#: src/remmina_ssh_plugin.cpp:1441
 #, fuzzy
 msgid "_Paste"
 msgstr "_पेस्ट"
 
-#: src/remmina_ssh_plugin.c:1442
+#: src/remmina_ssh_plugin.cpp:1442
 #, fuzzy
 msgid "Select all"
 msgstr "सभी का चयन करे"
 
-#: src/remmina_ssh_plugin.c:1442
+#: src/remmina_ssh_plugin.cpp:1442
 #, fuzzy
 msgid "_Select all"
 msgstr "सभी का चयन करें"
 
-#: src/remmina_ssh_plugin.c:1443
+#: src/remmina_ssh_plugin.cpp:1443
 #, fuzzy
 msgid "Increase font size"
 msgstr "फ़ॉन्ट का आकार बढ़ाएं"
 
-#: src/remmina_ssh_plugin.c:1443
+#: src/remmina_ssh_plugin.cpp:1443
 #, fuzzy
 msgid "_Increase font size"
 msgstr "_Increase फ़ॉन्ट आकार"
 
-#: src/remmina_ssh_plugin.c:1444
+#: src/remmina_ssh_plugin.cpp:1444
 #, fuzzy
 msgid "Decrease font size"
 msgstr "फ़ॉन्ट आकार में कमी"
 
-#: src/remmina_ssh_plugin.c:1444
+#: src/remmina_ssh_plugin.cpp:1444
 #, fuzzy
 msgid "_Decrease font size"
 msgstr "_Decrease फ़ॉन्ट आकार"
 
-#: src/remmina_ssh_plugin.c:1445
+#: src/remmina_ssh_plugin.cpp:1445
 #, fuzzy
 msgid "Find text"
 msgstr "शब्द ढूंढें"
 
-#: src/remmina_ssh_plugin.c:1445
+#: src/remmina_ssh_plugin.cpp:1445
 #, fuzzy
 msgid "_Find text"
 msgstr "शब्द ढूंढें"
 
-#: src/remmina_ssh_plugin.c:1472 plugins/spice/spice_plugin.c:674
-#: plugins/vnc/vnc_plugin.c:1998 plugins/vnc/vnc_plugin.c:2010
+#: src/remmina_ssh_plugin.cpp:1472 plugins/spice/spice_plugin.cpp:674
+#: plugins/vnc/vnc_plugin.cpp:1998 plugins/vnc/vnc_plugin.cpp:2010
 #, fuzzy
 msgid "User password"
 msgstr "यूजर पासवर्ड"
 
-#: src/remmina_ssh_plugin.c:1478
+#: src/remmina_ssh_plugin.cpp:1478
 msgid "Opening command"
 msgstr ""
 
-#: src/remmina_ssh_plugin.c:1479
+#: src/remmina_ssh_plugin.cpp:1479
 #, fuzzy
 msgid "Start-up background program"
 msgstr "स्टार्ट-अप कार्यक्रम"
 
-#: src/remmina_ssh_plugin.c:1484
+#: src/remmina_ssh_plugin.cpp:1484
 #, fuzzy
 msgid ""
 "The filename can use the following placeholders:\n"
@@ -1990,255 +1990,255 @@ msgstr ""
 "  • % जी को रेममिना प्रोफाइल ग्रुप नाम के साथ प्रतिस्थापित किया गया है\n"
 "  आईएसओ 8601 प्रारूप में स्थानीय तिथि और समय के साथ प्रतिस्थापित किया गया है\n"
 
-#: src/remmina_ssh_plugin.c:1506
+#: src/remmina_ssh_plugin.cpp:1506
 #, fuzzy
 msgid "Terminal colour scheme"
 msgstr "टर्मिनल कलर स्कीम"
 
-#: src/remmina_ssh_plugin.c:1507
+#: src/remmina_ssh_plugin.cpp:1507
 #, fuzzy
 msgid "Character set"
 msgstr "चरित्र सेट"
 
-#: src/remmina_ssh_plugin.c:1509
+#: src/remmina_ssh_plugin.cpp:1509
 #, fuzzy
 msgid "KEX (Key Exchange) algorithms"
 msgstr "केईएक्स (कुंजी एक्सचेंज) एल्गोरिदम"
 
-#: src/remmina_ssh_plugin.c:1510
+#: src/remmina_ssh_plugin.cpp:1510
 #, fuzzy
 msgid "Symmetric cipher client to server"
 msgstr "सर्वर के लिए सममित सिफर क्लाइंट"
 
-#: src/remmina_ssh_plugin.c:1511
+#: src/remmina_ssh_plugin.cpp:1511
 #, fuzzy
 msgid "Preferred server host key types"
 msgstr "पसंदीदा सर्वर होस्ट कुंजी प्रकार"
 
-#: src/remmina_ssh_plugin.c:1512
+#: src/remmina_ssh_plugin.cpp:1512
 #, fuzzy
 msgid "Folder for SSH session log"
 msgstr "एसएसएच सत्र लॉग के लिए फ़ोल्डर"
 
-#: src/remmina_ssh_plugin.c:1513
+#: src/remmina_ssh_plugin.cpp:1513
 #, fuzzy
 msgid "Filename for SSH session log"
 msgstr "एसएसएच सत्र लॉग के लिए फाइलनेम"
 
-#: src/remmina_ssh_plugin.c:1514
+#: src/remmina_ssh_plugin.cpp:1514
 #, fuzzy
 msgid "Log SSH session when exiting Remmina"
 msgstr "रेम्मीना से बाहर निकलते समय एसएसएच सत्र लॉग करें"
 
-#: src/remmina_ssh_plugin.c:1515
+#: src/remmina_ssh_plugin.cpp:1515
 #, fuzzy
 msgid "Log SSH session asynchronously"
 msgstr "एसएसएच सत्र को अतुलित रूप से लॉग इन करें"
 
-#: src/remmina_ssh_plugin.c:1515
+#: src/remmina_ssh_plugin.cpp:1515
 #, fuzzy
 msgid "Saving the session asynchronously may have a notable performance impact"
 msgstr "सत्र को बचाने के लिए एक उल्लेखनीय प्रदर्शन प्रभाव हो सकता है"
 
-#: src/remmina_ssh_plugin.c:1516
+#: src/remmina_ssh_plugin.cpp:1516
 #, fuzzy
 msgid "Audible terminal bell"
 msgstr "श्रव्य टर्मिनल बेल"
 
-#: src/remmina_ssh_plugin.c:1517
+#: src/remmina_ssh_plugin.cpp:1517
 #, fuzzy
 msgid "SSH compression"
 msgstr "एसएसएच संपीड़न"
 
-#: src/remmina_ssh_plugin.c:1518
+#: src/remmina_ssh_plugin.cpp:1518
 #, fuzzy
 msgid "Don't remember passwords"
 msgstr "पासवर्ड याद नहीं है"
 
-#: src/remmina_ssh_plugin.c:1519
+#: src/remmina_ssh_plugin.cpp:1519
 #, fuzzy
 msgid "Strict host key checking"
 msgstr "सख्त मेजबान कुंजी जांच"
 
-#: src/remmina_ssh_plugin.c:1533
+#: src/remmina_ssh_plugin.cpp:1533
 #, fuzzy
 msgid "SSH - Secure Shell"
 msgstr "एसएसएच - सुरक्षित खोल"
 
-#: plugins/kwallet/src/kwallet_plugin_main.c:118
+#: plugins/kwallet/src/kwallet_plugin_main.cpp:118
 #, fuzzy
 msgid "Secured password storage in KWallet"
 msgstr "KWallet में सुरक्षित पासवर्ड भंडारण"
 
-#: plugins/rdp/rdp_settings.c:217
+#: plugins/rdp/rdp_settings.cpp:217
 #, fuzzy
 msgid "<Auto-detect>"
 msgstr "<Auto-detect>"
 
-#: plugins/rdp/rdp_settings.c:249
+#: plugins/rdp/rdp_settings.cpp:249
 #, fuzzy
 msgid "<Not set>"
 msgstr "< सेट नहीं>"
 
-#: plugins/rdp/rdp_settings.c:280
+#: plugins/rdp/rdp_settings.cpp:280
 #, fuzzy
 msgid "<Choose a quality level to edit…>"
 msgstr "< संपादित करने के लिए एक गुणवत्ता स्तर को कूस... >"
 
-#: plugins/rdp/rdp_settings.c:282 plugins/rdp/rdp_plugin.c:2622
-#: plugins/vnc/vnc_plugin.c:1947
+#: plugins/rdp/rdp_settings.cpp:282 plugins/rdp/rdp_plugin.cpp:2622
+#: plugins/vnc/vnc_plugin.cpp:1947
 #, fuzzy
 msgid "Poor (fastest)"
 msgstr "गरीब (सबसे तेज)"
 
-#: plugins/rdp/rdp_settings.c:284 plugins/rdp/rdp_plugin.c:2623
-#: plugins/vnc/vnc_plugin.c:1946
+#: plugins/rdp/rdp_settings.cpp:284 plugins/rdp/rdp_plugin.cpp:2623
+#: plugins/vnc/vnc_plugin.cpp:1946
 #, fuzzy
 msgid "Medium"
 msgstr "मध्य"
 
-#: plugins/rdp/rdp_settings.c:286 plugins/rdp/rdp_plugin.c:2624
-#: plugins/vnc/vnc_plugin.c:1944
+#: plugins/rdp/rdp_settings.cpp:286 plugins/rdp/rdp_plugin.cpp:2624
+#: plugins/vnc/vnc_plugin.cpp:1944
 #, fuzzy
 msgid "Good"
 msgstr "अच्छा"
 
-#: plugins/rdp/rdp_settings.c:288 plugins/rdp/rdp_plugin.c:2625
-#: plugins/vnc/vnc_plugin.c:1945
+#: plugins/rdp/rdp_settings.cpp:288 plugins/rdp/rdp_plugin.cpp:2625
+#: plugins/vnc/vnc_plugin.cpp:1945
 #, fuzzy
 msgid "Best (slowest)"
 msgstr "सबसे अच्छा (सबसे धीमा)"
 
-#: plugins/rdp/rdp_settings.c:427
+#: plugins/rdp/rdp_settings.cpp:427
 #, fuzzy
 msgid "Keyboard layout"
 msgstr "कुंजीपट का अभिन्यास:"
 
-#: plugins/rdp/rdp_settings.c:457
+#: plugins/rdp/rdp_settings.cpp:457
 #, fuzzy
 msgid "Use client keyboard mapping"
 msgstr "क्लाइंट कीबोर्ड मैपिंग का उपयोग करें"
 
-#: plugins/rdp/rdp_settings.c:468
+#: plugins/rdp/rdp_settings.cpp:468
 #, fuzzy
 msgid "Keyboard scancode remapping"
 msgstr "कीबोर्ड स्कैनकोड रिमैपिंग"
 
-#: plugins/rdp/rdp_settings.c:483
+#: plugins/rdp/rdp_settings.cpp:483
 #, fuzzy
 msgid "List of key=value,… pairs to remap scancodes. E.g. 0x56=0x29,0x29=0x56"
 msgstr ""
 "कुंजी =मूल्य की सूची,... स्कैनकोड को फिर सेमैप करने के लिए जोड़े। उदाहरण के लिए 0x56 "
 "=0x29,0x29=0x56"
 
-#: plugins/rdp/rdp_settings.c:486
+#: plugins/rdp/rdp_settings.cpp:486
 #, fuzzy
 msgid "FreeRDP > 2.3.0 is required to map scancodes"
 msgstr "फ्रीआरपी > स्कैनकोड मैप करने के लिए 2.3.0 की आवश्यकता होती है"
 
-#: plugins/rdp/rdp_settings.c:494
+#: plugins/rdp/rdp_settings.cpp:494
 #, fuzzy
 msgid "Quality settings"
 msgstr "गुणवत्ता सेटिंग्स"
 
-#: plugins/rdp/rdp_settings.c:517
+#: plugins/rdp/rdp_settings.cpp:517
 #, fuzzy
 msgid "Wallpaper"
 msgstr "वॉलपेपर"
 
-#: plugins/rdp/rdp_settings.c:525
+#: plugins/rdp/rdp_settings.cpp:525
 #, fuzzy
 msgid "Window drag"
 msgstr "विंडो ड्रैग"
 
-#: plugins/rdp/rdp_settings.c:532
+#: plugins/rdp/rdp_settings.cpp:532
 #, fuzzy
 msgid "Menu animation"
 msgstr "मेनू एनीमेशन"
 
-#: plugins/rdp/rdp_settings.c:540
+#: plugins/rdp/rdp_settings.cpp:540
 #, fuzzy
 msgid "Theme"
 msgstr "थीम"
 
-#: plugins/rdp/rdp_settings.c:547
+#: plugins/rdp/rdp_settings.cpp:547
 #, fuzzy
 msgid "Cursor shadow"
 msgstr "कर्सर छाया"
 
-#: plugins/rdp/rdp_settings.c:555
+#: plugins/rdp/rdp_settings.cpp:555
 #, fuzzy
 msgid "Cursor blinking"
 msgstr "कर्सर निमिष"
 
-#: plugins/rdp/rdp_settings.c:562
+#: plugins/rdp/rdp_settings.cpp:562
 #, fuzzy
 msgid "Font smoothing"
 msgstr "फ़ॉन्ट चौरसाई"
 
-#: plugins/rdp/rdp_settings.c:570
+#: plugins/rdp/rdp_settings.cpp:570
 #, fuzzy
 msgid "Composition"
 msgstr "संयोजन"
 
-#: plugins/rdp/rdp_settings.c:580
+#: plugins/rdp/rdp_settings.cpp:580
 #, fuzzy
 msgid "Remote scale factor"
 msgstr "रिमोट स्केल फैक्टर"
 
-#: plugins/rdp/rdp_settings.c:595
+#: plugins/rdp/rdp_settings.cpp:595
 #, fuzzy
 msgid "Desktop scale factor %"
 msgstr "डेस्कटॉप स्केल फैक्टर %"
 
-#: plugins/rdp/rdp_settings.c:607
+#: plugins/rdp/rdp_settings.cpp:607
 #, fuzzy
 msgid "Device scale factor %"
 msgstr "डिवाइस स्केल फैक्टर %"
 
-#: plugins/rdp/rdp_settings.c:630
+#: plugins/rdp/rdp_settings.cpp:630
 #, fuzzy
 msgid "Desktop orientation"
 msgstr "डेस्कटॉप ओरिएंटेशन"
 
-#: plugins/rdp/rdp_settings.c:650
+#: plugins/rdp/rdp_settings.cpp:650
 #, fuzzy
 msgid "Input device settings"
 msgstr "इनपुट डिवाइस सेटिंग्स"
 
-#: plugins/rdp/rdp_settings.c:658 plugins/rdp/rdp_plugin.c:2766
-#: plugins/vnc/vnc_plugin.c:2030
+#: plugins/rdp/rdp_settings.cpp:658 plugins/rdp/rdp_plugin.cpp:2766
+#: plugins/vnc/vnc_plugin.cpp:2030
 #, fuzzy
 msgid "Disable smooth scrolling"
 msgstr "चिकनी स्क्रॉल को अक्षम करें"
 
-#: plugins/rdp/rdp_settings.c:669
+#: plugins/rdp/rdp_settings.cpp:669
 #, fuzzy
 msgid "General settings"
 msgstr "सामान्य सेटिंग्स"
 
-#: plugins/rdp/rdp_settings.c:676 plugins/rdp/rdp_plugin.c:2819
+#: plugins/rdp/rdp_settings.cpp:676 plugins/rdp/rdp_plugin.cpp:2819
 #, fuzzy
 msgid "Reconnect attempts number"
 msgstr "प्रयास संख्या को फिर से कनेक्ट करें"
 
-#: plugins/rdp/rdp_settings.c:689 plugins/rdp/rdp_plugin.c:2819
+#: plugins/rdp/rdp_settings.cpp:689 plugins/rdp/rdp_plugin.cpp:2819
 #, fuzzy
 msgid ""
 "The maximum number of reconnect attempts upon an RDP disconnect (default: 20)"
 msgstr "आरडीपी डिस्कनेक्ट पर पुनः कनेक्ट प्रयासों की अधिकतम संख्या (डिफ़ॉल्ट: 20)"
 
-#: plugins/rdp/rdp_plugin.c:771 plugins/rdp/rdp_plugin.c:836
+#: plugins/rdp/rdp_plugin.cpp:771 plugins/rdp/rdp_plugin.cpp:836
 #, fuzzy
 msgid "Enter RDP authentication credentials"
 msgstr "आरडीपी प्रमाणीकरण साख दर्ज करें"
 
-#: plugins/rdp/rdp_plugin.c:844
+#: plugins/rdp/rdp_plugin.cpp:844
 #, fuzzy
 msgid "Enter RDP gateway authentication credentials"
 msgstr "आरडीपी गेटवे प्रमाणीकरण साख दर्ज करें"
 
-#: plugins/rdp/rdp_plugin.c:2153
+#: plugins/rdp/rdp_plugin.cpp:2153
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2247,7 +2247,7 @@ msgstr ""
 "आरडीपी सर्वर \"%s\" का उपयोग नहीं कर सका।\n"
 "खाता बंद कर दिया गया है।"
 
-#: plugins/rdp/rdp_plugin.c:2160
+#: plugins/rdp/rdp_plugin.cpp:2160
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2256,7 +2256,7 @@ msgstr ""
 "आरडीपी सर्वर \"%s\" का उपयोग नहीं कर सका।\n"
 "खाता समाप्त हो गया।"
 
-#: plugins/rdp/rdp_plugin.c:2167
+#: plugins/rdp/rdp_plugin.cpp:2167
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2265,7 +2265,7 @@ msgstr ""
 "आरडीपी सर्वर \"%s\" का उपयोग नहीं कर सका।\n"
 "पासवर्ड की अवधि समाप्त हो गई।"
 
-#: plugins/rdp/rdp_plugin.c:2174
+#: plugins/rdp/rdp_plugin.cpp:2174
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2274,7 +2274,7 @@ msgstr ""
 "आरडीपी सर्वर \"%s\" का उपयोग नहीं कर सका।\n"
 "खाता अक्षम।"
 
-#: plugins/rdp/rdp_plugin.c:2180
+#: plugins/rdp/rdp_plugin.cpp:2180
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2283,7 +2283,7 @@ msgstr ""
 "आरडीपी सर्वर \"%s\" का उपयोग नहीं कर सका।\n"
 "अपर्याप्त उपयोगकर्ता विशेषाधिकार।"
 
-#: plugins/rdp/rdp_plugin.c:2188
+#: plugins/rdp/rdp_plugin.cpp:2188
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2292,7 +2292,7 @@ msgstr ""
 "आरडीपी सर्वर \"%s\" का उपयोग नहीं कर सका।\n"
 "खाता प्रतिबंधित।"
 
-#: plugins/rdp/rdp_plugin.c:2196
+#: plugins/rdp/rdp_plugin.cpp:2196
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2301,17 +2301,17 @@ msgstr ""
 "आरडीपी सर्वर \"%s\" का उपयोग नहीं कर सका।\n"
 "कनेक्ट करने से पहले यूजर पासवर्ड बदलें।"
 
-#: plugins/rdp/rdp_plugin.c:2201
+#: plugins/rdp/rdp_plugin.cpp:2201
 #, fuzzy, c-format
 msgid "Lost connection to the RDP server “%s”."
 msgstr "आरडीपी सर्वर से कनेक्शन खो दिया \"%s\" ।"
 
-#: plugins/rdp/rdp_plugin.c:2204
+#: plugins/rdp/rdp_plugin.cpp:2204
 #, fuzzy, c-format
 msgid "Could not find the address for the RDP server “%s”."
 msgstr "आरडीपी सर्वर \"%s\" के लिए पता नहीं मिल सका।"
 
-#: plugins/rdp/rdp_plugin.c:2208
+#: plugins/rdp/rdp_plugin.cpp:2208
 #, fuzzy, c-format
 msgid ""
 "Could not connect to the RDP server “%s” via TLS. See the DEBUG traces from "
@@ -2321,7 +2321,7 @@ msgstr ""
 "जांच करें जो एक सामान्य टीएलएस संस्करण का समर्थन करता है।"
 
 #. TRANSLATORS: the placeholder may be either an IP/FQDN or a server hostname
-#: plugins/rdp/rdp_plugin.c:2212
+#: plugins/rdp/rdp_plugin.cpp:2212
 #, fuzzy, c-format
 msgid ""
 "Unable to establish a connection to the RDP server “%s”. Check “Security "
@@ -2330,17 +2330,17 @@ msgstr ""
 "आरडीपी सर्वर \"%s के लिए एक कनेक्शन स्थापित करने में असमर्थ। \"सुरक्षा प्रोटोकॉल बातचीत"
 "\" की जांच करें।"
 
-#: plugins/rdp/rdp_plugin.c:2220
+#: plugins/rdp/rdp_plugin.cpp:2220
 #, fuzzy, c-format
 msgid "Cannot connect to the RDP server “%s”."
 msgstr "आरडीपी सर्वर \"%s से कनेक्ट नहीं कर सकते।"
 
-#: plugins/rdp/rdp_plugin.c:2223
+#: plugins/rdp/rdp_plugin.cpp:2223
 #, fuzzy
 msgid "Could not start libfreerdp-gdi."
 msgstr "लिब्बरहेड़ी-जीडीआई शुरू नहीं कर सके।"
 
-#: plugins/rdp/rdp_plugin.c:2226
+#: plugins/rdp/rdp_plugin.cpp:2226
 #, fuzzy, c-format
 msgid ""
 "You requested a H.264 GFX mode for the server “%s”, but your libfreerdp does "
@@ -2349,12 +2349,12 @@ msgstr ""
 "आपने सर्वर \"%s\" के लिए H.264 GFX मोड का अनुरोध किया, लेकिन आपका लिब्रीर्ड्प H.264 "
 "का समर्थन नहीं करता है। कृपया एक गैर-एवीसी रंग गहराई सेटिंग का उपयोग करें।"
 
-#: plugins/rdp/rdp_plugin.c:2233
+#: plugins/rdp/rdp_plugin.cpp:2233
 #, fuzzy, c-format
 msgid "The “%s” server refused the connection."
 msgstr "\"%s\" सर्वर ने कनेक्शन से इनकार कर दिया।"
 
-#: plugins/rdp/rdp_plugin.c:2238
+#: plugins/rdp/rdp_plugin.cpp:2238
 #, fuzzy, c-format
 msgid ""
 "The Remote Desktop Gateway “%s” denied the user “%s\\%s” access due to "
@@ -2363,143 +2363,143 @@ msgstr ""
 "रिमोट डेस्कटॉप गेटवे \"%s\" ने उपयोगकर्ता को नीति के कारण \"%s\\%s\" एक्सेस से वंचित कर "
 "दिया।"
 
-#: plugins/rdp/rdp_plugin.c:2248
+#: plugins/rdp/rdp_plugin.cpp:2248
 #, fuzzy, c-format
 msgid "Cannot connect to the “%s” RDP server."
 msgstr "\"%s\" आरडीपी सर्वर से कनेक्ट नहीं कर सकते।"
 
-#: plugins/rdp/rdp_plugin.c:2591
+#: plugins/rdp/rdp_plugin.cpp:2591
 #, fuzzy
 msgid "Automatic (32 bpp) (Server chooses its best format)"
 msgstr "स्वचालित (32 बीपीपी) (सर्वर इसका सबसे अच्छा प्रारूप चुनता है)"
 
-#: plugins/rdp/rdp_plugin.c:2592
+#: plugins/rdp/rdp_plugin.cpp:2592
 #, fuzzy
 msgid "GFX AVC444 (32 bpp)"
 msgstr "जीएफएक्स एवीसी 444 (32 बीपीपी)"
 
-#: plugins/rdp/rdp_plugin.c:2593
+#: plugins/rdp/rdp_plugin.cpp:2593
 #, fuzzy
 msgid "GFX AVC420 (32 bpp)"
 msgstr "जीएफएक्स एवीसी 420 (32 बीपीपी)"
 
-#: plugins/rdp/rdp_plugin.c:2594
+#: plugins/rdp/rdp_plugin.cpp:2594
 #, fuzzy
 msgid "GFX RFX (32 bpp)"
 msgstr "जीएफएक्स आरएफएक्स (32 बीपीपी)"
 
-#: plugins/rdp/rdp_plugin.c:2595
+#: plugins/rdp/rdp_plugin.cpp:2595
 #, fuzzy
 msgid "GFX RFX Progressive (32 bpp)"
 msgstr "जीएफएक्स आरएफएक्स प्रोग्रेसिव (32 बीपीपी)"
 
-#: plugins/rdp/rdp_plugin.c:2596
+#: plugins/rdp/rdp_plugin.cpp:2596
 #, fuzzy
 msgid "RemoteFX (32 bpp)"
 msgstr "रिमोटएफएक्स (32 बीपीपी)"
 
-#: plugins/rdp/rdp_plugin.c:2597 plugins/vnc/vnc_plugin.c:1935
+#: plugins/rdp/rdp_plugin.cpp:2597 plugins/vnc/vnc_plugin.cpp:1935
 #, fuzzy
 msgid "True colour (32 bpp)"
 msgstr "असली रंग (32 बीपीपी)"
 
-#: plugins/rdp/rdp_plugin.c:2598
+#: plugins/rdp/rdp_plugin.cpp:2598
 #, fuzzy
 msgid "True colour (24 bpp)"
 msgstr "असली रंग (24 बीपीपी)"
 
-#: plugins/rdp/rdp_plugin.c:2599 plugins/vnc/vnc_plugin.c:1936
+#: plugins/rdp/rdp_plugin.cpp:2599 plugins/vnc/vnc_plugin.cpp:1936
 #, fuzzy
 msgid "High colour (16 bpp)"
 msgstr "उच्च रंग (16 बीपीपी)"
 
-#: plugins/rdp/rdp_plugin.c:2600
+#: plugins/rdp/rdp_plugin.cpp:2600
 #, fuzzy
 msgid "High colour (15 bpp)"
 msgstr "उच्च रंग (15 बीपीपी)"
 
-#: plugins/rdp/rdp_plugin.c:2601 plugins/vnc/vnc_plugin.c:1937
+#: plugins/rdp/rdp_plugin.cpp:2601 plugins/vnc/vnc_plugin.cpp:1937
 #, fuzzy
 msgid "256 colours (8 bpp)"
 msgstr "256 रंग (8 बीपीपी)"
 
-#: plugins/rdp/rdp_plugin.c:2632 data/ui/remmina_preferences.glade:612
+#: plugins/rdp/rdp_plugin.cpp:2632 data/ui/remmina_preferences.glade:612
 #, fuzzy
 msgid "None"
 msgstr "कोई नहीं"
 
-#: plugins/rdp/rdp_plugin.c:2633
+#: plugins/rdp/rdp_plugin.cpp:2633
 #, fuzzy
 msgid "Auto-detect"
 msgstr "ऑटो का पता लगाने"
 
-#: plugins/rdp/rdp_plugin.c:2634
+#: plugins/rdp/rdp_plugin.cpp:2634
 #, fuzzy
 msgid "Modem"
 msgstr "मॉडेम"
 
-#: plugins/rdp/rdp_plugin.c:2635
+#: plugins/rdp/rdp_plugin.cpp:2635
 #, fuzzy
 msgid "Low performance broadband"
 msgstr "कम प्रदर्शन ब्रॉडबैंड"
 
-#: plugins/rdp/rdp_plugin.c:2636
+#: plugins/rdp/rdp_plugin.cpp:2636
 #, fuzzy
 msgid "Satellite"
 msgstr "उपग्रह"
 
-#: plugins/rdp/rdp_plugin.c:2637
+#: plugins/rdp/rdp_plugin.cpp:2637
 #, fuzzy
 msgid "High performance broadband"
 msgstr "उच्च प्रदर्शन ब्रॉडबैंड"
 
-#: plugins/rdp/rdp_plugin.c:2638
+#: plugins/rdp/rdp_plugin.cpp:2638
 #, fuzzy
 msgid "WAN"
 msgstr "वैन"
 
-#: plugins/rdp/rdp_plugin.c:2639
+#: plugins/rdp/rdp_plugin.cpp:2639
 #, fuzzy
 msgid "LAN"
 msgstr "लैन"
 
-#: plugins/rdp/rdp_plugin.c:2646 plugins/spice/spice_plugin.c:635
+#: plugins/rdp/rdp_plugin.cpp:2646 plugins/spice/spice_plugin.cpp:635
 #: data/ui/remmina_preferences.glade:648
 #, fuzzy
 msgid "Off"
 msgstr "बंद"
 
-#: plugins/rdp/rdp_plugin.c:2655
+#: plugins/rdp/rdp_plugin.cpp:2655
 #, fuzzy
 msgid "Automatic negotiation"
 msgstr "स्वचालित बातचीत"
 
-#: plugins/rdp/rdp_plugin.c:2656
+#: plugins/rdp/rdp_plugin.cpp:2656
 #, fuzzy
 msgid "NLA protocol security"
 msgstr "एनएलए प्रोटोकॉल सुरक्षा"
 
-#: plugins/rdp/rdp_plugin.c:2657
+#: plugins/rdp/rdp_plugin.cpp:2657
 #, fuzzy
 msgid "TLS protocol security"
 msgstr "टीएलएस प्रोटोकॉल सुरक्षा"
 
-#: plugins/rdp/rdp_plugin.c:2658
+#: plugins/rdp/rdp_plugin.cpp:2658
 #, fuzzy
 msgid "RDP protocol security"
 msgstr "आरडीपी प्रोटोकॉल सुरक्षा"
 
-#: plugins/rdp/rdp_plugin.c:2659
+#: plugins/rdp/rdp_plugin.cpp:2659
 #, fuzzy
 msgid "NLA extended protocol security"
 msgstr "NLA ने बढ़ाई प्रोटोकॉल सुरक्षा"
 
-#: plugins/rdp/rdp_plugin.c:2672
+#: plugins/rdp/rdp_plugin.cpp:2672
 #, fuzzy
 msgid "2600 (Windows XP), 7601 (Windows Vista/7), 9600 (Windows 8 and newer)"
 msgstr "2600 (विंडोज एक्सपी), 7601 (विंडोज विस्टा/7), 9600 (विंडोज 8 और नए)"
 
-#: plugins/rdp/rdp_plugin.c:2675
+#: plugins/rdp/rdp_plugin.cpp:2675
 #, fuzzy
 msgid ""
 "Used i.a. by terminal services in a smart card channel to distinguish client "
@@ -2517,7 +2517,7 @@ msgstr ""
 "= 7065: विंडोज 8 और नया: SCardGetGetReaderIcon (),\n"
 "    SCardGetDeviceTypeId ()"
 
-#: plugins/rdp/rdp_plugin.c:2683
+#: plugins/rdp/rdp_plugin.cpp:2683
 #, fuzzy
 msgid ""
 "Options for redirection of audio input:\n"
@@ -2536,7 +2536,7 @@ msgstr ""
 "  • sys:oss, देव:1, प्रारूप: 1\n"
 "  • sys: alsa"
 
-#: plugins/rdp/rdp_plugin.c:2692
+#: plugins/rdp/rdp_plugin.cpp:2692
 #, fuzzy
 msgid ""
 "Options for redirection of audio output:\n"
@@ -2555,7 +2555,7 @@ msgstr ""
 "  • sys:oss, देव:1, प्रारूप: 1\n"
 "  • sys: alsa"
 
-#: plugins/rdp/rdp_plugin.c:2702
+#: plugins/rdp/rdp_plugin.cpp:2702
 #, fuzzy
 msgid ""
 "Options for redirection of USB device:\n"
@@ -2568,7 +2568,7 @@ msgstr ""
 "  • ऑटो\n"
 "  • id:054c:0268#4669:6e6b, addr:04:0c"
 
-#: plugins/rdp/rdp_plugin.c:2708
+#: plugins/rdp/rdp_plugin.cpp:2708
 #, fuzzy
 msgid ""
 "Advanced setting for high latency links:\n"
@@ -2579,7 +2579,7 @@ msgstr ""
 "कनेक्शन मध्यांतर समायोजित करता है। यदि आपका कनेक्शन समय से बाहर है तो उपयोग करें।\n"
 "सबसे ज्यादा संभव वैल्यू 600000 एमएस (10 मिनट) है।\n"
 
-#: plugins/rdp/rdp_plugin.c:2713
+#: plugins/rdp/rdp_plugin.cpp:2713
 #, fuzzy
 msgid ""
 "Performance optimisations based on the network connection type:\n"
@@ -2590,7 +2590,7 @@ msgstr ""
 "ऑटो-डिटेक्शन का उपयोग करने की सलाह दी जाती है।\n"
 "यदि \"ऑटो-डिटेक्ट\" विफल रहता है, तो सूची में सबसे उपयुक्त विकल्प चुनें।\n"
 
-#: plugins/rdp/rdp_plugin.c:2718
+#: plugins/rdp/rdp_plugin.cpp:2718
 #, fuzzy
 msgid ""
 "Comma-separated list of monitor IDs and desktop orientations:\n"
@@ -2615,7 +2615,7 @@ msgstr ""
 "  • 270 (पोर्ट्रेट फ़्लिप)\n"
 "\n"
 
-#: plugins/rdp/rdp_plugin.c:2730
+#: plugins/rdp/rdp_plugin.cpp:2730
 #, fuzzy
 msgid ""
 "Redirect directory <path> as named share <name>.\n"
@@ -2636,170 +2636,170 @@ msgstr ""
 "  • हॉटप्लग,*\n"
 "\n"
 
-#: plugins/rdp/rdp_plugin.c:2762 plugins/spice/spice_plugin.c:677
+#: plugins/rdp/rdp_plugin.cpp:2762 plugins/spice/spice_plugin.cpp:677
 #, fuzzy
 msgid "Share folder"
 msgstr "शेयर फ़ोल्डर"
 
-#: plugins/rdp/rdp_plugin.c:2762
+#: plugins/rdp/rdp_plugin.cpp:2762
 #, fuzzy
 msgid "Use “Redirect directory” in the advanced tab for multiple directories"
 msgstr "कई निर्देशिकाओं के लिए उन्नत टैब में \"रीडायरेक्ट निर्देशिका\" का उपयोग करें"
 
-#: plugins/rdp/rdp_plugin.c:2763
+#: plugins/rdp/rdp_plugin.cpp:2763
 #, fuzzy
 msgid "Restricted admin mode"
 msgstr "प्रतिबंधित व्यवस्थापक मोड"
 
-#: plugins/rdp/rdp_plugin.c:2764
+#: plugins/rdp/rdp_plugin.cpp:2764
 #, fuzzy
 msgid "Password hash"
 msgstr "पासवर्ड हैश"
 
-#: plugins/rdp/rdp_plugin.c:2764
+#: plugins/rdp/rdp_plugin.cpp:2764
 #, fuzzy
 msgid "Restricted admin mode password hash"
 msgstr "प्रतिबंधित व्यवस्थापक मोड पासवर्ड हैश"
 
-#: plugins/rdp/rdp_plugin.c:2765
+#: plugins/rdp/rdp_plugin.cpp:2765
 #, fuzzy
 msgid "Left-handed mouse support"
 msgstr "बाएं हाथ माउस समर्थन"
 
-#: plugins/rdp/rdp_plugin.c:2765
+#: plugins/rdp/rdp_plugin.cpp:2765
 #, fuzzy
 msgid "Swap left and right mouse buttons for left-handed mouse support"
 msgstr "बाएं हाथ माउस समर्थन के लिए बाएं और दाएं माउस बटन स्वैप करें"
 
-#: plugins/rdp/rdp_plugin.c:2767
+#: plugins/rdp/rdp_plugin.cpp:2767
 #, fuzzy
 msgid "Enable multi monitor"
 msgstr "मल्टी मॉनिटर सक्षम"
 
-#: plugins/rdp/rdp_plugin.c:2768
+#: plugins/rdp/rdp_plugin.cpp:2768
 #, fuzzy
 msgid "Span screen over multiple monitors"
 msgstr "कई मॉनिटर पर स्पैन स्क्रीन"
 
-#: plugins/rdp/rdp_plugin.c:2769
+#: plugins/rdp/rdp_plugin.cpp:2769
 #, fuzzy
 msgid "List monitor IDs"
 msgstr "सूची मॉनिटर टीडीएस"
 
-#: plugins/rdp/rdp_plugin.c:2771 plugins/vnc/vnc_plugin.c:1999
-#: plugins/vnc/vnc_plugin.c:2011 plugins/gvnc/gvnc_plugin.c:849
+#: plugins/rdp/rdp_plugin.cpp:2771 plugins/vnc/vnc_plugin.cpp:1999
+#: plugins/vnc/vnc_plugin.cpp:2011 plugins/gvnc/gvnc_plugin.cpp:849
 #, fuzzy
 msgid "Colour depth"
 msgstr "रंग गहराई"
 
-#: plugins/rdp/rdp_plugin.c:2772
+#: plugins/rdp/rdp_plugin.cpp:2772
 #, fuzzy
 msgid "Network connection type"
 msgstr "नेटवर्क कनेक्शन प्रकार"
 
-#: plugins/rdp/rdp_plugin.c:2788 plugins/vnc/vnc_plugin.c:2000
-#: plugins/vnc/vnc_plugin.c:2012
+#: plugins/rdp/rdp_plugin.cpp:2788 plugins/vnc/vnc_plugin.cpp:2000
+#: plugins/vnc/vnc_plugin.cpp:2012
 #, fuzzy
 msgid "Quality"
 msgstr "गुणवत्ता"
 
-#: plugins/rdp/rdp_plugin.c:2789
+#: plugins/rdp/rdp_plugin.cpp:2789
 #, fuzzy
 msgid "Security protocol negotiation"
 msgstr "सुरक्षा प्रोटोकॉल बातचीत"
 
-#: plugins/rdp/rdp_plugin.c:2790
+#: plugins/rdp/rdp_plugin.cpp:2790
 #, fuzzy
 msgid "Gateway transport type"
 msgstr "गेटवे परिवहन प्रकार"
 
-#: plugins/rdp/rdp_plugin.c:2791
+#: plugins/rdp/rdp_plugin.cpp:2791
 #, fuzzy
 msgid "FreeRDP log level"
 msgstr "फ्रीआरपीपी लॉग लेवल"
 
-#: plugins/rdp/rdp_plugin.c:2792
+#: plugins/rdp/rdp_plugin.cpp:2792
 #, fuzzy
 msgid "FreeRDP log filters"
 msgstr "फ्रीआरपी लॉग फिल्टर"
 
-#: plugins/rdp/rdp_plugin.c:2792
+#: plugins/rdp/rdp_plugin.cpp:2792
 #, fuzzy
 msgid "tag:level[,tag:level[,…]]"
 msgstr "टैग:स्तर [,टैग:स्तर [,...]]"
 
-#: plugins/rdp/rdp_plugin.c:2793
+#: plugins/rdp/rdp_plugin.cpp:2793
 #, fuzzy
 msgid "Audio output mode"
 msgstr "ऑडियो आउटपुट मोड"
 
-#: plugins/rdp/rdp_plugin.c:2794
+#: plugins/rdp/rdp_plugin.cpp:2794
 #, fuzzy
 msgid "Redirect local audio output"
 msgstr "स्थानीय ऑडियो आउटपुट को रीडायरेक्ट करें"
 
-#: plugins/rdp/rdp_plugin.c:2795
+#: plugins/rdp/rdp_plugin.cpp:2795
 #, fuzzy
 msgid "Redirect local microphone"
 msgstr "स्थानीय माइक्रोफोन को रीडायरेक्ट करें"
 
-#: plugins/rdp/rdp_plugin.c:2796
+#: plugins/rdp/rdp_plugin.cpp:2796
 #, fuzzy
 msgid "Connection timeout in ms"
 msgstr "एमएस में कनेक्शन मध्यांतर"
 
-#: plugins/rdp/rdp_plugin.c:2797
+#: plugins/rdp/rdp_plugin.cpp:2797
 #, fuzzy
 msgid "Remote Desktop Gateway server"
 msgstr "रिमोट डेस्कटॉप गेटवे सर्वर"
 
-#: plugins/rdp/rdp_plugin.c:2798
+#: plugins/rdp/rdp_plugin.cpp:2798
 #, fuzzy
 msgid "Remote Desktop Gateway username"
 msgstr "रिमोट डेस्कटॉप गेटवे उपयोगकर्ता नाम"
 
-#: plugins/rdp/rdp_plugin.c:2799
+#: plugins/rdp/rdp_plugin.cpp:2799
 #, fuzzy
 msgid "Remote Desktop Gateway password"
 msgstr "रिमोट डेस्कटॉप गेटवे पासवर्ड"
 
-#: plugins/rdp/rdp_plugin.c:2800
+#: plugins/rdp/rdp_plugin.cpp:2800
 #, fuzzy
 msgid "Remote Desktop Gateway domain"
 msgstr "रिमोट डेस्कटॉप गेटवे डोमेन"
 
-#: plugins/rdp/rdp_plugin.c:2801
+#: plugins/rdp/rdp_plugin.cpp:2801
 #, fuzzy
 msgid "Redirect directory"
 msgstr "रीडायरेक्ट निर्देशिका"
 
-#: plugins/rdp/rdp_plugin.c:2802
+#: plugins/rdp/rdp_plugin.cpp:2802
 #, fuzzy
 msgid "Client name"
 msgstr "ग्राहक का नाम"
 
-#: plugins/rdp/rdp_plugin.c:2803
+#: plugins/rdp/rdp_plugin.cpp:2803
 #, fuzzy
 msgid "Client build"
 msgstr "ग्राहक का निर्माण"
 
-#: plugins/rdp/rdp_plugin.c:2804
+#: plugins/rdp/rdp_plugin.cpp:2804
 #, fuzzy
 msgid "Start-up program"
 msgstr "स्टार्ट-अप कार्यक्रम"
 
-#: plugins/rdp/rdp_plugin.c:2806
+#: plugins/rdp/rdp_plugin.cpp:2806
 #, fuzzy
 msgid "Load balance info"
 msgstr "लोड बैलेंस की जानकारी"
 
 #. TRANSLATORS: Do not use typographic quotation marks, these must stay as "double quote", also know as “Typewriter ("programmer's") quote, ambidextrous.”
-#: plugins/rdp/rdp_plugin.c:2808
+#: plugins/rdp/rdp_plugin.cpp:2808
 #, fuzzy
 msgid "Override printer drivers"
 msgstr "प्रिंटर ड्राइवरों को ओवरराइड करें"
 
-#: plugins/rdp/rdp_plugin.c:2808
+#: plugins/rdp/rdp_plugin.cpp:2808
 #, fuzzy
 msgid ""
 "\"Samsung_CLX-3300_Series\":\"Samsung CLX-3300 Series PS\";\"Canon MF410\":"
@@ -2808,398 +2808,398 @@ msgstr ""
 "\"Samsung_CLX-3300_Series\": \"सैमसंग CLX-३३०० श्रृंखला पीएस\";\" कैनन MF410\": "
 "\"कैनन MF410 श्रृंखला UFR द्वितीय\""
 
-#: plugins/rdp/rdp_plugin.c:2809
+#: plugins/rdp/rdp_plugin.cpp:2809
 #, fuzzy
 msgid "USB device redirection"
 msgstr "यूएसबी डिवाइस रीडायरेक्शन"
 
-#: plugins/rdp/rdp_plugin.c:2810
+#: plugins/rdp/rdp_plugin.cpp:2810
 #, fuzzy
 msgid "Local serial name"
 msgstr "स्थानीय धारावाहिक नाम"
 
-#: plugins/rdp/rdp_plugin.c:2810
+#: plugins/rdp/rdp_plugin.cpp:2810
 #, fuzzy
 msgid "COM1, COM2, etc."
 msgstr "COM1, COM2, आदि"
 
-#: plugins/rdp/rdp_plugin.c:2811
+#: plugins/rdp/rdp_plugin.cpp:2811
 #, fuzzy
 msgid "Local serial driver"
 msgstr "स्थानीय सीरियल ड्राइवर"
 
-#: plugins/rdp/rdp_plugin.c:2811
+#: plugins/rdp/rdp_plugin.cpp:2811
 #, fuzzy
 msgid "Serial"
 msgstr "धारावाहिक"
 
-#: plugins/rdp/rdp_plugin.c:2812
+#: plugins/rdp/rdp_plugin.cpp:2812
 #, fuzzy
 msgid "Local serial path"
 msgstr "स्थानीय धारावाहिक पथ"
 
-#: plugins/rdp/rdp_plugin.c:2812
+#: plugins/rdp/rdp_plugin.cpp:2812
 #, fuzzy
 msgid "/dev/ttyS0, /dev/ttyS1, etc."
 msgstr "/देव/ttyS0, /देव/ttyS1, आदि ।"
 
-#: plugins/rdp/rdp_plugin.c:2813
+#: plugins/rdp/rdp_plugin.cpp:2813
 #, fuzzy
 msgid "Local parallel name"
 msgstr "स्थानीय समानांतर नाम"
 
-#: plugins/rdp/rdp_plugin.c:2814
+#: plugins/rdp/rdp_plugin.cpp:2814
 #, fuzzy
 msgid "Local parallel device"
 msgstr "स्थानीय समानांतर डिवाइस"
 
-#: plugins/rdp/rdp_plugin.c:2815
+#: plugins/rdp/rdp_plugin.cpp:2815
 #, fuzzy
 msgid "Name of smart card"
 msgstr "स्मार्ट कार्ड का नाम"
 
-#: plugins/rdp/rdp_plugin.c:2816
+#: plugins/rdp/rdp_plugin.cpp:2816
 #, fuzzy
 msgid "Dynamic virtual channel"
 msgstr "डायनेमिक वर्चुअल चैनल"
 
-#: plugins/rdp/rdp_plugin.c:2816 plugins/rdp/rdp_plugin.c:2817
+#: plugins/rdp/rdp_plugin.cpp:2816 plugins/rdp/rdp_plugin.cpp:2817
 #, fuzzy
 msgid "<channel>[,<options>]"
 msgstr "<channel> [,<options>]"
 
-#: plugins/rdp/rdp_plugin.c:2817
+#: plugins/rdp/rdp_plugin.cpp:2817
 #, fuzzy
 msgid "Static virtual channel"
 msgstr "स्टेटिक वर्चुअल चैनल"
 
-#: plugins/rdp/rdp_plugin.c:2818
+#: plugins/rdp/rdp_plugin.cpp:2818
 #, fuzzy
 msgid "TCP redirection"
 msgstr "टीसीपी पुनर्निर्देशन"
 
-#: plugins/rdp/rdp_plugin.c:2818
+#: plugins/rdp/rdp_plugin.cpp:2818
 #, fuzzy
 msgid "/PATH/TO/rdp2tcp"
 msgstr "/पाथ/टू/आरडीपी2टीसीपी"
 
-#: plugins/rdp/rdp_plugin.c:2820
+#: plugins/rdp/rdp_plugin.cpp:2820
 #, fuzzy
 msgid "Prefer IPv6 AAAA record over IPv4 A record"
 msgstr "IPv4 एक रिकॉर्ड पर IPv6 AAAA रिकॉर्ड पसंद करते हैं"
 
-#: plugins/rdp/rdp_plugin.c:2821
+#: plugins/rdp/rdp_plugin.cpp:2821
 #, fuzzy
 msgid "Share printers"
 msgstr "शेयर प्रिंटर"
 
-#: plugins/rdp/rdp_plugin.c:2822
+#: plugins/rdp/rdp_plugin.cpp:2822
 #, fuzzy
 msgid "Share serial ports"
 msgstr "सीरियल पोर्ट साझा करें"
 
-#: plugins/rdp/rdp_plugin.c:2823
+#: plugins/rdp/rdp_plugin.cpp:2823
 #, fuzzy
 msgid "(SELinux) permissive mode for serial ports"
 msgstr "(SELinux) धारावाहिक बंदरगाहों के लिए स्वतंत्र मोड"
 
-#: plugins/rdp/rdp_plugin.c:2824
+#: plugins/rdp/rdp_plugin.cpp:2824
 #, fuzzy
 msgid "Share parallel ports"
 msgstr "समानांतर बंदरगाहों को साझा करें"
 
-#: plugins/rdp/rdp_plugin.c:2825
+#: plugins/rdp/rdp_plugin.cpp:2825
 #, fuzzy
 msgid "Share a smart card"
 msgstr "एक स्मार्ट कार्ड साझा करें"
 
-#: plugins/rdp/rdp_plugin.c:2826 plugins/vnc/vnc_plugin.c:2035
+#: plugins/rdp/rdp_plugin.cpp:2826 plugins/vnc/vnc_plugin.cpp:2035
 #, fuzzy
 msgid "Turn off clipboard sync"
 msgstr "क्लिपबोर्ड सिंक बंद करें"
 
-#: plugins/rdp/rdp_plugin.c:2827
+#: plugins/rdp/rdp_plugin.cpp:2827
 #, fuzzy
 msgid "Ignore certificate"
 msgstr "प्रमाण पत्र पर ध्यान न दें"
 
-#: plugins/rdp/rdp_plugin.c:2828
+#: plugins/rdp/rdp_plugin.cpp:2828
 #, fuzzy
 msgid "Use the old license workflow"
 msgstr "पुराने लाइसेंस वर्कफ़्लो का उपयोग करें"
 
-#: plugins/rdp/rdp_plugin.c:2828
+#: plugins/rdp/rdp_plugin.cpp:2828
 #, fuzzy
 msgid "It disables CAL and hwId is set to 0"
 msgstr "यह सीएएल को अक्षम करता है और एचडब्ल्यूआईडी 0 पर सेट है"
 
-#: plugins/rdp/rdp_plugin.c:2829 plugins/spice/spice_plugin.c:702
-#: plugins/vnc/vnc_plugin.c:2031 plugins/www/www_plugin.c:919
-#: plugins/gvnc/gvnc_plugin.c:867
+#: plugins/rdp/rdp_plugin.cpp:2829 plugins/spice/spice_plugin.cpp:702
+#: plugins/vnc/vnc_plugin.cpp:2031 plugins/www/www_plugin.cpp:919
+#: plugins/gvnc/gvnc_plugin.cpp:867
 #, fuzzy
 msgid "Forget passwords after use"
 msgstr "उपयोग के बाद पासवर्ड भूल जाओ"
 
-#: plugins/rdp/rdp_plugin.c:2830
+#: plugins/rdp/rdp_plugin.cpp:2830
 #, fuzzy
 msgid "Attach to console (2003/2003 R2)"
 msgstr "सांत्वना के लिए देते है (2003/2003 R2)"
 
-#: plugins/rdp/rdp_plugin.c:2831
+#: plugins/rdp/rdp_plugin.cpp:2831
 #, fuzzy
 msgid "Turn off fast-path"
 msgstr "फास्ट-पाथ बंद करें"
 
-#: plugins/rdp/rdp_plugin.c:2832
+#: plugins/rdp/rdp_plugin.cpp:2832
 #, fuzzy
 msgid "Server detection using Remote Desktop Gateway"
 msgstr "रिमोट डेस्कटॉप गेटवे का उपयोग करके सर्वर डिटेक्शन"
 
-#: plugins/rdp/rdp_plugin.c:2834
+#: plugins/rdp/rdp_plugin.cpp:2834
 #, fuzzy
 msgid "Use system proxy settings"
 msgstr "सिस्टम प्रॉक्सी सेटिंग्स का उपयोग करें"
 
-#: plugins/rdp/rdp_plugin.c:2836
+#: plugins/rdp/rdp_plugin.cpp:2836
 #, fuzzy
 msgid "Turn off automatic reconnection"
 msgstr "स्वचालित पुनर्कनेक्शन बंद करें"
 
-#: plugins/rdp/rdp_plugin.c:2837
+#: plugins/rdp/rdp_plugin.cpp:2837
 #, fuzzy
 msgid "Relax order checks"
 msgstr "आदेश की जांच आराम"
 
-#: plugins/rdp/rdp_plugin.c:2838
+#: plugins/rdp/rdp_plugin.cpp:2838
 #, fuzzy
 msgid "Glyph cache"
 msgstr "ग्लिफ कैश"
 
-#: plugins/rdp/rdp_plugin.c:2839
+#: plugins/rdp/rdp_plugin.cpp:2839
 #, fuzzy
 msgid "Enable multitransport protocol (UDP)"
 msgstr "मल्टीट्रांसपोर्ट प्रोटोकॉल (यूडीपी) सक्षम करें"
 
-#: plugins/rdp/rdp_plugin.c:2839
+#: plugins/rdp/rdp_plugin.cpp:2839
 #, fuzzy
 msgid "Using the UDP protocol may improve performance"
 msgstr "यूडीपी प्रोटोकॉल का उपयोग करने से प्रदर्शन में सुधार हो सकता है"
 
-#: plugins/rdp/rdp_plugin.c:2840
+#: plugins/rdp/rdp_plugin.cpp:2840
 #, fuzzy
 msgid "Use base credentials for gateway too"
 msgstr "गेटवे के लिए बेस क्रेडेंशियल्स का भी इस्तेमाल करें"
 
-#: plugins/rdp/rdp_plugin.c:2842
+#: plugins/rdp/rdp_plugin.cpp:2842
 #, fuzzy
 msgid "Enable Gateway websockets support"
 msgstr "गेटवे वेबसॉक्स समर्थन सक्षम करें"
 
-#: plugins/rdp/rdp_plugin.c:2855 plugins/spice/spice_plugin.c:715
-#: plugins/vnc/vnc_plugin.c:2052
+#: plugins/rdp/rdp_plugin.cpp:2855 plugins/spice/spice_plugin.cpp:715
+#: plugins/vnc/vnc_plugin.cpp:2052
 #, fuzzy
 msgid "Send Ctrl+Alt+Delete"
 msgstr "सीटीआरएल+ऑल्ट+डिलीट भेजें"
 
-#: plugins/rdp/rdp_plugin.c:2868
+#: plugins/rdp/rdp_plugin.cpp:2868
 #, fuzzy
 msgid "RDP - Remote Desktop Protocol"
 msgstr "आरडीपी - रिमोट डेस्कटॉप प्रोटोकॉल"
 
-#: plugins/rdp/rdp_plugin.c:2893
+#: plugins/rdp/rdp_plugin.cpp:2893
 #, fuzzy
 msgid "RDP - RDP File Handler"
 msgstr "आरडीपी - आरडीपी फाइल हैंडलर"
 
-#: plugins/rdp/rdp_plugin.c:2908
+#: plugins/rdp/rdp_plugin.cpp:2908
 #, fuzzy
 msgid "RDP - Preferences"
 msgstr "आरडीपी - प्राथमिकताएं"
 
-#: plugins/rdp/rdp_plugin.c:2961
+#: plugins/rdp/rdp_plugin.cpp:2961
 #, fuzzy
 msgid "Export connection in Windows .rdp file format"
 msgstr "विंडोज .rdp फ़ाइल प्रारूप में निर्यात कनेक्शन"
 
-#: plugins/rdp/rdp_event.c:344
+#: plugins/rdp/rdp_event.cpp:344
 #, fuzzy, c-format
 msgid "Reconnection attempt %d of %d…"
 msgstr "पुनर्कनेक्शन का प्रयास %d%d…"
 
-#: plugins/spice/spice_plugin_file_transfer.c:82
+#: plugins/spice/spice_plugin_file_transfer.cpp:82
 #, fuzzy
 msgid "File Transfers"
 msgstr "फाइल ट्रांसफर"
 
-#: plugins/spice/spice_plugin_file_transfer.c:219
+#: plugins/spice/spice_plugin_file_transfer.cpp:219
 #, fuzzy
 msgid "Transfer error"
 msgstr "स्थानांतरण त्रुटि"
 
-#: plugins/spice/spice_plugin_file_transfer.c:220
+#: plugins/spice/spice_plugin_file_transfer.cpp:220
 #, fuzzy, c-format
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: plugins/spice/spice_plugin_file_transfer.c:223
+#: plugins/spice/spice_plugin_file_transfer.cpp:223
 #, fuzzy
 msgid "Transfer completed"
 msgstr "स्थानांतरण पूरा"
 
-#: plugins/spice/spice_plugin_file_transfer.c:224
+#: plugins/spice/spice_plugin_file_transfer.cpp:224
 #, fuzzy, c-format
 msgid "The %s file has been transferred"
 msgstr "%s फ़ाइल स्थानांतरित कर दिया गया है"
 
-#: plugins/spice/spice_plugin.c:351
+#: plugins/spice/spice_plugin.cpp:351
 #, fuzzy
 msgid "Enter SPICE password"
 msgstr "स्पाइस पासवर्ड दर्ज करें"
 
-#: plugins/spice/spice_plugin.c:386
+#: plugins/spice/spice_plugin.cpp:386
 #, fuzzy, c-format
 msgid "Disconnected from the SPICE server “%s”."
 msgstr "स्पाइस सर्वर \"%s\" से काट दिया।"
 
-#: plugins/spice/spice_plugin.c:402
+#: plugins/spice/spice_plugin.cpp:402
 #, fuzzy
 msgid "TLS connection error."
 msgstr "टीएलएस कनेक्शन त्रुटि।"
 
-#: plugins/spice/spice_plugin.c:408
+#: plugins/spice/spice_plugin.cpp:408
 #, fuzzy
 msgid "Connection to the SPICE server dropped."
 msgstr "स्पाइस सर्वर का कनेक्शन गिरा।"
 
-#: plugins/spice/spice_plugin.c:616 plugins/spice/spice_plugin.c:634
+#: plugins/spice/spice_plugin.cpp:616 plugins/spice/spice_plugin.cpp:634
 #, fuzzy
 msgid "Default"
 msgstr "डिफॉल्ट"
 
-#: plugins/spice/spice_plugin.c:636
+#: plugins/spice/spice_plugin.cpp:636
 #, fuzzy
 msgid "Auto GLZ"
 msgstr "ऑटो जीएलजेड"
 
-#: plugins/spice/spice_plugin.c:637
+#: plugins/spice/spice_plugin.cpp:637
 #, fuzzy
 msgid "Auto LZ"
 msgstr "ऑटो एलजेड"
 
-#: plugins/spice/spice_plugin.c:650
+#: plugins/spice/spice_plugin.cpp:650
 #, fuzzy
 msgid "Disable video overlay if videos are not displayed properly.\n"
 msgstr "यदि वीडियो ठीक से प्रदर्शित नहीं किए जाते हैं तो वीडियो ओवरले को अक्षम करें।\n"
 
-#: plugins/spice/spice_plugin.c:675
+#: plugins/spice/spice_plugin.cpp:675
 #, fuzzy
 msgid "Use TLS encryption"
 msgstr "टीएलएस एन्क्रिप्शन का उपयोग करें"
 
-#: plugins/spice/spice_plugin.c:676
+#: plugins/spice/spice_plugin.cpp:676
 #, fuzzy
 msgid "Server CA certificate"
 msgstr "सर्वर सीए प्रमाण पत्र"
 
-#: plugins/spice/spice_plugin.c:694
+#: plugins/spice/spice_plugin.cpp:694
 #, fuzzy
 msgid "Preferred video codec"
 msgstr "पसंदीदा वीडियो कोडेक"
 
-#: plugins/spice/spice_plugin.c:695
+#: plugins/spice/spice_plugin.cpp:695
 #, fuzzy
 msgid "Turn off GStreamer overlay"
 msgstr "GStreamer ओवरले बंद करें"
 
-#: plugins/spice/spice_plugin.c:698
+#: plugins/spice/spice_plugin.cpp:698
 #, fuzzy
 msgid "Preferred image compression"
 msgstr "पसंदीदा छवि संपीड़न"
 
-#: plugins/spice/spice_plugin.c:701 plugins/spice/spice_plugin.c:714
-#: plugins/gvnc/gvnc_plugin.c:866 plugins/gvnc/gvnc_plugin.c:880
+#: plugins/spice/spice_plugin.cpp:701 plugins/spice/spice_plugin.cpp:714
+#: plugins/gvnc/gvnc_plugin.cpp:866 plugins/gvnc/gvnc_plugin.cpp:880
 #, fuzzy
 msgid "No clipboard sync"
 msgstr "कोई क्लिपबोर्ड सिंक नहीं"
 
-#: plugins/spice/spice_plugin.c:703 plugins/gvnc/gvnc_plugin.c:869
+#: plugins/spice/spice_plugin.cpp:703 plugins/gvnc/gvnc_plugin.cpp:869
 #, fuzzy
 msgid "Enable audio channel"
 msgstr "ऑडियो चैनल सक्षम"
 
-#: plugins/spice/spice_plugin.c:704
+#: plugins/spice/spice_plugin.cpp:704
 #, fuzzy
 msgid "Share smart card"
 msgstr "स्मार्ट कार्ड साझा करें"
 
-#: plugins/spice/spice_plugin.c:705 plugins/spice/spice_plugin.c:713
-#: plugins/vnc/vnc_plugin.c:2037 plugins/vnc/vnc_plugin.c:2048
-#: plugins/gvnc/gvnc_plugin.c:870 plugins/gvnc/gvnc_plugin.c:879
+#: plugins/spice/spice_plugin.cpp:705 plugins/spice/spice_plugin.cpp:713
+#: plugins/vnc/vnc_plugin.cpp:2037 plugins/vnc/vnc_plugin.cpp:2048
+#: plugins/gvnc/gvnc_plugin.cpp:870 plugins/gvnc/gvnc_plugin.cpp:879
 #, fuzzy
 msgid "View only"
 msgstr "केवल देखिये"
 
-#: plugins/spice/spice_plugin.c:716 plugins/spice/spice_plugin_usb.c:51
+#: plugins/spice/spice_plugin.cpp:716 plugins/spice/spice_plugin_usb.cpp:51
 #, fuzzy
 msgid "Select USB devices for redirection"
 msgstr "पुनर्निर्देशन के लिए यूएसबी डिवाइस का चयन करें"
 
-#: plugins/spice/spice_plugin.c:727
+#: plugins/spice/spice_plugin.cpp:727
 #, fuzzy
 msgid "SPICE - Simple Protocol for Independent Computing Environments"
 msgstr "स्पाइस - स्वतंत्र कंप्यूटिंग वातावरण के लिए सरल प्रोटोकॉल"
 
-#: plugins/spice/spice_plugin_usb.c:54
+#: plugins/spice/spice_plugin_usb.cpp:54
 #, fuzzy
 msgid "_Close"
 msgstr "बंद करें (_C)"
 
-#: plugins/spice/spice_plugin_usb.c:94
+#: plugins/spice/spice_plugin_usb.cpp:94
 #, fuzzy
 msgid "USB redirection error"
 msgstr "यूएसबी रीडायरेक्टेशन एरर"
 
-#: plugins/vnc/vnc_plugin.c:789
+#: plugins/vnc/vnc_plugin.cpp:789
 #, fuzzy
 msgid "Enter VNC password"
 msgstr "वीएनसी पासवर्ड दर्ज करें"
 
-#: plugins/vnc/vnc_plugin.c:842 plugins/gvnc/gvnc_plugin.c:539
+#: plugins/vnc/vnc_plugin.cpp:842 plugins/gvnc/gvnc_plugin.cpp:539
 #, fuzzy
 msgid "Enter VNC authentication credentials"
 msgstr "वीएनसी प्रमाणीकरण साख दर्ज करें"
 
-#: plugins/vnc/vnc_plugin.c:950
+#: plugins/vnc/vnc_plugin.cpp:950
 #, fuzzy
 msgid "Unable to connect to VNC server"
 msgstr "वीएनसी सर्वर से कनेक्ट करने में असमर्थ"
 
-#: plugins/vnc/vnc_plugin.c:951
+#: plugins/vnc/vnc_plugin.cpp:951
 #, fuzzy, c-format
 msgid "Couldn’t convert '%s' to host address"
 msgstr "'%s] को होस्ट पते में परिवर्तित नहीं कर सका"
 
-#: plugins/vnc/vnc_plugin.c:952
+#: plugins/vnc/vnc_plugin.cpp:952
 #, fuzzy, c-format
 msgid "VNC connection failed: %s"
 msgstr "वीएनसी कनेक्शन विफल: %s"
 
-#: plugins/vnc/vnc_plugin.c:953
+#: plugins/vnc/vnc_plugin.cpp:953
 #, fuzzy
 msgid "Your connection has been rejected."
 msgstr "आपका कनेक्शन अस्वीकार कर दिया गया है।"
 
-#: plugins/vnc/vnc_plugin.c:980
+#: plugins/vnc/vnc_plugin.cpp:980
 #, fuzzy, c-format
 msgid "The VNC server requested an unknown authentication method. %s"
 msgstr "वीएनसी सर्वर ने एक अज्ञात प्रमाणीकरण विधि का अनुरोध किया। %s"
 
-#: plugins/vnc/vnc_plugin.c:982
+#: plugins/vnc/vnc_plugin.cpp:982
 #, fuzzy
 msgid "Please retry after turning on encryption for this profile."
 msgstr "कृपया इस प्रोफ़ाइल के लिए एन्क्रिप्शन चालू करने के बाद फिर से प्रयास करें।"
 
-#: plugins/vnc/vnc_plugin.c:1952
+#: plugins/vnc/vnc_plugin.cpp:1952
 #, fuzzy
 msgid ""
 "Connect to VNC using a repeater:\n"
@@ -3218,7 +3218,7 @@ msgstr ""
 "    रिपीटर, उदाहरण के लिए x11vnc के साथ:\n"
 "    x11vnc -कनेक्ट रिपीटर =आईडी: 123456789 +10.10.10.12:5500"
 
-#: plugins/vnc/vnc_plugin.c:1961
+#: plugins/vnc/vnc_plugin.cpp:1961
 #, fuzzy
 msgid ""
 "Listening for remote VNC connection:\n"
@@ -3235,7 +3235,7 @@ msgstr ""
 "    रेममिना, उदाहरण के लिए x11vnc के साथ:\n"
 "    x11vnc -डिस्प्ले:0 -कनेक्ट 192.168.1.36:8888"
 
-#: plugins/vnc/vnc_plugin.c:1969
+#: plugins/vnc/vnc_plugin.cpp:1969
 msgid ""
 "Override pre-set VNC encodings:\n"
 "\n"
@@ -3248,149 +3248,149 @@ msgid ""
 "corre rre raw”"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:1996
+#: plugins/vnc/vnc_plugin.cpp:1996
 #, fuzzy
 msgid "Repeater"
 msgstr "आवर्तक"
 
-#: plugins/vnc/vnc_plugin.c:2008
+#: plugins/vnc/vnc_plugin.cpp:2008
 #, fuzzy
 msgid "Listen on port"
 msgstr "पोर्ट पर सुनो"
 
-#: plugins/vnc/vnc_plugin.c:2028
+#: plugins/vnc/vnc_plugin.cpp:2028
 msgid "Override pre-set VNC encodings"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:2029
+#: plugins/vnc/vnc_plugin.cpp:2029
 msgid "Force tight encoding"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:2029
+#: plugins/vnc/vnc_plugin.cpp:2029
 msgid "Enabling this may help when the remote desktop looks scrambled"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:2032 plugins/gvnc/gvnc_plugin.c:868
+#: plugins/vnc/vnc_plugin.cpp:2032 plugins/gvnc/gvnc_plugin.cpp:868
 #, fuzzy
 msgid "Ignore remote bell messages"
 msgstr "रिमोट बेल संदेशों पर ध्यान न दें"
 
-#: plugins/vnc/vnc_plugin.c:2033 plugins/vnc/vnc_plugin.c:2049
+#: plugins/vnc/vnc_plugin.cpp:2033 plugins/vnc/vnc_plugin.cpp:2049
 #, fuzzy
 msgid "Prevent local interaction on the server"
 msgstr "सर्वर पर स्थानीय बातचीत को रोकें"
 
-#: plugins/vnc/vnc_plugin.c:2034
+#: plugins/vnc/vnc_plugin.cpp:2034
 #, fuzzy
 msgid "Show remote cursor"
 msgstr "रिमोट कर्सर दिखाएं"
 
-#: plugins/vnc/vnc_plugin.c:2036
+#: plugins/vnc/vnc_plugin.cpp:2036
 #, fuzzy
 msgid "Turn off encryption"
 msgstr "एन्क्रिप्शन बंद करें"
 
-#: plugins/vnc/vnc_plugin.c:2051
+#: plugins/vnc/vnc_plugin.cpp:2051
 #, fuzzy
 msgid "Open Chat…"
 msgstr "ओपन चैट…"
 
-#: plugins/vnc/vnc_plugin.h:41
+#: plugins/vnc/vnc_plugin.hpp:41
 #, fuzzy
 msgid "Remmina VNC Plugin"
 msgstr "रेम्मीना वीएनसी प्लगइन"
 
-#: plugins/vnc/vnc_plugin.h:46
+#: plugins/vnc/vnc_plugin.hpp:46
 #, fuzzy
 msgid "Remmina VNC listener Plugin"
 msgstr "रेम्मीना वीएनसी श्रोता प्लगइन"
 
-#: plugins/www/www_config.h:43
+#: plugins/www/www_config.hpp:43
 #, fuzzy
 msgid "Remmina web-browser plugin"
 msgstr "रेममिना वेब-ब्राउज़र प्लगइन"
 
-#: plugins/www/www_plugin.c:98
+#: plugins/www/www_plugin.cpp:98
 #, fuzzy
 msgid "File downloaded"
 msgstr "फाइल डाउनलोड की गई"
 
-#: plugins/www/www_plugin.c:581
+#: plugins/www/www_plugin.cpp:581
 #, fuzzy
 msgid "Enter WWW authentication credentials"
 msgstr "डब्ल्यूडब्ल्यूडब्ल्यू प्रमाणीकरण साख दर्ज करें"
 
-#: plugins/www/www_plugin.c:893
+#: plugins/www/www_plugin.cpp:893
 #, fuzzy
 msgid "URL"
 msgstr "यू.आर.एल"
 
-#: plugins/www/www_plugin.c:893
+#: plugins/www/www_plugin.cpp:893
 #, fuzzy
 msgid "http://address or https://address"
 msgstr "http://address या https://address"
 
-#: plugins/www/www_plugin.c:910
+#: plugins/www/www_plugin.cpp:910
 #, fuzzy
 msgid "User agent"
 msgstr "उपयोगकर्ता एजेंट"
 
-#: plugins/www/www_plugin.c:911
+#: plugins/www/www_plugin.cpp:911
 #, fuzzy
 msgid "Proxy URL"
 msgstr "प्रॉक्सी यूआरएल"
 
-#: plugins/www/www_plugin.c:911
+#: plugins/www/www_plugin.cpp:911
 #, fuzzy
 msgid "E.g. https://example.org, socks://mysocks:1080"
 msgstr "उदाहरण के लिए https://example.org, socks://mysocks:1080"
 
-#: plugins/www/www_plugin.c:912
+#: plugins/www/www_plugin.cpp:912
 #, fuzzy
 msgid "Turn on Java support"
 msgstr "जावा समर्थन चालू करें"
 
-#: plugins/www/www_plugin.c:913
+#: plugins/www/www_plugin.cpp:913
 #, fuzzy
 msgid "Turn on smooth scrolling"
 msgstr "चिकनी स्क्रॉल चालू करें"
 
-#: plugins/www/www_plugin.c:914
+#: plugins/www/www_plugin.cpp:914
 #, fuzzy
 msgid "Turn on spatial navigation"
 msgstr "स्थानिक नेविगेशन चालू करें"
 
-#: plugins/www/www_plugin.c:915
+#: plugins/www/www_plugin.cpp:915
 #, fuzzy
 msgid "Turn on plugin support"
 msgstr "प्लगइन समर्थन चालू करें"
 
-#: plugins/www/www_plugin.c:916
+#: plugins/www/www_plugin.cpp:916
 #, fuzzy
 msgid "Turn on WebGL support"
 msgstr "वेबजीएल समर्थन चालू करें"
 
-#: plugins/www/www_plugin.c:917
+#: plugins/www/www_plugin.cpp:917
 #, fuzzy
 msgid "Turn on HTML5 audio support"
 msgstr "HTML5 ऑडियो समर्थन चालू करें"
 
-#: plugins/www/www_plugin.c:918
+#: plugins/www/www_plugin.cpp:918
 #, fuzzy
 msgid "Ignore TLS errors"
 msgstr "टीएलएस त्रुटियों पर ध्यान न दें"
 
-#: plugins/www/www_plugin.c:921
+#: plugins/www/www_plugin.cpp:921
 #, fuzzy
 msgid "Turn on Web Inspector"
 msgstr "वेब इंस्पेक्टर चालू करें"
 
-#: plugins/exec/exec_plugin.c:160
+#: plugins/exec/exec_plugin.cpp:160
 #, fuzzy
 msgid "You did not set any command to be executed"
 msgstr "आपने निष्पादित होने के लिए कोई आदेश सेट नहीं किया"
 
-#: plugins/exec/exec_plugin.c:206
+#: plugins/exec/exec_plugin.cpp:206
 #, fuzzy
 msgid ""
 "Warning: Running a command synchronously may cause Remmina not to respond.\n"
@@ -3399,282 +3399,282 @@ msgstr ""
 "चेतावनी: एक आदेश समकालिक रूप से चलाने के कारण रेम्मीना को जवाब नहीं देना पड़ सकता है।\n"
 "क्या आप वास्तव में जारी रखना चाहते हैं?"
 
-#: plugins/exec/exec_plugin.c:274
+#: plugins/exec/exec_plugin.cpp:274
 #, fuzzy
 msgid "Command"
 msgstr "आदेश"
 
-#: plugins/exec/exec_plugin.c:275
+#: plugins/exec/exec_plugin.cpp:275
 #, fuzzy
 msgid "Asynchronous execution"
 msgstr "अतुलित करने का काम"
 
-#: plugins/exec/exec_plugin_config.h:41
+#: plugins/exec/exec_plugin_config.hpp:41
 #, fuzzy
 msgid "Execute a command"
 msgstr "एक आदेश निष्पादित करें"
 
-#: plugins/tool_hello_world/plugin_config.h:40
+#: plugins/tool_hello_world/plugin_config.hpp:40
 #, fuzzy
 msgid "Hello, World!"
 msgstr "हेलो, वर्ल्ड!"
 
-#: plugins/secret/src/glibsecret_plugin.c:188
+#: plugins/secret/src/glibsecret_plugin.cpp:188
 #, fuzzy
 msgid "Secured password storage in the GNOME keyring"
 msgstr "GNOME कुंजीरिंग में सुरक्षित पासवर्ड भंडारण"
 
-#: plugins/x2go/x2go_plugin.c:67
+#: plugins/x2go/x2go_plugin.cpp:67
 #, c-format
 msgid ""
 "The command-line feature '%s' is not available! Attempting to start PyHoca-"
 "CLI without using this feature…"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:289 plugins/x2go/x2go_plugin.c:421
-#: plugins/x2go/x2go_plugin.c:510 plugins/x2go/x2go_plugin.c:617
-#: plugins/x2go/x2go_plugin.c:707 plugins/x2go/x2go_plugin.c:719
-#: plugins/x2go/x2go_plugin.c:728 plugins/x2go/x2go_plugin.c:754
-#: plugins/x2go/x2go_plugin.c:763 plugins/x2go/x2go_plugin.c:782
-#: plugins/x2go/x2go_plugin.c:832 plugins/x2go/x2go_plugin.c:898
-#: plugins/x2go/x2go_plugin.c:909 plugins/x2go/x2go_plugin.c:917
-#: plugins/x2go/x2go_plugin.c:1031 plugins/x2go/x2go_plugin.c:1047
-#: plugins/x2go/x2go_plugin.c:1112 plugins/x2go/x2go_plugin.c:1140
-#: plugins/x2go/x2go_plugin.c:1289 plugins/x2go/x2go_plugin.c:1651
-#: plugins/x2go/x2go_plugin.c:1685 plugins/x2go/x2go_plugin.c:1781
-#: plugins/x2go/x2go_plugin.c:2075 plugins/x2go/x2go_plugin.c:2875
-#: plugins/x2go/x2go_plugin.c:3088 plugins/x2go/x2go_plugin.c:3093
-#: plugins/x2go/x2go_plugin.c:3098 plugins/x2go/x2go_plugin.c:3103
-#: plugins/x2go/x2go_plugin.c:3118 plugins/x2go/x2go_plugin.c:3123
-#: plugins/x2go/x2go_plugin.c:3128 plugins/x2go/x2go_plugin.c:3133
+#: plugins/x2go/x2go_plugin.cpp:289 plugins/x2go/x2go_plugin.cpp:421
+#: plugins/x2go/x2go_plugin.cpp:510 plugins/x2go/x2go_plugin.cpp:617
+#: plugins/x2go/x2go_plugin.cpp:707 plugins/x2go/x2go_plugin.cpp:719
+#: plugins/x2go/x2go_plugin.cpp:728 plugins/x2go/x2go_plugin.cpp:754
+#: plugins/x2go/x2go_plugin.cpp:763 plugins/x2go/x2go_plugin.cpp:782
+#: plugins/x2go/x2go_plugin.cpp:832 plugins/x2go/x2go_plugin.cpp:898
+#: plugins/x2go/x2go_plugin.cpp:909 plugins/x2go/x2go_plugin.cpp:917
+#: plugins/x2go/x2go_plugin.cpp:1031 plugins/x2go/x2go_plugin.cpp:1047
+#: plugins/x2go/x2go_plugin.cpp:1112 plugins/x2go/x2go_plugin.cpp:1140
+#: plugins/x2go/x2go_plugin.cpp:1289 plugins/x2go/x2go_plugin.cpp:1651
+#: plugins/x2go/x2go_plugin.cpp:1685 plugins/x2go/x2go_plugin.cpp:1781
+#: plugins/x2go/x2go_plugin.cpp:2075 plugins/x2go/x2go_plugin.cpp:2875
+#: plugins/x2go/x2go_plugin.cpp:3088 plugins/x2go/x2go_plugin.cpp:3093
+#: plugins/x2go/x2go_plugin.cpp:3098 plugins/x2go/x2go_plugin.cpp:3103
+#: plugins/x2go/x2go_plugin.cpp:3118 plugins/x2go/x2go_plugin.cpp:3123
+#: plugins/x2go/x2go_plugin.cpp:3128 plugins/x2go/x2go_plugin.cpp:3133
 #, fuzzy, c-format
 msgid "Internal error: %s"
 msgstr "आंतरिक त्रुटि।"
 
-#: plugins/x2go/x2go_plugin.c:290 plugins/x2go/x2go_plugin.c:422
-#: plugins/x2go/x2go_plugin.c:511 plugins/x2go/x2go_plugin.c:1290
+#: plugins/x2go/x2go_plugin.cpp:290 plugins/x2go/x2go_plugin.cpp:422
+#: plugins/x2go/x2go_plugin.cpp:511 plugins/x2go/x2go_plugin.cpp:1290
 msgid "Parameter 'custom_data' is not initialized!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:303
+#: plugins/x2go/x2go_plugin.cpp:303
 #, fuzzy
 msgid "Broken `DialogData`! Aborting…"
 msgstr "टूटा 'डायलॉगडाटा'! निरस्त।।।"
 
-#: plugins/x2go/x2go_plugin.c:307
+#: plugins/x2go/x2go_plugin.cpp:307
 #, fuzzy
 msgid "Can't retrieve `DialogData`! Aborting…"
 msgstr "'संवाद) को पुनः प्राप्त नहीं कर सकते! निरस्त।।।"
 
-#: plugins/x2go/x2go_plugin.c:469
+#: plugins/x2go/x2go_plugin.cpp:469
 msgid "X Display"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:470
+#: plugins/x2go/x2go_plugin.cpp:470
 #, fuzzy
 msgid "Status"
 msgstr "फ़ाइल की स्थिति"
 
-#: plugins/x2go/x2go_plugin.c:471
+#: plugins/x2go/x2go_plugin.cpp:471
 #, fuzzy
 msgid "Session ID"
 msgstr "अनुमतियाँ"
 
-#: plugins/x2go/x2go_plugin.c:472
+#: plugins/x2go/x2go_plugin.cpp:472
 msgid "Create date"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:473
+#: plugins/x2go/x2go_plugin.cpp:473
 msgid "Suspended since"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:474
+#: plugins/x2go/x2go_plugin.cpp:474
 msgid "Agent PID"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:476
+#: plugins/x2go/x2go_plugin.cpp:476
 #, fuzzy
 msgid "Hostname"
 msgstr "उपयोगकर्ता नाम"
 
-#: plugins/x2go/x2go_plugin.c:477
+#: plugins/x2go/x2go_plugin.cpp:477
 msgid "Cookie"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:478
+#: plugins/x2go/x2go_plugin.cpp:478
 msgid "Graphic port"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:479
+#: plugins/x2go/x2go_plugin.cpp:479
 msgid "SND port"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:480
+#: plugins/x2go/x2go_plugin.cpp:480
 #, fuzzy
 msgid "SSHFS port"
 msgstr "स्थानीय एसएसएच बंदरगाह"
 
-#: plugins/x2go/x2go_plugin.c:481
+#: plugins/x2go/x2go_plugin.cpp:481
 msgid "Visible"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:520
+#: plugins/x2go/x2go_plugin.cpp:520
 #, fuzzy
 msgid "Couldn't retrieve valid `DialogData` or `sessions_list`! Aborting…"
 msgstr "'संवाद) को पुनः प्राप्त नहीं कर सकते! निरस्त।।।"
 
 #. TRANSLATORS: Stick to x2goclient's translation for terminate.
-#: plugins/x2go/x2go_plugin.c:529
+#: plugins/x2go/x2go_plugin.cpp:529
 #, fuzzy
 msgid "_Terminate"
 msgstr "टर्मिनल"
 
 #. TRANSLATORS: Stick to x2goclient's translation for resume.
-#: plugins/x2go/x2go_plugin.c:532
+#: plugins/x2go/x2go_plugin.cpp:532
 #, fuzzy
 msgid "_Resume"
 msgstr "दुबारा आरम्भ करना"
 
-#: plugins/x2go/x2go_plugin.c:534
+#: plugins/x2go/x2go_plugin.cpp:534
 #, fuzzy
 msgid "_New"
 msgstr "_नया"
 
 #. TRANSLATORS: Tooltip for terminating button inside Session-Chooser-Dialog.
 #. TRANSLATORS: Please stick to X2GoClient's way of translating.
-#: plugins/x2go/x2go_plugin.c:543
+#: plugins/x2go/x2go_plugin.cpp:543
 msgid "Terminating X2Go sessions can take a moment."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:618 plugins/x2go/x2go_plugin.c:620
+#: plugins/x2go/x2go_plugin.cpp:618 plugins/x2go/x2go_plugin.cpp:620
 #, c-format
 msgid "Unknown property '%i'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:708 plugins/x2go/x2go_plugin.c:755
+#: plugins/x2go/x2go_plugin.cpp:708 plugins/x2go/x2go_plugin.cpp:755
 msgid "Couldn't find child GtkTreeView of session chooser dialog."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:720
+#: plugins/x2go/x2go_plugin.cpp:720
 msgid ""
 "Neither the 'dialog' nor 'treeview' parameters are initialized! At least one "
 "of them must be given."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:729
+#: plugins/x2go/x2go_plugin.cpp:729
 msgid ""
 "Could not obtain \"GtkTreeModelFilter*\" of the session chooser dialog, for "
 "unknown reason."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:764
+#: plugins/x2go/x2go_plugin.cpp:764
 msgid "Couldn't get currently selected row (session)!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:783
+#: plugins/x2go/x2go_plugin.cpp:783
 #, c-format
 msgid ""
 "Exactly one session should be selectable but '%i' rows (sessions) are "
 "selected."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:833
+#: plugins/x2go/x2go_plugin.cpp:833
 msgid "Failed to fill 'GtkTreeIter'."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:899
+#: plugins/x2go/x2go_plugin.cpp:899
 msgid "parameter 'argv' is 'NULL'."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:910
+#: plugins/x2go/x2go_plugin.cpp:910
 msgid "parameter 'error' is 'NULL'."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:918
+#: plugins/x2go/x2go_plugin.cpp:918
 msgid "parameter 'env' is either invalid or uninitialized."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:934 plugins/x2go/x2go_plugin.c:2376
+#: plugins/x2go/x2go_plugin.cpp:934 plugins/x2go/x2go_plugin.cpp:2376
 #, fuzzy
 msgid "Started PyHoca-CLI with the following arguments:"
 msgstr "निम्नलिखित तर्कों के साथ पाइहोका-क्ली शुरू किया:"
 
-#: plugins/x2go/x2go_plugin.c:962
+#: plugins/x2go/x2go_plugin.cpp:962
 msgid ""
 "The necessary PyHoca-CLI process has encountered a internet connection "
 "problem."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:972
+#: plugins/x2go/x2go_plugin.cpp:972
 #, fuzzy, c-format
 msgid ""
 "Could not start PyHoca-CLI:\n"
 "%s"
 msgstr "PyHoca-CLI (%i): '%s शुरू नहीं कर सका'"
 
-#: plugins/x2go/x2go_plugin.c:983
+#: plugins/x2go/x2go_plugin.cpp:983
 #, c-format
 msgid ""
 "An unknown error occured while trying to start PyHoca-CLI. Exit code: %i"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:990
+#: plugins/x2go/x2go_plugin.cpp:990
 #, c-format
 msgid ""
 "An unknown error occured while trying to start PyHoca-CLI. Exit code: %i. "
 "Error: '%s'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1032
+#: plugins/x2go/x2go_plugin.cpp:1032
 msgid "Neither the 'path' nor 'dialog' parameters are initialized."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1048
+#: plugins/x2go/x2go_plugin.cpp:1048
 msgid "GtkTreePath 'path' describes a non-existing row!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1113
+#: plugins/x2go/x2go_plugin.cpp:1113
 msgid "Parameter 'custom_data' is not fully initialized!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1141 plugins/x2go/x2go_plugin.c:1782
-#: plugins/x2go/x2go_plugin.c:2076
+#: plugins/x2go/x2go_plugin.cpp:1141 plugins/x2go/x2go_plugin.cpp:1782
+#: plugins/x2go/x2go_plugin.cpp:2076
 #, fuzzy
 msgid "'Invalid connection data.'"
 msgstr "साझा कनेक्शन"
 
-#: plugins/x2go/x2go_plugin.c:1218
+#: plugins/x2go/x2go_plugin.cpp:1218
 #, fuzzy, c-format
 msgid ""
 "An error occured while trying to terminate X2Go session '%s':\n"
 "%s"
 msgstr "X2Go सत्र शुरू करते समय एक त्रुटि हुई …"
 
-#: plugins/x2go/x2go_plugin.c:1230 plugins/x2go/x2go_plugin.c:1594
+#: plugins/x2go/x2go_plugin.cpp:1230 plugins/x2go/x2go_plugin.cpp:1594
 #, fuzzy
 msgid "An error occured."
 msgstr "एक त्रुटि हुई।"
 
-#: plugins/x2go/x2go_plugin.c:1330 plugins/x2go/x2go_plugin.c:1345
+#: plugins/x2go/x2go_plugin.cpp:1330 plugins/x2go/x2go_plugin.cpp:1345
 msgid "Couldn't get session ID from session chooser dialog."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1337
+#: plugins/x2go/x2go_plugin.cpp:1337
 #, c-format
 msgid "Resuming session: '%s'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1352
+#: plugins/x2go/x2go_plugin.cpp:1352
 #, c-format
 msgid "Terminating session: '%s'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1586
+#: plugins/x2go/x2go_plugin.cpp:1586
 #, fuzzy
 msgid "PyHoca-CLI exited unexpectedly. This connection will now be closed."
 msgstr "पाइहोका-क्लि अप्रत्याशित रूप से बाहर निकल गया। अब यह कनेक्शन बंद हो जाएगा।"
 
-#: plugins/x2go/x2go_plugin.c:1595
+#: plugins/x2go/x2go_plugin.cpp:1595
 #, fuzzy
 msgid ""
 "The necessary child process 'pyhoca-cli' stopped unexpectedly.\n"
@@ -3685,16 +3685,16 @@ msgstr ""
 "कृपया संभावित त्रुटियों के लिए अपनी प्रोफ़ाइल सेटिंग्स और पाइहोका-क्ली के आउटपुट की जांच करें "
 "और यह सुनिश्चित करें कि रिमोट सर्वर पहुंच योग्य है।"
 
-#: plugins/x2go/x2go_plugin.c:1638
+#: plugins/x2go/x2go_plugin.cpp:1638
 msgid "Can't save empty username!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1652
+#: plugins/x2go/x2go_plugin.cpp:1652
 #, fuzzy
 msgid "Could not save new credentials."
 msgstr "फ़ाइल को \"%s\" नहीं बचा सका।"
 
-#: plugins/x2go/x2go_plugin.c:1655
+#: plugins/x2go/x2go_plugin.cpp:1655
 #, fuzzy
 msgid ""
 "An error occured while trying to save new credentials: 's_password' or "
@@ -3703,103 +3703,103 @@ msgstr ""
 "नई साख बचाने की कोशिश करते समय एक त्रुटि हुई: 's_password' या 's_username' तार सेट "
 "नहीं किए गए थे।"
 
-#: plugins/x2go/x2go_plugin.c:1686
+#: plugins/x2go/x2go_plugin.cpp:1686
 msgid "Parameter 'default_username' is uninitialized."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1715
+#: plugins/x2go/x2go_plugin.cpp:1715
 #, fuzzy
 msgid "Enter X2Go credentials"
 msgstr "X2Go क्रेडेंशियल्स दर्ज करें"
 
-#: plugins/x2go/x2go_plugin.c:1912
+#: plugins/x2go/x2go_plugin.cpp:1912
 msgid ""
 "Couldn't parse the output of PyHoca-CLI's --list-sessions option. Creating a "
 "new session now."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1951
+#: plugins/x2go/x2go_plugin.cpp:1951
 msgid "Couldn't allocate enough memory!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1961
+#: plugins/x2go/x2go_plugin.cpp:1961
 #, c-format
 msgid "Found already existing X2Go session with ID: '%s'"
 msgstr ""
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2004
+#: plugins/x2go/x2go_plugin.cpp:2004
 msgid "Suspended"
 msgstr ""
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2007
+#: plugins/x2go/x2go_plugin.cpp:2007
 #, fuzzy
 msgid "Running"
 msgstr "चल रहे"
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2010
+#: plugins/x2go/x2go_plugin.cpp:2010
 #, fuzzy
 msgid "Terminated"
 msgstr "टर्मिनल"
 
-#: plugins/x2go/x2go_plugin.c:2043
+#: plugins/x2go/x2go_plugin.cpp:2043
 msgid ""
 "Could not find any sessions on remote machine. Creating a new session now."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2098
+#: plugins/x2go/x2go_plugin.cpp:2098
 #, fuzzy
 msgid "Choose a session to resume:"
 msgstr "अपलोड करने के लिए एक फ़ाइल चुनें"
 
-#: plugins/x2go/x2go_plugin.c:2141
+#: plugins/x2go/x2go_plugin.cpp:2141
 #, fuzzy
 msgid "Waiting for user to select a session…"
 msgstr "सत्र की खिड़की दिखाने के लिए पाइहोका-क्ली का इंतजार करना ।"
 
-#: plugins/x2go/x2go_plugin.c:2149
+#: plugins/x2go/x2go_plugin.cpp:2149
 msgid "No session was selected. Creating a new one."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2197
+#: plugins/x2go/x2go_plugin.cpp:2197
 #, c-format
 msgid "A non-critical error happened: %s"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2202
+#: plugins/x2go/x2go_plugin.cpp:2202
 #, c-format
 msgid "User chose to resume session with ID: '%s'"
 msgstr ""
 
 #. TRANSLATORS: Please stick to X2GoClient's way of translating.
-#: plugins/x2go/x2go_plugin.c:2223
+#: plugins/x2go/x2go_plugin.cpp:2223
 #, c-format
 msgid "Resuming session '%s'…"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2354
+#: plugins/x2go/x2go_plugin.cpp:2354
 #, fuzzy
 msgid "DPI setting is out of bounds. Please adjust it in profile settings."
 msgstr "डीपीआई सेटिंग सीमा से बाहर है। कृपया इसे प्रोफाइल सेटिंग में एडजस्ट करें।"
 
-#: plugins/x2go/x2go_plugin.c:2396
+#: plugins/x2go/x2go_plugin.cpp:2396
 #, fuzzy
 msgid "An error occured while starting an X2Go session…"
 msgstr "X2Go सत्र शुरू करते समय एक त्रुटि हुई …"
 
-#: plugins/x2go/x2go_plugin.c:2404
+#: plugins/x2go/x2go_plugin.cpp:2404
 #, fuzzy
 msgid "Could not start X2Go session."
 msgstr "X2Go सत्र शुरू नहीं कर सका।"
 
-#: plugins/x2go/x2go_plugin.c:2405
+#: plugins/x2go/x2go_plugin.cpp:2405
 #, fuzzy, c-format
 msgid "Could not start PyHoca-CLI (%i): '%s'"
 msgstr "PyHoca-CLI (%i): '%s शुरू नहीं कर सका'"
 
-#: plugins/x2go/x2go_plugin.c:2520
+#: plugins/x2go/x2go_plugin.cpp:2520
 #, fuzzy
 msgid ""
 "Couldn't get PyHoca-CLI's command-line features. This indicates it is either "
@@ -3810,7 +3810,7 @@ msgstr ""
 "पाइहोका-क्ली संस्करण बहुत पुराना है या पाइहोका-क्ली स्थापित नहीं है! सुविधाओं का एक "
 "पुराना सीमित सेट अब इस्तेमाल किया जाएगा ।"
 
-#: plugins/x2go/x2go_plugin.c:2529
+#: plugins/x2go/x2go_plugin.cpp:2529
 #, fuzzy
 msgid ""
 "Could not parse PyHoca-CLI's command-line features. Using a limited feature-"
@@ -3819,47 +3819,47 @@ msgstr ""
 "पाहोका-क्लि कार्यक्षमता पार्सिंग संभव नहीं था! अभी के लिए एक सीमित सुविधा सेट का उपयोग "
 "करना।"
 
-#: plugins/x2go/x2go_plugin.c:2535
+#: plugins/x2go/x2go_plugin.cpp:2535
 #, fuzzy
 msgid "Retrieved the following PyHoca-CLI command-line features:"
 msgstr "निम्नलिखित पाइहोका-क्ली कार्यक्षमता प्राप्त की:"
 
-#: plugins/x2go/x2go_plugin.c:2543
+#: plugins/x2go/x2go_plugin.cpp:2543
 #, fuzzy, c-format
 msgid "Available feature[%i]: '%s'"
 msgstr "उपलब्ध सुविधा [%i: '%s'"
 
-#: plugins/x2go/x2go_plugin.c:2648
+#: plugins/x2go/x2go_plugin.cpp:2648
 #, fuzzy
 msgid "Could not open X11 DISPLAY."
 msgstr "X11 डिस्प्ले नहीं खोल सका।"
 
-#: plugins/x2go/x2go_plugin.c:2688
+#: plugins/x2go/x2go_plugin.cpp:2688
 #, fuzzy
 msgid "Waiting for window of X2Go Agent to appear…"
 msgstr "X2Go एजेंट विंडो के प्रदर्शित होने की प्रतीक्षा कर रहा है।"
 
-#: plugins/x2go/x2go_plugin.c:2714
+#: plugins/x2go/x2go_plugin.cpp:2714
 #, fuzzy
 msgid "Waiting for PyHoca-CLI to show the session's window…"
 msgstr "सत्र की खिड़की दिखाने के लिए पाइहोका-क्ली का इंतजार करना ।"
 
-#: plugins/x2go/x2go_plugin.c:2765
+#: plugins/x2go/x2go_plugin.cpp:2765
 #, fuzzy
 msgid "No X2Go session window appeared. Something went wrong…"
 msgstr "कोई X2Go सत्र खिड़की दिखाई दी। कुछ गलत हो गया …"
 
-#: plugins/x2go/x2go_plugin.c:2876
+#: plugins/x2go/x2go_plugin.cpp:2876
 #, fuzzy
 msgid "RemminaProtocolWidget* gp is 'NULL'!"
 msgstr "आंतरिक त्रुटि: रेम्मिनाप्रोटोकोलविकेट * जीपी शून्य है!"
 
-#: plugins/x2go/x2go_plugin.c:2897
+#: plugins/x2go/x2go_plugin.cpp:2897
 #, fuzzy, c-format
 msgid "The %s protocol is unavailable because GtkSocket only works under X.org"
 msgstr "प्रोटोकॉल %s अनुपलब्ध है क्योंकि GtkSocket केवल X.org के तहत काम करता है"
 
-#: plugins/x2go/x2go_plugin.c:2906
+#: plugins/x2go/x2go_plugin.cpp:2906
 #, fuzzy
 msgid "Could not initialize pthread. Falling back to non-threaded mode…"
 msgstr "पीटीरेड को शुरू नहीं कर सके। गैर-पिरोया मोड पर वापस गिरना …"
@@ -3872,7 +3872,7 @@ msgstr "पीटीरेड को शुरू नहीं कर सके�
 #. your language.
 #. (Except your listing-grammar differs from english.)
 #. 'value1' and 'value2'
-#: plugins/x2go/x2go_plugin.c:2949 plugins/x2go/x2go_plugin.c:2967
+#: plugins/x2go/x2go_plugin.cpp:2949 plugins/x2go/x2go_plugin.cpp:2967
 #, fuzzy, c-format
 msgid "%sand '%s'"
 msgstr "%sऔर '%s'"
@@ -3883,7 +3883,7 @@ msgstr "%sऔर '%s'"
 #. TRANSLATORS: Presumably you just want to leave it english.
 #. (Except your listing-grammar differs from english.)
 #. 'value1' and 'value2'
-#: plugins/x2go/x2go_plugin.c:2954 plugins/x2go/x2go_plugin.c:2972
+#: plugins/x2go/x2go_plugin.cpp:2954 plugins/x2go/x2go_plugin.cpp:2972
 #, fuzzy, c-format
 msgid "%s'%s' "
 msgstr "%s'%s' "
@@ -3891,128 +3891,128 @@ msgstr "%s'%s' "
 #. TRANSLATORS: Presumably you just want to leave it english.
 #. (Except your listing-grammar differs from english.)
 #. 'value1', 'value2', 'valueN-1' and 'valueN'
-#: plugins/x2go/x2go_plugin.c:2959
+#: plugins/x2go/x2go_plugin.cpp:2959
 #, fuzzy, c-format
 msgid "%s'%s', "
 msgstr "%s'%s,, "
 
-#: plugins/x2go/x2go_plugin.c:2998
+#: plugins/x2go/x2go_plugin.cpp:2998
 #, fuzzy
 msgid "Invalid validation data in ProtocolSettings array!"
 msgstr "प्रोटोकॉलसेटिंग सरणी में सत्यापन डेटा अमान्य है!"
 
-#: plugins/x2go/x2go_plugin.c:3013 plugins/x2go/x2go_plugin.c:3078
+#: plugins/x2go/x2go_plugin.cpp:3013 plugins/x2go/x2go_plugin.cpp:3078
 #, fuzzy
 msgid "Validation data in ProtocolSettings array is invalid!"
 msgstr "प्रोटोकॉलसेटिंग सरणी में सत्यापन डेटा अमान्य है!"
 
-#: plugins/x2go/x2go_plugin.c:3022
+#: plugins/x2go/x2go_plugin.cpp:3022
 msgid "Parameters 'key' or 'value' are 'NULL'!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:3040
+#: plugins/x2go/x2go_plugin.cpp:3040
 #, fuzzy, c-format
 msgid "Allowed values are %s."
 msgstr "अनुमानित मान %s हैं।"
 
-#: plugins/x2go/x2go_plugin.c:3042
+#: plugins/x2go/x2go_plugin.cpp:3042
 #, fuzzy, c-format
 msgid "The only allowed value is '%s'."
 msgstr "केवल अनुमेई मूल्य '%s है।"
 
-#: plugins/x2go/x2go_plugin.c:3089
+#: plugins/x2go/x2go_plugin.cpp:3089
 #, fuzzy
 msgid "The lower limit is not a valid integer!"
 msgstr "न्यूनतम सीमा एक वैध पूर्णांक नहीं है!"
 
-#: plugins/x2go/x2go_plugin.c:3094
+#: plugins/x2go/x2go_plugin.cpp:3094
 msgid "The lower limit is too high!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:3099
+#: plugins/x2go/x2go_plugin.cpp:3099
 msgid "The lower limit is too low!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:3104 plugins/x2go/x2go_plugin.c:3134
-#: plugins/x2go/x2go_plugin.c:3154
+#: plugins/x2go/x2go_plugin.cpp:3104 plugins/x2go/x2go_plugin.cpp:3134
+#: plugins/x2go/x2go_plugin.cpp:3154
 #, fuzzy
 msgid "Something unknown went wrong."
 msgstr "कुछ गलत हो गया"
 
-#: plugins/x2go/x2go_plugin.c:3109 plugins/x2go/x2go_plugin.c:3139
-#: plugins/x2go/x2go_plugin.c:3158
+#: plugins/x2go/x2go_plugin.cpp:3109 plugins/x2go/x2go_plugin.cpp:3139
+#: plugins/x2go/x2go_plugin.cpp:3158
 msgid "Please check the RemminaProtocolSetting array for possible errors."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:3119
+#: plugins/x2go/x2go_plugin.cpp:3119
 #, fuzzy
 msgid "The upper limit is not a valid integer!"
 msgstr "इनपुट एक वैध पूर्णांक नहीं है!"
 
-#: plugins/x2go/x2go_plugin.c:3124
+#: plugins/x2go/x2go_plugin.cpp:3124
 msgid "The upper limit is too high!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:3129
+#: plugins/x2go/x2go_plugin.cpp:3129
 msgid "The upper limit is too low!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:3149
+#: plugins/x2go/x2go_plugin.cpp:3149
 #, fuzzy
 msgid "The input is not a valid integer!"
 msgstr "इनपुट एक वैध पूर्णांक नहीं है!"
 
-#: plugins/x2go/x2go_plugin.c:3151 plugins/x2go/x2go_plugin.c:3170
+#: plugins/x2go/x2go_plugin.cpp:3151 plugins/x2go/x2go_plugin.cpp:3170
 #, fuzzy, c-format
 msgid "Input must be a number between %i and %i."
 msgstr "इनपुट %i और %i के बीच एक नंबर होना चाहिए।"
 
-#: plugins/x2go/x2go_plugin.c:3199
+#: plugins/x2go/x2go_plugin.cpp:3199
 #, fuzzy
 msgid "Startup program"
 msgstr "स्टार्टअप कार्यक्रम"
 
-#: plugins/x2go/x2go_plugin.c:3201
+#: plugins/x2go/x2go_plugin.cpp:3201
 #, fuzzy
 msgid "Which command should be executed after creating the X2Go session?"
 msgstr "X2Go सत्र बनाने के बाद कौन सा आदेश निष्पादित किया जाना चाहिए?"
 
-#: plugins/x2go/x2go_plugin.c:3203
+#: plugins/x2go/x2go_plugin.cpp:3203
 #, fuzzy
 msgid "Keyboard Layout (auto)"
 msgstr "कीबोर्ड लेआउट (ऑटो)"
 
-#: plugins/x2go/x2go_plugin.c:3204
+#: plugins/x2go/x2go_plugin.cpp:3204
 #, fuzzy
 msgid "Keyboard type (auto)"
 msgstr "कीबोर्ड प्रकार (ऑटो)"
 
-#: plugins/x2go/x2go_plugin.c:3205
+#: plugins/x2go/x2go_plugin.cpp:3205
 #, fuzzy
 msgid "Audio support"
 msgstr "ऑडियो समर्थन"
 
-#: plugins/x2go/x2go_plugin.c:3207
+#: plugins/x2go/x2go_plugin.cpp:3207
 #, fuzzy
 msgid "The sound system of the X2Go server (default: 'pulse')."
 msgstr "X2Go सर्वर का साउंड सिस्टम (डिफ़ॉल्ट: 'पल्स')।"
 
-#: plugins/x2go/x2go_plugin.c:3210
+#: plugins/x2go/x2go_plugin.cpp:3210
 #, fuzzy
 msgid "Clipboard direction"
 msgstr "क्लिपबोर्ड दिशा"
 
-#: plugins/x2go/x2go_plugin.c:3212
+#: plugins/x2go/x2go_plugin.cpp:3212
 #, fuzzy
 msgid "Which direction should clipboard content be copied? (default: 'both')."
 msgstr "क्लिपबोर्ड सामग्री को किस दिशा में कॉपी किया जाना चाहिए? (डिफ़ॉल्ट: 'दोनों') ।"
 
-#: plugins/x2go/x2go_plugin.c:3216
+#: plugins/x2go/x2go_plugin.cpp:3216
 #, fuzzy
 msgid "DPI resolution"
 msgstr "डीपीआई संकल्प"
 
-#: plugins/x2go/x2go_plugin.c:3217
+#: plugins/x2go/x2go_plugin.cpp:3217
 #, fuzzy
 msgid ""
 "Launch session with a specific resolution (in dots per inch). Must be "
@@ -4021,174 +4021,174 @@ msgstr ""
 "एक विशिष्ट संकल्प (प्रति इंच डॉट्स में) के साथ सत्र लॉन्च करें। 20 से 400 के बीच होना जरूरी "
 "है।"
 
-#: plugins/x2go/x2go_plugin.c:3261
+#: plugins/x2go/x2go_plugin.cpp:3261
 #, fuzzy
 msgid "X2Go plugin loaded."
 msgstr "X2Go प्लगइन लोड किया गया।"
 
-#: plugins/x2go/x2go_plugin.h:43
+#: plugins/x2go/x2go_plugin.hpp:43
 #, fuzzy
 msgid "X2Go - Launch an X2Go session"
 msgstr "X2Go - एक X2Go सत्र लॉन्च"
 
-#: plugins/gvnc/gvnc_plugin_config.h:40
+#: plugins/gvnc/gvnc_plugin_config.hpp:40
 #, fuzzy
 msgid "Remmina VNC plugin for GNOME and KVM"
 msgstr "ग्नोम और केवीएम के लिए रेम्मीना वीएनसी प्लगइन"
 
-#: plugins/gvnc/gvnc_plugin.c:477
+#: plugins/gvnc/gvnc_plugin.cpp:477
 #, fuzzy, c-format
 msgid "Unsupported authentication type %u"
 msgstr "असमर्थित प्रमाणीकरण प्रकार %u"
 
-#: plugins/gvnc/gvnc_plugin.c:489
+#: plugins/gvnc/gvnc_plugin.cpp:489
 #, fuzzy, c-format
 msgid "Authentication failure: %s"
 msgstr "प्रमाणीकरण विफलता: %s"
 
-#: plugins/gvnc/gvnc_plugin.c:820
+#: plugins/gvnc/gvnc_plugin.cpp:820
 #, fuzzy
 msgid "Use server settings"
 msgstr "सर्वर सेटिंग्स का उपयोग करें"
 
-#: plugins/gvnc/gvnc_plugin.c:821
+#: plugins/gvnc/gvnc_plugin.cpp:821
 #, fuzzy
 msgid "True colour (24 bits)"
 msgstr "असली रंग (24 बिट्स)"
 
-#: plugins/gvnc/gvnc_plugin.c:822
+#: plugins/gvnc/gvnc_plugin.cpp:822
 #, fuzzy
 msgid "High colour (16 bits)"
 msgstr "उच्च रंग (16 बिट्स)"
 
-#: plugins/gvnc/gvnc_plugin.c:823
+#: plugins/gvnc/gvnc_plugin.cpp:823
 #, fuzzy
 msgid "Low colour (8 bits)"
 msgstr "कम रंग (8 बिट्स)"
 
-#: plugins/gvnc/gvnc_plugin.c:824
+#: plugins/gvnc/gvnc_plugin.cpp:824
 #, fuzzy
 msgid "Ultra low colour (3 bits)"
 msgstr "अल्ट्रा कम रंग (3 बिट्स)"
 
-#: plugins/gvnc/gvnc_plugin.c:848
+#: plugins/gvnc/gvnc_plugin.cpp:848
 #, fuzzy
 msgid "VNC password"
 msgstr "वीएनसी पासवर्ड"
 
-#: plugins/gvnc/gvnc_plugin.c:850
+#: plugins/gvnc/gvnc_plugin.cpp:850
 #, fuzzy
 msgid "Use JPEG Compression"
 msgstr "जेपीईजी संपीड़न का उपयोग करें"
 
-#: plugins/gvnc/gvnc_plugin.c:850
+#: plugins/gvnc/gvnc_plugin.cpp:850
 #, fuzzy
 msgid "This might not work on all VNC servers"
 msgstr "यह सभी वीएनसी सर्वरों पर काम नहीं कर सकता है"
 
-#: plugins/gvnc/gvnc_plugin.c:851
+#: plugins/gvnc/gvnc_plugin.cpp:851
 #, fuzzy
 msgid "Enable GTK-VNC debug"
 msgstr "जीटीके-वीएनसी डिबग को सक्षम करें"
 
-#: plugins/gvnc/gvnc_plugin.c:871
+#: plugins/gvnc/gvnc_plugin.cpp:871
 #, fuzzy
 msgid "Shared connection"
 msgstr "साझा कनेक्शन"
 
-#: plugins/gvnc/gvnc_plugin.c:871
+#: plugins/gvnc/gvnc_plugin.cpp:871
 #, fuzzy
 msgid ""
 "If the server should try to share the desktop by leaving other clients "
 "connected"
 msgstr "यदि सर्वर को अन्य ग्राहकों को कनेक्ट करके डेस्कटॉप साझा करने की कोशिश करनी चाहिए"
 
-#: plugins/gvnc/gvnc_plugin.c:881
+#: plugins/gvnc/gvnc_plugin.cpp:881
 #, fuzzy
 msgid "Send Ctrl+Alt+_Del"
 msgstr "सीटीआरएल+ऑल्ट+_Del भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:882
+#: plugins/gvnc/gvnc_plugin.cpp:882
 #, fuzzy
 msgid "Send Ctrl+Alt+_Backspace"
 msgstr "Ctrl+Alt+_Backspace भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:883
+#: plugins/gvnc/gvnc_plugin.cpp:883
 #, fuzzy
 msgid "Send Ctrl+Alt+_F1"
 msgstr "Ctrl+Alt+_F1 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:884
+#: plugins/gvnc/gvnc_plugin.cpp:884
 #, fuzzy
 msgid "Send Ctrl+Alt+_F2"
 msgstr "Ctrl+Alt+_F2 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:885
+#: plugins/gvnc/gvnc_plugin.cpp:885
 #, fuzzy
 msgid "Send Ctrl+Alt+_F3"
 msgstr "Ctrl+Alt+_F3 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:886
+#: plugins/gvnc/gvnc_plugin.cpp:886
 #, fuzzy
 msgid "Send Ctrl+Alt+_F4"
 msgstr "Ctrl+Alt+_F4 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:887
+#: plugins/gvnc/gvnc_plugin.cpp:887
 #, fuzzy
 msgid "Send Ctrl+Alt+_F5"
 msgstr "Ctrl+Alt+_F5 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:888
+#: plugins/gvnc/gvnc_plugin.cpp:888
 #, fuzzy
 msgid "Send Ctrl+Alt+_F6"
 msgstr "सीटीआरएल +ऑल्ट+_F6 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:889
+#: plugins/gvnc/gvnc_plugin.cpp:889
 #, fuzzy
 msgid "Send Ctrl+Alt+_F7"
 msgstr "सीटीआरएल+ऑल्ट+_F7 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:890
+#: plugins/gvnc/gvnc_plugin.cpp:890
 #, fuzzy
 msgid "Send Ctrl+Alt+_F8"
 msgstr "Ctrl+Alt+_F8 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:891
+#: plugins/gvnc/gvnc_plugin.cpp:891
 #, fuzzy
 msgid "Send Ctrl+Alt+_F9"
 msgstr "Ctrl+Alt+_F9 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:892
+#: plugins/gvnc/gvnc_plugin.cpp:892
 #, fuzzy
 msgid "Send Ctrl+Alt+_F10"
 msgstr "सीटीआरएल+ऑल्ट+_F10 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:893
+#: plugins/gvnc/gvnc_plugin.cpp:893
 #, fuzzy
 msgid "Send Ctrl+Alt+_F11"
 msgstr "सीटीआरएल+ऑल्ट+_F11 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:894
+#: plugins/gvnc/gvnc_plugin.cpp:894
 #, fuzzy
 msgid "Send Ctrl+Alt+_F12"
 msgstr "सीटीआरएल+ऑल्ट+_F12 भेजें"
 
-#: plugins/gvnc/gvnc_plugin.c:896
+#: plugins/gvnc/gvnc_plugin.cpp:896
 #, fuzzy
 msgid "Reboot remote host"
 msgstr "रिबूट रिमोट होस्ट"
 
-#: plugins/gvnc/gvnc_plugin.c:897
+#: plugins/gvnc/gvnc_plugin.cpp:897
 #, fuzzy
 msgid "Reset remote host (hard reboot)"
 msgstr "रिमोट होस्ट (हार्ड रिबूट) को रीसेट करें"
 
-#: plugins/gvnc/gvnc_plugin.c:898
+#: plugins/gvnc/gvnc_plugin.cpp:898
 #, fuzzy
 msgid "Shutdown remote host"
 msgstr "शटडाउन रिमोट होस्ट"
 
-#: plugins/telepathy/telepathy_channel_handler.c:237
+#: plugins/telepathy/telepathy_channel_handler.cpp:237
 #, fuzzy, c-format
 msgid ""
 "%s wants to share their desktop.\n"
@@ -4197,12 +4197,12 @@ msgstr ""
 "%s अपने डेस्कटॉप को साझा करना चाहता है।\n"
 "क्या आप स्वीकार करते हैं?"
 
-#: plugins/telepathy/telepathy_channel_handler.c:240
+#: plugins/telepathy/telepathy_channel_handler.cpp:240
 #, fuzzy
 msgid "Desktop sharing invitation"
 msgstr "डेस्कटॉप शेयरिंग आमंत्रण"
 
-#: plugins/telepathy/telepathy_plugin.c:57
+#: plugins/telepathy/telepathy_plugin.cpp:57
 #, fuzzy
 msgid "Telepathy - Desktop Sharing"
 msgstr "टेलीपैथी - डेस्कटॉप शेयरिंग"

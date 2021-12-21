@@ -125,7 +125,7 @@ if ! rem_varhasvalue GIT_TAG ; then
 fi
 
 
-if ! find src plugins -name "*\.c" -o -name "*\.h" | sed 's/^.\///'  >| po/POTFILES.in ; then
+if ! find src plugins -name "*\.cpp" -o -name "*\.hpp" | sed 's/^.\///'  >| po/POTFILES.in ; then
 	exit 1
 fi
 if ! find data -name "*.glade" | sed 's/^.\///' >> po/POTFILES.in ; then

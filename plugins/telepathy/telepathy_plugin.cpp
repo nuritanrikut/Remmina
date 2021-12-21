@@ -34,8 +34,8 @@
  *
  */
 
-#include "common/remmina_plugin.h"
-#include "telepathy_handler.h"
+#include "common/remmina_plugin.hpp"
+#include "telepathy_handler.hpp"
 
 RemminaPluginService *remmina_plugin_telepathy_service = NULL;
 
@@ -60,17 +60,20 @@ static RemminaEntryPlugin remmina_plugin_telepathy = {
     remmina_plugin_telepathy_entry       // Plugin entry function
 };
 
-G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
+extern "C"
 {
-    TRACE_CALL( __func__ );
-    remmina_plugin_telepathy_service = service;
-
-    bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
-    bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
-
-    if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin_telepathy ) )
+    G_MODULE_EXPORT int remmina_plugin_entry( RemminaPluginService *service )
     {
-        return FALSE;
+        TRACE_CALL( __func__ );
+        remmina_plugin_telepathy_service = service;
+
+        bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
+        bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
+
+        if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin_telepathy ) )
+        {
+            return FALSE;
+        }
+        return TRUE;
     }
-    return TRUE;
 }

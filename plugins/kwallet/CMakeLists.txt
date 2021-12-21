@@ -38,9 +38,9 @@ find_suggested_package(KF5Wallet)
 if(KF5Wallet_FOUND)
     message(STATUS "KF5Wallet library found.")
     set(REMMINA_PLUGIN_KF5WALLET_SRCS
-        src/kwallet_plugin_main.c
+        src/kwallet_plugin_main.cpp
         src/kwallet_plugin.cpp
-        src/kwallet_plugin.h
+        src/kwallet_plugin.hpp
     )
 
     add_library(remmina-plugin-kwallet MODULE ${REMMINA_PLUGIN_KF5WALLET_SRCS})

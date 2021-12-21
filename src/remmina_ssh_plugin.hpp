@@ -40,16 +40,16 @@
 #    include <vte/vte.h>
 #endif
 
-G_BEGIN_DECLS
+
 
 void remmina_ssh_plugin_register( void );
 
 typedef struct _RemminaProtocolSettingOpt
 {
     RemminaProtocolSettingType type;
-    const gchar *name;
-    const gchar *label;
-    gboolean compact;
+    const char *name;
+    const char *label;
+    bool compact;
     gpointer opt1;
     gpointer opt2;
 } RemminaProtocolSettingOpt;
@@ -65,7 +65,7 @@ void remmina_plugin_ssh_vte_copy_clipboard( GtkMenuItem *menuitem, gpointer vte 
 void remmina_plugin_ssh_vte_paste_clipboard( GtkMenuItem *menuitem, gpointer vte );
 void remmina_plugin_ssh_vte_decrease_font( GtkMenuItem *menuitem, gpointer vte );
 void remmina_plugin_ssh_vte_increase_font( GtkMenuItem *menuitem, gpointer vte );
-gboolean remmina_ssh_plugin_popup_menu( GtkWidget *widget, GdkEvent *event, GtkWidget *menu );
+int remmina_ssh_plugin_popup_menu( GtkWidget *widget, GdkEvent *event, GtkWidget *menu );
 #endif
 
-G_END_DECLS
+

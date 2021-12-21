@@ -36,11 +36,11 @@
 #include <gtk/gtk.h>
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
-#include <structmember.h>
+#include <structmember.hpp>
 
-#include "remmina/remmina_trace_calls.h"
-#include "remmina_file.h"
-#include "remmina_plugin_python_remmina_file.h"
+#include "remmina/remmina_trace_calls.hpp"
+#include "remmina_file.hpp"
+#include "remmina_plugin_python_remmina_file.hpp"
 
 typedef struct
 {
@@ -92,8 +92,8 @@ static PyObject *file_get_path( PyRemminaFile *self, PyObject *args )
 
 static PyObject *file_set_setting( PyRemminaFile *self, PyObject *args, PyObject *kwds )
 {
-    static const gchar *keyword_list[] = { "key", "value" };
-    gchar *key;
+    static const char *keyword_list[] = { "key", "value" };
+    char *key;
     PyObject *value;
 
     if( PyArg_ParseTupleAndKeywords( args, kwds, "sO", keyword_list, &key, &value ) )
@@ -122,8 +122,8 @@ static PyObject *file_set_setting( PyRemminaFile *self, PyObject *args, PyObject
 
 static PyObject *file_get_setting( PyRemminaFile *self, PyObject *args, PyObject *kwds )
 {
-    static const gchar *keyword_list[] = { "key", "default" };
-    gchar *key;
+    static const char *keyword_list[] = { "key", "default" };
+    char *key;
     PyObject *def;
 
     if( PyArg_ParseTupleAndKeywords( args, kwds, "sO", keyword_list, &key, &def ) )
@@ -152,7 +152,7 @@ static PyObject *file_get_setting( PyRemminaFile *self, PyObject *args, PyObject
 
 static PyObject *file_get_secret( PyRemminaFile *self, PyObject *key )
 {
-    static const gchar *keyword_list[] = { "key", "default" };
+    static const char *keyword_list[] = { "key", "default" };
 
     if( key && PyUnicode_Check( key ) )
     {

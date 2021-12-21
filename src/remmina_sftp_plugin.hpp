@@ -36,9 +36,9 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 void remmina_sftp_plugin_register( void );
-gboolean remmina_plugin_sftp_start_direct_tunnel( RemminaProtocolWidget *gp, char **phost, int *pport );
+int remmina_plugin_sftp_start_direct_tunnel( RemminaProtocolWidget *gp, char **phost, int *pport );
 
-G_END_DECLS
+

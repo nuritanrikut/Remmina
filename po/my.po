@@ -21,104 +21,104 @@ msgstr ""
 "X-Generator: Weblate 4.10\n"
 "X-Launchpad-Export-Date: 2014-09-20 14:24+0000\n"
 
-#: src/remmina_sftp_plugin.c:310 src/remmina_sftp_plugin.c:354
-#: src/remmina_protocol_widget.c:1677 src/remmina_protocol_widget.c:1696
-#: src/remmina_file_editor.c:1101 src/remmina_file_editor.c:1222
-#: src/remmina_ssh_plugin.c:1361 plugins/rdp/rdp_plugin.c:2760
-#: plugins/www/www_plugin.c:895 plugins/x2go/x2go_plugin.c:3198
+#: src/remmina_sftp_plugin.cpp:310 src/remmina_sftp_plugin.cpp:354
+#: src/remmina_protocol_widget.cpp:1677 src/remmina_protocol_widget.cpp:1696
+#: src/remmina_file_editor.cpp:1101 src/remmina_file_editor.cpp:1222
+#: src/remmina_ssh_plugin.cpp:1361 plugins/rdp/rdp_plugin.cpp:2760
+#: plugins/www/www_plugin.cpp:895 plugins/x2go/x2go_plugin.cpp:3198
 #: data/ui/remmina_mpc.glade:236 data/ui/remmina_preferences.glade:1646
 #: data/ui/remmina_unlock.glade:116
 msgid "Password"
 msgstr "စကားဝှက်"
 
-#: src/remmina_sftp_plugin.c:311 src/remmina_sftp_plugin.c:356
-#: src/remmina_file_editor.c:1102 src/remmina_ssh_plugin.c:1362
-#: src/remmina_ssh_plugin.c:1473
+#: src/remmina_sftp_plugin.cpp:311 src/remmina_sftp_plugin.cpp:356
+#: src/remmina_file_editor.cpp:1102 src/remmina_ssh_plugin.cpp:1362
+#: src/remmina_ssh_plugin.cpp:1473
 #, fuzzy
 msgid "SSH identity file"
 msgstr "SSH ident ဖိုင်"
 
-#: src/remmina_sftp_plugin.c:312 src/remmina_file_editor.c:1103
-#: src/remmina_ssh_plugin.c:1363
+#: src/remmina_sftp_plugin.cpp:312 src/remmina_file_editor.cpp:1103
+#: src/remmina_ssh_plugin.cpp:1363
 #, fuzzy
 msgid "SSH agent"
 msgstr "SSH ကိုယ်စားလှယ်"
 
-#: src/remmina_sftp_plugin.c:313 src/remmina_file_editor.c:1104
-#: src/remmina_ssh_plugin.c:1364
+#: src/remmina_sftp_plugin.cpp:313 src/remmina_file_editor.cpp:1104
+#: src/remmina_ssh_plugin.cpp:1364
 #, fuzzy
 msgid "Public key (automatic)"
 msgstr "ပြည်သူ့ခလုတ် (အလိုအလျောက်)"
 
-#: src/remmina_sftp_plugin.c:314 src/remmina_file_editor.c:1105
-#: src/remmina_ssh_plugin.c:1365
+#: src/remmina_sftp_plugin.cpp:314 src/remmina_file_editor.cpp:1105
+#: src/remmina_ssh_plugin.cpp:1365
 #, fuzzy
 msgid "Kerberos (GSSAPI)"
 msgstr "Kerberos (GSAPI)"
 
-#: src/remmina_sftp_plugin.c:323
+#: src/remmina_sftp_plugin.cpp:323
 #, fuzzy
 msgid "Show Hidden Files"
 msgstr "ဝှက်ထားတဲ့ဖိုင်တွေကို ပြပါ"
 
-#: src/remmina_sftp_plugin.c:325
+#: src/remmina_sftp_plugin.cpp:325
 #, fuzzy
 msgid "Overwrite all files"
 msgstr "ဖိုင်အားလုံးကို ကျော်လွှားရေးသားပါ"
 
-#: src/remmina_sftp_plugin.c:327
+#: src/remmina_sftp_plugin.cpp:327
 #, fuzzy
 msgid "Resume all file transfers"
 msgstr "ဖိုင် လွှဲပြောင်းမှုအားလုံးကို ပြန်လုပ်ပါ"
 
-#: src/remmina_sftp_plugin.c:328 src/remmina_protocol_widget.c:284
+#: src/remmina_sftp_plugin.cpp:328 src/remmina_protocol_widget.cpp:284
 #, fuzzy
 msgid "Connect via SSH from a new terminal"
 msgstr "terminal အသစ်မှ SSH မှတစ်ဆင့် ဆက်သွယ်ပါ"
 
-#: src/remmina_sftp_plugin.c:353 src/remmina_message_panel.c:330
-#: src/remmina_file_editor.c:1216 src/remmina_ssh_plugin.c:1471
-#: plugins/rdp/rdp_plugin.c:2759 plugins/vnc/vnc_plugin.c:1997
-#: plugins/vnc/vnc_plugin.c:2009 plugins/www/www_plugin.c:894
-#: plugins/x2go/x2go_plugin.c:475 plugins/x2go/x2go_plugin.c:3197
+#: src/remmina_sftp_plugin.cpp:353 src/remmina_message_panel.cpp:330
+#: src/remmina_file_editor.cpp:1216 src/remmina_ssh_plugin.cpp:1471
+#: plugins/rdp/rdp_plugin.cpp:2759 plugins/vnc/vnc_plugin.cpp:1997
+#: plugins/vnc/vnc_plugin.cpp:2009 plugins/www/www_plugin.cpp:894
+#: plugins/x2go/x2go_plugin.cpp:475 plugins/x2go/x2go_plugin.cpp:3197
 #: data/ui/remmina_mpc.glade:144
 #, fuzzy
 msgid "Username"
 msgstr "အသုံးပြုသူအမည်"
 
-#: src/remmina_sftp_plugin.c:355 src/remmina_file_editor.c:1207
-#: src/remmina_ssh_plugin.c:1470
+#: src/remmina_sftp_plugin.cpp:355 src/remmina_file_editor.cpp:1207
+#: src/remmina_ssh_plugin.cpp:1470
 #, fuzzy
 msgid "Authentication type"
 msgstr "စစ်ဆေးခြင်း အမျိုးအစား"
 
-#: src/remmina_sftp_plugin.c:357 src/remmina_file_editor.c:1240
-#: src/remmina_ssh_plugin.c:1477
+#: src/remmina_sftp_plugin.cpp:357 src/remmina_file_editor.cpp:1240
+#: src/remmina_ssh_plugin.cpp:1477
 #, fuzzy
 msgid "Password to unlock private key"
 msgstr "ပုဂ္ဂလိကခလုတ်ကိုဖွင့်ရန် စကားဝှက်"
 
-#: src/remmina_sftp_plugin.c:358 src/remmina_ssh_plugin.c:1508
+#: src/remmina_sftp_plugin.cpp:358 src/remmina_ssh_plugin.cpp:1508
 #, fuzzy
 msgid "SSH Proxy Command"
 msgstr "SSH Prox အမိန့်"
 
-#: src/remmina_sftp_plugin.c:367
+#: src/remmina_sftp_plugin.cpp:367
 #, fuzzy
 msgid "SFTP - Secure File Transfer"
 msgstr "SFTP - လုံခြုံတဲ့ ဖိုင် လွှဲပြောင်း"
 
-#: src/remmina_log.c:129
+#: src/remmina_log.cpp:129
 #, fuzzy
 msgid "Remmina debugging window"
 msgstr "Remmina အဓိက ပြတင်းပေါက်ကို ဖွင့်ပါ"
 
-#: src/remmina_log.c:133
+#: src/remmina_log.cpp:133
 #, fuzzy
 msgid "Paste sytem info in the Remmina debugging window"
 msgstr "Remmina အဓိက ပြတင်းပေါက်ကို ဖွင့်ပါ"
 
-#: src/remmina_log.c:153
+#: src/remmina_log.cpp:153
 msgid ""
 "This window can help you find connection problems.\n"
 "You can stop and start the logging at any moment using the On/Off switch.\n"
@@ -128,162 +128,162 @@ msgid ""
 "Remmina/-/wikis/Usage/Remmina-debugging\n"
 msgstr ""
 
-#: src/remmina_plugin_manager.c:73 src/remmina_file_editor.c:1951
+#: src/remmina_plugin_manager.cpp:73 src/remmina_file_editor.cpp:1951
 #, fuzzy
 msgid "Protocol"
 msgstr "Protocol"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Entry"
 msgstr "ဝင် ဝင် ဝင်"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "File"
 msgstr "ဖိုင်"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Tool"
 msgstr "ကိရိယာ"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Preference"
 msgstr "အပြင်အဆင်"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 #, fuzzy
 msgid "Secret"
 msgstr "လျှို့ဝှက်ချက်"
 
-#: src/remmina_plugin_manager.c:462 data/ui/remmina_main.glade:305
+#: src/remmina_plugin_manager.cpp:462 data/ui/remmina_main.glade:305
 #, fuzzy
 msgid "Plugins"
 msgstr "ပလက်ဂျင်း"
 
-#: src/remmina_plugin_manager.c:462 src/remmina_message_panel.c:452
-#: src/remmina_message_panel.c:621 src/remmina_file_editor.c:242
+#: src/remmina_plugin_manager.cpp:462 src/remmina_message_panel.cpp:452
+#: src/remmina_message_panel.cpp:621 src/remmina_file_editor.cpp:242
 #, fuzzy
 msgid "_OK"
 msgstr "_OK"
 
-#: src/remmina_plugin_manager.c:480 src/remmina_file_editor.c:1908
+#: src/remmina_plugin_manager.cpp:480 src/remmina_file_editor.cpp:1908
 #: data/ui/remmina_main.glade:442
 #, fuzzy
 msgid "Name"
 msgstr "အမည်"
 
-#: src/remmina_plugin_manager.c:486
+#: src/remmina_plugin_manager.cpp:486
 #, fuzzy
 msgid "Type"
 msgstr "အမျိုးအစား"
 
-#: src/remmina_plugin_manager.c:492
+#: src/remmina_plugin_manager.cpp:492
 #, fuzzy
 msgid "Description"
 msgstr "ရှင်းလင်းဖော်ပြချက်"
 
-#: src/remmina_plugin_manager.c:498
+#: src/remmina_plugin_manager.cpp:498
 #, fuzzy
 msgid "Version"
 msgstr "ဗားရှင်း"
 
-#: src/remmina_chat_window.c:178
+#: src/remmina_chat_window.cpp:178
 #, c-format
 msgid "Chat with %s"
 msgstr "%s နှင့်Chat မည်"
 
-#: src/remmina_chat_window.c:230
+#: src/remmina_chat_window.cpp:230
 msgid "_Send"
 msgstr "_S ပို့မည်"
 
-#: src/remmina_chat_window.c:240
+#: src/remmina_chat_window.cpp:240
 msgid "_Clear"
 msgstr "_C ရှင်းလင်းမည်"
 
-#: src/remmina_applet_menu_item.c:121
+#: src/remmina_applet_menu_item.cpp:121
 msgid "Discovered"
 msgstr "ရှာဖွေမည်"
 
-#: src/remmina_applet_menu_item.c:126
+#: src/remmina_applet_menu_item.cpp:126
 msgid "New Connection"
 msgstr "ချိတ်ဆက်မှု့အသစ်"
 
-#: src/remmina_key_chooser.h:38
+#: src/remmina_key_chooser.hpp:38
 #, fuzzy
 msgid "Shift+"
 msgstr "အပြောင်းအလဲ +"
 
-#: src/remmina_key_chooser.h:39
+#: src/remmina_key_chooser.hpp:39
 #, fuzzy
 msgid "Ctrl+"
 msgstr "Ctrl + Ctrl +"
 
-#: src/remmina_key_chooser.h:40
+#: src/remmina_key_chooser.hpp:40
 #, fuzzy
 msgid "Alt+"
 msgstr "နှုတ်ခမ်း +"
 
-#: src/remmina_key_chooser.h:41
+#: src/remmina_key_chooser.hpp:41
 #, fuzzy
 msgid "Super+"
 msgstr "Super + Super +"
 
-#: src/remmina_key_chooser.h:42
+#: src/remmina_key_chooser.hpp:42
 #, fuzzy
 msgid "Hyper+"
 msgstr "ဟိုက်ပါ +"
 
-#: src/remmina_key_chooser.h:43
+#: src/remmina_key_chooser.hpp:43
 #, fuzzy
 msgid "Meta+"
 msgstr "မီတာ + မီတာ +"
 
-#: src/remmina_key_chooser.h:44
+#: src/remmina_key_chooser.hpp:44
 #, fuzzy
 msgid "<None>"
 msgstr "<None>"
 
-#: src/remmina_pref_dialog.c:91 src/remmina_file_editor.c:528
+#: src/remmina_pref_dialog.cpp:91 src/remmina_file_editor.cpp:528
 #, fuzzy
 msgid "Resolutions"
 msgstr "ဖြေရှင်းချက်များ"
 
-#: src/remmina_pref_dialog.c:91 src/remmina_file_editor.c:528
+#: src/remmina_pref_dialog.cpp:91 src/remmina_file_editor.cpp:528
 #, fuzzy
 msgid "Configure the available resolutions"
 msgstr "ရရှိနိုင်တဲ့ ဖြေရှင်းချက်တွေကို သတ်မှတ်ပါ"
 
-#: src/remmina_pref_dialog.c:143
+#: src/remmina_pref_dialog.cpp:143
 #, fuzzy
 msgid "Recent lists cleared."
 msgstr "မကြာသေးမီက စာရင်းများ ရှင်းလင်းခဲ့သည်။"
 
-#: src/remmina_pref_dialog.c:155 src/rcw.c:2028
+#: src/remmina_pref_dialog.cpp:155 src/rcw.cpp:2028
 #: data/ui/remmina_preferences.glade:169 data/ui/remmina_preferences.glade:179
 #, fuzzy
 msgid "Keystrokes"
 msgstr "Keystrostros"
 
-#: src/remmina_pref_dialog.c:155
+#: src/remmina_pref_dialog.cpp:155
 #, fuzzy
 msgid "Configure the keystrokes"
 msgstr "သော့ချက်ရိုက်ချက်များကို ပုံဖော်ပါ"
 
 #. TRANSLATORS: Do not translate libsodium, is the name of a library
-#: src/remmina_pref_dialog.c:482
+#: src/remmina_pref_dialog.cpp:482
 #, fuzzy
 msgid "libsodium >= 1.9.0 is required to use master password"
 msgstr "Libsodium > = 1.9.0 ကို Master စကားဝှက်အသုံးပြုဖို့ လိုအပ်ပါတယ်"
 
-#: src/remmina_pref_dialog.c:805
+#: src/remmina_pref_dialog.cpp:805
 #, fuzzy
 msgid "Picking a terminal colouring file replaces the file: "
 msgstr "terminal ရောင်စုံဖိုင်ကို ရွေးခြင်းက ဖိုင်ကို အစားထိုးလိုက်ပါတယ်- "
 
-#: src/remmina_pref_dialog.c:809
+#: src/remmina_pref_dialog.cpp:809
 #, fuzzy
 msgid ""
 "This file contains the “Custom” terminal colour scheme selectable from the "
@@ -293,13 +293,13 @@ msgstr ""
 "ဤဖိုင်တွင် သတ်မှတ်ချက်များတွင် \"Terminal\" tab တွင် တည်းဖြတ်နိုင်သည့် \"အဆင့်မြင့်\" အရောင် အစီအစဉ်မှ "
 "ရွေးချယ်ရသော \"ဓလေ့ထုံးစံ\" အရောင်စီမံကိန်းပါဝင်သည်။"
 
-#: src/remmina_message_panel.c:163 data/ui/remmina_mpc.glade:46
+#: src/remmina_message_panel.cpp:163 data/ui/remmina_mpc.glade:46
 #: data/ui/remmina_unlock.glade:46
 #, fuzzy
 msgid "Cancel"
 msgstr "ပယ်ဖျက်"
 
-#: src/remmina_message_panel.c:199 data/ui/remmina_snap_info_dialog.glade:28
+#: src/remmina_message_panel.cpp:199 data/ui/remmina_snap_info_dialog.glade:28
 #: data/ui/remmina_string_list.glade:8 data/ui/remmina_string_list.glade:9
 #: data/ui/remmina_string_list.glade:63 data/ui/remmina_news.glade:33
 #: data/ui/remmina_preferences.glade:2593
@@ -307,200 +307,200 @@ msgstr "ပယ်ဖျက်"
 msgid "Close"
 msgstr "ပိတ်ပါ"
 
-#: src/remmina_message_panel.c:260
+#: src/remmina_message_panel.cpp:260
 #, fuzzy
 msgid "Yes"
 msgstr "ဟုတ်"
 
-#: src/remmina_message_panel.c:267
+#: src/remmina_message_panel.cpp:267
 #, fuzzy
 msgid "No"
 msgstr "မဟုတ်"
 
-#: src/remmina_message_panel.c:391 plugins/rdp/rdp_plugin.c:2761
+#: src/remmina_message_panel.cpp:391 plugins/rdp/rdp_plugin.cpp:2761
 #: data/ui/remmina_mpc.glade:172
 #, fuzzy
 msgid "Domain"
 msgstr "ဒိုမိန်း"
 
-#: src/remmina_message_panel.c:420
+#: src/remmina_message_panel.cpp:420
 #, fuzzy
 msgid "Save password"
 msgstr "စကားဝှက်ကို သိမ်းဆည်းပါ"
 
-#: src/remmina_message_panel.c:457 src/remmina_message_panel.c:629
-#: src/remmina_sftp_client.c:947 src/remmina_file_editor.c:241
-#: src/remmina_file_editor.c:1783 plugins/spice/spice_plugin_file_transfer.c:84
+#: src/remmina_message_panel.cpp:457 src/remmina_message_panel.cpp:629
+#: src/remmina_sftp_client.cpp:947 src/remmina_file_editor.cpp:241
+#: src/remmina_file_editor.cpp:1783 plugins/spice/spice_plugin_file_transfer.cpp:84
 #: data/ui/remmina_key_chooser.glade:8 data/ui/remmina_key_chooser.glade:9
 #: data/ui/remmina_spinner.glade:8 data/ui/remmina_spinner.glade:9
 #, fuzzy
 msgid "_Cancel"
 msgstr "_Cancel"
 
-#: src/remmina_message_panel.c:513
+#: src/remmina_message_panel.cpp:513
 #, fuzzy
 msgid "Enter certificate authentication files"
 msgstr "အသိအမှတ်ပြုလွှာ စစ်ဆေးရေးဖိုင်များ ဝင်ရောက်ပါ"
 
-#: src/remmina_message_panel.c:525
+#: src/remmina_message_panel.cpp:525
 #, fuzzy
 msgid "CA Certificate File"
 msgstr "စီအေ လက်မှတ်ဖိုင်"
 
-#: src/remmina_message_panel.c:547
+#: src/remmina_message_panel.cpp:547
 #, fuzzy
 msgid "CA CRL File"
 msgstr "CRL ဖိုင်"
 
-#: src/remmina_message_panel.c:569
+#: src/remmina_message_panel.cpp:569
 #, fuzzy
 msgid "Client Certificate File"
 msgstr "Certicate Certicate ဖိုင်"
 
-#: src/remmina_message_panel.c:591
+#: src/remmina_message_panel.cpp:591
 #, fuzzy
 msgid "Client Certificate Key"
 msgstr "Certicate Certicate key"
 
-#: src/rcw.c:655
+#: src/rcw.cpp:655
 #, fuzzy, c-format
 msgid ""
 "Are you sure you want to close %i active connections in the current window?"
 msgstr "လက်ရှိ ပြတင်းပေါက်မှာ %i တက်ကြွတဲ့ ချိတ်ဆက်မှုတွေကို ပိတ်ချင်တယ်ဆိုတာ သေချာလား။"
 
-#: src/rcw.c:1399
+#: src/rcw.cpp:1399
 #, fuzzy
 msgid "Viewport fullscreen mode"
 msgstr "မြင်ကွင်းအပြည့် မျက်နှာပြင်ပုံစံ"
 
-#: src/rcw.c:1407 data/ui/remmina_preferences.glade:578
+#: src/rcw.cpp:1407 data/ui/remmina_preferences.glade:578
 #, fuzzy
 msgid "Scrolled fullscreen"
 msgstr "လိပ်ထားတဲ့ ဆင်ခြေဖြူ"
 
-#: src/rcw.c:1493
+#: src/rcw.cpp:1493
 #, fuzzy
 msgid "Keep aspect ratio when scaled"
 msgstr "ချိန်ခွင်ချိန်တွင် ရှုထောင့်အချိုးကို ထိန်းသိမ်းထားပါ"
 
-#: src/rcw.c:1501
+#: src/rcw.cpp:1501
 #, fuzzy
 msgid "Fill client window when scaled"
 msgstr "ဖောက်သည် ဝင်းဒိုး ဖြည့်ပါ"
 
-#: src/rcw.c:2049
+#: src/rcw.cpp:2049
 #, fuzzy
 msgid "Send clipboard content as keystrokes"
 msgstr "Clipboard အကြောင်းအရာကို ကီးစထရိုက်တာအဖြစ် ပေးပို့ပါ"
 
-#: src/rcw.c:2155
+#: src/rcw.cpp:2155
 #, fuzzy
 msgid "Turn off scaling to avoid screenshot distortion."
 msgstr "ဖန်သားပြင် လွဲမှား မှု ကို ရှောင်ရှား ရန် စကေး ပိတ် ပါ ။"
 
-#: src/rcw.c:2215 plugins/www/www_plugin.c:855
+#: src/rcw.cpp:2215 plugins/www/www_plugin.cpp:855
 #, fuzzy
 msgid "Screenshot taken"
 msgstr "ရုပ်ရှင်ရိုက်ယူမှု"
 
-#: src/rcw.c:2298
+#: src/rcw.cpp:2298
 #, fuzzy
 msgid "_Menu"
 msgstr "_Menu"
 
-#: src/rcw.c:2299
+#: src/rcw.cpp:2299
 #, fuzzy
 msgid "Menu"
 msgstr "မီနူး"
 
-#: src/rcw.c:2308
+#: src/rcw.cpp:2308
 #, fuzzy
 msgid "Open the Remmina main window"
 msgstr "Remmina အဓိက ပြတင်းပေါက်ကို ဖွင့်ပါ"
 
-#: src/rcw.c:2318
+#: src/rcw.cpp:2318
 #, fuzzy
 msgid "Duplicate current connection"
 msgstr "လက်ရှိ ဆက်သွယ်မှုကို တုပပါ"
 
-#: src/rcw.c:2335
+#: src/rcw.cpp:2335
 #, fuzzy
 msgid "Resize the window to fit in remote resolution"
 msgstr "ဝေးလံသောဖြေရှင်းချက်တွင် အံဝင်ခွင်ကျဖြစ်စေရန် ပြတင်းပေါက်ကို ပြင်ဆင်ပါ"
 
-#: src/rcw.c:2346
+#: src/rcw.cpp:2346
 #, fuzzy
 msgid "Toggle fullscreen mode"
 msgstr "Toggle အပြည့် မျက်နှာပြင်ပုံစံ"
 
-#: src/rcw.c:2392 data/ui/remmina_preferences.glade:1303
+#: src/rcw.cpp:2392 data/ui/remmina_preferences.glade:1303
 #: data/ui/remmina_preferences.glade:1313
 #, fuzzy
 msgid "Multi monitor"
 msgstr "Multi မော်နီတာ"
 
-#: src/rcw.c:2408
+#: src/rcw.cpp:2408
 #, fuzzy
 msgid "Toggle dynamic resolution update"
 msgstr "Toggle dynnamic ဖြေရှင်းချက် အသစ်ပြင်ဆင်ချက်"
 
-#: src/rcw.c:2418
+#: src/rcw.cpp:2418
 #, fuzzy
 msgid "Toggle scaled mode"
 msgstr "Toggle စကေးချထားတဲ့ ပုံစံ"
 
-#: src/rcw.c:2458 data/ui/remmina_preferences.glade:1037
+#: src/rcw.cpp:2458 data/ui/remmina_preferences.glade:1037
 #, fuzzy
 msgid "Switch tab pages"
 msgstr "Swech tab စာမျက်နှာများ"
 
-#: src/rcw.c:2468
+#: src/rcw.cpp:2468
 #, fuzzy
 msgid "Grab all keyboard events"
 msgstr "ကီးဘုတ်အဖြစ်အပျက်အားလုံးကို ရယူပါ"
 
-#: src/rcw.c:2478
+#: src/rcw.cpp:2478
 #, fuzzy
 msgid "Preferences"
 msgstr "အပြင်အဆင်"
 
-#: src/rcw.c:2487
+#: src/rcw.cpp:2487
 msgid "_Tools"
 msgstr "Tools"
 
-#: src/rcw.c:2488 data/ui/remmina_main.glade:207
+#: src/rcw.cpp:2488 data/ui/remmina_main.glade:207
 msgid "Tools"
 msgstr "Tools"
 
-#: src/rcw.c:2501 data/ui/remmina_preferences.glade:1238
+#: src/rcw.cpp:2501 data/ui/remmina_preferences.glade:1238
 #: data/ui/remmina_preferences.glade:1248
 #, fuzzy
 msgid "Screenshot"
 msgstr "ဇာတ်ညွှန်း"
 
-#: src/rcw.c:2515 data/ui/remmina_preferences.glade:1145
+#: src/rcw.cpp:2515 data/ui/remmina_preferences.glade:1145
 #, fuzzy
 msgid "Minimize window"
 msgstr "ဝင်းဒိုးကို လျော့နည်းစေပါ"
 
-#: src/rcw.c:2525 data/ui/remmina_preferences.glade:1176
+#: src/rcw.cpp:2525 data/ui/remmina_preferences.glade:1176
 msgid "Disconnect"
 msgstr "အဆက်အသွယ်ဖြတ်မည်။"
 
-#: src/rcw.c:4298
+#: src/rcw.cpp:4298
 #, fuzzy, c-format
 msgid "The file “%s” is corrupted, unreadable, or could not be found."
 msgstr "\"%s ဖိုင်သည် ယိုယွင်းပျက်စီးနေပြီး မဖြည့်ဆည်းနိုင်၊ မတွေ့ရပါ။"
 
 #. TRANSLATORS: This should be a link to the Remmina wiki page:
 #. TRANSLATORS: 'GtkSocket feature is not available'.
-#: src/rcw.c:4372
+#: src/rcw.cpp:4372
 msgid ""
 "https://gitlab.com/Remmina/Remmina/-/wikis/GtkSocket-feature-is-not-"
 "available-in-a-Wayland-session"
 msgstr ""
 
-#: src/rcw.c:4509
+#: src/rcw.cpp:4509
 #, fuzzy
 msgid ""
 "Warning: This plugin requires GtkSocket, but this feature is unavailable in "
@@ -509,7 +509,7 @@ msgstr "သတိပေးချက်- ဒီပလက်ဂျင်က GtkSoc
 
 #. TRANSLATORS: This should be a link to the Remmina wiki page:
 #. 'GtkSocket feature is not available'.
-#: src/rcw.c:4515
+#: src/rcw.cpp:4515
 msgid ""
 "Plugins relying on GtkSocket can't run in a Wayland session.\n"
 "For more info and a possible workaround, please visit the Remmina wiki at:\n"
@@ -518,45 +518,45 @@ msgid ""
 "available-in-a-Wayland-session"
 msgstr ""
 
-#: src/rcw.c:4529
+#: src/rcw.cpp:4529
 #, fuzzy
 msgid "Open in web browser"
 msgstr "အဓိက ဝင်းဒိုးကိုဖွင့်ပါ"
 
-#: src/remmina_mpchange.c:234
+#: src/remmina_mpchange.cpp:234
 #, fuzzy
 msgid "The passwords do not match"
 msgstr "စကားဝှက်တွေနဲ့ မကိုက်ညီဘူး"
 
-#: src/remmina_mpchange.c:244
+#: src/remmina_mpchange.cpp:244
 #, fuzzy
 msgid "Resetting passwords, please wait…"
 msgstr "စကားဝှက်များကို ပြန်လည်ချိန်ညှိပါ၊ ကျေးဇူးပြု၍ စောင့်ပါ...…"
 
-#: src/remmina_mpchange.c:327
+#: src/remmina_mpchange.cpp:327
 #, fuzzy
 msgid "The multi password changer requires a secrecy plugin.\n"
 msgstr "စကားဝှက်ပြောင်းလဲသူမှာ လျှို့ဝှက် ပလက်ဂျင်လိုအပ်ပါတယ်။\n"
 
-#: src/remmina_mpchange.c:330
+#: src/remmina_mpchange.cpp:330
 #, fuzzy
 msgid "The multi password changer requires a secrecy service.\n"
 msgstr "စကားဝှက်ပြောင်းလဲသူမှာ လျှို့ဝှက်လုပ်ငန်းတစ်ခု လိုအပ်ပါတယ်။\n"
 
-#: src/remmina_mpchange.c:409
+#: src/remmina_mpchange.cpp:409
 #, fuzzy, c-format
 msgid "%d password changed."
 msgid_plural "%d passwords changed."
 msgstr[0] "%d စကားဝှက်ပြောင်းလဲခဲ့သည်။"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:84
+#: src/remmina.cpp:84
 #, fuzzy
 msgid "Show 'About'"
 msgstr "'အကြောင်း' ပြပါ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:86
+#: src/remmina.cpp:86
 #, fuzzy
 msgid ""
 "Connect either to a desktop described in a file (.remmina or a filetype "
@@ -566,13 +566,13 @@ msgstr ""
 "(သို့)သို့မဟုတ် ထောက်ပံ့ထားသော URI (RDP, VNC, SSH သို့မဟုတ် SPICE) တွင်ဖော်ပြထားသော desktop သို့ "
 "ဆက်သွယ်ပါ"
 
-#: src/remmina.c:86 src/remmina.c:88 src/remmina.c:90
+#: src/remmina.cpp:86 src/remmina.cpp:88 src/remmina.cpp:90
 #, fuzzy
 msgid "FILE"
 msgstr "ဖိုင်"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:88
+#: src/remmina.cpp:88
 #, fuzzy
 msgid ""
 "Connect to a desktop described in a file (.remmina or a filetype supported "
@@ -581,7 +581,7 @@ msgstr ""
 "ဖိုင်ထဲမှာဖော်ပြထားတဲ့ desktop (.Remmina ဒါမှမဟုတ် plugin က ထောက်ပံ့ထားတဲ့ အမျိုးအစားတစ်ခု)"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:90
+#: src/remmina.cpp:90
 #, fuzzy
 msgid ""
 "Edit desktop connection described in file (.remmina or a filetype supported "
@@ -591,86 +591,86 @@ msgstr ""
 "အမျိုးအစား)"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:93
+#: src/remmina.cpp:93
 #, fuzzy
 msgid "Start in kiosk mode"
 msgstr "Kiosk ပုံစံနဲ့ စတင်ပါ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:95
+#: src/remmina.cpp:95
 msgid "Create new connection profile"
 msgstr "ချိတ်ဆက်မှု့အသစ်"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:97
+#: src/remmina.cpp:97
 #, fuzzy
 msgid "Show preferences"
 msgstr "ကြိုက်နှစ်သက်ရာများကို ပြသပါ"
 
-#: src/remmina.c:97
+#: src/remmina.cpp:97
 #, fuzzy
 msgid "TABINDEX"
 msgstr "တာဘင်ဒက်စ်"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:104
+#: src/remmina.cpp:104
 #, fuzzy
 msgid "Quit"
 msgstr "နှုတ်ထွက်ပါ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:106
+#: src/remmina.cpp:106
 #, fuzzy
 msgid "Use default server name (for --new)"
 msgstr "စံထားချက်ဆာဗာအမည်ကို အသုံးပြုပါ (အသစ်အတွက်)"
 
-#: src/remmina.c:106
+#: src/remmina.cpp:106
 #, fuzzy
 msgid "SERVER"
 msgstr "ဆာဗာ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:108
+#: src/remmina.cpp:108
 #, fuzzy
 msgid "Use default protocol (for --new)"
 msgstr "စံထားချက် ပရိုတိုကောအသုံးပြုပါ (အသစ်အတွက်)"
 
-#: src/remmina.c:108
+#: src/remmina.cpp:108
 #, fuzzy
 msgid "PROTOCOL"
 msgstr "ပရိုတိုကောလ်"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:110
+#: src/remmina.cpp:110
 #, fuzzy
 msgid "Start in tray"
 msgstr "trat တွင် အစပြုပါ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:112
+#: src/remmina.cpp:112
 #, fuzzy
 msgid "Show the application version"
 msgstr "application ဗားရှင်းကို ပြပါ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:114
+#: src/remmina.cpp:114
 #, fuzzy
 msgid "Show version of the application and its plugins"
 msgstr "အပ္ပလီကေးရှင်းနှင့် ၎င်း၏ ပလက်ဂျင်းများကို ပြသပါ"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:116
+#: src/remmina.cpp:116
 #, fuzzy
 msgid "Modify connection profile (requires --set-option)"
 msgstr "ဆက်သွယ်မှု ပရိုဖိုင်ကို ပြုပြင်ပါ (သတ်မှတ်-ရွေးချယ်မှု)"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:118
+#: src/remmina.cpp:118
 #, fuzzy
 msgid "Set one or more profile settings, to be used with --update-profile"
 msgstr "ကိုယ်ရေးရာဇဝင်အချက်အလက်နဲ့ အသုံးပြုဖို့ ကိုယ်ရေးရာဇဝင်အချက်အလက်တစ်ခု ဒါမှမဟုတ် ဒီထက်မက သတ်မှတ်ပါ"
 
-#: src/remmina.c:119
+#: src/remmina.cpp:119
 #, fuzzy
 msgid "Encrypt a password"
 msgstr "စကားဝှက်တစ်ခုကို လျှို့ဝှက်"
@@ -679,7 +679,7 @@ msgstr "စကားဝှက်တစ်ခုကို လျှို့ဝ�
 #. * This link should point to a resource explaining how to get Remmina
 #. * to log more verbose statements.
 #.
-#: src/remmina.c:334
+#: src/remmina.cpp:334
 msgid ""
 "Remmina does not log all output statements. Turn on more verbose output by "
 "using \"G_MESSAGES_DEBUG=all\" as an environment variable.\n"
@@ -688,12 +688,12 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:388
+#: src/remmina.cpp:388
 #, fuzzy
 msgid "- or protocol://username:encryptedpassword@host:port"
 msgstr "- သို့မဟုတ် ပရိုတိုကော−/userme:encryptedpassword@host"
 
-#: src/remmina.c:391
+#: src/remmina.cpp:391
 #, fuzzy
 msgid ""
 "Examples:\n"
@@ -759,412 +759,412 @@ msgstr ""
 "\"သုံးစွဲသူအမည်\\ နာပါ့စ်ဝေါ့\"| Remmina --redate-redate-profile /PATH/FO/FO.FO."
 "Remmina -- ရွေးချယ်ပိုင်ခွင့် သုံးစွဲသူအမည် -- resolution_mode =2-s- 2-s- ရွေးချယ်မှု စကားဝှက်\n"
 
-#: src/remmina_public.c:345
+#: src/remmina_public.cpp:345
 #, fuzzy, c-format
 msgid "Address is too long for UNIX socket_path: %s"
 msgstr "[ X42X] သည် ယူနစ်စ် အတွက် အလွန် ရှည်လျား socket_path : %s"
 
-#: src/remmina_public.c:355
+#: src/remmina_public.cpp:355
 #, fuzzy, c-format
 msgid "Creating UNIX socket failed: %s"
 msgstr "UNIX ဆိုကက်ဖန်တီးခြင်း မအောင်မြင်ခဲ့ပါ ။ %s"
 
-#: src/remmina_public.c:361
+#: src/remmina_public.cpp:361
 #, fuzzy, c-format
 msgid "Connecting to UNIX socket failed: %s"
 msgstr "UNIX ဆိုကက်နှင့်ဆက်သွယ်ခြင်း ပျက်ကွက်ခဲ့သည်။ %s"
 
-#: src/remmina_public.c:631
+#: src/remmina_public.cpp:631
 #, fuzzy
 msgid "Please enter format 'widthxheight'."
 msgstr "ကျေးဇူးပြု၍ 'ဝစ်ဒက်ဇ်ဟိုက်' ပုံစံကို ဝင်ကြည့်ပါ။"
 
-#: src/remmina_public.c:653
+#: src/remmina_public.cpp:653
 #, fuzzy
 msgid "Change security settings"
 msgstr "လုံခြုံရေးနေရာများကို ပြောင်းလဲပါ"
 
 #. TRANSLATORS: translator-credits should be replaced with a formatted list of translators in your own language
-#: src/remmina_about.c:54
+#: src/remmina_about.cpp:54
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Pyae Sone https://launchpad.net/~gipsyhnh"
 
-#: src/remmina_ftp_client.c:389
+#: src/remmina_ftp_client.cpp:389
 #, fuzzy
 msgid "Choose download location"
 msgstr "ဒေါင်းလုတ်ဆွဲတဲ့နေရာကို ရွေးပါ"
 
-#: src/remmina_ftp_client.c:529
+#: src/remmina_ftp_client.cpp:529
 #, fuzzy
 msgid "Are you sure to delete the selected files on server?"
 msgstr "ဆာဗာပေါ်က ရွေးထားတဲ့ဖိုင်တွေကို ဖျက်ပစ်မယ်ဆိုတာ သေချာလား။"
 
-#: src/remmina_ftp_client.c:586
+#: src/remmina_ftp_client.cpp:586
 #, fuzzy
 msgid "Choose a file to upload"
 msgstr "တင်ရန် ဖိုင်တစ်ခုရွေးချယ်ပါ"
 
-#: src/remmina_ftp_client.c:593
+#: src/remmina_ftp_client.cpp:593
 #, fuzzy
 msgid "Upload folder"
 msgstr "ဖိုင်တွဲ"
 
-#: src/remmina_ftp_client.c:649 src/remmina_ftp_client.c:763
+#: src/remmina_ftp_client.cpp:649 src/remmina_ftp_client.cpp:763
 #, fuzzy
 msgid "Download"
 msgstr "ဒေါင်းမည်"
 
-#: src/remmina_ftp_client.c:656 src/remmina_ftp_client.c:770
+#: src/remmina_ftp_client.cpp:656 src/remmina_ftp_client.cpp:770
 #, fuzzy
 msgid "Upload"
 msgstr "တင်ပါ"
 
-#: src/remmina_ftp_client.c:663
+#: src/remmina_ftp_client.cpp:663
 #, fuzzy
 msgid "_Delete"
 msgstr "_Delete"
 
-#: src/remmina_ftp_client.c:748
+#: src/remmina_ftp_client.cpp:748
 #, fuzzy
 msgid "Home"
 msgstr "အိမ်အိမ်"
 
-#: src/remmina_ftp_client.c:749
+#: src/remmina_ftp_client.cpp:749
 #, fuzzy
 msgid "Go to home folder"
 msgstr "အိမ်ဖိုင်တွဲကို သွားပါ"
 
-#: src/remmina_ftp_client.c:753
+#: src/remmina_ftp_client.cpp:753
 #, fuzzy
 msgid "Up"
 msgstr "အထက်သို့"
 
-#: src/remmina_ftp_client.c:754
+#: src/remmina_ftp_client.cpp:754
 #, fuzzy
 msgid "Go to parent folder"
 msgstr "မိဘဖိုင်တွဲကို သွားပါ"
 
-#: src/remmina_ftp_client.c:758 plugins/rdp/rdp_plugin.c:2851
-#: plugins/vnc/vnc_plugin.c:2050
+#: src/remmina_ftp_client.cpp:758 plugins/rdp/rdp_plugin.cpp:2851
+#: plugins/vnc/vnc_plugin.cpp:2050
 #, fuzzy
 msgid "Refresh"
 msgstr "ပြန်စမည်"
 
-#: src/remmina_ftp_client.c:759
+#: src/remmina_ftp_client.cpp:759
 #, fuzzy
 msgid "Refresh current folder"
 msgstr "လတ်လတ်ဆတ်ဆတ် ဖိုင်တွဲကို လန်းဆန်းစေပါ"
 
-#: src/remmina_ftp_client.c:764
+#: src/remmina_ftp_client.cpp:764
 #, fuzzy
 msgid "Download from server"
 msgstr "ဆာဗာကနေ ဒေါင်းလုတ်ဆွဲပါ"
 
-#: src/remmina_ftp_client.c:771
+#: src/remmina_ftp_client.cpp:771
 #, fuzzy
 msgid "Upload to server"
 msgstr "ဆာဗာသို့ ကူးယူပါ"
 
-#: src/remmina_ftp_client.c:775 data/ui/remmina_main.glade:197
+#: src/remmina_ftp_client.cpp:775 data/ui/remmina_main.glade:197
 #, fuzzy
 msgid "Delete"
 msgstr "ဖျက်ပါ..."
 
-#: src/remmina_ftp_client.c:776
+#: src/remmina_ftp_client.cpp:776
 #, fuzzy
 msgid "Delete files on server"
 msgstr "ဆာဗာပေါ်က ဖိုင်တွေကို ဖျက်ပါ"
 
-#: src/remmina_ftp_client.c:905 src/remmina_ftp_client.c:974
+#: src/remmina_ftp_client.cpp:905 src/remmina_ftp_client.cpp:974
 #, fuzzy
 msgid "Filename"
 msgstr "ဖိုင်လန်နာမ်"
 
-#: src/remmina_ftp_client.c:918 src/remmina_ftp_client.c:1003
+#: src/remmina_ftp_client.cpp:918 src/remmina_ftp_client.cpp:1003
 #, fuzzy
 msgid "Size"
 msgstr "အရွယ်အစား"
 
-#: src/remmina_ftp_client.c:926
+#: src/remmina_ftp_client.cpp:926
 #, fuzzy
 msgid "User"
 msgstr "အသုံးပြုသူ"
 
-#: src/remmina_ftp_client.c:932 src/remmina_file_editor.c:1933
+#: src/remmina_ftp_client.cpp:932 src/remmina_file_editor.cpp:1933
 #: data/ui/remmina_mpc.glade:115 data/ui/remmina_main.glade:464
 #, fuzzy
 msgid "Group"
 msgstr "အုပ်စု"
 
-#: src/remmina_ftp_client.c:938
+#: src/remmina_ftp_client.cpp:938
 #, fuzzy
 msgid "Permission"
 msgstr "ခွင့်ပြုချက်များ"
 
-#: src/remmina_ftp_client.c:990 plugins/rdp/rdp_plugin.c:2648
+#: src/remmina_ftp_client.cpp:990 plugins/rdp/rdp_plugin.cpp:2648
 #, fuzzy
 msgid "Remote"
 msgstr "အဝေး"
 
-#: src/remmina_ftp_client.c:997 plugins/rdp/rdp_plugin.c:2647
+#: src/remmina_ftp_client.cpp:997 plugins/rdp/rdp_plugin.cpp:2647
 #, fuzzy
 msgid "Local"
 msgstr "ဒေသခံ"
 
-#: src/remmina_ftp_client.c:1011
+#: src/remmina_ftp_client.cpp:1011
 #, fuzzy
 msgid "Progress"
 msgstr "တိုးတက်မှု"
 
-#: src/remmina_protocol_widget.c:291 src/remmina_ssh_plugin.c:829
-#: src/remmina_ssh_plugin.c:1446
+#: src/remmina_protocol_widget.cpp:291 src/remmina_ssh_plugin.cpp:829
+#: src/remmina_ssh_plugin.cpp:1446
 #, fuzzy
 msgid "Open SFTP transfer…"
 msgstr "အက်စ်အက်ဖ်တီပီ လွှဲပြောင်းခြင်း…"
 
-#: src/remmina_protocol_widget.c:320
+#: src/remmina_protocol_widget.cpp:320
 #, fuzzy
 msgid "Executing external commands…"
 msgstr "ပြင်ပအမိန့်များကို ဆောင်ရွက်ခြင်း...…"
 
 #. TRANSLATORS: “%s” is a placeholder for the connection profile name
-#: src/remmina_protocol_widget.c:328
+#: src/remmina_protocol_widget.cpp:328
 #, fuzzy, c-format
 msgid "Connecting to “%s”…"
 msgstr "\"[%s\" သို့ ဆက်သွယ်ခြင်း…"
 
 #. TRANSLATORS: “%s” is a placeholder for an hostname or an IP address.
-#: src/remmina_protocol_widget.c:916 src/remmina_protocol_widget.c:1101
+#: src/remmina_protocol_widget.cpp:916 src/remmina_protocol_widget.cpp:1101
 #, fuzzy, c-format
 msgid "Connecting to “%s” via SSH…"
 msgstr "SSH မှတစ်ဆင့် \"[%s သို့ ဆက်သွယ်ခြင်း…"
 
 #. TRANSLATORS: “%i” is a placeholder for a TCP port number.
-#: src/remmina_protocol_widget.c:1165
+#: src/remmina_protocol_widget.cpp:1165
 #, fuzzy, c-format
 msgid "Awaiting incoming SSH connection on port %i…"
 msgstr "ဆိပ်ကမ်းတွင် ဝင်ရောက်လာမည့် SSH ဆက်သွယ်မှုကို စောင့်မျှော်နေ %i…"
 
-#: src/remmina_protocol_widget.c:1218
+#: src/remmina_protocol_widget.cpp:1218
 #, fuzzy, c-format
 msgid "The “%s” command is not available on the SSH server."
 msgstr "\"%s\" ညွှန်ကြားချက်ကို SSH ဆာဗာမှာ မရရှိနိုင်ပါဘူး။"
 
-#: src/remmina_protocol_widget.c:1223
+#: src/remmina_protocol_widget.cpp:1223
 #, fuzzy, c-format
 msgid "Could not run the “%s” command on the SSH server (status = %i)."
 msgstr "SSH ဆာဗာ (အခြေအနေ = %i အမိန့်ကို မလုပ်ဆောင်နိုင်ပါ။"
 
 #. TRANSLATORS: %s is a placeholder for an error message
-#: src/remmina_protocol_widget.c:1231
+#: src/remmina_protocol_widget.cpp:1231
 #, fuzzy, c-format
 msgid "Could not run command. %s"
 msgstr "ညွှန်ကြားချက်ကို မလုပ်ဆောင်နိုင်ဘူး။ %s"
 
 #. TRANSLATORS: “%s” is a placeholder for a hostname or IP address.
-#: src/remmina_protocol_widget.c:1301
+#: src/remmina_protocol_widget.cpp:1301
 #, fuzzy, c-format
 msgid "Connecting to %s via SSH…"
 msgstr "SSH မှတစ်ဆင့် %s နှင့် ဆက်သွယ်ခြင်း…"
 
-#: src/remmina_protocol_widget.c:1695
+#: src/remmina_protocol_widget.cpp:1695
 #, fuzzy
 msgid "Type in SSH username and password."
 msgstr "SSH အသုံးပြုသူအမည်နဲ့ စကားဝှက်ထဲက အမျိုးအစား။"
 
-#: src/remmina_protocol_widget.c:1750 src/remmina_protocol_widget.c:1782
+#: src/remmina_protocol_widget.cpp:1750 src/remmina_protocol_widget.cpp:1782
 #, fuzzy
 msgid "Fingerprint automatically accepted"
 msgstr "လက်ဗွေရာကို အလိုအလျောက်လက်ခံ"
 
 #. TRANSLATORS: The user is asked to verify a new SSL certificate.
-#: src/remmina_protocol_widget.c:1758
+#: src/remmina_protocol_widget.cpp:1758
 #, fuzzy
 msgid "Certificate details:"
 msgstr "လက်မှတ် အသေးစိတ် အချက်အလက်များ -"
 
 #. TRANSLATORS: An SSL certificate subject is usually the remote server the user connect to.
-#: src/remmina_protocol_widget.c:1760 src/remmina_protocol_widget.c:1792
+#: src/remmina_protocol_widget.cpp:1760 src/remmina_protocol_widget.cpp:1792
 #, fuzzy
 msgid "Subject:"
 msgstr "အကြောင်းအရာ -"
 
 #. TRANSLATORS: The name or email of the entity that have issued the SSL certificate
-#: src/remmina_protocol_widget.c:1762 src/remmina_protocol_widget.c:1794
+#: src/remmina_protocol_widget.cpp:1762 src/remmina_protocol_widget.cpp:1794
 #, fuzzy
 msgid "Issuer:"
 msgstr "ထုတ်ဝေသူ -"
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1764
+#: src/remmina_protocol_widget.cpp:1764
 #, fuzzy
 msgid "Fingerprint:"
 msgstr "လက်ချောင်း -"
 
 #. TRANSLATORS: The user is asked to accept or refuse a new SSL certificate.
-#: src/remmina_protocol_widget.c:1766
+#: src/remmina_protocol_widget.cpp:1766
 #, fuzzy
 msgid "Accept certificate?"
 msgstr "လက်မှတ်ကို လက်ခံပါသလား။"
 
 #. TRANSLATORS: The user is asked to verify a new SSL certificate.
-#: src/remmina_protocol_widget.c:1790
+#: src/remmina_protocol_widget.cpp:1790
 #, fuzzy
 msgid "The certificate changed! Details:"
 msgstr "အသိအမှတ်ပြုလက်မှတ်ပြောင်းလဲသွားလေသည်! အသေးစိတ်အချက်အလက်များ -"
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1796
+#: src/remmina_protocol_widget.cpp:1796
 #, fuzzy
 msgid "Old fingerprint:"
 msgstr "လက်ချောင်းအဟောင်း -"
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1798
+#: src/remmina_protocol_widget.cpp:1798
 #, fuzzy
 msgid "New fingerprint:"
 msgstr "လက်ဗွေအသစ် -"
 
 #. TRANSLATORS: The user is asked to accept or refuse a new SSL certificate.
-#: src/remmina_protocol_widget.c:1800
+#: src/remmina_protocol_widget.cpp:1800
 #, fuzzy
 msgid "Accept changed certificate?"
 msgstr "အပြောင်းအလဲလက်မှတ်ကို လက်ခံပါသလား။"
 
 #. TRANSLATORS: “%i” is a placeholder for a port number. “%s”  is a placeholder for a protocol name (VNC).
-#: src/remmina_protocol_widget.c:1943
+#: src/remmina_protocol_widget.cpp:1943
 #, fuzzy, c-format
 msgid "Listening on port %i for an incoming %s connection…"
 msgstr "ဝင်ရောက်လာတဲ့ %s ဆက်သွယ်မှုအတွက် ဆိပ်ကမ်း %i ကို နားထောင်ခြင်း...…"
 
-#: src/remmina_protocol_widget.c:1968
+#: src/remmina_protocol_widget.cpp:1968
 #, fuzzy
 msgid "Could not authenticate, attempting reconnection…"
 msgstr "ပြန်လည်ဆက်သွယ်ရန်ကြိုးစားခြင်း မရှိနိုင်ပါ...…"
 
-#: src/remmina_protocol_widget.c:2030 src/remmina_file_editor.c:436
-#: src/remmina_file_editor.c:1172 data/ui/remmina_main.glade:478
+#: src/remmina_protocol_widget.cpp:2030 src/remmina_file_editor.cpp:436
+#: src/remmina_file_editor.cpp:1172 data/ui/remmina_main.glade:478
 msgid "Server"
 msgstr "ဆာဗာ"
 
 #. TRANSLATORS: “%s” is a placeholder for a protocol name, like “RDP”.
-#: src/remmina_protocol_widget.c:2048
+#: src/remmina_protocol_widget.cpp:2048
 #, fuzzy, c-format
 msgid "Install the %s protocol plugin first."
 msgstr "%s Protocol plugin ကို ပထမဆုံး သွင်းပါ။"
 
-#: src/remmina_ssh.c:236
+#: src/remmina_ssh.cpp:236
 #, fuzzy, c-format
 msgid "Could not authenticate with TOTP/OTP/2FA. %s"
 msgstr "TOTP/OTP/2FA. [X442X] နှင့် ခွင့်ပြုချက်မရနိုင်ပါ။ %s"
 
-#: src/remmina_ssh.c:295 src/remmina_ssh.c:676
+#: src/remmina_ssh.cpp:295 src/remmina_ssh.cpp:676
 #, fuzzy, c-format
 msgid "Could not authenticate with SSH password. %s"
 msgstr "SSH စကားဝှက်နဲ့ တရားဝင်မလုပ်နိုင်ဘူး။ %s"
 
-#: src/remmina_ssh.c:322 src/remmina_ssh.c:389
+#: src/remmina_ssh.cpp:322 src/remmina_ssh.cpp:389
 #, fuzzy
 msgid "No saved SSH passphrase supplied. Asking user to enter it."
 msgstr "ဘယ် SSH စကားစုကိုမှ မထောက်ပံ့ခဲ့ဘူး။ အသုံးပြုသူကို ဝင်ခွင့်တောင်းပါ။"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:327 src/remmina_ssh.c:368 src/remmina_ssh.c:394
-#: src/remmina_ssh.c:433 src/remmina_ssh.c:746
+#: src/remmina_ssh.cpp:327 src/remmina_ssh.cpp:368 src/remmina_ssh.cpp:394
+#: src/remmina_ssh.cpp:433 src/remmina_ssh.cpp:746
 #, fuzzy, c-format
 msgid "Could not authenticate with public SSH key. %s"
 msgstr "အများပြည်သူ SSH သော့နဲ့ တရားဝင်မလုပ်နိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:336
+#: src/remmina_ssh.cpp:336
 #, fuzzy, c-format
 msgid "SSH certificate cannot be imported. %s"
 msgstr "SSH လက်မှတ်ကို တင်သွင်းလို့မရဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:345
+#: src/remmina_ssh.cpp:345
 #, fuzzy, c-format
 msgid "SSH certificate cannot be copied into the private SSH key. %s"
 msgstr "SSH လက်မှတ်ကို ပုဂ္ဂလိက SSH သော့ထဲမှာ ကူးယူလို့မရဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:355
+#: src/remmina_ssh.cpp:355
 #, fuzzy, c-format
 msgid "Could not authenticate using SSH certificate. %s"
 msgstr "SSH လက်မှတ်ကိုသုံးပြီး တရားဝင်မလုပ်နိုင်ဘူး။ %s"
 
-#: src/remmina_ssh.c:369
+#: src/remmina_ssh.cpp:369
 #, fuzzy
 msgid "SSH identity file not selected."
 msgstr "SSH identity ဖိုင်ကို ရွေးချယ်မထားပါ။"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:380
+#: src/remmina_ssh.cpp:380
 #, fuzzy, c-format
 msgid "Public SSH key cannot be imported. %s"
 msgstr "ပြည်သူ့ SSH သော့ကို တင်သွင်းလို့မရဘူး။ %s"
 
-#: src/remmina_ssh.c:478
+#: src/remmina_ssh.cpp:478
 #, fuzzy, c-format
 msgid "Could not authenticate automatically with public SSH key. %s"
 msgstr "အများပြည်သူ SSH သော့နဲ့ အလိုအလျောက် ခွင့်မပြုနိုင်ဘူး။ %s"
 
-#: src/remmina_ssh.c:523
+#: src/remmina_ssh.cpp:523
 #, fuzzy, c-format
 msgid "Could not authenticate automatically with SSH agent. %s"
 msgstr "SSH ကိုယ်စားလှယ်နဲ့ အလိုအလျောက် ခွင့်မပြုနိုင်ဘူး။ %s"
 
-#: src/remmina_ssh.c:569 src/remmina_ssh.c:856
+#: src/remmina_ssh.cpp:569 src/remmina_ssh.cpp:856
 #, fuzzy, c-format
 msgid "Could not authenticate with SSH GSSAPI/Kerberos. %s"
 msgstr "SSH GSH GSAPI/Kerberos နဲ့အတူ တရားဝင်မလုပ်နိုင်ဘူး။ %s"
 
-#: src/remmina_ssh.c:598
+#: src/remmina_ssh.cpp:598
 #, fuzzy
 msgid "The public SSH key changed!"
 msgstr "ပြည်သူ့ SSH သော့ပြောင်းသွားတယ်!"
 
-#: src/remmina_ssh.c:711
+#: src/remmina_ssh.cpp:711
 #, fuzzy, c-format
 msgid "Could not authenticate with keyboard-interactive. %s"
 msgstr "ကီးဘုတ်အပြန်အလှန်ဆက်သွယ်မှုနဲ့ ခွင့်မပြုနိုင်ဘူး။ %s"
 
-#: src/remmina_ssh.c:813
+#: src/remmina_ssh.cpp:813
 #, fuzzy, c-format
 msgid "Could not authenticate with automatic public SSH key. %s"
 msgstr "အလိုအလျောက် ပြည်သူ့ SSH သော့နဲ့ ခွင့်မပြုနိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:921
+#: src/remmina_ssh.cpp:921
 #, fuzzy, c-format
 msgid "Could not fetch the server's public SSH key. %s"
 msgstr "ဆာဗာရဲ့ အများပြည်သူ SSH သော့ကို မယူနိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:928
+#: src/remmina_ssh.cpp:928
 #, fuzzy, c-format
 msgid "Could not fetch public SSH key. %s"
 msgstr "အများပြည်သူ SSH သော့ကို မယူနိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:936
+#: src/remmina_ssh.cpp:936
 #, fuzzy, c-format
 msgid "Could not fetch checksum of the public SSH key. %s"
 msgstr "အများပြည်သူ SSH သော့ရဲ့ စစ်ဆေးချက်တွေကို မယူနိုင်ဘူး။ %s"
 
-#: src/remmina_ssh.c:949
+#: src/remmina_ssh.cpp:949
 #, fuzzy
 msgid "The server is unknown. The public key fingerprint is:"
 msgstr "ဆာဗာကို မသိရဘူး။ ပြည်သူ့ အဓိက လက်ဗွေရာမှာ -"
 
-#: src/remmina_ssh.c:951 src/remmina_ssh.c:957
+#: src/remmina_ssh.cpp:951 src/remmina_ssh.cpp:957
 #, fuzzy
 msgid "Do you trust the new public key?"
 msgstr "လူထုခလုတ်အသစ်ကို သင်ယုံကြည်သလား။"
 
-#: src/remmina_ssh.c:954
+#: src/remmina_ssh.cpp:954
 #, fuzzy
 msgid ""
 "Warning: The server has changed its public key. This means you are either "
@@ -1175,195 +1175,195 @@ msgstr ""
 "ဒါမှမဟုတ် အုပ်ချုပ်ရေးမှူးက သော့ကို ပြောင်းလဲလိုက်ပါတယ်။ ပြည်သူ့ အဓိက လက်ဗွေရာ အသစ်ကတော့"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:979
+#: src/remmina_ssh.cpp:979
 #, fuzzy, c-format
 msgid "Could not check list of known SSH hosts. %s"
 msgstr "သိ ထား သော အက်စ်အက်စ်အိပ်ခ်ျ အိမ်ရှင် များ ၏ စာရင်း ကို မ စစ်ဆေး နိုင် ခဲ့ ပါ ။ %s"
 
-#: src/remmina_ssh.c:988
+#: src/remmina_ssh.cpp:988
 #, fuzzy
 msgid "SSH password"
 msgstr "SSH စကားဝှက်"
 
-#: src/remmina_ssh.c:995 src/remmina_ssh.c:1039
+#: src/remmina_ssh.cpp:995 src/remmina_ssh.cpp:1039
 #, fuzzy
 msgid "SSH private key passphrase"
 msgstr "SSH ပုဂ္ဂလိက အဓိကစကားစု"
 
-#: src/remmina_ssh.c:1000
+#: src/remmina_ssh.cpp:1000
 #, fuzzy
 msgid "SSH Kerberos/GSSAPI"
 msgstr "SSH Kerberos/GSAPI"
 
-#: src/remmina_ssh.c:1005
+#: src/remmina_ssh.cpp:1005
 #, fuzzy
 msgid "Enter TOTP/OTP/2FA code"
 msgstr "TOTP/OTP/2FA သင်္ကေတထဲ ထည့်ပါ"
 
-#: src/remmina_ssh.c:1035 src/remmina_ssh.c:1061
+#: src/remmina_ssh.cpp:1035 src/remmina_ssh.cpp:1061
 #, fuzzy
 msgid "SSH tunnel credentials"
 msgstr "SSH ဥမင်လိုဏ်ခေါင်း အထောက်အထားများ"
 
-#: src/remmina_ssh.c:1035 src/remmina_ssh.c:1061
+#: src/remmina_ssh.cpp:1035 src/remmina_ssh.cpp:1061
 #, fuzzy
 msgid "SSH credentials"
 msgstr "SSH အသိအမှတ်ပြုချက်များ"
 
-#: src/remmina_ssh.c:1112
+#: src/remmina_ssh.cpp:1112
 #, fuzzy
 msgid "Keyboard interactive login, TOTP/OTP/2FA"
 msgstr "Keyboard အပြန်အလှန်ဆက်သွယ်ရေး လိုဂင် ၊ TOTP/OTP/2FA"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1337
+#: src/remmina_ssh.cpp:1337
 #, fuzzy, c-format
 msgid "Could not start SSH session. %s"
 msgstr "SSH အစည်းအရုံးကို မစနိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1735
+#: src/remmina_ssh.cpp:1735
 #, fuzzy, c-format
 msgid "Could not create channel. %s"
 msgstr "ရုပ်သံ လိုင်းကို မဖန်တီးနိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1746
+#: src/remmina_ssh.cpp:1746
 #, fuzzy, c-format
 msgid "Could not connect to SSH tunnel. %s"
 msgstr "SSH ဥမင်လိုဏ်ခေါင်းနဲ့ မဆက်သွယ်နိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1816 src/remmina_ssh.c:1837 src/remmina_ssh.c:1846
+#: src/remmina_ssh.cpp:1816 src/remmina_ssh.cpp:1837 src/remmina_ssh.cpp:1846
 #, fuzzy, c-format
 msgid "Could not request port forwarding. %s"
 msgstr "ဆိပ်ကမ်းကို ပို့ပေးဖို့ မတောင်းဆိုနိုင်ဘူး။ %s"
 
-#: src/remmina_ssh.c:1876
+#: src/remmina_ssh.cpp:1876
 #, fuzzy
 msgid "The server did not respond."
 msgstr "ဆာဗာက မတုံ့ပြန်ခဲ့ဘူး။"
 
-#: src/remmina_ssh.c:1916
+#: src/remmina_ssh.cpp:1916
 #, fuzzy, c-format
 msgid "Cannot connect to local port %i."
 msgstr "ဒေသခံဆိပ်ကမ်း %i ကို ဆက်သွယ်လို့မရဘူး။"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1965
+#: src/remmina_ssh.cpp:1965
 #, fuzzy, c-format
 msgid "Could not write to SSH channel. %s"
 msgstr "SSH ရုပ်သံလိုင်းကို မရေးနိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1972
+#: src/remmina_ssh.cpp:1972
 #, fuzzy, c-format
 msgid "Could not read from tunnel listening socket. %s"
 msgstr "ဥမင်လိုဏ်ခေါင်းကနေ မဖတ်နိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1992
+#: src/remmina_ssh.cpp:1992
 #, fuzzy, c-format
 msgid "Could not poll SSH channel. %s"
 msgstr "SSH ရုပ်သံ လိုင်းကို မဲမပေးနိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1999
+#: src/remmina_ssh.cpp:1999
 #, fuzzy, c-format
 msgid "Could not read SSH channel in a non-blocking way. %s"
 msgstr "SSH ရုပ်သံလိုင်းကို ပိတ်ဆို့မှုမရှိတဲ့နည်းနဲ့ မဖတ်နိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2018
+#: src/remmina_ssh.cpp:2018
 #, fuzzy, c-format
 msgid "Could not send data to tunnel listening socket. %s"
 msgstr "ဥမင်လိုဏ်မျဉ်း နားထောင်နေတဲ့ ဥမင်လိုဏ်ခေါင်းဆီ အချက်အလက်တွေ မပို့ပေးနိုင်ဘူး။ %s"
 
-#: src/remmina_ssh.c:2120
+#: src/remmina_ssh.cpp:2120
 #, fuzzy
 msgid "Assign a destination port."
 msgstr "ခရီးပန်းတိုင်ဆိပ်ကမ်းကို သတ်မှတ်ပေးပါ။"
 
-#: src/remmina_ssh.c:2127
+#: src/remmina_ssh.cpp:2127
 #, fuzzy
 msgid "Could not create socket."
 msgstr "ခြေအိတ်ကို မဖန်တီးနိုင်ဘူး။"
 
-#: src/remmina_ssh.c:2137
+#: src/remmina_ssh.cpp:2137
 #, fuzzy
 msgid "Could not bind server socket to local port."
 msgstr "ဒေသခံဆိပ်ကမ်းသို့ ဆာဗာခြေကတ်ကို မချည်နှောင်နိုင်ပါ။"
 
-#: src/remmina_ssh.c:2143
+#: src/remmina_ssh.cpp:2143
 #, fuzzy
 msgid "Could not listen to local port."
 msgstr "ဒေသခံဆိပ်ကမ်းကို နားမထောင်နိုင်ဘူး။"
 
 #. TRANSLATORS: Do not translate pthread
-#: src/remmina_ssh.c:2153 src/remmina_ssh.c:2170 src/remmina_ssh.c:2188
+#: src/remmina_ssh.cpp:2153 src/remmina_ssh.cpp:2170 src/remmina_ssh.cpp:2188
 #, fuzzy
 msgid "Could not start pthread."
 msgstr "ဖာသာဒ်ကို မစနိုင်ဘူး။"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2280
+#: src/remmina_ssh.cpp:2280
 #, fuzzy, c-format
 msgid "Could not create SFTP session. %s"
 msgstr "SFTP အစည်းအရုံးကို မဖန်တီးနိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2285
+#: src/remmina_ssh.cpp:2285
 #, fuzzy, c-format
 msgid "Could not start SFTP session. %s"
 msgstr "SFTP အစည်းအရုံးကို မစတင်နိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2379
+#: src/remmina_ssh.cpp:2379
 #, fuzzy, c-format
 msgid "Could not open channel. %s"
 msgstr "ရုပ်သံလိုင်းကို မဖွင့်နိုင်ဘူး။ %s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2394
+#: src/remmina_ssh.cpp:2394
 #, fuzzy, c-format
 msgid "Could not request shell. %s"
 msgstr "အခွံကို မတောင်းဆိုနိုင်ဘူး။ %s"
 
-#: src/remmina_ssh.c:2523
+#: src/remmina_ssh.cpp:2523
 #, fuzzy
 msgid "Could not create PTY device."
 msgstr "PTY ကိရိယာကို မဖန်တီးနိုင်ဘူး။"
 
-#: src/remmina_exec.c:478
+#: src/remmina_exec.cpp:478
 #, fuzzy, c-format
 msgid "Plugin %s is not registered."
 msgstr "Plugin %s ကို မှတ်ပုံတင်မထားပါ။"
 
-#: src/remmina_main.c:685
+#: src/remmina_main.cpp:685
 #, fuzzy
 msgid "The latest successful connection attempt, or a pre-computed date"
 msgstr "နောက်ဆုံး အောင်မြင်တဲ့ ဆက်သွယ်ရေးကြိုးပမ်းမှု ဒါမှမဟုတ် ကြိုတင်တွက်ချက်ထားတဲ့ ရက်စွဲ"
 
-#: src/remmina_main.c:687
+#: src/remmina_main.cpp:687
 #, fuzzy, c-format
 msgid "Total %i item."
 msgid_plural "Total %i items."
 msgstr[0] "စုစုပေါင်း %i ပစ္စည်းစုစုပေါင်း။"
 
-#: src/remmina_main.c:695
+#: src/remmina_main.cpp:695
 msgid "Network status: fully online"
 msgstr ""
 
-#: src/remmina_main.c:698
+#: src/remmina_main.cpp:698
 msgid "Network status: offline"
 msgstr ""
 
-#: src/remmina_main.c:902
+#: src/remmina_main.cpp:902
 #, fuzzy, c-format
 msgid "Are you sure you want to delete “%s”?"
 msgstr "\"%s ကို ဖျက်ချင်တယ်ဆိုတာ သေချာလား။"
 
-#: src/remmina_main.c:1026
+#: src/remmina_main.cpp:1026
 #, fuzzy, c-format
 msgid ""
 "Unable to import:\n"
@@ -1372,116 +1372,116 @@ msgstr ""
 "တင်သွင်းရန် မစွမ်းဆောင်နိုင်ပါ -\n"
 "%s"
 
-#: src/remmina_main.c:1052 data/ui/remmina_main.glade:285
+#: src/remmina_main.cpp:1052 data/ui/remmina_main.glade:285
 #, fuzzy
 msgid "Import"
 msgstr "တင်သွင်းခြင်း"
 
-#: src/remmina_main.c:1075 src/remmina_file_editor.c:1791
+#: src/remmina_main.cpp:1075 src/remmina_file_editor.cpp:1791
 #, fuzzy
 msgid "_Save"
 msgstr "_Save"
 
-#: src/remmina_main.c:1081
+#: src/remmina_main.cpp:1081
 #, fuzzy
 msgid "This protocol does not support exporting."
 msgstr "ဒီပရိုတိုကောက တင်ပို့မှုကို မထောက်ခံပါဘူး။"
 
-#: src/remmina_main.c:1401
+#: src/remmina_main.cpp:1401
 #, fuzzy
 msgid "Remmina Remote Desktop Client"
 msgstr "Remmina ဝေးလံတဲ့ Desktop Client"
 
-#: src/remmina_main.c:1403
+#: src/remmina_main.cpp:1403
 #, fuzzy
 msgid "Remmina Kiosk"
 msgstr "ရမ်မီနာ Kiossk"
 
 #. TRANSLATORS: The placeholder %s is a directory path
-#: src/remmina_sftp_client.c:173
+#: src/remmina_sftp_client.cpp:173
 #, fuzzy, c-format
 msgid "Could not create the folder “%s”."
 msgstr "ဖိုင်တွဲ \"%s ကို မဖန်တီးနိုင်ပါဘူး။"
 
 #. TRANSLATORS: The placeholder %s is a file path
-#: src/remmina_sftp_client.c:181 src/remmina_sftp_client.c:202
+#: src/remmina_sftp_client.cpp:181 src/remmina_sftp_client.cpp:202
 #, fuzzy, c-format
 msgid "Could not create the file “%s”."
 msgstr "\"%s ဖိုင်ကို မဖန်တီးနိုင်ပါဘူး။"
 
 #. TRANSLATORS: The placeholders %s are a file path, and an error message.
-#: src/remmina_sftp_client.c:220
+#: src/remmina_sftp_client.cpp:220
 #, fuzzy, c-format
 msgid "Could not open the file “%s” on the server. %s"
 msgstr "\"%s ဖိုင်ကို ဆာဗာမှာ မဖွင့်နိုင်ဘူး။ %s"
 
-#: src/remmina_sftp_client.c:242
+#: src/remmina_sftp_client.cpp:242
 #, fuzzy, c-format
 msgid "Could not save the file “%s”."
 msgstr "\"%s ဖိုင်ကို မသိမ်းဆည်းနိုင်ပါဘူး။"
 
-#: src/remmina_sftp_client.c:281 src/remmina_sftp_client.c:698
-#: src/remmina_sftp_client.c:761
+#: src/remmina_sftp_client.cpp:281 src/remmina_sftp_client.cpp:698
+#: src/remmina_sftp_client.cpp:761
 #, fuzzy, c-format
 msgid "Could not open the folder “%s”. %s"
 msgstr "ဖိုင်တွဲကို \"%s မဖွင့်နိုင်ဘူး။ %s"
 
-#: src/remmina_sftp_client.c:385
+#: src/remmina_sftp_client.cpp:385
 #, fuzzy, c-format
 msgid "Could not create the folder “%s” on the server. %s"
 msgstr "ဆာဗာပေါ်တွင် ဖိုင်တွဲ \"%s ကို မဖန်တီးနိုင်ပါ။ %s"
 
-#: src/remmina_sftp_client.c:413 src/remmina_sftp_client.c:435
+#: src/remmina_sftp_client.cpp:413 src/remmina_sftp_client.cpp:435
 #, fuzzy, c-format
 msgid "Could not create the file “%s” on the server. %s"
 msgstr "ဆာဗာပေါ်တွင် \"%s ဖိုင်ကို မဖန်တီးနိုင်ပါ။ %s"
 
-#: src/remmina_sftp_client.c:456
+#: src/remmina_sftp_client.cpp:456
 #, fuzzy, c-format
 msgid "Could not open the file “%s”."
 msgstr "\"%s ဖိုင်ကို မဖွင့်နိုင်ပါဘူး။"
 
-#: src/remmina_sftp_client.c:476
+#: src/remmina_sftp_client.cpp:476
 #, fuzzy, c-format
 msgid "Could not write to the file “%s” on the server. %s"
 msgstr "ဆာဗာပေါ်က \"%s ဖိုင်ထဲသို့ စာရေးလို့မရဘူး။ %s"
 
-#: src/remmina_sftp_client.c:716
+#: src/remmina_sftp_client.cpp:716
 #, fuzzy, c-format
 msgid "Could not read from the folder. %s"
 msgstr "ဖိုင်တွဲကနေ မဖတ်နိုင်ဘူး။ %s"
 
-#: src/remmina_sftp_client.c:823
+#: src/remmina_sftp_client.cpp:823
 #, fuzzy
 msgid "Are you sure you want to cancel the file transfer in progress?"
 msgstr "ဖိုင် လွှဲပြောင်းမှုကို ဖျက်သိမ်းချင်တယ်ဆိုတာ သေချာပါသလား။"
 
-#: src/remmina_sftp_client.c:857
+#: src/remmina_sftp_client.cpp:857
 #, fuzzy, c-format
 msgid "Could not delete “%s”. %s"
 msgstr "\"%s ကို မဖျက်နိုင်ခဲ့ပါဘူး။ %s"
 
-#: src/remmina_sftp_client.c:942
+#: src/remmina_sftp_client.cpp:942
 #, fuzzy
 msgid "The file exists already"
 msgstr "ဖိုင်တည်ရှိပြီးသား"
 
-#: src/remmina_sftp_client.c:945
+#: src/remmina_sftp_client.cpp:945
 #, fuzzy
 msgid "Resume"
 msgstr "ဆက်ကူးမည်"
 
-#: src/remmina_sftp_client.c:946
+#: src/remmina_sftp_client.cpp:946
 #, fuzzy
 msgid "Overwrite"
 msgstr "ထပ္ေရးမည္"
 
-#: src/remmina_sftp_client.c:964
+#: src/remmina_sftp_client.cpp:964
 #, fuzzy
 msgid "The following file already exists in the target folder:"
 msgstr "အောက်ပါဖိုင်သည် ပစ်မှတ်ဖိုင်တွဲတွင် ရှိနှင့်ပြီးဖြစ်သည်-"
 
-#: src/remmina_file_editor.c:61
+#: src/remmina_file_editor.cpp:61
 #, fuzzy
 #| msgid ""
 #| "<tt><big>Supported formats\n"
@@ -1503,7 +1503,7 @@ msgstr ""
 "• ID:id ID နံပါတ်\n"
 "• unix:///path/socket.sock</big>"
 
-#: src/remmina_file_editor.c:70
+#: src/remmina_file_editor.cpp:70
 #, fuzzy
 msgid ""
 "<big>• command in PATH args %h\n"
@@ -1531,7 +1531,7 @@ msgstr ""
 "အဆက်အသွယ်မလုပ်ခင် အမိန့်ကို ကွပ်မျက်စေချင်တယ်ဆိုရင် နောက်ခံမှာ မပြေးပါနဲ့။\n"
 "</big>"
 
-#: src/remmina_file_editor.c:84
+#: src/remmina_file_editor.cpp:84
 #, fuzzy
 #| msgid ""
 #| "<tt><big>Supported formats\n"
@@ -1551,143 +1551,143 @@ msgstr ""
 "• ဆာဗာ[:p]\n"
 "• username@server[:p :p :p] (SSH Protocol)</big>"
 
-#: src/remmina_file_editor.c:162
+#: src/remmina_file_editor.cpp:162
 #, fuzzy
 msgid "Input is invalid."
 msgstr "ထည့်သွင်းခြင်းသည် မ မှန်ကန်ပါ။"
 
-#: src/remmina_file_editor.c:239
+#: src/remmina_file_editor.cpp:239
 msgid "Choose a Remote Desktop Server"
 msgstr "Remote Desktop Server တစ်ခုကိုရွေးပါ"
 
-#: src/remmina_file_editor.c:460
+#: src/remmina_file_editor.cpp:460
 #, fuzzy, c-format
 msgid "Browse the network to find a %s server"
 msgstr "%s ဆာဗာကိုရှာရန် ကွန်ရက်ကို ရှာဖွေပါ"
 
-#: src/remmina_file_editor.c:564
+#: src/remmina_file_editor.cpp:564
 #, fuzzy
 msgid "Resolution"
 msgstr "ဖြေရှင်းချက်"
 
-#: src/remmina_file_editor.c:571
+#: src/remmina_file_editor.cpp:571
 #, fuzzy
 msgid "Use initial window size"
 msgstr "ကနဦး ဝင်းဒိုးအရွယ်အစားကို အသုံးပြုပါ"
 
-#: src/remmina_file_editor.c:575
+#: src/remmina_file_editor.cpp:575
 #, fuzzy
 msgid "Use client resolution"
 msgstr "ဖောက်သည်များ၏ ဖြေရှင်းချက်ကို အသုံးပြုပါ"
 
-#: src/remmina_file_editor.c:586 src/remmina_file_editor.c:1152
+#: src/remmina_file_editor.cpp:586 src/remmina_file_editor.cpp:1152
 msgid "Custom"
 msgstr "စိတ်ကြိုက်"
 
-#: src/remmina_file_editor.c:945
+#: src/remmina_file_editor.cpp:945
 #, fuzzy
 msgid "Keyboard mapping"
 msgstr "ကီးဘုတ်မြေပုံရေးဆွဲခြင်း"
 
-#: src/remmina_file_editor.c:1072
+#: src/remmina_file_editor.cpp:1072
 #, fuzzy
 msgid "Behavior"
 msgstr "အပြုအမူ"
 
-#: src/remmina_file_editor.c:1075
+#: src/remmina_file_editor.cpp:1075
 #, fuzzy
 msgid "Execute a Command"
 msgstr "ညွှန်ကြားချက်တစ်ခုကို အကောင်အထည်ဖော်ပါ"
 
-#: src/remmina_file_editor.c:1079
+#: src/remmina_file_editor.cpp:1079
 msgid "Before connecting"
 msgstr "ချိတ်ဆက်မှု့အသစ်"
 
-#: src/remmina_file_editor.c:1081
+#: src/remmina_file_editor.cpp:1081
 #, fuzzy
 msgid "command %h %u %t %U %p %g --option"
 msgstr "%h %u %u %U %U %U %p %p %g-option"
 
-#: src/remmina_file_editor.c:1086
+#: src/remmina_file_editor.cpp:1086
 msgid "After connecting"
 msgstr "ချိတ်ဆက်မှု့အသစ်"
 
-#: src/remmina_file_editor.c:1088
+#: src/remmina_file_editor.cpp:1088
 #, fuzzy
 msgid "/path/to/command -opt1 arg %h %u %t -opt2 %U %p %g"
 msgstr "/path/com - opt1 arg %h %u %u %opt2 %U %P %g"
 
-#: src/remmina_file_editor.c:1092
+#: src/remmina_file_editor.cpp:1092
 #, fuzzy
 msgid "Start-up"
 msgstr "စတင်ခြင်း"
 
-#: src/remmina_file_editor.c:1095
+#: src/remmina_file_editor.cpp:1095
 #, fuzzy
 msgid "Auto-start this profile"
 msgstr "ဒီ ကိုယ်ရေးရာဇဝင်ကို အလိုအလျောက်စတင်ပါ"
 
-#: src/remmina_file_editor.c:1125
+#: src/remmina_file_editor.cpp:1125
 #, fuzzy
 msgid "SSH Tunnel"
 msgstr "SSH ဥမင်လိုဏ်ခေါင်း"
 
-#: src/remmina_file_editor.c:1126
+#: src/remmina_file_editor.cpp:1126
 #, fuzzy
 msgid "Enable SSH tunnel"
 msgstr "SSH ဥမင်လိုဏ်ခေါင်းကို ပြင်ဆင်ပေးပါ"
 
-#: src/remmina_file_editor.c:1133
+#: src/remmina_file_editor.cpp:1133
 #, fuzzy
 msgid "Tunnel via loopback address"
 msgstr "လိပ်စာမှတစ်ဆင့် ဥမင်လိုဏ်ခေါင်း"
 
-#: src/remmina_file_editor.c:1143
+#: src/remmina_file_editor.cpp:1143
 #, fuzzy, c-format
 msgid "Same server at port %i"
 msgstr "ဆိပ်ကမ်းတွင်ပင် ထိုဆာဗာ %i"
 
-#: src/remmina_file_editor.c:1193 plugins/rdp/rdp_plugin.c:2805
+#: src/remmina_file_editor.cpp:1193 plugins/rdp/rdp_plugin.cpp:2805
 #, fuzzy
 msgid "Start-up path"
 msgstr "စတင်လမ်းကြောင်း"
 
-#: src/remmina_file_editor.c:1202
+#: src/remmina_file_editor.cpp:1202
 #, fuzzy
 msgid "SSH Authentication"
 msgstr "SSH Auuentation"
 
-#: src/remmina_file_editor.c:1229
+#: src/remmina_file_editor.cpp:1229
 #, fuzzy
 msgid "SSH private key file"
 msgstr "SSH ပုဂ္ဂလိက သော့ဖိုင်"
 
-#: src/remmina_file_editor.c:1235 src/remmina_ssh_plugin.c:1475
+#: src/remmina_file_editor.cpp:1235 src/remmina_ssh_plugin.cpp:1475
 #, fuzzy
 msgid "SSH certificate file"
 msgstr "SSH certicate ဖိုင်"
 
-#: src/remmina_file_editor.c:1293
+#: src/remmina_file_editor.cpp:1293
 #, fuzzy
 msgid "Basic"
 msgstr "အခြေခံ"
 
-#: src/remmina_file_editor.c:1299
+#: src/remmina_file_editor.cpp:1299
 #, fuzzy
 msgid "Advanced"
 msgstr "အထူးအပြင်အဆင်များ"
 
-#: src/remmina_file_editor.c:1310
+#: src/remmina_file_editor.cpp:1310
 #, fuzzy
 msgid "Notes"
 msgstr "မှတ်စု"
 
-#: src/remmina_file_editor.c:1438
+#: src/remmina_file_editor.cpp:1438
 #, fuzzy, c-format
 msgid "(%s: %i): Can't validate setting '%s' since 'value' or 'gfe' are NULL!"
 msgstr "(%s: %i]: 'တန်ဖိုး' သို့မဟုတ် 'gfe' သည် NULL ဖြစ်ကြရာ '%s] သတ်မှတ်ခြင်းကို အတည်မပြုနိုင်ပါ။"
 
-#: src/remmina_file_editor.c:1441
+#: src/remmina_file_editor.cpp:1441
 #, fuzzy, c-format
 msgid ""
 "(%s: %i): Can't validate user input since 'setting_name_to_validate', "
@@ -1695,128 +1695,128 @@ msgid ""
 msgstr "(%s: %i]: 'setting_name_to_validate' သို့မဟုတ် 'gfe' သည် NULL!"
 
 #. TRANSLATORS: Meta-error. Shouldn't be visible.
-#: src/remmina_file_editor.c:1445 plugins/x2go/x2go_plugin.c:2394
-#: plugins/x2go/x2go_plugin.c:3023
+#: src/remmina_file_editor.cpp:1445 plugins/x2go/x2go_plugin.cpp:2394
+#: plugins/x2go/x2go_plugin.cpp:3023
 #, fuzzy
 msgid "Internal error."
 msgstr "ပြည်တွင်းအမှား။"
 
-#: src/remmina_file_editor.c:1667 src/remmina_file_editor.c:1703
-#: src/remmina_file_editor.c:1724 src/remmina_file_editor.c:1747
+#: src/remmina_file_editor.cpp:1667 src/remmina_file_editor.cpp:1703
+#: src/remmina_file_editor.cpp:1724 src/remmina_file_editor.cpp:1747
 #, fuzzy, c-format
 msgid "Couldn't validate user input. %s"
 msgstr "သုံးစွဲသူတွေရဲ့ ထည့်သွင်းထည့်သွင်းချက်ကို အကောင်အထည်မဖော်နိုင်ဘူး။ %s"
 
-#: src/remmina_file_editor.c:1691
+#: src/remmina_file_editor.cpp:1691
 #, fuzzy
 msgid "Default settings saved."
 msgstr "စံထားချက်များ သိမ်းဆည်းထားလေသည်။"
 
-#: src/remmina_file_editor.c:1781
+#: src/remmina_file_editor.cpp:1781
 msgid "Remote Connection Profile"
 msgstr "ချိတ်ဆက်မှု့အသစ်"
 
-#: src/remmina_file_editor.c:1787
+#: src/remmina_file_editor.cpp:1787
 #, fuzzy
 msgid "Save as Default"
 msgstr "စံထားချက်အဖြစ် သိမ်းဆည်းပါ"
 
-#: src/remmina_file_editor.c:1788
+#: src/remmina_file_editor.cpp:1788
 #, fuzzy
 msgid "Use the current settings as the default for all new connection profiles"
 msgstr "ဆက်သွယ်ရေး ကိုယ်ရေးရာဇဝင်အသစ်အားလုံးအတွက် စံထားချက်အဖြစ် လက်ရှိ သတ်မှတ်ချက်များကို အသုံးပြုပါ"
 
-#: src/remmina_file_editor.c:1796 data/ui/remmina_main.glade:160
+#: src/remmina_file_editor.cpp:1796 data/ui/remmina_main.glade:160
 #, fuzzy
 msgid "Connect"
 msgstr "ချိတ်ဆက်"
 
-#: src/remmina_file_editor.c:1799
+#: src/remmina_file_editor.cpp:1799
 #, fuzzy
 msgid "_Save and Connect"
 msgstr "_Save နှင့် ဆက်သွယ်ရေး"
 
-#: src/remmina_file_editor.c:1922
+#: src/remmina_file_editor.cpp:1922
 #, fuzzy
 msgid "Quick Connect"
 msgstr "မြန်မြန်ဆက်သွယ်မှု"
 
-#: src/remmina_file_editor.c:1946
+#: src/remmina_file_editor.cpp:1946
 #, fuzzy, c-format
 msgid "Use '%s' as subgroup delimiter"
 msgstr "'%s' ကို စုစည်းထားတဲ့ အဖွဲ့အစည်း အောက်ပိုင်း ဒီလီမီတာအဖြစ် သုံးပါ"
 
-#: src/remmina_file_editor.c:2012 src/remmina_file_editor.c:2030
+#: src/remmina_file_editor.cpp:2012 src/remmina_file_editor.cpp:2030
 #, fuzzy, c-format
 msgid "Could not find the file “%s”."
 msgstr "\"%s ဖိုင်ကို ရှာမတွေ့နိုင်ပါဘူး။"
 
 #. TRANSLATORS: This is a message that pops up when an external Remmina plugin tries to set the window resolution using a legacy parameter.
 #. TRANSLATORS: This is a message that pop-up when an external Remmina plugin tries to set the windows resolution using a legacy parameter.
-#: src/remmina_file.c:451 src/remmina_file.c:497
+#: src/remmina_file.cpp:451 src/remmina_file.cpp:497
 #, fuzzy
 msgid ""
 "Using the «resolution» parameter in the Remmina preferences file is "
 "deprecated.\n"
 msgstr "«» ရီမီနာ ကြိုက်နှစ်သက်တဲ့ ဖိုင်ထဲက ကိန်းဂဏန်းကိုသုံးပြီး စိတ်ဓာတ်ကျသွားတယ်။\n"
 
-#: src/remmina_icon.c:137
+#: src/remmina_icon.cpp:137
 #, fuzzy
 msgid "Open Main Window"
 msgstr "အဓိက ဝင်းဒိုးကိုဖွင့်ပါ"
 
-#: src/remmina_icon.c:142 data/ui/remmina_main.glade:254
+#: src/remmina_icon.cpp:142 data/ui/remmina_main.glade:254
 #, fuzzy
 msgid "_Preferences"
 msgstr "အပြင်အဆင်"
 
-#: src/remmina_icon.c:147
+#: src/remmina_icon.cpp:147
 #, fuzzy
 msgid "_About"
 msgstr "_About"
 
-#: src/remmina_icon.c:157
+#: src/remmina_icon.cpp:157
 #, fuzzy
 msgid "Enable Service Discovery"
 msgstr "ဝန်ဆောင်မှု ရှာဖွေတွေ့ရှိမှု"
 
-#: src/remmina_icon.c:169 data/ui/remmina_main.glade:404
+#: src/remmina_icon.cpp:169 data/ui/remmina_main.glade:404
 #, fuzzy
 msgid "_Quit"
 msgstr "_Quit"
 
 #. TRANSLATORS: Applet name as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
 #. TRANSLATORS: Applet Name as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
-#: src/remmina_icon.c:295 src/remmina_icon.c:447
+#: src/remmina_icon.cpp:295 src/remmina_icon.cpp:447
 #, fuzzy
 msgid "Remmina Applet"
 msgstr "Remmina Applele"
 
 #. TRANSLATORS: Applet comment/description as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
-#: src/remmina_icon.c:297 src/remmina_icon.c:449
+#: src/remmina_icon.cpp:297 src/remmina_icon.cpp:449
 #, fuzzy
 msgid "Connect to remote desktops through the applet menu"
 msgstr "ပန်းသီးစာရင်းမှတစ်ဆင့် ဝေးလံတဲ့ ဒက်စ်တော့ပ်တွေနဲ့ ချိတ်ဆက်ပါ"
 
-#: src/remmina_icon.c:361
+#: src/remmina_icon.cpp:361
 #, fuzzy
 msgid "StatusNotifier/Appindicator support in “"
 msgstr "Statnotifier/Appindicator ထောက်ပံ့မှု \""
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:368
+#: src/remmina_icon.cpp:368
 #, fuzzy, c-format
 msgid "%s your desktop does support it"
 msgstr "%s ခင်ဗျားရဲ့ desktop က ထောက်ခံပါတယ်"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:370
+#: src/remmina_icon.cpp:370
 #, fuzzy, c-format
 msgid "%s and Remmina has built-in (compiled) support for libappindicator."
 msgstr "%s နှင့် Remmina တို့က Libapindicator အတွက် (စုစည်းထား) ထောက်ပံ့ပေးထားပါတယ်။"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:373
+#: src/remmina_icon.cpp:373
 #, fuzzy, c-format
 msgid ""
 "%s not supported natively by your Desktop Environment. libappindicator will "
@@ -1826,151 +1826,151 @@ msgstr ""
 "xembed သို့ ပြန်လှည့်ရန် ကြိုးစားမည်"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:377
+#: src/remmina_icon.cpp:377
 #, fuzzy, c-format
 msgid "%s You may need to install, and use XApp Status Applet"
 msgstr "%s XApp Statatus Applet ကို သုံးဖို့ လိုအပ်နိုင်ပါတယ်"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:380
+#: src/remmina_icon.cpp:380
 #, fuzzy, c-format
 msgid "%s You may need to install, and use KStatusNotifierItem"
 msgstr "%s တပ်ဆင်ရန်လိုအပ်ပေမည်။ KStatusNotifierTem"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:383
+#: src/remmina_icon.cpp:383
 #, fuzzy, c-format
 msgid "%s You may need to install, and use XEmbed SNI Proxy"
 msgstr "%s ထည့်သွင်းရန် လိုအပ်ပေမည်။ Xembed SNI Proxy"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:386
+#: src/remmina_icon.cpp:386
 #, fuzzy, c-format
 msgid "%s You may need to install, and use Gnome Shell Extension Appindicator"
 msgstr "%s သွင်းရန်လိုအပ်ပေမည်။ Gnome Shell Extendicator Appindicator"
 
 #. TRANSLATORS: %s is a placeholder for an error message
-#: src/remmina_ssh_plugin.c:539
+#: src/remmina_ssh_plugin.cpp:539
 #, fuzzy, c-format
 msgid "Error: %s"
 msgstr "အမှား - %s"
 
-#: src/remmina_ssh_plugin.c:556
+#: src/remmina_ssh_plugin.cpp:556
 #, fuzzy
 msgid "Terminal content saved in"
 msgstr "Terminal အကြောင်းအရာများကို သိမ်းဆည်းထားခဲ့"
 
-#: src/remmina_ssh_plugin.c:822
+#: src/remmina_ssh_plugin.cpp:822
 #, fuzzy
 msgid "Select All (host+A)"
 msgstr "အားလုံးရွေးချယ် (အိမ်ရှင်+အေ)"
 
-#: src/remmina_ssh_plugin.c:823
+#: src/remmina_ssh_plugin.cpp:823
 #, fuzzy
 msgid "Copy (host+C)"
 msgstr "မိတ္တူကူး (အိမ်ရှင်+စီ)"
 
-#: src/remmina_ssh_plugin.c:824
+#: src/remmina_ssh_plugin.cpp:824
 #, fuzzy
 msgid "Paste (host+V)"
 msgstr "ပါစတီ (အိမ်ရှင်+V)"
 
-#: src/remmina_ssh_plugin.c:825
+#: src/remmina_ssh_plugin.cpp:825
 #, fuzzy
 msgid "Save session to file"
 msgstr "ဖိုင်အတွက် သိမ်းဆည်းထားပါ"
 
-#: src/remmina_ssh_plugin.c:826
+#: src/remmina_ssh_plugin.cpp:826
 #, fuzzy
 msgid "Increase font size (host+Page Up)"
 msgstr "ဖောင့်အရွယ်အစားကို တိုးမြှင့် (အိမ်ရှင်+ပေ့ပ်)"
 
-#: src/remmina_ssh_plugin.c:827
+#: src/remmina_ssh_plugin.cpp:827
 #, fuzzy
 msgid "Decrease font size (host+Page Down)"
 msgstr "ဖောင့်အရွယ် (အိမ်ရှင်+စာမျက်နှာအောက်)"
 
-#: src/remmina_ssh_plugin.c:828
+#: src/remmina_ssh_plugin.cpp:828
 #, fuzzy
 msgid "Find text (host+G)"
 msgstr "စာသားကိုရှာ (အိမ်ရှင်+G)"
 
-#: src/remmina_ssh_plugin.c:1440 data/ui/remmina_main.glade:177
+#: src/remmina_ssh_plugin.cpp:1440 data/ui/remmina_main.glade:177
 #, fuzzy
 msgid "Copy"
 msgstr "ကူးရန်"
 
-#: src/remmina_ssh_plugin.c:1440
+#: src/remmina_ssh_plugin.cpp:1440
 #, fuzzy
 msgid "_Copy"
 msgstr "_Copy"
 
-#: src/remmina_ssh_plugin.c:1441
+#: src/remmina_ssh_plugin.cpp:1441
 #, fuzzy
 msgid "Paste"
 msgstr "ပက်စတီ"
 
-#: src/remmina_ssh_plugin.c:1441
+#: src/remmina_ssh_plugin.cpp:1441
 #, fuzzy
 msgid "_Paste"
 msgstr "_Paste"
 
-#: src/remmina_ssh_plugin.c:1442
+#: src/remmina_ssh_plugin.cpp:1442
 #, fuzzy
 msgid "Select all"
 msgstr "အားလုံးရွေးချယ်ပါ"
 
-#: src/remmina_ssh_plugin.c:1442
+#: src/remmina_ssh_plugin.cpp:1442
 #, fuzzy
 msgid "_Select all"
 msgstr "_Select အားလုံး _Select အားလုံး _Select အား"
 
-#: src/remmina_ssh_plugin.c:1443
+#: src/remmina_ssh_plugin.cpp:1443
 #, fuzzy
 msgid "Increase font size"
 msgstr "ဖောင့်အရွယ်အစားကို တိုးမြှင့်ပါ"
 
-#: src/remmina_ssh_plugin.c:1443
+#: src/remmina_ssh_plugin.cpp:1443
 #, fuzzy
 msgid "_Increase font size"
 msgstr "_Increase ဖောင့်အရွယ်အစား"
 
-#: src/remmina_ssh_plugin.c:1444
+#: src/remmina_ssh_plugin.cpp:1444
 #, fuzzy
 msgid "Decrease font size"
 msgstr "ဖောင့်အရွယ်အစားကို လျှော့ချပါ"
 
-#: src/remmina_ssh_plugin.c:1444
+#: src/remmina_ssh_plugin.cpp:1444
 #, fuzzy
 msgid "_Decrease font size"
 msgstr "_Decrease ဖောင့်အရွယ်အစား"
 
-#: src/remmina_ssh_plugin.c:1445
+#: src/remmina_ssh_plugin.cpp:1445
 #, fuzzy
 msgid "Find text"
 msgstr "စာသားကို ရှာဖွေပါ"
 
-#: src/remmina_ssh_plugin.c:1445
+#: src/remmina_ssh_plugin.cpp:1445
 #, fuzzy
 msgid "_Find text"
 msgstr "_Find စာသား"
 
-#: src/remmina_ssh_plugin.c:1472 plugins/spice/spice_plugin.c:674
-#: plugins/vnc/vnc_plugin.c:1998 plugins/vnc/vnc_plugin.c:2010
+#: src/remmina_ssh_plugin.cpp:1472 plugins/spice/spice_plugin.cpp:674
+#: plugins/vnc/vnc_plugin.cpp:1998 plugins/vnc/vnc_plugin.cpp:2010
 #, fuzzy
 msgid "User password"
 msgstr "အသုံးပြုသူ စကားဝှက်"
 
-#: src/remmina_ssh_plugin.c:1478
+#: src/remmina_ssh_plugin.cpp:1478
 msgid "Opening command"
 msgstr ""
 
-#: src/remmina_ssh_plugin.c:1479
+#: src/remmina_ssh_plugin.cpp:1479
 #, fuzzy
 msgid "Start-up background program"
 msgstr "စတင်ပရိုဂရမ်"
 
-#: src/remmina_ssh_plugin.c:1484
+#: src/remmina_ssh_plugin.cpp:1484
 #, fuzzy
 msgid ""
 "The filename can use the following placeholders:\n"
@@ -1993,239 +1993,239 @@ msgstr ""
 "  • %g ကို Remmina Profile အုပ်စုအမည်ဖြင့် အစားထိုးပါ\n"
 "  • %d ကို ဒေသတွင်း ရက်စွဲနှင့် အချိန်ကို ISO 8601 ပုံစံဖြင့် အစားထိုး\n"
 
-#: src/remmina_ssh_plugin.c:1506
+#: src/remmina_ssh_plugin.cpp:1506
 #, fuzzy
 msgid "Terminal colour scheme"
 msgstr "Terminal အရောင် စီမံကိန်း"
 
-#: src/remmina_ssh_plugin.c:1507
+#: src/remmina_ssh_plugin.cpp:1507
 #, fuzzy
 msgid "Character set"
 msgstr "ဇာတ်ကောင်အစု"
 
-#: src/remmina_ssh_plugin.c:1509
+#: src/remmina_ssh_plugin.cpp:1509
 #, fuzzy
 msgid "KEX (Key Exchange) algorithms"
 msgstr "KEX (Key Exchange) အယ်ဂိုရီသမ်များ"
 
-#: src/remmina_ssh_plugin.c:1510
+#: src/remmina_ssh_plugin.cpp:1510
 #, fuzzy
 msgid "Symmetric cipher client to server"
 msgstr "symmmtric cipher ဖောက်သည် ဆာဗာ"
 
-#: src/remmina_ssh_plugin.c:1511
+#: src/remmina_ssh_plugin.cpp:1511
 #, fuzzy
 msgid "Preferred server host key types"
 msgstr "ကြိုက်နှစ်သက်သော ဆာဗာ အိမ်ရှင် အဓိကအမျိုးအစားများ"
 
-#: src/remmina_ssh_plugin.c:1512
+#: src/remmina_ssh_plugin.cpp:1512
 #, fuzzy
 msgid "Folder for SSH session log"
 msgstr "SSH SSH ssion မှတ်စုအတွက် ဖိုင်တွဲ"
 
-#: src/remmina_ssh_plugin.c:1513
+#: src/remmina_ssh_plugin.cpp:1513
 #, fuzzy
 msgid "Filename for SSH session log"
 msgstr "SSH SSH ssion မှတ်စုအတွက် Fililename"
 
-#: src/remmina_ssh_plugin.c:1514
+#: src/remmina_ssh_plugin.cpp:1514
 #, fuzzy
 msgid "Log SSH session when exiting Remmina"
 msgstr "Remmina ကနေထွက်ချိန်မှာ Log SSH အစီအစဉ်"
 
-#: src/remmina_ssh_plugin.c:1515
+#: src/remmina_ssh_plugin.cpp:1515
 #, fuzzy
 msgid "Log SSH session asynchronously"
 msgstr "သစ်အက်စ်အက်စ်အိပ်ခ်ျ အစီအစဉ်"
 
-#: src/remmina_ssh_plugin.c:1515
+#: src/remmina_ssh_plugin.cpp:1515
 #, fuzzy
 msgid "Saving the session asynchronously may have a notable performance impact"
 msgstr "အစည်းအဝေးကို ထိန်းသိမ်းခြင်းဟာ ထူးခြားတဲ့ စွမ်းဆောင်ရည် အကျိုးသက်ရောက်မှု ရှိနိုင်တယ်"
 
-#: src/remmina_ssh_plugin.c:1516
+#: src/remmina_ssh_plugin.cpp:1516
 #, fuzzy
 msgid "Audible terminal bell"
 msgstr "ကြားနိုင်သော terminal ခေါင်းလောင်း"
 
-#: src/remmina_ssh_plugin.c:1517
+#: src/remmina_ssh_plugin.cpp:1517
 #, fuzzy
 msgid "SSH compression"
 msgstr "SSH ဖိသိပ်ခြင်း"
 
-#: src/remmina_ssh_plugin.c:1518
+#: src/remmina_ssh_plugin.cpp:1518
 #, fuzzy
 msgid "Don't remember passwords"
 msgstr "စကားဝှက်တွေကို မမှတ်မိပါနဲ့"
 
-#: src/remmina_ssh_plugin.c:1519
+#: src/remmina_ssh_plugin.cpp:1519
 #, fuzzy
 msgid "Strict host key checking"
 msgstr "တင်းကျပ်တဲ့ အိမ်ရှင် အဓိကစစ်ဆေးမှု"
 
-#: src/remmina_ssh_plugin.c:1533
+#: src/remmina_ssh_plugin.cpp:1533
 #, fuzzy
 msgid "SSH - Secure Shell"
 msgstr "SSH - လုံခြုံသောခွေး"
 
-#: plugins/kwallet/src/kwallet_plugin_main.c:118
+#: plugins/kwallet/src/kwallet_plugin_main.cpp:118
 #, fuzzy
 msgid "Secured password storage in KWallet"
 msgstr "ကဝေါလက်မြို့တွင် လုံခြုံသော စကားဝှက်သိုလှောင်မှု"
 
-#: plugins/rdp/rdp_settings.c:217
+#: plugins/rdp/rdp_settings.cpp:217
 #, fuzzy
 msgid "<Auto-detect>"
 msgstr "<Auto-detect>"
 
-#: plugins/rdp/rdp_settings.c:249
+#: plugins/rdp/rdp_settings.cpp:249
 #, fuzzy
 msgid "<Not set>"
 msgstr "< သတ်မှတ်ထားတဲ့ >>"
 
-#: plugins/rdp/rdp_settings.c:280
+#: plugins/rdp/rdp_settings.cpp:280
 #, fuzzy
 msgid "<Choose a quality level to edit…>"
 msgstr "< တည်းခိုရန် အရည်အသွေးအဆင့်အဆင့်အဆင့်ကို >"
 
-#: plugins/rdp/rdp_settings.c:282 plugins/rdp/rdp_plugin.c:2622
-#: plugins/vnc/vnc_plugin.c:1947
+#: plugins/rdp/rdp_settings.cpp:282 plugins/rdp/rdp_plugin.cpp:2622
+#: plugins/vnc/vnc_plugin.cpp:1947
 #, fuzzy
 msgid "Poor (fastest)"
 msgstr "ဆင်းရဲနွမ်းပါး (အမြန်ဆုံး)"
 
-#: plugins/rdp/rdp_settings.c:284 plugins/rdp/rdp_plugin.c:2623
-#: plugins/vnc/vnc_plugin.c:1946
+#: plugins/rdp/rdp_settings.cpp:284 plugins/rdp/rdp_plugin.cpp:2623
+#: plugins/vnc/vnc_plugin.cpp:1946
 #, fuzzy
 msgid "Medium"
 msgstr "အလယ်အလတ်"
 
-#: plugins/rdp/rdp_settings.c:286 plugins/rdp/rdp_plugin.c:2624
-#: plugins/vnc/vnc_plugin.c:1944
+#: plugins/rdp/rdp_settings.cpp:286 plugins/rdp/rdp_plugin.cpp:2624
+#: plugins/vnc/vnc_plugin.cpp:1944
 #, fuzzy
 msgid "Good"
 msgstr "ကောင်းမွန်စွာ"
 
-#: plugins/rdp/rdp_settings.c:288 plugins/rdp/rdp_plugin.c:2625
-#: plugins/vnc/vnc_plugin.c:1945
+#: plugins/rdp/rdp_settings.cpp:288 plugins/rdp/rdp_plugin.cpp:2625
+#: plugins/vnc/vnc_plugin.cpp:1945
 #, fuzzy
 msgid "Best (slowest)"
 msgstr "အကောင်းဆုံး (နှေးဆုံး)"
 
-#: plugins/rdp/rdp_settings.c:427
+#: plugins/rdp/rdp_settings.cpp:427
 #, fuzzy
 msgid "Keyboard layout"
 msgstr "ကီးဘုတ်ပုံစံ"
 
-#: plugins/rdp/rdp_settings.c:457
+#: plugins/rdp/rdp_settings.cpp:457
 #, fuzzy
 msgid "Use client keyboard mapping"
 msgstr "ဖောက်သည် ကီးဘုတ် မြေပုံရေးဆွဲရာတွင် အသုံးပြုပါ"
 
-#: plugins/rdp/rdp_settings.c:468
+#: plugins/rdp/rdp_settings.cpp:468
 #, fuzzy
 msgid "Keyboard scancode remapping"
 msgstr "Keyboard Scancode ပြန်လည်ပြုပြင်ခြင်း"
 
-#: plugins/rdp/rdp_settings.c:483
+#: plugins/rdp/rdp_settings.cpp:483
 #, fuzzy
 msgid "List of key=value,… pairs to remap scancodes. E.g. 0x56=0x29,0x29=0x56"
 msgstr ""
 "သော့ချက်=တန်ဖိုးစာရင်း,... စကင်ကို့ဒ်များကို ပြန်လည်ရရှိရန် စုံတွဲများ။ E.g.0x56=0x29 0x29 "
 "0x29=0x56 0x56"
 
-#: plugins/rdp/rdp_settings.c:486
+#: plugins/rdp/rdp_settings.cpp:486
 #, fuzzy
 msgid "FreeRDP > 2.3.0 is required to map scancodes"
 msgstr "freeRDP > 2.3.0 ကို မြေပုံရေးသားရန် လိုအပ်"
 
-#: plugins/rdp/rdp_settings.c:494
+#: plugins/rdp/rdp_settings.cpp:494
 #, fuzzy
 msgid "Quality settings"
 msgstr "အရည်အသွေး သတ်မှတ်ချက်များ"
 
-#: plugins/rdp/rdp_settings.c:517
+#: plugins/rdp/rdp_settings.cpp:517
 #, fuzzy
 msgid "Wallpaper"
 msgstr "ဝေါလ်ပါ"
 
-#: plugins/rdp/rdp_settings.c:525
+#: plugins/rdp/rdp_settings.cpp:525
 #, fuzzy
 msgid "Window drag"
 msgstr "Window ဒရိုက်"
 
-#: plugins/rdp/rdp_settings.c:532
+#: plugins/rdp/rdp_settings.cpp:532
 #, fuzzy
 msgid "Menu animation"
 msgstr "မီနူး သက်၀င်မှု"
 
-#: plugins/rdp/rdp_settings.c:540
+#: plugins/rdp/rdp_settings.cpp:540
 #, fuzzy
 msgid "Theme"
 msgstr "အျပင္အဆင္"
 
-#: plugins/rdp/rdp_settings.c:547
+#: plugins/rdp/rdp_settings.cpp:547
 #, fuzzy
 msgid "Cursor shadow"
 msgstr "ကျူဆာအရိပ်"
 
-#: plugins/rdp/rdp_settings.c:555
+#: plugins/rdp/rdp_settings.cpp:555
 #, fuzzy
 msgid "Cursor blinking"
 msgstr "မျက်ခတ်ခြင်း"
 
-#: plugins/rdp/rdp_settings.c:562
+#: plugins/rdp/rdp_settings.cpp:562
 #, fuzzy
 msgid "Font smoothing"
 msgstr "ဖောင့်ချောချောမောခြင်း"
 
-#: plugins/rdp/rdp_settings.c:570
+#: plugins/rdp/rdp_settings.cpp:570
 #, fuzzy
 msgid "Composition"
 msgstr "သီချင်းဆိုခြင်း"
 
-#: plugins/rdp/rdp_settings.c:580
+#: plugins/rdp/rdp_settings.cpp:580
 #, fuzzy
 msgid "Remote scale factor"
 msgstr "ဝေးလံတဲ့ စကေးအချက်"
 
-#: plugins/rdp/rdp_settings.c:595
+#: plugins/rdp/rdp_settings.cpp:595
 #, fuzzy
 msgid "Desktop scale factor %"
 msgstr "Desktop စကေး အချက်အလက် %"
 
-#: plugins/rdp/rdp_settings.c:607
+#: plugins/rdp/rdp_settings.cpp:607
 #, fuzzy
 msgid "Device scale factor %"
 msgstr "စက်ကိရိယာ စကေး အချက်အလက် %"
 
-#: plugins/rdp/rdp_settings.c:630
+#: plugins/rdp/rdp_settings.cpp:630
 #, fuzzy
 msgid "Desktop orientation"
 msgstr "Desktop ဦးတည်ချက်"
 
-#: plugins/rdp/rdp_settings.c:650
+#: plugins/rdp/rdp_settings.cpp:650
 #, fuzzy
 msgid "Input device settings"
 msgstr "ထည့်သွင်းကိရိယာ တပ်ဆင်မှုများ"
 
-#: plugins/rdp/rdp_settings.c:658 plugins/rdp/rdp_plugin.c:2766
-#: plugins/vnc/vnc_plugin.c:2030
+#: plugins/rdp/rdp_settings.cpp:658 plugins/rdp/rdp_plugin.cpp:2766
+#: plugins/vnc/vnc_plugin.cpp:2030
 #, fuzzy
 msgid "Disable smooth scrolling"
 msgstr "ချောမွေ့တဲ့ လိပ်စာ"
 
-#: plugins/rdp/rdp_settings.c:669
+#: plugins/rdp/rdp_settings.cpp:669
 #, fuzzy
 msgid "General settings"
 msgstr "အထွေထွေ အခြေအနေများ"
 
-#: plugins/rdp/rdp_settings.c:676 plugins/rdp/rdp_plugin.c:2819
+#: plugins/rdp/rdp_settings.cpp:676 plugins/rdp/rdp_plugin.cpp:2819
 #, fuzzy
 msgid "Reconnect attempts number"
 msgstr "ပြန်လည်ဆက်သွယ်ရန် ကြိုးပမ်းမှု နံပါတ်များ"
 
-#: plugins/rdp/rdp_settings.c:689 plugins/rdp/rdp_plugin.c:2819
+#: plugins/rdp/rdp_settings.cpp:689 plugins/rdp/rdp_plugin.cpp:2819
 #, fuzzy
 msgid ""
 "The maximum number of reconnect attempts upon an RDP disconnect (default: 20)"
@@ -2233,17 +2233,17 @@ msgstr ""
 "အာဒီပီ အဆက်အသွယ် ပြတ်တောက် မှု တစ် ခု အပေါ် ပြန်လည် ဆက်သွယ်ရေး ကြိုးပမ်း မှု ၏ အများဆုံး အရေအတွက် "
 "( ပျက်ကွက် မှု : ၂၀ )"
 
-#: plugins/rdp/rdp_plugin.c:771 plugins/rdp/rdp_plugin.c:836
+#: plugins/rdp/rdp_plugin.cpp:771 plugins/rdp/rdp_plugin.cpp:836
 #, fuzzy
 msgid "Enter RDP authentication credentials"
 msgstr "RDP စစ်ဆေးရေး အသိအမှတ်ပြုချက်များကို ဝင်ရောက်ပါ"
 
-#: plugins/rdp/rdp_plugin.c:844
+#: plugins/rdp/rdp_plugin.cpp:844
 #, fuzzy
 msgid "Enter RDP gateway authentication credentials"
 msgstr "RDP gateway စစ်ဆေးရေး အသိအမှတ်ပြုချက်များကို ဝင်ရောက်ပါ"
 
-#: plugins/rdp/rdp_plugin.c:2153
+#: plugins/rdp/rdp_plugin.cpp:2153
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2252,7 +2252,7 @@ msgstr ""
 "RDP ဆာဗာ \"%s ကို ဝင်ရောက်ကြည့်ရှုလို့မရဘူး။\n"
 "အကောင့်ကို သော့ခတ်ထားတယ်။"
 
-#: plugins/rdp/rdp_plugin.c:2160
+#: plugins/rdp/rdp_plugin.cpp:2160
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2261,7 +2261,7 @@ msgstr ""
 "RDP ဆာဗာ \"%s ကို ဝင်ရောက်ကြည့်ရှုလို့မရဘူး။\n"
 "အကောင့် သက်တမ်းကုန်ဆုံးသွားလေသည်။"
 
-#: plugins/rdp/rdp_plugin.c:2167
+#: plugins/rdp/rdp_plugin.cpp:2167
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2270,7 +2270,7 @@ msgstr ""
 "RDP ဆာဗာ \"%s ကို ဝင်ရောက်ကြည့်ရှုလို့မရဘူး။\n"
 "စကားဝှက် သက် ကုန်ဆုံးသွားလေသည်။"
 
-#: plugins/rdp/rdp_plugin.c:2174
+#: plugins/rdp/rdp_plugin.cpp:2174
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2279,7 +2279,7 @@ msgstr ""
 "RDP ဆာဗာ \"%s ကို ဝင်ရောက်ကြည့်ရှုလို့မရဘူး။\n"
 "အကောင့် မသန်မစွမ်းဖြစ်နေသည်။"
 
-#: plugins/rdp/rdp_plugin.c:2180
+#: plugins/rdp/rdp_plugin.cpp:2180
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2288,7 +2288,7 @@ msgstr ""
 "RDP ဆာဗာ \"%s ကို ဝင်ရောက်ကြည့်ရှုလို့မရဘူး။\n"
 "သုံးစွဲသူတွေရဲ့ အခွင့်ထူးတွေ မလုံလောက်ဘူး။"
 
-#: plugins/rdp/rdp_plugin.c:2188
+#: plugins/rdp/rdp_plugin.cpp:2188
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2297,7 +2297,7 @@ msgstr ""
 "RDP ဆာဗာ \"%s ကို ဝင်ရောက်ကြည့်ရှုလို့မရဘူး။\n"
 "အကောင့်ကန့်သတ်ထားသည်။"
 
-#: plugins/rdp/rdp_plugin.c:2196
+#: plugins/rdp/rdp_plugin.cpp:2196
 #, fuzzy, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2306,17 +2306,17 @@ msgstr ""
 "RDP ဆာဗာ \"%s ကို ဝင်ရောက်ကြည့်ရှုလို့မရဘူး။\n"
 "မဆက်သွယ်မီ အသုံးပြုသူ စကားဝှက်ကို ပြောင်းလဲပါ။"
 
-#: plugins/rdp/rdp_plugin.c:2201
+#: plugins/rdp/rdp_plugin.cpp:2201
 #, fuzzy, c-format
 msgid "Lost connection to the RDP server “%s”."
 msgstr "RDP ဆာဗာ \"%s..."
 
-#: plugins/rdp/rdp_plugin.c:2204
+#: plugins/rdp/rdp_plugin.cpp:2204
 #, fuzzy, c-format
 msgid "Could not find the address for the RDP server “%s”."
 msgstr "RDP ဆာဗာ \"%s အတွက် လိပ်စာကို ရှာမတွေ့နိုင်ဘူး။"
 
-#: plugins/rdp/rdp_plugin.c:2208
+#: plugins/rdp/rdp_plugin.cpp:2208
 #, fuzzy, c-format
 msgid ""
 "Could not connect to the RDP server “%s” via TLS. See the DEBUG traces from "
@@ -2326,24 +2326,24 @@ msgstr ""
 "ဗားရှင်း တစ် ခု ကို ထောက်ပံ့ ပေး သည် ကို စစ်ဆေး ပါ ။"
 
 #. TRANSLATORS: the placeholder may be either an IP/FQDN or a server hostname
-#: plugins/rdp/rdp_plugin.c:2212
+#: plugins/rdp/rdp_plugin.cpp:2212
 #, fuzzy, c-format
 msgid ""
 "Unable to establish a connection to the RDP server “%s”. Check “Security "
 "protocol negotiation”."
 msgstr "RDP ဆာဗာ \"%s... \"လုံခြုံရေး ပရိုတိုကော စေ့စပ်ညှိနှိုင်းမှု\"ကို စစ်ဆေးပါ။"
 
-#: plugins/rdp/rdp_plugin.c:2220
+#: plugins/rdp/rdp_plugin.cpp:2220
 #, fuzzy, c-format
 msgid "Cannot connect to the RDP server “%s”."
 msgstr "RDP ဆာဗာ \"%s ကို ဆက်သွယ်လို့မရဘူး။"
 
-#: plugins/rdp/rdp_plugin.c:2223
+#: plugins/rdp/rdp_plugin.cpp:2223
 #, fuzzy
 msgid "Could not start libfreerdp-gdi."
 msgstr "Libbfreerdp-gdi ကို မစနိုင်ဘူး။"
 
-#: plugins/rdp/rdp_plugin.c:2226
+#: plugins/rdp/rdp_plugin.cpp:2226
 #, fuzzy, c-format
 msgid ""
 "You requested a H.264 GFX mode for the server “%s”, but your libfreerdp does "
@@ -2352,12 +2352,12 @@ msgstr ""
 "\"%s အတွက် H.264 GFX ပုံစံကို တောင်းဆိုခဲ့ပေမဲ့ ခင်ဗျားရဲ့ Libfredp က H.264 ကို မထောက်ပံ့ပါဘူး။ "
 "ကျေးဇူးပြု၍ အေဗွီစီမဟုတ်သော အရောင်နက်ကို သုံးပါ။"
 
-#: plugins/rdp/rdp_plugin.c:2233
+#: plugins/rdp/rdp_plugin.cpp:2233
 #, fuzzy, c-format
 msgid "The “%s” server refused the connection."
 msgstr "\"%s ဆာဗာက ဆက်သွယ်မှုကို ငြင်းပယ်ခဲ့တယ်။"
 
-#: plugins/rdp/rdp_plugin.c:2238
+#: plugins/rdp/rdp_plugin.cpp:2238
 #, fuzzy, c-format
 msgid ""
 "The Remote Desktop Gateway “%s” denied the user “%s\\%s” access due to "
@@ -2366,143 +2366,143 @@ msgstr ""
 "ဝေးလံတဲ့ Desktop Gateway \"%s \" အသုံးပြုသူအား မူဝါဒကြောင့် \"%s%s][\\ X49X]]%s%s] "
 "သုံးစွဲခွင့်ကို မူဝါဒကြောင့် ငြင်းဆိုခဲ့သည်။"
 
-#: plugins/rdp/rdp_plugin.c:2248
+#: plugins/rdp/rdp_plugin.cpp:2248
 #, fuzzy, c-format
 msgid "Cannot connect to the “%s” RDP server."
 msgstr "\"[%s \" RDP ဆာဗာနဲ့ ဆက်သွယ်လို့မရဘူး။"
 
-#: plugins/rdp/rdp_plugin.c:2591
+#: plugins/rdp/rdp_plugin.cpp:2591
 #, fuzzy
 msgid "Automatic (32 bpp) (Server chooses its best format)"
 msgstr "Automatic (32 bpp) (ဆာဗာက ၎င်းရဲ့ အကောင်းဆုံး ပုံစံကို ရွေးချယ်တယ်)"
 
-#: plugins/rdp/rdp_plugin.c:2592
+#: plugins/rdp/rdp_plugin.cpp:2592
 #, fuzzy
 msgid "GFX AVC444 (32 bpp)"
 msgstr "GFX AVC44444 (32 bpp)"
 
-#: plugins/rdp/rdp_plugin.c:2593
+#: plugins/rdp/rdp_plugin.cpp:2593
 #, fuzzy
 msgid "GFX AVC420 (32 bpp)"
 msgstr "GFX AVC420 (32 bpp)"
 
-#: plugins/rdp/rdp_plugin.c:2594
+#: plugins/rdp/rdp_plugin.cpp:2594
 #, fuzzy
 msgid "GFX RFX (32 bpp)"
 msgstr "GFX RFX (32 bpp)"
 
-#: plugins/rdp/rdp_plugin.c:2595
+#: plugins/rdp/rdp_plugin.cpp:2595
 #, fuzzy
 msgid "GFX RFX Progressive (32 bpp)"
 msgstr "GFX RFX တိုးတက်မှု (32 bpp)"
 
-#: plugins/rdp/rdp_plugin.c:2596
+#: plugins/rdp/rdp_plugin.cpp:2596
 #, fuzzy
 msgid "RemoteFX (32 bpp)"
 msgstr "RemoteFX (32 bpp)"
 
-#: plugins/rdp/rdp_plugin.c:2597 plugins/vnc/vnc_plugin.c:1935
+#: plugins/rdp/rdp_plugin.cpp:2597 plugins/vnc/vnc_plugin.cpp:1935
 #, fuzzy
 msgid "True colour (32 bpp)"
 msgstr "စစ်မှန်တဲ့အရောင် (၃၂ ဘီပီ)"
 
-#: plugins/rdp/rdp_plugin.c:2598
+#: plugins/rdp/rdp_plugin.cpp:2598
 #, fuzzy
 msgid "True colour (24 bpp)"
 msgstr "စစ်မှန်တဲ့အရောင် (၂၄ ဘီပီ)"
 
-#: plugins/rdp/rdp_plugin.c:2599 plugins/vnc/vnc_plugin.c:1936
+#: plugins/rdp/rdp_plugin.cpp:2599 plugins/vnc/vnc_plugin.cpp:1936
 #, fuzzy
 msgid "High colour (16 bpp)"
 msgstr "အရောင်မြင့် (၁၆ ဘီပီ)"
 
-#: plugins/rdp/rdp_plugin.c:2600
+#: plugins/rdp/rdp_plugin.cpp:2600
 #, fuzzy
 msgid "High colour (15 bpp)"
 msgstr "အရောင်မြင့် (၁၅ ဘီပီ)"
 
-#: plugins/rdp/rdp_plugin.c:2601 plugins/vnc/vnc_plugin.c:1937
+#: plugins/rdp/rdp_plugin.cpp:2601 plugins/vnc/vnc_plugin.cpp:1937
 #, fuzzy
 msgid "256 colours (8 bpp)"
 msgstr "၂၅၆ အရောင် (၈ ဘီပီ)"
 
-#: plugins/rdp/rdp_plugin.c:2632 data/ui/remmina_preferences.glade:612
+#: plugins/rdp/rdp_plugin.cpp:2632 data/ui/remmina_preferences.glade:612
 #, fuzzy
 msgid "None"
 msgstr "မရှိ"
 
-#: plugins/rdp/rdp_plugin.c:2633
+#: plugins/rdp/rdp_plugin.cpp:2633
 #, fuzzy
 msgid "Auto-detect"
 msgstr "အလိုအလျောက်စစ်ဆေးခြင်း"
 
-#: plugins/rdp/rdp_plugin.c:2634
+#: plugins/rdp/rdp_plugin.cpp:2634
 #, fuzzy
 msgid "Modem"
 msgstr "မိုဒမ်"
 
-#: plugins/rdp/rdp_plugin.c:2635
+#: plugins/rdp/rdp_plugin.cpp:2635
 #, fuzzy
 msgid "Low performance broadband"
 msgstr "စွမ်းဆောင်ရည်နည်းတဲ့ broadbad broadbad"
 
-#: plugins/rdp/rdp_plugin.c:2636
+#: plugins/rdp/rdp_plugin.cpp:2636
 #, fuzzy
 msgid "Satellite"
 msgstr "ဂြိုဟ်တု"
 
-#: plugins/rdp/rdp_plugin.c:2637
+#: plugins/rdp/rdp_plugin.cpp:2637
 #, fuzzy
 msgid "High performance broadband"
 msgstr "စွမ်းဆောင်ရည်မြင့် broadbroadbrod"
 
-#: plugins/rdp/rdp_plugin.c:2638
+#: plugins/rdp/rdp_plugin.cpp:2638
 #, fuzzy
 msgid "WAN"
 msgstr "ဝေါ့"
 
-#: plugins/rdp/rdp_plugin.c:2639
+#: plugins/rdp/rdp_plugin.cpp:2639
 #, fuzzy
 msgid "LAN"
 msgstr "LAN"
 
-#: plugins/rdp/rdp_plugin.c:2646 plugins/spice/spice_plugin.c:635
+#: plugins/rdp/rdp_plugin.cpp:2646 plugins/spice/spice_plugin.cpp:635
 #: data/ui/remmina_preferences.glade:648
 #, fuzzy
 msgid "Off"
 msgstr "ပိတ်"
 
-#: plugins/rdp/rdp_plugin.c:2655
+#: plugins/rdp/rdp_plugin.cpp:2655
 #, fuzzy
 msgid "Automatic negotiation"
 msgstr "အလိုအလျောက် စေ့စပ်ညှိနှိုင်းခြင်း"
 
-#: plugins/rdp/rdp_plugin.c:2656
+#: plugins/rdp/rdp_plugin.cpp:2656
 #, fuzzy
 msgid "NLA protocol security"
 msgstr "NLA Protocol လုံခြုံရေး"
 
-#: plugins/rdp/rdp_plugin.c:2657
+#: plugins/rdp/rdp_plugin.cpp:2657
 #, fuzzy
 msgid "TLS protocol security"
 msgstr "TLS Protocol လုံခြုံရေး"
 
-#: plugins/rdp/rdp_plugin.c:2658
+#: plugins/rdp/rdp_plugin.cpp:2658
 #, fuzzy
 msgid "RDP protocol security"
 msgstr "RDP Protocol လုံခြုံရေး"
 
-#: plugins/rdp/rdp_plugin.c:2659
+#: plugins/rdp/rdp_plugin.cpp:2659
 #, fuzzy
 msgid "NLA extended protocol security"
 msgstr "NLA က ပရိုတိုကော လုံခြုံရေးကို တိုးမြှင့်ပေးခဲ့"
 
-#: plugins/rdp/rdp_plugin.c:2672
+#: plugins/rdp/rdp_plugin.cpp:2672
 #, fuzzy
 msgid "2600 (Windows XP), 7601 (Windows Vista/7), 9600 (Windows 8 and newer)"
 msgstr "၂၆၀၀ (Windows XP)၊ ၇၆၀၁ (Windows Vista/7)၊ 9600 (Windows 8 နဲ့ အသစ်)"
 
-#: plugins/rdp/rdp_plugin.c:2675
+#: plugins/rdp/rdp_plugin.cpp:2675
 #, fuzzy
 msgid ""
 "Used i.a. by terminal services in a smart card channel to distinguish client "
@@ -2521,7 +2521,7 @@ msgstr ""
 "(SCardGetReadericon(SCardGetReadericon)၊\n"
 "    SCardGetDevicetyiid()"
 
-#: plugins/rdp/rdp_plugin.c:2683
+#: plugins/rdp/rdp_plugin.cpp:2683
 #, fuzzy
 msgid ""
 "Options for redirection of audio input:\n"
@@ -2540,7 +2540,7 @@ msgstr ""
 "  • ses:oss,dev:1,ပုံစံ:၁\n"
 "  • ss:Alsa"
 
-#: plugins/rdp/rdp_plugin.c:2692
+#: plugins/rdp/rdp_plugin.cpp:2692
 #, fuzzy
 msgid ""
 "Options for redirection of audio output:\n"
@@ -2559,7 +2559,7 @@ msgstr ""
 "  • ses:oss,dev:1,ပုံစံ:၁\n"
 "  • ss:Alsa"
 
-#: plugins/rdp/rdp_plugin.c:2702
+#: plugins/rdp/rdp_plugin.cpp:2702
 #, fuzzy
 msgid ""
 "Options for redirection of USB device:\n"
@@ -2572,7 +2572,7 @@ msgstr ""
 "  • မော်တော်ကား\n"
 "  • id:054c:054c:0268/4669:6e69:6e69:6e69:6e69:6e6b,34:0c"
 
-#: plugins/rdp/rdp_plugin.c:2708
+#: plugins/rdp/rdp_plugin.cpp:2708
 #, fuzzy
 msgid ""
 "Advanced setting for high latency links:\n"
@@ -2583,7 +2583,7 @@ msgstr ""
 "ဆက်သွယ်ချိန်ကို ချိန်ညှိပေးတယ်။ အဆက်အသွယ်ပြတ်သွားရင် သုံးပါ။\n"
 "ဖြစ်နိုင်တဲ့ တန်ဖိုးအမြင့်ဆုံးက ၆၀၀ ms (10 မိနစ်) ဖြစ်ပါတယ်။\n"
 
-#: plugins/rdp/rdp_plugin.c:2713
+#: plugins/rdp/rdp_plugin.cpp:2713
 #, fuzzy
 msgid ""
 "Performance optimisations based on the network connection type:\n"
@@ -2594,7 +2594,7 @@ msgstr ""
 "အလိုအလျောက်ရှာဖွေခြင်းဖြင့် အကြံပြုထားသည်။\n"
 "\"Auto-Auto-Tetect\" မအောင်မြင်ဘူးဆိုရင် စာရင်းထဲမှာ သင့်တော်ဆုံးရွေးချယ်စရာကို ရွေးချယ်ပါ။\n"
 
-#: plugins/rdp/rdp_plugin.c:2718
+#: plugins/rdp/rdp_plugin.cpp:2718
 #, fuzzy
 msgid ""
 "Comma-separated list of monitor IDs and desktop orientations:\n"
@@ -2619,7 +2619,7 @@ msgstr ""
 "  • ၂၇၀ (ဓာတ်ပုံ ပြောင်းသွား)\n"
 "\n"
 
-#: plugins/rdp/rdp_plugin.c:2730
+#: plugins/rdp/rdp_plugin.cpp:2730
 #, fuzzy
 msgid ""
 "Redirect directory <path> as named share <name>.\n"
@@ -2641,169 +2641,169 @@ msgstr ""
 "  • hoplug *\n"
 "\n"
 
-#: plugins/rdp/rdp_plugin.c:2762 plugins/spice/spice_plugin.c:677
+#: plugins/rdp/rdp_plugin.cpp:2762 plugins/spice/spice_plugin.cpp:677
 #, fuzzy
 msgid "Share folder"
 msgstr "ဖိုင်တွဲကို ဝေမျှပါ"
 
-#: plugins/rdp/rdp_plugin.c:2762
+#: plugins/rdp/rdp_plugin.cpp:2762
 #, fuzzy
 msgid "Use “Redirect directory” in the advanced tab for multiple directories"
 msgstr "လမ်းညွှန်များစွာအတွက် အဆင့်မြင့် တက်ဘ်မှာ \"Redirect ညွှန်ကြားရေးလမ်းညွှန်\"ကိုသုံးပါ"
 
-#: plugins/rdp/rdp_plugin.c:2763
+#: plugins/rdp/rdp_plugin.cpp:2763
 #, fuzzy
 msgid "Restricted admin mode"
 msgstr "ကန့်သတ်ထားတဲ့ စီမံခန့်ခွဲနည်း"
 
-#: plugins/rdp/rdp_plugin.c:2764
+#: plugins/rdp/rdp_plugin.cpp:2764
 #, fuzzy
 #| msgid "Password"
 msgid "Password hash"
 msgstr "စကားဝှက်ဟက်ရှ်"
 
-#: plugins/rdp/rdp_plugin.c:2764
+#: plugins/rdp/rdp_plugin.cpp:2764
 #, fuzzy
 msgid "Restricted admin mode password hash"
 msgstr "ကန့်သတ်ထားတဲ့ စီမံခန့်ခွဲမှုပုံစံ စကားဝှက်ဟက်ခ်ျ"
 
-#: plugins/rdp/rdp_plugin.c:2765
+#: plugins/rdp/rdp_plugin.cpp:2765
 #, fuzzy
 msgid "Left-handed mouse support"
 msgstr "လက်ဝဲကြွက်ထောက်ပံ့မှု"
 
-#: plugins/rdp/rdp_plugin.c:2765
+#: plugins/rdp/rdp_plugin.cpp:2765
 #, fuzzy
 msgid "Swap left and right mouse buttons for left-handed mouse support"
 msgstr "လက်ဝဲလက်ကြွက်ထောက်ပံ့မှုအတွက် လက်ဝဲနှင့် ညာကြွက်ခလုတ်များ"
 
-#: plugins/rdp/rdp_plugin.c:2767
+#: plugins/rdp/rdp_plugin.cpp:2767
 #, fuzzy
 msgid "Enable multi monitor"
 msgstr "multi monitor ကို ခွင့်ပြုပါ"
 
-#: plugins/rdp/rdp_plugin.c:2768
+#: plugins/rdp/rdp_plugin.cpp:2768
 #, fuzzy
 msgid "Span screen over multiple monitors"
 msgstr "မော်နီတာ အများအပြားပေါ်မှ Span ရုပ်ရှင်"
 
-#: plugins/rdp/rdp_plugin.c:2769
+#: plugins/rdp/rdp_plugin.cpp:2769
 #, fuzzy
 msgid "List monitor IDs"
 msgstr "စာရင်း စောင့်ကြည့်ရေး IDs"
 
-#: plugins/rdp/rdp_plugin.c:2771 plugins/vnc/vnc_plugin.c:1999
-#: plugins/vnc/vnc_plugin.c:2011 plugins/gvnc/gvnc_plugin.c:849
+#: plugins/rdp/rdp_plugin.cpp:2771 plugins/vnc/vnc_plugin.cpp:1999
+#: plugins/vnc/vnc_plugin.cpp:2011 plugins/gvnc/gvnc_plugin.cpp:849
 #, fuzzy
 msgid "Colour depth"
 msgstr "အရောင် ညစ်ညမ်းမှု"
 
-#: plugins/rdp/rdp_plugin.c:2772
+#: plugins/rdp/rdp_plugin.cpp:2772
 msgid "Network connection type"
 msgstr "ချိတ်ဆက်မှု့အသစ်"
 
-#: plugins/rdp/rdp_plugin.c:2788 plugins/vnc/vnc_plugin.c:2000
-#: plugins/vnc/vnc_plugin.c:2012
+#: plugins/rdp/rdp_plugin.cpp:2788 plugins/vnc/vnc_plugin.cpp:2000
+#: plugins/vnc/vnc_plugin.cpp:2012
 #, fuzzy
 msgid "Quality"
 msgstr "အရည်အသွေး"
 
-#: plugins/rdp/rdp_plugin.c:2789
+#: plugins/rdp/rdp_plugin.cpp:2789
 #, fuzzy
 msgid "Security protocol negotiation"
 msgstr "လုံခြုံရေး ပရိုတိုကော ညှိနှိုင်းဆွေးနွေးမှု"
 
-#: plugins/rdp/rdp_plugin.c:2790
+#: plugins/rdp/rdp_plugin.cpp:2790
 #, fuzzy
 msgid "Gateway transport type"
 msgstr "ဂိတ်ဝေးသယ်ယူပို့ဆောင်ရေး အမျိုးအစား"
 
-#: plugins/rdp/rdp_plugin.c:2791
+#: plugins/rdp/rdp_plugin.cpp:2791
 #, fuzzy
 msgid "FreeRDP log level"
 msgstr "freeRDP မှတ်တမ်းအဆင့်"
 
-#: plugins/rdp/rdp_plugin.c:2792
+#: plugins/rdp/rdp_plugin.cpp:2792
 #, fuzzy
 msgid "FreeRDP log filters"
 msgstr "freeRDP မှတ်တမ်းကိန်းများ"
 
-#: plugins/rdp/rdp_plugin.c:2792
+#: plugins/rdp/rdp_plugin.cpp:2792
 #, fuzzy
 msgid "tag:level[,tag:level[,…]]"
 msgstr "အမှတ်အမှတ်:အဆင့်–အဆင့်:,...]]"
 
-#: plugins/rdp/rdp_plugin.c:2793
+#: plugins/rdp/rdp_plugin.cpp:2793
 #, fuzzy
 msgid "Audio output mode"
 msgstr "Audio ထုတ်ကုန် ပုံစံ"
 
-#: plugins/rdp/rdp_plugin.c:2794
+#: plugins/rdp/rdp_plugin.cpp:2794
 #, fuzzy
 msgid "Redirect local audio output"
 msgstr "ဒေသတွင်း အသံထွက်"
 
-#: plugins/rdp/rdp_plugin.c:2795
+#: plugins/rdp/rdp_plugin.cpp:2795
 #, fuzzy
 msgid "Redirect local microphone"
 msgstr "ဒေသတွင်း မိုက္ကရိုဖုန်းကို ပြန်လည်ပြုပြင်ပါ"
 
-#: plugins/rdp/rdp_plugin.c:2796
+#: plugins/rdp/rdp_plugin.cpp:2796
 #, fuzzy
 msgid "Connection timeout in ms"
 msgstr "Ms တွင် ဆက်သွယ်ရေး အချိန်"
 
-#: plugins/rdp/rdp_plugin.c:2797
+#: plugins/rdp/rdp_plugin.cpp:2797
 msgid "Remote Desktop Gateway server"
 msgstr "Remote Desktop Server တစ်ခုကိုရွေးပါ"
 
-#: plugins/rdp/rdp_plugin.c:2798
+#: plugins/rdp/rdp_plugin.cpp:2798
 #, fuzzy
 msgid "Remote Desktop Gateway username"
 msgstr "ဝေးလံသော Desktop Gateway အသုံးပြုသူအမည်"
 
-#: plugins/rdp/rdp_plugin.c:2799
+#: plugins/rdp/rdp_plugin.cpp:2799
 #, fuzzy
 msgid "Remote Desktop Gateway password"
 msgstr "ဝေးလံသော Desktop Gateway စကားဝှက်"
 
-#: plugins/rdp/rdp_plugin.c:2800
+#: plugins/rdp/rdp_plugin.cpp:2800
 #, fuzzy
 msgid "Remote Desktop Gateway domain"
 msgstr "ဝေးလံသော Desktop Gateway ဒိုမိန်း"
 
-#: plugins/rdp/rdp_plugin.c:2801
+#: plugins/rdp/rdp_plugin.cpp:2801
 #, fuzzy
 msgid "Redirect directory"
 msgstr "အပြန်အလှန်လမ်းညွှန်"
 
-#: plugins/rdp/rdp_plugin.c:2802
+#: plugins/rdp/rdp_plugin.cpp:2802
 #, fuzzy
 msgid "Client name"
 msgstr "ကလိုင်းအမည်"
 
-#: plugins/rdp/rdp_plugin.c:2803
+#: plugins/rdp/rdp_plugin.cpp:2803
 #, fuzzy
 msgid "Client build"
 msgstr "ဖလိုင်းဆောက်လုပ်ခြင်း"
 
-#: plugins/rdp/rdp_plugin.c:2804
+#: plugins/rdp/rdp_plugin.cpp:2804
 #, fuzzy
 msgid "Start-up program"
 msgstr "စတင်ပရိုဂရမ်"
 
-#: plugins/rdp/rdp_plugin.c:2806
+#: plugins/rdp/rdp_plugin.cpp:2806
 #, fuzzy
 msgid "Load balance info"
 msgstr "ဝန်ထုပ် ဟန်ချက်ညီမျှမှု အချက်အလက်"
 
 #. TRANSLATORS: Do not use typographic quotation marks, these must stay as "double quote", also know as “Typewriter ("programmer's") quote, ambidextrous.”
-#: plugins/rdp/rdp_plugin.c:2808
+#: plugins/rdp/rdp_plugin.cpp:2808
 #, fuzzy
 msgid "Override printer drivers"
 msgstr "ပုံနှိပ်စက်ယာဉ်မောင်းများကို ကျော်ဖြတ်ပါ"
 
-#: plugins/rdp/rdp_plugin.c:2808
+#: plugins/rdp/rdp_plugin.cpp:2808
 #, fuzzy
 msgid ""
 "\"Samsung_CLX-3300_Series\":\"Samsung CLX-3300 Series PS\";\"Canon MF410\":"
@@ -2812,399 +2812,399 @@ msgstr ""
 "\"Samsung_CLX-3300_Series\":Samsung CLX-3300 Serer PS\"\" MF410\": \"ကန်နွန် "
 "MF410 Serer UFR II 2\"\""
 
-#: plugins/rdp/rdp_plugin.c:2809
+#: plugins/rdp/rdp_plugin.cpp:2809
 #, fuzzy
 msgid "USB device redirection"
 msgstr "ယူအက်စ်ဘီ ကိရိယာ အပြန်အလှန် လှည့်ပတ်မှု"
 
-#: plugins/rdp/rdp_plugin.c:2810
+#: plugins/rdp/rdp_plugin.cpp:2810
 #, fuzzy
 msgid "Local serial name"
 msgstr "ဒေသခံ ဇာတ်လမ်းတွဲအမည်"
 
-#: plugins/rdp/rdp_plugin.c:2810
+#: plugins/rdp/rdp_plugin.cpp:2810
 #, fuzzy
 msgid "COM1, COM2, etc."
 msgstr "COM1, COM2, စသည်တို့"
 
-#: plugins/rdp/rdp_plugin.c:2811
+#: plugins/rdp/rdp_plugin.cpp:2811
 #, fuzzy
 msgid "Local serial driver"
 msgstr "ဒေသခံ ဆက်တိုက်ယာဉ်မောင်း"
 
-#: plugins/rdp/rdp_plugin.c:2811
+#: plugins/rdp/rdp_plugin.cpp:2811
 #, fuzzy
 msgid "Serial"
 msgstr "ဇာတ်လမ်းတွဲ"
 
-#: plugins/rdp/rdp_plugin.c:2812
+#: plugins/rdp/rdp_plugin.cpp:2812
 #, fuzzy
 msgid "Local serial path"
 msgstr "ဒေသန္တရလမ်းကြောင်း"
 
-#: plugins/rdp/rdp_plugin.c:2812
+#: plugins/rdp/rdp_plugin.cpp:2812
 #, fuzzy
 msgid "/dev/ttyS0, /dev/ttyS1, etc."
 msgstr "/dev/ttyS0, /dev/ttyS1 စသည်တို့"
 
-#: plugins/rdp/rdp_plugin.c:2813
+#: plugins/rdp/rdp_plugin.cpp:2813
 #, fuzzy
 msgid "Local parallel name"
 msgstr "ဒေသတွင်း အပြိုင်အမည်"
 
-#: plugins/rdp/rdp_plugin.c:2814
+#: plugins/rdp/rdp_plugin.cpp:2814
 #, fuzzy
 msgid "Local parallel device"
 msgstr "ဒေသတွင်း အပြိုင်ကိရိယာ"
 
-#: plugins/rdp/rdp_plugin.c:2815
+#: plugins/rdp/rdp_plugin.cpp:2815
 #, fuzzy
 msgid "Name of smart card"
 msgstr "စမတ်ကတ်အမည်"
 
-#: plugins/rdp/rdp_plugin.c:2816
+#: plugins/rdp/rdp_plugin.cpp:2816
 #, fuzzy
 msgid "Dynamic virtual channel"
 msgstr "Dynamic virtual လိုင်း"
 
-#: plugins/rdp/rdp_plugin.c:2816 plugins/rdp/rdp_plugin.c:2817
+#: plugins/rdp/rdp_plugin.cpp:2816 plugins/rdp/rdp_plugin.cpp:2817
 #, fuzzy
 msgid "<channel>[,<options>]"
 msgstr "<channel> [<options> <options>]"
 
-#: plugins/rdp/rdp_plugin.c:2817
+#: plugins/rdp/rdp_plugin.cpp:2817
 #, fuzzy
 msgid "Static virtual channel"
 msgstr "တည်ငြိမ်တဲ့ ရုပ်သံလိုင်း"
 
-#: plugins/rdp/rdp_plugin.c:2818
+#: plugins/rdp/rdp_plugin.cpp:2818
 #, fuzzy
 #| msgid "Per connection"
 msgid "TCP redirection"
 msgstr "တီစီပီ အပြန်အလှန် ညွှန်ကြားချက်"
 
-#: plugins/rdp/rdp_plugin.c:2818
+#: plugins/rdp/rdp_plugin.cpp:2818
 #, fuzzy
 msgid "/PATH/TO/rdp2tcp"
 msgstr "/PATH/PATH/rdp2tp"
 
-#: plugins/rdp/rdp_plugin.c:2820
+#: plugins/rdp/rdp_plugin.cpp:2820
 #, fuzzy
 msgid "Prefer IPv6 AAAA record over IPv4 A record"
 msgstr "IPv6 AAA မှတ်တမ်းကို ကြိုက်နှစ်သက်တဲ့ IPv6 AAA မှတ်တမ်းတင်ထားတဲ့ IPv6 AAA မှတ်တမ်းတင်ထားပါတယ်"
 
-#: plugins/rdp/rdp_plugin.c:2821
+#: plugins/rdp/rdp_plugin.cpp:2821
 #, fuzzy
 msgid "Share printers"
 msgstr "ပုံနှိပ်စက်များကို ဝေမျှပါ"
 
-#: plugins/rdp/rdp_plugin.c:2822
+#: plugins/rdp/rdp_plugin.cpp:2822
 #, fuzzy
 msgid "Share serial ports"
 msgstr "အဆက်မပြတ် ဆိပ်ကမ်းများကို ဝေမျှပါ"
 
-#: plugins/rdp/rdp_plugin.c:2823
+#: plugins/rdp/rdp_plugin.cpp:2823
 #, fuzzy
 msgid "(SELinux) permissive mode for serial ports"
 msgstr "(SELinux) ဆက်တိုက်ဆိပ်ကမ်းများအတွက် ခွင့်ပြုချက်စံနှုန်း"
 
-#: plugins/rdp/rdp_plugin.c:2824
+#: plugins/rdp/rdp_plugin.cpp:2824
 #, fuzzy
 msgid "Share parallel ports"
 msgstr "အပြိုင် ဆိပ်ကမ်းများကို ဝေမျှပါ"
 
-#: plugins/rdp/rdp_plugin.c:2825
+#: plugins/rdp/rdp_plugin.cpp:2825
 #, fuzzy
 msgid "Share a smart card"
 msgstr "စမတ်ကတ်ကို မျှဝေပါ"
 
-#: plugins/rdp/rdp_plugin.c:2826 plugins/vnc/vnc_plugin.c:2035
+#: plugins/rdp/rdp_plugin.cpp:2826 plugins/vnc/vnc_plugin.cpp:2035
 #, fuzzy
 msgid "Turn off clipboard sync"
 msgstr "ကလစ်ဘုတ် အစုလိုက်အပြုံလိုက် ပိတ်ပါ"
 
-#: plugins/rdp/rdp_plugin.c:2827
+#: plugins/rdp/rdp_plugin.cpp:2827
 #, fuzzy
 msgid "Ignore certificate"
 msgstr "လျစ်လျူရှုထားသော လက်မှတ်ကို လျစ်လျူရှု"
 
-#: plugins/rdp/rdp_plugin.c:2828
+#: plugins/rdp/rdp_plugin.cpp:2828
 #, fuzzy
 msgid "Use the old license workflow"
 msgstr "လိုင်စင်အလုပ်အဟောင်းကို အသုံးပြုပါ"
 
-#: plugins/rdp/rdp_plugin.c:2828
+#: plugins/rdp/rdp_plugin.cpp:2828
 #, fuzzy
 msgid "It disables CAL and hwId is set to 0"
 msgstr "CAL နှင့်hwid ကို ၀"
 
-#: plugins/rdp/rdp_plugin.c:2829 plugins/spice/spice_plugin.c:702
-#: plugins/vnc/vnc_plugin.c:2031 plugins/www/www_plugin.c:919
-#: plugins/gvnc/gvnc_plugin.c:867
+#: plugins/rdp/rdp_plugin.cpp:2829 plugins/spice/spice_plugin.cpp:702
+#: plugins/vnc/vnc_plugin.cpp:2031 plugins/www/www_plugin.cpp:919
+#: plugins/gvnc/gvnc_plugin.cpp:867
 #, fuzzy
 msgid "Forget passwords after use"
 msgstr "အသုံးပြုပြီးနောက် စကားဝှက်များကို မေ့လျော့ပါ"
 
-#: plugins/rdp/rdp_plugin.c:2830
+#: plugins/rdp/rdp_plugin.cpp:2830
 #, fuzzy
 msgid "Attach to console (2003/2003 R2)"
 msgstr "ကွန်ဇိုး (၂၀၀၃/၂၀၀၃ R2)"
 
-#: plugins/rdp/rdp_plugin.c:2831
+#: plugins/rdp/rdp_plugin.cpp:2831
 #, fuzzy
 msgid "Turn off fast-path"
 msgstr "မြန်မြန်ဆန်ဆန် ပိတ်လိုက်ပါ"
 
-#: plugins/rdp/rdp_plugin.c:2832
+#: plugins/rdp/rdp_plugin.cpp:2832
 #, fuzzy
 msgid "Server detection using Remote Desktop Gateway"
 msgstr "ဝေးလံတဲ့ Desktop Gateway ကိုသုံးပြီး ဆာဗာ ရှာဖွေခြင်း"
 
-#: plugins/rdp/rdp_plugin.c:2834
+#: plugins/rdp/rdp_plugin.cpp:2834
 #, fuzzy
 msgid "Use system proxy settings"
 msgstr "စနစ် ပုဂ္ဂလိက သတ်မှတ်ချက်များကို အသုံးပြုပါ"
 
-#: plugins/rdp/rdp_plugin.c:2836
+#: plugins/rdp/rdp_plugin.cpp:2836
 #, fuzzy
 msgid "Turn off automatic reconnection"
 msgstr "အလိုအလျောက် ပြန်လည်ဆက်သွယ်မှုကို ပိတ်လိုက်ပါ"
 
-#: plugins/rdp/rdp_plugin.c:2837
+#: plugins/rdp/rdp_plugin.cpp:2837
 #, fuzzy
 msgid "Relax order checks"
 msgstr "အမိန့်စစ်ဆေးချက်များကို ဖြေလျှော့ပါ"
 
-#: plugins/rdp/rdp_plugin.c:2838
+#: plugins/rdp/rdp_plugin.cpp:2838
 #, fuzzy
 msgid "Glyph cache"
 msgstr "ဂလစ်ဖ်ကုလားအုတ်"
 
-#: plugins/rdp/rdp_plugin.c:2839
+#: plugins/rdp/rdp_plugin.cpp:2839
 #, fuzzy
 msgid "Enable multitransport protocol (UDP)"
 msgstr "multitransport Protocol (UDP) ကို ထုတ်လုပ်ပေးပါ"
 
-#: plugins/rdp/rdp_plugin.c:2839
+#: plugins/rdp/rdp_plugin.cpp:2839
 #, fuzzy
 msgid "Using the UDP protocol may improve performance"
 msgstr "UDP Protocol ကိုသုံးခြင်းက စွမ်းဆောင်ရည်ကို တိုးတက်ကောင်းမွန်စေနိုင်ပါတယ်"
 
-#: plugins/rdp/rdp_plugin.c:2840
+#: plugins/rdp/rdp_plugin.cpp:2840
 #, fuzzy
 msgid "Use base credentials for gateway too"
 msgstr "ဂိတ်ဝအတွက် အခြေခံအချက်အလက်များကိုလည်း အသုံးပြုပါ"
 
-#: plugins/rdp/rdp_plugin.c:2842
+#: plugins/rdp/rdp_plugin.cpp:2842
 #, fuzzy
 msgid "Enable Gateway websockets support"
 msgstr "Gatewa ဝက်ဘ်ဆိုက်များကို ထောက်ပံ့ပေးရန် ဂိတ်ဝေး ဝက်ဘ်ဆိုက်များ ထောက်ပံ့ပေးနိုင်စေပါ"
 
-#: plugins/rdp/rdp_plugin.c:2855 plugins/spice/spice_plugin.c:715
-#: plugins/vnc/vnc_plugin.c:2052
+#: plugins/rdp/rdp_plugin.cpp:2855 plugins/spice/spice_plugin.cpp:715
+#: plugins/vnc/vnc_plugin.cpp:2052
 #, fuzzy
 msgid "Send Ctrl+Alt+Delete"
 msgstr "Ctrl+Alt+Dele"
 
-#: plugins/rdp/rdp_plugin.c:2868
+#: plugins/rdp/rdp_plugin.cpp:2868
 #, fuzzy
 msgid "RDP - Remote Desktop Protocol"
 msgstr "RDP - ဝေးလံတဲ့ Desktop Protocol"
 
-#: plugins/rdp/rdp_plugin.c:2893
+#: plugins/rdp/rdp_plugin.cpp:2893
 #, fuzzy
 msgid "RDP - RDP File Handler"
 msgstr "RDP - RDP ဖိုင် ဟန်လာ"
 
-#: plugins/rdp/rdp_plugin.c:2908
+#: plugins/rdp/rdp_plugin.cpp:2908
 #, fuzzy
 msgid "RDP - Preferences"
 msgstr "RDP - ကြိုက်နှစ်သက်မှုများ"
 
-#: plugins/rdp/rdp_plugin.c:2961
+#: plugins/rdp/rdp_plugin.cpp:2961
 #, fuzzy
 msgid "Export connection in Windows .rdp file format"
 msgstr "Windows.rdp ဖိုင်ပုံစံထဲက ထုတ်ကုန်ဆက်သွယ်မှု"
 
-#: plugins/rdp/rdp_event.c:344
+#: plugins/rdp/rdp_event.cpp:344
 #, fuzzy, c-format
 msgid "Reconnection attempt %d of %d…"
 msgstr "%d ရဲ့ ပြန်လည်ဆက်သွယ်ရေး ကြိုးပမ်းမှု %d"
 
-#: plugins/spice/spice_plugin_file_transfer.c:82
+#: plugins/spice/spice_plugin_file_transfer.cpp:82
 #, fuzzy
 msgid "File Transfers"
 msgstr "ဖိုင် လွှဲပြောင်းမှုများ"
 
-#: plugins/spice/spice_plugin_file_transfer.c:219
+#: plugins/spice/spice_plugin_file_transfer.cpp:219
 #, fuzzy
 msgid "Transfer error"
 msgstr "လွှဲပြောင်းအမှား"
 
-#: plugins/spice/spice_plugin_file_transfer.c:220
+#: plugins/spice/spice_plugin_file_transfer.cpp:220
 #, fuzzy, c-format
 msgid "%s: %s"
 msgstr "%s: %s"
 
-#: plugins/spice/spice_plugin_file_transfer.c:223
+#: plugins/spice/spice_plugin_file_transfer.cpp:223
 #, fuzzy
 msgid "Transfer completed"
 msgstr "လွှဲပြောင်းပြီး"
 
-#: plugins/spice/spice_plugin_file_transfer.c:224
+#: plugins/spice/spice_plugin_file_transfer.cpp:224
 #, fuzzy, c-format
 msgid "The %s file has been transferred"
 msgstr "%s ဖိုင်ကို လွှဲပြောင်းပေးလိုက်ပြီ"
 
-#: plugins/spice/spice_plugin.c:351
+#: plugins/spice/spice_plugin.cpp:351
 #, fuzzy
 msgid "Enter SPICE password"
 msgstr "SPICE စကားဝှက်ထဲထည့်ပါ"
 
-#: plugins/spice/spice_plugin.c:386
+#: plugins/spice/spice_plugin.cpp:386
 #, fuzzy, c-format
 msgid "Disconnected from the SPICE server “%s”."
 msgstr "SPICE ဆာဗာ \"%s..."
 
-#: plugins/spice/spice_plugin.c:402
+#: plugins/spice/spice_plugin.cpp:402
 #, fuzzy
 msgid "TLS connection error."
 msgstr "TLS ဆက်သွယ်မှု အမှားပါ။"
 
-#: plugins/spice/spice_plugin.c:408
+#: plugins/spice/spice_plugin.cpp:408
 #, fuzzy
 msgid "Connection to the SPICE server dropped."
 msgstr "SPICE ဆာဗာနဲ့ ဆက်သွယ်မှု ကျဆင်းသွားတယ်။"
 
-#: plugins/spice/spice_plugin.c:616 plugins/spice/spice_plugin.c:634
+#: plugins/spice/spice_plugin.cpp:616 plugins/spice/spice_plugin.cpp:634
 #, fuzzy
 msgid "Default"
 msgstr "မူလပုံ"
 
-#: plugins/spice/spice_plugin.c:636
+#: plugins/spice/spice_plugin.cpp:636
 #, fuzzy
 msgid "Auto GLZ"
 msgstr "အလိုအလျောက် GLZ"
 
-#: plugins/spice/spice_plugin.c:637
+#: plugins/spice/spice_plugin.cpp:637
 #, fuzzy
 msgid "Auto LZ"
 msgstr "Auto LZ"
 
-#: plugins/spice/spice_plugin.c:650
+#: plugins/spice/spice_plugin.cpp:650
 #, fuzzy
 msgid "Disable video overlay if videos are not displayed properly.\n"
 msgstr "ဗီဒီယိုများကို ကောင်းစွာတင်ပြမထားပါက မသန်မစွမ်း ဗီဒီယိုများ လွှင့်တင်ပါ။\n"
 
-#: plugins/spice/spice_plugin.c:675
+#: plugins/spice/spice_plugin.cpp:675
 #, fuzzy
 msgid "Use TLS encryption"
 msgstr "TLS လျှို့ဝှက်ချက်ကို အသုံးပြုပါ"
 
-#: plugins/spice/spice_plugin.c:676
+#: plugins/spice/spice_plugin.cpp:676
 #, fuzzy
 msgid "Server CA certificate"
 msgstr "ဆာဗာ စီအေ လက်မှတ်"
 
-#: plugins/spice/spice_plugin.c:694
+#: plugins/spice/spice_plugin.cpp:694
 #, fuzzy
 msgid "Preferred video codec"
 msgstr "ကြိုက်နှစ်သက်တဲ့ ဗီဒီယိုကိုဒက်"
 
-#: plugins/spice/spice_plugin.c:695
+#: plugins/spice/spice_plugin.cpp:695
 #, fuzzy
 msgid "Turn off GStreamer overlay"
 msgstr "GStreamer အပိတ်ပါ"
 
-#: plugins/spice/spice_plugin.c:698
+#: plugins/spice/spice_plugin.cpp:698
 #, fuzzy
 msgid "Preferred image compression"
 msgstr "ကြိုက်နှစ်သက်သော ရုပ်ပုံဖိသိပ်မှု"
 
-#: plugins/spice/spice_plugin.c:701 plugins/spice/spice_plugin.c:714
-#: plugins/gvnc/gvnc_plugin.c:866 plugins/gvnc/gvnc_plugin.c:880
+#: plugins/spice/spice_plugin.cpp:701 plugins/spice/spice_plugin.cpp:714
+#: plugins/gvnc/gvnc_plugin.cpp:866 plugins/gvnc/gvnc_plugin.cpp:880
 #, fuzzy
 msgid "No clipboard sync"
 msgstr "Clipbod sync မရှိဘူး"
 
-#: plugins/spice/spice_plugin.c:703 plugins/gvnc/gvnc_plugin.c:869
+#: plugins/spice/spice_plugin.cpp:703 plugins/gvnc/gvnc_plugin.cpp:869
 #, fuzzy
 msgid "Enable audio channel"
 msgstr "အသံလိုင်းကို ခွင့်ပြုပါ"
 
-#: plugins/spice/spice_plugin.c:704
+#: plugins/spice/spice_plugin.cpp:704
 #, fuzzy
 msgid "Share smart card"
 msgstr "စမတ်ကတ် ဝေမျှပါ"
 
-#: plugins/spice/spice_plugin.c:705 plugins/spice/spice_plugin.c:713
-#: plugins/vnc/vnc_plugin.c:2037 plugins/vnc/vnc_plugin.c:2048
-#: plugins/gvnc/gvnc_plugin.c:870 plugins/gvnc/gvnc_plugin.c:879
+#: plugins/spice/spice_plugin.cpp:705 plugins/spice/spice_plugin.cpp:713
+#: plugins/vnc/vnc_plugin.cpp:2037 plugins/vnc/vnc_plugin.cpp:2048
+#: plugins/gvnc/gvnc_plugin.cpp:870 plugins/gvnc/gvnc_plugin.cpp:879
 #, fuzzy
 msgid "View only"
 msgstr "မြင်ကွင်းကိုသာ ရှု"
 
-#: plugins/spice/spice_plugin.c:716 plugins/spice/spice_plugin_usb.c:51
+#: plugins/spice/spice_plugin.cpp:716 plugins/spice/spice_plugin_usb.cpp:51
 #, fuzzy
 msgid "Select USB devices for redirection"
 msgstr "ပြန်လည်လမ်းညွှန်မှုအတွက် USB ကိရိယာတွေကို ရွေးပါ"
 
-#: plugins/spice/spice_plugin.c:727
+#: plugins/spice/spice_plugin.cpp:727
 #, fuzzy
 msgid "SPICE - Simple Protocol for Independent Computing Environments"
 msgstr "SPICE - လွတ်လပ်သော ကွန်ပျူတာ ပတ်ဝန်းကျင်အတွက် ရိုးရှင်းသော ပရိုတိုကော"
 
-#: plugins/spice/spice_plugin_usb.c:54
+#: plugins/spice/spice_plugin_usb.cpp:54
 #, fuzzy
 msgid "_Close"
 msgstr "_Close"
 
-#: plugins/spice/spice_plugin_usb.c:94
+#: plugins/spice/spice_plugin_usb.cpp:94
 #, fuzzy
 msgid "USB redirection error"
 msgstr "ယူအက်စ်ဘီ အပြောင်းအလဲ အမှား"
 
-#: plugins/vnc/vnc_plugin.c:789
+#: plugins/vnc/vnc_plugin.cpp:789
 #, fuzzy
 msgid "Enter VNC password"
 msgstr "VNC စကားဝှက်ထဲထည့်ပါ"
 
-#: plugins/vnc/vnc_plugin.c:842 plugins/gvnc/gvnc_plugin.c:539
+#: plugins/vnc/vnc_plugin.cpp:842 plugins/gvnc/gvnc_plugin.cpp:539
 #, fuzzy
 msgid "Enter VNC authentication credentials"
 msgstr "VNC စစ်ဆေးရေး အသိအမှတ်ပြုချက်များကို ဝင်ကြည့်ပါ"
 
-#: plugins/vnc/vnc_plugin.c:950
+#: plugins/vnc/vnc_plugin.cpp:950
 #, fuzzy
 msgid "Unable to connect to VNC server"
 msgstr "VNC ဆာဗာနဲ့ ချိတ်ဆက်လို့မရဘူး"
 
-#: plugins/vnc/vnc_plugin.c:951
+#: plugins/vnc/vnc_plugin.cpp:951
 #, fuzzy, c-format
 msgid "Couldn’t convert '%s' to host address"
 msgstr "'%s ကို အိမ်ရှင်လိပ်စာအဖြစ် မပြောင်းလဲနိုင်ပါ"
 
-#: plugins/vnc/vnc_plugin.c:952
+#: plugins/vnc/vnc_plugin.cpp:952
 #, fuzzy, c-format
 msgid "VNC connection failed: %s"
 msgstr "VNC ဆက်သွယ်မှု ပျက်ကွက်ခဲ့သည်။ %s"
 
-#: plugins/vnc/vnc_plugin.c:953
+#: plugins/vnc/vnc_plugin.cpp:953
 #, fuzzy
 msgid "Your connection has been rejected."
 msgstr "ခင်ဗျားတို့ရဲ့ ဆက်သွယ်မှုကို ငြင်းပယ်လိုက်ပြီ။"
 
-#: plugins/vnc/vnc_plugin.c:980
+#: plugins/vnc/vnc_plugin.cpp:980
 #, fuzzy, c-format
 msgid "The VNC server requested an unknown authentication method. %s"
 msgstr "ဗွီအန်စီ ဆာဗာ က အမည် မ သိ စစ်ဆေး မှု နည်းလမ်း တစ် ခု ကို တောင်းဆို ခဲ့ သည် ။ %s"
 
-#: plugins/vnc/vnc_plugin.c:982
+#: plugins/vnc/vnc_plugin.cpp:982
 #, fuzzy
 msgid "Please retry after turning on encryption for this profile."
 msgstr "ဒီမှတ်တမ်းအတွက် စာဝှက်ဖွင့်ပြီးတဲ့နောက် ပြန်သုံးပါ။"
 
-#: plugins/vnc/vnc_plugin.c:1952
+#: plugins/vnc/vnc_plugin.cpp:1952
 #, fuzzy
 msgid ""
 "Connect to VNC using a repeater:\n"
@@ -3223,7 +3223,7 @@ msgstr ""
 "    x11vnc နဲ့ ထပ်ပြောသူ၊ အီး.ဂီ.\n"
 "    x11vnc - ပြန်လည်ဆက်သွယ်သူ=ID:123456789+10.10.10.10.10.5500"
 
-#: plugins/vnc/vnc_plugin.c:1961
+#: plugins/vnc/vnc_plugin.cpp:1961
 #, fuzzy
 msgid ""
 "Listening for remote VNC connection:\n"
@@ -3240,7 +3240,7 @@ msgstr ""
 "    Remmina, e.g. x11vnc နဲ့\n"
 "    x11vnc -ပြပွဲ :0 -192.168.168:36:88888888"
 
-#: plugins/vnc/vnc_plugin.c:1969
+#: plugins/vnc/vnc_plugin.cpp:1969
 msgid ""
 "Override pre-set VNC encodings:\n"
 "\n"
@@ -3253,149 +3253,149 @@ msgid ""
 "corre rre raw”"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:1996
+#: plugins/vnc/vnc_plugin.cpp:1996
 #, fuzzy
 msgid "Repeater"
 msgstr "ထပ်ခါထပ်ခါ ထပ်ခါထပ်ခါ"
 
-#: plugins/vnc/vnc_plugin.c:2008
+#: plugins/vnc/vnc_plugin.cpp:2008
 #, fuzzy
 msgid "Listen on port"
 msgstr "ဆိပ်ကမ်းမှာ နားထောင်ပါ"
 
-#: plugins/vnc/vnc_plugin.c:2028
+#: plugins/vnc/vnc_plugin.cpp:2028
 msgid "Override pre-set VNC encodings"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:2029
+#: plugins/vnc/vnc_plugin.cpp:2029
 msgid "Force tight encoding"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:2029
+#: plugins/vnc/vnc_plugin.cpp:2029
 msgid "Enabling this may help when the remote desktop looks scrambled"
 msgstr ""
 
-#: plugins/vnc/vnc_plugin.c:2032 plugins/gvnc/gvnc_plugin.c:868
+#: plugins/vnc/vnc_plugin.cpp:2032 plugins/gvnc/gvnc_plugin.cpp:868
 #, fuzzy
 msgid "Ignore remote bell messages"
 msgstr "ဝေးလံတဲ့ ခေါင်းလောင်းသတင်းအချက်အလက်တွေကို လျစ်လျူရှုပါ"
 
-#: plugins/vnc/vnc_plugin.c:2033 plugins/vnc/vnc_plugin.c:2049
+#: plugins/vnc/vnc_plugin.cpp:2033 plugins/vnc/vnc_plugin.cpp:2049
 #, fuzzy
 msgid "Prevent local interaction on the server"
 msgstr "ဆာဗာမှာ ဒေသခံ အပြန်အလှန် အပြန်အလှန်ဆက်သွယ်မှုကို တားဆီးပါ"
 
-#: plugins/vnc/vnc_plugin.c:2034
+#: plugins/vnc/vnc_plugin.cpp:2034
 #, fuzzy
 msgid "Show remote cursor"
 msgstr "ဝေးလံတဲ့ ကျိန်စာပြပါ"
 
-#: plugins/vnc/vnc_plugin.c:2036
+#: plugins/vnc/vnc_plugin.cpp:2036
 #, fuzzy
 msgid "Turn off encryption"
 msgstr "လျှို့ဝှက်ချက်ကို ပိတ်လိုက်ပါ"
 
-#: plugins/vnc/vnc_plugin.c:2051
+#: plugins/vnc/vnc_plugin.cpp:2051
 #, fuzzy
 msgid "Open Chat…"
 msgstr "ဖွင့်ပါ…"
 
-#: plugins/vnc/vnc_plugin.h:41
+#: plugins/vnc/vnc_plugin.hpp:41
 #, fuzzy
 msgid "Remmina VNC Plugin"
 msgstr "Remmina VNC Plugingy"
 
-#: plugins/vnc/vnc_plugin.h:46
+#: plugins/vnc/vnc_plugin.hpp:46
 #, fuzzy
 msgid "Remmina VNC listener Plugin"
 msgstr "Remmina VNC နားထောင်သူ ပလူဂျင်း"
 
-#: plugins/www/www_config.h:43
+#: plugins/www/www_config.hpp:43
 #, fuzzy
 msgid "Remmina web-browser plugin"
 msgstr "Remmina ဝက်ဘ်-ဘရောက်ဇာ ပလက်ဂျင်း"
 
-#: plugins/www/www_plugin.c:98
+#: plugins/www/www_plugin.cpp:98
 #, fuzzy
 msgid "File downloaded"
 msgstr "ဖိုင်ကူးယူထားတဲ့ ဖိုင်"
 
-#: plugins/www/www_plugin.c:581
+#: plugins/www/www_plugin.cpp:581
 #, fuzzy
 msgid "Enter WWW authentication credentials"
 msgstr "ဒဗလျူဒဗလျူ စစ်ဆေးရေး အသိအမှတ်ပြုချက်များကို ဝင်ရောက်ပါ"
 
-#: plugins/www/www_plugin.c:893
+#: plugins/www/www_plugin.cpp:893
 #, fuzzy
 msgid "URL"
 msgstr "ယူအာအယ်"
 
-#: plugins/www/www_plugin.c:893
+#: plugins/www/www_plugin.cpp:893
 #, fuzzy
 msgid "http://address or https://address"
 msgstr "http://address ဒါမှမဟုတ် https://address"
 
-#: plugins/www/www_plugin.c:910
+#: plugins/www/www_plugin.cpp:910
 #, fuzzy
 msgid "User agent"
 msgstr "အသုံးပြုသူ ကိုယ်စားလှယ်"
 
-#: plugins/www/www_plugin.c:911
+#: plugins/www/www_plugin.cpp:911
 #, fuzzy
 msgid "Proxy URL"
 msgstr "Proxy URL"
 
-#: plugins/www/www_plugin.c:911
+#: plugins/www/www_plugin.cpp:911
 #, fuzzy
 msgid "E.g. https://example.org, socks://mysocks:1080"
 msgstr "https://example.org socks://mysocks:1080"
 
-#: plugins/www/www_plugin.c:912
+#: plugins/www/www_plugin.cpp:912
 #, fuzzy
 msgid "Turn on Java support"
 msgstr "Java ထောက်ပံ့မှု"
 
-#: plugins/www/www_plugin.c:913
+#: plugins/www/www_plugin.cpp:913
 #, fuzzy
 msgid "Turn on smooth scrolling"
 msgstr "ချောမွေ့တဲ့ လိပ်စာကို ဖွင့်ပါ"
 
-#: plugins/www/www_plugin.c:914
+#: plugins/www/www_plugin.cpp:914
 #, fuzzy
 msgid "Turn on spatial navigation"
 msgstr "အာကာသလမ်းကြောင်းကို ဖွင့်ပါ"
 
-#: plugins/www/www_plugin.c:915
+#: plugins/www/www_plugin.cpp:915
 #, fuzzy
 msgid "Turn on plugin support"
 msgstr "plugin ထောက်ပံ့ပေးပါ"
 
-#: plugins/www/www_plugin.c:916
+#: plugins/www/www_plugin.cpp:916
 #, fuzzy
 msgid "Turn on WebGL support"
 msgstr "WebGL ထောက်ပံ့မှု"
 
-#: plugins/www/www_plugin.c:917
+#: plugins/www/www_plugin.cpp:917
 #, fuzzy
 msgid "Turn on HTML5 audio support"
 msgstr "HTML5 အသံထောက်အပံ့ကိုဖွင့်ပါ"
 
-#: plugins/www/www_plugin.c:918
+#: plugins/www/www_plugin.cpp:918
 #, fuzzy
 msgid "Ignore TLS errors"
 msgstr "TLS အမှားများကို လျစ်လျူရှုခြင်း"
 
-#: plugins/www/www_plugin.c:921
+#: plugins/www/www_plugin.cpp:921
 #, fuzzy
 msgid "Turn on Web Inspector"
 msgstr "ဝက်ဘ်စစ်ဆေးရေးယာဉ်ကိုဖွင့်ပါ"
 
-#: plugins/exec/exec_plugin.c:160
+#: plugins/exec/exec_plugin.cpp:160
 #, fuzzy
 msgid "You did not set any command to be executed"
 msgstr "ကွပ်မျက်ရန် မည်သည့်အမိန့်ကိုမျှ မချမှတ်ခဲ့ပါ"
 
-#: plugins/exec/exec_plugin.c:206
+#: plugins/exec/exec_plugin.cpp:206
 #, fuzzy
 msgid ""
 "Warning: Running a command synchronously may cause Remmina not to respond.\n"
@@ -3404,282 +3404,282 @@ msgstr ""
 "သတိပေးချက်– အမိန့်ကို တစ်ပြိုင်တည်းပြေးခြင်းက ရမ်မီနာကို မတုံ့ပြန်စေနိုင်ပါ။\n"
 "သင် အမှန်တကယ် ဆက်လက်လုပ်ဆောင်လိုပါသလော။"
 
-#: plugins/exec/exec_plugin.c:274
+#: plugins/exec/exec_plugin.cpp:274
 #, fuzzy
 msgid "Command"
 msgstr "ညွှန်"
 
-#: plugins/exec/exec_plugin.c:275
+#: plugins/exec/exec_plugin.cpp:275
 #, fuzzy
 msgid "Asynchronous execution"
 msgstr "အက်စိန်ခရိုဏ်းချုပ် ကွပ်မျက်ခြင်း"
 
-#: plugins/exec/exec_plugin_config.h:41
+#: plugins/exec/exec_plugin_config.hpp:41
 #, fuzzy
 msgid "Execute a command"
 msgstr "အမိန့်ကို အကောင်အထည်ဖော်ပါ"
 
-#: plugins/tool_hello_world/plugin_config.h:40
+#: plugins/tool_hello_world/plugin_config.hpp:40
 #, fuzzy
 msgid "Hello, World!"
 msgstr "မင်္ဂလာပါကမ္ဘာလောက!"
 
-#: plugins/secret/src/glibsecret_plugin.c:188
+#: plugins/secret/src/glibsecret_plugin.cpp:188
 #, fuzzy
 msgid "Secured password storage in the GNOME keyring"
 msgstr "GNOME keying မှာ လုံခြုံတဲ့ စကားဝှက်သိုလှောင်မှု"
 
-#: plugins/x2go/x2go_plugin.c:67
+#: plugins/x2go/x2go_plugin.cpp:67
 #, c-format
 msgid ""
 "The command-line feature '%s' is not available! Attempting to start PyHoca-"
 "CLI without using this feature…"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:289 plugins/x2go/x2go_plugin.c:421
-#: plugins/x2go/x2go_plugin.c:510 plugins/x2go/x2go_plugin.c:617
-#: plugins/x2go/x2go_plugin.c:707 plugins/x2go/x2go_plugin.c:719
-#: plugins/x2go/x2go_plugin.c:728 plugins/x2go/x2go_plugin.c:754
-#: plugins/x2go/x2go_plugin.c:763 plugins/x2go/x2go_plugin.c:782
-#: plugins/x2go/x2go_plugin.c:832 plugins/x2go/x2go_plugin.c:898
-#: plugins/x2go/x2go_plugin.c:909 plugins/x2go/x2go_plugin.c:917
-#: plugins/x2go/x2go_plugin.c:1031 plugins/x2go/x2go_plugin.c:1047
-#: plugins/x2go/x2go_plugin.c:1112 plugins/x2go/x2go_plugin.c:1140
-#: plugins/x2go/x2go_plugin.c:1289 plugins/x2go/x2go_plugin.c:1651
-#: plugins/x2go/x2go_plugin.c:1685 plugins/x2go/x2go_plugin.c:1781
-#: plugins/x2go/x2go_plugin.c:2075 plugins/x2go/x2go_plugin.c:2875
-#: plugins/x2go/x2go_plugin.c:3088 plugins/x2go/x2go_plugin.c:3093
-#: plugins/x2go/x2go_plugin.c:3098 plugins/x2go/x2go_plugin.c:3103
-#: plugins/x2go/x2go_plugin.c:3118 plugins/x2go/x2go_plugin.c:3123
-#: plugins/x2go/x2go_plugin.c:3128 plugins/x2go/x2go_plugin.c:3133
+#: plugins/x2go/x2go_plugin.cpp:289 plugins/x2go/x2go_plugin.cpp:421
+#: plugins/x2go/x2go_plugin.cpp:510 plugins/x2go/x2go_plugin.cpp:617
+#: plugins/x2go/x2go_plugin.cpp:707 plugins/x2go/x2go_plugin.cpp:719
+#: plugins/x2go/x2go_plugin.cpp:728 plugins/x2go/x2go_plugin.cpp:754
+#: plugins/x2go/x2go_plugin.cpp:763 plugins/x2go/x2go_plugin.cpp:782
+#: plugins/x2go/x2go_plugin.cpp:832 plugins/x2go/x2go_plugin.cpp:898
+#: plugins/x2go/x2go_plugin.cpp:909 plugins/x2go/x2go_plugin.cpp:917
+#: plugins/x2go/x2go_plugin.cpp:1031 plugins/x2go/x2go_plugin.cpp:1047
+#: plugins/x2go/x2go_plugin.cpp:1112 plugins/x2go/x2go_plugin.cpp:1140
+#: plugins/x2go/x2go_plugin.cpp:1289 plugins/x2go/x2go_plugin.cpp:1651
+#: plugins/x2go/x2go_plugin.cpp:1685 plugins/x2go/x2go_plugin.cpp:1781
+#: plugins/x2go/x2go_plugin.cpp:2075 plugins/x2go/x2go_plugin.cpp:2875
+#: plugins/x2go/x2go_plugin.cpp:3088 plugins/x2go/x2go_plugin.cpp:3093
+#: plugins/x2go/x2go_plugin.cpp:3098 plugins/x2go/x2go_plugin.cpp:3103
+#: plugins/x2go/x2go_plugin.cpp:3118 plugins/x2go/x2go_plugin.cpp:3123
+#: plugins/x2go/x2go_plugin.cpp:3128 plugins/x2go/x2go_plugin.cpp:3133
 #, fuzzy, c-format
 msgid "Internal error: %s"
 msgstr "ပြည်တွင်းအမှား - "
 
-#: plugins/x2go/x2go_plugin.c:290 plugins/x2go/x2go_plugin.c:422
-#: plugins/x2go/x2go_plugin.c:511 plugins/x2go/x2go_plugin.c:1290
+#: plugins/x2go/x2go_plugin.cpp:290 plugins/x2go/x2go_plugin.cpp:422
+#: plugins/x2go/x2go_plugin.cpp:511 plugins/x2go/x2go_plugin.cpp:1290
 msgid "Parameter 'custom_data' is not initialized!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:303
+#: plugins/x2go/x2go_plugin.cpp:303
 #, fuzzy
 msgid "Broken `DialogData`! Aborting…"
 msgstr "ကျိုးပဲ့နေတဲ့ 'DialogData'! ဖျက်ချခြင်း...…"
 
-#: plugins/x2go/x2go_plugin.c:307
+#: plugins/x2go/x2go_plugin.cpp:307
 #, fuzzy
 msgid "Can't retrieve `DialogData`! Aborting…"
 msgstr "'DialogData' ကို ပြန်မယူနိုင်ဘူး! ဖျက်ချခြင်း...…"
 
-#: plugins/x2go/x2go_plugin.c:469
+#: plugins/x2go/x2go_plugin.cpp:469
 msgid "X Display"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:470
+#: plugins/x2go/x2go_plugin.cpp:470
 #, fuzzy
 msgid "Status"
 msgstr "ဖိုင်အခြေအနေ"
 
-#: plugins/x2go/x2go_plugin.c:471
+#: plugins/x2go/x2go_plugin.cpp:471
 #, fuzzy
 msgid "Session ID"
 msgstr "ခွင့်ပြုချက်များ"
 
-#: plugins/x2go/x2go_plugin.c:472
+#: plugins/x2go/x2go_plugin.cpp:472
 msgid "Create date"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:473
+#: plugins/x2go/x2go_plugin.cpp:473
 msgid "Suspended since"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:474
+#: plugins/x2go/x2go_plugin.cpp:474
 msgid "Agent PID"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:476
+#: plugins/x2go/x2go_plugin.cpp:476
 #, fuzzy
 msgid "Hostname"
 msgstr "အသုံးပြုသူအမည်"
 
-#: plugins/x2go/x2go_plugin.c:477
+#: plugins/x2go/x2go_plugin.cpp:477
 msgid "Cookie"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:478
+#: plugins/x2go/x2go_plugin.cpp:478
 msgid "Graphic port"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:479
+#: plugins/x2go/x2go_plugin.cpp:479
 msgid "SND port"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:480
+#: plugins/x2go/x2go_plugin.cpp:480
 #, fuzzy
 msgid "SSHFS port"
 msgstr "ဒေသန္တရ SSH ဆိပ်ကမ်း"
 
-#: plugins/x2go/x2go_plugin.c:481
+#: plugins/x2go/x2go_plugin.cpp:481
 msgid "Visible"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:520
+#: plugins/x2go/x2go_plugin.cpp:520
 #, fuzzy
 msgid "Couldn't retrieve valid `DialogData` or `sessions_list`! Aborting…"
 msgstr "'DialogData' ကို ပြန်မယူနိုင်ဘူး! ဖျက်ချခြင်း...…"
 
 #. TRANSLATORS: Stick to x2goclient's translation for terminate.
-#: plugins/x2go/x2go_plugin.c:529
+#: plugins/x2go/x2go_plugin.cpp:529
 #, fuzzy
 msgid "_Terminate"
 msgstr "Terminal"
 
 #. TRANSLATORS: Stick to x2goclient's translation for resume.
-#: plugins/x2go/x2go_plugin.c:532
+#: plugins/x2go/x2go_plugin.cpp:532
 #, fuzzy
 msgid "_Resume"
 msgstr "ဆက်ကူးမည်"
 
-#: plugins/x2go/x2go_plugin.c:534
+#: plugins/x2go/x2go_plugin.cpp:534
 msgid "_New"
 msgstr ""
 
 #. TRANSLATORS: Tooltip for terminating button inside Session-Chooser-Dialog.
 #. TRANSLATORS: Please stick to X2GoClient's way of translating.
-#: plugins/x2go/x2go_plugin.c:543
+#: plugins/x2go/x2go_plugin.cpp:543
 msgid "Terminating X2Go sessions can take a moment."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:618 plugins/x2go/x2go_plugin.c:620
+#: plugins/x2go/x2go_plugin.cpp:618 plugins/x2go/x2go_plugin.cpp:620
 #, c-format
 msgid "Unknown property '%i'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:708 plugins/x2go/x2go_plugin.c:755
+#: plugins/x2go/x2go_plugin.cpp:708 plugins/x2go/x2go_plugin.cpp:755
 msgid "Couldn't find child GtkTreeView of session chooser dialog."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:720
+#: plugins/x2go/x2go_plugin.cpp:720
 msgid ""
 "Neither the 'dialog' nor 'treeview' parameters are initialized! At least one "
 "of them must be given."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:729
+#: plugins/x2go/x2go_plugin.cpp:729
 msgid ""
 "Could not obtain \"GtkTreeModelFilter*\" of the session chooser dialog, for "
 "unknown reason."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:764
+#: plugins/x2go/x2go_plugin.cpp:764
 msgid "Couldn't get currently selected row (session)!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:783
+#: plugins/x2go/x2go_plugin.cpp:783
 #, c-format
 msgid ""
 "Exactly one session should be selectable but '%i' rows (sessions) are "
 "selected."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:833
+#: plugins/x2go/x2go_plugin.cpp:833
 msgid "Failed to fill 'GtkTreeIter'."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:899
+#: plugins/x2go/x2go_plugin.cpp:899
 msgid "parameter 'argv' is 'NULL'."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:910
+#: plugins/x2go/x2go_plugin.cpp:910
 msgid "parameter 'error' is 'NULL'."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:918
+#: plugins/x2go/x2go_plugin.cpp:918
 msgid "parameter 'env' is either invalid or uninitialized."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:934 plugins/x2go/x2go_plugin.c:2376
+#: plugins/x2go/x2go_plugin.cpp:934 plugins/x2go/x2go_plugin.cpp:2376
 #, fuzzy
 msgid "Started PyHoca-CLI with the following arguments:"
 msgstr "Pyhoca-CLI ကို အောက်ပါ အငြင်းပွားမှုများဖြင့် စတင်ခဲ့သည်-"
 
-#: plugins/x2go/x2go_plugin.c:962
+#: plugins/x2go/x2go_plugin.cpp:962
 msgid ""
 "The necessary PyHoca-CLI process has encountered a internet connection "
 "problem."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:972
+#: plugins/x2go/x2go_plugin.cpp:972
 #, fuzzy, c-format
 msgid ""
 "Could not start PyHoca-CLI:\n"
 "%s"
 msgstr "Pyhoca-CLI ([%i] :'%s]"
 
-#: plugins/x2go/x2go_plugin.c:983
+#: plugins/x2go/x2go_plugin.cpp:983
 #, c-format
 msgid ""
 "An unknown error occured while trying to start PyHoca-CLI. Exit code: %i"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:990
+#: plugins/x2go/x2go_plugin.cpp:990
 #, c-format
 msgid ""
 "An unknown error occured while trying to start PyHoca-CLI. Exit code: %i. "
 "Error: '%s'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1032
+#: plugins/x2go/x2go_plugin.cpp:1032
 msgid "Neither the 'path' nor 'dialog' parameters are initialized."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1048
+#: plugins/x2go/x2go_plugin.cpp:1048
 msgid "GtkTreePath 'path' describes a non-existing row!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1113
+#: plugins/x2go/x2go_plugin.cpp:1113
 msgid "Parameter 'custom_data' is not fully initialized!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1141 plugins/x2go/x2go_plugin.c:1782
-#: plugins/x2go/x2go_plugin.c:2076
+#: plugins/x2go/x2go_plugin.cpp:1141 plugins/x2go/x2go_plugin.cpp:1782
+#: plugins/x2go/x2go_plugin.cpp:2076
 #, fuzzy
 #| msgid "Per connection"
 msgid "'Invalid connection data.'"
 msgstr "ဝေမျှဆက်သွယ်မှု"
 
-#: plugins/x2go/x2go_plugin.c:1218
+#: plugins/x2go/x2go_plugin.cpp:1218
 #, fuzzy, c-format
 msgid ""
 "An error occured while trying to terminate X2Go session '%s':\n"
 "%s"
 msgstr "X2Go အစည်းအရုံးစတင်ချိန်မှာ အမှားတစ်ခု ဖြစ်ပျက်ခဲ့တာ...…"
 
-#: plugins/x2go/x2go_plugin.c:1230 plugins/x2go/x2go_plugin.c:1594
+#: plugins/x2go/x2go_plugin.cpp:1230 plugins/x2go/x2go_plugin.cpp:1594
 #, fuzzy
 msgid "An error occured."
 msgstr "အမှားတစ်ခု ဖြစ်ပွားခဲ့တယ်။"
 
-#: plugins/x2go/x2go_plugin.c:1330 plugins/x2go/x2go_plugin.c:1345
+#: plugins/x2go/x2go_plugin.cpp:1330 plugins/x2go/x2go_plugin.cpp:1345
 msgid "Couldn't get session ID from session chooser dialog."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1337
+#: plugins/x2go/x2go_plugin.cpp:1337
 #, c-format
 msgid "Resuming session: '%s'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1352
+#: plugins/x2go/x2go_plugin.cpp:1352
 #, c-format
 msgid "Terminating session: '%s'"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1586
+#: plugins/x2go/x2go_plugin.cpp:1586
 #, fuzzy
 msgid "PyHoca-CLI exited unexpectedly. This connection will now be closed."
 msgstr "ပီဟိုကာ-စီအယ်လ်အိုင်က မမျှော်လင့်ဘဲ ထွက်သွားတယ်။ ဒီဆက်သွယ်မှုကို အခု ပိတ်ထားပါလိမ့်မယ်။"
 
-#: plugins/x2go/x2go_plugin.c:1595
+#: plugins/x2go/x2go_plugin.cpp:1595
 #, fuzzy
 msgid ""
 "The necessary child process 'pyhoca-cli' stopped unexpectedly.\n"
@@ -3690,17 +3690,17 @@ msgstr ""
 "ဖြစ်နိုင်တဲ့ အမှားတွေအတွက် သင့်ကိုယ်ရေးရာဇဝင်အချက်အလက်တွေနဲ့ PyHoca-CLI ရဲ့ ထုတ်ကုန်တွေကို ကျေးဇူးပြု၍ "
 "စစ်ဆေးကြည့်ပါ။ ထို့ပြင် ဝေးလံသောဆာဗာကို ရောက်ရှိနိုင်ကြောင်း သေချာစေပါ။"
 
-#: plugins/x2go/x2go_plugin.c:1638
+#: plugins/x2go/x2go_plugin.cpp:1638
 #, fuzzy
 msgid "Can't save empty username!"
 msgstr "သုံးစွဲသူအမည်အလွတ်ကို မသိမ်းနိုင်ပါဘူး!"
 
-#: plugins/x2go/x2go_plugin.c:1652
+#: plugins/x2go/x2go_plugin.cpp:1652
 #, fuzzy
 msgid "Could not save new credentials."
 msgstr "ပြည်တွင်းအမှား– အသိအမှတ်ပြုချက်အသစ်တွေကို မသိမ်းနိုင်ဘူး။"
 
-#: plugins/x2go/x2go_plugin.c:1655
+#: plugins/x2go/x2go_plugin.cpp:1655
 #, fuzzy
 msgid ""
 "An error occured while trying to save new credentials: 's_password' or "
@@ -3709,104 +3709,104 @@ msgstr ""
 "'s_password' သို့မဟုတ် 's_password' သို့မဟုတ် 's_username' ကြိုးများ မချထားခဲ့ပါဟူသော "
 "အရည်အချင်းအသစ်များကို ချွေတာရန် ကြိုးစားနေစဉ် အမှားတစ်ခု ဖြစ်ပွားခဲ့သည်။"
 
-#: plugins/x2go/x2go_plugin.c:1686
+#: plugins/x2go/x2go_plugin.cpp:1686
 msgid "Parameter 'default_username' is uninitialized."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1715
+#: plugins/x2go/x2go_plugin.cpp:1715
 #, fuzzy
 msgid "Enter X2Go credentials"
 msgstr "X2go အသိအမှတ်ပြုချက်များကို ဝင်ရောက်ပါ"
 
-#: plugins/x2go/x2go_plugin.c:1912
+#: plugins/x2go/x2go_plugin.cpp:1912
 msgid ""
 "Couldn't parse the output of PyHoca-CLI's --list-sessions option. Creating a "
 "new session now."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1951
+#: plugins/x2go/x2go_plugin.cpp:1951
 msgid "Couldn't allocate enough memory!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:1961
+#: plugins/x2go/x2go_plugin.cpp:1961
 #, c-format
 msgid "Found already existing X2Go session with ID: '%s'"
 msgstr ""
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2004
+#: plugins/x2go/x2go_plugin.cpp:2004
 msgid "Suspended"
 msgstr ""
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2007
+#: plugins/x2go/x2go_plugin.cpp:2007
 #, fuzzy
 msgid "Running"
 msgstr "လုပ်ဆောင်ဆဲ"
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2010
+#: plugins/x2go/x2go_plugin.cpp:2010
 #, fuzzy
 msgid "Terminated"
 msgstr "Terminal"
 
-#: plugins/x2go/x2go_plugin.c:2043
+#: plugins/x2go/x2go_plugin.cpp:2043
 msgid ""
 "Could not find any sessions on remote machine. Creating a new session now."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2098
+#: plugins/x2go/x2go_plugin.cpp:2098
 #, fuzzy
 msgid "Choose a session to resume:"
 msgstr "တင်ရန် ဖိုင်တစ်ခုရွေးချယ်ပါ"
 
-#: plugins/x2go/x2go_plugin.c:2141
+#: plugins/x2go/x2go_plugin.cpp:2141
 #, fuzzy
 msgid "Waiting for user to select a session…"
 msgstr "အစည်းအဝေးရဲ့ ပြတင်းပေါက်ပြဖို့ Pyhoca-CLI ကို စောင့်နေတာ...…"
 
-#: plugins/x2go/x2go_plugin.c:2149
+#: plugins/x2go/x2go_plugin.cpp:2149
 msgid "No session was selected. Creating a new one."
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2197
+#: plugins/x2go/x2go_plugin.cpp:2197
 #, c-format
 msgid "A non-critical error happened: %s"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2202
+#: plugins/x2go/x2go_plugin.cpp:2202
 #, c-format
 msgid "User chose to resume session with ID: '%s'"
 msgstr ""
 
 #. TRANSLATORS: Please stick to X2GoClient's way of translating.
-#: plugins/x2go/x2go_plugin.c:2223
+#: plugins/x2go/x2go_plugin.cpp:2223
 #, c-format
 msgid "Resuming session '%s'…"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:2354
+#: plugins/x2go/x2go_plugin.cpp:2354
 #, fuzzy
 msgid "DPI setting is out of bounds. Please adjust it in profile settings."
 msgstr ""
 "ဒီပီအိုင် တပ်ဆင်မှုဟာ အကန့်အသတ်မရှိဘူး။ ကျေးဇူးပြု၍ ယင်းကို ကိုယ်ရေးရာဇဝင်အချက်အလက်များတွင် ညှိနှိုင်းပါ။"
 
-#: plugins/x2go/x2go_plugin.c:2396
+#: plugins/x2go/x2go_plugin.cpp:2396
 #, fuzzy
 msgid "An error occured while starting an X2Go session…"
 msgstr "X2Go အစည်းအရုံးစတင်ချိန်မှာ အမှားတစ်ခု ဖြစ်ပျက်ခဲ့တာ...…"
 
-#: plugins/x2go/x2go_plugin.c:2404
+#: plugins/x2go/x2go_plugin.cpp:2404
 #, fuzzy
 msgid "Could not start X2Go session."
 msgstr "X2Go အစည်းအရုံးကို မစတင်နိုင်ပါဘူး။"
 
-#: plugins/x2go/x2go_plugin.c:2405
+#: plugins/x2go/x2go_plugin.cpp:2405
 #, fuzzy, c-format
 msgid "Could not start PyHoca-CLI (%i): '%s'"
 msgstr "Pyhoca-CLI ([%i] :'%s]"
 
-#: plugins/x2go/x2go_plugin.c:2520
+#: plugins/x2go/x2go_plugin.cpp:2520
 #, fuzzy
 msgid ""
 "Couldn't get PyHoca-CLI's command-line features. This indicates it is either "
@@ -3816,7 +3816,7 @@ msgstr ""
 "Pyhoca-CLI ရဲ့ အမိန့်လိုင်း အသွင်အပြင်တွေကို မရရှိနိုင်ဘူး။ ဒါက အရမ်းအသက်ကြီးလွန်းတယ် ဒါမှမဟုတ် "
 "ဝတ်ဆင်မထားဘူးဆိုတာ ဖော်ပြတယ်။ အကန့်အသတ်ရှိတဲ့ အင်္ဂါရပ်တွေကို အခုအတွက် အသုံးပြုပါလိမ့်မယ်။"
 
-#: plugins/x2go/x2go_plugin.c:2529
+#: plugins/x2go/x2go_plugin.cpp:2529
 #, fuzzy
 msgid ""
 "Could not parse PyHoca-CLI's command-line features. Using a limited feature-"
@@ -3825,47 +3825,47 @@ msgstr ""
 "Pyhoca-CLI ရဲ့ ညွှန်ကြားချက်လိုင်း အသွင်အပြင်တွေကို မခွဲထုတ်နိုင်ဘူး။ အခုအတွက် အကန့်အသတ်ရှိတဲ့ အသွင်အပြင်တစ်ခုကို "
 "အသုံးပြုနေပါတယ်။"
 
-#: plugins/x2go/x2go_plugin.c:2535
+#: plugins/x2go/x2go_plugin.cpp:2535
 #, fuzzy
 msgid "Retrieved the following PyHoca-CLI command-line features:"
 msgstr "အောက်ပါ Pyhoca-CLI ကွန်မန်လိုင်း အသွင်အပြင်များကို ပြန်လည်ရယူခဲ့သည်-"
 
-#: plugins/x2go/x2go_plugin.c:2543
+#: plugins/x2go/x2go_plugin.cpp:2543
 #, fuzzy, c-format
 msgid "Available feature[%i]: '%s'"
 msgstr "ရရှိနိုင်သော အင်္ဂါရပ်%i]: '%s]"
 
-#: plugins/x2go/x2go_plugin.c:2648
+#: plugins/x2go/x2go_plugin.cpp:2648
 #, fuzzy
 msgid "Could not open X11 DISPLAY."
 msgstr "X11 ပြပွဲကို မဖွင့်နိုင်ပါဘူး။"
 
-#: plugins/x2go/x2go_plugin.c:2688
+#: plugins/x2go/x2go_plugin.cpp:2688
 #, fuzzy
 msgid "Waiting for window of X2Go Agent to appear…"
 msgstr "X2Go အေဂျင်စီရဲ့ ပြတင်းပေါက်ပေါ်လာဖို့ စောင့်နေတာ...…"
 
-#: plugins/x2go/x2go_plugin.c:2714
+#: plugins/x2go/x2go_plugin.cpp:2714
 #, fuzzy
 msgid "Waiting for PyHoca-CLI to show the session's window…"
 msgstr "အစည်းအဝေးရဲ့ ပြတင်းပေါက်ပြဖို့ Pyhoca-CLI ကို စောင့်နေတာ...…"
 
-#: plugins/x2go/x2go_plugin.c:2765
+#: plugins/x2go/x2go_plugin.cpp:2765
 #, fuzzy
 msgid "No X2Go session window appeared. Something went wrong…"
 msgstr "X2Go session window မရှိဘူး။ တစ်ခုခု မှားသွားတယ်...…"
 
-#: plugins/x2go/x2go_plugin.c:2876
+#: plugins/x2go/x2go_plugin.cpp:2876
 #, fuzzy
 msgid "RemminaProtocolWidget* gp is 'NULL'!"
 msgstr "ပြည်တွင်းအမှား– RemminaProtocolWidget * Gp က NULL!"
 
-#: plugins/x2go/x2go_plugin.c:2897
+#: plugins/x2go/x2go_plugin.cpp:2897
 #, fuzzy, c-format
 msgid "The %s protocol is unavailable because GtkSocket only works under X.org"
 msgstr "GtkSocket သည် လက်အောက်တွင်သာ အလုပ်လုပ်သောကြောင့် %s ပရိုတိုကော X.org ကို မရရှိနိုင်ပါ။"
 
-#: plugins/x2go/x2go_plugin.c:2906
+#: plugins/x2go/x2go_plugin.cpp:2906
 #, fuzzy
 msgid "Could not initialize pthread. Falling back to non-threaded mode…"
 msgstr "ပက်သ်ကို အစပျိုးလို့မရဘူး။ ချည်နှောင်မှုမရှိတဲ့ နည်းလမ်းဆီ ပြန်ကျသွားတာ...…"
@@ -3878,7 +3878,7 @@ msgstr "ပက်သ်ကို အစပျိုးလို့မရဘူ�
 #. your language.
 #. (Except your listing-grammar differs from english.)
 #. 'value1' and 'value2'
-#: plugins/x2go/x2go_plugin.c:2949 plugins/x2go/x2go_plugin.c:2967
+#: plugins/x2go/x2go_plugin.cpp:2949 plugins/x2go/x2go_plugin.cpp:2967
 #, fuzzy, c-format
 msgid "%sand '%s'"
 msgstr "%sနှင့် '%s"
@@ -3889,7 +3889,7 @@ msgstr "%sနှင့် '%s"
 #. TRANSLATORS: Presumably you just want to leave it english.
 #. (Except your listing-grammar differs from english.)
 #. 'value1' and 'value2'
-#: plugins/x2go/x2go_plugin.c:2954 plugins/x2go/x2go_plugin.c:2972
+#: plugins/x2go/x2go_plugin.cpp:2954 plugins/x2go/x2go_plugin.cpp:2972
 #, fuzzy, c-format
 msgid "%s'%s' "
 msgstr "%s[X3X%s] "
@@ -3897,134 +3897,134 @@ msgstr "%s[X3X%s] "
 #. TRANSLATORS: Presumably you just want to leave it english.
 #. (Except your listing-grammar differs from english.)
 #. 'value1', 'value2', 'valueN-1' and 'valueN'
-#: plugins/x2go/x2go_plugin.c:2959
+#: plugins/x2go/x2go_plugin.cpp:2959
 #, fuzzy, c-format
 msgid "%s'%s', "
 msgstr "%s%s...%s'၊ "
 
-#: plugins/x2go/x2go_plugin.c:2998
+#: plugins/x2go/x2go_plugin.cpp:2998
 #, fuzzy
 msgid "Invalid validation data in ProtocolSettings array!"
 msgstr "ProtocolSettings အစီအစဉ်ထဲက မမှန်ကန်တဲ့ အတည်ပြုချက် အချက်အလက်များ!"
 
-#: plugins/x2go/x2go_plugin.c:3013 plugins/x2go/x2go_plugin.c:3078
+#: plugins/x2go/x2go_plugin.cpp:3013 plugins/x2go/x2go_plugin.cpp:3078
 #, fuzzy
 msgid "Validation data in ProtocolSettings array is invalid!"
 msgstr "ProtocolSettings အစီအစဉ်မှ အတည်ပြုချက် အချက်အလက်များသည် မမှန်ကန်ပါ!"
 
-#: plugins/x2go/x2go_plugin.c:3022
+#: plugins/x2go/x2go_plugin.cpp:3022
 msgid "Parameters 'key' or 'value' are 'NULL'!"
 msgstr ""
 
-#: plugins/x2go/x2go_plugin.c:3040
+#: plugins/x2go/x2go_plugin.cpp:3040
 #, fuzzy, c-format
 msgid "Allowed values are %s."
 msgstr "ခွင့်ပြုထားတဲ့ တန်ဖိုးတွေက %s ဖြစ်ပါတယ်။"
 
-#: plugins/x2go/x2go_plugin.c:3042
+#: plugins/x2go/x2go_plugin.cpp:3042
 #, fuzzy, c-format
 msgid "The only allowed value is '%s'."
 msgstr "ခွင့်ပြုထားတဲ့ တန်ဖိုးကတော့ '%s] ဖြစ်ပါတယ်။"
 
-#: plugins/x2go/x2go_plugin.c:3089
+#: plugins/x2go/x2go_plugin.cpp:3089
 #, fuzzy
 msgid "The lower limit is not a valid integer!"
 msgstr "အောက်ကန့်သတ်ချက်က မှန်ကန်တဲ့ အင်တီဂျာ မဟုတ်ပါဘူး!"
 
-#: plugins/x2go/x2go_plugin.c:3094
+#: plugins/x2go/x2go_plugin.cpp:3094
 #, fuzzy
 msgid "The lower limit is too high!"
 msgstr "နိမ့်ကျတဲ့ ကန့်သတ်ချက်က အရမ်းမြင့်လွန်းတယ်!"
 
-#: plugins/x2go/x2go_plugin.c:3099
+#: plugins/x2go/x2go_plugin.cpp:3099
 #, fuzzy
 msgid "The lower limit is too low!"
 msgstr "နိမ့်ကျတဲ့ ကန့်သတ်ချက်က အရမ်းနည်းလွန်းတယ်!"
 
-#: plugins/x2go/x2go_plugin.c:3104 plugins/x2go/x2go_plugin.c:3134
-#: plugins/x2go/x2go_plugin.c:3154
+#: plugins/x2go/x2go_plugin.cpp:3104 plugins/x2go/x2go_plugin.cpp:3134
+#: plugins/x2go/x2go_plugin.cpp:3154
 #, fuzzy
 msgid "Something unknown went wrong."
 msgstr "တစ်စုံတစ်ရာ မှားယွင်းနေသည်"
 
-#: plugins/x2go/x2go_plugin.c:3109 plugins/x2go/x2go_plugin.c:3139
-#: plugins/x2go/x2go_plugin.c:3158
+#: plugins/x2go/x2go_plugin.cpp:3109 plugins/x2go/x2go_plugin.cpp:3139
+#: plugins/x2go/x2go_plugin.cpp:3158
 #, fuzzy
 msgid "Please check the RemminaProtocolSetting array for possible errors."
 msgstr "ဖြစ်နိုင်တဲ့ အမှားတွေအတွက် RemminaProtocolSetting အစီအစဉ်ကို ကျေးဇူးပြု၍ စစ်ဆေးပါ။"
 
-#: plugins/x2go/x2go_plugin.c:3119
+#: plugins/x2go/x2go_plugin.cpp:3119
 #, fuzzy
 msgid "The upper limit is not a valid integer!"
 msgstr "အထက်က ကန့်သတ်ချက်က မှန်ကန်တဲ့ အင်တီဂျာ မဟုတ်ပါဘူး!"
 
-#: plugins/x2go/x2go_plugin.c:3124
+#: plugins/x2go/x2go_plugin.cpp:3124
 #, fuzzy
 msgid "The upper limit is too high!"
 msgstr "အထက်က ကန့်သတ်ချက်က အရမ်းမြင့်လွန်းတယ်!"
 
-#: plugins/x2go/x2go_plugin.c:3129
+#: plugins/x2go/x2go_plugin.cpp:3129
 #, fuzzy
 msgid "The upper limit is too low!"
 msgstr "အထက်က ကန့်သတ်ချက်က အရမ်းနည်းလွန်းတယ်!"
 
-#: plugins/x2go/x2go_plugin.c:3149
+#: plugins/x2go/x2go_plugin.cpp:3149
 #, fuzzy
 msgid "The input is not a valid integer!"
 msgstr "ဝင်ငွေသည် တရားဝင်အင်တီဂျားမဟုတ်ပါ!"
 
-#: plugins/x2go/x2go_plugin.c:3151 plugins/x2go/x2go_plugin.c:3170
+#: plugins/x2go/x2go_plugin.cpp:3151 plugins/x2go/x2go_plugin.cpp:3170
 #, fuzzy, c-format
 msgid "Input must be a number between %i and %i."
 msgstr "%i နှင့် %i အကြား နံပါတ်တစ်ခု ဖြစ်ရမည်။"
 
-#: plugins/x2go/x2go_plugin.c:3199
+#: plugins/x2go/x2go_plugin.cpp:3199
 #, fuzzy
 msgid "Startup program"
 msgstr "စတော့ပရိုဂရမ်"
 
-#: plugins/x2go/x2go_plugin.c:3201
+#: plugins/x2go/x2go_plugin.cpp:3201
 #, fuzzy
 msgid "Which command should be executed after creating the X2Go session?"
 msgstr "X2GO အစည်းအရုံးကို ဖန်တီးပြီးတဲ့နောက် ဘယ်အမိန့်ကို ကွပ်မျက်သင့်သလဲ။"
 
-#: plugins/x2go/x2go_plugin.c:3203
+#: plugins/x2go/x2go_plugin.cpp:3203
 #, fuzzy
 msgid "Keyboard Layout (auto)"
 msgstr "Keybod Layout (Auto)"
 
-#: plugins/x2go/x2go_plugin.c:3204
+#: plugins/x2go/x2go_plugin.cpp:3204
 #, fuzzy
 msgid "Keyboard type (auto)"
 msgstr "ကီးဘုတ်အမျိုးအစား (အော်တို)"
 
-#: plugins/x2go/x2go_plugin.c:3205
+#: plugins/x2go/x2go_plugin.cpp:3205
 #, fuzzy
 msgid "Audio support"
 msgstr "Audiioထောက်ပံ့မှု"
 
-#: plugins/x2go/x2go_plugin.c:3207
+#: plugins/x2go/x2go_plugin.cpp:3207
 #, fuzzy
 msgid "The sound system of the X2Go server (default: 'pulse')."
 msgstr "X2Go ဆာဗာ ၏အသံစနစ် (မူလ: 'Pulse') ၏ အသံစနစ်။"
 
-#: plugins/x2go/x2go_plugin.c:3210
+#: plugins/x2go/x2go_plugin.cpp:3210
 #, fuzzy
 #| msgid "Per connection"
 msgid "Clipboard direction"
 msgstr "ကလစ်ဘုတ် လမ်းညွှန်ချက်"
 
-#: plugins/x2go/x2go_plugin.c:3212
+#: plugins/x2go/x2go_plugin.cpp:3212
 #, fuzzy
 msgid "Which direction should clipboard content be copied? (default: 'both')."
 msgstr "ဘယ်လမ်းညွှန်ချက်ကို ကလစ်ဘုတ် အကြောင်းအရာတွေကို ကူးယူသင့်သလဲ။ (ပျက်ကွက်မှု - 'နှစ်ယောက်စလုံး')။"
 
-#: plugins/x2go/x2go_plugin.c:3216
+#: plugins/x2go/x2go_plugin.cpp:3216
 #, fuzzy
 msgid "DPI resolution"
 msgstr "DPI ဖြေရှင်းချက်"
 
-#: plugins/x2go/x2go_plugin.c:3217
+#: plugins/x2go/x2go_plugin.cpp:3217
 #, fuzzy
 msgid ""
 "Launch session with a specific resolution (in dots per inch). Must be "
@@ -4033,176 +4033,176 @@ msgstr ""
 "သတ်သတ်မှတ်မှတ် ဖြေရှင်းချက် (တစ်လက်မလျှင် အစက်များတွင်) သတ်မှတ်ထားသော ဖြေရှင်းချက်ဖြင့် လွှတ်တင်ပါ။ ၂၀ နဲ့ "
 "၄၀၀ ကြားမှာ ရှိရမယ်။"
 
-#: plugins/x2go/x2go_plugin.c:3261
+#: plugins/x2go/x2go_plugin.cpp:3261
 #, fuzzy
 msgid "X2Go plugin loaded."
 msgstr "X2Go plugin ဝန်တင်ထားပါတယ်။"
 
-#: plugins/x2go/x2go_plugin.h:43
+#: plugins/x2go/x2go_plugin.hpp:43
 #, fuzzy
 msgid "X2Go - Launch an X2Go session"
 msgstr "X2Go - X2Go အစည်းအရုံးကို စတင်ဖွင့်လှစ်ပါ"
 
-#: plugins/gvnc/gvnc_plugin_config.h:40
+#: plugins/gvnc/gvnc_plugin_config.hpp:40
 #, fuzzy
 msgid "Remmina VNC plugin for GNOME and KVM"
 msgstr "GNOME နဲ့ KVM အတွက် Remmina VNC plugy"
 
-#: plugins/gvnc/gvnc_plugin.c:477
+#: plugins/gvnc/gvnc_plugin.cpp:477
 #, fuzzy, c-format
 msgid "Unsupported authentication type %u"
 msgstr "%u"
 
-#: plugins/gvnc/gvnc_plugin.c:489
+#: plugins/gvnc/gvnc_plugin.cpp:489
 #, fuzzy, c-format
 msgid "Authentication failure: %s"
 msgstr "စစ်ဆေးရေးပျက်ကွက်မှု - %s"
 
-#: plugins/gvnc/gvnc_plugin.c:820
+#: plugins/gvnc/gvnc_plugin.cpp:820
 #, fuzzy
 msgid "Use server settings"
 msgstr "ဆာဗာနေရာများကို အသုံးပြုပါ"
 
-#: plugins/gvnc/gvnc_plugin.c:821
+#: plugins/gvnc/gvnc_plugin.cpp:821
 #, fuzzy
 msgid "True colour (24 bits)"
 msgstr "စစ်မှန်တဲ့အရောင် (၂၄ လုံး)"
 
-#: plugins/gvnc/gvnc_plugin.c:822
+#: plugins/gvnc/gvnc_plugin.cpp:822
 #, fuzzy
 msgid "High colour (16 bits)"
 msgstr "အရောင်မြင့် (၁၆ လုံး)"
 
-#: plugins/gvnc/gvnc_plugin.c:823
+#: plugins/gvnc/gvnc_plugin.cpp:823
 #, fuzzy
 msgid "Low colour (8 bits)"
 msgstr "အရောင်နိမ့် (၈ ဘစ်)"
 
-#: plugins/gvnc/gvnc_plugin.c:824
+#: plugins/gvnc/gvnc_plugin.cpp:824
 #, fuzzy
 msgid "Ultra low colour (3 bits)"
 msgstr "Ultra အရောင် နိမ့် (၃ အပိုင်း)"
 
-#: plugins/gvnc/gvnc_plugin.c:848
+#: plugins/gvnc/gvnc_plugin.cpp:848
 #, fuzzy
 #| msgid "Password"
 msgid "VNC password"
 msgstr "VNC စကားဝှက်"
 
-#: plugins/gvnc/gvnc_plugin.c:850
+#: plugins/gvnc/gvnc_plugin.cpp:850
 #, fuzzy
 msgid "Use JPEG Compression"
 msgstr "JPEG ဖိသိပ်မှုကို အသုံးပြုပါ"
 
-#: plugins/gvnc/gvnc_plugin.c:850
+#: plugins/gvnc/gvnc_plugin.cpp:850
 #, fuzzy
 msgid "This might not work on all VNC servers"
 msgstr "ဒါက VNC ဆာဗာအားလုံးမှာ အလုပ်မလုပ်နိုင်ဘူး"
 
-#: plugins/gvnc/gvnc_plugin.c:851
+#: plugins/gvnc/gvnc_plugin.cpp:851
 #, fuzzy
 msgid "Enable GTK-VNC debug"
 msgstr "ဂျီတီကေ-ဗွီအန်စီ ဒေဝါဘူတာကို ဖန်တီးပါ"
 
-#: plugins/gvnc/gvnc_plugin.c:871
+#: plugins/gvnc/gvnc_plugin.cpp:871
 #, fuzzy
 #| msgid "Per connection"
 msgid "Shared connection"
 msgstr "ဝေမျှဆက်သွယ်မှု"
 
-#: plugins/gvnc/gvnc_plugin.c:871
+#: plugins/gvnc/gvnc_plugin.cpp:871
 #, fuzzy
 msgid ""
 "If the server should try to share the desktop by leaving other clients "
 "connected"
 msgstr "အကယ်၍ ဆာဗာက တခြားဖောက်သည်တွေကို ချိတ်ဆက်ထားပြီး Desktop ကို ဝေမျှဖို့ ကြိုးစားသင့်တယ်ဆိုရင်"
 
-#: plugins/gvnc/gvnc_plugin.c:881
+#: plugins/gvnc/gvnc_plugin.cpp:881
 #, fuzzy
 msgid "Send Ctrl+Alt+_Del"
 msgstr "Ctrl+Alt++++ _Del"
 
-#: plugins/gvnc/gvnc_plugin.c:882
+#: plugins/gvnc/gvnc_plugin.cpp:882
 #, fuzzy
 msgid "Send Ctrl+Alt+_Backspace"
 msgstr "Ctrl+Alt+++ _Backspace"
 
-#: plugins/gvnc/gvnc_plugin.c:883
+#: plugins/gvnc/gvnc_plugin.cpp:883
 #, fuzzy
 msgid "Send Ctrl+Alt+_F1"
 msgstr "Ctrl+Alt+++ _F1"
 
-#: plugins/gvnc/gvnc_plugin.c:884
+#: plugins/gvnc/gvnc_plugin.cpp:884
 #, fuzzy
 msgid "Send Ctrl+Alt+_F2"
 msgstr "Ctrl+Alt+Alt++ _F2"
 
-#: plugins/gvnc/gvnc_plugin.c:885
+#: plugins/gvnc/gvnc_plugin.cpp:885
 #, fuzzy
 msgid "Send Ctrl+Alt+_F3"
 msgstr "Ctrl+Alt+++ _F3"
 
-#: plugins/gvnc/gvnc_plugin.c:886
+#: plugins/gvnc/gvnc_plugin.cpp:886
 #, fuzzy
 msgid "Send Ctrl+Alt+_F4"
 msgstr "Ctrl+Alt+++ _F4"
 
-#: plugins/gvnc/gvnc_plugin.c:887
+#: plugins/gvnc/gvnc_plugin.cpp:887
 #, fuzzy
 msgid "Send Ctrl+Alt+_F5"
 msgstr "Ctrl+Alt+++ _F5"
 
-#: plugins/gvnc/gvnc_plugin.c:888
+#: plugins/gvnc/gvnc_plugin.cpp:888
 #, fuzzy
 msgid "Send Ctrl+Alt+_F6"
 msgstr "Ctrl+Alt+++ _F6"
 
-#: plugins/gvnc/gvnc_plugin.c:889
+#: plugins/gvnc/gvnc_plugin.cpp:889
 #, fuzzy
 msgid "Send Ctrl+Alt+_F7"
 msgstr "Ctrl+Alt+++ _F7"
 
-#: plugins/gvnc/gvnc_plugin.c:890
+#: plugins/gvnc/gvnc_plugin.cpp:890
 #, fuzzy
 msgid "Send Ctrl+Alt+_F8"
 msgstr "Ctrl+Alt++++ _F8"
 
-#: plugins/gvnc/gvnc_plugin.c:891
+#: plugins/gvnc/gvnc_plugin.cpp:891
 #, fuzzy
 msgid "Send Ctrl+Alt+_F9"
 msgstr "Ctrl+Alt+Alt++ _F9"
 
-#: plugins/gvnc/gvnc_plugin.c:892
+#: plugins/gvnc/gvnc_plugin.cpp:892
 #, fuzzy
 msgid "Send Ctrl+Alt+_F10"
 msgstr "Ctrl+Alt+++ _F10"
 
-#: plugins/gvnc/gvnc_plugin.c:893
+#: plugins/gvnc/gvnc_plugin.cpp:893
 #, fuzzy
 msgid "Send Ctrl+Alt+_F11"
 msgstr "Ctrl+Alt+++ _F11"
 
-#: plugins/gvnc/gvnc_plugin.c:894
+#: plugins/gvnc/gvnc_plugin.cpp:894
 #, fuzzy
 msgid "Send Ctrl+Alt+_F12"
 msgstr "Ctrl+Alt+++ _F12"
 
-#: plugins/gvnc/gvnc_plugin.c:896
+#: plugins/gvnc/gvnc_plugin.cpp:896
 #, fuzzy
 msgid "Reboot remote host"
 msgstr "ဝေးလံတဲ့ အိမ်ရှင်"
 
-#: plugins/gvnc/gvnc_plugin.c:897
+#: plugins/gvnc/gvnc_plugin.cpp:897
 #, fuzzy
 msgid "Reset remote host (hard reboot)"
 msgstr "ဝေးလံတဲ့ အိမ်ရှင် (ခက်ခဲတဲ့ ပြန်လည်ပြုပြင်မှု)"
 
-#: plugins/gvnc/gvnc_plugin.c:898
+#: plugins/gvnc/gvnc_plugin.cpp:898
 #, fuzzy
 msgid "Shutdown remote host"
 msgstr "ဝေးလံတဲ့ အိမ်ရှင်ကို ပိတ်လိုက်"
 
-#: plugins/telepathy/telepathy_channel_handler.c:237
+#: plugins/telepathy/telepathy_channel_handler.cpp:237
 #, fuzzy, c-format
 msgid ""
 "%s wants to share their desktop.\n"
@@ -4211,12 +4211,12 @@ msgstr ""
 "%s က သူတို့ရဲ့ desktop ကို မျှဝေချင်ပါတယ်။\n"
 "သင်လက်ခံပါသလား"
 
-#: plugins/telepathy/telepathy_channel_handler.c:240
+#: plugins/telepathy/telepathy_channel_handler.cpp:240
 #, fuzzy
 msgid "Desktop sharing invitation"
 msgstr "Desktop ဖိတ်ကြားချက် ဝေမျှခြင်း"
 
-#: plugins/telepathy/telepathy_plugin.c:57
+#: plugins/telepathy/telepathy_plugin.cpp:57
 #, fuzzy
 msgid "Telepathy - Desktop Sharing"
 msgstr "Telepathth - Desktop ဝေမျှခြင်း"

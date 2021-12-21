@@ -34,10 +34,10 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 #include "json-glib/json-glib.h"
 
 JsonNode *remmina_stats_get_all( void );
 
-G_END_DECLS
+

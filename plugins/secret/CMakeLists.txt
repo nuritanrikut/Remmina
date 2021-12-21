@@ -34,7 +34,7 @@
 
 find_suggested_package(Libsecret)
 if(LIBSECRET_FOUND)
-    set(REMMINA_PLUGIN_SECRET_SRCS src/glibsecret_plugin.c)
+    set(REMMINA_PLUGIN_SECRET_SRCS src/glibsecret_plugin.cpp)
 
     add_library(remmina-plugin-secret MODULE ${REMMINA_PLUGIN_SECRET_SRCS})
     set_target_properties(remmina-plugin-secret PROPERTIES PREFIX "")

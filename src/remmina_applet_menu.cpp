@@ -40,18 +40,18 @@
 #include <glib/gi18n.h>
 #include <string.h>
 
-#include "remmina_public.h"
-#include "remmina_applet_menu_item.h"
-#include "remmina_applet_menu.h"
-#include "remmina_file_manager.h"
-#include "remmina_pref.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_public.hpp"
+#include "remmina_applet_menu_item.hpp"
+#include "remmina_applet_menu.hpp"
+#include "remmina_file_manager.hpp"
+#include "remmina_pref.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 G_DEFINE_TYPE( RemminaAppletMenu, remmina_applet_menu, GTK_TYPE_MENU )
 
 struct _RemminaAppletMenuPriv
 {
-    gboolean hide_count;
+    bool hide_count;
 };
 
 enum
@@ -75,7 +75,7 @@ static void remmina_applet_menu_class_init( RemminaAppletMenuClass *klass )
     remmina_applet_menu_signals[LAUNCH_ITEM_SIGNAL] =
         g_signal_new( "launch-item",
                       G_TYPE_FROM_CLASS( klass ),
-                      G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
+                      static_cast<GSignalFlags>(G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION),
                       G_STRUCT_OFFSET( RemminaAppletMenuClass, launch_item ),
                       NULL,
                       NULL,
@@ -85,7 +85,7 @@ static void remmina_applet_menu_class_init( RemminaAppletMenuClass *klass )
                       G_TYPE_OBJECT );
     remmina_applet_menu_signals[EDIT_ITEM_SIGNAL] = g_signal_new( "edit-item",
                                                                   G_TYPE_FROM_CLASS( klass ),
-                                                                  G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
+                                                                  static_cast<GSignalFlags>(G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION),
                                                                   G_STRUCT_OFFSET( RemminaAppletMenuClass, edit_item ),
                                                                   NULL,
                                                                   NULL,
@@ -110,7 +110,7 @@ static void remmina_applet_menu_on_item_activate( RemminaAppletMenuItem *menuite
 }
 
 static GtkWidget *remmina_applet_menu_add_group( GtkWidget *menu,
-                                                 const gchar *group,
+                                                 const char *group,
                                                  gint position,
                                                  RemminaAppletMenuItem *menuitem,
                                                  GtkWidget **groupmenuitem )
@@ -148,11 +148,11 @@ static void remmina_applet_menu_increase_group_count( GtkWidget *widget )
 {
     TRACE_CALL( __func__ );
     gint cnt;
-    gchar *s;
+    char *s;
 
     cnt = GPOINTER_TO_INT( g_object_get_data( G_OBJECT( widget ), "count" ) ) + 1;
     g_object_set_data( G_OBJECT( widget ), "count", GINT_TO_POINTER( cnt ) );
-    s = g_strdup_printf( "%s (%i)", (const gchar *)g_object_get_data( G_OBJECT( widget ), "group" ), cnt );
+    s = g_strdup_printf( "%s (%i)", (const char *)g_object_get_data( G_OBJECT( widget ), "group" ), cnt );
     gtk_menu_item_set_label( GTK_MENU_ITEM( widget ), s );
     g_free( s );
 }
@@ -169,7 +169,7 @@ void remmina_applet_menu_add_item( RemminaAppletMenu *menu, RemminaAppletMenuIte
     GtkWidget *submenu;
     GtkWidget *groupmenuitem;
     GtkMenuItem *submenuitem;
-    gchar *s, *p1, *p2, *mstr;
+    char *s, *p1, *p2, *mstr;
     GList *childs, *child;
     gint position;
 
@@ -192,7 +192,7 @@ void remmina_applet_menu_add_item( RemminaAppletMenu *menu, RemminaAppletMenuIte
             submenuitem = GTK_MENU_ITEM( child->data );
             if( gtk_menu_item_get_submenu( submenuitem ) )
             {
-                mstr = (gchar *)g_object_get_data( G_OBJECT( submenuitem ), "group" );
+                mstr = (char *)g_object_get_data( G_OBJECT( submenuitem ), "group" );
                 if( g_strcmp0( p1, mstr ) == 0 )
                 {
                     /* Found existing group menu */
@@ -270,7 +270,7 @@ GtkWidget *remmina_applet_menu_new( void )
     return GTK_WIDGET( menu );
 }
 
-void remmina_applet_menu_set_hide_count( RemminaAppletMenu *menu, gboolean hide_count )
+void remmina_applet_menu_set_hide_count( RemminaAppletMenu *menu, bool hide_count )
 {
     TRACE_CALL( __func__ );
     menu->priv->hide_count = hide_count;
@@ -280,13 +280,13 @@ void remmina_applet_menu_populate( RemminaAppletMenu *menu )
 {
     TRACE_CALL( __func__ );
     GtkWidget *menuitem;
-    gchar filename[MAX_PATH_LEN];
+    char filename[MAX_PATH_LEN];
     GDir *dir;
-    gchar *remmina_data_dir;
-    const gchar *name;
+    char *remmina_data_dir;
+    const char *name;
     gint count = 0;
 
-    gboolean new_ontop = remmina_pref.applet_new_ontop;
+    bool new_ontop = remmina_pref.applet_new_ontop;
 
     remmina_data_dir = remmina_file_get_datadir();
     dir = g_dir_open( remmina_data_dir, 0, NULL );

@@ -40,10 +40,10 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include "remmina/remmina_trace_calls.h"
-#include "remmina_sysinfo.h"
+#include "remmina/remmina_trace_calls.hpp"
+#include "remmina_sysinfo.hpp"
 
-gboolean remmina_sysinfo_is_appindicator_available()
+int remmina_sysinfo_is_appindicator_available()
 {
     /* Check if we have an appindicator available (which uses
 	 * DBUS KDE StatusNotifier)
@@ -53,7 +53,7 @@ gboolean remmina_sysinfo_is_appindicator_available()
     GDBusConnection *con;
     GVariant *v;
     GError *error;
-    gboolean available;
+    bool available;
 
     available = FALSE;
     con = g_bus_get_sync( G_BUS_TYPE_SESSION, NULL, NULL );
@@ -86,7 +86,7 @@ gboolean remmina_sysinfo_is_appindicator_available()
  * @return the GNOME Shell version as a string or NULL if error or no GNOME Shell found.
  * @warning The returned string must be freed with g_free.
  */
-gchar *remmina_sysinfo_get_gnome_shell_version()
+char *remmina_sysinfo_get_gnome_shell_version()
 {
     TRACE_CALL( __func__ );
     GDBusConnection *con;
@@ -94,7 +94,7 @@ gchar *remmina_sysinfo_get_gnome_shell_version()
     GVariant *v;
     GError *error;
     gsize sz;
-    gchar *ret;
+    char *ret;
 
     ret = NULL;
 
@@ -103,7 +103,7 @@ gchar *remmina_sysinfo_get_gnome_shell_version()
     {
         error = NULL;
         p = g_dbus_proxy_new_sync( con,
-                                   G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS | G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
+                                   static_cast<GDBusProxyFlags>(G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS | G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START),
                                    NULL,
                                    "org.gnome.Shell",
                                    "/org/gnome/Shell",
@@ -134,12 +134,12 @@ gchar *remmina_sysinfo_get_gnome_shell_version()
  * or \0 if nothing has been found.
  * @warning The returned string must be freed with g_free.
  */
-gchar *remmina_sysinfo_get_wm_name()
+char *remmina_sysinfo_get_wm_name()
 {
     TRACE_CALL( __func__ );
-    const gchar *xdg_current_desktop;
-    const gchar *gdmsession;
-    gchar *ret;
+    const char *xdg_current_desktop;
+    const char *gdmsession;
+    char *ret;
 
     xdg_current_desktop = g_environ_getenv( g_get_environ(), "XDG_CURRENT_DESKTOP" );
     gdmsession = g_environ_getenv( g_get_environ(), "GDMSESSION" );

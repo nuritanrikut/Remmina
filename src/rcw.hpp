@@ -36,10 +36,10 @@
 
 #pragma once
 
-#include "remmina_file.h"
-#include "remmina_message_panel.h"
+#include "remmina_file.hpp"
+#include "remmina_message_panel.hpp"
 
-G_BEGIN_DECLS
+
 
 #define REMMINA_TYPE_CONNECTION_WINDOW ( rcw_get_type() )
 #define RCW( obj ) ( G_TYPE_CHECK_INSTANCE_CAST( ( obj ), REMMINA_TYPE_CONNECTION_WINDOW, RemminaConnectionWindow ) )
@@ -76,10 +76,10 @@ typedef enum
 GType rcw_get_type( void ) G_GNUC_CONST;
 
 /* Open a new connection window for a .remmina file */
-gboolean rcw_open_from_filename( const gchar *filename );
+int rcw_open_from_filename( const char *filename );
 /* Open a new connection window for a given RemminaFile struct. The struct will be freed after the call */
 void rcw_open_from_file( RemminaFile *remminafile );
-gboolean rcw_delete( RemminaConnectionWindow *cnnwin );
+int rcw_delete( RemminaConnectionWindow *cnnwin );
 void rcw_set_delete_confirm_mode( RemminaConnectionWindow *cnnwin, RemminaConnectionWindowOnDeleteConfirmMode mode );
 GtkWidget *rcw_open_from_file_full( RemminaFile *remminafile, GCallback disconnect_cb, gpointer data, guint *handler );
 GtkWindow *rcw_get_gtkwindow( RemminaConnectionObject *cnnobj );
@@ -92,4 +92,4 @@ void rco_get_monitor_geometry( RemminaConnectionObject *cnnobj, GdkRectangle *sz
 #define MESSAGE_PANEL_SPINNER 0x00000001
 #define MESSAGE_PANEL_OKBUTTON 0x00000002
 
-G_END_DECLS
+

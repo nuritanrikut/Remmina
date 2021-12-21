@@ -36,8 +36,8 @@
 
 #include <gtk/gtk.h>
 #include "config.h"
-#include "remmina_avahi.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_avahi.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 #ifdef HAVE_LIBAVAHI_CLIENT
 
@@ -53,7 +53,7 @@ struct _RemminaAvahiPriv
     AvahiClient *client;
     AvahiServiceBrowser *sb;
     guint iterate_handler;
-    gboolean has_event;
+    bool has_event;
 };
 
 static void remmina_avahi_resolve_callback( AvahiServiceResolver *r,
@@ -71,8 +71,8 @@ static void remmina_avahi_resolve_callback( AvahiServiceResolver *r,
                                             AVAHI_GCC_UNUSED void *userdata )
 {
     TRACE_CALL( __func__ );
-    gchar *key;
-    gchar *value;
+    char *key;
+    char *value;
     RemminaAvahi *ga = (RemminaAvahi *)userdata;
 
     assert( r );
@@ -119,7 +119,7 @@ static void remmina_avahi_browse_callback( AvahiServiceBrowser *b,
                                            void *userdata )
 {
     TRACE_CALL( __func__ );
-    gchar *key;
+    char *key;
     RemminaAvahi *ga = (RemminaAvahi *)userdata;
 
     assert( b );
@@ -152,7 +152,7 @@ static void remmina_avahi_browse_callback( AvahiServiceBrowser *b,
                                                type,
                                                domain,
                                                AVAHI_PROTO_UNSPEC,
-                                               0,
+                                               static_cast<AvahiLookupFlags>(0),
                                                remmina_avahi_resolve_callback,
                                                ga ) ) )
             {
@@ -191,7 +191,7 @@ static void remmina_avahi_client_callback( AvahiClient *c, AvahiClientState stat
     }
 }
 
-static gboolean remmina_avahi_iterate( RemminaAvahi *ga )
+static int remmina_avahi_iterate( RemminaAvahi *ga )
 {
     TRACE_CALL( __func__ );
     while( TRUE )
@@ -242,7 +242,7 @@ void remmina_avahi_start( RemminaAvahi *ga )
     }
 
     ga->priv->client = avahi_client_new(
-        avahi_simple_poll_get( ga->priv->simple_poll ), 0, remmina_avahi_client_callback, ga, &error );
+        avahi_simple_poll_get( ga->priv->simple_poll ), static_cast<AvahiClientFlags>(0), remmina_avahi_client_callback, ga, &error );
     if( !ga->priv->client )
     {
         g_print( "Failed to create client: %s\n", avahi_strerror( error ) );
@@ -255,7 +255,7 @@ void remmina_avahi_start( RemminaAvahi *ga )
                                               AVAHI_PROTO_UNSPEC,
                                               "_rfb._tcp",
                                               NULL,
-                                              0,
+                                              static_cast<AvahiLookupFlags>(0),
                                               remmina_avahi_browse_callback,
                                               ga );
     if( !ga->priv->sb )

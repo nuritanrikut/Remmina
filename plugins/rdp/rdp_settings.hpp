@@ -35,7 +35,6 @@
 
 #pragma once
 
-G_BEGIN_DECLS
 
 void remmina_rdp_settings_init( void );
 guint remmina_rdp_settings_get_keyboard_layout( void );
@@ -45,4 +44,3 @@ void remmina_rdp_settings_get_orientation_scale_prefs( int *desktopOrientation,
                                                        int *desktopScaleFactor,
                                                        int *deviceScaleFactor );
 
-G_END_DECLS

@@ -32,12 +32,12 @@
  *
  */
 
-#include "gvnc_plugin_config.h"
-#include "gvnc_plugin.h"
+#include "gvnc_plugin_config.hpp"
+#include "gvnc_plugin.hpp"
 
-#include <vncdisplay.h>
-#include <vncutil.h>
-#include <vncaudiopulse.h>
+#include <vncdisplay.hpp>
+#include <vncutil.hpp>
+#include <vncaudiopulse.hpp>
 
 #define GVNC_DEFAULT_PORT 5900
 
@@ -79,10 +79,10 @@ enum
 static RemminaPluginService *remmina_plugin_service = NULL;
 #define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )
 
-gchar *str_replace( const gchar *string, const gchar *search, const gchar *replacement )
+char *str_replace( const char *string, const char *search, const char *replacement )
 {
     TRACE_CALL( __func__ );
-    gchar *str, **arr;
+    char *str, **arr;
 
     g_return_val_if_fail( string != NULL, NULL );
     g_return_val_if_fail( search != NULL, NULL );
@@ -132,7 +132,7 @@ static void gvnc_plugin_mouse_grab( GtkWidget *vncdisplay, RemminaProtocolWidget
     TRACE_CALL( __func__ );
     GVncPluginData *gpdata = GET_PLUGIN_DATA( gp );
     VncGrabSequence *seq = vnc_display_get_grab_keys( VNC_DISPLAY( gpdata->vnc ) );
-    gchar *seqstr = vnc_grab_sequence_as_string( seq );
+    char *seqstr = vnc_grab_sequence_as_string( seq );
 
     REMMINA_PLUGIN_DEBUG( "Pointer grabbed: %s", seqstr );
 }
@@ -143,7 +143,7 @@ static void gvnc_plugin_mouse_ungrab( GtkWidget *vncdisplay, RemminaProtocolWidg
     REMMINA_PLUGIN_DEBUG( "Pointer ungrabbed" );
 }
 
-static void gvnc_plugin_on_vnc_error( GtkWidget *vncdisplay G_GNUC_UNUSED, const gchar *msg, RemminaProtocolWidget *gp )
+static void gvnc_plugin_on_vnc_error( GtkWidget *vncdisplay G_GNUC_UNUSED, const char *msg, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     GVncPluginData *gpdata = GET_PLUGIN_DATA( gp );
@@ -155,9 +155,9 @@ static void gvnc_plugin_on_vnc_error( GtkWidget *vncdisplay G_GNUC_UNUSED, const
     gpdata->error_msg = g_strdup( msg );
 }
 
-static gboolean gvnc_plugin_get_screenshot( RemminaProtocolWidget *gp, RemminaPluginScreenshotData *rpsd )
+static int gvnc_plugin_get_screenshot( RemminaProtocolWidget *gp, RemminaPluginScreenshotData *rpsd )
     __attribute__( ( unused ) );
-static gboolean gvnc_plugin_get_screenshot( RemminaProtocolWidget *gp, RemminaPluginScreenshotData *rpsd )
+static int gvnc_plugin_get_screenshot( RemminaProtocolWidget *gp, RemminaPluginScreenshotData *rpsd )
 {
     GVncPluginData *gpdata = GET_PLUGIN_DATA( gp );
     //gsize szmem;
@@ -191,11 +191,11 @@ static gboolean gvnc_plugin_get_screenshot( RemminaProtocolWidget *gp, RemminaPl
     return TRUE;
 }
 
-void gvnc_plugin_paste_text( RemminaProtocolWidget *gp, const gchar *text )
+void gvnc_plugin_paste_text( RemminaProtocolWidget *gp, const char *text )
 {
     TRACE_CALL( __func__ );
     GVncPluginData *gpdata = GET_PLUGIN_DATA( gp );
-    gchar *out;
+    char *out;
     gsize a, b;
     GError *error = NULL;
 
@@ -220,7 +220,7 @@ static void gvnc_plugin_clipboard_cb( GtkClipboard *cb, GdkEvent *event, Remmina
 {
     TRACE_CALL( __func__ );
     //GVncPluginData *gpdata = GET_PLUGIN_DATA(gp);
-    gchar *text;
+    char *text;
 
     REMMINA_PLUGIN_DEBUG( "owner-change event received" );
 
@@ -250,7 +250,7 @@ static void gvnc_plugin_clipboard_copy( GtkClipboard *clipboard G_GNUC_UNUSED,
     REMMINA_PLUGIN_DEBUG( "Text copied" );
 }
 
-static void gvnc_plugin_cut_text( VncDisplay *vnc G_GNUC_UNUSED, const gchar *text, RemminaProtocolWidget *gp )
+static void gvnc_plugin_cut_text( VncDisplay *vnc G_GNUC_UNUSED, const char *text, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     GVncPluginData *gpdata = GET_PLUGIN_DATA( gp );
@@ -360,7 +360,7 @@ static void gvnc_plugin_update_scale_mode( RemminaProtocolWidget *gp )
     remmina_plugin_service->protocol_plugin_update_align( gp );
 }
 
-static gboolean gvnc_plugin_query_feature( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature )
+static int gvnc_plugin_query_feature( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature )
 {
     TRACE_CALL( __func__ );
 
@@ -486,34 +486,34 @@ gvnc_plugin_auth_unsupported( VncDisplay *vnc G_GNUC_UNUSED, unsigned int authTy
     GVncPluginData *gpdata = GET_PLUGIN_DATA( gp );
 
     g_clear_pointer( &gpdata->error_msg, g_free );
-    gchar *msg = g_strdup_printf( _( "Unsupported authentication type %u" ), authType );
+    char *msg = g_strdup_printf( _( "Unsupported authentication type %u" ), authType );
 
     remmina_plugin_service->protocol_plugin_set_error( gp, "%s", msg );
     g_free( msg );
 }
 
-static void gvnc_plugin_auth_failure( VncDisplay *vnc G_GNUC_UNUSED, const gchar *reason, RemminaProtocolWidget *gp )
+static void gvnc_plugin_auth_failure( VncDisplay *vnc G_GNUC_UNUSED, const char *reason, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     GVncPluginData *gpdata = GET_PLUGIN_DATA( gp );
 
     g_clear_pointer( &gpdata->error_msg, g_free );
-    gchar *msg = g_strdup_printf( _( "Authentication failure: %s" ), reason );
+    char *msg = g_strdup_printf( _( "Authentication failure: %s" ), reason );
 
     remmina_plugin_service->protocol_plugin_set_error( gp, "%s", msg );
     g_free( msg );
 }
 
-static gboolean gvnc_plugin_ask_auth( GtkWidget *vncdisplay, GValueArray *credList, RemminaProtocolWidget *gp )
+static int gvnc_plugin_ask_auth( GtkWidget *vncdisplay, GValueArray *credList, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
 
     gint ret;
-    gboolean disablepasswordstoring;
-    gchar *s_username = NULL, *s_password = NULL;
-    gboolean wantPassword = FALSE, wantUsername = FALSE;
+    bool disablepasswordstoring;
+    char *s_username = NULL, *s_password = NULL;
+    bool wantPassword = FALSE, wantUsername = FALSE;
     int i;
-    gboolean save;
+    bool save;
 
     GVncPluginData *gpdata = GET_PLUGIN_DATA( gp );
     RemminaFile *remminafile = remmina_plugin_service->protocol_plugin_get_file( gp );
@@ -565,7 +565,7 @@ static gboolean gvnc_plugin_ask_auth( GtkWidget *vncdisplay, GValueArray *credLi
         {
             // User has requested to save credentials. We put the password
             // into remminafile->settings. It will be saved later, on successful connection, by
-            // rcw.c
+            // rcw.cpp
             remmina_plugin_service->file_set_string( remminafile, "password", s_password );
         }
         else
@@ -685,7 +685,7 @@ static void gvnc_plugin_disconnected( VncDisplay *vnc G_GNUC_UNUSED, RemminaProt
 
     REMMINA_PLUGIN_DEBUG( "[%s] Plugin disconnected", PLUGIN_NAME );
 }
-static gboolean gvnc_plugin_close_connection( RemminaProtocolWidget *gp )
+static int gvnc_plugin_close_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     GVncPluginData *gpdata = GET_PLUGIN_DATA( gp );
@@ -751,12 +751,12 @@ static void gvnc_plugin_init( RemminaProtocolWidget *gp )
     gpdata->signal_clipboard = g_signal_connect( cb, "owner-change", G_CALLBACK( gvnc_plugin_clipboard_cb ), gp );
 }
 
-static gboolean gvnc_plugin_open_connection( RemminaProtocolWidget *gp )
+static int gvnc_plugin_open_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
 
     gint port;
-    gchar *host = NULL, *tunnel = NULL;
+    char *host = NULL, *tunnel = NULL;
     GVncPluginData *gpdata = GET_PLUGIN_DATA( gp );
     RemminaFile *remminafile = remmina_plugin_service->protocol_plugin_get_file( gp );
 
@@ -770,11 +770,11 @@ static gboolean gvnc_plugin_open_connection( RemminaProtocolWidget *gp )
 
     remmina_plugin_service->protocol_plugin_register_hostkey( gp, gpdata->vnc );
 
-    const gchar *address = remmina_plugin_service->file_get_string( remminafile, "server" );
+    const char *address = remmina_plugin_service->file_get_string( remminafile, "server" );
     if( strstr( g_strdup( address ), "unix:///" ) != NULL )
     {
         REMMINA_PLUGIN_DEBUG( "address contain unix:// -> %s", address );
-        gchar *val = str_replace( address, "unix://", "" );
+        char *val = str_replace( address, "unix://", "" );
         REMMINA_PLUGIN_DEBUG( "address after cleaning = %s", val );
         gint fd = remmina_plugin_service->open_unix_sock( val );
         REMMINA_PLUGIN_DEBUG( "Unix socket fd: %d", fd );
@@ -848,9 +848,9 @@ static gpointer colordepth_list[] = { "0",
  * g) Validation data pointer, will be passed to the validation callback method.
  * h) Validation callback method (Can be NULL. Every entry will be valid then.)
  *		use following prototype:
- *		gboolean mysetting_validator_method(gpointer key, gpointer value,
+ *		bool mysetting_validator_method(gpointer key, gpointer value,
  *						    gpointer validator_data);
- *		gpointer key is a gchar* containing the setting's name,
+ *		gpointer key is a char* containing the setting's name,
  *		gpointer value contains the value which should be validated,
  *		gpointer validator_data contains your passed data.
  */
@@ -1025,16 +1025,19 @@ static RemminaProtocolPlugin remmina_plugin = {
     NULL  // RCW unmap event
 };
 
-G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
+extern "C"
 {
-    TRACE_CALL( __func__ );
-    remmina_plugin_service = service;
+    G_MODULE_EXPORT int remmina_plugin_entry( RemminaPluginService *service )
+    {
+        TRACE_CALL( __func__ );
+        remmina_plugin_service = service;
 
-    bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
-    bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
+        bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
+        bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
 
-    if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin ) )
-        return FALSE;
+        if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin ) )
+            return FALSE;
 
-    return TRUE;
+        return TRUE;
+    }
 }

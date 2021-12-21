@@ -33,7 +33,7 @@
  */
 
 /**
- * @file remmina_plugin_python_module.c
+ * @file remmina_plugin_python_module.cpp
  * @brief Implementation of the Python module 'remmina'.
  * @author Mathias Winterhalter
  * @date 14.10.2020
@@ -50,13 +50,13 @@
 #include <gtk/gtk.h>
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
-#include <structmember.h>
+#include <structmember.hpp>
 
 #include "config.h"
-#include "remmina_plugin_manager.h"
-#include "remmina_plugin_python_remmina.h"
-#include "remmina/plugin.h"
-#include "remmina_protocol_widget.h"
+#include "remmina_plugin_manager.hpp"
+#include "remmina_plugin_python_remmina.hpp"
+#include "remmina/plugin.hpp"
+#include "remmina_protocol_widget.hpp"
 
 /**
  * @brief Handles the initialization of the Python plugin.
@@ -79,7 +79,7 @@ static void remmina_protocol_init_wrapper( RemminaProtocolWidget *gp )
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static gboolean remmina_protocol_open_connection_wrapper( RemminaProtocolWidget *gp )
+static int remmina_protocol_open_connection_wrapper( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     remmina_plugin_manager_service.protocol_plugin_signal_connection_opened( gp );
@@ -94,7 +94,7 @@ static gboolean remmina_protocol_open_connection_wrapper( RemminaProtocolWidget 
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static gboolean remmina_protocol_close_connection_wrapper( RemminaProtocolWidget *gp )
+static int remmina_protocol_close_connection_wrapper( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     PyPlugin *py_plugin = remmina_plugin_python_module_get_plugin( gp );
@@ -108,7 +108,7 @@ static gboolean remmina_protocol_close_connection_wrapper( RemminaProtocolWidget
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static gboolean remmina_protocol_query_feature_wrapper( RemminaProtocolPlugin *plugin,
+static int remmina_protocol_query_feature_wrapper( RemminaProtocolPlugin *plugin,
                                                         RemminaProtocolWidget *gp,
                                                         const RemminaProtocolFeature *feature )
 {
@@ -155,7 +155,7 @@ static void remmina_protocol_send_keytrokes_wrapper( RemminaProtocolPlugin *plug
  *
  * @param   gp  The protocol widget used by the plugin.
  */
-static gboolean remmina_protocol_get_plugin_screenshot_wrapper( RemminaProtocolPlugin *plugin,
+static int remmina_protocol_get_plugin_screenshot_wrapper( RemminaProtocolPlugin *plugin,
                                                                 RemminaProtocolWidget *gp,
                                                                 RemminaPluginScreenshotData *rpsd )
 {
@@ -165,7 +165,7 @@ static gboolean remmina_protocol_get_plugin_screenshot_wrapper( RemminaProtocolP
     return result == Py_True;
 }
 
-static long GetEnumOrDefault( PyObject *instance, gchar *constant_name, long def )
+static long GetEnumOrDefault( PyObject *instance, char *constant_name, long def )
 {
     PyObject *attr = PyObject_GetAttrString( instance, constant_name );
     if( attr && PyLong_Check( attr ) )

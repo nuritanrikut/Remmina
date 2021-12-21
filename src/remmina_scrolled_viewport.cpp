@@ -36,9 +36,9 @@
 
 #include <gtk/gtk.h>
 #include "config.h"
-#include "remmina_scrolled_viewport.h"
-#include "remmina_pref.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_scrolled_viewport.hpp"
+#include "remmina_pref.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 G_DEFINE_TYPE( RemminaScrolledViewport, remmina_scrolled_viewport, GTK_TYPE_EVENT_BOX )
 
@@ -70,7 +70,7 @@ remmina_scrolled_viewport_get_preferred_height( GtkWidget *widget, gint *minimum
  * relay the fact that this specific occurrence of timeout has been cancelled.
  * A new one may be scheduled if the mouse pointer moves to the edge again.
  */
-static gboolean remmina_scrolled_viewport_motion_timeout( gpointer data )
+static int remmina_scrolled_viewport_motion_timeout( gpointer data )
 {
     TRACE_CALL( __func__ );
     RemminaScrolledViewport *gsv;
@@ -156,14 +156,14 @@ static gboolean remmina_scrolled_viewport_motion_timeout( gpointer data )
     return TRUE;
 }
 
-static gboolean remmina_scrolled_viewport_enter( GtkWidget *widget, GdkEventCrossing *event, gpointer data )
+static int remmina_scrolled_viewport_enter( GtkWidget *widget, GdkEventCrossing *event, gpointer data )
 {
     TRACE_CALL( __func__ );
     remmina_scrolled_viewport_remove_motion( REMMINA_SCROLLED_VIEWPORT( widget ) );
     return FALSE;
 }
 
-static gboolean remmina_scrolled_viewport_leave( GtkWidget *widget, GdkEventCrossing *event, gpointer data )
+static int remmina_scrolled_viewport_leave( GtkWidget *widget, GdkEventCrossing *event, gpointer data )
 {
     TRACE_CALL( __func__ );
     RemminaScrolledViewport *gsv = REMMINA_SCROLLED_VIEWPORT( widget );

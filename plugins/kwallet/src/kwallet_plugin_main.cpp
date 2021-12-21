@@ -38,21 +38,21 @@
 #include <glib.h>
 #include <glib/gi18n-lib.h>
 #include <glib/gstdio.h>
-#include <remmina/plugin.h>
+#include <remmina/plugin.hpp>
 
-#include "kwallet_plugin.h"
+#include "kwallet_plugin.hpp"
 
 static RemminaPluginService *remmina_plugin_service = NULL;
 
-gboolean remmina_plugin_kwallet_is_service_available()
+int remmina_plugin_kwallet_is_service_available()
 {
     return rp_kwallet_is_service_available();
 }
 
-static gchar *build_kwallet_key( RemminaFile *remminafile, const gchar *key )
+static char *build_kwallet_key( RemminaFile *remminafile, const char *key )
 {
-    const gchar *path;
-    gchar *kwkey;
+    const char *path;
+    char *kwkey;
     size_t kwkey_sz;
 
     path = remmina_plugin_service->file_get_path( remminafile );
@@ -67,19 +67,19 @@ static gchar *build_kwallet_key( RemminaFile *remminafile, const gchar *key )
     return kwkey;
 }
 
-void remmina_plugin_kwallet_store_password( RemminaFile *remminafile, const gchar *key, const gchar *password )
+void remmina_plugin_kwallet_store_password( RemminaFile *remminafile, const char *key, const char *password )
 {
     TRACE_CALL( __func__ );
-    gchar *kwkey;
+    char *kwkey;
     kwkey = build_kwallet_key( remminafile, key );
     rp_kwallet_store_password( kwkey, password );
     g_free( kwkey );
 }
 
-gchar *remmina_plugin_kwallet_get_password( RemminaFile *remminafile, const gchar *key )
+char *remmina_plugin_kwallet_get_password( RemminaFile *remminafile, const char *key )
 {
     TRACE_CALL( __func__ );
-    gchar *kwkey, *password;
+    char *kwkey, *password;
 
     kwkey = build_kwallet_key( remminafile, key );
     password = rp_kwallet_get_password( kwkey );
@@ -88,19 +88,19 @@ gchar *remmina_plugin_kwallet_get_password( RemminaFile *remminafile, const gcha
     return password;
 }
 
-void remmina_plugin_kwallet_delete_password( RemminaFile *remminafile, const gchar *key )
+void remmina_plugin_kwallet_delete_password( RemminaFile *remminafile, const char *key )
 {
     TRACE_CALL( __func__ );
-    gchar *kwkey;
+    char *kwkey;
     kwkey = build_kwallet_key( remminafile, key );
     rp_kwallet_delete_password( kwkey );
     g_free( kwkey );
 }
 
-gboolean remmina_plugin_kwallet_init()
+int remmina_plugin_kwallet_init()
 {
     /* Activates only when KDE is running */
-    const gchar *envvar;
+    const char *envvar;
 
     envvar = g_environ_getenv( g_get_environ(), "XDG_CURRENT_DESKTOP" );
     if( !envvar || strcmp( envvar, "KDE" ) != 0 )
@@ -123,19 +123,22 @@ static RemminaSecretPlugin remmina_plugin_kwallet = {
     remmina_plugin_kwallet_delete_password,
 };
 
-G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
+extern "C"
 {
-    TRACE_CALL( __func__ );
+    G_MODULE_EXPORT int remmina_plugin_entry( RemminaPluginService *service )
+    {
+        TRACE_CALL( __func__ );
 
-    /* This function should only register the secret plugin. No init action
+        /* This function should only register the secret plugin. No init action
 	 * should be performed here. Initialization will be done later
 	 * with remmina_plugin_xxx_init() . */
 
-    remmina_plugin_service = service;
-    if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin_kwallet ) )
-    {
-        return FALSE;
-    }
+        remmina_plugin_service = service;
+        if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin_kwallet ) )
+        {
+            return FALSE;
+        }
 
-    return TRUE;
+        return TRUE;
+    }
 }

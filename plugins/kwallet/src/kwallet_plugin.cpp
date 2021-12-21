@@ -34,7 +34,7 @@
  */
 
 
-#include "kwallet_plugin.h"
+#include "kwallet_plugin.hpp"
 #include <KWallet>
 
 static KWallet::Wallet* wallet;

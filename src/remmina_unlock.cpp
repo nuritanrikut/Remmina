@@ -40,18 +40,18 @@
 #include <glib/gprintf.h>
 
 #include "config.h"
-#include "remmina_sodium.h"
-#include "remmina_pref.h"
-#include "remmina_unlock.h"
-#include "remmina_public.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_sodium.hpp"
+#include "remmina_pref.hpp"
+#include "remmina_unlock.hpp"
+#include "remmina_public.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 #if SODIUM_VERSION_INT >= 90200
 static RemminaUnlockDialog *remmina_unlock_dialog;
 #    define GET_OBJ( object_name ) gtk_builder_get_object( remmina_unlock_dialog->builder, object_name )
 
 GTimer *timer;
-gboolean isinit;
+bool isinit;
 
 static void remmina_unlock_timer_init()
 {
@@ -81,8 +81,8 @@ static void remmina_unlock_unlock_clicked( GtkButton *btn, gpointer user_data )
     TRACE_CALL( __func__ );
     //g_timer_reset(remmina_unlock_dialog->timer);
 
-    gchar *unlock_password;
-    const gchar *entry_passwd;
+    char *unlock_password;
+    const char *entry_passwd;
     gint rc;
 
     unlock_password = remmina_pref_get_value( "unlock_password" );
@@ -117,7 +117,7 @@ gint remmina_unlock_new( GtkWindow *parent )
 
     gdouble unlock_timeout;
     gdouble elapsed = 0.0;
-    gboolean lock = TRUE;
+    bool lock = TRUE;
 
     unlock_timeout = remmina_pref.unlock_timeout;
 

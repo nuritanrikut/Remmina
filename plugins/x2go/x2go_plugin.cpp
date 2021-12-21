@@ -41,8 +41,8 @@
  *
  */
 
-#include "x2go_plugin.h"
-#include "common/remmina_plugin.h"
+#include "x2go_plugin.hpp"
+#include "common/remmina_plugin.hpp"
 
 #include <gtk/gtkx.h>
 #include <gdk/gdkx.h>
@@ -72,7 +72,7 @@
 #define SET_RESUME_SESSION( gp, resume_data ) \
     g_object_set_data_full( G_OBJECT( gp ), "resume-session-data", resume_data, g_free )
 
-#define GET_RESUME_SESSION( gp ) (gchar *)g_object_get_data( G_OBJECT( gp ), "resume-session-data" )
+#define GET_RESUME_SESSION( gp ) (char *)g_object_get_data( G_OBJECT( gp ), "resume-session-data" )
 
 // A session is selected if the returning value is something other than 0.
 #define IS_SESSION_SELECTED( gp ) g_object_get_data( G_OBJECT( gp ), "session-selected" ) ? TRUE : FALSE
@@ -122,7 +122,7 @@ typedef struct _RemminaPluginX2GoData
 
     GPid pidx2go;
 
-    gboolean disconnected;
+    bool disconnected;
 
     GList *available_features;
 } RemminaPluginX2GoData;
@@ -192,9 +192,9 @@ typedef enum _str2int_errno
  *
  * @return Indicates if the operation succeeded, or why it failed with str2int_errno enum.
  */
-str2int_errno str2int( gint *out, gchar *s, gint base )
+str2int_errno str2int( gint *out, char *s, gint base )
 {
-    gchar *end;
+    char *end;
 
     if( !s || !out || base <= 0 )
         return STR2INT_INVALID_DATA;
@@ -236,7 +236,7 @@ str2int_errno str2int( gint *out, gchar *s, gint base )
  * rmplugin_x2go_open_dialog()
  *
  * Quick example of a callback function: \n
- * static gboolean rmplugin_x2go_test_callback(RemminaProtocolWidget *gp, gint response_id, \n
+ * static int rmplugin_x2go_test_callback(RemminaProtocolWidget *gp, gint response_id, \n
  *					       GtkDialog *self) { \n
  *	REMMINA_PLUGIN_DEBUG("response: %i", response_id); \n
  *	if (response_id == GTK_RESPONSE_OK) { \n
@@ -253,8 +253,8 @@ struct _DialogData
     GtkDialogFlags flags;
     GtkMessageType type;
     GtkButtonsType buttons;
-    gchar *title;
-    gchar *message;
+    char *title;
+    char *message;
     GCallback callbackfunc;
 
     // If the dialog needs to be custom.
@@ -270,7 +270,7 @@ struct _DialogData
  * 	     #G_SOURCE_CONTINUE and #G_SOURCE_REMOVE are more memorable
  *	     names for the return value.
  */
-static gboolean rmplugin_x2go_open_dialog( X2GoCustomUserData *custom_data )
+static int rmplugin_x2go_open_dialog( X2GoCustomUserData *custom_data )
 {
     REMMINA_PLUGIN_DEBUG( "Function entry." );
 
@@ -366,10 +366,10 @@ enum SESSION_CHOOSER_RESPONSE_TYPE
  *	       default string)
  * @return GtkWidget*
  */
-static GtkWidget *rmplugin_x2go_find_child( GtkWidget *parent, const gchar *name )
+static GtkWidget *rmplugin_x2go_find_child( GtkWidget *parent, const char *name )
 {
-    const gchar *parent_name = gtk_widget_get_name( (GtkWidget *)parent );
-    if( g_ascii_strcasecmp( parent_name, (gchar *)name ) == 0 )
+    const char *parent_name = gtk_widget_get_name( (GtkWidget *)parent );
+    if( g_ascii_strcasecmp( parent_name, (char *)name ) == 0 )
     {
         return parent;
     }
@@ -408,10 +408,10 @@ static GtkWidget *rmplugin_x2go_find_child( GtkWidget *parent, const gchar *name
  *				gp -> gp (RemminaProtocolWidget*) \n
  *				opt1 -> dialog widget (GtkWidget*)
  */
-static gboolean rmplugin_x2go_session_chooser_row_activated( GtkTreeView *treeview,
-                                                             GtkTreePath *path,
-                                                             GtkTreeViewColumn *column,
-                                                             X2GoCustomUserData *custom_data )
+static int rmplugin_x2go_session_chooser_row_activated( GtkTreeView *treeview,
+                                                        GtkTreePath *path,
+                                                        GtkTreeViewColumn *column,
+                                                        X2GoCustomUserData *custom_data )
 {
     REMMINA_PLUGIN_DEBUG( "Function entry." );
 
@@ -428,7 +428,7 @@ static gboolean rmplugin_x2go_session_chooser_row_activated( GtkTreeView *treevi
     // connect_data (unused)
     GtkWidget *dialog = GTK_WIDGET( custom_data->opt1 );
 
-    gchar *session_id;
+    char *session_id;
     GtkTreeIter iter;
     GtkTreeModel *model = gtk_tree_view_get_model( treeview );
 
@@ -444,7 +444,7 @@ static gboolean rmplugin_x2go_session_chooser_row_activated( GtkTreeView *treevi
 
         // Unstucking main process. Telling it that a session has been selected.
         // We use a trick here. As long as there is something other than 0
-        // stored, a session is selected. So we use the gpointer as a gboolean.
+        // stored, a session is selected. So we use the gpointer as a bool.
         SET_SESSION_SELECTED( gp, (gpointer)TRUE );
         gtk_widget_hide( GTK_WIDGET( dialog ) );
         gtk_widget_destroy( GTK_WIDGET( dialog ) );
@@ -458,11 +458,11 @@ static gboolean rmplugin_x2go_session_chooser_row_activated( GtkTreeView *treevi
  *	  string containing it's display name.
  *
  * @param session_property A session property. (as described by SESSION_PROPERTIES enum)
- * @return gchar* Translated display name. (Can be NULL, if session_property is invalid!)
+ * @return char* Translated display name. (Can be NULL, if session_property is invalid!)
  */
-static gchar *rmplugin_x2go_session_property_to_string( guint session_property )
+static char *rmplugin_x2go_session_property_to_string( guint session_property )
 {
-    gchar *return_char = NULL;
+    char *return_char = NULL;
 
     switch( session_property )
     {
@@ -522,7 +522,7 @@ static gchar *rmplugin_x2go_session_property_to_string( guint session_property )
  *				connect_data -> connection data (struct _ConnectionData*)
  * @param sessions_list The GList* Should contain all found X2Go-Sessions.
  *			Sessions are string arrays of properties.
- *			The type of the GList is gchar**.
+ *			The type of the GList is char**.
  *
  * @returns GtkWidget* custom dialog.
  */
@@ -629,7 +629,7 @@ static GtkWidget *rmplugin_x2go_choose_session_dialog_factory( X2GoCustomUserDat
 
     GtkTreeViewColumn *tree_view_col = NULL;
     GtkCellRenderer *cell_renderer = NULL;
-    gchar *header_title = NULL;
+    char *header_title = NULL;
 
     // First to last in SESSION_PROPERTIES.
     for( guint i = 0; i < SESSION_NUM_PROPERTIES; ++i )
@@ -664,14 +664,14 @@ static GtkWidget *rmplugin_x2go_choose_session_dialog_factory( X2GoCustomUserDat
 
     for( elem = sessions_list; elem; elem = elem->next )
     {
-        gchar **session = (gchar **)elem->data;
+        char **session = (char **)elem->data;
         g_assert( session != NULL );
 
         gtk_list_store_append( store, &iter );
 
         for( gint i = 0; i < SESSION_NUM_PROPERTIES; i++ )
         {
-            gchar *property = session[i];
+            char *property = session[i];
             GValue a = G_VALUE_INIT;
 
             // Everything here is a string (except SESSION_DIALOG_IS_VISIBLE)
@@ -862,7 +862,7 @@ static GValue rmplugin_x2go_session_chooser_get_property( GtkWidget *dialog, gin
         return ret_value; // error message was already handled.
 
     GtkTreeIter iter;
-    gboolean success = gtk_tree_model_get_iter( model, &iter, row );
+    bool success = gtk_tree_model_get_iter( model, &iter, row );
     if( !success )
     {
         REMMINA_PLUGIN_CRITICAL( "%s",
@@ -894,7 +894,7 @@ static GValue rmplugin_x2go_session_chooser_get_property( GtkWidget *dialog, gin
 		GValue property = G_VALUE_INIT;
 		property = rmplugin_x2go_session_chooser_get_property(dialog, i, path);
 
-		gchar* display_name = rmplugin_x2go_session_property_to_string(i);
+		char* display_name = rmplugin_x2go_session_property_to_string(i);
 		g_assert(display_name && "Couldn't get display name for a property!");
 
 		if (i == SESSION_DIALOG_IS_VISIBLE) {
@@ -923,13 +923,13 @@ static GValue rmplugin_x2go_session_chooser_get_property( GtkWidget *dialog, gin
  *
  * @returns Returns either standard output string or NULL if it failed.
  */
-static gchar *rmplugin_x2go_spawn_pyhoca_process( guint argc, gchar *argv[], GError **error, gchar **env )
+static char *rmplugin_x2go_spawn_pyhoca_process( guint argc, char *argv[], GError **error, char **env )
 {
     REMMINA_PLUGIN_DEBUG( "Function entry." );
 
     if( !argv )
     {
-        gchar *errmsg = g_strdup_printf( _( "Internal error: %s" ), _( "parameter 'argv' is 'NULL'." ) );
+        char *errmsg = g_strdup_printf( _( "Internal error: %s" ), _( "parameter 'argv' is 'NULL'." ) );
         REMMINA_PLUGIN_CRITICAL( "%s", errmsg );
         g_set_error( error, 1, 1, "%s", errmsg );
         return NULL;
@@ -945,7 +945,7 @@ static gchar *rmplugin_x2go_spawn_pyhoca_process( guint argc, gchar *argv[], GEr
 
     if( !env || !env[0] )
     {
-        gchar *errmsg =
+        char *errmsg =
             g_strdup_printf( _( "Internal error: %s" ), _( "parameter 'env' is either invalid or uninitialized." ) );
         REMMINA_PLUGIN_CRITICAL( "%s", errmsg );
         g_set_error( error, 1, 1, "%s", errmsg );
@@ -953,11 +953,11 @@ static gchar *rmplugin_x2go_spawn_pyhoca_process( guint argc, gchar *argv[], GEr
     }
 
     gint exit_code = 0;
-    gchar *standard_out;
+    char *standard_out;
     // Just supresses pyhoca-cli's help message when pyhoca-cli's version is too old.
-    gchar *standard_err;
+    char *standard_err;
 
-    gboolean success_ret = g_spawn_sync(
+    bool success_ret = g_spawn_sync(
         NULL, argv, env, G_SPAWN_SEARCH_PATH, NULL, NULL, &standard_out, &standard_err, &exit_code, error );
 
     REMMINA_PLUGIN_INFO( "%s", _( "Started PyHoca-CLI with the following arguments:" ) );
@@ -994,8 +994,8 @@ static gchar *rmplugin_x2go_spawn_pyhoca_process( guint argc, gchar *argv[], GEr
                               "occured while establishing the connection:" ) )
         {
             // Log error into GUI.
-            gchar *errmsg = g_strdup_printf( _( "The necessary PyHoca-CLI process has encountered a "
-                                                "internet connection problem." ) );
+            char *errmsg = g_strdup_printf( _( "The necessary PyHoca-CLI process has encountered a "
+                                               "internet connection problem." ) );
 
             // Log error into debug window and stdout
             REMMINA_PLUGIN_CRITICAL( "%s:\n%s", errmsg, standard_err );
@@ -1004,9 +1004,9 @@ static gchar *rmplugin_x2go_spawn_pyhoca_process( guint argc, gchar *argv[], GEr
         }
         else
         {
-            gchar *errmsg = g_strdup_printf( _( "Could not start "
-                                                "PyHoca-CLI:\n%s" ),
-                                             standard_err );
+            char *errmsg = g_strdup_printf( _( "Could not start "
+                                               "PyHoca-CLI:\n%s" ),
+                                            standard_err );
             REMMINA_PLUGIN_CRITICAL( "%s", errmsg );
             g_set_error( error, 1, 1, "%s", errmsg );
             return NULL;
@@ -1016,18 +1016,18 @@ static gchar *rmplugin_x2go_spawn_pyhoca_process( guint argc, gchar *argv[], GEr
     {
         if( !( *error ) )
         {
-            gchar *errmsg = g_strdup_printf( _( "An unknown error occured while trying "
-                                                "to start PyHoca-CLI. Exit code: %i" ),
-                                             exit_code );
+            char *errmsg = g_strdup_printf( _( "An unknown error occured while trying "
+                                               "to start PyHoca-CLI. Exit code: %i" ),
+                                            exit_code );
             REMMINA_PLUGIN_WARNING( "%s", errmsg );
             g_set_error( error, 1, 1, "%s", errmsg );
         }
         else
         {
-            gchar *errmsg = g_strdup_printf( _( "An unknown error occured while trying to start "
-                                                "PyHoca-CLI. Exit code: %i. Error: '%s'" ),
-                                             exit_code,
-                                             ( *error )->message );
+            char *errmsg = g_strdup_printf( _( "An unknown error occured while trying to start "
+                                               "PyHoca-CLI. Exit code: %i. Error: '%s'" ),
+                                            exit_code,
+                                            ( *error )->message );
             REMMINA_PLUGIN_WARNING( "%s", errmsg );
         }
 
@@ -1043,9 +1043,9 @@ static gchar *rmplugin_x2go_spawn_pyhoca_process( guint argc, gchar *argv[], GEr
  */
 struct _ConnectionData
 {
-    gchar *host;
-    gchar *username;
-    gchar *password;
+    char *host;
+    char *username;
+    char *password;
 };
 
 /**
@@ -1056,11 +1056,11 @@ struct _ConnectionData
  *
  * @param path Describes which row. (GtkTreePath*) \n
  *	       Should be from GtkTreeModelFilter's perspective!
- * @param value TRUE = row is visible & FALSE = row is invisible (gboolean)
+ * @param value TRUE = row is visible & FALSE = row is invisible (bool)
  * @param dialog Session-Chooser-Dialog (GtkDialog*)
- * @return Returns TRUE if successful. (gboolean)
+ * @return Returns TRUE if successful. (bool)
  */
-static gboolean rmplugin_x2go_session_chooser_set_row_visible( GtkTreePath *path, gboolean value, GtkDialog *dialog )
+static int rmplugin_x2go_session_chooser_set_row_visible( GtkTreePath *path, bool value, GtkDialog *dialog )
 {
     REMMINA_PLUGIN_DEBUG( "Function entry." );
 
@@ -1138,7 +1138,7 @@ static gboolean rmplugin_x2go_session_chooser_set_row_visible( GtkTreePath *path
  *	   memorable names for the return value. See GLib docs. \n
  *	   https://docs.gtk.org/glib/const.SOURCE_REMOVE.html
  */
-static gboolean rmplugin_x2go_pyhoca_terminate_session( X2GoCustomUserData *custom_data )
+static int rmplugin_x2go_pyhoca_terminate_session( X2GoCustomUserData *custom_data )
 {
     REMMINA_PLUGIN_DEBUG( "Function entry." );
 
@@ -1160,9 +1160,9 @@ static gboolean rmplugin_x2go_pyhoca_terminate_session( X2GoCustomUserData *cust
     GtkDialog *dialog = GTK_DIALOG( custom_data->opt2 );
 
     /* Check connect_data. */
-    gchar *host = NULL;
-    gchar *username = NULL;
-    gchar *password = NULL;
+    char *host = NULL;
+    char *username = NULL;
+    char *password = NULL;
 
     if( !connect_data || !connect_data->host || !connect_data->username || !connect_data->password
         || strlen( connect_data->host ) <= 0 || strlen( connect_data->username ) <= 0 )
@@ -1184,11 +1184,11 @@ static gboolean rmplugin_x2go_pyhoca_terminate_session( X2GoCustomUserData *cust
     // error message was handled already.
     if( !G_VALUE_HOLDS_STRING( &value ) )
         return G_SOURCE_REMOVE;
-    const gchar *session_id = g_value_get_string( &value );
+    const char *session_id = g_value_get_string( &value );
 
     // We will now start pyhoca-cli with only the '--terminate $SESSION_ID' option.
     // (and of course auth related stuff)
-    gchar *argv[50];
+    char *argv[50];
     gint argc = 0;
 
     argv[argc++] = g_strdup( "pyhoca-cli" );
@@ -1258,13 +1258,13 @@ static gboolean rmplugin_x2go_pyhoca_terminate_session( X2GoCustomUserData *cust
     argv[argc++] = NULL;
 
     GError *error = NULL;
-    gchar **envp = g_get_environ();
+    char **envp = g_get_environ();
     rmplugin_x2go_spawn_pyhoca_process( argc, argv, &error, envp );
     g_strfreev( envp );
 
     if( error )
     {
-        gchar *err_msg = g_strdup_printf(
+        char *err_msg = g_strdup_printf(
             _( "An error occured while trying to terminate X2Go session '%s':\n%s" ), session_id, error->message );
 
         REMMINA_PLUGIN_CRITICAL( "%s", err_msg );
@@ -1321,12 +1321,11 @@ static gboolean rmplugin_x2go_pyhoca_terminate_session( X2GoCustomUserData *cust
  * @param response_id See GTK 'response' signal.
  * @param self The dialog itself.
  *
- * @return gboolean, #G_SOURCE_CONTINUE and #G_SOURCE_REMOVE are more memorable
+ * @return bool, #G_SOURCE_CONTINUE and #G_SOURCE_REMOVE are more memorable
  *	   names for the return value. See GLib docs. \n
  *	   https://docs.gtk.org/glib/const.SOURCE_REMOVE.html
  */
-static gboolean
-rmplugin_x2go_session_chooser_callback( X2GoCustomUserData *custom_data, gint response_id, GtkDialog *self )
+static int rmplugin_x2go_session_chooser_callback( X2GoCustomUserData *custom_data, gint response_id, GtkDialog *self )
 {
     REMMINA_PLUGIN_DEBUG( "Function entry." );
 
@@ -1349,7 +1348,7 @@ rmplugin_x2go_session_chooser_callback( X2GoCustomUserData *custom_data, gint re
 
         // Unstucking main process. Telling it that a session has been selected.
         // We use a trick here. As long as there is something other
-        // than 0 stored, a session is selected. So we use the gpointer as a gboolean.
+        // than 0 stored, a session is selected. So we use the gpointer as a bool.
         SET_SESSION_SELECTED( gp, (gpointer)TRUE );
 
         gtk_widget_destroy( GTK_WIDGET( self ) );
@@ -1367,7 +1366,7 @@ rmplugin_x2go_session_chooser_callback( X2GoCustomUserData *custom_data, gint re
     if( !G_VALUE_HOLDS_STRING( &value ) )
         return G_SOURCE_REMOVE;
 
-    gchar *session_id = (gchar *)g_value_get_string( &value );
+    char *session_id = (char *)g_value_get_string( &value );
 
     if( response_id == SESSION_CHOOSER_RESPONSE_CHOOSE )
     {
@@ -1435,7 +1434,7 @@ rmplugin_x2go_session_chooser_callback( X2GoCustomUserData *custom_data, gint re
 
     // Unstucking main process. Telling it that a session has been selected.
     // We use a trick here. As long as there is something other
-    // than 0 stored, a session is selected. So we use the gpointer as a gboolean.
+    // than 0 stored, a session is selected. So we use the gpointer as a bool.
     SET_SESSION_SELECTED( gp, (gpointer)TRUE );
 
     gtk_widget_destroy( GTK_WIDGET( self ) );
@@ -1468,10 +1467,10 @@ struct onMainThread_cb_data
     /* Mutex for thread synchronization */
     pthread_mutex_t mu;
     /* Flag to catch cancellations */
-    gboolean cancelled;
+    bool cancelled;
 };
 
-static gboolean onMainThread_cb( struct onMainThread_cb_data *d )
+static int onMainThread_cb( struct onMainThread_cb_data *d )
 {
     TRACE_CALL( __func__ );
     if( !d->cancelled )
@@ -1522,7 +1521,7 @@ static void onMainThread_gtk_socket_add_id( GtkSocket *sk, Window w )
     struct onMainThread_cb_data *d;
 
     d = g_new0( struct onMainThread_cb_data, 1 );
-    d->func = FUNC_GTK_SOCKET_ADD_ID;
+    d->func = onMainThread_cb_data::FUNC_GTK_SOCKET_ADD_ID;
     d->sk = sk;
     d->w = w;
 
@@ -1534,7 +1533,7 @@ static void onMainThread_gtk_socket_add_id( GtkSocket *sk, Window w )
 static void rmplugin_x2go_remove_window_id( Window window_id )
 {
     gint i;
-    gboolean already_seen = FALSE;
+    bool already_seen = FALSE;
 
     pthread_mutex_lock( &remmina_x2go_init_mutex );
     for( i = 0; i < remmina_x2go_window_id_array->len; i++ )
@@ -1561,7 +1560,7 @@ static void rmplugin_x2go_remove_window_id( Window window_id )
  * 	     #G_SOURCE_CONTINUE and #G_SOURCE_REMOVE are more memorable
  *	     names for the return value.
  */
-static gboolean rmplugin_x2go_cleanup( RemminaProtocolWidget *gp )
+static int rmplugin_x2go_cleanup( RemminaProtocolWidget *gp )
 {
     REMMINA_PLUGIN_DEBUG( "Function entry." );
 
@@ -1604,7 +1603,7 @@ static gboolean rmplugin_x2go_cleanup( RemminaProtocolWidget *gp )
     return G_SOURCE_REMOVE;
 }
 
-static gboolean rmplugin_x2go_close_connection( RemminaProtocolWidget *gp )
+static int rmplugin_x2go_close_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     RemminaPluginX2GoData *gpdata = GET_PLUGIN_DATA( gp );
@@ -1685,12 +1684,11 @@ static void rmplugin_x2go_pyhoca_cli_exited( GPid pid, gint status, RemminaProto
  * @brief Saves s_password and s_username if set.
  * @returns either TRUE or FALSE. If FALSE gets returned, `errmsg` is set.
  */
-static gboolean
-rmplugin_x2go_save_credentials( RemminaFile *remminafile, gchar *s_username, gchar *s_password, gchar *errmsg )
+static int rmplugin_x2go_save_credentials( RemminaFile *remminafile, char *s_username, char *s_password, char *errmsg )
 {
     // User has requested to save credentials. We put all the new credentials
     // into remminafile->settings. They will be saved later, on successful
-    // connection, by rcw.c
+    // connection, by rcw.cpp
     if( s_password && s_username )
     {
         if( g_strcmp0( s_username, "" ) == 0 )
@@ -1728,8 +1726,8 @@ rmplugin_x2go_save_credentials( RemminaFile *remminafile, gchar *s_username, gch
  *
  * @returns FALSE if auth failed and TRUE on success.
  */
-static gboolean
-rmplugin_x2go_get_auth( RemminaProtocolWidget *gp, gchar **errmsg, gchar **default_username, gchar **default_password )
+static int
+rmplugin_x2go_get_auth( RemminaProtocolWidget *gp, char **errmsg, char **default_username, char **default_password )
 {
     REMMINA_PLUGIN_DEBUG( "Function entry." );
 
@@ -1754,10 +1752,10 @@ rmplugin_x2go_get_auth( RemminaProtocolWidget *gp, gchar **errmsg, gchar **defau
         ( *default_password ) = g_strdup( "" );
     }
 
-    gchar *s_username, *s_password;
+    char *s_username, *s_password;
     gint ret;
-    gboolean save;
-    gboolean disable_password_storing;
+    bool save;
+    bool disable_password_storing;
     RemminaFile *remminafile;
 
     remminafile = rm_plugin_service->protocol_plugin_get_file( gp );
@@ -1821,15 +1819,15 @@ rmplugin_x2go_get_auth( RemminaProtocolWidget *gp, gchar **errmsg, gchar **defau
  * @returns Standard output of pyhoca-cli command.
  *	    If NULL then errmsg is set to user-friendly error message.
  */
-static gchar *
+static char *
 rmplugin_x2go_get_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, struct _ConnectionData *connect_data )
 {
     REMMINA_PLUGIN_DEBUG( "Function entry." );
     RemminaPluginX2GoData *gpdata = GET_PLUGIN_DATA( gp );
 
-    gchar *host = NULL;
-    gchar *username = NULL;
-    gchar *password = NULL;
+    char *host = NULL;
+    char *username = NULL;
+    char *password = NULL;
 
     if( !connect_data || !connect_data->host || !connect_data->username || !connect_data->password
         || strlen( connect_data->host ) <= 0 || strlen( connect_data->username ) <= 0 )
@@ -1848,7 +1846,7 @@ rmplugin_x2go_get_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, st
 
     // We will now start pyhoca-cli with only the '--list-sessions' option.
 
-    gchar *argv[50];
+    char *argv[50];
     gint argc = 0;
 
     argv[argc++] = g_strdup( "pyhoca-cli" );
@@ -1920,8 +1918,8 @@ rmplugin_x2go_get_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, st
     argv[argc++] = NULL;
 
     //#ifndef GLIB_AVAILABLE_IN_2_68
-    gchar **envp = g_get_environ();
-    gchar *envp_splitted = g_strjoinv( ";", envp );
+    char **envp = g_get_environ();
+    char *envp_splitted = g_strjoinv( ";", envp );
     envp_splitted = g_strconcat( envp_splitted, ";LANG=C", (void *)NULL );
     envp = g_strsplit( envp_splitted, ";", 0 );
     /*
@@ -1934,7 +1932,7 @@ rmplugin_x2go_get_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, st
 	* #endif
 	*/
 
-    gchar *std_out = rmplugin_x2go_spawn_pyhoca_process( argc, argv, error, envp );
+    char *std_out = rmplugin_x2go_spawn_pyhoca_process( argc, argv, error, envp );
     g_strfreev( envp );
 
     if( !std_out || *error )
@@ -1969,7 +1967,7 @@ rmplugin_x2go_parse_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, 
 {
     REMMINA_PLUGIN_DEBUG( "Function entry." );
 
-    gchar *pyhoca_output = NULL;
+    char *pyhoca_output = NULL;
 
     pyhoca_output = rmplugin_x2go_get_pyhoca_sessions( gp, error, connect_data );
     if( !pyhoca_output || *error )
@@ -1982,7 +1980,7 @@ rmplugin_x2go_parse_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, 
         return NULL;
     }
 
-    gchar **lines_list = g_strsplit( pyhoca_output, "\n", -1 );
+    char **lines_list = g_strsplit( pyhoca_output, "\n", -1 );
     // Assume at least two lines of output.
     if( lines_list == NULL || lines_list[0] == NULL || lines_list[1] == NULL )
     {
@@ -1996,13 +1994,13 @@ rmplugin_x2go_parse_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, 
         return NULL;
     }
 
-    gboolean found_session = FALSE;
+    bool found_session = FALSE;
     GList *sessions = NULL;
-    gchar **session = NULL;
+    char **session = NULL;
 
     for( guint i = 0; lines_list[i] != NULL; i++ )
     {
-        gchar *current_line = lines_list[i];
+        char *current_line = lines_list[i];
 
         // TOO VERBOSE:
         //REMMINA_PLUGIN_DEBUG("pyhoca-cli: %s", current_line);
@@ -2017,8 +2015,8 @@ rmplugin_x2go_parse_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, 
 
         if( g_str_has_prefix( current_line, "Session Name: " ) )
         {
-            gchar *session_id = NULL;
-            gchar **line_list = g_strsplit( current_line, ": ", 0 );
+            char *session_id = NULL;
+            char **line_list = g_strsplit( current_line, ": ", 0 );
 
             if( line_list == NULL || line_list[0] == NULL || line_list[1] == NULL || strlen( line_list[0] ) <= 0
                 || strlen( line_list[1] ) <= 0 )
@@ -2027,7 +2025,7 @@ rmplugin_x2go_parse_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, 
                 continue;
             }
 
-            session = malloc( sizeof( gchar * ) * ( SESSION_NUM_PROPERTIES + 1 ) );
+            session = malloc( sizeof( char * ) * ( SESSION_NUM_PROPERTIES + 1 ) );
             if( !session )
             {
                 REMMINA_PLUGIN_CRITICAL( "%s",
@@ -2058,8 +2056,8 @@ rmplugin_x2go_parse_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, 
             continue;
         }
 
-        gchar *value = NULL;
-        gchar **line_list = g_strsplit( current_line, ": ", 0 );
+        char *value = NULL;
+        char **line_list = g_strsplit( current_line, ": ", 0 );
 
         if( line_list == NULL || line_list[0] == NULL || line_list[1] == NULL || strlen( line_list[0] ) <= 0
             || strlen( line_list[1] ) <= 0 )
@@ -2170,9 +2168,9 @@ rmplugin_x2go_parse_pyhoca_sessions( RemminaProtocolWidget *gp, GError **error, 
  *		Not necessarily an *error* message.
  * @param connect_data Stores all necessary information needed for
  *		       etrieving sessions from a X2Go server.
- * @return gchar* ID of session. Can be 'NULL' but then 'error' is set.
+ * @return char* ID of session. Can be 'NULL' but then 'error' is set.
  */
-static gchar *
+static char *
 rmplugin_x2go_ask_session( RemminaProtocolWidget *gp, GError **error, struct _ConnectionData *connect_data )
 {
     if( !connect_data || !connect_data->host || !connect_data->username || !connect_data->password
@@ -2205,7 +2203,7 @@ rmplugin_x2go_ask_session( RemminaProtocolWidget *gp, GError **error, struct _Co
     ddata->title = _( "Choose a session to resume:" );
     ddata->message = "";
 
-    // gboolean factory(X2GoCustomUserData*, gpointer)
+    // int factory(X2GoCustomUserData*, gpointer)
     // 	X2GoCustomUserData*:
     //		gp -> gp (RemminaProtocolWidget*)
     //		dialog_data -> dialog data (struct _DialogData*)
@@ -2213,7 +2211,7 @@ rmplugin_x2go_ask_session( RemminaProtocolWidget *gp, GError **error, struct _Co
     //	gpointer: dialog_factory_data
     ddata->callbackfunc = G_CALLBACK( rmplugin_x2go_session_chooser_callback );
 
-    // gboolean factory(X2GoCustomUserData*, gpointer)
+    // int factory(X2GoCustomUserData*, gpointer)
     // 	X2GoCustomUserData*:
     //		gp -> gp (RemminaProtocolWidget*)
     //		dialog_data -> dialog data (struct _DialogData*)
@@ -2252,7 +2250,7 @@ rmplugin_x2go_ask_session( RemminaProtocolWidget *gp, GError **error, struct _Co
         counter++;
     }
 
-    gchar *chosen_resume_session = GET_RESUME_SESSION( gp );
+    char *chosen_resume_session = GET_RESUME_SESSION( gp );
 
     if( !chosen_resume_session || strlen( chosen_resume_session ) <= 0 )
     {
@@ -2263,24 +2261,24 @@ rmplugin_x2go_ask_session( RemminaProtocolWidget *gp, GError **error, struct _Co
     return chosen_resume_session;
 }
 
-static gboolean rmplugin_x2go_exec_x2go( gchar *host,
-                                         gint sshport,
-                                         gchar *username,
-                                         gchar *password,
-                                         gchar *command,
-                                         gchar *kbdlayout,
-                                         gchar *kbdtype,
-                                         gchar *audio,
-                                         gchar *clipboard,
-                                         gint dpi,
-                                         gchar *resolution,
-                                         RemminaProtocolWidget *gp,
-                                         gchar *errmsg )
+static int rmplugin_x2go_exec_x2go( char *host,
+                                    gint sshport,
+                                    char *username,
+                                    char *password,
+                                    char *command,
+                                    char *kbdlayout,
+                                    char *kbdtype,
+                                    char *audio,
+                                    char *clipboard,
+                                    gint dpi,
+                                    char *resolution,
+                                    RemminaProtocolWidget *gp,
+                                    char *errmsg )
 {
     TRACE_CALL( __func__ );
     RemminaPluginX2GoData *gpdata = GET_PLUGIN_DATA( gp );
 
-    gchar *argv[50];
+    char *argv[50];
     gint argc = 0;
 
     // Sets `username` and `password`.
@@ -2295,7 +2293,7 @@ static gboolean rmplugin_x2go_exec_x2go( gchar *host,
     connect_data->password = password;
 
     GError *session_error = NULL;
-    gchar *resume_session_id = rmplugin_x2go_ask_session( gp, &session_error, connect_data );
+    char *resume_session_id = rmplugin_x2go_ask_session( gp, &session_error, connect_data );
 
     if( !resume_session_id || session_error || strlen( resume_session_id ) <= 0 )
     {
@@ -2535,18 +2533,18 @@ static gboolean rmplugin_x2go_exec_x2go( gchar *host,
     argv[argc++] = NULL;
 
     GError *error = NULL;
-    gchar **envp = g_get_environ();
-    gboolean success = g_spawn_async_with_pipes( NULL,
-                                                 argv,
-                                                 envp,
-                                                 ( G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH ),
-                                                 NULL,
-                                                 NULL,
-                                                 &gpdata->pidx2go,
-                                                 NULL,
-                                                 NULL,
-                                                 NULL,
-                                                 &error );
+    char **envp = g_get_environ();
+    bool success = g_spawn_async_with_pipes( NULL,
+                                             argv,
+                                             envp,
+                                             ( G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_SEARCH_PATH ),
+                                             NULL,
+                                             NULL,
+                                             &gpdata->pidx2go,
+                                             NULL,
+                                             NULL,
+                                             NULL,
+                                             &error );
 
     REMMINA_PLUGIN_INFO( "%s", _( "Started PyHoca-CLI with the following arguments:" ) );
     // Print every argument except passwords. Free all arg strings.
@@ -2574,8 +2572,8 @@ static gboolean rmplugin_x2go_exec_x2go( gchar *host,
         if( !error )
             error = g_error_new( 0, 0, _( "Internal error." ) );
 
-        gchar *error_title = _( "An error occured while "
-                                "starting an X2Go session…" );
+        char *error_title = _( "An error occured while "
+                               "starting an X2Go session…" );
 
         struct _DialogData *ddata = g_new0( struct _DialogData, 1 );
         ddata->parent = GTK_WINDOW( gtk_widget_get_toplevel( GTK_WIDGET( gp ) ) );
@@ -2640,49 +2638,49 @@ static GList *rmplugin_x2go_old_pyhoca_features()
     REMMINA_PLUGIN_DEBUG( "Function entry." );
 
 #define AMOUNT_FEATURES 43
-    gchar *features[AMOUNT_FEATURES] = { "ADD_TO_KNOWN_HOSTS",
-                                         "AUTH_ATTEMPTS",
-                                         "BROKER_PASSWORD",
-                                         "BROKER_URL",
-                                         "CLEAN_SESSIONS",
-                                         "COMMAND",
-                                         "DEBUG",
-                                         "FORCE_PASSWORD",
-                                         "FORWARD_SSHAGENT",
-                                         "GEOMETRY",
-                                         "KBD_LAYOUT",
-                                         "KBD_TYPE",
-                                         "LIBDEBUG",
-                                         "LIBDEBUG_SFTPXFER",
-                                         "LINK",
-                                         "LIST_CLIENT_FEATURES",
-                                         "LIST_DESKTOPS",
-                                         "LIST_SESSIONS",
-                                         "NEW",
-                                         "PACK",
-                                         "PASSWORD",
-                                         "PDFVIEW_CMD",
-                                         "PRINTER",
-                                         "PRINTING",
-                                         "PRINT_ACTION",
-                                         "PRINT_CMD",
-                                         "QUIET",
-                                         "REMOTE_SSH_PORT",
-                                         "RESUME",
-                                         "SAVE_TO_FOLDER",
-                                         "SESSION_PROFILE",
-                                         "SESSION_TYPE",
-                                         "SHARE_DESKTOP",
-                                         "SHARE_LOCAL_FOLDERS",
-                                         "SHARE_MODE",
-                                         "SOUND",
-                                         "SSH_PRIVKEY",
-                                         "SUSPEND",
-                                         "TERMINATE",
-                                         "TERMINATE_ON_CTRL_C",
-                                         "TRY_RESUME",
-                                         "USERNAME",
-                                         "XINERAMA" };
+    char *features[AMOUNT_FEATURES] = { "ADD_TO_KNOWN_HOSTS",
+                                        "AUTH_ATTEMPTS",
+                                        "BROKER_PASSWORD",
+                                        "BROKER_URL",
+                                        "CLEAN_SESSIONS",
+                                        "COMMAND",
+                                        "DEBUG",
+                                        "FORCE_PASSWORD",
+                                        "FORWARD_SSHAGENT",
+                                        "GEOMETRY",
+                                        "KBD_LAYOUT",
+                                        "KBD_TYPE",
+                                        "LIBDEBUG",
+                                        "LIBDEBUG_SFTPXFER",
+                                        "LINK",
+                                        "LIST_CLIENT_FEATURES",
+                                        "LIST_DESKTOPS",
+                                        "LIST_SESSIONS",
+                                        "NEW",
+                                        "PACK",
+                                        "PASSWORD",
+                                        "PDFVIEW_CMD",
+                                        "PRINTER",
+                                        "PRINTING",
+                                        "PRINT_ACTION",
+                                        "PRINT_CMD",
+                                        "QUIET",
+                                        "REMOTE_SSH_PORT",
+                                        "RESUME",
+                                        "SAVE_TO_FOLDER",
+                                        "SESSION_PROFILE",
+                                        "SESSION_TYPE",
+                                        "SHARE_DESKTOP",
+                                        "SHARE_LOCAL_FOLDERS",
+                                        "SHARE_MODE",
+                                        "SOUND",
+                                        "SSH_PRIVKEY",
+                                        "SUSPEND",
+                                        "TERMINATE",
+                                        "TERMINATE_ON_CTRL_C",
+                                        "TRY_RESUME",
+                                        "USERNAME",
+                                        "XINERAMA" };
 
     GList *features_list = NULL;
     for( int i = 0; i < AMOUNT_FEATURES; i++ )
@@ -2706,7 +2704,7 @@ static GList *rmplugin_x2go_populate_available_features_list()
     // and depending on the exit code and standard output we will determine if some
     // features are available or not.
 
-    gchar *argv[50];
+    char *argv[50];
     gint argc = 0;
 
     argv[argc++] = g_strdup( "pyhoca-cli" );
@@ -2716,8 +2714,8 @@ static GList *rmplugin_x2go_populate_available_features_list()
     GError *error = NULL; // Won't be actually used.
 
     // Querying pyhoca-cli's command line features.
-    gchar **envp = g_get_environ();
-    gchar *features_string = rmplugin_x2go_spawn_pyhoca_process( argc, argv, &error, envp );
+    char **envp = g_get_environ();
+    char *features_string = rmplugin_x2go_spawn_pyhoca_process( argc, argv, &error, envp );
     g_strfreev( envp );
 
     if( !features_string || error )
@@ -2736,12 +2734,12 @@ static GList *rmplugin_x2go_populate_available_features_list()
     }
     else
     {
-        gchar **features_list = g_strsplit( features_string, "\n", 0 );
+        char **features_list = g_strsplit( features_string, "\n", 0 );
 
         if( features_list == NULL )
         {
-            gchar *error_msg = _( "Could not parse PyHoca-CLI's command-line "
-                                  "features. Using a limited feature-set for now." );
+            char *error_msg = _( "Could not parse PyHoca-CLI's command-line "
+                                 "features. Using a limited feature-set for now." );
             REMMINA_PLUGIN_WARNING( "%s", error_msg );
             return rmplugin_x2go_old_pyhoca_features();
         }
@@ -2772,7 +2770,7 @@ static void rmplugin_x2go_on_plug_added( GtkSocket *socket, RemminaProtocolWidge
     return;
 }
 
-static gboolean rmplugin_x2go_on_plug_removed( GtkSocket *socket, RemminaProtocolWidget *gp )
+static int rmplugin_x2go_on_plug_removed( GtkSocket *socket, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     REMMINA_PLUGIN_DEBUG( "Function entry." );
@@ -2818,11 +2816,11 @@ static void rmplugin_x2go_init( RemminaProtocolWidget *gp )
     gtk_container_add( GTK_CONTAINER( gp ), gpdata->socket );
 }
 
-static gboolean rmplugin_x2go_try_window_id( Window window_id )
+static int rmplugin_x2go_try_window_id( Window window_id )
 {
     TRACE_CALL( __func__ );
     gint i;
-    gboolean already_seen = FALSE;
+    bool already_seen = FALSE;
 
     REMMINA_PLUGIN_DEBUG( "Check if the window of X2Go Agent with ID [0x%lx] is already known or if "
                           "it needs registration",
@@ -2858,7 +2856,7 @@ static int rmplugin_x2go_dummy_handler( Display *dsp, XErrorEvent *err )
     return 0;
 }
 
-static gboolean rmplugin_x2go_start_create_notify( RemminaProtocolWidget *gp, gchar *errmsg )
+static int rmplugin_x2go_start_create_notify( RemminaProtocolWidget *gp, char *errmsg )
 {
     TRACE_CALL( __func__ );
     RemminaPluginX2GoData *gpdata = GET_PLUGIN_DATA( gp );
@@ -2879,12 +2877,12 @@ static gboolean rmplugin_x2go_start_create_notify( RemminaProtocolWidget *gp, gc
     return TRUE;
 }
 
-static gboolean rmplugin_x2go_monitor_create_notify( RemminaProtocolWidget *gp, const gchar *cmd, gchar *errmsg )
+static int rmplugin_x2go_monitor_create_notify( RemminaProtocolWidget *gp, const char *cmd, char *errmsg )
 {
     TRACE_CALL( __func__ );
     RemminaPluginX2GoData *gpdata;
 
-    gboolean agent_window_found = FALSE;
+    bool agent_window_found = FALSE;
     Atom atom;
     XEvent xev;
     Window w;
@@ -2975,7 +2973,7 @@ static gboolean rmplugin_x2go_monitor_create_notify( RemminaProtocolWidget *gp, 
                                   (char *)data,
                                   w );
         }
-        if( data && g_strrstr( (gchar *)data, cmd ) && rmplugin_x2go_try_window_id( w ) )
+        if( data && g_strrstr( (char *)data, cmd ) && rmplugin_x2go_try_window_id( w ) )
         {
             gpdata->window_id = w;
             agent_window_found = TRUE;
@@ -3004,7 +3002,7 @@ static gboolean rmplugin_x2go_monitor_create_notify( RemminaProtocolWidget *gp, 
     return TRUE;
 }
 
-static gboolean rmplugin_x2go_start_session( RemminaProtocolWidget *gp )
+static int rmplugin_x2go_start_session( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     REMMINA_PLUGIN_DEBUG( "Function entry." );
@@ -3012,17 +3010,17 @@ static gboolean rmplugin_x2go_start_session( RemminaProtocolWidget *gp )
     RemminaPluginX2GoData *gpdata = GET_PLUGIN_DATA( gp );
     ;
     RemminaFile *remminafile;
-    const gchar errmsg[512] = { 0 };
-    gboolean ret = TRUE;
+    const char errmsg[512] = { 0 };
+    bool ret = TRUE;
 
-    gchar *servstr, *host, *username, *password, *command, *kbdlayout, *kbdtype, *audio, *clipboard, *res;
+    char *servstr, *host, *username, *password, *command, *kbdlayout, *kbdtype, *audio, *clipboard, *res;
     gint sshport, dpi;
     GdkDisplay *default_dsp;
     gint width, height;
 
     // We save the X Display name (:0) as we will need to synchronize the clipboards
     default_dsp = gdk_display_get_default();
-    const gchar *default_dsp_name = gdk_display_get_name( default_dsp );
+    const char *default_dsp_name = gdk_display_get_name( default_dsp );
     REMMINA_PLUGIN_DEBUG( "Default display is '%s'.", default_dsp_name );
 
     remminafile = rm_plugin_service->protocol_plugin_get_file( gp );
@@ -3075,7 +3073,7 @@ static gboolean rmplugin_x2go_start_session( RemminaProtocolWidget *gp )
 
     /* register for notifications of window creation events */
     if( ret )
-        ret = rmplugin_x2go_start_create_notify( gp, (gchar *)&errmsg );
+        ret = rmplugin_x2go_start_create_notify( gp, (char *)&errmsg );
 
     /* trigger the session start, session window should appear soon after this */
     if( ret )
@@ -3091,11 +3089,11 @@ static gboolean rmplugin_x2go_start_session( RemminaProtocolWidget *gp )
                                        dpi,
                                        res,
                                        gp,
-                                       (gchar *)&errmsg );
+                                       (char *)&errmsg );
 
     /* get the window ID of the remote x2goagent */
     if( ret )
-        ret = rmplugin_x2go_monitor_create_notify( gp, "x2goagent", (gchar *)&errmsg );
+        ret = rmplugin_x2go_monitor_create_notify( gp, "x2goagent", (char *)&errmsg );
 
     if( !ret )
     {
@@ -3110,11 +3108,11 @@ static gboolean rmplugin_x2go_start_session( RemminaProtocolWidget *gp )
     return TRUE;
 }
 
-static gboolean rmplugin_x2go_main( RemminaProtocolWidget *gp )
+static int rmplugin_x2go_main( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     RemminaPluginX2GoData *gpdata = GET_PLUGIN_DATA( gp );
-    gboolean ret = FALSE;
+    bool ret = FALSE;
 
     ret = rmplugin_x2go_start_session( gp );
 
@@ -3143,7 +3141,7 @@ static gpointer rmplugin_x2go_main_thread( RemminaProtocolWidget *gp )
     return NULL;
 }
 
-static gboolean rmplugin_x2go_open_connection( RemminaProtocolWidget *gp )
+static int rmplugin_x2go_open_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     RemminaPluginX2GoData *gpdata = GET_PLUGIN_DATA( gp );
@@ -3173,7 +3171,7 @@ static gboolean rmplugin_x2go_open_connection( RemminaProtocolWidget *gp )
     }
 }
 
-static gboolean rmplugin_x2go_query_feature( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature )
+static int rmplugin_x2go_query_feature( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature )
 {
     TRACE_CALL( __func__ );
     return TRUE;
@@ -3193,10 +3191,10 @@ static const RemminaProtocolFeature rmplugin_x2go_features[] = {
  * @param current_element Which element is element_to_add?
  * @param string The string to which `element_to_add` will be added.
  */
-static gchar *rmplugin_x2go_enumeration_prettifier( const guint max_elements,
-                                                    const guint current_element,
-                                                    gchar *element_to_add,
-                                                    gchar *string )
+static char *rmplugin_x2go_enumeration_prettifier( const guint max_elements,
+                                                   const guint current_element,
+                                                   char *element_to_add,
+                                                   char *string )
 {
     if( max_elements > 2 )
     {
@@ -3260,32 +3258,32 @@ static gchar *rmplugin_x2go_enumeration_prettifier( const guint max_elements,
  *	    value is invalid. If the given value is error-free then NULL gets returned.
  *
  */
-static GError *rmplugin_x2go_string_setting_validator( gchar *key, gchar *value, gchar *data )
+static GError *rmplugin_x2go_string_setting_validator( char *key, char *value, char *data )
 {
     GError *error = NULL;
 
     if( !data )
     {
-        gchar *error_msg = _( "Invalid validation data in ProtocolSettings array!" );
+        char *error_msg = _( "Invalid validation data in ProtocolSettings array!" );
         REMMINA_PLUGIN_CRITICAL( "%s", error_msg );
         g_set_error( &error, 1, 1, "%s", error_msg );
         return error;
     }
 
-    gchar **elements_list = g_strsplit( data, ",", 0 );
+    char **elements_list = g_strsplit( data, ",", 0 );
 
     guint elements_amount = 0;
     elements_amount = g_strv_length( elements_list );
 
     if( elements_list == NULL || elements_list[0] == NULL || strlen( elements_list[0] ) <= 0 )
     {
-        gchar *error_msg = _( "Validation data in ProtocolSettings array is invalid!" );
+        char *error_msg = _( "Validation data in ProtocolSettings array is invalid!" );
         REMMINA_PLUGIN_CRITICAL( "%s", error_msg );
         g_set_error( &error, 1, 1, "%s", error_msg );
         return error;
     }
 
-    gchar *data_str = "";
+    char *data_str = "";
 
     if( !key || !value )
     {
@@ -3297,7 +3295,7 @@ static GError *rmplugin_x2go_string_setting_validator( gchar *key, gchar *value,
     for( guint i = 0; elements_list[i] != NULL; i++ )
     {
         // Don't wanna crash if elements_list[i] is NULL.
-        gchar *element = elements_list[i] ? elements_list[i] : "";
+        char *element = elements_list[i] ? elements_list[i] : "";
         if( g_strcmp0( value, element ) == 0 )
         {
             // We found value in elements_list. Value passed validation.
@@ -3336,16 +3334,16 @@ static GError *rmplugin_x2go_string_setting_validator( gchar *key, gchar *value,
  *	    value is invalid. If the given value is error-free then NULL gets returned.
  *
  */
-static GError *rmplugin_x2go_int_setting_validator( gchar *key, gpointer value, gchar *data )
+static GError *rmplugin_x2go_int_setting_validator( char *key, gpointer value, char *data )
 {
     GError *error = NULL;
 
-    gchar **integer_list = g_strsplit( data, ";", 0 );
+    char **integer_list = g_strsplit( data, ";", 0 );
 
     if( integer_list == NULL || integer_list[0] == NULL || integer_list[1] == NULL || strlen( integer_list[0] ) <= 0
         || strlen( integer_list[1] ) <= 0 )
     {
-        gchar *error_msg = _( "Validation data in ProtocolSettings array is invalid!" );
+        char *error_msg = _( "Validation data in ProtocolSettings array is invalid!" );
         REMMINA_PLUGIN_CRITICAL( "%s", error_msg );
         g_set_error( &error, 1, 1, "%s", error_msg );
         return error;
@@ -3444,8 +3442,8 @@ static GError *rmplugin_x2go_int_setting_validator( gchar *key, gpointer value, 
         return error;
     }
 
-    /*REMMINA_PLUGIN_DEBUG("Key:  \t%s", (gchar*) key);
-	REMMINA_PLUGIN_DEBUG("Value:\t%s", (gchar*) value);
+    /*REMMINA_PLUGIN_DEBUG("Key:  \t%s", (char*) key);
+	REMMINA_PLUGIN_DEBUG("Value:\t%s", (char*) value);
 	REMMINA_PLUGIN_DEBUG("Data: \t%s", data);
 	REMMINA_PLUGIN_DEBUG("Min: %i, Max: %i", minimum, maximum);
 	REMMINA_PLUGIN_DEBUG("Value converted:\t%i", int_value);*/
@@ -3470,9 +3468,9 @@ static GError *rmplugin_x2go_int_setting_validator( gchar *key, gpointer value, 
  * g) Validation data pointer, will be passed to the validation callback method.
  * h) Validation callback method (Can be NULL. Every entry will be valid then.)
  *		use following prototype:
- *		gboolean mysetting_validator_method(gpointer key, gpointer value,
+ *		bool mysetting_validator_method(gpointer key, gpointer value,
  *						    gpointer validator_data);
- *		gpointer key is a gchar* containing the setting's name,
+ *		gpointer key is a char* containing the setting's name,
  *		gpointer value contains the value which should be validated,
  *		gpointer validator_data contains your passed data.
  */
@@ -3544,23 +3542,26 @@ static RemminaProtocolPlugin rmplugin_x2go = {
     NULL,                           // Screenshot
 };
 
-G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
+extern "C"
 {
-    TRACE_CALL( "remmina_plugin_entry" );
-    rm_plugin_service = service;
-
-    bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
-    bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
-
-    if( !service->register_plugin( (RemminaPlugin *)&rmplugin_x2go ) )
+    G_MODULE_EXPORT int remmina_plugin_entry( RemminaPluginService *service )
     {
-        return FALSE;
+        TRACE_CALL( "remmina_plugin_entry" );
+        rm_plugin_service = service;
+
+        bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
+        bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
+
+        if( !service->register_plugin( (RemminaPlugin *)&rmplugin_x2go ) )
+        {
+            return FALSE;
+        }
+
+        pthread_mutex_init( &remmina_x2go_init_mutex, NULL );
+        remmina_x2go_window_id_array = g_array_new( FALSE, TRUE, sizeof( Window ) );
+
+        REMMINA_PLUGIN_MESSAGE( "%s", _( "X2Go plugin loaded." ) );
+
+        return TRUE;
     }
-
-    pthread_mutex_init( &remmina_x2go_init_mutex, NULL );
-    remmina_x2go_window_id_array = g_array_new( FALSE, TRUE, sizeof( Window ) );
-
-    REMMINA_PLUGIN_MESSAGE( "%s", _( "X2Go plugin loaded." ) );
-
-    return TRUE;
 }

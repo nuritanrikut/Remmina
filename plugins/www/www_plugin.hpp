@@ -34,7 +34,7 @@
 
 #pragma once
 
-#include "common/remmina_plugin.h"
+#include "common/remmina_plugin.hpp"
 
 #include <glib.h>
 #include <webkit2/webkit2.h>
@@ -51,11 +51,9 @@ typedef enum
 extern RemminaPluginService *remmina_plugin_service;
 #define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )
 
-G_BEGIN_DECLS
 void remmina_plugin_www_decide_nav( WebKitPolicyDecision *decision, RemminaProtocolWidget *gp );
 void remmina_plugin_www_decide_newwin( WebKitPolicyDecision *decision, RemminaProtocolWidget *gp );
-gboolean remmina_plugin_www_decide_resource( WebKitPolicyDecision *decision, RemminaProtocolWidget *gp );
+int remmina_plugin_www_decide_resource( WebKitPolicyDecision *decision, RemminaProtocolWidget *gp );
 void remmina_plugin_www_response_received( WebKitDownload *download, GParamSpec *ps, RemminaProtocolWidget *gp );
-void remmina_plugin_www_notify_download( WebKitDownload *download, gchar *destination, RemminaProtocolWidget *gp );
+void remmina_plugin_www_notify_download( WebKitDownload *download, char *destination, RemminaProtocolWidget *gp );
 
-G_END_DECLS

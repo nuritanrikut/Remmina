@@ -33,8 +33,8 @@
 
 
 set(REMMINA_PLUGIN_EXEC_SRCS
-        exec_plugin_config.h
-        exec_plugin.c
+        exec_plugin_config.hpp
+        exec_plugin.cpp
 )
 
 add_library(remmina-plugin-exec MODULE ${REMMINA_PLUGIN_EXEC_SRCS})

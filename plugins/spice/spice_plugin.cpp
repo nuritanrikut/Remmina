@@ -32,7 +32,7 @@
  *
  */
 
-#include "spice_plugin.h"
+#include "spice_plugin.hpp"
 
 #define XSPICE_DEFAULT_PORT 5900
 
@@ -53,11 +53,11 @@ static void remmina_plugin_spice_main_channel_event_cb( SpiceChannel *, SpiceCha
 static void remmina_plugin_spice_agent_connected_event_cb( SpiceChannel *, RemminaProtocolWidget * );
 static void remmina_plugin_spice_display_ready_cb( GObject *, GParamSpec *, RemminaProtocolWidget * );
 static void remmina_plugin_spice_update_scale_mode( RemminaProtocolWidget * );
-static gboolean remmina_plugin_spice_session_open_fd( RemminaProtocolWidget *gp, gint fd ) __attribute__( ( unused ) );
-static gboolean remmina_plugin_spice_channel_open_fd( SpiceChannel *, int with_tls, RemminaProtocolWidget * )
+static int remmina_plugin_spice_session_open_fd( RemminaProtocolWidget *gp, gint fd ) __attribute__( ( unused ) );
+static int remmina_plugin_spice_channel_open_fd( SpiceChannel *, int with_tls, RemminaProtocolWidget * )
     __attribute__( ( unused ) );
-//static gboolean remmina_plugin_spice_session_open_fd(RemminaProtocolWidget *gp, gint fd);
-//static gboolean remmina_plugin_spice_channel_open_fd(SpiceChannel *, int with_tls, RemminaProtocolWidget *);
+//static int remmina_plugin_spice_session_open_fd(RemminaProtocolWidget *gp, gint fd);
+//static int remmina_plugin_spice_channel_open_fd(SpiceChannel *, int with_tls, RemminaProtocolWidget *);
 
 void remmina_plugin_spice_select_usb_devices( RemminaProtocolWidget * );
 #ifdef SPICE_GTK_CHECK_VERSION
@@ -66,10 +66,10 @@ void remmina_plugin_spice_file_transfer_new_cb( SpiceMainChannel *, SpiceFileTra
 #    endif /* SPICE_GTK_CHECK_VERSION(0, 31, 0) */
 #endif     /* SPICE_GTK_CHECK_VERSION */
 
-gchar *str_replace( const gchar *string, const gchar *search, const gchar *replacement )
+char *str_replace( const char *string, const char *search, const char *replacement )
 {
     TRACE_CALL( __func__ );
-    gchar *str, **arr;
+    char *str, **arr;
 
     g_return_val_if_fail( string != NULL, NULL );
     g_return_val_if_fail( search != NULL, NULL );
@@ -87,7 +87,7 @@ gchar *str_replace( const gchar *string, const gchar *search, const gchar *repla
     return str;
 }
 
-static gboolean remmina_plugin_spice_session_open_fd( RemminaProtocolWidget *gp, int fd )
+static int remmina_plugin_spice_session_open_fd( RemminaProtocolWidget *gp, int fd )
 {
     TRACE_CALL( __func__ );
     RemminaPluginSpiceData *gpdata = GET_PLUGIN_DATA( gp );
@@ -98,7 +98,7 @@ static gboolean remmina_plugin_spice_session_open_fd( RemminaProtocolWidget *gp,
     return spice_session_open_fd( gpdata->session, fd );
 }
 
-static gboolean
+static int
 remmina_plugin_spice_channel_open_fd( SpiceChannel *channel, int with_tls G_GNUC_UNUSED, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
@@ -148,13 +148,13 @@ static void remmina_plugin_spice_init( RemminaProtocolWidget *gp )
                   NULL );
 }
 
-static gboolean remmina_plugin_spice_open_connection( RemminaProtocolWidget *gp )
+static int remmina_plugin_spice_open_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
 
     gint port;
-    const gchar *cacert;
-    gchar *host, *tunnel;
+    const char *cacert;
+    char *host, *tunnel;
     RemminaPluginSpiceData *gpdata = GET_PLUGIN_DATA( gp );
     RemminaFile *remminafile = remmina_plugin_service->protocol_plugin_get_file( gp );
 
@@ -169,9 +169,9 @@ static gboolean remmina_plugin_spice_open_connection( RemminaProtocolWidget *gp 
     /**-START- UNIX socket
 	* if(strstr(g_strdup(tunnel), "unix:///") != NULL) {
 	* 	REMMINA_PLUGIN_DEBUG("Tunnel contain unix:// -> %s", tunnel);
-	* 	gchar *val = str_replace (tunnel, "unix://", "");
+	* 	char *val = str_replace (tunnel, "unix://", "");
 	* 	REMMINA_PLUGIN_DEBUG("tunnel after cleaning = %s", val);
-	* 	//gchar *val = g_strdup(remmina_plugin_service->file_get_string(remminafile, "server"));
+	* 	//char *val = g_strdup(remmina_plugin_service->file_get_string(remminafile, "server"));
 	* 	g_object_set(gpdata->session, "unix-path", val, NULL);
 	* 	gint fd = remmina_plugin_service->open_unix_sock(val);
 	* 	REMMINA_PLUGIN_DEBUG("Unix socket fd: %d", fd);
@@ -218,7 +218,7 @@ static gboolean remmina_plugin_spice_open_connection( RemminaProtocolWidget *gp 
     return TRUE;
 }
 
-static gboolean remmina_plugin_spice_close_connection( RemminaProtocolWidget *gp )
+static int remmina_plugin_spice_close_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     RemminaPluginSpiceData *gpdata = GET_PLUGIN_DATA( gp );
@@ -226,9 +226,13 @@ static gboolean remmina_plugin_spice_close_connection( RemminaProtocolWidget *gp
     if( gpdata->main_channel )
     {
         g_signal_handlers_disconnect_by_func(
-            gpdata->main_channel, G_CALLBACK( remmina_plugin_spice_main_channel_event_cb ), gp );
+            gpdata->main_channel,
+            reinterpret_cast<void *>( G_CALLBACK( remmina_plugin_spice_main_channel_event_cb ) ),
+            gp );
         g_signal_handlers_disconnect_by_func(
-            gpdata->main_channel, G_CALLBACK( remmina_plugin_spice_agent_connected_event_cb ), gp );
+            gpdata->main_channel,
+            reinterpret_cast<void *>( G_CALLBACK( remmina_plugin_spice_agent_connected_event_cb ) ),
+            gp );
     }
 
     if( gpdata->session )
@@ -251,7 +255,7 @@ static gboolean remmina_plugin_spice_close_connection( RemminaProtocolWidget *gp
     return FALSE;
 }
 
-static gboolean
+static int
 remmina_plugin_spice_disable_gst_overlay( SpiceChannel *channel, void *pipeline_ptr, RemminaProtocolWidget *gp )
 {
     g_signal_stop_emission_by_name( channel, "gst-video-overlay" );
@@ -334,14 +338,14 @@ remmina_plugin_spice_channel_new_cb( SpiceSession *session, SpiceChannel *channe
     }
 }
 
-static gboolean remmina_plugin_spice_ask_auth( RemminaProtocolWidget *gp )
+static int remmina_plugin_spice_ask_auth( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
 
     gint ret;
-    gboolean disablepasswordstoring;
-    gchar *s_password;
-    gboolean save;
+    bool disablepasswordstoring;
+    char *s_password;
+    bool save;
 
     RemminaPluginSpiceData *gpdata = GET_PLUGIN_DATA( gp );
     RemminaFile *remminafile = remmina_plugin_service->protocol_plugin_get_file( gp );
@@ -350,7 +354,8 @@ static gboolean remmina_plugin_spice_ask_auth( RemminaProtocolWidget *gp )
 
     ret = remmina_plugin_service->protocol_plugin_init_auth(
         gp,
-        ( disablepasswordstoring ? 0 : REMMINA_MESSAGE_PANEL_FLAG_SAVEPASSWORD ),
+        ( disablepasswordstoring ? static_cast<RemminaMessagePanelFlags>( 0 )
+                                 : REMMINA_MESSAGE_PANEL_FLAG_SAVEPASSWORD ),
         _( "Enter SPICE password" ),
         NULL,
         remmina_plugin_service->file_get_string( remminafile, "password" ),
@@ -383,7 +388,7 @@ remmina_plugin_spice_main_channel_event_cb( SpiceChannel *channel, SpiceChannelE
 {
     TRACE_CALL( __func__ );
 
-    gchar *server;
+    char *server;
     gint port;
     RemminaFile *remminafile = remmina_plugin_service->protocol_plugin_get_file( gp );
 
@@ -429,7 +434,7 @@ remmina_plugin_spice_main_channel_event_cb( SpiceChannel *channel, SpiceChannelE
 void remmina_plugin_spice_agent_connected_event_cb( SpiceChannel *channel, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
-    gboolean connected;
+    bool connected;
 
     g_object_get( channel, "agent-connected", &connected, NULL );
 
@@ -447,7 +452,7 @@ static void remmina_plugin_spice_display_ready_cb( GObject *display, GParamSpec 
 {
     TRACE_CALL( __func__ );
 
-    gboolean ready;
+    bool ready;
 
     g_object_get( display, "ready", &ready, NULL );
 
@@ -456,7 +461,8 @@ static void remmina_plugin_spice_display_ready_cb( GObject *display, GParamSpec 
         RemminaPluginSpiceData *gpdata = GET_PLUGIN_DATA( gp );
         RemminaFile *remminafile = remmina_plugin_service->protocol_plugin_get_file( gp );
 
-        g_signal_handlers_disconnect_by_func( display, G_CALLBACK( remmina_plugin_spice_display_ready_cb ), gp );
+        g_signal_handlers_disconnect_by_func(
+            display, reinterpret_cast<void *>( G_CALLBACK( remmina_plugin_spice_display_ready_cb ) ), gp );
 
         RemminaScaleMode scaleMode = remmina_plugin_service->remmina_protocol_widget_get_current_scale_mode( gp );
         g_object_set( display,
@@ -468,7 +474,8 @@ static void remmina_plugin_spice_display_ready_cb( GObject *display, GParamSpec 
 
 #ifdef SPICE_GTK_CHECK_VERSION
 #    if SPICE_GTK_CHECK_VERSION( 0, 34, 0 )
-        SpiceVideoCodecType videocodec = remmina_plugin_service->file_get_int( remminafile, "videocodec", 0 );
+        SpiceVideoCodecType videocodec =
+            static_cast<SpiceVideoCodecType>( remmina_plugin_service->file_get_int( remminafile, "videocodec", 0 ) );
         if( videocodec )
         {
 #        if SPICE_GTK_CHECK_VERSION( 0, 38, 0 )
@@ -510,8 +517,8 @@ static void remmina_plugin_spice_display_ready_cb( GObject *display, GParamSpec 
 
 #ifdef SPICE_GTK_CHECK_VERSION
 #    if SPICE_GTK_CHECK_VERSION( 0, 31, 0 )
-        SpiceImageCompression imagecompression =
-            remmina_plugin_service->file_get_int( remminafile, "imagecompression", 0 );
+        SpiceImageCompression imagecompression = static_cast<SpiceImageCompression>(
+            remmina_plugin_service->file_get_int( remminafile, "imagecompression", 0 ) );
         if( imagecompression )
         {
 #        if SPICE_GTK_CHECK_VERSION( 0, 35, 0 )
@@ -582,7 +589,7 @@ static void remmina_plugin_spice_update_scale_mode( RemminaProtocolWidget *gp )
     }
 }
 
-static gboolean remmina_plugin_spice_query_feature( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature )
+static int remmina_plugin_spice_query_feature( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature )
 {
     TRACE_CALL( __func__ );
 
@@ -628,9 +635,9 @@ static void remmina_plugin_spice_call_feature( RemminaProtocolWidget *gp, const 
 #ifdef SPICE_GTK_CHECK_VERSION
 #    if SPICE_GTK_CHECK_VERSION( 0, 34, 0 )
 /* Array of key/value pairs for preferred video codec
- * Key - SpiceVideoCodecType (spice/enums.h)
+ * Key - SpiceVideoCodecType (spice/enums.hpp)
  */
-static gpointer videocodec_list[] =
+static const char *videocodec_list[] =
     { "0", N_( "Default" ), "1", "mjpeg", "2", "vp8", "3", "h264", "4", "vp9", "5", "h265", NULL };
 #    endif
 #endif
@@ -638,31 +645,31 @@ static gpointer videocodec_list[] =
 #ifdef SPICE_GTK_CHECK_VERSION
 #    if SPICE_GTK_CHECK_VERSION( 0, 31, 0 )
 /* Array of key/value pairs for preferred video codec
- * Key - SpiceImageCompression (spice/enums.h)
+ * Key - SpiceImageCompression (spice/enums.hpp)
  */
-static gpointer imagecompression_list[] = { "0",
-                                            N_( "Default" ),
-                                            "1",
-                                            N_( "Off" ),
-                                            "2",
-                                            N_( "Auto GLZ" ),
-                                            "3",
-                                            N_( "Auto LZ" ),
-                                            "4",
-                                            "Quic",
-                                            "5",
-                                            "GLZ",
-                                            "6",
-                                            "LZ",
-                                            "7",
-                                            "LZ4",
-                                            NULL };
+static const char *imagecompression_list[] = { "0",
+                                               N_( "Default" ),
+                                               "1",
+                                               N_( "Off" ),
+                                               "2",
+                                               N_( "Auto GLZ" ),
+                                               "3",
+                                               N_( "Auto LZ" ),
+                                               "4",
+                                               "Quic",
+                                               "5",
+                                               "GLZ",
+                                               "6",
+                                               "LZ",
+                                               "7",
+                                               "LZ4",
+                                               NULL };
 #    endif
 #endif
 
 #ifdef SPICE_GTK_CHECK_VERSION
 #    if SPICE_GTK_CHECK_VERSION( 0, 34, 0 )
-static gchar disablegstvideooverlay_tooltip[] = N_( "Disable video overlay if videos are not displayed properly.\n" );
+static char disablegstvideooverlay_tooltip[] = N_( "Disable video overlay if videos are not displayed properly.\n" );
 #    endif
 #endif
 
@@ -677,9 +684,9 @@ static gchar disablegstvideooverlay_tooltip[] = N_( "Disable video overlay if vi
  * g) Validation data pointer, will be passed to the validation callback method.
  * h) Validation callback method (Can be NULL. Every entry will be valid then.)
  *		use following prototype:
- *		gboolean mysetting_validator_method(gpointer key, gpointer value,
+ *		bool mysetting_validator_method(gpointer key, gpointer value,
  *						    gpointer validator_data);
- *		gpointer key is a gchar* containing the setting's name,
+ *		gpointer key is a char* containing the setting's name,
  *		gpointer value contains the value which should be validated,
  *		gpointer validator_data contains your passed data.
  */
@@ -738,21 +745,21 @@ static const RemminaProtocolFeature remmina_plugin_spice_features[] = {
     { REMMINA_PROTOCOL_FEATURE_TYPE_PREF,
       REMMINA_PLUGIN_SPICE_FEATURE_PREF_VIEWONLY,
       GINT_TO_POINTER( REMMINA_PROTOCOL_FEATURE_PREF_CHECK ),
-      "viewonly",
-      N_( "View only" ) },
+      static_cast<void *>( const_cast<char *>( "viewonly" ) ),
+      static_cast<void *>( const_cast<char *>( N_( "View only" ) ) ) },
     { REMMINA_PROTOCOL_FEATURE_TYPE_PREF,
       REMMINA_PLUGIN_SPICE_FEATURE_PREF_DISABLECLIPBOARD,
       GINT_TO_POINTER( REMMINA_PROTOCOL_FEATURE_PREF_CHECK ),
-      "disableclipboard",
-      N_( "No clipboard sync" ) },
+      static_cast<void *>( const_cast<char *>( "disableclipboard" ) ),
+      static_cast<void *>( const_cast<char *>( N_( "No clipboard sync" ) ) ) },
     { REMMINA_PROTOCOL_FEATURE_TYPE_TOOL,
       REMMINA_PLUGIN_SPICE_FEATURE_TOOL_SENDCTRLALTDEL,
-      N_( "Send Ctrl+Alt+Delete" ),
+      static_cast<void *>( const_cast<char *>( N_( "Send Ctrl+Alt+Delete" ) ) ),
       NULL,
       NULL },
     { REMMINA_PROTOCOL_FEATURE_TYPE_TOOL,
       REMMINA_PLUGIN_SPICE_FEATURE_TOOL_USBREDIR,
-      N_( "Select USB devices for redirection" ),
+      static_cast<void *>( const_cast<char *>( N_( "Select USB devices for redirection" ) ) ),
       NULL,
       NULL },
     { REMMINA_PROTOCOL_FEATURE_TYPE_DYNRESUPDATE, REMMINA_PLUGIN_SPICE_FEATURE_DYNRESUPDATE, NULL, NULL, NULL },
@@ -782,13 +789,13 @@ static RemminaProtocolPlugin remmina_plugin_spice = {
     NULL                                                                    // RCW unmap event
 };
 
-void remmina_plugin_spice_remove_list_option( gpointer *option_list, const gchar *option_to_remove )
+void remmina_plugin_spice_remove_list_option( gpointer *option_list, const char *option_to_remove )
 {
-    gpointer *src, *dst;
+    char **src, **dst;
 
     TRACE_CALL( __func__ );
 
-    dst = src = option_list;
+    dst = src = reinterpret_cast<char **>( option_list );
     while( *src )
     {
         if( strcmp( *src, option_to_remove ) != 0 )
@@ -807,12 +814,12 @@ void remmina_plugin_spice_remove_list_option( gpointer *option_list, const gchar
 
 #ifdef SPICE_GTK_CHECK_VERSION
 #    if SPICE_GTK_CHECK_VERSION( 0, 31, 0 )
-gboolean remmina_plugin_spice_is_lz4_supported()
+int remmina_plugin_spice_is_lz4_supported()
 {
-    gboolean result = FALSE;
+    bool result = FALSE;
     GOptionContext *context;
     GOptionGroup *spiceGroup;
-    gchar *spiceHelp;
+    char *spiceHelp;
 
     TRACE_CALL( __func__ );
 
@@ -823,7 +830,7 @@ gboolean remmina_plugin_spice_is_lz4_supported()
     spiceHelp = g_option_context_get_help( context, FALSE, spiceGroup );
     if( g_strcmp0( spiceHelp, "" ) != 0 )
     {
-        gchar **spiceHelpLines, **line;
+        char **spiceHelpLines, **line;
         spiceHelpLines = g_strsplit( spiceHelp, "\n", -1 );
 
         for( line = spiceHelpLines; *line != NULL; ++line )
@@ -849,29 +856,33 @@ gboolean remmina_plugin_spice_is_lz4_supported()
 #    endif
 #endif
 
-G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
+extern "C"
 {
-    TRACE_CALL( __func__ );
-    remmina_plugin_service = service;
+    G_MODULE_EXPORT int remmina_plugin_entry( RemminaPluginService *service )
+    {
+        TRACE_CALL( __func__ );
+        remmina_plugin_service = service;
 
-    bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
-    bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
+        bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
+        bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
 
 #ifdef SPICE_GTK_CHECK_VERSION
 #    if SPICE_GTK_CHECK_VERSION( 0, 31, 0 )
-    if( !remmina_plugin_spice_is_lz4_supported() )
-    {
-        char key_str[10];
-        sprintf( key_str, "%d", SPICE_IMAGE_COMPRESSION_LZ4 );
-        remmina_plugin_spice_remove_list_option( imagecompression_list, key_str );
-    }
+        if( !remmina_plugin_spice_is_lz4_supported() )
+        {
+            char key_str[10];
+            sprintf( key_str, "%d", SPICE_IMAGE_COMPRESSION_LZ4 );
+            remmina_plugin_spice_remove_list_option(
+                reinterpret_cast<void **>( const_cast<char **>( imagecompression_list ) ), key_str );
+        }
 #    endif
 #endif
 
-    if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin_spice ) )
-    {
-        return FALSE;
-    }
+        if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin_spice ) )
+        {
+            return FALSE;
+        }
 
-    return TRUE;
+        return TRUE;
+    }
 }

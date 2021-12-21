@@ -33,9 +33,9 @@
  *
  */
 
-#include "www_config.h"
+#include "www_config.hpp"
 
-#include "common/remmina_plugin.h"
+#include "common/remmina_plugin.hpp"
 
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
@@ -48,8 +48,8 @@
 #if WEBKIT_CHECK_VERSION( 2, 21, 1 )
 #    include <jsc/jsc.h>
 #endif
-#include "www_utils.h"
-#include "www_plugin.h"
+#include "www_utils.hpp"
+#include "www_plugin.hpp"
 
 #define UNUSED( x ) (void)( x )
 
@@ -67,9 +67,9 @@ typedef struct _RemminaPluginWWWData
     WebKitWebView *webview;
     WebKitLoadEvent load_event;
 
-    gchar *url;
-    gboolean authenticated;
-    gboolean formauthenticated;
+    char *url;
+    bool authenticated;
+    bool formauthenticated;
 } RemminaPluginWWWData;
 
 RemminaPluginService *remmina_plugin_service = NULL;
@@ -91,24 +91,24 @@ void remmina_plugin_www_response_received( WebKitDownload *download, GParamSpec 
     REMMINA_PLUGIN_DEBUG( "Download response received" );
 }
 
-void remmina_plugin_www_notify_download( WebKitDownload *download, gchar *destination, RemminaProtocolWidget *gp )
+void remmina_plugin_www_notify_download( WebKitDownload *download, char *destination, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     REMMINA_PLUGIN_DEBUG( "Download is finished" );
-    const gchar *dest = webkit_download_get_destination( download );
+    const char *dest = webkit_download_get_destination( download );
     www_utils_send_notification( "www-plugin-download-completed-id", _( "File downloaded" ), dest );
     //download(gp, webkit_download_get_response(download));
     //webkit_download_cancel(download);
 }
 
-static gboolean remmina_plugin_www_decide_policy_cb( WebKitWebView *webview,
-                                                     WebKitPolicyDecision *decision,
-                                                     WebKitPolicyDecisionType decision_type,
-                                                     RemminaProtocolWidget *gp )
+static int remmina_plugin_www_decide_policy_cb( WebKitWebView *webview,
+                                                WebKitPolicyDecision *decision,
+                                                WebKitPolicyDecisionType decision_type,
+                                                RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
 
-    gboolean res = TRUE;
+    bool res = TRUE;
 
     switch( decision_type )
     {
@@ -131,7 +131,7 @@ void remmina_plugin_www_decide_nav( WebKitPolicyDecision *decision, RemminaProto
 {
     TRACE_CALL( __func__ );
     REMMINA_PLUGIN_DEBUG( "Policy decision navigation" );
-    const gchar *url = NULL;
+    const char *url = NULL;
     WebKitNavigationAction *a =
         webkit_navigation_policy_decision_get_navigation_action( WEBKIT_NAVIGATION_POLICY_DECISION( decision ) );
 
@@ -179,7 +179,7 @@ void remmina_plugin_www_on_create( WebKitWebView *webview, WebKitNavigationActio
     TRACE_CALL( __func__ );
     REMMINA_PLUGIN_DEBUG( "New web-view" );
 
-    const gchar *url = NULL;
+    const char *url = NULL;
 
     RemminaPluginWWWData *gpdata;
     gpdata = (RemminaPluginWWWData *)g_object_get_data( G_OBJECT( gp ), "plugin-data" );
@@ -187,23 +187,31 @@ void remmina_plugin_www_on_create( WebKitWebView *webview, WebKitNavigationActio
     switch( webkit_navigation_action_get_navigation_type( a ) )
     {
         case WEBKIT_NAVIGATION_TYPE_LINK_CLICKED:
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_LINK_CLICKED" );
             url = webkit_uri_request_get_uri( webkit_navigation_action_get_request( a ) );
             REMMINA_PLUGIN_DEBUG( "Downloading url %s ", url );
             WebKitDownload *d = webkit_web_view_download_uri( gpdata->webview, url );
             UNUSED( d );
-
-            break;
+        }
+        break;
         case WEBKIT_NAVIGATION_TYPE_FORM_SUBMITTED:
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_FORM_SUBMITTED" );
-            break;
+        }
+        break;
         case WEBKIT_NAVIGATION_TYPE_BACK_FORWARD:
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_BACK_FORWARD" );
-            break;
+        }
+        break;
         case WEBKIT_NAVIGATION_TYPE_RELOAD:
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_RELOAD" );
-            break;
+        }
+        break;
         case WEBKIT_NAVIGATION_TYPE_FORM_RESUBMITTED:
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_FORM_RESUBMITTED" );
             /* Filter domains here */
             /* If the value of “mouse-button” is not 0, then the navigation was triggered by a mouse event.
@@ -211,8 +219,10 @@ void remmina_plugin_www_on_create( WebKitWebView *webview, WebKitNavigationActio
             url = webkit_uri_request_get_uri( webkit_navigation_action_get_request( a ) );
             REMMINA_PLUGIN_DEBUG( "Trying to open url: %s", url );
             webkit_web_view_load_uri( gpdata->webview, url );
-            break;
+        }
+        break;
         case WEBKIT_NAVIGATION_TYPE_OTHER: /* fallthrough */
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_OTHER" );
             /* Filter domains here */
             /* If the value of “mouse-button” is not 0, then the navigation was triggered by a mouse event.
@@ -220,7 +230,8 @@ void remmina_plugin_www_on_create( WebKitWebView *webview, WebKitNavigationActio
             url = webkit_uri_request_get_uri( webkit_navigation_action_get_request( a ) );
             REMMINA_PLUGIN_DEBUG( "Trying to open url: %s", url );
             webkit_web_view_load_uri( gpdata->webview, url );
-            break;
+        }
+        break;
         default:
             break;
     }
@@ -232,7 +243,7 @@ void remmina_plugin_www_decide_newwin( WebKitPolicyDecision *decision, RemminaPr
     TRACE_CALL( __func__ );
     REMMINA_PLUGIN_DEBUG( "Policy decision new window" );
 
-    const gchar *url = NULL;
+    const char *url = NULL;
 
     RemminaPluginWWWData *gpdata;
     gpdata = (RemminaPluginWWWData *)g_object_get_data( G_OBJECT( gp ), "plugin-data" );
@@ -243,23 +254,31 @@ void remmina_plugin_www_decide_newwin( WebKitPolicyDecision *decision, RemminaPr
     switch( webkit_navigation_action_get_navigation_type( a ) )
     {
         case WEBKIT_NAVIGATION_TYPE_LINK_CLICKED:
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_LINK_CLICKED" );
             url = webkit_uri_request_get_uri( webkit_navigation_action_get_request( a ) );
             REMMINA_PLUGIN_DEBUG( "Downloading url %s ", url );
             WebKitDownload *d = webkit_web_view_download_uri( gpdata->webview, url );
             UNUSED( d );
-
-            break;
+        }
+        break;
         case WEBKIT_NAVIGATION_TYPE_FORM_SUBMITTED:
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_FORM_SUBMITTED" );
-            break;
+        }
+        break;
         case WEBKIT_NAVIGATION_TYPE_BACK_FORWARD:
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_BACK_FORWARD" );
-            break;
+        }
+        break;
         case WEBKIT_NAVIGATION_TYPE_RELOAD:
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_RELOAD" );
-            break;
+        }
+        break;
         case WEBKIT_NAVIGATION_TYPE_FORM_RESUBMITTED:
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_FORM_RESUBMITTED" );
             /* Filter domains here */
             /* If the value of “mouse-button” is not 0, then the navigation was triggered by a mouse event.
@@ -267,8 +286,10 @@ void remmina_plugin_www_decide_newwin( WebKitPolicyDecision *decision, RemminaPr
             url = webkit_uri_request_get_uri( webkit_navigation_action_get_request( a ) );
             REMMINA_PLUGIN_DEBUG( "Trying to open url: %s", url );
             webkit_web_view_load_uri( gpdata->webview, url );
-            break;
+        }
+        break;
         case WEBKIT_NAVIGATION_TYPE_OTHER: /* fallthrough */
+        {
             REMMINA_PLUGIN_DEBUG( "WEBKIT_NAVIGATION_TYPE_OTHER" );
             /* Filter domains here */
             /* If the value of “mouse-button” is not 0, then the navigation was triggered by a mouse event.
@@ -276,7 +297,8 @@ void remmina_plugin_www_decide_newwin( WebKitPolicyDecision *decision, RemminaPr
             url = webkit_uri_request_get_uri( webkit_navigation_action_get_request( a ) );
             REMMINA_PLUGIN_DEBUG( "Trying to open url: %s", url );
             webkit_web_view_load_uri( gpdata->webview, url );
-            break;
+        }
+        break;
         default:
             break;
     }
@@ -284,14 +306,14 @@ void remmina_plugin_www_decide_newwin( WebKitPolicyDecision *decision, RemminaPr
 
     webkit_policy_decision_ignore( decision );
 }
-gboolean remmina_plugin_www_decide_resource( WebKitPolicyDecision *decision, RemminaProtocolWidget *gp )
+int remmina_plugin_www_decide_resource( WebKitPolicyDecision *decision, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     REMMINA_PLUGIN_DEBUG( "Policy decision resource" );
     WebKitResponsePolicyDecision *response_decision = WEBKIT_RESPONSE_POLICY_DECISION( decision );
     WebKitURIResponse *response = webkit_response_policy_decision_get_response( response_decision );
     ;
-    const gchar *request_uri = webkit_uri_response_get_uri( response );
+    const char *request_uri = webkit_uri_response_get_uri( response );
 
     WebKitURIRequest *request;
     WebKitWebResource *main_resource;
@@ -359,7 +381,7 @@ static void remmina_www_web_view_js_finished( GObject *object, GAsyncResult *res
     }
 
 #if WEBKIT_CHECK_VERSION( 2, 21, 1 )
-    gchar *str_value;
+    char *str_value;
     JSCValue *value = webkit_javascript_result_get_js_value( js_result );
     if( jsc_value_is_string( value ) || jsc_value_is_boolean( value ) )
     {
@@ -384,22 +406,22 @@ static void remmina_www_web_view_js_finished( GObject *object, GAsyncResult *res
         webkit_javascript_result_unref( js_result );
 }
 
-static gboolean remmina_www_query_feature( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature )
+static int remmina_www_query_feature( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature )
 {
     TRACE_CALL( __func__ );
     return TRUE;
 }
 
-static gboolean remmina_plugin_www_load_failed_tls_cb( WebKitWebView *webview,
-                                                       gchar *failing_uri,
-                                                       GTlsCertificate *certificate,
-                                                       GTlsCertificateFlags errors,
-                                                       RemminaProtocolWidget *gp ) __attribute__( ( unused ) );
-static gboolean remmina_plugin_www_load_failed_tls_cb( WebKitWebView *webview,
-                                                       gchar *failing_uri,
-                                                       GTlsCertificate *certificate,
-                                                       GTlsCertificateFlags errors,
-                                                       RemminaProtocolWidget *gp )
+static int remmina_plugin_www_load_failed_tls_cb( WebKitWebView *webview,
+                                                  char *failing_uri,
+                                                  GTlsCertificate *certificate,
+                                                  GTlsCertificateFlags errors,
+                                                  RemminaProtocolWidget *gp ) __attribute__( ( unused ) );
+static int remmina_plugin_www_load_failed_tls_cb( WebKitWebView *webview,
+                                                  char *failing_uri,
+                                                  GTlsCertificate *certificate,
+                                                  GTlsCertificateFlags errors,
+                                                  RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     /* Avoid failing if certificate is not good. TODO: Add widgets to let the user decide */
@@ -413,8 +435,8 @@ static void remmina_plugin_www_init( RemminaProtocolWidget *gp )
 
     RemminaPluginWWWData *gpdata;
     RemminaFile *remminafile;
-    gchar *datapath;
-    gchar *cache_dir;
+    char *datapath;
+    char *cache_dir;
 
     gpdata = g_new0( RemminaPluginWWWData, 1 );
     g_object_set_data_full( G_OBJECT( gp ), "plugin-data", gpdata, g_free );
@@ -434,10 +456,10 @@ static void remmina_plugin_www_init( RemminaProtocolWidget *gp )
 
     if( datapath )
     {
-        gchar *indexeddb_dir = g_build_filename( datapath, "indexeddb", NULL );
-        gchar *local_storage_dir = g_build_filename( datapath, "local_storage", NULL );
-        gchar *applications_dir = g_build_filename( datapath, "applications", NULL );
-        gchar *websql_dir = g_build_filename( datapath, "websql", NULL );
+        char *indexeddb_dir = g_build_filename( datapath, "indexeddb", NULL );
+        char *local_storage_dir = g_build_filename( datapath, "local_storage", NULL );
+        char *applications_dir = g_build_filename( datapath, "applications", NULL );
+        char *websql_dir = g_build_filename( datapath, "websql", NULL );
         gpdata->data_mgr = webkit_website_data_manager_new( "disk-cache-directory",
                                                             cache_dir,
                                                             "indexeddb-directory",
@@ -463,7 +485,7 @@ static void remmina_plugin_www_init( RemminaProtocolWidget *gp )
     if( remmina_plugin_service->file_get_string( remminafile, "server" ) )
         gpdata->url = g_strdup( remmina_plugin_service->file_get_string( remminafile, "server" ) );
     else
-        gpdata->url = "https://remmina.org";
+        gpdata->url = strdup( "https://remmina.org" );
     g_info( "URL is set to %s", gpdata->url );
 
     gpdata->settings = webkit_settings_new();
@@ -489,7 +511,7 @@ static void remmina_plugin_www_init( RemminaProtocolWidget *gp )
     /* user-agent. */
     if( remmina_plugin_service->file_get_string( remminafile, "user-agent" ) )
     {
-        gchar *useragent = g_strdup( remmina_plugin_service->file_get_string( remminafile, "user-agent" ) );
+        char *useragent = g_strdup( remmina_plugin_service->file_get_string( remminafile, "user-agent" ) );
         webkit_settings_set_user_agent( gpdata->settings, useragent );
         g_info( "User Agent set to: %s", useragent );
         g_free( useragent );
@@ -543,7 +565,7 @@ static void remmina_plugin_www_init( RemminaProtocolWidget *gp )
     }
     if( remmina_plugin_service->file_get_string( remminafile, "proxy-url" ) )
     {
-        gchar *proxyurl = g_strdup( remmina_plugin_service->file_get_string( remminafile, "proxy-url" ) );
+        char *proxyurl = g_strdup( remmina_plugin_service->file_get_string( remminafile, "proxy-url" ) );
         WebKitNetworkProxySettings *proxy_settings = webkit_network_proxy_settings_new( proxyurl, NULL );
 #if WEBKIT_CHECK_VERSION( 2, 32, 0 )
         webkit_website_data_manager_set_network_proxy_settings(
@@ -574,16 +596,16 @@ static void remmina_plugin_www_init( RemminaProtocolWidget *gp )
         G_OBJECT( gpdata->context ), "download-started", G_CALLBACK( remmina_plugin_www_download_started ), gp );
 }
 
-static gboolean
+static int
 remmina_plugin_www_on_auth( WebKitWebView *webview, WebKitAuthenticationRequest *request, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
 
-    gchar *s_username, *s_password;
+    char *s_username, *s_password;
     gint ret;
     RemminaPluginWWWData *gpdata;
-    gboolean save;
-    gboolean disablepasswordstoring;
+    bool save;
+    bool disablepasswordstoring;
     RemminaFile *remminafile;
 
     gpdata = (RemminaPluginWWWData *)g_object_get_data( G_OBJECT( gp ), "plugin-data" );
@@ -595,7 +617,8 @@ remmina_plugin_www_on_auth( WebKitWebView *webview, WebKitAuthenticationRequest 
     disablepasswordstoring = remmina_plugin_service->file_get_int( remminafile, "disablepasswordstoring", FALSE );
     ret = remmina_plugin_service->protocol_plugin_init_auth(
         gp,
-        ( disablepasswordstoring ? 0 : REMMINA_MESSAGE_PANEL_FLAG_SAVEPASSWORD ) | REMMINA_MESSAGE_PANEL_FLAG_USERNAME,
+        static_cast<RemminaMessagePanelFlags>( ( disablepasswordstoring ? 0 : REMMINA_MESSAGE_PANEL_FLAG_SAVEPASSWORD )
+                                               | REMMINA_MESSAGE_PANEL_FLAG_USERNAME ),
         _( "Enter WWW authentication credentials" ),
         remmina_plugin_service->file_get_string( remminafile, "username" ),
         remmina_plugin_service->file_get_string( remminafile, "password" ),
@@ -642,12 +665,12 @@ static void
 remmina_plugin_www_form_auth( WebKitWebView *webview, WebKitLoadEvent load_event, RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
-    gchar *s_js;
+    char *s_js;
     GString *jsstr;
     RemminaPluginWWWData *gpdata;
     RemminaFile *remminafile;
-    gchar *remmina_dir;
-    gchar *www_js_file = NULL;
+    char *remmina_dir;
+    char *www_js_file = NULL;
     GError *error = NULL;
 
     gpdata = (RemminaPluginWWWData *)g_object_get_data( G_OBJECT( gp ), "plugin-data" );
@@ -658,7 +681,7 @@ remmina_plugin_www_form_auth( WebKitWebView *webview, WebKitLoadEvent load_event
 
     REMMINA_PLUGIN_DEBUG( "load-changed emitted" );
 
-    const gchar *const *dirs = g_get_system_data_dirs();
+    const char *const *dirs = g_get_system_data_dirs();
 
     unsigned int i = 0;
     for( i = 0; dirs[i] != NULL; ++i )
@@ -759,7 +782,7 @@ remmina_plugin_www_form_auth( WebKitWebView *webview, WebKitLoadEvent load_event
     }
 }
 
-static gboolean remmina_plugin_www_close_connection( RemminaProtocolWidget *gp )
+static int remmina_plugin_www_close_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
     RemminaPluginWWWData *gpdata;
@@ -784,7 +807,7 @@ static gboolean remmina_plugin_www_close_connection( RemminaProtocolWidget *gp )
     return FALSE;
 }
 
-static gboolean remmina_plugin_www_open_connection( RemminaProtocolWidget *gp )
+static int remmina_plugin_www_open_connection( RemminaProtocolWidget *gp )
 {
     TRACE_CALL( __func__ );
 
@@ -860,7 +883,7 @@ static void remmina_plugin_www_save_snapshot( GObject *object, GAsyncResult *res
     int height;
     GdkPixbuf *screenshot;
     GString *pngstr;
-    gchar *pngname;
+    char *pngname;
     //cairo_forma_t* cairo_format;
     GDateTime *date = g_date_time_new_now_utc();
 
@@ -899,7 +922,7 @@ static void remmina_plugin_www_save_snapshot( GObject *object, GAsyncResult *res
 
     cairo_surface_destroy( surface );
 }
-static gboolean remmina_plugin_www_get_snapshot( RemminaProtocolWidget *gp, RemminaPluginScreenshotData *rpsd )
+static int remmina_plugin_www_get_snapshot( RemminaProtocolWidget *gp, RemminaPluginScreenshotData *rpsd )
 {
     TRACE_CALL( __func__ );
     RemminaPluginWWWData *gpdata;
@@ -925,9 +948,9 @@ static gboolean remmina_plugin_www_get_snapshot( RemminaProtocolWidget *gp, Remm
  * g) Validation data pointer, will be passed to the validation callback method.
  * h) Validation callback method (Can be NULL. Every entry will be valid then.)
  *		use following prototype:
- *		gboolean mysetting_validator_method(gpointer key, gpointer value,
+ *		bool mysetting_validator_method(gpointer key, gpointer value,
  *						    gpointer validator_data);
- *		gpointer key is a gchar* containing the setting's name,
+ *		gpointer key is a char* containing the setting's name,
  *		gpointer value contains the value which should be validated,
  *		gpointer validator_data contains your passed data.
  */
@@ -937,7 +960,7 @@ static const RemminaProtocolSetting remmina_plugin_www_basic_settings[] = {
       N_( "URL" ),
       FALSE,
       NULL,
-      N_( "http://address or https://address" ),
+      static_cast<void *>( const_cast<char *>( N_( "http://address or https://address" ) ) ),
       NULL,
       NULL },
     { REMMINA_PROTOCOL_SETTING_TYPE_TEXT, "username", N_( "Username" ), FALSE, NULL, NULL, NULL, NULL },
@@ -960,7 +983,7 @@ static const RemminaProtocolSetting remmina_plugin_www_advanced_settings[] = {
       N_( "Proxy URL" ),
       FALSE,
       NULL,
-      N_( "E.g. https://example.org, socks://mysocks:1080" ) },
+      static_cast<void *>( const_cast<char *>( N_( "E.g. https://example.org, socks://mysocks:1080" ) ) ) },
     { REMMINA_PROTOCOL_SETTING_TYPE_CHECK, "enable-java", N_( "Turn on Java support" ), TRUE, NULL, NULL },
     { REMMINA_PROTOCOL_SETTING_TYPE_CHECK,
       "enable-smooth-scrolling",
@@ -1018,15 +1041,18 @@ static RemminaProtocolPlugin remmina_plugin = {
     NULL                                  // RCW unmap event
 };
 
-G_MODULE_EXPORT gboolean remmina_plugin_entry( RemminaPluginService *service )
+extern "C"
 {
-    TRACE_CALL( __func__ );
-    remmina_plugin_service = service;
+    G_MODULE_EXPORT int remmina_plugin_entry( RemminaPluginService *service )
+    {
+        TRACE_CALL( __func__ );
+        remmina_plugin_service = service;
 
-    bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
-    bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
+        bindtextdomain( GETTEXT_PACKAGE, REMMINA_RUNTIME_LOCALEDIR );
+        bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
 
-    if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin ) )
-        return FALSE;
-    return TRUE;
+        if( !service->register_plugin( (RemminaPlugin *)&remmina_plugin ) )
+            return FALSE;
+        return TRUE;
+    }
 }

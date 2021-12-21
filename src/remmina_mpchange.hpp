@@ -34,15 +34,15 @@
  *
  */
 
-#include "remmina/types.h"
+#include "remmina/types.hpp"
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 /* Schedule the multipassword change confirmation dialog to be executed ASAP */
-void remmina_mpchange_schedule( gboolean has_domain,
-                                const gchar *group,
-                                const gchar *domain,
-                                const gchar *username,
-                                const gchar *password );
+void remmina_mpchange_schedule( bool has_domain,
+                                const char *group,
+                                const char *domain,
+                                const char *username,
+                                const char *password );

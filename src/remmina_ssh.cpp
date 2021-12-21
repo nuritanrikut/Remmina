@@ -78,14 +78,14 @@
 #    ifdef HAVE_PTY_H
 #        include <pty.h>
 #    endif
-#    include "remmina_public.h"
-#    include "remmina/types.h"
-#    include "remmina_file.h"
-#    include "remmina_log.h"
-#    include "remmina_pref.h"
-#    include "remmina_ssh.h"
-#    include "remmina_masterthread_exec.h"
-#    include "remmina/remmina_trace_calls.h"
+#    include "remmina_public.hpp"
+#    include "remmina/types.hpp"
+#    include "remmina_file.hpp"
+#    include "remmina_log.hpp"
+#    include "remmina_pref.hpp"
+#    include "remmina_ssh.hpp"
+#    include "remmina_masterthread_exec.hpp"
+#    include "remmina/remmina_trace_calls.hpp"
 
 #    ifdef HAVE_NETINET_TCP_H
 #        include <netinet/tcp.h>
@@ -105,9 +105,9 @@
 #    define LOCK_SSH( ssh ) pthread_mutex_lock( &REMMINA_SSH( ssh )->ssh_mutex );
 #    define UNLOCK_SSH( ssh ) pthread_mutex_unlock( &REMMINA_SSH( ssh )->ssh_mutex );
 
-static const gchar *common_identities[] = { ".ssh/id_ed25519", ".ssh/id_rsa", ".ssh/id_dsa", ".ssh/identity", NULL };
+static const char *common_identities[] = { ".ssh/id_ed25519", ".ssh/id_rsa", ".ssh/id_dsa", ".ssh/identity", NULL };
 
-gchar *remmina_ssh_identity_path( const gchar *id )
+char *remmina_ssh_identity_path( const char *id )
 {
     TRACE_CALL( __func__ );
     if( id == NULL )
@@ -117,32 +117,32 @@ gchar *remmina_ssh_identity_path( const gchar *id )
     return g_strdup_printf( "%s/%s", g_get_home_dir(), id );
 }
 
-gchar *remmina_ssh_find_identity( void )
+char *remmina_ssh_find_identity( void )
 {
     TRACE_CALL( __func__ );
-    gchar *path;
+    char *path;
     gint i;
 
     for( i = 0; common_identities[i]; i++ )
     {
         path = remmina_ssh_identity_path( common_identities[i] );
-        if( g_file_test( path, G_FILE_TEST_IS_REGULAR | G_FILE_TEST_EXISTS ) )
+        if( g_file_test( path, static_cast<GFileTest>(G_FILE_TEST_IS_REGULAR | G_FILE_TEST_EXISTS) ) )
             return path;
         g_free( path );
     }
     return NULL;
 }
 
-void remmina_ssh_set_error( RemminaSSH *ssh, const gchar *fmt )
+void remmina_ssh_set_error( RemminaSSH *ssh, const char *fmt )
 {
     TRACE_CALL( __func__ );
-    const gchar *err;
+    const char *err;
 
     err = ssh_get_error( ssh->session );
     ssh->error = g_strdup_printf( fmt, err );
 }
 
-void remmina_ssh_set_application_error( RemminaSSH *ssh, const gchar *fmt, ... )
+void remmina_ssh_set_application_error( RemminaSSH *ssh, const char *fmt, ... )
 {
     TRACE_CALL( __func__ );
     va_list args;
@@ -158,8 +158,8 @@ static enum remmina_ssh_auth_result remmina_ssh_auth_interactive( RemminaSSH *ss
     gint ret;
     gint n;
     gint i;
-    const gchar *name, *instruction;
-    //gchar *prompt,*ptr;
+    const char *name, *instruction;
+    //char *prompt,*ptr;
 
     ret = SSH_AUTH_ERROR;
     if( ssh->authenticated )
@@ -303,7 +303,7 @@ remmina_ssh_auth_pubkey( RemminaSSH *ssh, RemminaProtocolWidget *gp, RemminaFile
 
     ssh_key key = NULL;
     ssh_key cert = NULL;
-    gchar pubkey[132] = { 0 }; // +".pub"
+    char pubkey[132] = { 0 }; // +".pub"
     gint ret;
 
     if( ssh->authenticated )
@@ -592,7 +592,7 @@ static enum remmina_ssh_auth_result remmina_ssh_auth_gssapi( RemminaSSH *ssh )
 }
 
 enum remmina_ssh_auth_result
-remmina_ssh_auth( RemminaSSH *ssh, const gchar *password, RemminaProtocolWidget *gp, RemminaFile *remminafile )
+remmina_ssh_auth( RemminaSSH *ssh, const char *password, RemminaProtocolWidget *gp, RemminaFile *remminafile )
 {
     TRACE_CALL( __func__ );
     gint method;
@@ -912,22 +912,22 @@ remmina_ssh_auth( RemminaSSH *ssh, const gchar *password, RemminaProtocolWidget 
     return REMMINA_SSH_AUTH_FATAL_ERROR;
 }
 
-enum remmina_ssh_auth_result
+remmina_ssh_auth_result
 remmina_ssh_auth_gui( RemminaSSH *ssh, RemminaProtocolWidget *gp, RemminaFile *remminafile )
 {
     TRACE_CALL( __func__ );
-    gchar *keyname;
-    gchar *pwdfkey;
-    gchar *message;
-    gchar *current_pwd;
-    gchar *current_user;
-    const gchar *instruction;
+    char *keyname;
+    const char *pwdfkey;
+    char *message;
+    char *current_pwd;
+    char *current_user;
+    const char *instruction;
     gint ret;
     size_t len;
     guchar *pubkey;
     ssh_key server_pubkey;
-    gboolean disablepasswordstoring;
-    gboolean save_password;
+    bool disablepasswordstoring;
+    bool save_password;
     gint attempt;
 
     /* Check if the server’s public key is known */
@@ -1095,7 +1095,7 @@ remmina_ssh_auth_gui( RemminaSSH *ssh, RemminaProtocolWidget *gp, RemminaFile *r
         {
             ret = remmina_protocol_widget_panel_auth(
                 gp,
-                ( disablepasswordstoring ? 0 : REMMINA_MESSAGE_PANEL_FLAG_SAVEPASSWORD ),
+                static_cast<RemminaMessagePanelFlags>( disablepasswordstoring ? 0 : REMMINA_MESSAGE_PANEL_FLAG_SAVEPASSWORD ),
                 ssh->is_tunnel ? _( "SSH tunnel credentials" ) : _( "SSH credentials" ),
                 NULL,
                 remmina_file_get_string( remminafile, pwdfkey ),
@@ -1126,9 +1126,9 @@ remmina_ssh_auth_gui( RemminaSSH *ssh, RemminaProtocolWidget *gp, RemminaFile *r
                 g_strdup( remmina_file_get_string( remminafile, ssh->is_tunnel ? "ssh_tunnel_username" : "username" ) );
             ret = remmina_protocol_widget_panel_auth(
                 gp,
-                ( disablepasswordstoring ? 0 : REMMINA_MESSAGE_PANEL_FLAG_SAVEPASSWORD )
+                static_cast<RemminaMessagePanelFlags>(( disablepasswordstoring ? 0 : REMMINA_MESSAGE_PANEL_FLAG_SAVEPASSWORD )
                     | REMMINA_MESSAGE_PANEL_FLAG_USERNAME
-                    | ( !ssh->is_tunnel ? 0 : REMMINA_MESSAGE_PANEL_FLAG_USERNAME_READONLY ),
+                    | ( !ssh->is_tunnel ? 0 : REMMINA_MESSAGE_PANEL_FLAG_USERNAME_READONLY )),
                 ssh->is_tunnel ? _( "SSH tunnel credentials" ) : _( "SSH credentials" ),
                 current_user,
                 current_pwd,
@@ -1186,7 +1186,7 @@ remmina_ssh_auth_gui( RemminaSSH *ssh, RemminaProtocolWidget *gp, RemminaFile *r
 			 * password_prompt
 			 */
             ret = remmina_protocol_widget_panel_auth(
-                gp, 0, _( "Keyboard interactive login, TOTP/OTP/2FA" ), NULL, NULL, NULL, instruction );
+                gp, static_cast<RemminaMessagePanelFlags>(0), _( "Keyboard interactive login, TOTP/OTP/2FA" ), NULL, NULL, NULL, instruction );
             if( ret == GTK_RESPONSE_OK )
             {
                 g_free( current_pwd );
@@ -1223,7 +1223,7 @@ remmina_ssh_auth_gui( RemminaSSH *ssh, RemminaProtocolWidget *gp, RemminaFile *r
         ret = REMMINA_SSH_AUTH_FATAL_ERROR;
     }
 
-    return ret;
+    return static_cast<remmina_ssh_auth_result>(ret);
 }
 
 void remmina_ssh_log_callback( ssh_session session, int priority, const char *message, void *userdata )
@@ -1232,12 +1232,12 @@ void remmina_ssh_log_callback( ssh_session session, int priority, const char *me
     REMMINA_DEBUG( message );
 }
 
-gboolean remmina_ssh_init_session( RemminaSSH *ssh )
+int remmina_ssh_init_session( RemminaSSH *ssh )
 {
     TRACE_CALL( __func__ );
     gint verbosity;
     gint rc;
-    gchar *parsed_config;
+    char *parsed_config;
 #    ifdef HAVE_NETINET_TCP_H
     socket_t sshsock;
     gint optval;
@@ -1515,13 +1515,13 @@ gboolean remmina_ssh_init_session( RemminaSSH *ssh )
     return TRUE;
 }
 
-gboolean remmina_ssh_init_from_file( RemminaSSH *ssh, RemminaFile *remminafile, gboolean is_tunnel )
+int remmina_ssh_init_from_file( RemminaSSH *ssh, RemminaFile *remminafile, bool is_tunnel )
 {
     TRACE_CALL( __func__ );
-    const gchar *username;
-    const gchar *privatekey;
-    const gchar *server;
-    gchar *s;
+    const char *username;
+    const char *privatekey;
+    const char *server;
+    char *s;
 
     ssh->session = NULL;
     ssh->callback = NULL;
@@ -1626,7 +1626,7 @@ gboolean remmina_ssh_init_from_file( RemminaSSH *ssh, RemminaFile *remminafile, 
     return TRUE;
 }
 
-static gboolean remmina_ssh_init_from_ssh( RemminaSSH *ssh, const RemminaSSH *ssh_src )
+static int remmina_ssh_init_from_ssh( RemminaSSH *ssh, const RemminaSSH *ssh_src )
 {
     TRACE_CALL( __func__ );
     ssh->session = NULL;
@@ -1656,10 +1656,10 @@ static gboolean remmina_ssh_init_from_ssh( RemminaSSH *ssh, const RemminaSSH *ss
     return TRUE;
 }
 
-gchar *remmina_ssh_convert( RemminaSSH *ssh, const gchar *from )
+char *remmina_ssh_convert( RemminaSSH *ssh, const char *from )
 {
     TRACE_CALL( __func__ );
-    gchar *to = NULL;
+    char *to = NULL;
 
     if( ssh->charset && from )
         to = g_convert( from, -1, "UTF-8", ssh->charset, NULL, NULL, NULL );
@@ -1668,10 +1668,10 @@ gchar *remmina_ssh_convert( RemminaSSH *ssh, const gchar *from )
     return to;
 }
 
-gchar *remmina_ssh_unconvert( RemminaSSH *ssh, const gchar *from )
+char *remmina_ssh_unconvert( RemminaSSH *ssh, const char *from )
 {
     TRACE_CALL( __func__ );
-    gchar *to = NULL;
+    char *to = NULL;
 
     if( ssh->charset && from )
         to = g_convert( from, -1, ssh->charset, "UTF-8", NULL, NULL, NULL );
@@ -1706,8 +1706,8 @@ void remmina_ssh_free( RemminaSSH *ssh )
 *-----------------------------------------------------------------------------*/
 struct _RemminaSSHTunnelBuffer
 {
-    gchar *data;
-    gchar *ptr;
+    char *data;
+    char *ptr;
     ssize_t len;
 };
 
@@ -1717,7 +1717,7 @@ static RemminaSSHTunnelBuffer *remmina_ssh_tunnel_buffer_new( ssize_t len )
     RemminaSSHTunnelBuffer *buffer;
 
     buffer = g_new( RemminaSSHTunnelBuffer, 1 );
-    buffer->data = (gchar *)g_malloc( len );
+    buffer->data = (char *)g_malloc( len );
     buffer->ptr = buffer->data;
     buffer->len = len;
     return buffer;
@@ -1836,7 +1836,7 @@ static void remmina_ssh_tunnel_add_channel( RemminaSSHTunnel *tunnel, ssh_channe
     fcntl( sock, F_SETFL, flags | O_NONBLOCK );
 }
 
-static int remmina_ssh_tunnel_accept_local_connection( RemminaSSHTunnel *tunnel, gboolean blocking )
+static int remmina_ssh_tunnel_accept_local_connection( RemminaSSHTunnel *tunnel, bool blocking )
 {
     gint sock, sock_flags;
 
@@ -1892,7 +1892,7 @@ static gpointer remmina_ssh_tunnel_main_thread_proc( gpointer data )
 {
     TRACE_CALL( __func__ );
     RemminaSSHTunnel *tunnel = (RemminaSSHTunnel *)data;
-    gchar *ptr;
+    char *ptr;
     ssize_t len = 0, lenw = 0;
     fd_set set;
     struct timeval timeout;
@@ -1900,8 +1900,8 @@ static gpointer remmina_ssh_tunnel_main_thread_proc( gpointer data )
     g_autoptr( GDateTime ) t2 = NULL;
     GTimeSpan diff; // microseconds
     ssh_channel channel = NULL;
-    gboolean first = TRUE;
-    gboolean disconnected;
+    bool first = TRUE;
+    bool disconnected;
     gint sock;
     gint maxfd;
     gint i;
@@ -2019,7 +2019,7 @@ static gpointer remmina_ssh_tunnel_main_thread_proc( gpointer data )
     }
 
     tunnel->buffer_len = 10240;
-    tunnel->buffer = g_malloc( tunnel->buffer_len );
+    tunnel->buffer = static_cast<char*>(g_malloc( tunnel->buffer_len ));
 
     /* Start the tunnel data transmission */
     while( tunnel->running )
@@ -2260,7 +2260,7 @@ static gpointer remmina_ssh_tunnel_main_thread_proc( gpointer data )
     return NULL;
 }
 
-static gboolean remmina_ssh_notify_tunnel_main_thread_end( gpointer data )
+static int remmina_ssh_notify_tunnel_main_thread_end( gpointer data )
 {
     TRACE_CALL( __func__ );
     RemminaSSHTunnel *tunnel = (RemminaSSHTunnel *)data;
@@ -2303,7 +2303,7 @@ void remmina_ssh_tunnel_cancel_accept( RemminaSSHTunnel *tunnel )
     }
 }
 
-gboolean remmina_ssh_tunnel_open( RemminaSSHTunnel *tunnel, const gchar *host, gint port, gint local_port )
+int remmina_ssh_tunnel_open( RemminaSSHTunnel *tunnel, const char *host, gint port, gint local_port )
 {
     TRACE_CALL( __func__ );
     gint sock;
@@ -2359,7 +2359,7 @@ gboolean remmina_ssh_tunnel_open( RemminaSSHTunnel *tunnel, const gchar *host, g
     return TRUE;
 }
 
-gboolean remmina_ssh_tunnel_xport( RemminaSSHTunnel *tunnel, gboolean bindlocalhost )
+int remmina_ssh_tunnel_xport( RemminaSSHTunnel *tunnel, bool bindlocalhost )
 {
     TRACE_CALL( __func__ );
     tunnel->tunnel_type = REMMINA_SSH_TUNNEL_XPORT;
@@ -2376,7 +2376,7 @@ gboolean remmina_ssh_tunnel_xport( RemminaSSHTunnel *tunnel, gboolean bindlocalh
     return TRUE;
 }
 
-gboolean remmina_ssh_tunnel_reverse( RemminaSSHTunnel *tunnel, gint port, gint local_port )
+int remmina_ssh_tunnel_reverse( RemminaSSHTunnel *tunnel, gint port, gint local_port )
 {
     TRACE_CALL( __func__ );
     tunnel->tunnel_type = REMMINA_SSH_TUNNEL_REVERSE;
@@ -2394,7 +2394,7 @@ gboolean remmina_ssh_tunnel_reverse( RemminaSSHTunnel *tunnel, gint port, gint l
     return TRUE;
 }
 
-gboolean remmina_ssh_tunnel_terminated( RemminaSSHTunnel *tunnel )
+int remmina_ssh_tunnel_terminated( RemminaSSHTunnel *tunnel )
 {
     TRACE_CALL( __func__ );
     return tunnel->thread == 0;
@@ -2471,7 +2471,7 @@ RemminaSFTP *remmina_sftp_new_from_ssh( RemminaSSH *ssh )
     return sftp;
 }
 
-gboolean remmina_sftp_open( RemminaSFTP *sftp )
+int remmina_sftp_open( RemminaSFTP *sftp )
 {
     TRACE_CALL( __func__ );
     sftp->sftp_sess = sftp_new( sftp->ssh.session );
@@ -2536,7 +2536,7 @@ RemminaSSHShell *remmina_ssh_shell_new_from_ssh( RemminaSSH *ssh )
     return shell;
 }
 
-static gboolean remmina_ssh_call_exit_callback_on_main_thread( gpointer data )
+static int remmina_ssh_call_exit_callback_on_main_thread( gpointer data )
 {
     TRACE_CALL( __func__ );
 
@@ -2557,13 +2557,13 @@ static gpointer remmina_ssh_shell_thread( gpointer data )
     struct timeval timeout;
     ssh_channel channel = NULL;
     ssh_channel ch[2], chout[2];
-    gchar *buf = NULL;
+    char *buf = NULL;
     gint buf_len;
     gint len;
     gint i, ret;
-    gchar *filename;
-    const gchar *dir;
-    const gchar *sshlogname;
+    char *filename;
+    const char *dir;
+    const char *sshlogname;
     FILE *fp;
 
     //gint screen;
@@ -2604,7 +2604,7 @@ static gpointer remmina_ssh_shell_thread( gpointer data )
     UNLOCK_SSH( shell )
 
     buf_len = 1000;
-    buf = g_malloc( buf_len + 1 );
+    buf = static_cast<char*>(g_malloc( buf_len + 1 ));
 
     ch[0] = channel;
     ch[1] = NULL;
@@ -2635,7 +2635,7 @@ static gpointer remmina_ssh_shell_thread( gpointer data )
     if( !shell->closed && shell->run_line && shell->run_line[0] )
     {
         LOCK_SSH( shell )
-        //TODO: Confirm assumption - assuming null terminated gchar string
+        //TODO: Confirm assumption - assuming null terminated char string
         ssh_channel_write( channel, shell->run_line, (gint)strlen( shell->run_line ) );
         ssh_channel_write( channel, "\n", (gint)1 ); //TODO: Test this
         UNLOCK_SSH( shell )
@@ -2680,7 +2680,7 @@ static gpointer remmina_ssh_shell_thread( gpointer data )
             if( len > buf_len )
             {
                 buf_len = len;
-                buf = (gchar *)g_realloc( buf, buf_len + 1 );
+                buf = (char *)g_realloc( buf, buf_len + 1 );
             }
             LOCK_SSH( shell )
             len = ssh_channel_read_nonblocking( channel, buf, len, i );
@@ -2722,10 +2722,10 @@ static gpointer remmina_ssh_shell_thread( gpointer data )
     return NULL;
 }
 
-gboolean remmina_ssh_shell_open( RemminaSSHShell *shell, RemminaSSHExitFunc exit_callback, gpointer data )
+int remmina_ssh_shell_open( RemminaSSHShell *shell, RemminaSSHExitFunc exit_callback, gpointer data )
 {
     TRACE_CALL( __func__ );
-    gchar *slavedevice;
+    char *slavedevice;
     struct termios stermios;
 
     shell->master = posix_openpt( O_RDWR | O_NOCTTY );

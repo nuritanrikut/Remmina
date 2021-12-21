@@ -39,7 +39,7 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 
-#include "remmina_icon.h"
+#include "remmina_icon.hpp"
 
 #ifdef HAVE_LIBAPPINDICATOR
 #    ifdef HAVE_AYATANA_LIBAPPINDICATOR
@@ -47,28 +47,28 @@
 #    else
 #        include <libappindicator/app-indicator.h>
 #    endif
-#    include "remmina_widget_pool.h"
-#    include "remmina_pref.h"
-#    include "remmina_exec.h"
+#    include "remmina_widget_pool.hpp"
+#    include "remmina_pref.hpp"
+#    include "remmina_exec.hpp"
 #    ifdef HAVE_LIBAVAHI_CLIENT
-#        include "remmina_avahi.h"
+#        include "remmina_avahi.hpp"
 #    endif
-#    include "remmina_applet_menu_item.h"
-#    include "remmina_applet_menu.h"
-#    include "rcw.h"
-#    include "remmina_log.h"
-#    include "remmina/remmina_trace_calls.h"
-#    include "remmina_sysinfo.h"
+#    include "remmina_applet_menu_item.hpp"
+#    include "remmina_applet_menu.hpp"
+#    include "rcw.hpp"
+#    include "remmina_log.hpp"
+#    include "remmina/remmina_trace_calls.hpp"
+#    include "remmina_sysinfo.hpp"
 
 typedef struct _RemminaIcon
 {
     AppIndicator *icon;
-    gboolean indicator_connected;
+    bool indicator_connected;
 #    ifdef HAVE_LIBAVAHI_CLIENT
     RemminaAvahi *avahi;
 #    endif
     guint32 popup_time;
-    gchar *autostart_file;
+    char *autostart_file;
 } RemminaIcon;
 
 static RemminaIcon remmina_icon = { 0 };
@@ -181,7 +181,7 @@ static void remmina_icon_populate_additional_menu_item( GtkWidget *menu )
 static void remmina_icon_on_launch_item( RemminaAppletMenu *menu, RemminaAppletMenuItem *menuitem, gpointer data )
 {
     TRACE_CALL( __func__ );
-    gchar *s;
+    char *s;
 
     switch( menuitem->item_type )
     {
@@ -202,7 +202,7 @@ static void remmina_icon_on_launch_item( RemminaAppletMenu *menu, RemminaAppletM
 static void remmina_icon_on_edit_item( RemminaAppletMenu *menu, RemminaAppletMenuItem *menuitem, gpointer data )
 {
     TRACE_CALL( __func__ );
-    gchar *s;
+    char *s;
 
     switch( menuitem->item_type )
     {
@@ -224,13 +224,13 @@ static void remmina_icon_populate_extra_menu_item( GtkWidget *menu )
 {
     TRACE_CALL( __func__ );
     GtkWidget *menuitem;
-    gboolean new_ontop;
+    bool new_ontop;
 
     new_ontop = remmina_pref.applet_new_ontop;
 
 #    ifdef HAVE_LIBAVAHI_CLIENT
     GHashTableIter iter;
-    gchar *tmp;
+    char *tmp;
     /* Iterate all discovered services from Avahi */
     if( remmina_icon.avahi )
     {
@@ -283,7 +283,7 @@ void remmina_icon_populate_menu( void )
 static void remmina_icon_save_autostart_file( GKeyFile *gkeyfile )
 {
     TRACE_CALL( __func__ );
-    gchar *content;
+    char *content;
     gsize length;
 
     content = g_key_file_to_data( gkeyfile, &length, NULL );
@@ -322,7 +322,7 @@ static void remmina_icon_create_autostart_file( void )
  * its work without the remmina main window.
  * @return TRUE if the Remmina icon is available.
  */
-gboolean remmina_icon_is_available( void )
+int remmina_icon_is_available( void )
 {
     TRACE_CALL( __func__ );
 
@@ -349,7 +349,7 @@ gboolean remmina_icon_is_available( void )
     return TRUE;
 }
 
-static void remmina_icon_connection_changed_cb( AppIndicator *indicator, gboolean connected, gpointer data )
+static void remmina_icon_connection_changed_cb( AppIndicator *indicator, bool connected, gpointer data )
 {
     TRACE_CALL( __func__ );
     REMMINA_DEBUG( "Indicator connection changed to: %d", connected );
@@ -360,17 +360,17 @@ void remmina_icon_init( void )
 {
     TRACE_CALL( __func__ );
 
-    gchar remmina_panel[29];
-    gboolean sni_supported;
+    char remmina_panel[29];
+    bool sni_supported;
 
     g_stpcpy( remmina_panel, "org.remmina.Remmina-status" );
 
     /* Print on stdout the availability of appindicators on DBUS */
     sni_supported = remmina_sysinfo_is_appindicator_available();
 
-    g_autofree gchar *wmname = g_ascii_strdown( remmina_sysinfo_get_wm_name(), -1 );
+    g_autofree char *wmname = g_ascii_strdown( remmina_sysinfo_get_wm_name(), -1 );
     //TRANSLATORS: These are Linux desktop components to show icons in the system tray, after the “ there's the Desktop Name (like GNOME).
-    g_autofree gchar *msg = g_strconcat( _( "StatusNotifier/Appindicator support in “" ), wmname, "”:", NULL );
+    g_autofree char *msg = g_strconcat( _( "StatusNotifier/Appindicator support in “" ), wmname, "”:", NULL );
 
     if( sni_supported )
     {
@@ -444,11 +444,11 @@ void remmina_icon_init( void )
     //g_object_get(G_OBJECT(remmina_icon.icon), "connected", &remmina_icon.indicator_connected, NULL);
 }
 
-gboolean remmina_icon_is_autostart( void )
+int remmina_icon_is_autostart( void )
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
-    gboolean b;
+    bool b;
 
     gkeyfile = g_key_file_new();
     g_key_file_load_from_file( gkeyfile, remmina_icon.autostart_file, G_KEY_FILE_NONE, NULL );
@@ -457,11 +457,11 @@ gboolean remmina_icon_is_autostart( void )
     return b;
 }
 
-void remmina_icon_set_autostart( gboolean autostart )
+void remmina_icon_set_autostart( bool autostart )
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
-    gboolean b;
+    bool b;
 
     gkeyfile = g_key_file_new();
     g_key_file_load_from_file( gkeyfile, remmina_icon.autostart_file, G_KEY_FILE_NONE, NULL );
@@ -483,13 +483,13 @@ void remmina_icon_set_autostart( gboolean autostart )
 #else
 void remmina_icon_init( void ){};
 void remmina_icon_destroy( void ){};
-gboolean remmina_icon_is_available( void )
+int remmina_icon_is_available( void )
 {
     return FALSE;
 };
 void remmina_icon_populate_menu( void ){};
-void remmina_icon_set_autostart( gboolean autostart ){};
-gboolean remmina_icon_is_autostart( void )
+void remmina_icon_set_autostart( bool autostart ){};
+int remmina_icon_is_autostart( void )
 {
     return FALSE;
 };

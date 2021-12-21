@@ -39,8 +39,8 @@
 #include <glib/gprintf.h>
 #include <string.h>
 #include <stdarg.h>
-#include "remmina_applet_menu_item.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_applet_menu_item.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 G_DEFINE_TYPE( RemminaAppletMenuItem, remmina_applet_menu_item, GTK_TYPE_MENU_ITEM )
 
@@ -90,7 +90,7 @@ GtkWidget *remmina_applet_menu_item_new( RemminaAppletMenuItemType item_type, ..
     switch( item_type )
     {
         case REMMINA_APPLET_MENU_ITEM_FILE:
-            item->filename = g_strdup( va_arg( ap, const gchar * ) );
+            item->filename = g_strdup( va_arg( ap, const char * ) );
 
             /* Load the file */
             gkeyfile = g_key_file_new();
@@ -120,7 +120,7 @@ GtkWidget *remmina_applet_menu_item_new( RemminaAppletMenuItemType item_type, ..
             break;
 
         case REMMINA_APPLET_MENU_ITEM_DISCOVERED:
-            item->name = g_strdup( va_arg( ap, const gchar * ) );
+            item->name = g_strdup( va_arg( ap, const char * ) );
             item->group = g_strdup( _( "Discovered" ) );
             item->protocol = g_strdup( "VNC" );
             break;

@@ -158,7 +158,7 @@ enum
     REMMINA_PREF_APPLET_TAB = 2
 };
 
-G_BEGIN_DECLS
+
 
 /* RemminaPrefDialog instance */
 GtkWidget *remmina_pref_dialog_new( gint default_tab, GtkWindow *parent );
@@ -167,4 +167,4 @@ GtkWidget *remmina_pref_dialog_get_dialog( void );
 void remmina_prefdiag_unlock_repwd_on_changed( GtkEditable *editable, RemminaPrefDialog *dialog );
 void remmina_pref_dialog_on_action_close( GSimpleAction *action, GVariant *param, gpointer data );
 
-G_END_DECLS
+

@@ -41,7 +41,7 @@
 #include <glib.h>
 #include <glib-object.h>
 
-G_BEGIN_DECLS
+
 
 /* PyGClosure is a _private_ structure */
 typedef void ( *PyClosureExceptionHandler )( GValue *ret, guint n_param_values, const GValue *params );
@@ -89,7 +89,7 @@ typedef struct
 {
     PyObject_HEAD gpointer boxed;
     GType gtype;
-    gboolean free_on_dealloc;
+    bool free_on_dealloc;
 } PyGBoxed;
 
 #define pyg_boxed_get( v, t ) ( (t *)( (PyGBoxed *)( v ) )->boxed )
@@ -118,7 +118,7 @@ typedef struct
 #define PyGParamSpec_Check( v ) ( PyObject_TypeCheck( v, &PyGParamSpec_Type ) )
 
 typedef int ( *PyGClassInitFunc )( gpointer gclass, PyTypeObject *pyclass );
-typedef PyTypeObject *( *PyGTypeRegistrationFunction )( const gchar *name, gpointer data );
+typedef PyTypeObject *( *PyGTypeRegistrationFunction )( const char *name, gpointer data );
 
 struct _PyGObject_Functions
 {
@@ -127,7 +127,7 @@ struct _PyGObject_Functions
      * use the macros below instead, which provides stability
      */
     void (
-        *register_class )( PyObject *dict, const gchar *class_name, GType gtype, PyTypeObject *type, PyObject *bases );
+        *register_class )( PyObject *dict, const char *class_name, GType gtype, PyTypeObject *type, PyObject *bases );
     void ( *register_wrapper )( PyObject *self );
     PyTypeObject *( *lookup_class )( GType type );
     PyObject *( *newgobj )( GObject *obj );
@@ -145,24 +145,24 @@ struct _PyGObject_Functions
                                      PyObject *( *from_func )( const GValue *value ),
                                      int ( *to_func )( GValue *value, PyObject *obj ) );
     int ( *value_from_pyobject )( GValue *value, PyObject *obj );
-    PyObject *( *value_as_pyobject )( const GValue *value, gboolean copy_boxed );
+    PyObject *( *value_as_pyobject )( const GValue *value, bool copy_boxed );
 
-    void ( *register_interface )( PyObject *dict, const gchar *class_name, GType gtype, PyTypeObject *type );
+    void ( *register_interface )( PyObject *dict, const char *class_name, GType gtype, PyTypeObject *type );
 
     PyTypeObject *boxed_type;
-    void ( *register_boxed )( PyObject *dict, const gchar *class_name, GType boxed_type, PyTypeObject *type );
-    PyObject *( *boxed_new )( GType boxed_type, gpointer boxed, gboolean copy_boxed, gboolean own_ref );
+    void ( *register_boxed )( PyObject *dict, const char *class_name, GType boxed_type, PyTypeObject *type );
+    PyObject *( *boxed_new )( GType boxed_type, gpointer boxed, bool copy_boxed, bool own_ref );
 
     PyTypeObject *pointer_type;
-    void ( *register_pointer )( PyObject *dict, const gchar *class_name, GType pointer_type, PyTypeObject *type );
+    void ( *register_pointer )( PyObject *dict, const char *class_name, GType pointer_type, PyTypeObject *type );
     PyObject *( *pointer_new )( GType boxed_type, gpointer pointer );
 
-    void ( *enum_add_constants )( PyObject *module, GType enum_type, const gchar *strip_prefix );
-    void ( *flags_add_constants )( PyObject *module, GType flags_type, const gchar *strip_prefix );
+    void ( *enum_add_constants )( PyObject *module, GType enum_type, const char *strip_prefix );
+    void ( *flags_add_constants )( PyObject *module, GType flags_type, const char *strip_prefix );
 
-    const gchar *( *constant_strip_prefix )( const gchar *name, const gchar *strip_prefix );
+    const char *( *constant_strip_prefix )( const char *name, const char *strip_prefix );
 
-    gboolean ( *error_check )( GError **error );
+    int ( *error_check )( GError **error );
 
     /* hooks to register handlers for getting GDK threads to cooperate
      * with python threading */
@@ -173,13 +173,13 @@ struct _PyGObject_Functions
     PyObject *( *paramspec_new )( GParamSpec *spec );
     GParamSpec *( *paramspec_get )( PyObject *tuple );
     int ( *pyobj_to_unichar_conv )( PyObject *pyobj, void *ptr );
-    gboolean ( *parse_constructor_args )( GType obj_type,
+    int ( *parse_constructor_args )( GType obj_type,
                                           char **arg_names,
                                           char **prop_names,
                                           GParameter *params,
                                           guint *nparams,
                                           PyObject **py_args );
-    PyObject *( *param_gvalue_as_pyobject )( const GValue *gvalue, gboolean copy_boxed, const GParamSpec *pspec );
+    PyObject *( *param_gvalue_as_pyobject )( const GValue *gvalue, bool copy_boxed, const GParamSpec *pspec );
     int ( *gvalue_from_param_pyobject )( GValue *value, PyObject *py_obj, const GParamSpec *pspec );
     PyTypeObject *enum_type;
     PyObject *( *enum_add )( PyObject *module, const char *type_name_, const char *strip_prefix, GType gtype );
@@ -189,7 +189,7 @@ struct _PyGObject_Functions
     PyObject *( *flags_add )( PyObject *module, const char *type_name_, const char *strip_prefix, GType gtype );
     PyObject *( *flags_from_gtype )( GType gtype, int value );
 
-    gboolean threads_enabled;
+    bool threads_enabled;
     int ( *enable_threads )( void );
 
     int ( *gil_state_ensure )( void );
@@ -201,10 +201,10 @@ struct _PyGObject_Functions
 
     void ( *add_warning_redirection )( const char *domain, PyObject *warning );
     void ( *disable_warning_redirections )( void );
-    void ( *type_register_custom )( const gchar *type_name, PyGTypeRegistrationFunction callback, gpointer data );
-    gboolean ( *gerror_exception_check )( GError **error );
+    void ( *type_register_custom )( const char *type_name, PyGTypeRegistrationFunction callback, gpointer data );
+    int ( *gerror_exception_check )( GError **error );
     PyObject *( *option_group_new )( GOptionGroup *group );
-    GType ( *type_from_object_strict )( PyObject *obj, gboolean strict );
+    GType ( *type_from_object_strict )( PyObject *obj, bool strict );
 };
 
 #ifndef _INSIDE_PYGOBJECT_
@@ -654,6 +654,6 @@ static inline PyObject *pygobject_init( int req_major, int req_minor, int req_mi
 
 #endif /* !_INSIDE_PYGOBJECT_ */
 
-G_END_DECLS
+
 
 #endif /* !_PYGOBJECT_H_ */

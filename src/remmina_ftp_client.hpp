@@ -36,7 +36,7 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 #define REMMINA_TYPE_FTP_CLIENT ( remmina_ftp_client_get_type() )
 #define REMMINA_FTP_CLIENT( obj ) ( G_TYPE_CHECK_INSTANCE_CAST( ( obj ), REMMINA_TYPE_FTP_CLIENT, RemminaFTPClient ) )
@@ -122,17 +122,17 @@ typedef struct _RemminaFTPTask
 {
     /* Read-only */
     gint type;
-    gchar *name;
+    char *name;
     gint taskid;
     gint tasktype;
-    gchar *remotedir;
-    gchar *localdir;
+    char *remotedir;
+    char *localdir;
     GtkTreeRowReference *rowref;
     /* Updatable */
     gfloat size;
     gint status;
     gfloat donesize;
-    gchar *tooltip;
+    char *tooltip;
 } RemminaFTPTask;
 
 GtkWidget *remmina_ftp_client_new( void );
@@ -140,14 +140,14 @@ GtkWidget *remmina_ftp_client_new( void );
 void remmina_ftp_client_save_state( RemminaFTPClient *client, RemminaFile *remminafile );
 void remmina_ftp_client_load_state( RemminaFTPClient *client, RemminaFile *remminafile );
 
-void remmina_ftp_client_set_show_hidden( RemminaFTPClient *client, gboolean show_hidden );
+void remmina_ftp_client_set_show_hidden( RemminaFTPClient *client, bool show_hidden );
 void remmina_ftp_client_clear_file_list( RemminaFTPClient *client );
 /* column, value, …, -1 */
 void remmina_ftp_client_add_file( RemminaFTPClient *client, ... );
 /* Set the current directory. Should be called by opendir signal handler */
-void remmina_ftp_client_set_dir( RemminaFTPClient *client, const gchar *dir );
+void remmina_ftp_client_set_dir( RemminaFTPClient *client, const char *dir );
 /* Get the current directory as newly allocated string */
-gchar *remmina_ftp_client_get_dir( RemminaFTPClient *client );
+char *remmina_ftp_client_get_dir( RemminaFTPClient *client );
 /* Get the next waiting task */
 RemminaFTPTask *remmina_ftp_client_get_waiting_task( RemminaFTPClient *client );
 /* Update the task */
@@ -155,10 +155,10 @@ void remmina_ftp_client_update_task( RemminaFTPClient *client, RemminaFTPTask *t
 /* Free the RemminaFTPTask object */
 void remmina_ftp_task_free( RemminaFTPTask *task );
 /* Get/Set Set overwrite_all status */
-void remmina_ftp_client_set_overwrite_status( RemminaFTPClient *client, gboolean status );
-gboolean remmina_ftp_client_get_overwrite_status( RemminaFTPClient *client );
+void remmina_ftp_client_set_overwrite_status( RemminaFTPClient *client, bool status );
+int remmina_ftp_client_get_overwrite_status( RemminaFTPClient *client );
 /* Get/Set Set resume_all status */
-void remmina_ftp_client_set_resume_status( RemminaFTPClient *client, gboolean status );
-gboolean remmina_ftp_client_get_resume_status( RemminaFTPClient *client );
+void remmina_ftp_client_set_resume_status( RemminaFTPClient *client, bool status );
+int remmina_ftp_client_get_resume_status( RemminaFTPClient *client );
 
-G_END_DECLS
+

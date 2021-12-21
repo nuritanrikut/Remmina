@@ -19,3 +19,4 @@ flatpak/repo/
 compile_commands.json
 generated
 patches
+install/*

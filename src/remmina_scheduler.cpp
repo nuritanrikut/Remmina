@@ -37,10 +37,10 @@
 #include <gio/gio.h>
 #include <glib/gi18n.h>
 #include <string.h>
-#include "remmina_scheduler.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_scheduler.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
-static gboolean remmina_scheduler_periodic_check( gpointer user_data )
+static int remmina_scheduler_periodic_check( gpointer user_data )
 {
     TRACE_CALL( __func__ );
     rsSchedData *rssd = (rsSchedData *)user_data;
@@ -64,7 +64,7 @@ void *remmina_scheduler_setup( GSourceFunc cb, gpointer cb_data, guint first_int
 {
     TRACE_CALL( __func__ );
     rsSchedData *rssd;
-    rssd = g_malloc( sizeof( rsSchedData ) );
+    rssd = static_cast<rsSchedData*>(g_malloc( sizeof( rsSchedData ) ));
     rssd->cb_func_ptr = cb;
     rssd->cb_func_data = cb_data;
     rssd->interval = interval;

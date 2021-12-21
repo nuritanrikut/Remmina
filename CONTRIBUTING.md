@@ -22,7 +22,7 @@ Similarly, we have a quite important list of feature requests, that are labeled 
   * [#376](https://gitlab.com/Remmina/Remmina/issues/376) : RDP: Multi monitor support [$15]
 
 ### Internal projects
-  * Refactoring [remmina\_connection\_window.c](https://gitlab.com/Remmina/Remmina/blob/master/src/remmina_connection_window.c) as it is big, complicated and hard to extend.
+  * Refactoring [remmina\_connection\_window.cpp](https://gitlab.com/Remmina/Remmina/blob/master/src/remmina_connection_window.cpp) as it is big, complicated and hard to extend.
   * Simplify the user interface.
   * Separate plugin processes from the main process to improve stability.
   * Write an additional plugin system to write plugins also in Python and eventually Ruby.

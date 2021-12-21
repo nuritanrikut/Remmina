@@ -56,15 +56,15 @@
 #    include <X11/Xutil.h>
 #    include <X11/Xatom.h>
 #endif
-#include "remmina_public.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_public.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
-GtkWidget *remmina_public_create_combo_entry( const gchar *text, const gchar *def, gboolean descending )
+GtkWidget *remmina_public_create_combo_entry( const char *text, const char *def, bool descending )
 {
     TRACE_CALL( __func__ );
     GtkWidget *combo;
-    gboolean found;
-    gchar *buf, *ptr1, *ptr2;
+    bool found;
+    char *buf, *ptr1, *ptr2;
     gint i;
 
     //g_debug("text: %s\n", text);
@@ -118,7 +118,7 @@ GtkWidget *remmina_public_create_combo_entry( const gchar *text, const gchar *de
     return combo;
 }
 
-GtkWidget *remmina_public_create_combo_text_d( const gchar *text, const gchar *def, const gchar *empty_choice )
+GtkWidget *remmina_public_create_combo_text_d( const char *text, const char *def, const char *empty_choice )
 {
     TRACE_CALL( __func__ );
     GtkWidget *combo;
@@ -138,15 +138,15 @@ GtkWidget *remmina_public_create_combo_text_d( const gchar *text, const gchar *d
 }
 
 void remmina_public_load_combo_text_d( GtkWidget *combo,
-                                       const gchar *text,
-                                       const gchar *def,
-                                       const gchar *empty_choice )
+                                       const char *text,
+                                       const char *def,
+                                       const char *empty_choice )
 {
     TRACE_CALL( __func__ );
     GtkListStore *store;
     GtkTreeIter iter;
     gint i;
-    gchar *buf, *ptr1, *ptr2;
+    char *buf, *ptr1, *ptr2;
 
     store = GTK_LIST_STORE( gtk_combo_box_get_model( GTK_COMBO_BOX( combo ) ) );
     gtk_list_store_clear( store );
@@ -187,7 +187,7 @@ void remmina_public_load_combo_text_d( GtkWidget *combo,
     g_free( buf );
 }
 
-GtkWidget *remmina_public_create_combo( gboolean use_icon )
+GtkWidget *remmina_public_create_combo( bool use_icon )
 {
     TRACE_CALL( __func__ );
     GtkWidget *combo;
@@ -221,9 +221,9 @@ GtkWidget *remmina_public_create_combo( gboolean use_icon )
 }
 
 GtkWidget *remmina_public_create_combo_map( const gpointer *key_value_list,
-                                            const gchar *def,
-                                            gboolean use_icon,
-                                            const gchar *domain )
+                                            const char *def,
+                                            bool use_icon,
+                                            const char *domain )
 {
     TRACE_CALL( __func__ );
     gint i;
@@ -243,14 +243,14 @@ GtkWidget *remmina_public_create_combo_map( const gpointer *key_value_list,
                             key_value_list[i],
                             1,
                             key_value_list[i + 1] && ( (char *)key_value_list[i + 1] )[0]
-                                ? g_dgettext( domain, key_value_list[i + 1] )
+                                ? g_dgettext( domain, static_cast<char*>(key_value_list[i + 1]) )
                                 : "",
                             -1 );
         if( use_icon )
         {
             gtk_list_store_set( store, &iter, 2, key_value_list[i + 2], -1 );
         }
-        if( i == 0 || g_strcmp0( key_value_list[i], def ) == 0 )
+        if( i == 0 || g_strcmp0( static_cast<char*>(key_value_list[i]), def ) == 0 )
         {
             gtk_combo_box_set_active( GTK_COMBO_BOX( combo ), i / ( use_icon ? 3 : 2 ) );
         }
@@ -259,19 +259,19 @@ GtkWidget *remmina_public_create_combo_map( const gpointer *key_value_list,
 }
 
 GtkWidget *
-remmina_public_create_combo_mapint( const gpointer *key_value_list, gint def, gboolean use_icon, const gchar *domain )
+remmina_public_create_combo_mapint( const gpointer *key_value_list, gint def, bool use_icon, const char *domain )
 {
     TRACE_CALL( __func__ );
-    gchar buf[20];
+    char buf[20];
     g_snprintf( buf, sizeof( buf ), "%i", def );
     return remmina_public_create_combo_map( key_value_list, buf, use_icon, domain );
 }
 
-void remmina_public_create_group( GtkGrid *grid, const gchar *group, gint row, gint rows, gint cols )
+void remmina_public_create_group( GtkGrid *grid, const char *group, gint row, gint rows, gint cols )
 {
     TRACE_CALL( __func__ );
     GtkWidget *widget;
-    gchar *str;
+    char *str;
 
     widget = gtk_label_new( NULL );
     gtk_widget_show( widget );
@@ -287,12 +287,12 @@ void remmina_public_create_group( GtkGrid *grid, const gchar *group, gint row, g
     gtk_grid_attach( GTK_GRID( grid ), widget, 0, row + 1, 1, 1 );
 }
 
-gchar *remmina_public_combo_get_active_text( GtkComboBox *combo )
+char *remmina_public_combo_get_active_text( GtkComboBox *combo )
 {
     TRACE_CALL( __func__ );
     GtkTreeModel *model;
     GtkTreeIter iter;
-    gchar *s;
+    char *s;
 
     if( GTK_IS_COMBO_BOX_TEXT( combo ) )
     {
@@ -309,7 +309,7 @@ gchar *remmina_public_combo_get_active_text( GtkComboBox *combo )
 }
 
 #if !GTK_CHECK_VERSION( 3, 22, 0 )
-void remmina_public_popup_position( GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer user_data )
+void remmina_public_popup_position( GtkMenu *menu, gint *x, gint *y, bool *push_in, gpointer user_data )
 {
     TRACE_CALL( __func__ );
     GtkWidget *widget;
@@ -345,7 +345,7 @@ void remmina_public_popup_position( GtkMenu *menu, gint *x, gint *y, gboolean *p
 }
 #endif
 
-gchar *remmina_public_combine_path( const gchar *path1, const gchar *path2 )
+char *remmina_public_combine_path( const char *path1, const char *path2 )
 {
     TRACE_CALL( __func__ );
     if( !path1 || path1[0] == '\0' )
@@ -390,10 +390,10 @@ gint remmina_public_open_unix_sock( const char *unixsock )
     return fd;
 }
 
-void remmina_public_get_server_port_old( const gchar *server, gint defaultport, gchar **host, gint *port )
+void remmina_public_get_server_port_old( const char *server, gint defaultport, char **host, gint *port )
 {
     TRACE_CALL( __func__ );
-    gchar *str, *ptr, *ptr2;
+    char *str, *ptr, *ptr2;
 
     str = g_strdup( server );
 
@@ -446,11 +446,11 @@ void remmina_public_get_server_port_old( const gchar *server, gint defaultport, 
     g_debug( "(%s) - port: %d", __func__, *port );
 }
 
-void remmina_public_get_server_port( const gchar *server, gint defaultport, gchar **host, gint *port )
+void remmina_public_get_server_port( const char *server, gint defaultport, char **host, gint *port )
 {
     TRACE_CALL( __func__ );
 
-    const gchar *nul_terminated_server = NULL;
+    const char *nul_terminated_server = NULL;
     if( server != NULL )
     {
         if( strstr( g_strdup( server ), "ID:" ) != NULL )
@@ -465,7 +465,7 @@ void remmina_public_get_server_port( const gchar *server, gint defaultport, gcha
 
         nul_terminated_server = g_strdup( server );
         g_debug( "(%s) - Parsing server: %s, default port: %d", __func__, server, defaultport );
-        address = (GNetworkAddress *)g_network_address_parse( (const gchar *)nul_terminated_server, defaultport, &err );
+        address = (GNetworkAddress *)g_network_address_parse( (const char *)nul_terminated_server, defaultport, &err );
 
         if( address == NULL )
         {
@@ -495,14 +495,14 @@ void remmina_public_get_server_port( const gchar *server, gint defaultport, gcha
     return;
 }
 
-gboolean remmina_public_get_xauth_cookie( const gchar *display, gchar **msg )
+int remmina_public_get_xauth_cookie( const char *display, char **msg )
 {
     TRACE_CALL( __func__ );
-    gchar buf[200];
-    gchar *out = NULL;
-    gchar *ptr;
+    char buf[200];
+    char *out = NULL;
+    char *ptr;
     GError *error = NULL;
-    gboolean ret;
+    bool ret;
 
     if( !display )
         display = gdk_display_get_name( gdk_display_get_default() );
@@ -532,11 +532,11 @@ gboolean remmina_public_get_xauth_cookie( const gchar *display, gchar **msg )
     return ret;
 }
 
-gint remmina_public_open_xdisplay( const gchar *disp )
+gint remmina_public_open_xdisplay( const char *disp )
 {
     TRACE_CALL( __func__ );
-    gchar *display;
-    gchar *ptr;
+    char *display;
+    char *ptr;
     gint port;
     struct sockaddr_un addr;
     gint sock = -1;
@@ -586,7 +586,7 @@ guint16 remmina_public_get_keycode_for_keyval( GdkKeymap *keymap, guint keyval )
 }
 
 /* Check if the requested keycode is a key modifier */
-gboolean remmina_public_get_modifier_for_keycode( GdkKeymap *keymap, guint16 keycode )
+int remmina_public_get_modifier_for_keycode( GdkKeymap *keymap, guint16 keycode )
 {
     TRACE_CALL( __func__ );
     g_return_val_if_fail( keycode > 0, FALSE );
@@ -598,11 +598,11 @@ gboolean remmina_public_get_modifier_for_keycode( GdkKeymap *keymap, guint16 key
 }
 
 /* Load a GtkBuilder object from a filename */
-GtkBuilder *remmina_public_gtk_builder_new_from_file( gchar *filename )
+GtkBuilder *remmina_public_gtk_builder_new_from_file( char *filename )
 {
     TRACE_CALL( __func__ );
     GError *err = NULL;
-    gchar *ui_path = g_strconcat( REMMINA_RUNTIME_UIDIR, G_DIR_SEPARATOR_S, filename, NULL );
+    char *ui_path = g_strconcat( REMMINA_RUNTIME_UIDIR, G_DIR_SEPARATOR_S, filename, NULL );
     GtkBuilder *builder = gtk_builder_new();
     gtk_builder_add_from_file( builder, ui_path, &err );
     if( err != NULL )
@@ -615,7 +615,7 @@ GtkBuilder *remmina_public_gtk_builder_new_from_file( gchar *filename )
 }
 
 /* Load a GtkBuilder object from a resource */
-GtkBuilder *remmina_public_gtk_builder_new_from_resource( gchar *resource )
+GtkBuilder *remmina_public_gtk_builder_new_from_resource( const char *resource )
 {
     TRACE_CALL( __func__ );
     GError *err = NULL;
@@ -642,13 +642,13 @@ void remmina_public_gtk_widget_reparent( GtkWidget *widget, GtkContainer *contai
 }
 
 /* Validate the inserted value for a new resolution */
-gboolean remmina_public_resolution_validation_func( const gchar *new_str, gchar **error )
+int remmina_public_resolution_validation_func( const char *new_str, char **error )
 {
     TRACE_CALL( __func__ );
     gint i;
     gint width, height;
-    gboolean splitted;
-    gboolean result;
+    bool splitted;
+    bool result;
 
     width = 0;
     height = 0;
@@ -690,9 +690,9 @@ gboolean remmina_public_resolution_validation_func( const gchar *new_str, gchar 
 }
 
 /* Used to send desktop notifications */
-void remmina_public_send_notification( const gchar *notification_id,
-                                       const gchar *notification_title,
-                                       const gchar *notification_message )
+void remmina_public_send_notification( const char *notification_id,
+                                       const char *notification_title,
+                                       const char *notification_message )
 {
     TRACE_CALL( __func__ );
 
@@ -712,16 +712,16 @@ void remmina_public_send_notification( const gchar *notification_id,
         g_notification_add_button_with_target( n, _( "Change security settings" ), "app.preferences", "i", 5 );
     }
 #if GLIB_CHECK_VERSION( 2, 42, 0 )
-    g_notification_set_priority( n, priority );
+    g_notification_set_priority( n, static_cast<GNotificationPriority>(priority) );
 #endif
     g_application_send_notification( g_application_get_default(), notification_id, n );
 }
 
 /* Replaces all occurrences of search in a new copy of string by replacement. */
-gchar *remmina_public_str_replace( const gchar *string, const gchar *search, const gchar *replacement )
+char *remmina_public_str_replace( const char *string, const char *search, const char *replacement )
 {
     TRACE_CALL( __func__ );
-    gchar *str, **arr;
+    char *str, **arr;
 
     g_return_val_if_fail( string != NULL, NULL );
     g_return_val_if_fail( search != NULL, NULL );
@@ -741,10 +741,10 @@ gchar *remmina_public_str_replace( const gchar *string, const gchar *search, con
 
 /* Replaces all occurrences of search in a new copy of string by replacement
  * and overwrites the original string */
-gchar *remmina_public_str_replace_in_place( gchar *string, const gchar *search, const gchar *replacement )
+char *remmina_public_str_replace_in_place( char *string, const char *search, const char *replacement )
 {
     TRACE_CALL( __func__ );
-    gchar *new_string = remmina_public_str_replace( string, search, replacement );
+    char *new_string = remmina_public_str_replace( string, search, replacement );
     string = g_strdup( new_string );
     g_free( new_string );
     return string;
@@ -765,7 +765,7 @@ int remmina_public_split_resolution_string( const char *resolution_string, int *
 
 /* Return TRUE if current gtk version library in use is greater or equal than
  * the required major.minor.micro */
-gboolean remmina_gtk_check_version( guint major, guint minor, guint micro )
+int remmina_gtk_check_version( guint major, guint minor, guint micro )
 {
     guint rtmajor, rtminor, rtmicro;
     rtmajor = gtk_get_major_version();

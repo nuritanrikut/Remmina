@@ -49,16 +49,19 @@
 #    define VNCI_PLUGIN_SSH_APPICON "org.remmina.Remmina-vnc-ssh-symbolic"
 #endif
 
-typedef struct _RemminaPluginVncData
+#include <gtk/gtk.h>
+#include "remmina/types.hpp"
+
+struct RemminaPluginVncData
 {
     /* Whether the user requests to connect/disconnect */
-    gboolean connected;
+    bool connected;
     /* Whether the vnc process is running */
-    gboolean running;
+    bool running;
     /* Whether the initialization calls the authentication process */
-    gboolean auth_called;
+    bool auth_called;
     /* Whether it is the first attempt for authentication. Only first attempt will try to use cached credentials */
-    gboolean auth_first;
+    bool auth_first;
 
     GtkWidget *drawing_area;
     guchar *vnc_buffer;
@@ -89,8 +92,7 @@ typedef struct _RemminaPluginVncData
     pthread_mutex_t buffer_mutex;
 
     float scroll_x_accumulator, scroll_y_accumulator;
-
-} RemminaPluginVncData;
+};
 
 enum
 {
@@ -102,7 +104,7 @@ enum
     REMMINA_PLUGIN_VNC_EVENT_CHAT_CLOSE
 };
 
-typedef struct _RemminaPluginVncEvent
+struct RemminaPluginVncEvent
 {
     gint event_type;
     union
@@ -110,7 +112,7 @@ typedef struct _RemminaPluginVncEvent
         struct
         {
             guint keyval;
-            gboolean pressed;
+            bool pressed;
         } key;
         struct
         {
@@ -120,19 +122,17 @@ typedef struct _RemminaPluginVncEvent
         } pointer;
         struct
         {
-            gchar *text;
+            char *text;
         } text;
     } event_data;
-} RemminaPluginVncEvent;
+};
 
-typedef struct _RemminaPluginVncCoordinates
+struct RemminaPluginVncCoordinates
 {
     gint x, y;
-} RemminaPluginVncCoordinates;
+};
 
-G_BEGIN_DECLS
 
 /* --------- Support for execution on main thread of GUI functions -------------- */
-static void remmina_plugin_vnc_update_scale( RemminaProtocolWidget *gp, gboolean scale );
+static void remmina_plugin_vnc_update_scale( RemminaProtocolWidget *gp, bool scale );
 
-G_END_DECLS

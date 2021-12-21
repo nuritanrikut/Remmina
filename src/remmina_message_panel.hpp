@@ -36,7 +36,7 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 #define REMMINA_TYPE_MESSAGE_PANEL ( remmina_message_panel_get_type() )
 G_DECLARE_DERIVABLE_TYPE( RemminaMessagePanel, remmina_message_panel, REMMINA, MESSAGE_PANEL, GtkBox )
@@ -67,33 +67,33 @@ typedef void ( *RemminaMessagePanelCallback )( void *user_data, int button );
 
 RemminaMessagePanel *remmina_message_panel_new( void );
 void remmina_message_panel_setup_progress( RemminaMessagePanel *mp,
-                                           const gchar *message,
+                                           const char *message,
                                            RemminaMessagePanelCallback response_callback,
                                            gpointer response_callback_data );
 void remmina_message_panel_setup_message( RemminaMessagePanel *mp,
-                                          const gchar *message,
+                                          const char *message,
                                           RemminaMessagePanelCallback response_callback,
                                           gpointer response_callback_data );
 void remmina_message_panel_setup_question( RemminaMessagePanel *mp,
-                                           const gchar *message,
+                                           const char *message,
                                            RemminaMessagePanelCallback response_callback,
                                            gpointer response_callback_data );
 void remmina_message_panel_setup_auth( RemminaMessagePanel *mp,
                                        RemminaMessagePanelCallback response_callback,
                                        gpointer response_callback_data,
-                                       const gchar *title,
-                                       const gchar *password_prompt,
+                                       const char *title,
+                                       const char *password_prompt,
                                        unsigned flags );
 void remmina_message_panel_setup_auth_x509( RemminaMessagePanel *mp,
                                             RemminaMessagePanelCallback response_callback,
                                             gpointer response_callback_data );
 void remmina_message_panel_focus_auth_entry( RemminaMessagePanel *mp );
-void remmina_message_panel_field_set_string( RemminaMessagePanel *mp, int entryid, const gchar *text );
-gchar *remmina_message_panel_field_get_string( RemminaMessagePanel *mp, int entryid );
-void remmina_message_panel_field_set_switch( RemminaMessagePanel *mp, int entryid, gboolean state );
-gboolean remmina_message_panel_field_get_switch_state( RemminaMessagePanel *mp, int entryid );
-void remmina_message_panel_field_set_filename( RemminaMessagePanel *mp, int entryid, const gchar *filename );
-gchar *remmina_message_panel_field_get_filename( RemminaMessagePanel *mp, int entryid );
+void remmina_message_panel_field_set_string( RemminaMessagePanel *mp, int entryid, const char *text );
+char *remmina_message_panel_field_get_string( RemminaMessagePanel *mp, int entryid );
+void remmina_message_panel_field_set_switch( RemminaMessagePanel *mp, int entryid, bool state );
+int remmina_message_panel_field_get_switch_state( RemminaMessagePanel *mp, int entryid );
+void remmina_message_panel_field_set_filename( RemminaMessagePanel *mp, int entryid, const char *filename );
+char *remmina_message_panel_field_get_filename( RemminaMessagePanel *mp, int entryid );
 void remmina_message_panel_response( RemminaMessagePanel *mp, gint response_id );
 
-G_END_DECLS
+

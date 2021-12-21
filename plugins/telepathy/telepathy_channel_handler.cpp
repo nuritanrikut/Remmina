@@ -34,7 +34,7 @@
  *
  */
 
-#include "common/remmina_plugin.h"
+#include "common/remmina_plugin.hpp"
 #include <telepathy-glib/account.h>
 #include <telepathy-glib/channel.h>
 #include <telepathy-glib/contact.h>
@@ -44,14 +44,14 @@
 #include <telepathy-glib/interfaces.h>
 #include <telepathy-glib/svc-client.h>
 #include <telepathy-glib/util.h>
-#include "telepathy_channel_handler.h"
+#include "telepathy_channel_handler.hpp"
 
 extern RemminaPluginService *remmina_plugin_telepathy_service;
 
 typedef struct _RemminaTpChannelHandler
 {
-    gchar *connection_path;
-    gchar *channel_path;
+    char *connection_path;
+    char *channel_path;
     GHashTable *channel_properties;
     DBusGMethodInvocation *context;
 
@@ -63,10 +63,10 @@ typedef struct _RemminaTpChannelHandler
     TpConnection *connection;
     TpChannel *channel;
 
-    gchar *alias;
-    gchar *host;
+    char *alias;
+    char *host;
     guint port;
-    gchar *protocol;
+    char *protocol;
 } RemminaTpChannelHandler;
 
 static void remmina_tp_channel_handler_free( RemminaTpChannelHandler *chandler )
@@ -133,7 +133,7 @@ static void remmina_tp_channel_handler_connect( RemminaTpChannelHandler *chandle
 {
     TRACE_CALL( __func__ );
     RemminaFile *remminafile;
-    gchar *s;
+    char *s;
 
     remminafile = remmina_plugin_telepathy_service->file_new();
     remmina_plugin_telepathy_service->file_set_string( remminafile, "name", chandler->alias );
@@ -160,7 +160,7 @@ static void remmina_tp_channel_handler_get_service( TpProxy *channel,
 {
     TRACE_CALL( __func__ );
     RemminaTpChannelHandler *chandler = (RemminaTpChannelHandler *)user_data;
-    const gchar *svc;
+    const char *svc;
 
     if( error != NULL )
     {
@@ -253,10 +253,10 @@ static void remmina_tp_channel_handler_get_contacts( TpConnection *connection,
     TRACE_CALL( __func__ );
     RemminaTpChannelHandler *chandler = (RemminaTpChannelHandler *)user_data;
     TpContact *contact;
-    gchar *token;
-    const gchar *cm;
-    const gchar *protocol;
-    gchar *filename;
+    char *token;
+    const char *cm;
+    const char *protocol;
+    char *filename;
     GdkPixbuf *pixbuf;
     GtkWidget *image;
     GtkWidget *dialog;
@@ -288,7 +288,7 @@ static void remmina_tp_channel_handler_get_contacts( TpConnection *connection,
     remmina_plugin_telepathy_service->ui_register( dialog );
     gtk_widget_show( dialog );
 
-    token = (gchar *)tp_contact_get_avatar_token( contact );
+    token = (char *)tp_contact_get_avatar_token( contact );
     if( token == NULL )
     {
         return;
@@ -403,9 +403,9 @@ static void remmina_tp_channel_handler_account_ready( GObject *account, GAsyncRe
     tp_connection_call_when_ready( chandler->connection, remmina_tp_channel_handler_connection_ready, chandler );
 }
 
-void remmina_tp_channel_handler_new( const gchar *account_path,
-                                     const gchar *connection_path,
-                                     const gchar *channel_path,
+void remmina_tp_channel_handler_new( const char *account_path,
+                                     const char *connection_path,
+                                     const char *channel_path,
                                      GHashTable *channel_properties,
                                      DBusGMethodInvocation *context )
 {

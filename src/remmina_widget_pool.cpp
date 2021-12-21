@@ -36,9 +36,9 @@
 
 #include <gtk/gtk.h>
 #include <gmodule.h>
-#include "remmina_public.h"
-#include "remmina_widget_pool.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_public.hpp"
+#include "remmina_widget_pool.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 static GPtrArray *remmina_widget_pool = NULL;
 
@@ -61,7 +61,7 @@ void remmina_widget_pool_register( GtkWidget *widget )
     g_signal_connect( G_OBJECT( widget ), "destroy", G_CALLBACK( remmina_widget_pool_on_widget_destroy ), NULL );
 }
 
-GtkWidget *remmina_widget_pool_find( GType type, const gchar *tag )
+GtkWidget *remmina_widget_pool_find( GType type, const char *tag )
 {
     TRACE_CALL( __func__ );
     GtkWidget *widget;
@@ -75,7 +75,7 @@ GtkWidget *remmina_widget_pool_find( GType type, const gchar *tag )
         widget = GTK_WIDGET( g_ptr_array_index( remmina_widget_pool, i ) );
         if( !G_TYPE_CHECK_INSTANCE_TYPE( widget, type ) )
             continue;
-        if( tag && g_strcmp0( (const gchar *)g_object_get_data( G_OBJECT( widget ), "tag" ), tag ) != 0 )
+        if( tag && g_strcmp0( (const char *)g_object_get_data( G_OBJECT( widget ), "tag" ), tag ) != 0 )
             continue;
         return widget;
     }
@@ -98,7 +98,7 @@ GtkWidget *remmina_widget_pool_find_by_window( GType type, GdkWindow *window )
         if( !G_TYPE_CHECK_INSTANCE_TYPE( widget, type ) )
             continue;
         /* gdk_window_get_toplevel won’t work here, if the window is an embedded client. So we iterate the window tree */
-        for( parent = window; parent && parent != GDK_WINDOW_ROOT; parent = gdk_window_get_parent( parent ) )
+        for( parent = window; parent && parent != NULL; parent = gdk_window_get_parent( parent ) )
         {
             if( gtk_widget_get_window( widget ) == parent )
                 return widget;

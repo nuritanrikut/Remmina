@@ -32,7 +32,7 @@
  *
  */
 
-#include "spice_plugin.h"
+#include "spice_plugin.hpp"
 
 static void
 remmina_plugin_spice_usb_connect_failed_cb( GObject *, SpiceUsbDevice *, GError *, RemminaProtocolWidget * );

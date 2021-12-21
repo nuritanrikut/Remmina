@@ -35,7 +35,7 @@
 
 #pragma once
 
-G_BEGIN_DECLS
+
 
 #define REMMINA_TYPE_APPLET_MENU_ITEM ( remmina_applet_menu_item_get_type() )
 #define REMMINA_APPLET_MENU_ITEM( obj ) \
@@ -60,12 +60,12 @@ typedef struct _RemminaAppletMenuItem
     GtkMenuItem menu_item;
 
     RemminaAppletMenuItemType item_type;
-    gchar *filename;
-    gchar *name;
-    gchar *group;
-    gchar *protocol;
-    gchar *server;
-    gboolean ssh_tunnel_enabled;
+    char *filename;
+    char *name;
+    char *group;
+    char *protocol;
+    char *server;
+    bool ssh_tunnel_enabled;
 } RemminaAppletMenuItem;
 
 typedef struct _RemminaAppletMenuItemClass
@@ -78,4 +78,4 @@ GType remmina_applet_menu_item_get_type( void ) G_GNUC_CONST;
 GtkWidget *remmina_applet_menu_item_new( RemminaAppletMenuItemType item_type, ... );
 gint remmina_applet_menu_item_compare( gconstpointer a, gconstpointer b, gpointer user_data );
 
-G_END_DECLS
+

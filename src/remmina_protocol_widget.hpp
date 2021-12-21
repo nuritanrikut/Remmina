@@ -36,11 +36,11 @@
 
 #pragma once
 
-#include "rcw.h"
-#include "remmina_file.h"
-#include "remmina_ssh.h"
+#include "rcw.hpp"
+#include "remmina_file.hpp"
+#include "remmina_ssh.hpp"
 
-G_BEGIN_DECLS
+
 
 #define REMMINA_PROTOCOL_FEATURE_TOOL_SSH -1
 #define REMMINA_PROTOCOL_FEATURE_TOOL_SFTP -2
@@ -98,12 +98,12 @@ gint remmina_protocol_widget_get_multimon( RemminaProtocolWidget *gp );
 
 RemminaScaleMode remmina_protocol_widget_get_current_scale_mode( RemminaProtocolWidget *gp );
 void remmina_protocol_widget_set_current_scale_mode( RemminaProtocolWidget *gp, RemminaScaleMode scalemode );
-gboolean remmina_protocol_widget_get_expand( RemminaProtocolWidget *gp );
-void remmina_protocol_widget_set_expand( RemminaProtocolWidget *gp, gboolean expand );
-gboolean remmina_protocol_widget_has_error( RemminaProtocolWidget *gp );
-const gchar *remmina_protocol_widget_get_error_message( RemminaProtocolWidget *gp );
-void remmina_protocol_widget_set_error( RemminaProtocolWidget *gp, const gchar *fmt, ... );
-gboolean remmina_protocol_widget_is_closed( RemminaProtocolWidget *gp );
+int remmina_protocol_widget_get_expand( RemminaProtocolWidget *gp );
+void remmina_protocol_widget_set_expand( RemminaProtocolWidget *gp, bool expand );
+int remmina_protocol_widget_has_error( RemminaProtocolWidget *gp );
+const char *remmina_protocol_widget_get_error_message( RemminaProtocolWidget *gp );
+void remmina_protocol_widget_set_error( RemminaProtocolWidget *gp, const char *fmt, ... );
+int remmina_protocol_widget_is_closed( RemminaProtocolWidget *gp );
 RemminaFile *remmina_protocol_widget_get_file( RemminaProtocolWidget *gp );
 
 void remmina_protocol_widget_open_connection( RemminaProtocolWidget *gp );
@@ -116,55 +116,55 @@ void remmina_protocol_widget_unlock_dynres( RemminaProtocolWidget *gp );
 void remmina_protocol_widget_desktop_resize( RemminaProtocolWidget *gp );
 void remmina_protocol_widget_grab_focus( RemminaProtocolWidget *gp );
 const RemminaProtocolFeature *remmina_protocol_widget_get_features( RemminaProtocolWidget *gp );
-gboolean remmina_protocol_widget_query_feature_by_type( RemminaProtocolWidget *gp, RemminaProtocolFeatureType type );
-gboolean remmina_protocol_widget_query_feature_by_ref( RemminaProtocolWidget *gp,
+int remmina_protocol_widget_query_feature_by_type( RemminaProtocolWidget *gp, RemminaProtocolFeatureType type );
+int remmina_protocol_widget_query_feature_by_ref( RemminaProtocolWidget *gp,
                                                        const RemminaProtocolFeature *feature );
 void remmina_protocol_widget_call_feature_by_type( RemminaProtocolWidget *gp,
                                                    RemminaProtocolFeatureType type,
                                                    gint id );
 void remmina_protocol_widget_call_feature_by_ref( RemminaProtocolWidget *gp, const RemminaProtocolFeature *feature );
 /* Provide thread-safe way to emit signals */
-void remmina_protocol_widget_emit_signal( RemminaProtocolWidget *gp, const gchar *signal_name );
+void remmina_protocol_widget_emit_signal( RemminaProtocolWidget *gp, const char *signal_name );
 void remmina_protocol_widget_register_hostkey( RemminaProtocolWidget *gp, GtkWidget *widget );
 
-typedef gboolean ( *RemminaHostkeyFunc )( RemminaProtocolWidget *gp, guint keyval, gboolean release );
+typedef int ( *RemminaHostkeyFunc )( RemminaProtocolWidget *gp, guint keyval, bool release );
 void remmina_protocol_widget_set_hostkey_func( RemminaProtocolWidget *gp, RemminaHostkeyFunc func );
 
-gboolean remmina_protocol_widget_ssh_exec( RemminaProtocolWidget *gp, gboolean wait, const gchar *fmt, ... );
+int remmina_protocol_widget_ssh_exec( RemminaProtocolWidget *gp, bool wait, const char *fmt, ... );
 
 /* Start a SSH tunnel if it’s enabled. Returns a newly allocated string indicating:
  * 1. The actual destination (host:port) if SSH tunnel is disable
  * 2. The tunnel local destination (127.0.0.1:port) if SSH tunnel is enabled
  */
-gchar *remmina_protocol_widget_start_direct_tunnel( RemminaProtocolWidget *gp, gint default_port, gboolean port_plus );
+char *remmina_protocol_widget_start_direct_tunnel( RemminaProtocolWidget *gp, gint default_port, bool port_plus );
 
-gboolean remmina_protocol_widget_start_reverse_tunnel( RemminaProtocolWidget *gp, gint local_port );
-gboolean remmina_protocol_widget_start_xport_tunnel( RemminaProtocolWidget *gp, RemminaXPortTunnelInitFunc init_func );
+int remmina_protocol_widget_start_reverse_tunnel( RemminaProtocolWidget *gp, gint local_port );
+int remmina_protocol_widget_start_xport_tunnel( RemminaProtocolWidget *gp, RemminaXPortTunnelInitFunc init_func );
 void remmina_protocol_widget_set_display( RemminaProtocolWidget *gp, gint display );
 
 /* Extension for remmina_protocol_widget_panel_authuserpwd() not currently exported to plugins */
 gint remmina_protocol_widget_panel_authuserpwd_ssh_tunnel( RemminaProtocolWidget *gp,
-                                                           gboolean want_domain,
-                                                           gboolean allow_password_saving );
+                                                           bool want_domain,
+                                                           bool allow_password_saving );
 
 /* Dialog panel API used by the plugins */
 
 gint remmina_protocol_widget_panel_auth( RemminaProtocolWidget *gp,
                                          RemminaMessagePanelFlags pflags,
-                                         const gchar *title,
-                                         const gchar *default_username,
-                                         const gchar *default_password,
-                                         const gchar *default_domain,
-                                         const gchar *password_prompt );
+                                         const char *title,
+                                         const char *default_username,
+                                         const char *default_password,
+                                         const char *default_domain,
+                                         const char *password_prompt );
 gint remmina_protocol_widget_panel_new_certificate( RemminaProtocolWidget *gp,
-                                                    const gchar *subject,
-                                                    const gchar *issuer,
-                                                    const gchar *fingerprint );
+                                                    const char *subject,
+                                                    const char *issuer,
+                                                    const char *fingerprint );
 gint remmina_protocol_widget_panel_changed_certificate( RemminaProtocolWidget *gp,
-                                                        const gchar *subject,
-                                                        const gchar *issuer,
-                                                        const gchar *new_fingerprint,
-                                                        const gchar *old_fingerprint );
+                                                        const char *subject,
+                                                        const char *issuer,
+                                                        const char *new_fingerprint,
+                                                        const char *old_fingerprint );
 gint remmina_protocol_widget_panel_question_yesno( RemminaProtocolWidget *gp, const char *msg );
 
 void remmina_protocol_widget_panel_show( RemminaProtocolWidget *gp );
@@ -176,43 +176,43 @@ void remmina_protocol_widget_panel_show_retry( RemminaProtocolWidget *gp );
 
 void remmina_protocol_widget_save_cred( RemminaProtocolWidget *gp );
 
-gchar *remmina_protocol_widget_get_username( RemminaProtocolWidget *gp );
-gchar *remmina_protocol_widget_get_password( RemminaProtocolWidget *gp );
-gchar *remmina_protocol_widget_get_domain( RemminaProtocolWidget *gp );
-gboolean remmina_protocol_widget_get_savepassword( RemminaProtocolWidget *gp );
-gchar *remmina_protocol_widget_get_cacert( RemminaProtocolWidget *gp );
-gchar *remmina_protocol_widget_get_cacrl( RemminaProtocolWidget *gp );
-gchar *remmina_protocol_widget_get_clientcert( RemminaProtocolWidget *gp );
-gchar *remmina_protocol_widget_get_clientkey( RemminaProtocolWidget *gp );
+char *remmina_protocol_widget_get_username( RemminaProtocolWidget *gp );
+char *remmina_protocol_widget_get_password( RemminaProtocolWidget *gp );
+char *remmina_protocol_widget_get_domain( RemminaProtocolWidget *gp );
+int remmina_protocol_widget_get_savepassword( RemminaProtocolWidget *gp );
+char *remmina_protocol_widget_get_cacert( RemminaProtocolWidget *gp );
+char *remmina_protocol_widget_get_cacrl( RemminaProtocolWidget *gp );
+char *remmina_protocol_widget_get_clientcert( RemminaProtocolWidget *gp );
+char *remmina_protocol_widget_get_clientkey( RemminaProtocolWidget *gp );
 
 void remmina_protocol_widget_chat_open( RemminaProtocolWidget *gp,
-                                        const gchar *name,
-                                        void ( *on_send )( RemminaProtocolWidget *gp, const gchar *text ),
+                                        const char *name,
+                                        void ( *on_send )( RemminaProtocolWidget *gp, const char *text ),
                                         void ( *on_destroy )( RemminaProtocolWidget *gp ) );
 void remmina_protocol_widget_chat_close( RemminaProtocolWidget *gp );
-void remmina_protocol_widget_chat_receive( RemminaProtocolWidget *gp, const gchar *text );
+void remmina_protocol_widget_chat_receive( RemminaProtocolWidget *gp, const char *text );
 void remmina_protocol_widget_send_keys_signals( GtkWidget *widget,
                                                 const guint *keyvals,
                                                 int keyvals_length,
                                                 GdkEventType action );
 /* Check if the plugin accepts keystrokes */
-gboolean remmina_protocol_widget_plugin_receives_keystrokes( RemminaProtocolWidget *gp );
+int remmina_protocol_widget_plugin_receives_keystrokes( RemminaProtocolWidget *gp );
 /* Send to the plugin some keystrokes */
 void remmina_protocol_widget_send_keystrokes( RemminaProtocolWidget *gp, GtkMenuItem *widget );
 void remmina_protocol_widget_send_clipboard( RemminaProtocolWidget *gp, GtkMenuItem *widget );
 /* Take screenshot of plugin */
-gboolean remmina_protocol_widget_plugin_screenshot( RemminaProtocolWidget *gp, RemminaPluginScreenshotData *rpsd );
+int remmina_protocol_widget_plugin_screenshot( RemminaProtocolWidget *gp, RemminaPluginScreenshotData *rpsd );
 /* Deal with the remimna connection window map/unmap events */
-gboolean remmina_protocol_widget_map_event( RemminaProtocolWidget *gp );
-gboolean remmina_protocol_widget_unmap_event( RemminaProtocolWidget *gp );
+int remmina_protocol_widget_map_event( RemminaProtocolWidget *gp );
+int remmina_protocol_widget_unmap_event( RemminaProtocolWidget *gp );
 
 void remmina_protocol_widget_update_remote_resolution( RemminaProtocolWidget *gp );
 
 /* Functions to support execution of GTK code on master thread */
 RemminaMessagePanel *remmina_protocol_widget_mpprogress( RemminaConnectionObject *cnnobj,
-                                                         const gchar *msg,
+                                                         const char *msg,
                                                          RemminaMessagePanelCallback response_callback,
                                                          gpointer response_callback_data );
 void remmina_protocol_widget_mpdestroy( RemminaConnectionObject *cnnobj, RemminaMessagePanel *mp );
 
-G_END_DECLS
+

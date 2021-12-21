@@ -36,12 +36,12 @@
 #pragma once
 
 #include <gtk/gtk.h>
-#include "remmina_file.h"
-#include "remmina_main.h"
+#include "remmina_file.hpp"
+#include "remmina_main.hpp"
 
-G_BEGIN_DECLS
+
 
 /* Open a new connection window for a .remmina file */
-gboolean remmina_external_tools_from_filename( RemminaMain *remminamain, gchar *remminafilename );
+int remmina_external_tools_from_filename( RemminaMain *remminamain, char *remminafilename );
 
-G_END_DECLS
+

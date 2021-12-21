@@ -34,13 +34,13 @@
  *
  */
 
-#include "common/remmina_plugin.h"
+#include "common/remmina_plugin.hpp"
 #include <gmodule.h>
 #include <telepathy-glib/dbus.h>
 #include <telepathy-glib/defs.h>
 #include <telepathy-glib/svc-client.h>
-#include "telepathy_channel_handler.h"
-#include "telepathy_handler.h"
+#include "telepathy_channel_handler.hpp"
+#include "telepathy_handler.hpp"
 
 extern RemminaPluginService *remmina_plugin_telepathy_service;
 
@@ -83,7 +83,7 @@ static void remmina_tp_handler_handle_channels( TpSvcClientHandler *handler,
         array = g_ptr_array_index( channels, i );
         remmina_tp_channel_handler_new( account_path,
                                         connection_path,
-                                        (const gchar *)g_value_get_boxed( &g_array_index( array, GValue, 0 ) ),
+                                        (const char *)g_value_get_boxed( &g_array_index( array, GValue, 0 ) ),
                                         (GHashTable *)g_value_get_boxed( &g_array_index( array, GValue, 1 ) ),
                                         context );
     }
@@ -99,7 +99,7 @@ static void remmina_tp_handler_iface_init( gpointer g_iface, gpointer iface_data
 #undef IMPLEMENT
 }
 
-static gboolean remmina_tp_handler_register( RemminaTpHandler *handler )
+static int remmina_tp_handler_register( RemminaTpHandler *handler )
 {
     TRACE_CALL( __func__ );
     TpDBusDaemon *bus;

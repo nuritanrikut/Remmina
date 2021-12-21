@@ -36,12 +36,12 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include "remmina_key_chooser.h"
-#include "remmina_public.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_key_chooser.hpp"
+#include "remmina_public.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 /* Handle key-presses on the GtkEventBox */
-static gboolean
+static int
 remmina_key_chooser_dialog_on_key_press( GtkWidget *widget, GdkEventKey *event, RemminaKeyChooserArguments *arguments )
 {
     TRACE_CALL( __func__ );
@@ -56,7 +56,7 @@ remmina_key_chooser_dialog_on_key_press( GtkWidget *widget, GdkEventKey *event, 
 }
 
 /* Show a key chooser dialog and return the keyval for the selected key */
-RemminaKeyChooserArguments *remmina_key_chooser_new( GtkWindow *parent_window, gboolean use_modifiers )
+RemminaKeyChooserArguments *remmina_key_chooser_new( GtkWindow *parent_window, bool use_modifiers )
 {
     TRACE_CALL( __func__ );
     GtkBuilder *builder =
@@ -85,7 +85,7 @@ RemminaKeyChooserArguments *remmina_key_chooser_new( GtkWindow *parent_window, g
 }
 
 /* Get the uppercase character value of a keyval */
-gchar *remmina_key_chooser_get_value( guint keyval, guint state )
+char *remmina_key_chooser_get_value( guint keyval, guint state )
 {
     TRACE_CALL( __func__ );
 
@@ -103,10 +103,10 @@ gchar *remmina_key_chooser_get_value( guint keyval, guint state )
 }
 
 /* Get the keyval of a (lowercase) character value */
-guint remmina_key_chooser_get_keyval( const gchar *value )
+guint remmina_key_chooser_get_keyval( const char *value )
 {
     TRACE_CALL( __func__ );
-    gchar *patterns[] = { KEY_MODIFIER_SHIFT,
+    char *patterns[] = { KEY_MODIFIER_SHIFT,
                           KEY_MODIFIER_CTRL,
                           KEY_MODIFIER_ALT,
                           KEY_MODIFIER_SUPER,
@@ -114,8 +114,8 @@ guint remmina_key_chooser_get_keyval( const gchar *value )
                           KEY_MODIFIER_META,
                           NULL };
     gint i;
-    gchar *tmpvalue;
-    gchar *newvalue;
+    char *tmpvalue;
+    char *newvalue;
     guint keyval;
 
     if( g_strcmp0( value, KEY_CHOOSER_NONE ) == 0 )

@@ -36,9 +36,9 @@
  *
  */
 
-#include "rdp_plugin.h"
-#include "rdp_event.h"
-#include "rdp_graphics.h"
+#include "rdp_plugin.hpp"
+#include "rdp_event.hpp"
+#include "rdp_graphics.hpp"
 
 #include <freerdp/codec/color.h>
 #include <freerdp/codec/bitmap.h>

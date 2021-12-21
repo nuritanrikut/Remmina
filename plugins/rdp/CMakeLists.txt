@@ -40,22 +40,22 @@ find_package(X11)
 find_suggested_package(Cups)
 
 set(REMMINA_PLUGIN_RDP_SRCS
-    rdp_plugin.c
-    rdp_plugin.h
-    rdp_event.c
-    rdp_event.h
-    rdp_file.c
-    rdp_file.h
-    rdp_settings.c
-    rdp_settings.h
-    rdp_graphics.c
-    rdp_graphics.h
-    rdp_cliprdr.c
-    rdp_cliprdr.h
-    rdp_monitor.c
-    rdp_monitor.h
-    rdp_channels.c
-    rdp_channels.h
+    rdp_plugin.cpp
+    rdp_plugin.hpp
+    rdp_event.cpp
+    rdp_event.hpp
+    rdp_file.cpp
+    rdp_file.hpp
+    rdp_settings.cpp
+    rdp_settings.hpp
+    rdp_graphics.cpp
+    rdp_graphics.hpp
+    rdp_cliprdr.cpp
+    rdp_cliprdr.hpp
+    rdp_monitor.cpp
+    rdp_monitor.hpp
+    rdp_channels.cpp
+    rdp_channels.hpp
     )
 
 add_definitions(-DFREERDP_REQUIRED_MAJOR=${FREERDP_REQUIRED_MAJOR})

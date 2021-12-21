@@ -25,89 +25,89 @@ msgstr ""
 "X-Generator: Weblate 4.10\n"
 "X-Launchpad-Export-Date: 2014-04-10 15:04+0000\n"
 
-#: src/remmina_sftp_plugin.c:310 src/remmina_sftp_plugin.c:354
-#: src/remmina_protocol_widget.c:1677 src/remmina_protocol_widget.c:1696
-#: src/remmina_file_editor.c:1101 src/remmina_file_editor.c:1222
-#: src/remmina_ssh_plugin.c:1361 plugins/rdp/rdp_plugin.c:2760
-#: plugins/www/www_plugin.c:895 plugins/x2go/x2go_plugin.c:3198
+#: src/remmina_sftp_plugin.cpp:310 src/remmina_sftp_plugin.cpp:354
+#: src/remmina_protocol_widget.cpp:1677 src/remmina_protocol_widget.cpp:1696
+#: src/remmina_file_editor.cpp:1101 src/remmina_file_editor.cpp:1222
+#: src/remmina_ssh_plugin.cpp:1361 plugins/rdp/rdp_plugin.cpp:2760
+#: plugins/www/www_plugin.cpp:895 plugins/x2go/x2go_plugin.cpp:3198
 #: data/ui/remmina_mpc.glade:236 data/ui/remmina_preferences.glade:1646
 #: data/ui/remmina_unlock.glade:116
 msgid "Password"
 msgstr "密码"
 
-#: src/remmina_sftp_plugin.c:311 src/remmina_sftp_plugin.c:356
-#: src/remmina_file_editor.c:1102 src/remmina_ssh_plugin.c:1362
-#: src/remmina_ssh_plugin.c:1473
+#: src/remmina_sftp_plugin.cpp:311 src/remmina_sftp_plugin.cpp:356
+#: src/remmina_file_editor.cpp:1102 src/remmina_ssh_plugin.cpp:1362
+#: src/remmina_ssh_plugin.cpp:1473
 msgid "SSH identity file"
 msgstr "SSH 私钥文件"
 
-#: src/remmina_sftp_plugin.c:312 src/remmina_file_editor.c:1103
-#: src/remmina_ssh_plugin.c:1363
+#: src/remmina_sftp_plugin.cpp:312 src/remmina_file_editor.cpp:1103
+#: src/remmina_ssh_plugin.cpp:1363
 msgid "SSH agent"
 msgstr "SSH 代理"
 
-#: src/remmina_sftp_plugin.c:313 src/remmina_file_editor.c:1104
-#: src/remmina_ssh_plugin.c:1364
+#: src/remmina_sftp_plugin.cpp:313 src/remmina_file_editor.cpp:1104
+#: src/remmina_ssh_plugin.cpp:1364
 msgid "Public key (automatic)"
 msgstr "公钥（自动）"
 
-#: src/remmina_sftp_plugin.c:314 src/remmina_file_editor.c:1105
-#: src/remmina_ssh_plugin.c:1365
+#: src/remmina_sftp_plugin.cpp:314 src/remmina_file_editor.cpp:1105
+#: src/remmina_ssh_plugin.cpp:1365
 msgid "Kerberos (GSSAPI)"
 msgstr "Kerberos (GSSAPI)"
 
-#: src/remmina_sftp_plugin.c:323
+#: src/remmina_sftp_plugin.cpp:323
 msgid "Show Hidden Files"
 msgstr "显示隐藏文件"
 
-#: src/remmina_sftp_plugin.c:325
+#: src/remmina_sftp_plugin.cpp:325
 msgid "Overwrite all files"
 msgstr "覆盖所有文件"
 
-#: src/remmina_sftp_plugin.c:327
+#: src/remmina_sftp_plugin.cpp:327
 msgid "Resume all file transfers"
 msgstr "恢复所有文件传输"
 
-#: src/remmina_sftp_plugin.c:328 src/remmina_protocol_widget.c:284
+#: src/remmina_sftp_plugin.cpp:328 src/remmina_protocol_widget.cpp:284
 msgid "Connect via SSH from a new terminal"
 msgstr "通过 SSH 从新终端连接"
 
-#: src/remmina_sftp_plugin.c:353 src/remmina_message_panel.c:330
-#: src/remmina_file_editor.c:1216 src/remmina_ssh_plugin.c:1471
-#: plugins/rdp/rdp_plugin.c:2759 plugins/vnc/vnc_plugin.c:1997
-#: plugins/vnc/vnc_plugin.c:2009 plugins/www/www_plugin.c:894
-#: plugins/x2go/x2go_plugin.c:475 plugins/x2go/x2go_plugin.c:3197
+#: src/remmina_sftp_plugin.cpp:353 src/remmina_message_panel.cpp:330
+#: src/remmina_file_editor.cpp:1216 src/remmina_ssh_plugin.cpp:1471
+#: plugins/rdp/rdp_plugin.cpp:2759 plugins/vnc/vnc_plugin.cpp:1997
+#: plugins/vnc/vnc_plugin.cpp:2009 plugins/www/www_plugin.cpp:894
+#: plugins/x2go/x2go_plugin.cpp:475 plugins/x2go/x2go_plugin.cpp:3197
 #: data/ui/remmina_mpc.glade:144
 msgid "Username"
 msgstr "用户名"
 
-#: src/remmina_sftp_plugin.c:355 src/remmina_file_editor.c:1207
-#: src/remmina_ssh_plugin.c:1470
+#: src/remmina_sftp_plugin.cpp:355 src/remmina_file_editor.cpp:1207
+#: src/remmina_ssh_plugin.cpp:1470
 msgid "Authentication type"
 msgstr "认证类型"
 
-#: src/remmina_sftp_plugin.c:357 src/remmina_file_editor.c:1240
-#: src/remmina_ssh_plugin.c:1477
+#: src/remmina_sftp_plugin.cpp:357 src/remmina_file_editor.cpp:1240
+#: src/remmina_ssh_plugin.cpp:1477
 msgid "Password to unlock private key"
 msgstr "解锁私钥的密码"
 
-#: src/remmina_sftp_plugin.c:358 src/remmina_ssh_plugin.c:1508
+#: src/remmina_sftp_plugin.cpp:358 src/remmina_ssh_plugin.cpp:1508
 msgid "SSH Proxy Command"
 msgstr "SSH 代理命令"
 
-#: src/remmina_sftp_plugin.c:367
+#: src/remmina_sftp_plugin.cpp:367
 msgid "SFTP - Secure File Transfer"
 msgstr "SFTP - 安全文件传输"
 
-#: src/remmina_log.c:129
+#: src/remmina_log.cpp:129
 msgid "Remmina debugging window"
 msgstr "Remmina 调试窗口"
 
-#: src/remmina_log.c:133
+#: src/remmina_log.cpp:133
 msgid "Paste sytem info in the Remmina debugging window"
 msgstr "在 Remmina 调试窗口中粘贴系统信息"
 
-#: src/remmina_log.c:153
+#: src/remmina_log.cpp:153
 msgid ""
 "This window can help you find connection problems.\n"
 "You can stop and start the logging at any moment using the On/Off switch.\n"
@@ -122,136 +122,136 @@ msgstr ""
 "有关调试 Remmina 的更多信息，请参阅：https://gitlab.com/Remmina/Remmina/-/"
 "wikis/Usage/Remmina-debugging\n"
 
-#: src/remmina_plugin_manager.c:73 src/remmina_file_editor.c:1951
+#: src/remmina_plugin_manager.cpp:73 src/remmina_file_editor.cpp:1951
 msgid "Protocol"
 msgstr "协议"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 msgid "Entry"
 msgstr "入口"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 msgid "File"
 msgstr "文件"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 msgid "Tool"
 msgstr "工具"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 msgid "Preference"
 msgstr "首选项"
 
-#: src/remmina_plugin_manager.c:73
+#: src/remmina_plugin_manager.cpp:73
 msgid "Secret"
 msgstr "机密"
 
-#: src/remmina_plugin_manager.c:462 data/ui/remmina_main.glade:305
+#: src/remmina_plugin_manager.cpp:462 data/ui/remmina_main.glade:305
 msgid "Plugins"
 msgstr "插件"
 
-#: src/remmina_plugin_manager.c:462 src/remmina_message_panel.c:452
-#: src/remmina_message_panel.c:621 src/remmina_file_editor.c:242
+#: src/remmina_plugin_manager.cpp:462 src/remmina_message_panel.cpp:452
+#: src/remmina_message_panel.cpp:621 src/remmina_file_editor.cpp:242
 msgid "_OK"
 msgstr "确定(_O)"
 
-#: src/remmina_plugin_manager.c:480 src/remmina_file_editor.c:1908
+#: src/remmina_plugin_manager.cpp:480 src/remmina_file_editor.cpp:1908
 #: data/ui/remmina_main.glade:442
 msgid "Name"
 msgstr "名称"
 
-#: src/remmina_plugin_manager.c:486
+#: src/remmina_plugin_manager.cpp:486
 msgid "Type"
 msgstr "类型"
 
-#: src/remmina_plugin_manager.c:492
+#: src/remmina_plugin_manager.cpp:492
 msgid "Description"
 msgstr "描述"
 
-#: src/remmina_plugin_manager.c:498
+#: src/remmina_plugin_manager.cpp:498
 msgid "Version"
 msgstr "版本"
 
-#: src/remmina_chat_window.c:178
+#: src/remmina_chat_window.cpp:178
 #, c-format
 msgid "Chat with %s"
 msgstr "与 %s 聊天"
 
-#: src/remmina_chat_window.c:230
+#: src/remmina_chat_window.cpp:230
 msgid "_Send"
 msgstr "发送(_S)"
 
-#: src/remmina_chat_window.c:240
+#: src/remmina_chat_window.cpp:240
 msgid "_Clear"
 msgstr "清除(_C)"
 
-#: src/remmina_applet_menu_item.c:121
+#: src/remmina_applet_menu_item.cpp:121
 msgid "Discovered"
 msgstr "已发现"
 
-#: src/remmina_applet_menu_item.c:126
+#: src/remmina_applet_menu_item.cpp:126
 msgid "New Connection"
 msgstr "新的连接"
 
-#: src/remmina_key_chooser.h:38
+#: src/remmina_key_chooser.hpp:38
 msgid "Shift+"
 msgstr "Shift+"
 
-#: src/remmina_key_chooser.h:39
+#: src/remmina_key_chooser.hpp:39
 msgid "Ctrl+"
 msgstr "Ctrl+"
 
-#: src/remmina_key_chooser.h:40
+#: src/remmina_key_chooser.hpp:40
 msgid "Alt+"
 msgstr "Alt+"
 
-#: src/remmina_key_chooser.h:41
+#: src/remmina_key_chooser.hpp:41
 msgid "Super+"
 msgstr "Super+"
 
-#: src/remmina_key_chooser.h:42
+#: src/remmina_key_chooser.hpp:42
 msgid "Hyper+"
 msgstr "Hyper+"
 
-#: src/remmina_key_chooser.h:43
+#: src/remmina_key_chooser.hpp:43
 msgid "Meta+"
 msgstr "Hyper+"
 
-#: src/remmina_key_chooser.h:44
+#: src/remmina_key_chooser.hpp:44
 msgid "<None>"
 msgstr "<无>"
 
-#: src/remmina_pref_dialog.c:91 src/remmina_file_editor.c:528
+#: src/remmina_pref_dialog.cpp:91 src/remmina_file_editor.cpp:528
 msgid "Resolutions"
 msgstr "分辨率"
 
-#: src/remmina_pref_dialog.c:91 src/remmina_file_editor.c:528
+#: src/remmina_pref_dialog.cpp:91 src/remmina_file_editor.cpp:528
 msgid "Configure the available resolutions"
 msgstr "配置可提供的分辨率"
 
-#: src/remmina_pref_dialog.c:143
+#: src/remmina_pref_dialog.cpp:143
 msgid "Recent lists cleared."
 msgstr "最近项已被清除。"
 
-#: src/remmina_pref_dialog.c:155 src/rcw.c:2028
+#: src/remmina_pref_dialog.cpp:155 src/rcw.cpp:2028
 #: data/ui/remmina_preferences.glade:169 data/ui/remmina_preferences.glade:179
 msgid "Keystrokes"
 msgstr "键盘监听"
 
-#: src/remmina_pref_dialog.c:155
+#: src/remmina_pref_dialog.cpp:155
 msgid "Configure the keystrokes"
 msgstr "配置键盘监听"
 
 #. TRANSLATORS: Do not translate libsodium, is the name of a library
-#: src/remmina_pref_dialog.c:482
+#: src/remmina_pref_dialog.cpp:482
 msgid "libsodium >= 1.9.0 is required to use master password"
 msgstr "要使用管控密码，必须 libsodium >= 1.9.0"
 
-#: src/remmina_pref_dialog.c:805
+#: src/remmina_pref_dialog.cpp:805
 msgid "Picking a terminal colouring file replaces the file: "
 msgstr "选择一个终端配色文件替换该文件： "
 
-#: src/remmina_pref_dialog.c:809
+#: src/remmina_pref_dialog.cpp:809
 msgid ""
 "This file contains the “Custom” terminal colour scheme selectable from the "
 "“Advanced” tab of terminal connections and editable in the “Terminal” tab in "
@@ -260,175 +260,175 @@ msgstr ""
 "此文件包含“自定义”终端颜色方案，可从终端连接的“高级”选项卡中选择，并可在设置"
 "的“终端”选项卡中编辑。"
 
-#: src/remmina_message_panel.c:163 data/ui/remmina_mpc.glade:46
+#: src/remmina_message_panel.cpp:163 data/ui/remmina_mpc.glade:46
 #: data/ui/remmina_unlock.glade:46
 msgid "Cancel"
 msgstr "取消"
 
-#: src/remmina_message_panel.c:199 data/ui/remmina_snap_info_dialog.glade:28
+#: src/remmina_message_panel.cpp:199 data/ui/remmina_snap_info_dialog.glade:28
 #: data/ui/remmina_string_list.glade:8 data/ui/remmina_string_list.glade:9
 #: data/ui/remmina_string_list.glade:63 data/ui/remmina_news.glade:33
 #: data/ui/remmina_preferences.glade:2593
 msgid "Close"
 msgstr "关闭"
 
-#: src/remmina_message_panel.c:260
+#: src/remmina_message_panel.cpp:260
 msgid "Yes"
 msgstr "是"
 
-#: src/remmina_message_panel.c:267
+#: src/remmina_message_panel.cpp:267
 msgid "No"
 msgstr "否"
 
-#: src/remmina_message_panel.c:391 plugins/rdp/rdp_plugin.c:2761
+#: src/remmina_message_panel.cpp:391 plugins/rdp/rdp_plugin.cpp:2761
 #: data/ui/remmina_mpc.glade:172
 msgid "Domain"
 msgstr "域"
 
-#: src/remmina_message_panel.c:420
+#: src/remmina_message_panel.cpp:420
 msgid "Save password"
 msgstr "保存密码"
 
-#: src/remmina_message_panel.c:457 src/remmina_message_panel.c:629
-#: src/remmina_sftp_client.c:947 src/remmina_file_editor.c:241
-#: src/remmina_file_editor.c:1783 plugins/spice/spice_plugin_file_transfer.c:84
+#: src/remmina_message_panel.cpp:457 src/remmina_message_panel.cpp:629
+#: src/remmina_sftp_client.cpp:947 src/remmina_file_editor.cpp:241
+#: src/remmina_file_editor.cpp:1783 plugins/spice/spice_plugin_file_transfer.cpp:84
 #: data/ui/remmina_key_chooser.glade:8 data/ui/remmina_key_chooser.glade:9
 #: data/ui/remmina_spinner.glade:8 data/ui/remmina_spinner.glade:9
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: src/remmina_message_panel.c:513
+#: src/remmina_message_panel.cpp:513
 msgid "Enter certificate authentication files"
 msgstr "输入证书认证文件"
 
-#: src/remmina_message_panel.c:525
+#: src/remmina_message_panel.cpp:525
 msgid "CA Certificate File"
 msgstr "CA 证书文件"
 
-#: src/remmina_message_panel.c:547
+#: src/remmina_message_panel.cpp:547
 msgid "CA CRL File"
 msgstr "CA CRL 文件"
 
-#: src/remmina_message_panel.c:569
+#: src/remmina_message_panel.cpp:569
 msgid "Client Certificate File"
 msgstr "客户端证书文件"
 
-#: src/remmina_message_panel.c:591
+#: src/remmina_message_panel.cpp:591
 msgid "Client Certificate Key"
 msgstr "客户端证书密钥"
 
-#: src/rcw.c:655
+#: src/rcw.cpp:655
 #, c-format
 msgid ""
 "Are you sure you want to close %i active connections in the current window?"
 msgstr "当前窗口已打开 %i 个连接。确认要关闭吗？"
 
-#: src/rcw.c:1399
+#: src/rcw.cpp:1399
 msgid "Viewport fullscreen mode"
 msgstr "视口全屏模式"
 
-#: src/rcw.c:1407 data/ui/remmina_preferences.glade:578
+#: src/rcw.cpp:1407 data/ui/remmina_preferences.glade:578
 msgid "Scrolled fullscreen"
 msgstr "滚动全屏"
 
-#: src/rcw.c:1493
+#: src/rcw.cpp:1493
 msgid "Keep aspect ratio when scaled"
 msgstr "缩放时保持比例"
 
-#: src/rcw.c:1501
+#: src/rcw.cpp:1501
 msgid "Fill client window when scaled"
 msgstr "缩放时填满客户端窗口"
 
-#: src/rcw.c:2049
+#: src/rcw.cpp:2049
 msgid "Send clipboard content as keystrokes"
 msgstr "以击键方式发送剪贴板内容"
 
-#: src/rcw.c:2155
+#: src/rcw.cpp:2155
 msgid "Turn off scaling to avoid screenshot distortion."
 msgstr "关闭缩放比例以避免屏幕截图失真。"
 
-#: src/rcw.c:2215 plugins/www/www_plugin.c:855
+#: src/rcw.cpp:2215 plugins/www/www_plugin.cpp:855
 msgid "Screenshot taken"
 msgstr "截屏"
 
-#: src/rcw.c:2298
+#: src/rcw.cpp:2298
 msgid "_Menu"
 msgstr "_菜单"
 
-#: src/rcw.c:2299
+#: src/rcw.cpp:2299
 msgid "Menu"
 msgstr "菜单"
 
-#: src/rcw.c:2308
+#: src/rcw.cpp:2308
 msgid "Open the Remmina main window"
 msgstr "打开 Remmina 主窗口"
 
-#: src/rcw.c:2318
+#: src/rcw.cpp:2318
 msgid "Duplicate current connection"
 msgstr "重复当前连接"
 
-#: src/rcw.c:2335
+#: src/rcw.cpp:2335
 msgid "Resize the window to fit in remote resolution"
 msgstr "调整窗口大小以适应远程分辨率"
 
-#: src/rcw.c:2346
+#: src/rcw.cpp:2346
 msgid "Toggle fullscreen mode"
 msgstr "切换全屏模式"
 
-#: src/rcw.c:2392 data/ui/remmina_preferences.glade:1303
+#: src/rcw.cpp:2392 data/ui/remmina_preferences.glade:1303
 #: data/ui/remmina_preferences.glade:1313
 msgid "Multi monitor"
 msgstr "多显示器"
 
-#: src/rcw.c:2408
+#: src/rcw.cpp:2408
 msgid "Toggle dynamic resolution update"
 msgstr "切换动态分辨率更新"
 
-#: src/rcw.c:2418
+#: src/rcw.cpp:2418
 msgid "Toggle scaled mode"
 msgstr "切换缩放模式"
 
-#: src/rcw.c:2458 data/ui/remmina_preferences.glade:1037
+#: src/rcw.cpp:2458 data/ui/remmina_preferences.glade:1037
 msgid "Switch tab pages"
 msgstr "切换标签页"
 
-#: src/rcw.c:2468
+#: src/rcw.cpp:2468
 msgid "Grab all keyboard events"
 msgstr "俘获所有键盘事件"
 
-#: src/rcw.c:2478
+#: src/rcw.cpp:2478
 msgid "Preferences"
 msgstr "首选项"
 
-#: src/rcw.c:2487
+#: src/rcw.cpp:2487
 msgid "_Tools"
 msgstr "工具(_T)"
 
-#: src/rcw.c:2488 data/ui/remmina_main.glade:207
+#: src/rcw.cpp:2488 data/ui/remmina_main.glade:207
 msgid "Tools"
 msgstr "工具"
 
-#: src/rcw.c:2501 data/ui/remmina_preferences.glade:1238
+#: src/rcw.cpp:2501 data/ui/remmina_preferences.glade:1238
 #: data/ui/remmina_preferences.glade:1248
 msgid "Screenshot"
 msgstr "截屏"
 
-#: src/rcw.c:2515 data/ui/remmina_preferences.glade:1145
+#: src/rcw.cpp:2515 data/ui/remmina_preferences.glade:1145
 msgid "Minimize window"
 msgstr "最小化窗口"
 
-#: src/rcw.c:2525 data/ui/remmina_preferences.glade:1176
+#: src/rcw.cpp:2525 data/ui/remmina_preferences.glade:1176
 msgid "Disconnect"
 msgstr "断开"
 
-#: src/rcw.c:4298
+#: src/rcw.cpp:4298
 #, c-format
 msgid "The file “%s” is corrupted, unreadable, or could not be found."
 msgstr "文件“%s” 已损坏，无法读取或未找到。"
 
 #. TRANSLATORS: This should be a link to the Remmina wiki page:
 #. TRANSLATORS: 'GtkSocket feature is not available'.
-#: src/rcw.c:4372
+#: src/rcw.cpp:4372
 msgid ""
 "https://gitlab.com/Remmina/Remmina/-/wikis/GtkSocket-feature-is-not-"
 "available-in-a-Wayland-session"
@@ -436,7 +436,7 @@ msgstr ""
 "https://gitlab.com/Remmina/Remmina/-/wikis/GtkSocket-feature-is-not-"
 "available-in-a-Wayland-session"
 
-#: src/rcw.c:4509
+#: src/rcw.cpp:4509
 msgid ""
 "Warning: This plugin requires GtkSocket, but this feature is unavailable in "
 "a Wayland session."
@@ -444,7 +444,7 @@ msgstr "警告：此插件需要 GtkSocket，但此功能在 Wayland 会话中�
 
 #. TRANSLATORS: This should be a link to the Remmina wiki page:
 #. 'GtkSocket feature is not available'.
-#: src/rcw.c:4515
+#: src/rcw.cpp:4515
 msgid ""
 "Plugins relying on GtkSocket can't run in a Wayland session.\n"
 "For more info and a possible workaround, please visit the Remmina wiki at:\n"
@@ -458,39 +458,39 @@ msgstr ""
 "https://gitlab.com/Remmina/Remmina/-/wikis/GtkSocket-feature-is-not-"
 "available-in-a-Wayland-session"
 
-#: src/rcw.c:4529
+#: src/rcw.cpp:4529
 msgid "Open in web browser"
 msgstr "在浏览器中打开"
 
-#: src/remmina_mpchange.c:234
+#: src/remmina_mpchange.cpp:234
 msgid "The passwords do not match"
 msgstr "密码不符"
 
-#: src/remmina_mpchange.c:244
+#: src/remmina_mpchange.cpp:244
 msgid "Resetting passwords, please wait…"
 msgstr "正在重置密码，请稍候…"
 
-#: src/remmina_mpchange.c:327
+#: src/remmina_mpchange.cpp:327
 msgid "The multi password changer requires a secrecy plugin.\n"
 msgstr "多密码转换器需要一个保密插件\n"
 
-#: src/remmina_mpchange.c:330
+#: src/remmina_mpchange.cpp:330
 msgid "The multi password changer requires a secrecy service.\n"
 msgstr "如果没有安全服务，多密码转换器将无法运行。\n"
 
-#: src/remmina_mpchange.c:409
+#: src/remmina_mpchange.cpp:409
 #, c-format
 msgid "%d password changed."
 msgid_plural "%d passwords changed."
 msgstr[0] "%d 个密码已更改。"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:84
+#: src/remmina.cpp:84
 msgid "Show 'About'"
 msgstr "显示关于对话框"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:86
+#: src/remmina.cpp:86
 msgid ""
 "Connect either to a desktop described in a file (.remmina or a filetype "
 "supported by a plugin) or a supported URI (RDP, VNC, SSH or SPICE)"
@@ -498,92 +498,92 @@ msgstr ""
 "连接到文件(.remmina或插件支持的文件类型)描述的桌面，或支持的URI (RDP、VNC、"
 "SSH或SPICE)"
 
-#: src/remmina.c:86 src/remmina.c:88 src/remmina.c:90
+#: src/remmina.cpp:86 src/remmina.cpp:88 src/remmina.cpp:90
 msgid "FILE"
 msgstr "文件"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:88
+#: src/remmina.cpp:88
 msgid ""
 "Connect to a desktop described in a file (.remmina or a filetype supported "
 "by a plugin)"
 msgstr "连接到文件描述的桌面（.remmina 或插件支持的文件类型）"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:90
+#: src/remmina.cpp:90
 msgid ""
 "Edit desktop connection described in file (.remmina or a filetype supported "
 "by plugin)"
 msgstr "编辑文件描述的桌面连接（.remmina 或插件支持的文件类型）"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:93
+#: src/remmina.cpp:93
 msgid "Start in kiosk mode"
 msgstr "在 Kiosk 模式下启动"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:95
+#: src/remmina.cpp:95
 msgid "Create new connection profile"
 msgstr "创建一个新的连接配置文件"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:97
+#: src/remmina.cpp:97
 msgid "Show preferences"
 msgstr "显示首选项"
 
-#: src/remmina.c:97
+#: src/remmina.cpp:97
 msgid "TABINDEX"
 msgstr "标签索引"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:104
+#: src/remmina.cpp:104
 msgid "Quit"
 msgstr "退出"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:106
+#: src/remmina.cpp:106
 msgid "Use default server name (for --new)"
 msgstr "使用默认服务名（for --new）"
 
-#: src/remmina.c:106
+#: src/remmina.cpp:106
 msgid "SERVER"
 msgstr "服务"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:108
+#: src/remmina.cpp:108
 msgid "Use default protocol (for --new)"
 msgstr "使用默认协议（for --new）"
 
-#: src/remmina.c:108
+#: src/remmina.cpp:108
 msgid "PROTOCOL"
 msgstr "协议"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:110
+#: src/remmina.cpp:110
 msgid "Start in tray"
 msgstr "启动托盘"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:112
+#: src/remmina.cpp:112
 msgid "Show the application version"
 msgstr "显示应用程序版本"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:114
+#: src/remmina.cpp:114
 msgid "Show version of the application and its plugins"
 msgstr "显示应用程序及其插件的版本"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:116
+#: src/remmina.cpp:116
 msgid "Modify connection profile (requires --set-option)"
 msgstr "修改连接配置文件(需要 --set-option)"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:118
+#: src/remmina.cpp:118
 msgid "Set one or more profile settings, to be used with --update-profile"
 msgstr "设置一个或多个配置文件设置，用于 --update-profile"
 
-#: src/remmina.c:119
+#: src/remmina.cpp:119
 msgid "Encrypt a password"
 msgstr "加密一个密码"
 
@@ -591,7 +591,7 @@ msgstr "加密一个密码"
 #. * This link should point to a resource explaining how to get Remmina
 #. * to log more verbose statements.
 #.
-#: src/remmina.c:334
+#: src/remmina.cpp:334
 msgid ""
 "Remmina does not log all output statements. Turn on more verbose output by "
 "using \"G_MESSAGES_DEBUG=all\" as an environment variable.\n"
@@ -604,11 +604,11 @@ msgstr ""
 "https://gitlab.com/Remmina/Remmina/-/wikis/Usage/Remmina-debugging"
 
 #. TRANSLATORS: Shown in terminal. Do not use characters that may be not supported on a terminal
-#: src/remmina.c:388
+#: src/remmina.cpp:388
 msgid "- or protocol://username:encryptedpassword@host:port"
 msgstr "- 或者 协议://用户名:加密密码@主机:端口"
 
-#: src/remmina.c:391
+#: src/remmina.cpp:391
 msgid ""
 "Examples:\n"
 "To connect using an existing connection profile, use:\n"
@@ -673,31 +673,31 @@ msgstr ""
 "remmina --set-option username --set-option resolution_mode=2 --set-option "
 "password\n"
 
-#: src/remmina_public.c:345
+#: src/remmina_public.cpp:345
 #, c-format
 msgid "Address is too long for UNIX socket_path: %s"
 msgstr "UNIX 套接字路径的地址太长: %s"
 
-#: src/remmina_public.c:355
+#: src/remmina_public.cpp:355
 #, c-format
 msgid "Creating UNIX socket failed: %s"
 msgstr "创建UNIX套接字失败：%s"
 
-#: src/remmina_public.c:361
+#: src/remmina_public.cpp:361
 #, c-format
 msgid "Connecting to UNIX socket failed: %s"
 msgstr "未能连接到 UNIX 套接字：%s"
 
-#: src/remmina_public.c:631
+#: src/remmina_public.cpp:631
 msgid "Please enter format 'widthxheight'."
 msgstr "请正确输入“宽x高”。"
 
-#: src/remmina_public.c:653
+#: src/remmina_public.cpp:653
 msgid "Change security settings"
 msgstr "更改安全设置"
 
 #. TRANSLATORS: translator-credits should be replaced with a formatted list of translators in your own language
-#: src/remmina_about.c:54
+#: src/remmina_about.cpp:54
 msgid "translator-credits"
 msgstr ""
 "Remmina 的原版本简体中文翻译由作者本人完成\n"
@@ -712,336 +712,336 @@ msgstr ""
 "https://hosted.weblate.org/projects/remmina/\n"
 "  玉堂白鹤 <yjwork@qq.com>, 2020"
 
-#: src/remmina_ftp_client.c:389
+#: src/remmina_ftp_client.cpp:389
 msgid "Choose download location"
 msgstr "选择下载目录"
 
-#: src/remmina_ftp_client.c:529
+#: src/remmina_ftp_client.cpp:529
 msgid "Are you sure to delete the selected files on server?"
 msgstr "确认要删除服务器上的文件？"
 
-#: src/remmina_ftp_client.c:586
+#: src/remmina_ftp_client.cpp:586
 msgid "Choose a file to upload"
 msgstr "选择要上传的文件"
 
-#: src/remmina_ftp_client.c:593
+#: src/remmina_ftp_client.cpp:593
 msgid "Upload folder"
 msgstr "上传文件夹"
 
-#: src/remmina_ftp_client.c:649 src/remmina_ftp_client.c:763
+#: src/remmina_ftp_client.cpp:649 src/remmina_ftp_client.cpp:763
 msgid "Download"
 msgstr "下载"
 
-#: src/remmina_ftp_client.c:656 src/remmina_ftp_client.c:770
+#: src/remmina_ftp_client.cpp:656 src/remmina_ftp_client.cpp:770
 msgid "Upload"
 msgstr "上传"
 
-#: src/remmina_ftp_client.c:663
+#: src/remmina_ftp_client.cpp:663
 msgid "_Delete"
 msgstr "删除(_D)"
 
-#: src/remmina_ftp_client.c:748
+#: src/remmina_ftp_client.cpp:748
 msgid "Home"
 msgstr "首页"
 
-#: src/remmina_ftp_client.c:749
+#: src/remmina_ftp_client.cpp:749
 msgid "Go to home folder"
 msgstr "跳到主目录"
 
-#: src/remmina_ftp_client.c:753
+#: src/remmina_ftp_client.cpp:753
 msgid "Up"
 msgstr "向上"
 
-#: src/remmina_ftp_client.c:754
+#: src/remmina_ftp_client.cpp:754
 msgid "Go to parent folder"
 msgstr "跳到上一层目录"
 
-#: src/remmina_ftp_client.c:758 plugins/rdp/rdp_plugin.c:2851
-#: plugins/vnc/vnc_plugin.c:2050
+#: src/remmina_ftp_client.cpp:758 plugins/rdp/rdp_plugin.cpp:2851
+#: plugins/vnc/vnc_plugin.cpp:2050
 msgid "Refresh"
 msgstr "刷新"
 
-#: src/remmina_ftp_client.c:759
+#: src/remmina_ftp_client.cpp:759
 msgid "Refresh current folder"
 msgstr "刷新当前目录"
 
-#: src/remmina_ftp_client.c:764
+#: src/remmina_ftp_client.cpp:764
 msgid "Download from server"
 msgstr "从服务器下载"
 
-#: src/remmina_ftp_client.c:771
+#: src/remmina_ftp_client.cpp:771
 msgid "Upload to server"
 msgstr "上传到服务器"
 
-#: src/remmina_ftp_client.c:775 data/ui/remmina_main.glade:197
+#: src/remmina_ftp_client.cpp:775 data/ui/remmina_main.glade:197
 msgid "Delete"
 msgstr "删除"
 
-#: src/remmina_ftp_client.c:776
+#: src/remmina_ftp_client.cpp:776
 msgid "Delete files on server"
 msgstr "删除服务器上的文件"
 
-#: src/remmina_ftp_client.c:905 src/remmina_ftp_client.c:974
+#: src/remmina_ftp_client.cpp:905 src/remmina_ftp_client.cpp:974
 msgid "Filename"
 msgstr "文件名"
 
-#: src/remmina_ftp_client.c:918 src/remmina_ftp_client.c:1003
+#: src/remmina_ftp_client.cpp:918 src/remmina_ftp_client.cpp:1003
 msgid "Size"
 msgstr "大小"
 
-#: src/remmina_ftp_client.c:926
+#: src/remmina_ftp_client.cpp:926
 msgid "User"
 msgstr "用户名"
 
-#: src/remmina_ftp_client.c:932 src/remmina_file_editor.c:1933
+#: src/remmina_ftp_client.cpp:932 src/remmina_file_editor.cpp:1933
 #: data/ui/remmina_mpc.glade:115 data/ui/remmina_main.glade:464
 msgid "Group"
 msgstr "分组"
 
-#: src/remmina_ftp_client.c:938
+#: src/remmina_ftp_client.cpp:938
 msgid "Permission"
 msgstr "权限"
 
-#: src/remmina_ftp_client.c:990 plugins/rdp/rdp_plugin.c:2648
+#: src/remmina_ftp_client.cpp:990 plugins/rdp/rdp_plugin.cpp:2648
 msgid "Remote"
 msgstr "远程"
 
-#: src/remmina_ftp_client.c:997 plugins/rdp/rdp_plugin.c:2647
+#: src/remmina_ftp_client.cpp:997 plugins/rdp/rdp_plugin.cpp:2647
 msgid "Local"
 msgstr "本地"
 
-#: src/remmina_ftp_client.c:1011
+#: src/remmina_ftp_client.cpp:1011
 msgid "Progress"
 msgstr "进度"
 
-#: src/remmina_protocol_widget.c:291 src/remmina_ssh_plugin.c:829
-#: src/remmina_ssh_plugin.c:1446
+#: src/remmina_protocol_widget.cpp:291 src/remmina_ssh_plugin.cpp:829
+#: src/remmina_ssh_plugin.cpp:1446
 msgid "Open SFTP transfer…"
 msgstr "打开 SFTP 传输…"
 
-#: src/remmina_protocol_widget.c:320
+#: src/remmina_protocol_widget.cpp:320
 msgid "Executing external commands…"
 msgstr "执行外部命令…"
 
 #. TRANSLATORS: “%s” is a placeholder for the connection profile name
-#: src/remmina_protocol_widget.c:328
+#: src/remmina_protocol_widget.cpp:328
 #, c-format
 msgid "Connecting to “%s”…"
 msgstr "正在连接到 “%s”…"
 
 #. TRANSLATORS: “%s” is a placeholder for an hostname or an IP address.
-#: src/remmina_protocol_widget.c:916 src/remmina_protocol_widget.c:1101
+#: src/remmina_protocol_widget.cpp:916 src/remmina_protocol_widget.cpp:1101
 #, c-format
 msgid "Connecting to “%s” via SSH…"
 msgstr "正在通过 SSH 连接到 “%s”…"
 
 #. TRANSLATORS: “%i” is a placeholder for a TCP port number.
-#: src/remmina_protocol_widget.c:1165
+#: src/remmina_protocol_widget.cpp:1165
 #, c-format
 msgid "Awaiting incoming SSH connection on port %i…"
 msgstr "在端口 %i 等待传入的 SSH 连接…"
 
-#: src/remmina_protocol_widget.c:1218
+#: src/remmina_protocol_widget.cpp:1218
 #, c-format
 msgid "The “%s” command is not available on the SSH server."
 msgstr "“%s”命令在 SSH 服务器上不可用。"
 
-#: src/remmina_protocol_widget.c:1223
+#: src/remmina_protocol_widget.cpp:1223
 #, c-format
 msgid "Could not run the “%s” command on the SSH server (status = %i)."
 msgstr "SSH 服务器运行命令 “%s” 失败（状态= %i）。"
 
 #. TRANSLATORS: %s is a placeholder for an error message
-#: src/remmina_protocol_widget.c:1231
+#: src/remmina_protocol_widget.cpp:1231
 #, c-format
 msgid "Could not run command. %s"
 msgstr "无法运行命令。%s"
 
 #. TRANSLATORS: “%s” is a placeholder for a hostname or IP address.
-#: src/remmina_protocol_widget.c:1301
+#: src/remmina_protocol_widget.cpp:1301
 #, c-format
 msgid "Connecting to %s via SSH…"
 msgstr "通过 SSH 连接到 %s …"
 
-#: src/remmina_protocol_widget.c:1695
+#: src/remmina_protocol_widget.cpp:1695
 msgid "Type in SSH username and password."
 msgstr "输入 SSH 的用户名和密码。"
 
-#: src/remmina_protocol_widget.c:1750 src/remmina_protocol_widget.c:1782
+#: src/remmina_protocol_widget.cpp:1750 src/remmina_protocol_widget.cpp:1782
 msgid "Fingerprint automatically accepted"
 msgstr "自动接受指纹"
 
 #. TRANSLATORS: The user is asked to verify a new SSL certificate.
-#: src/remmina_protocol_widget.c:1758
+#: src/remmina_protocol_widget.cpp:1758
 msgid "Certificate details:"
 msgstr "证书详情："
 
 #. TRANSLATORS: An SSL certificate subject is usually the remote server the user connect to.
-#: src/remmina_protocol_widget.c:1760 src/remmina_protocol_widget.c:1792
+#: src/remmina_protocol_widget.cpp:1760 src/remmina_protocol_widget.cpp:1792
 msgid "Subject:"
 msgstr "主题："
 
 #. TRANSLATORS: The name or email of the entity that have issued the SSL certificate
-#: src/remmina_protocol_widget.c:1762 src/remmina_protocol_widget.c:1794
+#: src/remmina_protocol_widget.cpp:1762 src/remmina_protocol_widget.cpp:1794
 msgid "Issuer:"
 msgstr "颁发者："
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1764
+#: src/remmina_protocol_widget.cpp:1764
 msgid "Fingerprint:"
 msgstr "指纹："
 
 #. TRANSLATORS: The user is asked to accept or refuse a new SSL certificate.
-#: src/remmina_protocol_widget.c:1766
+#: src/remmina_protocol_widget.cpp:1766
 msgid "Accept certificate?"
 msgstr "接受证书吗？"
 
 #. TRANSLATORS: The user is asked to verify a new SSL certificate.
-#: src/remmina_protocol_widget.c:1790
+#: src/remmina_protocol_widget.cpp:1790
 msgid "The certificate changed! Details:"
 msgstr "证书已更改！详情："
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1796
+#: src/remmina_protocol_widget.cpp:1796
 msgid "Old fingerprint:"
 msgstr "旧指纹："
 
 #. TRANSLATORS: An SSL certificate fingerprint, is a hash of a certificate calculated on all certificate's data and its signature.
-#: src/remmina_protocol_widget.c:1798
+#: src/remmina_protocol_widget.cpp:1798
 msgid "New fingerprint:"
 msgstr "新指纹："
 
 #. TRANSLATORS: The user is asked to accept or refuse a new SSL certificate.
-#: src/remmina_protocol_widget.c:1800
+#: src/remmina_protocol_widget.cpp:1800
 msgid "Accept changed certificate?"
 msgstr "接受更改的证书吗？"
 
 #. TRANSLATORS: “%i” is a placeholder for a port number. “%s”  is a placeholder for a protocol name (VNC).
-#: src/remmina_protocol_widget.c:1943
+#: src/remmina_protocol_widget.cpp:1943
 #, c-format
 msgid "Listening on port %i for an incoming %s connection…"
 msgstr "在 %i 端口监听传入的 %s 连接…"
 
-#: src/remmina_protocol_widget.c:1968
+#: src/remmina_protocol_widget.cpp:1968
 msgid "Could not authenticate, attempting reconnection…"
 msgstr "验证失败，重新连接…"
 
-#: src/remmina_protocol_widget.c:2030 src/remmina_file_editor.c:436
-#: src/remmina_file_editor.c:1172 data/ui/remmina_main.glade:478
+#: src/remmina_protocol_widget.cpp:2030 src/remmina_file_editor.cpp:436
+#: src/remmina_file_editor.cpp:1172 data/ui/remmina_main.glade:478
 msgid "Server"
 msgstr "服务器"
 
 #. TRANSLATORS: “%s” is a placeholder for a protocol name, like “RDP”.
-#: src/remmina_protocol_widget.c:2048
+#: src/remmina_protocol_widget.cpp:2048
 #, c-format
 msgid "Install the %s protocol plugin first."
 msgstr "请先安装 %s 协议插件。"
 
-#: src/remmina_ssh.c:236
+#: src/remmina_ssh.cpp:236
 #, c-format
 msgid "Could not authenticate with TOTP/OTP/2FA. %s"
 msgstr "无法使用 TOTP/OTP/2FA 进行身份验证。%s"
 
-#: src/remmina_ssh.c:295 src/remmina_ssh.c:676
+#: src/remmina_ssh.cpp:295 src/remmina_ssh.cpp:676
 #, c-format
 msgid "Could not authenticate with SSH password. %s"
 msgstr "无法使用 SSH 密码进行身份验证。%s"
 
-#: src/remmina_ssh.c:322 src/remmina_ssh.c:389
+#: src/remmina_ssh.cpp:322 src/remmina_ssh.cpp:389
 msgid "No saved SSH passphrase supplied. Asking user to enter it."
 msgstr "未能提供保存的 SSH 密码。需要用户输入。"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:327 src/remmina_ssh.c:368 src/remmina_ssh.c:394
-#: src/remmina_ssh.c:433 src/remmina_ssh.c:746
+#: src/remmina_ssh.cpp:327 src/remmina_ssh.cpp:368 src/remmina_ssh.cpp:394
+#: src/remmina_ssh.cpp:433 src/remmina_ssh.cpp:746
 #, c-format
 msgid "Could not authenticate with public SSH key. %s"
 msgstr "无法使用公共SSH密钥进行身份验证。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:336
+#: src/remmina_ssh.cpp:336
 #, c-format
 msgid "SSH certificate cannot be imported. %s"
 msgstr "无法导入 SSH 证书。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:345
+#: src/remmina_ssh.cpp:345
 #, c-format
 msgid "SSH certificate cannot be copied into the private SSH key. %s"
 msgstr "SSH 证书无法复制到私人 SSH 中。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:355
+#: src/remmina_ssh.cpp:355
 #, c-format
 msgid "Could not authenticate using SSH certificate. %s"
 msgstr "无法使用 SSH 证书进行身份验证。%s"
 
-#: src/remmina_ssh.c:369
+#: src/remmina_ssh.cpp:369
 msgid "SSH identity file not selected."
 msgstr "未选中 SSH 身份文件。"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:380
+#: src/remmina_ssh.cpp:380
 #, c-format
 msgid "Public SSH key cannot be imported. %s"
 msgstr "无法导入公共 SSH 密钥。%s"
 
-#: src/remmina_ssh.c:478
+#: src/remmina_ssh.cpp:478
 #, c-format
 msgid "Could not authenticate automatically with public SSH key. %s"
 msgstr "无法使用公共 SSH 密钥自动进行身份验证。%s"
 
-#: src/remmina_ssh.c:523
+#: src/remmina_ssh.cpp:523
 #, c-format
 msgid "Could not authenticate automatically with SSH agent. %s"
 msgstr "无法使用 SSH 代理自动进行身份验证。%s"
 
-#: src/remmina_ssh.c:569 src/remmina_ssh.c:856
+#: src/remmina_ssh.cpp:569 src/remmina_ssh.cpp:856
 #, c-format
 msgid "Could not authenticate with SSH GSSAPI/Kerberos. %s"
 msgstr "无法使用 SSH GSSAPI/Kerberos 进行身份验证。 %s"
 
-#: src/remmina_ssh.c:598
+#: src/remmina_ssh.cpp:598
 msgid "The public SSH key changed!"
 msgstr "SSH 公钥已变更！"
 
-#: src/remmina_ssh.c:711
+#: src/remmina_ssh.cpp:711
 #, c-format
 msgid "Could not authenticate with keyboard-interactive. %s"
 msgstr "无法使用键盘互动进行身份验证。%s"
 
-#: src/remmina_ssh.c:813
+#: src/remmina_ssh.cpp:813
 #, c-format
 msgid "Could not authenticate with automatic public SSH key. %s"
 msgstr "无法使用自动公共SSH密钥进行身份验证。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:921
+#: src/remmina_ssh.cpp:921
 #, c-format
 msgid "Could not fetch the server's public SSH key. %s"
 msgstr "无法获取服务器的公共SSH密钥。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:928
+#: src/remmina_ssh.cpp:928
 #, c-format
 msgid "Could not fetch public SSH key. %s"
 msgstr "无法获取公共SSH密钥。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:936
+#: src/remmina_ssh.cpp:936
 #, c-format
 msgid "Could not fetch checksum of the public SSH key. %s"
 msgstr "无法获取公共SSH密钥的校验和。%s"
 
-#: src/remmina_ssh.c:949
+#: src/remmina_ssh.cpp:949
 msgid "The server is unknown. The public key fingerprint is:"
 msgstr "服务器未知，其公钥指纹为："
 
-#: src/remmina_ssh.c:951 src/remmina_ssh.c:957
+#: src/remmina_ssh.cpp:951 src/remmina_ssh.cpp:957
 msgid "Do you trust the new public key?"
 msgstr "您信任新的公钥吗？"
 
-#: src/remmina_ssh.c:954
+#: src/remmina_ssh.cpp:954
 msgid ""
 "Warning: The server has changed its public key. This means you are either "
 "under attack,\n"
@@ -1051,180 +1051,180 @@ msgstr ""
 "或者服务器管理员修改了密钥。新的公钥指纹为："
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:979
+#: src/remmina_ssh.cpp:979
 #, c-format
 msgid "Could not check list of known SSH hosts. %s"
 msgstr "无法检查已知SSH主机的列表。%s"
 
-#: src/remmina_ssh.c:988
+#: src/remmina_ssh.cpp:988
 msgid "SSH password"
 msgstr "SSH 密码"
 
-#: src/remmina_ssh.c:995 src/remmina_ssh.c:1039
+#: src/remmina_ssh.cpp:995 src/remmina_ssh.cpp:1039
 msgid "SSH private key passphrase"
 msgstr "SSH 私钥密码"
 
-#: src/remmina_ssh.c:1000
+#: src/remmina_ssh.cpp:1000
 msgid "SSH Kerberos/GSSAPI"
 msgstr "SSH Kerberos/GSSAPI"
 
-#: src/remmina_ssh.c:1005
+#: src/remmina_ssh.cpp:1005
 msgid "Enter TOTP/OTP/2FA code"
 msgstr "输入 TOTP/OTP/2FA 代码"
 
-#: src/remmina_ssh.c:1035 src/remmina_ssh.c:1061
+#: src/remmina_ssh.cpp:1035 src/remmina_ssh.cpp:1061
 msgid "SSH tunnel credentials"
 msgstr "SSH 通道凭据"
 
-#: src/remmina_ssh.c:1035 src/remmina_ssh.c:1061
+#: src/remmina_ssh.cpp:1035 src/remmina_ssh.cpp:1061
 msgid "SSH credentials"
 msgstr "SSH 凭据"
 
-#: src/remmina_ssh.c:1112
+#: src/remmina_ssh.cpp:1112
 msgid "Keyboard interactive login, TOTP/OTP/2FA"
 msgstr "键盘交互式登录, TOTP/OTP/2FA"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1337
+#: src/remmina_ssh.cpp:1337
 #, c-format
 msgid "Could not start SSH session. %s"
 msgstr "无法启动 SSH 会话。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1735
+#: src/remmina_ssh.cpp:1735
 #, c-format
 msgid "Could not create channel. %s"
 msgstr "创建通道失败。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1746
+#: src/remmina_ssh.cpp:1746
 #, c-format
 msgid "Could not connect to SSH tunnel. %s"
 msgstr "无法连接到 SSH 通道。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1816 src/remmina_ssh.c:1837 src/remmina_ssh.c:1846
+#: src/remmina_ssh.cpp:1816 src/remmina_ssh.cpp:1837 src/remmina_ssh.cpp:1846
 #, c-format
 msgid "Could not request port forwarding. %s"
 msgstr "无法申请端口转发。%s"
 
-#: src/remmina_ssh.c:1876
+#: src/remmina_ssh.cpp:1876
 msgid "The server did not respond."
 msgstr "服务器没有响应。"
 
-#: src/remmina_ssh.c:1916
+#: src/remmina_ssh.cpp:1916
 #, c-format
 msgid "Cannot connect to local port %i."
 msgstr "无法连接到本地端口 %i。"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1965
+#: src/remmina_ssh.cpp:1965
 #, c-format
 msgid "Could not write to SSH channel. %s"
 msgstr "无法写入SSH通道。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1972
+#: src/remmina_ssh.cpp:1972
 #, c-format
 msgid "Could not read from tunnel listening socket. %s"
 msgstr "读取隧道侦听套接字返回错误。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1992
+#: src/remmina_ssh.cpp:1992
 #, c-format
 msgid "Could not poll SSH channel. %s"
 msgstr "轮询SSH通道失败。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:1999
+#: src/remmina_ssh.cpp:1999
 #, c-format
 msgid "Could not read SSH channel in a non-blocking way. %s"
 msgstr "无法以非阻塞方式读取SSH通道。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2018
+#: src/remmina_ssh.cpp:2018
 #, c-format
 msgid "Could not send data to tunnel listening socket. %s"
 msgstr "无法发送数据到隧道监听套接字。%s"
 
-#: src/remmina_ssh.c:2120
+#: src/remmina_ssh.cpp:2120
 msgid "Assign a destination port."
 msgstr "分配目标端口。"
 
-#: src/remmina_ssh.c:2127
+#: src/remmina_ssh.cpp:2127
 msgid "Could not create socket."
 msgstr "无法创建套接字。"
 
-#: src/remmina_ssh.c:2137
+#: src/remmina_ssh.cpp:2137
 msgid "Could not bind server socket to local port."
 msgstr "无法将服务器套接字绑定到本地端口。"
 
-#: src/remmina_ssh.c:2143
+#: src/remmina_ssh.cpp:2143
 msgid "Could not listen to local port."
 msgstr "无法侦听本地端口。"
 
 #. TRANSLATORS: Do not translate pthread
-#: src/remmina_ssh.c:2153 src/remmina_ssh.c:2170 src/remmina_ssh.c:2188
+#: src/remmina_ssh.cpp:2153 src/remmina_ssh.cpp:2170 src/remmina_ssh.cpp:2188
 msgid "Could not start pthread."
 msgstr "无法启动 pthread。"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2280
+#: src/remmina_ssh.cpp:2280
 #, c-format
 msgid "Could not create SFTP session. %s"
 msgstr "无法创建 SFTP 会话。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2285
+#: src/remmina_ssh.cpp:2285
 #, c-format
 msgid "Could not start SFTP session. %s"
 msgstr "无法启动 SFTP 会话。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2379
+#: src/remmina_ssh.cpp:2379
 #, c-format
 msgid "Could not open channel. %s"
 msgstr "打开通道失败。%s"
 
 #. TRANSLATORS: The placeholder %s is an error message
-#: src/remmina_ssh.c:2394
+#: src/remmina_ssh.cpp:2394
 #, c-format
 msgid "Could not request shell. %s"
 msgstr "无法请求 shell。%s"
 
-#: src/remmina_ssh.c:2523
+#: src/remmina_ssh.cpp:2523
 msgid "Could not create PTY device."
 msgstr "无法创建 PTY 设备。"
 
-#: src/remmina_exec.c:478
+#: src/remmina_exec.cpp:478
 #, c-format
 msgid "Plugin %s is not registered."
 msgstr "插件 %s 未注册。"
 
-#: src/remmina_main.c:685
+#: src/remmina_main.cpp:685
 msgid "The latest successful connection attempt, or a pre-computed date"
 msgstr "最近一次成功的连接尝试，或预先计算的日期"
 
-#: src/remmina_main.c:687
+#: src/remmina_main.cpp:687
 #, c-format
 msgid "Total %i item."
 msgid_plural "Total %i items."
 msgstr[0] "共 %i 项。"
 
-#: src/remmina_main.c:695
+#: src/remmina_main.cpp:695
 msgid "Network status: fully online"
 msgstr "网络状态：完全在线"
 
-#: src/remmina_main.c:698
+#: src/remmina_main.cpp:698
 msgid "Network status: offline"
 msgstr "网络状态：离线"
 
-#: src/remmina_main.c:902
+#: src/remmina_main.cpp:902
 #, c-format
 msgid "Are you sure you want to delete “%s”?"
 msgstr "确认要删除 “%s”吗？"
 
-#: src/remmina_main.c:1026
+#: src/remmina_main.cpp:1026
 #, c-format
 msgid ""
 "Unable to import:\n"
@@ -1233,106 +1233,106 @@ msgstr ""
 "无法导入：\n"
 "%s"
 
-#: src/remmina_main.c:1052 data/ui/remmina_main.glade:285
+#: src/remmina_main.cpp:1052 data/ui/remmina_main.glade:285
 msgid "Import"
 msgstr "导入"
 
-#: src/remmina_main.c:1075 src/remmina_file_editor.c:1791
+#: src/remmina_main.cpp:1075 src/remmina_file_editor.cpp:1791
 msgid "_Save"
 msgstr "保存(_S)"
 
-#: src/remmina_main.c:1081
+#: src/remmina_main.cpp:1081
 msgid "This protocol does not support exporting."
 msgstr "此协议不支持导出。"
 
-#: src/remmina_main.c:1401
+#: src/remmina_main.cpp:1401
 msgid "Remmina Remote Desktop Client"
 msgstr "Remmina 远程桌面客户端"
 
-#: src/remmina_main.c:1403
+#: src/remmina_main.cpp:1403
 msgid "Remmina Kiosk"
 msgstr "Remmina 终端"
 
 #. TRANSLATORS: The placeholder %s is a directory path
-#: src/remmina_sftp_client.c:173
+#: src/remmina_sftp_client.cpp:173
 #, c-format
 msgid "Could not create the folder “%s”."
 msgstr "无法创建文件夹 “%s”。"
 
 #. TRANSLATORS: The placeholder %s is a file path
-#: src/remmina_sftp_client.c:181 src/remmina_sftp_client.c:202
+#: src/remmina_sftp_client.cpp:181 src/remmina_sftp_client.cpp:202
 #, c-format
 msgid "Could not create the file “%s”."
 msgstr "无法创建文件 “%s”。"
 
 #. TRANSLATORS: The placeholders %s are a file path, and an error message.
-#: src/remmina_sftp_client.c:220
+#: src/remmina_sftp_client.cpp:220
 #, c-format
 msgid "Could not open the file “%s” on the server. %s"
 msgstr "无法打开服务器上的文件 “%s”。%s"
 
-#: src/remmina_sftp_client.c:242
+#: src/remmina_sftp_client.cpp:242
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "无法保存文件 “%s”。"
 
-#: src/remmina_sftp_client.c:281 src/remmina_sftp_client.c:698
-#: src/remmina_sftp_client.c:761
+#: src/remmina_sftp_client.cpp:281 src/remmina_sftp_client.cpp:698
+#: src/remmina_sftp_client.cpp:761
 #, c-format
 msgid "Could not open the folder “%s”. %s"
 msgstr "无法打开文件夹 “%s”。 %s"
 
-#: src/remmina_sftp_client.c:385
+#: src/remmina_sftp_client.cpp:385
 #, c-format
 msgid "Could not create the folder “%s” on the server. %s"
 msgstr "在服务器上创建文件夹 “%s” 失败。%s"
 
-#: src/remmina_sftp_client.c:413 src/remmina_sftp_client.c:435
+#: src/remmina_sftp_client.cpp:413 src/remmina_sftp_client.cpp:435
 #, c-format
 msgid "Could not create the file “%s” on the server. %s"
 msgstr "在服务器上创建文件 “%s”失败。%s"
 
-#: src/remmina_sftp_client.c:456
+#: src/remmina_sftp_client.cpp:456
 #, c-format
 msgid "Could not open the file “%s”."
 msgstr "无法打开文件 “%s”。"
 
-#: src/remmina_sftp_client.c:476
+#: src/remmina_sftp_client.cpp:476
 #, c-format
 msgid "Could not write to the file “%s” on the server. %s"
 msgstr "无法在服务器上写入文件 “%s” 。%s"
 
-#: src/remmina_sftp_client.c:716
+#: src/remmina_sftp_client.cpp:716
 #, c-format
 msgid "Could not read from the folder. %s"
 msgstr "读取文件夹失败。%s"
 
-#: src/remmina_sftp_client.c:823
+#: src/remmina_sftp_client.cpp:823
 msgid "Are you sure you want to cancel the file transfer in progress?"
 msgstr "确定要取消正在进行的文件传输吗？"
 
-#: src/remmina_sftp_client.c:857
+#: src/remmina_sftp_client.cpp:857
 #, c-format
 msgid "Could not delete “%s”. %s"
 msgstr "无法删除 “%s”。 %s"
 
-#: src/remmina_sftp_client.c:942
+#: src/remmina_sftp_client.cpp:942
 msgid "The file exists already"
 msgstr "文件已经存在"
 
-#: src/remmina_sftp_client.c:945
+#: src/remmina_sftp_client.cpp:945
 msgid "Resume"
 msgstr "恢复"
 
-#: src/remmina_sftp_client.c:946
+#: src/remmina_sftp_client.cpp:946
 msgid "Overwrite"
 msgstr "覆盖"
 
-#: src/remmina_sftp_client.c:964
+#: src/remmina_sftp_client.cpp:964
 msgid "The following file already exists in the target folder:"
 msgstr "目标文件夹中已经存在如下文件："
 
-#: src/remmina_file_editor.c:61
+#: src/remmina_file_editor.cpp:61
 msgid ""
 "<big>Supported formats\n"
 "• server\n"
@@ -1348,7 +1348,7 @@ msgstr ""
 "•ID：中继器ID号\n"
 "• unix:///path/socket.sock</big>"
 
-#: src/remmina_file_editor.c:70
+#: src/remmina_file_editor.cpp:70
 msgid ""
 "<big>• command in PATH args %h\n"
 "• /path/to/foo -options %h %u\n"
@@ -1375,7 +1375,7 @@ msgstr ""
 "如果要在连接前执行命令，请不要在后台运行。\n"
 "</big>"
 
-#: src/remmina_file_editor.c:84
+#: src/remmina_file_editor.cpp:84
 msgid ""
 "<big>Supported formats\n"
 "• server\n"
@@ -1387,122 +1387,122 @@ msgstr ""
 "• 服务器[:端口]\n"
 "• 用户名@服务器:[端口]（仅 SSH 协议）</big>"
 
-#: src/remmina_file_editor.c:162
+#: src/remmina_file_editor.cpp:162
 msgid "Input is invalid."
 msgstr "输入无效。"
 
-#: src/remmina_file_editor.c:239
+#: src/remmina_file_editor.cpp:239
 msgid "Choose a Remote Desktop Server"
 msgstr "请选择一个远程桌面服务器"
 
-#: src/remmina_file_editor.c:460
+#: src/remmina_file_editor.cpp:460
 #, c-format
 msgid "Browse the network to find a %s server"
 msgstr "浏览网络查找 %s 服务器"
 
-#: src/remmina_file_editor.c:564
+#: src/remmina_file_editor.cpp:564
 msgid "Resolution"
 msgstr "分辨率"
 
-#: src/remmina_file_editor.c:571
+#: src/remmina_file_editor.cpp:571
 msgid "Use initial window size"
 msgstr "使用初始窗口大小"
 
-#: src/remmina_file_editor.c:575
+#: src/remmina_file_editor.cpp:575
 msgid "Use client resolution"
 msgstr "使用客户机的分辨率"
 
-#: src/remmina_file_editor.c:586 src/remmina_file_editor.c:1152
+#: src/remmina_file_editor.cpp:586 src/remmina_file_editor.cpp:1152
 msgid "Custom"
 msgstr "自定义"
 
-#: src/remmina_file_editor.c:945
+#: src/remmina_file_editor.cpp:945
 msgid "Keyboard mapping"
 msgstr "键盘映射"
 
-#: src/remmina_file_editor.c:1072
+#: src/remmina_file_editor.cpp:1072
 msgid "Behavior"
 msgstr "行为"
 
-#: src/remmina_file_editor.c:1075
+#: src/remmina_file_editor.cpp:1075
 msgid "Execute a Command"
 msgstr "执行命令"
 
-#: src/remmina_file_editor.c:1079
+#: src/remmina_file_editor.cpp:1079
 msgid "Before connecting"
 msgstr "连接前"
 
-#: src/remmina_file_editor.c:1081
+#: src/remmina_file_editor.cpp:1081
 msgid "command %h %u %t %U %p %g --option"
 msgstr "命令 %h %u %t %U %p %g --选项"
 
-#: src/remmina_file_editor.c:1086
+#: src/remmina_file_editor.cpp:1086
 msgid "After connecting"
 msgstr "连接后"
 
-#: src/remmina_file_editor.c:1088
+#: src/remmina_file_editor.cpp:1088
 msgid "/path/to/command -opt1 arg %h %u %t -opt2 %U %p %g"
 msgstr "/路径/至/命令 -opt1 arg %h %u %t -opt2 %U %p %g"
 
-#: src/remmina_file_editor.c:1092
+#: src/remmina_file_editor.cpp:1092
 msgid "Start-up"
 msgstr "启动"
 
-#: src/remmina_file_editor.c:1095
+#: src/remmina_file_editor.cpp:1095
 msgid "Auto-start this profile"
 msgstr "自动启动此配置文件"
 
-#: src/remmina_file_editor.c:1125
+#: src/remmina_file_editor.cpp:1125
 msgid "SSH Tunnel"
 msgstr "SSH 通道"
 
-#: src/remmina_file_editor.c:1126
+#: src/remmina_file_editor.cpp:1126
 msgid "Enable SSH tunnel"
 msgstr "启用 SSH 通道"
 
-#: src/remmina_file_editor.c:1133
+#: src/remmina_file_editor.cpp:1133
 msgid "Tunnel via loopback address"
 msgstr "通过 loopback 地址建立隧道"
 
-#: src/remmina_file_editor.c:1143
+#: src/remmina_file_editor.cpp:1143
 #, c-format
 msgid "Same server at port %i"
 msgstr "相同主机上的 %i 端口"
 
-#: src/remmina_file_editor.c:1193 plugins/rdp/rdp_plugin.c:2805
+#: src/remmina_file_editor.cpp:1193 plugins/rdp/rdp_plugin.cpp:2805
 msgid "Start-up path"
 msgstr "启动路径"
 
-#: src/remmina_file_editor.c:1202
+#: src/remmina_file_editor.cpp:1202
 msgid "SSH Authentication"
 msgstr "SSH 验证"
 
-#: src/remmina_file_editor.c:1229
+#: src/remmina_file_editor.cpp:1229
 msgid "SSH private key file"
 msgstr "SSH 私钥文件"
 
-#: src/remmina_file_editor.c:1235 src/remmina_ssh_plugin.c:1475
+#: src/remmina_file_editor.cpp:1235 src/remmina_ssh_plugin.cpp:1475
 msgid "SSH certificate file"
 msgstr "SSH 证书文件"
 
-#: src/remmina_file_editor.c:1293
+#: src/remmina_file_editor.cpp:1293
 msgid "Basic"
 msgstr "基本"
 
-#: src/remmina_file_editor.c:1299
+#: src/remmina_file_editor.cpp:1299
 msgid "Advanced"
 msgstr "高级"
 
-#: src/remmina_file_editor.c:1310
+#: src/remmina_file_editor.cpp:1310
 msgid "Notes"
 msgstr "备注"
 
-#: src/remmina_file_editor.c:1438
+#: src/remmina_file_editor.cpp:1438
 #, c-format
 msgid "(%s: %i): Can't validate setting '%s' since 'value' or 'gfe' are NULL!"
 msgstr "(%s: %i): 无法验证设置 '%s' ，因 'value' 或'gfe' 为 NULL！"
 
-#: src/remmina_file_editor.c:1441
+#: src/remmina_file_editor.cpp:1441
 #, c-format
 msgid ""
 "(%s: %i): Can't validate user input since 'setting_name_to_validate', "
@@ -1512,112 +1512,112 @@ msgstr ""
 "为 NULL！"
 
 #. TRANSLATORS: Meta-error. Shouldn't be visible.
-#: src/remmina_file_editor.c:1445 plugins/x2go/x2go_plugin.c:2394
-#: plugins/x2go/x2go_plugin.c:3023
+#: src/remmina_file_editor.cpp:1445 plugins/x2go/x2go_plugin.cpp:2394
+#: plugins/x2go/x2go_plugin.cpp:3023
 msgid "Internal error."
 msgstr "内部错误。"
 
-#: src/remmina_file_editor.c:1667 src/remmina_file_editor.c:1703
-#: src/remmina_file_editor.c:1724 src/remmina_file_editor.c:1747
+#: src/remmina_file_editor.cpp:1667 src/remmina_file_editor.cpp:1703
+#: src/remmina_file_editor.cpp:1724 src/remmina_file_editor.cpp:1747
 #, c-format
 msgid "Couldn't validate user input. %s"
 msgstr "无法验证用户输入。%s"
 
-#: src/remmina_file_editor.c:1691
+#: src/remmina_file_editor.cpp:1691
 msgid "Default settings saved."
 msgstr "默认值已保存。"
 
-#: src/remmina_file_editor.c:1781
+#: src/remmina_file_editor.cpp:1781
 msgid "Remote Connection Profile"
 msgstr "远程连接配置文件"
 
-#: src/remmina_file_editor.c:1787
+#: src/remmina_file_editor.cpp:1787
 msgid "Save as Default"
 msgstr "保存为默认值"
 
-#: src/remmina_file_editor.c:1788
+#: src/remmina_file_editor.cpp:1788
 msgid "Use the current settings as the default for all new connection profiles"
 msgstr "将当前设置用作所有新连接配置文件的默认设置"
 
-#: src/remmina_file_editor.c:1796 data/ui/remmina_main.glade:160
+#: src/remmina_file_editor.cpp:1796 data/ui/remmina_main.glade:160
 msgid "Connect"
 msgstr "连接"
 
-#: src/remmina_file_editor.c:1799
+#: src/remmina_file_editor.cpp:1799
 msgid "_Save and Connect"
 msgstr "保存并连接(_S)"
 
-#: src/remmina_file_editor.c:1922
+#: src/remmina_file_editor.cpp:1922
 msgid "Quick Connect"
 msgstr "快速连接"
 
-#: src/remmina_file_editor.c:1946
+#: src/remmina_file_editor.cpp:1946
 #, c-format
 msgid "Use '%s' as subgroup delimiter"
 msgstr "使用“%s”作为分组分隔符"
 
-#: src/remmina_file_editor.c:2012 src/remmina_file_editor.c:2030
+#: src/remmina_file_editor.cpp:2012 src/remmina_file_editor.cpp:2030
 #, c-format
 msgid "Could not find the file “%s”."
 msgstr "找不到文件 “%s”。"
 
 #. TRANSLATORS: This is a message that pops up when an external Remmina plugin tries to set the window resolution using a legacy parameter.
 #. TRANSLATORS: This is a message that pop-up when an external Remmina plugin tries to set the windows resolution using a legacy parameter.
-#: src/remmina_file.c:451 src/remmina_file.c:497
+#: src/remmina_file.cpp:451 src/remmina_file.cpp:497
 msgid ""
 "Using the «resolution» parameter in the Remmina preferences file is "
 "deprecated.\n"
 msgstr "在 Remmina 首选项文件中使用 «resolution» 参数已被废弃。\n"
 
-#: src/remmina_icon.c:137
+#: src/remmina_icon.cpp:137
 msgid "Open Main Window"
 msgstr "打开主窗口"
 
-#: src/remmina_icon.c:142 data/ui/remmina_main.glade:254
+#: src/remmina_icon.cpp:142 data/ui/remmina_main.glade:254
 msgid "_Preferences"
 msgstr "首选项(_P)"
 
-#: src/remmina_icon.c:147
+#: src/remmina_icon.cpp:147
 msgid "_About"
 msgstr "关于(_A)"
 
-#: src/remmina_icon.c:157
+#: src/remmina_icon.cpp:157
 msgid "Enable Service Discovery"
 msgstr "开启服务侦测功能"
 
-#: src/remmina_icon.c:169 data/ui/remmina_main.glade:404
+#: src/remmina_icon.cpp:169 data/ui/remmina_main.glade:404
 msgid "_Quit"
 msgstr "退出(_Q)"
 
 #. TRANSLATORS: Applet name as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
 #. TRANSLATORS: Applet Name as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
-#: src/remmina_icon.c:295 src/remmina_icon.c:447
+#: src/remmina_icon.cpp:295 src/remmina_icon.cpp:447
 msgid "Remmina Applet"
 msgstr "Remmina 面板小程序"
 
 #. TRANSLATORS: Applet comment/description as per the Freedesktop Desktop entry specification https://specifications.freedesktop.org/desktop-entry-spec/latest/
-#: src/remmina_icon.c:297 src/remmina_icon.c:449
+#: src/remmina_icon.cpp:297 src/remmina_icon.cpp:449
 msgid "Connect to remote desktops through the applet menu"
 msgstr "通过小程序菜单快速连接到远程桌面"
 
-#: src/remmina_icon.c:361
+#: src/remmina_icon.cpp:361
 msgid "StatusNotifier/Appindicator support in “"
 msgstr "StatusNotifier/Appindicator 支持在“"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:368
+#: src/remmina_icon.cpp:368
 #, c-format
 msgid "%s your desktop does support it"
 msgstr "%s你的桌面确实支持它"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:370
+#: src/remmina_icon.cpp:370
 #, c-format
 msgid "%s and Remmina has built-in (compiled) support for libappindicator."
 msgstr "%s 和 Remmina 具有对 libappindicator 的内置（编译）支持。"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:373
+#: src/remmina_icon.cpp:373
 #, c-format
 msgid ""
 "%s not supported natively by your Desktop Environment. libappindicator will "
@@ -1626,129 +1626,129 @@ msgstr ""
 "你的桌面环境不原生支持 %s。libappindicator 将尝试回退到 GtkStatusIcon/xembed"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:377
+#: src/remmina_icon.cpp:377
 #, c-format
 msgid "%s You may need to install, and use XApp Status Applet"
 msgstr "%s您可能需要安装并使用 XApp 状态小程序"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:380
+#: src/remmina_icon.cpp:380
 #, c-format
 msgid "%s You may need to install, and use KStatusNotifierItem"
 msgstr "%s您可能需要安装并使用 KStatusNotifierItem"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:383
+#: src/remmina_icon.cpp:383
 #, c-format
 msgid "%s You may need to install, and use XEmbed SNI Proxy"
 msgstr "%s您可能需要安装并使用 XEmbed SNI 代理"
 
 #. TRANSLATORS: %s is a placeholder for "StatusNotifier/Appindicator suppor in “DESKTOP NAME”: "
-#: src/remmina_icon.c:386
+#: src/remmina_icon.cpp:386
 #, c-format
 msgid "%s You may need to install, and use Gnome Shell Extension Appindicator"
 msgstr "%s您可能需要安装并使用 Gnome Shell Extension Appindicator"
 
 #. TRANSLATORS: %s is a placeholder for an error message
-#: src/remmina_ssh_plugin.c:539
+#: src/remmina_ssh_plugin.cpp:539
 #, c-format
 msgid "Error: %s"
 msgstr "错误: %s"
 
-#: src/remmina_ssh_plugin.c:556
+#: src/remmina_ssh_plugin.cpp:556
 msgid "Terminal content saved in"
 msgstr "终端内容保存在"
 
-#: src/remmina_ssh_plugin.c:822
+#: src/remmina_ssh_plugin.cpp:822
 msgid "Select All (host+A)"
 msgstr "全选 (Host + A)"
 
-#: src/remmina_ssh_plugin.c:823
+#: src/remmina_ssh_plugin.cpp:823
 msgid "Copy (host+C)"
 msgstr "复制 (host + C)"
 
-#: src/remmina_ssh_plugin.c:824
+#: src/remmina_ssh_plugin.cpp:824
 msgid "Paste (host+V)"
 msgstr "粘贴 (host+V)"
 
-#: src/remmina_ssh_plugin.c:825
+#: src/remmina_ssh_plugin.cpp:825
 msgid "Save session to file"
 msgstr "将会话保存到文件"
 
-#: src/remmina_ssh_plugin.c:826
+#: src/remmina_ssh_plugin.cpp:826
 msgid "Increase font size (host+Page Up)"
 msgstr "增加字体大小 (host+Page Up)"
 
-#: src/remmina_ssh_plugin.c:827
+#: src/remmina_ssh_plugin.cpp:827
 msgid "Decrease font size (host+Page Down)"
 msgstr "减小字体大小 (host+Page Down)"
 
-#: src/remmina_ssh_plugin.c:828
+#: src/remmina_ssh_plugin.cpp:828
 msgid "Find text (host+G)"
 msgstr "寻找文本 (host+G)"
 
-#: src/remmina_ssh_plugin.c:1440 data/ui/remmina_main.glade:177
+#: src/remmina_ssh_plugin.cpp:1440 data/ui/remmina_main.glade:177
 msgid "Copy"
 msgstr "复制"
 
-#: src/remmina_ssh_plugin.c:1440
+#: src/remmina_ssh_plugin.cpp:1440
 msgid "_Copy"
 msgstr "复制(_C)"
 
-#: src/remmina_ssh_plugin.c:1441
+#: src/remmina_ssh_plugin.cpp:1441
 msgid "Paste"
 msgstr "粘贴"
 
-#: src/remmina_ssh_plugin.c:1441
+#: src/remmina_ssh_plugin.cpp:1441
 msgid "_Paste"
 msgstr "粘贴(_P)"
 
-#: src/remmina_ssh_plugin.c:1442
+#: src/remmina_ssh_plugin.cpp:1442
 msgid "Select all"
 msgstr "全选"
 
-#: src/remmina_ssh_plugin.c:1442
+#: src/remmina_ssh_plugin.cpp:1442
 msgid "_Select all"
 msgstr "全选(_S)"
 
-#: src/remmina_ssh_plugin.c:1443
+#: src/remmina_ssh_plugin.cpp:1443
 msgid "Increase font size"
 msgstr "增大字体"
 
-#: src/remmina_ssh_plugin.c:1443
+#: src/remmina_ssh_plugin.cpp:1443
 msgid "_Increase font size"
 msgstr "增大字体(_I)"
 
-#: src/remmina_ssh_plugin.c:1444
+#: src/remmina_ssh_plugin.cpp:1444
 msgid "Decrease font size"
 msgstr "减小字体"
 
-#: src/remmina_ssh_plugin.c:1444
+#: src/remmina_ssh_plugin.cpp:1444
 msgid "_Decrease font size"
 msgstr "减小字体(_D)"
 
-#: src/remmina_ssh_plugin.c:1445
+#: src/remmina_ssh_plugin.cpp:1445
 msgid "Find text"
 msgstr "查找文本"
 
-#: src/remmina_ssh_plugin.c:1445
+#: src/remmina_ssh_plugin.cpp:1445
 msgid "_Find text"
 msgstr "查找文本(_F)"
 
-#: src/remmina_ssh_plugin.c:1472 plugins/spice/spice_plugin.c:674
-#: plugins/vnc/vnc_plugin.c:1998 plugins/vnc/vnc_plugin.c:2010
+#: src/remmina_ssh_plugin.cpp:1472 plugins/spice/spice_plugin.cpp:674
+#: plugins/vnc/vnc_plugin.cpp:1998 plugins/vnc/vnc_plugin.cpp:2010
 msgid "User password"
 msgstr "用户密码"
 
-#: src/remmina_ssh_plugin.c:1478
+#: src/remmina_ssh_plugin.cpp:1478
 msgid "Opening command"
 msgstr "打开命令"
 
-#: src/remmina_ssh_plugin.c:1479
+#: src/remmina_ssh_plugin.cpp:1479
 msgid "Start-up background program"
 msgstr "启动后台程序"
 
-#: src/remmina_ssh_plugin.c:1484
+#: src/remmina_ssh_plugin.cpp:1484
 msgid ""
 "The filename can use the following placeholders:\n"
 "\n"
@@ -1770,205 +1770,205 @@ msgstr ""
 "  • %g 由 Remmina 配置组名组成\n"
 "  • %d 由 ISO 8601 格式的本地日期和时间组成\n"
 
-#: src/remmina_ssh_plugin.c:1506
+#: src/remmina_ssh_plugin.cpp:1506
 msgid "Terminal colour scheme"
 msgstr "终端配色方案"
 
-#: src/remmina_ssh_plugin.c:1507
+#: src/remmina_ssh_plugin.cpp:1507
 msgid "Character set"
 msgstr "字符集"
 
-#: src/remmina_ssh_plugin.c:1509
+#: src/remmina_ssh_plugin.cpp:1509
 msgid "KEX (Key Exchange) algorithms"
 msgstr "KEX（密钥交换）算法"
 
-#: src/remmina_ssh_plugin.c:1510
+#: src/remmina_ssh_plugin.cpp:1510
 msgid "Symmetric cipher client to server"
 msgstr "对称加密客户端到服务器"
 
-#: src/remmina_ssh_plugin.c:1511
+#: src/remmina_ssh_plugin.cpp:1511
 msgid "Preferred server host key types"
 msgstr "首选服务器主机密钥类型"
 
-#: src/remmina_ssh_plugin.c:1512
+#: src/remmina_ssh_plugin.cpp:1512
 msgid "Folder for SSH session log"
 msgstr "SSH 会话日志文件夹"
 
-#: src/remmina_ssh_plugin.c:1513
+#: src/remmina_ssh_plugin.cpp:1513
 msgid "Filename for SSH session log"
 msgstr "SSH 会话日志的文件名"
 
-#: src/remmina_ssh_plugin.c:1514
+#: src/remmina_ssh_plugin.cpp:1514
 msgid "Log SSH session when exiting Remmina"
 msgstr "退出 Remmina 时记录 SSH 会话"
 
-#: src/remmina_ssh_plugin.c:1515
+#: src/remmina_ssh_plugin.cpp:1515
 msgid "Log SSH session asynchronously"
 msgstr "异步记录 SSH 会话"
 
-#: src/remmina_ssh_plugin.c:1515
+#: src/remmina_ssh_plugin.cpp:1515
 msgid "Saving the session asynchronously may have a notable performance impact"
 msgstr "异步保存会话可能会对性能产生显著影响"
 
-#: src/remmina_ssh_plugin.c:1516
+#: src/remmina_ssh_plugin.cpp:1516
 msgid "Audible terminal bell"
 msgstr "有声终端铃"
 
-#: src/remmina_ssh_plugin.c:1517
+#: src/remmina_ssh_plugin.cpp:1517
 msgid "SSH compression"
 msgstr "SSH 压缩"
 
-#: src/remmina_ssh_plugin.c:1518
+#: src/remmina_ssh_plugin.cpp:1518
 msgid "Don't remember passwords"
 msgstr "忘记密码"
 
-#: src/remmina_ssh_plugin.c:1519
+#: src/remmina_ssh_plugin.cpp:1519
 msgid "Strict host key checking"
 msgstr "严格的主机密钥检查"
 
-#: src/remmina_ssh_plugin.c:1533
+#: src/remmina_ssh_plugin.cpp:1533
 msgid "SSH - Secure Shell"
 msgstr "SSH - 安全 Shell 连接"
 
-#: plugins/kwallet/src/kwallet_plugin_main.c:118
+#: plugins/kwallet/src/kwallet_plugin_main.cpp:118
 msgid "Secured password storage in KWallet"
 msgstr "存储在 KWallet 中的安全密码"
 
-#: plugins/rdp/rdp_settings.c:217
+#: plugins/rdp/rdp_settings.cpp:217
 msgid "<Auto-detect>"
 msgstr "<自动检测>"
 
-#: plugins/rdp/rdp_settings.c:249
+#: plugins/rdp/rdp_settings.cpp:249
 msgid "<Not set>"
 msgstr "<未设置>"
 
-#: plugins/rdp/rdp_settings.c:280
+#: plugins/rdp/rdp_settings.cpp:280
 msgid "<Choose a quality level to edit…>"
 msgstr "<选择一个质量级别以编辑…>"
 
-#: plugins/rdp/rdp_settings.c:282 plugins/rdp/rdp_plugin.c:2622
-#: plugins/vnc/vnc_plugin.c:1947
+#: plugins/rdp/rdp_settings.cpp:282 plugins/rdp/rdp_plugin.cpp:2622
+#: plugins/vnc/vnc_plugin.cpp:1947
 msgid "Poor (fastest)"
 msgstr "差（最快）"
 
-#: plugins/rdp/rdp_settings.c:284 plugins/rdp/rdp_plugin.c:2623
-#: plugins/vnc/vnc_plugin.c:1946
+#: plugins/rdp/rdp_settings.cpp:284 plugins/rdp/rdp_plugin.cpp:2623
+#: plugins/vnc/vnc_plugin.cpp:1946
 msgid "Medium"
 msgstr "中等"
 
-#: plugins/rdp/rdp_settings.c:286 plugins/rdp/rdp_plugin.c:2624
-#: plugins/vnc/vnc_plugin.c:1944
+#: plugins/rdp/rdp_settings.cpp:286 plugins/rdp/rdp_plugin.cpp:2624
+#: plugins/vnc/vnc_plugin.cpp:1944
 msgid "Good"
 msgstr "良好"
 
-#: plugins/rdp/rdp_settings.c:288 plugins/rdp/rdp_plugin.c:2625
-#: plugins/vnc/vnc_plugin.c:1945
+#: plugins/rdp/rdp_settings.cpp:288 plugins/rdp/rdp_plugin.cpp:2625
+#: plugins/vnc/vnc_plugin.cpp:1945
 msgid "Best (slowest)"
 msgstr "最好（最慢）"
 
-#: plugins/rdp/rdp_settings.c:427
+#: plugins/rdp/rdp_settings.cpp:427
 msgid "Keyboard layout"
 msgstr "键盘布局"
 
-#: plugins/rdp/rdp_settings.c:457
+#: plugins/rdp/rdp_settings.cpp:457
 msgid "Use client keyboard mapping"
 msgstr "使用客户端键盘映射"
 
-#: plugins/rdp/rdp_settings.c:468
+#: plugins/rdp/rdp_settings.cpp:468
 msgid "Keyboard scancode remapping"
 msgstr "键盘扫码重映射"
 
-#: plugins/rdp/rdp_settings.c:483
+#: plugins/rdp/rdp_settings.cpp:483
 msgid "List of key=value,… pairs to remap scancodes. E.g. 0x56=0x29,0x29=0x56"
 msgstr "key=value，… 重映射扫码对的的列表。如，0x56=0x29、0x29=0x56"
 
-#: plugins/rdp/rdp_settings.c:486
+#: plugins/rdp/rdp_settings.cpp:486
 msgid "FreeRDP > 2.3.0 is required to map scancodes"
 msgstr "映射扫码需要 FreeRDP 版本高于 2.3.0"
 
-#: plugins/rdp/rdp_settings.c:494
+#: plugins/rdp/rdp_settings.cpp:494
 msgid "Quality settings"
 msgstr "质量设置"
 
-#: plugins/rdp/rdp_settings.c:517
+#: plugins/rdp/rdp_settings.cpp:517
 msgid "Wallpaper"
 msgstr "壁纸"
 
-#: plugins/rdp/rdp_settings.c:525
+#: plugins/rdp/rdp_settings.cpp:525
 msgid "Window drag"
 msgstr "窗口拖放"
 
-#: plugins/rdp/rdp_settings.c:532
+#: plugins/rdp/rdp_settings.cpp:532
 msgid "Menu animation"
 msgstr "菜单动画"
 
-#: plugins/rdp/rdp_settings.c:540
+#: plugins/rdp/rdp_settings.cpp:540
 msgid "Theme"
 msgstr "主题"
 
-#: plugins/rdp/rdp_settings.c:547
+#: plugins/rdp/rdp_settings.cpp:547
 msgid "Cursor shadow"
 msgstr "光标阴影"
 
-#: plugins/rdp/rdp_settings.c:555
+#: plugins/rdp/rdp_settings.cpp:555
 msgid "Cursor blinking"
 msgstr "光标闪烁"
 
-#: plugins/rdp/rdp_settings.c:562
+#: plugins/rdp/rdp_settings.cpp:562
 msgid "Font smoothing"
 msgstr "平滑字体"
 
-#: plugins/rdp/rdp_settings.c:570
+#: plugins/rdp/rdp_settings.cpp:570
 msgid "Composition"
 msgstr "混合器"
 
-#: plugins/rdp/rdp_settings.c:580
+#: plugins/rdp/rdp_settings.cpp:580
 msgid "Remote scale factor"
 msgstr "远程缩放因子"
 
-#: plugins/rdp/rdp_settings.c:595
+#: plugins/rdp/rdp_settings.cpp:595
 msgid "Desktop scale factor %"
 msgstr "桌面缩放因子 %"
 
-#: plugins/rdp/rdp_settings.c:607
+#: plugins/rdp/rdp_settings.cpp:607
 msgid "Device scale factor %"
 msgstr "设备缩放因子 %"
 
-#: plugins/rdp/rdp_settings.c:630
+#: plugins/rdp/rdp_settings.cpp:630
 msgid "Desktop orientation"
 msgstr "桌面方向"
 
-#: plugins/rdp/rdp_settings.c:650
+#: plugins/rdp/rdp_settings.cpp:650
 msgid "Input device settings"
 msgstr "输入设备设置"
 
-#: plugins/rdp/rdp_settings.c:658 plugins/rdp/rdp_plugin.c:2766
-#: plugins/vnc/vnc_plugin.c:2030
+#: plugins/rdp/rdp_settings.cpp:658 plugins/rdp/rdp_plugin.cpp:2766
+#: plugins/vnc/vnc_plugin.cpp:2030
 msgid "Disable smooth scrolling"
 msgstr "禁用平滑滚动"
 
-#: plugins/rdp/rdp_settings.c:669
+#: plugins/rdp/rdp_settings.cpp:669
 msgid "General settings"
 msgstr "常规设置"
 
-#: plugins/rdp/rdp_settings.c:676 plugins/rdp/rdp_plugin.c:2819
+#: plugins/rdp/rdp_settings.cpp:676 plugins/rdp/rdp_plugin.cpp:2819
 msgid "Reconnect attempts number"
 msgstr "重连尝试次数"
 
-#: plugins/rdp/rdp_settings.c:689 plugins/rdp/rdp_plugin.c:2819
+#: plugins/rdp/rdp_settings.cpp:689 plugins/rdp/rdp_plugin.cpp:2819
 msgid ""
 "The maximum number of reconnect attempts upon an RDP disconnect (default: 20)"
 msgstr "RDP 断开连接时的最大重新连接尝试次数（默认值：20）"
 
-#: plugins/rdp/rdp_plugin.c:771 plugins/rdp/rdp_plugin.c:836
+#: plugins/rdp/rdp_plugin.cpp:771 plugins/rdp/rdp_plugin.cpp:836
 msgid "Enter RDP authentication credentials"
 msgstr "输入 RDP 身份验证凭据"
 
-#: plugins/rdp/rdp_plugin.c:844
+#: plugins/rdp/rdp_plugin.cpp:844
 msgid "Enter RDP gateway authentication credentials"
 msgstr "输入 RDP 网关验证凭据"
 
-#: plugins/rdp/rdp_plugin.c:2153
+#: plugins/rdp/rdp_plugin.cpp:2153
 #, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -1977,7 +1977,7 @@ msgstr ""
 "RDP 服务器 “%s”访问失败。\n"
 "账户被锁。"
 
-#: plugins/rdp/rdp_plugin.c:2160
+#: plugins/rdp/rdp_plugin.cpp:2160
 #, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -1986,7 +1986,7 @@ msgstr ""
 "RDP 服务器 “%s”访问失败。\n"
 "账户已过期。"
 
-#: plugins/rdp/rdp_plugin.c:2167
+#: plugins/rdp/rdp_plugin.cpp:2167
 #, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -1995,7 +1995,7 @@ msgstr ""
 "RDP 服务器 “%s”访问失败。\n"
 "密码已过期。"
 
-#: plugins/rdp/rdp_plugin.c:2174
+#: plugins/rdp/rdp_plugin.cpp:2174
 #, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2004,7 +2004,7 @@ msgstr ""
 "RDP 服务器 “%s” 访问失败。\n"
 "账户已禁用。"
 
-#: plugins/rdp/rdp_plugin.c:2180
+#: plugins/rdp/rdp_plugin.cpp:2180
 #, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2013,7 +2013,7 @@ msgstr ""
 "访问 RDP 服务器 “%s”失败。\n"
 "用户权限不足。"
 
-#: plugins/rdp/rdp_plugin.c:2188
+#: plugins/rdp/rdp_plugin.cpp:2188
 #, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2022,7 +2022,7 @@ msgstr ""
 "RDP 服务器 “%s”访问失败。\n"
 "账户受限。"
 
-#: plugins/rdp/rdp_plugin.c:2196
+#: plugins/rdp/rdp_plugin.cpp:2196
 #, c-format
 msgid ""
 "Could not access the RDP server “%s”.\n"
@@ -2031,17 +2031,17 @@ msgstr ""
 "访问 RDP 服务器 “%s” 失败。\n"
 "用户必须在连接前更改密码。"
 
-#: plugins/rdp/rdp_plugin.c:2201
+#: plugins/rdp/rdp_plugin.cpp:2201
 #, c-format
 msgid "Lost connection to the RDP server “%s”."
 msgstr "失去到 RDP 服务器 “%s”的连接。"
 
-#: plugins/rdp/rdp_plugin.c:2204
+#: plugins/rdp/rdp_plugin.cpp:2204
 #, c-format
 msgid "Could not find the address for the RDP server “%s”."
 msgstr "无法找到 RDP 服务器 “%s”的地址。"
 
-#: plugins/rdp/rdp_plugin.c:2208
+#: plugins/rdp/rdp_plugin.cpp:2208
 #, c-format
 msgid ""
 "Could not connect to the RDP server “%s” via TLS. See the DEBUG traces from "
@@ -2051,23 +2051,23 @@ msgstr ""
 "踪。"
 
 #. TRANSLATORS: the placeholder may be either an IP/FQDN or a server hostname
-#: plugins/rdp/rdp_plugin.c:2212
+#: plugins/rdp/rdp_plugin.cpp:2212
 #, c-format
 msgid ""
 "Unable to establish a connection to the RDP server “%s”. Check “Security "
 "protocol negotiation”."
 msgstr "无法建立到 RDP 服务器 “%s”的连接。检查“安全协议协商”。"
 
-#: plugins/rdp/rdp_plugin.c:2220
+#: plugins/rdp/rdp_plugin.cpp:2220
 #, c-format
 msgid "Cannot connect to the RDP server “%s”."
 msgstr "无法连接到 RDP 服务器 “%s”。"
 
-#: plugins/rdp/rdp_plugin.c:2223
+#: plugins/rdp/rdp_plugin.cpp:2223
 msgid "Could not start libfreerdp-gdi."
 msgstr "无法启动 libfreerdp-gdi。"
 
-#: plugins/rdp/rdp_plugin.c:2226
+#: plugins/rdp/rdp_plugin.cpp:2226
 #, c-format
 msgid ""
 "You requested a H.264 GFX mode for the server “%s”, but your libfreerdp does "
@@ -2076,129 +2076,129 @@ msgstr ""
 "您为服务器 “%s” 请求了 H.264 GFX 模式，但您的 libfreerdp 不支持 H.264。 请使"
 "用非AVC颜色深度设置。"
 
-#: plugins/rdp/rdp_plugin.c:2233
+#: plugins/rdp/rdp_plugin.cpp:2233
 #, c-format
 msgid "The “%s” server refused the connection."
 msgstr "服务器 “%s” 拒绝连接。"
 
-#: plugins/rdp/rdp_plugin.c:2238
+#: plugins/rdp/rdp_plugin.cpp:2238
 #, c-format
 msgid ""
 "The Remote Desktop Gateway “%s” denied the user “%s\\%s” access due to "
 "policy."
 msgstr "由于策略，远程桌面网关 “%s” 拒绝了用户 \"%s\\%s\" 的访问。"
 
-#: plugins/rdp/rdp_plugin.c:2248
+#: plugins/rdp/rdp_plugin.cpp:2248
 #, c-format
 msgid "Cannot connect to the “%s” RDP server."
 msgstr "无法连接到 RDP 服务器 “%s” 。"
 
-#: plugins/rdp/rdp_plugin.c:2591
+#: plugins/rdp/rdp_plugin.cpp:2591
 msgid "Automatic (32 bpp) (Server chooses its best format)"
 msgstr "自动 (32 bpp) (服务器选择其最佳格式)"
 
-#: plugins/rdp/rdp_plugin.c:2592
+#: plugins/rdp/rdp_plugin.cpp:2592
 msgid "GFX AVC444 (32 bpp)"
 msgstr "GFX AVC444（32 位）"
 
-#: plugins/rdp/rdp_plugin.c:2593
+#: plugins/rdp/rdp_plugin.cpp:2593
 msgid "GFX AVC420 (32 bpp)"
 msgstr "GFX AVC420（32 位）"
 
-#: plugins/rdp/rdp_plugin.c:2594
+#: plugins/rdp/rdp_plugin.cpp:2594
 msgid "GFX RFX (32 bpp)"
 msgstr "GFX RFX（32 位）"
 
-#: plugins/rdp/rdp_plugin.c:2595
+#: plugins/rdp/rdp_plugin.cpp:2595
 msgid "GFX RFX Progressive (32 bpp)"
 msgstr "GFX RFX Progressive (32 位)"
 
-#: plugins/rdp/rdp_plugin.c:2596
+#: plugins/rdp/rdp_plugin.cpp:2596
 msgid "RemoteFX (32 bpp)"
 msgstr "RemoteFX（32 位）"
 
-#: plugins/rdp/rdp_plugin.c:2597 plugins/vnc/vnc_plugin.c:1935
+#: plugins/rdp/rdp_plugin.cpp:2597 plugins/vnc/vnc_plugin.cpp:1935
 msgid "True colour (32 bpp)"
 msgstr "真彩色（32 位）"
 
-#: plugins/rdp/rdp_plugin.c:2598
+#: plugins/rdp/rdp_plugin.cpp:2598
 msgid "True colour (24 bpp)"
 msgstr "真彩色（24 位）"
 
-#: plugins/rdp/rdp_plugin.c:2599 plugins/vnc/vnc_plugin.c:1936
+#: plugins/rdp/rdp_plugin.cpp:2599 plugins/vnc/vnc_plugin.cpp:1936
 msgid "High colour (16 bpp)"
 msgstr "增强色（16 位）"
 
-#: plugins/rdp/rdp_plugin.c:2600
+#: plugins/rdp/rdp_plugin.cpp:2600
 msgid "High colour (15 bpp)"
 msgstr "增强色（15 位）"
 
-#: plugins/rdp/rdp_plugin.c:2601 plugins/vnc/vnc_plugin.c:1937
+#: plugins/rdp/rdp_plugin.cpp:2601 plugins/vnc/vnc_plugin.cpp:1937
 msgid "256 colours (8 bpp)"
 msgstr "256 色（8 位）"
 
-#: plugins/rdp/rdp_plugin.c:2632 data/ui/remmina_preferences.glade:612
+#: plugins/rdp/rdp_plugin.cpp:2632 data/ui/remmina_preferences.glade:612
 msgid "None"
 msgstr "无"
 
-#: plugins/rdp/rdp_plugin.c:2633
+#: plugins/rdp/rdp_plugin.cpp:2633
 msgid "Auto-detect"
 msgstr "自动检测"
 
-#: plugins/rdp/rdp_plugin.c:2634
+#: plugins/rdp/rdp_plugin.cpp:2634
 msgid "Modem"
 msgstr "调制解调器"
 
-#: plugins/rdp/rdp_plugin.c:2635
+#: plugins/rdp/rdp_plugin.cpp:2635
 msgid "Low performance broadband"
 msgstr "低性能宽带"
 
-#: plugins/rdp/rdp_plugin.c:2636
+#: plugins/rdp/rdp_plugin.cpp:2636
 msgid "Satellite"
 msgstr "卫星"
 
-#: plugins/rdp/rdp_plugin.c:2637
+#: plugins/rdp/rdp_plugin.cpp:2637
 msgid "High performance broadband"
 msgstr "高性能宽带"
 
-#: plugins/rdp/rdp_plugin.c:2638
+#: plugins/rdp/rdp_plugin.cpp:2638
 msgid "WAN"
 msgstr "WAN"
 
-#: plugins/rdp/rdp_plugin.c:2639
+#: plugins/rdp/rdp_plugin.cpp:2639
 msgid "LAN"
 msgstr "LAN"
 
-#: plugins/rdp/rdp_plugin.c:2646 plugins/spice/spice_plugin.c:635
+#: plugins/rdp/rdp_plugin.cpp:2646 plugins/spice/spice_plugin.cpp:635
 #: data/ui/remmina_preferences.glade:648
 msgid "Off"
 msgstr "关"
 
-#: plugins/rdp/rdp_plugin.c:2655
+#: plugins/rdp/rdp_plugin.cpp:2655
 msgid "Automatic negotiation"
 msgstr "自动协商"
 
-#: plugins/rdp/rdp_plugin.c:2656
+#: plugins/rdp/rdp_plugin.cpp:2656
 msgid "NLA protocol security"
 msgstr "NLA 协议安全"
 
-#: plugins/rdp/rdp_plugin.c:2657
+#: plugins/rdp/rdp_plugin.cpp:2657
 msgid "TLS protocol security"
 msgstr "TLS协议安全"
 
-#: plugins/rdp/rdp_plugin.c:2658
+#: plugins/rdp/rdp_plugin.cpp:2658
 msgid "RDP protocol security"
 msgstr "RDP协议安全"
 
-#: plugins/rdp/rdp_plugin.c:2659
+#: plugins/rdp/rdp_plugin.cpp:2659
 msgid "NLA extended protocol security"
 msgstr "NLA 扩展协议安全"
 
-#: plugins/rdp/rdp_plugin.c:2672
+#: plugins/rdp/rdp_plugin.cpp:2672
 msgid "2600 (Windows XP), 7601 (Windows Vista/7), 9600 (Windows 8 and newer)"
 msgstr "2600 (Windows XP),7601 (Windows Vista/7),9600 (Windows 8 及更高版本)"
 
-#: plugins/rdp/rdp_plugin.c:2675
+#: plugins/rdp/rdp_plugin.cpp:2675
 msgid ""
 "Used i.a. by terminal services in a smart card channel to distinguish client "
 "capabilities:\n"
@@ -2215,7 +2215,7 @@ msgstr ""
 "  • >= 7065: Windows 8 及更新: SCardGetReaderIcon(),\n"
 "    SCardGetDeviceTypeId()"
 
-#: plugins/rdp/rdp_plugin.c:2683
+#: plugins/rdp/rdp_plugin.cpp:2683
 msgid ""
 "Options for redirection of audio input:\n"
 "  • [sys:<sys>,][dev:<dev>,][format:<format>,][rate:<rate>,]\n"
@@ -2233,7 +2233,7 @@ msgstr ""
 "  • sys:oss,dev:1,format:1\n"
 "  • sys:alsa"
 
-#: plugins/rdp/rdp_plugin.c:2692
+#: plugins/rdp/rdp_plugin.cpp:2692
 msgid ""
 "Options for redirection of audio output:\n"
 "  • [sys:<sys>,][dev:<dev>,][format:<format>,][rate:<rate>,]\n"
@@ -2251,7 +2251,7 @@ msgstr ""
 "  • sys:oss,dev:1,format:1\n"
 "  • sys:alsa"
 
-#: plugins/rdp/rdp_plugin.c:2702
+#: plugins/rdp/rdp_plugin.cpp:2702
 msgid ""
 "Options for redirection of USB device:\n"
 "  • [dbg,][id:<vid>:<pid>#…,][addr:<bus>:<addr>#…,][auto]\n"
@@ -2263,7 +2263,7 @@ msgstr ""
 "  • auto\n"
 "  • id:054c:0268#4669:6e6b,addr:04:0c"
 
-#: plugins/rdp/rdp_plugin.c:2708
+#: plugins/rdp/rdp_plugin.cpp:2708
 msgid ""
 "Advanced setting for high latency links:\n"
 "Adjusts the connection timeout. Use if your connection times out.\n"
@@ -2273,7 +2273,7 @@ msgstr ""
 "调整连接超时。如果您的连接超时，请使用。\n"
 "可能的最高值为 600000 毫秒（10 分钟）。\n"
 
-#: plugins/rdp/rdp_plugin.c:2713
+#: plugins/rdp/rdp_plugin.cpp:2713
 msgid ""
 "Performance optimisations based on the network connection type:\n"
 "Using auto-detection is advised.\n"
@@ -2283,7 +2283,7 @@ msgstr ""
 "建议使用自动检测。\n"
 "如果“自动检测”失败，请在列表中选择最合适的选项。\n"
 
-#: plugins/rdp/rdp_plugin.c:2718
+#: plugins/rdp/rdp_plugin.cpp:2718
 msgid ""
 "Comma-separated list of monitor IDs and desktop orientations:\n"
 "  • [<id>:<orientation-in-degrees>,]\n"
@@ -2307,7 +2307,7 @@ msgstr ""
 "  • 270 (纵向翻转)\n"
 "\n"
 
-#: plugins/rdp/rdp_plugin.c:2730
+#: plugins/rdp/rdp_plugin.cpp:2730
 msgid ""
 "Redirect directory <path> as named share <name>.\n"
 "  • <name>,<fullpath>[;<name>,<fullpath>[;…]]\n"
@@ -2327,138 +2327,138 @@ msgstr ""
 "  • hotplug,*\n"
 "\n"
 
-#: plugins/rdp/rdp_plugin.c:2762 plugins/spice/spice_plugin.c:677
+#: plugins/rdp/rdp_plugin.cpp:2762 plugins/spice/spice_plugin.cpp:677
 msgid "Share folder"
 msgstr "共享目录"
 
-#: plugins/rdp/rdp_plugin.c:2762
+#: plugins/rdp/rdp_plugin.cpp:2762
 msgid "Use “Redirect directory” in the advanced tab for multiple directories"
 msgstr "对多个目录使用高级选项卡中的“重定向目录”"
 
-#: plugins/rdp/rdp_plugin.c:2763
+#: plugins/rdp/rdp_plugin.cpp:2763
 msgid "Restricted admin mode"
 msgstr "受限的管理员模式"
 
-#: plugins/rdp/rdp_plugin.c:2764
+#: plugins/rdp/rdp_plugin.cpp:2764
 msgid "Password hash"
 msgstr "密码哈希"
 
-#: plugins/rdp/rdp_plugin.c:2764
+#: plugins/rdp/rdp_plugin.cpp:2764
 msgid "Restricted admin mode password hash"
 msgstr "受限管理员模式的密码哈希"
 
-#: plugins/rdp/rdp_plugin.c:2765
+#: plugins/rdp/rdp_plugin.cpp:2765
 msgid "Left-handed mouse support"
 msgstr "左手鼠标支持"
 
-#: plugins/rdp/rdp_plugin.c:2765
+#: plugins/rdp/rdp_plugin.cpp:2765
 msgid "Swap left and right mouse buttons for left-handed mouse support"
 msgstr "交换鼠标左键和右键以支持左手鼠标"
 
-#: plugins/rdp/rdp_plugin.c:2767
+#: plugins/rdp/rdp_plugin.cpp:2767
 msgid "Enable multi monitor"
 msgstr "启用多显视器"
 
-#: plugins/rdp/rdp_plugin.c:2768
+#: plugins/rdp/rdp_plugin.cpp:2768
 msgid "Span screen over multiple monitors"
 msgstr "跨多个显示器的屏幕"
 
-#: plugins/rdp/rdp_plugin.c:2769
+#: plugins/rdp/rdp_plugin.cpp:2769
 msgid "List monitor IDs"
 msgstr "列出显示器 ID"
 
-#: plugins/rdp/rdp_plugin.c:2771 plugins/vnc/vnc_plugin.c:1999
-#: plugins/vnc/vnc_plugin.c:2011 plugins/gvnc/gvnc_plugin.c:849
+#: plugins/rdp/rdp_plugin.cpp:2771 plugins/vnc/vnc_plugin.cpp:1999
+#: plugins/vnc/vnc_plugin.cpp:2011 plugins/gvnc/gvnc_plugin.cpp:849
 msgid "Colour depth"
 msgstr "色深"
 
-#: plugins/rdp/rdp_plugin.c:2772
+#: plugins/rdp/rdp_plugin.cpp:2772
 msgid "Network connection type"
 msgstr "网络连接类型"
 
-#: plugins/rdp/rdp_plugin.c:2788 plugins/vnc/vnc_plugin.c:2000
-#: plugins/vnc/vnc_plugin.c:2012
+#: plugins/rdp/rdp_plugin.cpp:2788 plugins/vnc/vnc_plugin.cpp:2000
+#: plugins/vnc/vnc_plugin.cpp:2012
 msgid "Quality"
 msgstr "画质"
 
-#: plugins/rdp/rdp_plugin.c:2789
+#: plugins/rdp/rdp_plugin.cpp:2789
 msgid "Security protocol negotiation"
 msgstr "安全协议协商"
 
-#: plugins/rdp/rdp_plugin.c:2790
+#: plugins/rdp/rdp_plugin.cpp:2790
 msgid "Gateway transport type"
 msgstr "网关传输类型"
 
-#: plugins/rdp/rdp_plugin.c:2791
+#: plugins/rdp/rdp_plugin.cpp:2791
 msgid "FreeRDP log level"
 msgstr "FreeRDP 日志级别"
 
-#: plugins/rdp/rdp_plugin.c:2792
+#: plugins/rdp/rdp_plugin.cpp:2792
 msgid "FreeRDP log filters"
 msgstr "FreeRDP 日志过滤器"
 
-#: plugins/rdp/rdp_plugin.c:2792
+#: plugins/rdp/rdp_plugin.cpp:2792
 msgid "tag:level[,tag:level[,…]]"
 msgstr "tag:level[,tag:level[,…]]"
 
-#: plugins/rdp/rdp_plugin.c:2793
+#: plugins/rdp/rdp_plugin.cpp:2793
 msgid "Audio output mode"
 msgstr "音频输出模式"
 
-#: plugins/rdp/rdp_plugin.c:2794
+#: plugins/rdp/rdp_plugin.cpp:2794
 msgid "Redirect local audio output"
 msgstr "重定向本地音频输出"
 
-#: plugins/rdp/rdp_plugin.c:2795
+#: plugins/rdp/rdp_plugin.cpp:2795
 msgid "Redirect local microphone"
 msgstr "重定向本地麦克风"
 
-#: plugins/rdp/rdp_plugin.c:2796
+#: plugins/rdp/rdp_plugin.cpp:2796
 msgid "Connection timeout in ms"
 msgstr "连接超时（毫秒）"
 
-#: plugins/rdp/rdp_plugin.c:2797
+#: plugins/rdp/rdp_plugin.cpp:2797
 msgid "Remote Desktop Gateway server"
 msgstr "RD 网关服务器"
 
-#: plugins/rdp/rdp_plugin.c:2798
+#: plugins/rdp/rdp_plugin.cpp:2798
 msgid "Remote Desktop Gateway username"
 msgstr "RD 网关用户名"
 
-#: plugins/rdp/rdp_plugin.c:2799
+#: plugins/rdp/rdp_plugin.cpp:2799
 msgid "Remote Desktop Gateway password"
 msgstr "远程桌面网关密码"
 
-#: plugins/rdp/rdp_plugin.c:2800
+#: plugins/rdp/rdp_plugin.cpp:2800
 msgid "Remote Desktop Gateway domain"
 msgstr "RD 网关域"
 
-#: plugins/rdp/rdp_plugin.c:2801
+#: plugins/rdp/rdp_plugin.cpp:2801
 msgid "Redirect directory"
 msgstr "重定向目录"
 
-#: plugins/rdp/rdp_plugin.c:2802
+#: plugins/rdp/rdp_plugin.cpp:2802
 msgid "Client name"
 msgstr "客户端名称"
 
-#: plugins/rdp/rdp_plugin.c:2803
+#: plugins/rdp/rdp_plugin.cpp:2803
 msgid "Client build"
 msgstr "客户端构建"
 
-#: plugins/rdp/rdp_plugin.c:2804
+#: plugins/rdp/rdp_plugin.cpp:2804
 msgid "Start-up program"
 msgstr "启动程序"
 
-#: plugins/rdp/rdp_plugin.c:2806
+#: plugins/rdp/rdp_plugin.cpp:2806
 msgid "Load balance info"
 msgstr "负载平衡信息"
 
 #. TRANSLATORS: Do not use typographic quotation marks, these must stay as "double quote", also know as “Typewriter ("programmer's") quote, ambidextrous.”
-#: plugins/rdp/rdp_plugin.c:2808
+#: plugins/rdp/rdp_plugin.cpp:2808
 msgid "Override printer drivers"
 msgstr "覆盖打印机驱动程序"
 
-#: plugins/rdp/rdp_plugin.c:2808
+#: plugins/rdp/rdp_plugin.cpp:2808
 msgid ""
 "\"Samsung_CLX-3300_Series\":\"Samsung CLX-3300 Series PS\";\"Canon MF410\":"
 "\"Canon MF410 Series UFR II\""
@@ -2466,328 +2466,328 @@ msgstr ""
 "\"Samsung_CLX-3300_Series\":\"Samsung CLX-3300 Series PS\";\"Canon MF410\":"
 "\"Canon MF410 Series UFR II\""
 
-#: plugins/rdp/rdp_plugin.c:2809
+#: plugins/rdp/rdp_plugin.cpp:2809
 msgid "USB device redirection"
 msgstr "USB 设备转发"
 
-#: plugins/rdp/rdp_plugin.c:2810
+#: plugins/rdp/rdp_plugin.cpp:2810
 msgid "Local serial name"
 msgstr "本地串口名称"
 
-#: plugins/rdp/rdp_plugin.c:2810
+#: plugins/rdp/rdp_plugin.cpp:2810
 msgid "COM1, COM2, etc."
 msgstr "COM1，COM2，等等。"
 
-#: plugins/rdp/rdp_plugin.c:2811
+#: plugins/rdp/rdp_plugin.cpp:2811
 msgid "Local serial driver"
 msgstr "本地串口驱动"
 
-#: plugins/rdp/rdp_plugin.c:2811
+#: plugins/rdp/rdp_plugin.cpp:2811
 msgid "Serial"
 msgstr "串口"
 
-#: plugins/rdp/rdp_plugin.c:2812
+#: plugins/rdp/rdp_plugin.cpp:2812
 msgid "Local serial path"
 msgstr "本地串口路径"
 
-#: plugins/rdp/rdp_plugin.c:2812
+#: plugins/rdp/rdp_plugin.cpp:2812
 msgid "/dev/ttyS0, /dev/ttyS1, etc."
 msgstr "/dev/ttyS0，/dev/ttyS1， 等等。"
 
-#: plugins/rdp/rdp_plugin.c:2813
+#: plugins/rdp/rdp_plugin.cpp:2813
 msgid "Local parallel name"
 msgstr "本地并口名称"
 
-#: plugins/rdp/rdp_plugin.c:2814
+#: plugins/rdp/rdp_plugin.cpp:2814
 msgid "Local parallel device"
 msgstr "本地并口驱动"
 
-#: plugins/rdp/rdp_plugin.c:2815
+#: plugins/rdp/rdp_plugin.cpp:2815
 msgid "Name of smart card"
 msgstr "智能卡名称"
 
-#: plugins/rdp/rdp_plugin.c:2816
+#: plugins/rdp/rdp_plugin.cpp:2816
 msgid "Dynamic virtual channel"
 msgstr "动态虚拟通道"
 
-#: plugins/rdp/rdp_plugin.c:2816 plugins/rdp/rdp_plugin.c:2817
+#: plugins/rdp/rdp_plugin.cpp:2816 plugins/rdp/rdp_plugin.cpp:2817
 msgid "<channel>[,<options>]"
 msgstr "<通道>[,<参数>]"
 
-#: plugins/rdp/rdp_plugin.c:2817
+#: plugins/rdp/rdp_plugin.cpp:2817
 msgid "Static virtual channel"
 msgstr "静态虚拟通道"
 
-#: plugins/rdp/rdp_plugin.c:2818
+#: plugins/rdp/rdp_plugin.cpp:2818
 msgid "TCP redirection"
 msgstr "TCP 重定向"
 
-#: plugins/rdp/rdp_plugin.c:2818
+#: plugins/rdp/rdp_plugin.cpp:2818
 msgid "/PATH/TO/rdp2tcp"
 msgstr "/PATH/TO/rdp2tcp"
 
-#: plugins/rdp/rdp_plugin.c:2820
+#: plugins/rdp/rdp_plugin.cpp:2820
 msgid "Prefer IPv6 AAAA record over IPv4 A record"
 msgstr "优先使用 IPv6 AAAA 记录而不是 IPv4 A 记录"
 
-#: plugins/rdp/rdp_plugin.c:2821
+#: plugins/rdp/rdp_plugin.cpp:2821
 msgid "Share printers"
 msgstr "共享打印机"
 
-#: plugins/rdp/rdp_plugin.c:2822
+#: plugins/rdp/rdp_plugin.cpp:2822
 msgid "Share serial ports"
 msgstr "共享串口"
 
-#: plugins/rdp/rdp_plugin.c:2823
+#: plugins/rdp/rdp_plugin.cpp:2823
 msgid "(SELinux) permissive mode for serial ports"
 msgstr "(SELinux)串行端口许可模式"
 
-#: plugins/rdp/rdp_plugin.c:2824
+#: plugins/rdp/rdp_plugin.cpp:2824
 msgid "Share parallel ports"
 msgstr "共享并口"
 
-#: plugins/rdp/rdp_plugin.c:2825
+#: plugins/rdp/rdp_plugin.cpp:2825
 msgid "Share a smart card"
 msgstr "共享智能卡"
 
-#: plugins/rdp/rdp_plugin.c:2826 plugins/vnc/vnc_plugin.c:2035
+#: plugins/rdp/rdp_plugin.cpp:2826 plugins/vnc/vnc_plugin.cpp:2035
 msgid "Turn off clipboard sync"
 msgstr "禁用剪贴板同步"
 
-#: plugins/rdp/rdp_plugin.c:2827
+#: plugins/rdp/rdp_plugin.cpp:2827
 msgid "Ignore certificate"
 msgstr "忽略证书"
 
-#: plugins/rdp/rdp_plugin.c:2828
+#: plugins/rdp/rdp_plugin.cpp:2828
 msgid "Use the old license workflow"
 msgstr "使用旧的许可证工作流程"
 
-#: plugins/rdp/rdp_plugin.c:2828
+#: plugins/rdp/rdp_plugin.cpp:2828
 msgid "It disables CAL and hwId is set to 0"
 msgstr "它禁用 CAL，并将 hwId 设置为 0"
 
-#: plugins/rdp/rdp_plugin.c:2829 plugins/spice/spice_plugin.c:702
-#: plugins/vnc/vnc_plugin.c:2031 plugins/www/www_plugin.c:919
-#: plugins/gvnc/gvnc_plugin.c:867
+#: plugins/rdp/rdp_plugin.cpp:2829 plugins/spice/spice_plugin.cpp:702
+#: plugins/vnc/vnc_plugin.cpp:2031 plugins/www/www_plugin.cpp:919
+#: plugins/gvnc/gvnc_plugin.cpp:867
 msgid "Forget passwords after use"
 msgstr "使用后忘记密码"
 
-#: plugins/rdp/rdp_plugin.c:2830
+#: plugins/rdp/rdp_plugin.cpp:2830
 msgid "Attach to console (2003/2003 R2)"
 msgstr "挂接到控制台（2003/2003 R2）"
 
-#: plugins/rdp/rdp_plugin.c:2831
+#: plugins/rdp/rdp_plugin.cpp:2831
 msgid "Turn off fast-path"
 msgstr "关闭快速路径"
 
-#: plugins/rdp/rdp_plugin.c:2832
+#: plugins/rdp/rdp_plugin.cpp:2832
 msgid "Server detection using Remote Desktop Gateway"
 msgstr "使用远程桌面网关检测服务器"
 
-#: plugins/rdp/rdp_plugin.c:2834
+#: plugins/rdp/rdp_plugin.cpp:2834
 msgid "Use system proxy settings"
 msgstr "使用系统代理设置"
 
-#: plugins/rdp/rdp_plugin.c:2836
+#: plugins/rdp/rdp_plugin.cpp:2836
 msgid "Turn off automatic reconnection"
 msgstr "禁用自动重连"
 
-#: plugins/rdp/rdp_plugin.c:2837
+#: plugins/rdp/rdp_plugin.cpp:2837
 msgid "Relax order checks"
 msgstr "Relax Order 检查"
 
-#: plugins/rdp/rdp_plugin.c:2838
+#: plugins/rdp/rdp_plugin.cpp:2838
 msgid "Glyph cache"
 msgstr "字形缓存"
 
-#: plugins/rdp/rdp_plugin.c:2839
+#: plugins/rdp/rdp_plugin.cpp:2839
 msgid "Enable multitransport protocol (UDP)"
 msgstr "启用多重传输协议 (UDP)"
 
-#: plugins/rdp/rdp_plugin.c:2839
+#: plugins/rdp/rdp_plugin.cpp:2839
 msgid "Using the UDP protocol may improve performance"
 msgstr "使用 UDP 协议可以提高性能"
 
-#: plugins/rdp/rdp_plugin.c:2840
+#: plugins/rdp/rdp_plugin.cpp:2840
 msgid "Use base credentials for gateway too"
 msgstr "也为网关使用提供基本凭据"
 
-#: plugins/rdp/rdp_plugin.c:2842
+#: plugins/rdp/rdp_plugin.cpp:2842
 msgid "Enable Gateway websockets support"
 msgstr "启用网关 websockets 支持"
 
-#: plugins/rdp/rdp_plugin.c:2855 plugins/spice/spice_plugin.c:715
-#: plugins/vnc/vnc_plugin.c:2052
+#: plugins/rdp/rdp_plugin.cpp:2855 plugins/spice/spice_plugin.cpp:715
+#: plugins/vnc/vnc_plugin.cpp:2052
 msgid "Send Ctrl+Alt+Delete"
 msgstr "发送 Ctrl+Alt+Delete"
 
-#: plugins/rdp/rdp_plugin.c:2868
+#: plugins/rdp/rdp_plugin.cpp:2868
 msgid "RDP - Remote Desktop Protocol"
 msgstr "RDP - 远程桌面协议"
 
-#: plugins/rdp/rdp_plugin.c:2893
+#: plugins/rdp/rdp_plugin.cpp:2893
 msgid "RDP - RDP File Handler"
 msgstr "RDP - RDP 文件处理器"
 
-#: plugins/rdp/rdp_plugin.c:2908
+#: plugins/rdp/rdp_plugin.cpp:2908
 msgid "RDP - Preferences"
 msgstr "RDP - 首选项"
 
-#: plugins/rdp/rdp_plugin.c:2961
+#: plugins/rdp/rdp_plugin.cpp:2961
 msgid "Export connection in Windows .rdp file format"
 msgstr "使用 Windows .rdp 文件格式导出连接"
 
-#: plugins/rdp/rdp_event.c:344
+#: plugins/rdp/rdp_event.cpp:344
 #, c-format
 msgid "Reconnection attempt %d of %d…"
 msgstr "正在重新连接。尝试 %d 的 %d…"
 
-#: plugins/spice/spice_plugin_file_transfer.c:82
+#: plugins/spice/spice_plugin_file_transfer.cpp:82
 msgid "File Transfers"
 msgstr "文件传输"
 
-#: plugins/spice/spice_plugin_file_transfer.c:219
+#: plugins/spice/spice_plugin_file_transfer.cpp:219
 msgid "Transfer error"
 msgstr "传输错误"
 
-#: plugins/spice/spice_plugin_file_transfer.c:220
+#: plugins/spice/spice_plugin_file_transfer.cpp:220
 #, c-format
 msgid "%s: %s"
 msgstr "%s：%s"
 
-#: plugins/spice/spice_plugin_file_transfer.c:223
+#: plugins/spice/spice_plugin_file_transfer.cpp:223
 msgid "Transfer completed"
 msgstr "传输完成"
 
-#: plugins/spice/spice_plugin_file_transfer.c:224
+#: plugins/spice/spice_plugin_file_transfer.cpp:224
 #, c-format
 msgid "The %s file has been transferred"
 msgstr "文件 %s 已传输"
 
-#: plugins/spice/spice_plugin.c:351
+#: plugins/spice/spice_plugin.cpp:351
 msgid "Enter SPICE password"
 msgstr "输入 SPICE 密码"
 
-#: plugins/spice/spice_plugin.c:386
+#: plugins/spice/spice_plugin.cpp:386
 #, c-format
 msgid "Disconnected from the SPICE server “%s”."
 msgstr "从 SPICE 服务器 \"“%s”断开连接。"
 
-#: plugins/spice/spice_plugin.c:402
+#: plugins/spice/spice_plugin.cpp:402
 msgid "TLS connection error."
 msgstr "TLS 连接错误。"
 
-#: plugins/spice/spice_plugin.c:408
+#: plugins/spice/spice_plugin.cpp:408
 msgid "Connection to the SPICE server dropped."
 msgstr "与 SPICE 服务器的连接断开。"
 
-#: plugins/spice/spice_plugin.c:616 plugins/spice/spice_plugin.c:634
+#: plugins/spice/spice_plugin.cpp:616 plugins/spice/spice_plugin.cpp:634
 msgid "Default"
 msgstr "默认值"
 
-#: plugins/spice/spice_plugin.c:636
+#: plugins/spice/spice_plugin.cpp:636
 msgid "Auto GLZ"
 msgstr "自动 GLZ"
 
-#: plugins/spice/spice_plugin.c:637
+#: plugins/spice/spice_plugin.cpp:637
 msgid "Auto LZ"
 msgstr "自动 LZ"
 
-#: plugins/spice/spice_plugin.c:650
+#: plugins/spice/spice_plugin.cpp:650
 msgid "Disable video overlay if videos are not displayed properly.\n"
 msgstr "如果视频显示不正常，请禁用视频叠加。\n"
 
-#: plugins/spice/spice_plugin.c:675
+#: plugins/spice/spice_plugin.cpp:675
 msgid "Use TLS encryption"
 msgstr "使用 TLS 加密"
 
-#: plugins/spice/spice_plugin.c:676
+#: plugins/spice/spice_plugin.cpp:676
 msgid "Server CA certificate"
 msgstr "服务器 CA 证书"
 
-#: plugins/spice/spice_plugin.c:694
+#: plugins/spice/spice_plugin.cpp:694
 msgid "Preferred video codec"
 msgstr "首选视频编解码器"
 
-#: plugins/spice/spice_plugin.c:695
+#: plugins/spice/spice_plugin.cpp:695
 msgid "Turn off GStreamer overlay"
 msgstr "禁止 Gstreamer 叠加"
 
-#: plugins/spice/spice_plugin.c:698
+#: plugins/spice/spice_plugin.cpp:698
 msgid "Preferred image compression"
 msgstr "首选图像压缩"
 
-#: plugins/spice/spice_plugin.c:701 plugins/spice/spice_plugin.c:714
-#: plugins/gvnc/gvnc_plugin.c:866 plugins/gvnc/gvnc_plugin.c:880
+#: plugins/spice/spice_plugin.cpp:701 plugins/spice/spice_plugin.cpp:714
+#: plugins/gvnc/gvnc_plugin.cpp:866 plugins/gvnc/gvnc_plugin.cpp:880
 msgid "No clipboard sync"
 msgstr "禁用剪贴板同步"
 
-#: plugins/spice/spice_plugin.c:703 plugins/gvnc/gvnc_plugin.c:869
+#: plugins/spice/spice_plugin.cpp:703 plugins/gvnc/gvnc_plugin.cpp:869
 msgid "Enable audio channel"
 msgstr "启用音频通道"
 
-#: plugins/spice/spice_plugin.c:704
+#: plugins/spice/spice_plugin.cpp:704
 msgid "Share smart card"
 msgstr "共享智能卡"
 
-#: plugins/spice/spice_plugin.c:705 plugins/spice/spice_plugin.c:713
-#: plugins/vnc/vnc_plugin.c:2037 plugins/vnc/vnc_plugin.c:2048
-#: plugins/gvnc/gvnc_plugin.c:870 plugins/gvnc/gvnc_plugin.c:879
+#: plugins/spice/spice_plugin.cpp:705 plugins/spice/spice_plugin.cpp:713
+#: plugins/vnc/vnc_plugin.cpp:2037 plugins/vnc/vnc_plugin.cpp:2048
+#: plugins/gvnc/gvnc_plugin.cpp:870 plugins/gvnc/gvnc_plugin.cpp:879
 msgid "View only"
 msgstr "仅查看"
 
-#: plugins/spice/spice_plugin.c:716 plugins/spice/spice_plugin_usb.c:51
+#: plugins/spice/spice_plugin.cpp:716 plugins/spice/spice_plugin_usb.cpp:51
 msgid "Select USB devices for redirection"
 msgstr "选择 USB 设备以转发"
 
-#: plugins/spice/spice_plugin.c:727
+#: plugins/spice/spice_plugin.cpp:727
 msgid "SPICE - Simple Protocol for Independent Computing Environments"
 msgstr "SPICE - 独立计算环境的简单协议"
 
-#: plugins/spice/spice_plugin_usb.c:54
+#: plugins/spice/spice_plugin_usb.cpp:54
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: plugins/spice/spice_plugin_usb.c:94
+#: plugins/spice/spice_plugin_usb.cpp:94
 msgid "USB redirection error"
 msgstr "USB 转发错误"
 
-#: plugins/vnc/vnc_plugin.c:789
+#: plugins/vnc/vnc_plugin.cpp:789
 msgid "Enter VNC password"
 msgstr "输入 VNC 密码"
 
-#: plugins/vnc/vnc_plugin.c:842 plugins/gvnc/gvnc_plugin.c:539
+#: plugins/vnc/vnc_plugin.cpp:842 plugins/gvnc/gvnc_plugin.cpp:539
 msgid "Enter VNC authentication credentials"
 msgstr "输入 VNC 身份验证凭据"
 
-#: plugins/vnc/vnc_plugin.c:950
+#: plugins/vnc/vnc_plugin.cpp:950
 msgid "Unable to connect to VNC server"
 msgstr "无法连接到 VNC 服务器"
 
-#: plugins/vnc/vnc_plugin.c:951
+#: plugins/vnc/vnc_plugin.cpp:951
 #, c-format
 msgid "Couldn’t convert '%s' to host address"
 msgstr "无法解析主机 “%s” 的地址"
 
-#: plugins/vnc/vnc_plugin.c:952
+#: plugins/vnc/vnc_plugin.cpp:952
 #, c-format
 msgid "VNC connection failed: %s"
 msgstr "VNC 连接失败：%s"
 
-#: plugins/vnc/vnc_plugin.c:953
+#: plugins/vnc/vnc_plugin.cpp:953
 msgid "Your connection has been rejected."
 msgstr "连接被拒绝。"
 
-#: plugins/vnc/vnc_plugin.c:980
+#: plugins/vnc/vnc_plugin.cpp:980
 #, c-format
 msgid "The VNC server requested an unknown authentication method. %s"
 msgstr "VNC服务器请求了未知的身份验证方法。 %s"
 
-#: plugins/vnc/vnc_plugin.c:982
+#: plugins/vnc/vnc_plugin.cpp:982
 msgid "Please retry after turning on encryption for this profile."
 msgstr "在此配置文件上启用加密后，请重试。"
 
-#: plugins/vnc/vnc_plugin.c:1952
+#: plugins/vnc/vnc_plugin.cpp:1952
 msgid ""
 "Connect to VNC using a repeater:\n"
 "  • The server field must contain the repeater ID, e.g. ID:123456789\n"
@@ -2805,7 +2805,7 @@ msgstr ""
 "    中继器，例如使用 x11vnc:\n"
 "    x11vnc -connect repeater=ID:123456789+10.10.10.12:5500"
 
-#: plugins/vnc/vnc_plugin.c:1961
+#: plugins/vnc/vnc_plugin.cpp:1961
 msgid ""
 "Listening for remote VNC connection:\n"
 "  • The “Listen on port” field is the port Remmina will listen to,\n"
@@ -2821,7 +2821,7 @@ msgstr ""
 "    远程 VNC 服务器连接到 Remmina：\n"
 "    x11vnc -display :0 -connect 192.168.1.36:8888"
 
-#: plugins/vnc/vnc_plugin.c:1969
+#: plugins/vnc/vnc_plugin.cpp:1969
 msgid ""
 "Override pre-set VNC encodings:\n"
 "\n"
@@ -2843,123 +2843,123 @@ msgstr ""
 "  • “最佳质量” 时，编码被设为 “copyrect zrle ultra zlib hextile corre rre "
 "raw”"
 
-#: plugins/vnc/vnc_plugin.c:1996
+#: plugins/vnc/vnc_plugin.cpp:1996
 msgid "Repeater"
 msgstr "中继器"
 
-#: plugins/vnc/vnc_plugin.c:2008
+#: plugins/vnc/vnc_plugin.cpp:2008
 msgid "Listen on port"
 msgstr "监听端口"
 
-#: plugins/vnc/vnc_plugin.c:2028
+#: plugins/vnc/vnc_plugin.cpp:2028
 msgid "Override pre-set VNC encodings"
 msgstr "绕过预设 VNC 编码"
 
-#: plugins/vnc/vnc_plugin.c:2029
+#: plugins/vnc/vnc_plugin.cpp:2029
 msgid "Force tight encoding"
 msgstr "强制使用紧编码"
 
-#: plugins/vnc/vnc_plugin.c:2029
+#: plugins/vnc/vnc_plugin.cpp:2029
 msgid "Enabling this may help when the remote desktop looks scrambled"
 msgstr "当远程桌面看起来乱七八糟时启用此功能可能会有所帮助"
 
-#: plugins/vnc/vnc_plugin.c:2032 plugins/gvnc/gvnc_plugin.c:868
+#: plugins/vnc/vnc_plugin.cpp:2032 plugins/gvnc/gvnc_plugin.cpp:868
 msgid "Ignore remote bell messages"
 msgstr "忽略远程铃声消息"
 
-#: plugins/vnc/vnc_plugin.c:2033 plugins/vnc/vnc_plugin.c:2049
+#: plugins/vnc/vnc_plugin.cpp:2033 plugins/vnc/vnc_plugin.cpp:2049
 msgid "Prevent local interaction on the server"
 msgstr "阻止服务器上的本地交互"
 
-#: plugins/vnc/vnc_plugin.c:2034
+#: plugins/vnc/vnc_plugin.cpp:2034
 msgid "Show remote cursor"
 msgstr "显示远程光标"
 
-#: plugins/vnc/vnc_plugin.c:2036
+#: plugins/vnc/vnc_plugin.cpp:2036
 msgid "Turn off encryption"
 msgstr "关闭 TLS 加密"
 
-#: plugins/vnc/vnc_plugin.c:2051
+#: plugins/vnc/vnc_plugin.cpp:2051
 msgid "Open Chat…"
 msgstr "打开聊天…"
 
-#: plugins/vnc/vnc_plugin.h:41
+#: plugins/vnc/vnc_plugin.hpp:41
 msgid "Remmina VNC Plugin"
 msgstr "Remmina VNC 插件"
 
-#: plugins/vnc/vnc_plugin.h:46
+#: plugins/vnc/vnc_plugin.hpp:46
 msgid "Remmina VNC listener Plugin"
 msgstr "Remmina VNC 侦听插件"
 
-#: plugins/www/www_config.h:43
+#: plugins/www/www_config.hpp:43
 msgid "Remmina web-browser plugin"
 msgstr "Remmina web浏览器插件"
 
-#: plugins/www/www_plugin.c:98
+#: plugins/www/www_plugin.cpp:98
 msgid "File downloaded"
 msgstr "文件已下载"
 
-#: plugins/www/www_plugin.c:581
+#: plugins/www/www_plugin.cpp:581
 msgid "Enter WWW authentication credentials"
 msgstr "输入 WWW 身份验证凭据"
 
-#: plugins/www/www_plugin.c:893
+#: plugins/www/www_plugin.cpp:893
 msgid "URL"
 msgstr "网址"
 
-#: plugins/www/www_plugin.c:893
+#: plugins/www/www_plugin.cpp:893
 msgid "http://address or https://address"
 msgstr "http://address 或 https://address"
 
-#: plugins/www/www_plugin.c:910
+#: plugins/www/www_plugin.cpp:910
 msgid "User agent"
 msgstr "使用代理"
 
-#: plugins/www/www_plugin.c:911
+#: plugins/www/www_plugin.cpp:911
 msgid "Proxy URL"
 msgstr "代理网址"
 
-#: plugins/www/www_plugin.c:911
+#: plugins/www/www_plugin.cpp:911
 msgid "E.g. https://example.org, socks://mysocks:1080"
 msgstr "例如 https://example.org, socks://mysocks:1080"
 
-#: plugins/www/www_plugin.c:912
+#: plugins/www/www_plugin.cpp:912
 msgid "Turn on Java support"
 msgstr "启用 Java 支持"
 
-#: plugins/www/www_plugin.c:913
+#: plugins/www/www_plugin.cpp:913
 msgid "Turn on smooth scrolling"
 msgstr "启用平滑滚动"
 
-#: plugins/www/www_plugin.c:914
+#: plugins/www/www_plugin.cpp:914
 msgid "Turn on spatial navigation"
 msgstr "开启空间导航"
 
-#: plugins/www/www_plugin.c:915
+#: plugins/www/www_plugin.cpp:915
 msgid "Turn on plugin support"
 msgstr "打开插件支持"
 
-#: plugins/www/www_plugin.c:916
+#: plugins/www/www_plugin.cpp:916
 msgid "Turn on WebGL support"
 msgstr "打开 WebGL 支持"
 
-#: plugins/www/www_plugin.c:917
+#: plugins/www/www_plugin.cpp:917
 msgid "Turn on HTML5 audio support"
 msgstr "开启 HTML5 音频支持"
 
-#: plugins/www/www_plugin.c:918
+#: plugins/www/www_plugin.cpp:918
 msgid "Ignore TLS errors"
 msgstr "忽略 TLS 错误"
 
-#: plugins/www/www_plugin.c:921
+#: plugins/www/www_plugin.cpp:921
 msgid "Turn on Web Inspector"
 msgstr "打开 Web 检查器"
 
-#: plugins/exec/exec_plugin.c:160
+#: plugins/exec/exec_plugin.cpp:160
 msgid "You did not set any command to be executed"
 msgstr "您没有设置任何要执行的命令"
 
-#: plugins/exec/exec_plugin.c:206
+#: plugins/exec/exec_plugin.cpp:206
 msgid ""
 "Warning: Running a command synchronously may cause Remmina not to respond.\n"
 "Do you really want to continue?"
@@ -2967,197 +2967,197 @@ msgstr ""
 "警告！同步执行命令，可能引起 Remmina 不响应。\n"
 "您真的想继续吗？"
 
-#: plugins/exec/exec_plugin.c:274
+#: plugins/exec/exec_plugin.cpp:274
 msgid "Command"
 msgstr "命令"
 
-#: plugins/exec/exec_plugin.c:275
+#: plugins/exec/exec_plugin.cpp:275
 msgid "Asynchronous execution"
 msgstr "异步执行"
 
-#: plugins/exec/exec_plugin_config.h:41
+#: plugins/exec/exec_plugin_config.hpp:41
 msgid "Execute a command"
 msgstr "执行命令"
 
-#: plugins/tool_hello_world/plugin_config.h:40
+#: plugins/tool_hello_world/plugin_config.hpp:40
 msgid "Hello, World!"
 msgstr "Hello World!"
 
-#: plugins/secret/src/glibsecret_plugin.c:188
+#: plugins/secret/src/glibsecret_plugin.cpp:188
 msgid "Secured password storage in the GNOME keyring"
 msgstr "存储在 GNOME 密钥环中的安全密码"
 
-#: plugins/x2go/x2go_plugin.c:67
+#: plugins/x2go/x2go_plugin.cpp:67
 #, c-format
 msgid ""
 "The command-line feature '%s' is not available! Attempting to start PyHoca-"
 "CLI without using this feature…"
 msgstr "命令行功能'%s'不可用！尝试在不使用此功能的情况下启动 PyHoca-CLI…"
 
-#: plugins/x2go/x2go_plugin.c:289 plugins/x2go/x2go_plugin.c:421
-#: plugins/x2go/x2go_plugin.c:510 plugins/x2go/x2go_plugin.c:617
-#: plugins/x2go/x2go_plugin.c:707 plugins/x2go/x2go_plugin.c:719
-#: plugins/x2go/x2go_plugin.c:728 plugins/x2go/x2go_plugin.c:754
-#: plugins/x2go/x2go_plugin.c:763 plugins/x2go/x2go_plugin.c:782
-#: plugins/x2go/x2go_plugin.c:832 plugins/x2go/x2go_plugin.c:898
-#: plugins/x2go/x2go_plugin.c:909 plugins/x2go/x2go_plugin.c:917
-#: plugins/x2go/x2go_plugin.c:1031 plugins/x2go/x2go_plugin.c:1047
-#: plugins/x2go/x2go_plugin.c:1112 plugins/x2go/x2go_plugin.c:1140
-#: plugins/x2go/x2go_plugin.c:1289 plugins/x2go/x2go_plugin.c:1651
-#: plugins/x2go/x2go_plugin.c:1685 plugins/x2go/x2go_plugin.c:1781
-#: plugins/x2go/x2go_plugin.c:2075 plugins/x2go/x2go_plugin.c:2875
-#: plugins/x2go/x2go_plugin.c:3088 plugins/x2go/x2go_plugin.c:3093
-#: plugins/x2go/x2go_plugin.c:3098 plugins/x2go/x2go_plugin.c:3103
-#: plugins/x2go/x2go_plugin.c:3118 plugins/x2go/x2go_plugin.c:3123
-#: plugins/x2go/x2go_plugin.c:3128 plugins/x2go/x2go_plugin.c:3133
+#: plugins/x2go/x2go_plugin.cpp:289 plugins/x2go/x2go_plugin.cpp:421
+#: plugins/x2go/x2go_plugin.cpp:510 plugins/x2go/x2go_plugin.cpp:617
+#: plugins/x2go/x2go_plugin.cpp:707 plugins/x2go/x2go_plugin.cpp:719
+#: plugins/x2go/x2go_plugin.cpp:728 plugins/x2go/x2go_plugin.cpp:754
+#: plugins/x2go/x2go_plugin.cpp:763 plugins/x2go/x2go_plugin.cpp:782
+#: plugins/x2go/x2go_plugin.cpp:832 plugins/x2go/x2go_plugin.cpp:898
+#: plugins/x2go/x2go_plugin.cpp:909 plugins/x2go/x2go_plugin.cpp:917
+#: plugins/x2go/x2go_plugin.cpp:1031 plugins/x2go/x2go_plugin.cpp:1047
+#: plugins/x2go/x2go_plugin.cpp:1112 plugins/x2go/x2go_plugin.cpp:1140
+#: plugins/x2go/x2go_plugin.cpp:1289 plugins/x2go/x2go_plugin.cpp:1651
+#: plugins/x2go/x2go_plugin.cpp:1685 plugins/x2go/x2go_plugin.cpp:1781
+#: plugins/x2go/x2go_plugin.cpp:2075 plugins/x2go/x2go_plugin.cpp:2875
+#: plugins/x2go/x2go_plugin.cpp:3088 plugins/x2go/x2go_plugin.cpp:3093
+#: plugins/x2go/x2go_plugin.cpp:3098 plugins/x2go/x2go_plugin.cpp:3103
+#: plugins/x2go/x2go_plugin.cpp:3118 plugins/x2go/x2go_plugin.cpp:3123
+#: plugins/x2go/x2go_plugin.cpp:3128 plugins/x2go/x2go_plugin.cpp:3133
 #, c-format
 msgid "Internal error: %s"
 msgstr "内部错误：%s"
 
-#: plugins/x2go/x2go_plugin.c:290 plugins/x2go/x2go_plugin.c:422
-#: plugins/x2go/x2go_plugin.c:511 plugins/x2go/x2go_plugin.c:1290
+#: plugins/x2go/x2go_plugin.cpp:290 plugins/x2go/x2go_plugin.cpp:422
+#: plugins/x2go/x2go_plugin.cpp:511 plugins/x2go/x2go_plugin.cpp:1290
 msgid "Parameter 'custom_data' is not initialized!"
 msgstr "参数 'custom_data' 未被初始化！"
 
-#: plugins/x2go/x2go_plugin.c:303
+#: plugins/x2go/x2go_plugin.cpp:303
 msgid "Broken `DialogData`! Aborting…"
 msgstr "损坏的 `DialogData`！终止中…"
 
-#: plugins/x2go/x2go_plugin.c:307
+#: plugins/x2go/x2go_plugin.cpp:307
 msgid "Can't retrieve `DialogData`! Aborting…"
 msgstr "无法取回 `DialogData`！终止中…"
 
-#: plugins/x2go/x2go_plugin.c:469
+#: plugins/x2go/x2go_plugin.cpp:469
 msgid "X Display"
 msgstr "X Display"
 
-#: plugins/x2go/x2go_plugin.c:470
+#: plugins/x2go/x2go_plugin.cpp:470
 msgid "Status"
 msgstr "状态"
 
-#: plugins/x2go/x2go_plugin.c:471
+#: plugins/x2go/x2go_plugin.cpp:471
 msgid "Session ID"
 msgstr "会话 ID"
 
-#: plugins/x2go/x2go_plugin.c:472
+#: plugins/x2go/x2go_plugin.cpp:472
 msgid "Create date"
 msgstr "创建日期"
 
-#: plugins/x2go/x2go_plugin.c:473
+#: plugins/x2go/x2go_plugin.cpp:473
 msgid "Suspended since"
 msgstr "自下列日期以来停用"
 
-#: plugins/x2go/x2go_plugin.c:474
+#: plugins/x2go/x2go_plugin.cpp:474
 msgid "Agent PID"
 msgstr "代理 PID"
 
-#: plugins/x2go/x2go_plugin.c:476
+#: plugins/x2go/x2go_plugin.cpp:476
 msgid "Hostname"
 msgstr "主机名"
 
-#: plugins/x2go/x2go_plugin.c:477
+#: plugins/x2go/x2go_plugin.cpp:477
 msgid "Cookie"
 msgstr "Cookie"
 
-#: plugins/x2go/x2go_plugin.c:478
+#: plugins/x2go/x2go_plugin.cpp:478
 msgid "Graphic port"
 msgstr "图形端口"
 
-#: plugins/x2go/x2go_plugin.c:479
+#: plugins/x2go/x2go_plugin.cpp:479
 msgid "SND port"
 msgstr "SND 端口"
 
-#: plugins/x2go/x2go_plugin.c:480
+#: plugins/x2go/x2go_plugin.cpp:480
 msgid "SSHFS port"
 msgstr "SSHFS 端口"
 
-#: plugins/x2go/x2go_plugin.c:481
+#: plugins/x2go/x2go_plugin.cpp:481
 msgid "Visible"
 msgstr "可见的"
 
-#: plugins/x2go/x2go_plugin.c:520
+#: plugins/x2go/x2go_plugin.cpp:520
 msgid "Couldn't retrieve valid `DialogData` or `sessions_list`! Aborting…"
 msgstr "无法获取有效的`DialogData`或`sessions_list`！正在中止…"
 
 #. TRANSLATORS: Stick to x2goclient's translation for terminate.
-#: plugins/x2go/x2go_plugin.c:529
+#: plugins/x2go/x2go_plugin.cpp:529
 msgid "_Terminate"
 msgstr "终止(_T)"
 
 #. TRANSLATORS: Stick to x2goclient's translation for resume.
-#: plugins/x2go/x2go_plugin.c:532
+#: plugins/x2go/x2go_plugin.cpp:532
 msgid "_Resume"
 msgstr "恢复(_R)"
 
-#: plugins/x2go/x2go_plugin.c:534
+#: plugins/x2go/x2go_plugin.cpp:534
 msgid "_New"
 msgstr "新建(_N)"
 
 #. TRANSLATORS: Tooltip for terminating button inside Session-Chooser-Dialog.
 #. TRANSLATORS: Please stick to X2GoClient's way of translating.
-#: plugins/x2go/x2go_plugin.c:543
+#: plugins/x2go/x2go_plugin.cpp:543
 msgid "Terminating X2Go sessions can take a moment."
 msgstr "终止 X2Go 会话可能需要一些时间。"
 
-#: plugins/x2go/x2go_plugin.c:618 plugins/x2go/x2go_plugin.c:620
+#: plugins/x2go/x2go_plugin.cpp:618 plugins/x2go/x2go_plugin.cpp:620
 #, c-format
 msgid "Unknown property '%i'"
 msgstr "未知属性 '%i'"
 
-#: plugins/x2go/x2go_plugin.c:708 plugins/x2go/x2go_plugin.c:755
+#: plugins/x2go/x2go_plugin.cpp:708 plugins/x2go/x2go_plugin.cpp:755
 msgid "Couldn't find child GtkTreeView of session chooser dialog."
 msgstr "找不到会话选择器对话框的子 GtkTreeView。"
 
-#: plugins/x2go/x2go_plugin.c:720
+#: plugins/x2go/x2go_plugin.cpp:720
 msgid ""
 "Neither the 'dialog' nor 'treeview' parameters are initialized! At least one "
 "of them must be given."
 msgstr "'dialog' 和 'treeview' 参数都没有初始化！ 必须至少提供其中之一。"
 
-#: plugins/x2go/x2go_plugin.c:729
+#: plugins/x2go/x2go_plugin.cpp:729
 msgid ""
 "Could not obtain \"GtkTreeModelFilter*\" of the session chooser dialog, for "
 "unknown reason."
 msgstr "由于未知原因，无法获取会话选择器对话框的 \"GtkTreeModelFilter*\"。"
 
-#: plugins/x2go/x2go_plugin.c:764
+#: plugins/x2go/x2go_plugin.cpp:764
 msgid "Couldn't get currently selected row (session)!"
 msgstr "无法获取当前选定的行（会话）！"
 
-#: plugins/x2go/x2go_plugin.c:783
+#: plugins/x2go/x2go_plugin.cpp:783
 #, c-format
 msgid ""
 "Exactly one session should be selectable but '%i' rows (sessions) are "
 "selected."
 msgstr "应该只选择一个会话，但实际选中了“%i”行 (会话）。"
 
-#: plugins/x2go/x2go_plugin.c:833
+#: plugins/x2go/x2go_plugin.cpp:833
 msgid "Failed to fill 'GtkTreeIter'."
 msgstr "填充 'GtkTreeIter' 失败。"
 
-#: plugins/x2go/x2go_plugin.c:899
+#: plugins/x2go/x2go_plugin.cpp:899
 msgid "parameter 'argv' is 'NULL'."
 msgstr "参数 'argv' 为 'NULL'。"
 
-#: plugins/x2go/x2go_plugin.c:910
+#: plugins/x2go/x2go_plugin.cpp:910
 msgid "parameter 'error' is 'NULL'."
 msgstr "参数 'error' 为 'NULL'。"
 
-#: plugins/x2go/x2go_plugin.c:918
+#: plugins/x2go/x2go_plugin.cpp:918
 msgid "parameter 'env' is either invalid or uninitialized."
 msgstr "参数 'env' 无效或未被初始化。"
 
-#: plugins/x2go/x2go_plugin.c:934 plugins/x2go/x2go_plugin.c:2376
+#: plugins/x2go/x2go_plugin.cpp:934 plugins/x2go/x2go_plugin.cpp:2376
 msgid "Started PyHoca-CLI with the following arguments:"
 msgstr "使用以下参数启动了 PyHoca-CLI："
 
-#: plugins/x2go/x2go_plugin.c:962
+#: plugins/x2go/x2go_plugin.cpp:962
 msgid ""
 "The necessary PyHoca-CLI process has encountered a internet connection "
 "problem."
 msgstr "必要的 PyHoca-CLI 进程遇到了一个互联网连接问题。"
 
-#: plugins/x2go/x2go_plugin.c:972
+#: plugins/x2go/x2go_plugin.cpp:972
 #, c-format
 msgid ""
 "Could not start PyHoca-CLI:\n"
@@ -3166,37 +3166,37 @@ msgstr ""
 "未能启动 PyHoca-CLI ：\n"
 "%s"
 
-#: plugins/x2go/x2go_plugin.c:983
+#: plugins/x2go/x2go_plugin.cpp:983
 #, c-format
 msgid ""
 "An unknown error occured while trying to start PyHoca-CLI. Exit code: %i"
 msgstr "尝试启动 PyHoca-CLI 时发生了一个未知的错误。退出代码：%i"
 
-#: plugins/x2go/x2go_plugin.c:990
+#: plugins/x2go/x2go_plugin.cpp:990
 #, c-format
 msgid ""
 "An unknown error occured while trying to start PyHoca-CLI. Exit code: %i. "
 "Error: '%s'"
 msgstr "尝试启动PyHoca-CLI时发生了一个未知的错误。退出代码：%i。错误：'%s'"
 
-#: plugins/x2go/x2go_plugin.c:1032
+#: plugins/x2go/x2go_plugin.cpp:1032
 msgid "Neither the 'path' nor 'dialog' parameters are initialized."
 msgstr "参数 'dialog' 和 'path' 均未初始化。"
 
-#: plugins/x2go/x2go_plugin.c:1048
+#: plugins/x2go/x2go_plugin.cpp:1048
 msgid "GtkTreePath 'path' describes a non-existing row!"
 msgstr "GtkTreePath 'path' 描述了一个不存在的行！"
 
-#: plugins/x2go/x2go_plugin.c:1113
+#: plugins/x2go/x2go_plugin.cpp:1113
 msgid "Parameter 'custom_data' is not fully initialized!"
 msgstr "参数 'custom_data' 未完全初始化！"
 
-#: plugins/x2go/x2go_plugin.c:1141 plugins/x2go/x2go_plugin.c:1782
-#: plugins/x2go/x2go_plugin.c:2076
+#: plugins/x2go/x2go_plugin.cpp:1141 plugins/x2go/x2go_plugin.cpp:1782
+#: plugins/x2go/x2go_plugin.cpp:2076
 msgid "'Invalid connection data.'"
 msgstr "'无效的连接数据'"
 
-#: plugins/x2go/x2go_plugin.c:1218
+#: plugins/x2go/x2go_plugin.cpp:1218
 #, c-format
 msgid ""
 "An error occured while trying to terminate X2Go session '%s':\n"
@@ -3205,29 +3205,29 @@ msgstr ""
 "尝试终止 X2Go 会话 '%s' 时发生错误：\n"
 "%s"
 
-#: plugins/x2go/x2go_plugin.c:1230 plugins/x2go/x2go_plugin.c:1594
+#: plugins/x2go/x2go_plugin.cpp:1230 plugins/x2go/x2go_plugin.cpp:1594
 msgid "An error occured."
 msgstr "发生了一个错误。"
 
-#: plugins/x2go/x2go_plugin.c:1330 plugins/x2go/x2go_plugin.c:1345
+#: plugins/x2go/x2go_plugin.cpp:1330 plugins/x2go/x2go_plugin.cpp:1345
 msgid "Couldn't get session ID from session chooser dialog."
 msgstr "无法从会话选择器对话框中获得会话 ID。"
 
-#: plugins/x2go/x2go_plugin.c:1337
+#: plugins/x2go/x2go_plugin.cpp:1337
 #, c-format
 msgid "Resuming session: '%s'"
 msgstr "恢复会话：'%s'"
 
-#: plugins/x2go/x2go_plugin.c:1352
+#: plugins/x2go/x2go_plugin.cpp:1352
 #, c-format
 msgid "Terminating session: '%s'"
 msgstr "正在终止会话：'%s'"
 
-#: plugins/x2go/x2go_plugin.c:1586
+#: plugins/x2go/x2go_plugin.cpp:1586
 msgid "PyHoca-CLI exited unexpectedly. This connection will now be closed."
 msgstr "PyHoca-CLI 意外退出。此连接将被关闭。"
 
-#: plugins/x2go/x2go_plugin.c:1595
+#: plugins/x2go/x2go_plugin.cpp:1595
 msgid ""
 "The necessary child process 'pyhoca-cli' stopped unexpectedly.\n"
 "Please check your profile settings and PyHoca-CLI's output for possible "
@@ -3237,110 +3237,110 @@ msgstr ""
 "请检查您的配置文件设置和 PyHoca-CLI 的输出是否存在错误，并确保远程服务器可访"
 "问。"
 
-#: plugins/x2go/x2go_plugin.c:1638
+#: plugins/x2go/x2go_plugin.cpp:1638
 msgid "Can't save empty username!"
 msgstr "无法保存空的用户名！"
 
-#: plugins/x2go/x2go_plugin.c:1652
+#: plugins/x2go/x2go_plugin.cpp:1652
 msgid "Could not save new credentials."
 msgstr "无法保存新的凭证。"
 
-#: plugins/x2go/x2go_plugin.c:1655
+#: plugins/x2go/x2go_plugin.cpp:1655
 msgid ""
 "An error occured while trying to save new credentials: 's_password' or "
 "'s_username' strings were not set."
 msgstr "尝试保存新凭据时发生错误：未设置's_password' 或 's_username' 字符串。"
 
-#: plugins/x2go/x2go_plugin.c:1686
+#: plugins/x2go/x2go_plugin.cpp:1686
 msgid "Parameter 'default_username' is uninitialized."
 msgstr "参数 'default_username' 未被初始化。"
 
-#: plugins/x2go/x2go_plugin.c:1715
+#: plugins/x2go/x2go_plugin.cpp:1715
 msgid "Enter X2Go credentials"
 msgstr "输入 X2Go 凭据"
 
-#: plugins/x2go/x2go_plugin.c:1912
+#: plugins/x2go/x2go_plugin.cpp:1912
 msgid ""
 "Couldn't parse the output of PyHoca-CLI's --list-sessions option. Creating a "
 "new session now."
 msgstr ""
 "无法解析 PyHoca-CLI 的--list-sessions 选项的输出。现在创建一个新的会话。"
 
-#: plugins/x2go/x2go_plugin.c:1951
+#: plugins/x2go/x2go_plugin.cpp:1951
 msgid "Couldn't allocate enough memory!"
 msgstr "无法分配足够的内存！"
 
-#: plugins/x2go/x2go_plugin.c:1961
+#: plugins/x2go/x2go_plugin.cpp:1961
 #, c-format
 msgid "Found already existing X2Go session with ID: '%s'"
 msgstr "发现已经存在的 X2Go 会话的ID：'%s'"
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2004
+#: plugins/x2go/x2go_plugin.cpp:2004
 msgid "Suspended"
 msgstr "已停用"
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2007
+#: plugins/x2go/x2go_plugin.cpp:2007
 msgid "Running"
 msgstr "运行中"
 
 #. TRANSLATORS: Please stick to X2GoClient's translation.
-#: plugins/x2go/x2go_plugin.c:2010
+#: plugins/x2go/x2go_plugin.cpp:2010
 msgid "Terminated"
 msgstr "已终止"
 
-#: plugins/x2go/x2go_plugin.c:2043
+#: plugins/x2go/x2go_plugin.cpp:2043
 msgid ""
 "Could not find any sessions on remote machine. Creating a new session now."
 msgstr "在远程机器上找不到任何会话。现在创建一个新的会话。"
 
-#: plugins/x2go/x2go_plugin.c:2098
+#: plugins/x2go/x2go_plugin.cpp:2098
 msgid "Choose a session to resume:"
 msgstr "选择一个会话来恢复："
 
-#: plugins/x2go/x2go_plugin.c:2141
+#: plugins/x2go/x2go_plugin.cpp:2141
 msgid "Waiting for user to select a session…"
 msgstr "等待用户选择一个会话…"
 
-#: plugins/x2go/x2go_plugin.c:2149
+#: plugins/x2go/x2go_plugin.cpp:2149
 msgid "No session was selected. Creating a new one."
 msgstr "没有选择会话。创建一个新的。"
 
-#: plugins/x2go/x2go_plugin.c:2197
+#: plugins/x2go/x2go_plugin.cpp:2197
 #, c-format
 msgid "A non-critical error happened: %s"
 msgstr "发生了一个非关键性的错误：%s"
 
-#: plugins/x2go/x2go_plugin.c:2202
+#: plugins/x2go/x2go_plugin.cpp:2202
 #, c-format
 msgid "User chose to resume session with ID: '%s'"
 msgstr "用户选择恢复以下 ID 的会话：'%s'"
 
 #. TRANSLATORS: Please stick to X2GoClient's way of translating.
-#: plugins/x2go/x2go_plugin.c:2223
+#: plugins/x2go/x2go_plugin.cpp:2223
 #, c-format
 msgid "Resuming session '%s'…"
 msgstr "正在恢复会话'%s'…"
 
-#: plugins/x2go/x2go_plugin.c:2354
+#: plugins/x2go/x2go_plugin.cpp:2354
 msgid "DPI setting is out of bounds. Please adjust it in profile settings."
 msgstr "DPI 设置越界。请在配置文件设置中进行调整。"
 
-#: plugins/x2go/x2go_plugin.c:2396
+#: plugins/x2go/x2go_plugin.cpp:2396
 msgid "An error occured while starting an X2Go session…"
 msgstr "启动 X2Go 会话时发生了一个错误…"
 
-#: plugins/x2go/x2go_plugin.c:2404
+#: plugins/x2go/x2go_plugin.cpp:2404
 msgid "Could not start X2Go session."
 msgstr "无法启动 X2Go 会话。"
 
-#: plugins/x2go/x2go_plugin.c:2405
+#: plugins/x2go/x2go_plugin.cpp:2405
 #, c-format
 msgid "Could not start PyHoca-CLI (%i): '%s'"
 msgstr "未能启动 PyHoca-CLI (%i): '%s'"
 
-#: plugins/x2go/x2go_plugin.c:2520
+#: plugins/x2go/x2go_plugin.cpp:2520
 msgid ""
 "Couldn't get PyHoca-CLI's command-line features. This indicates it is either "
 "too old, or not installed. An old limited set of features will be used for "
@@ -3349,47 +3349,47 @@ msgstr ""
 "无法获得 PyHoca-CLI 的命令行功能。这表明您的 PyHoca-CLI 版本太旧或未安装 "
 "PyHoca-CLI！将暂时使用旧的有限的功能集。"
 
-#: plugins/x2go/x2go_plugin.c:2529
+#: plugins/x2go/x2go_plugin.cpp:2529
 msgid ""
 "Could not parse PyHoca-CLI's command-line features. Using a limited feature-"
 "set for now."
 msgstr "无法解析 PyHoca-CLI 的命令行功能！暂时使用有限的功能集。"
 
-#: plugins/x2go/x2go_plugin.c:2535
+#: plugins/x2go/x2go_plugin.cpp:2535
 msgid "Retrieved the following PyHoca-CLI command-line features:"
 msgstr "获取了以下 PyHoca-CLI 功能："
 
-#: plugins/x2go/x2go_plugin.c:2543
+#: plugins/x2go/x2go_plugin.cpp:2543
 #, c-format
 msgid "Available feature[%i]: '%s'"
 msgstr "可用功能[%i]: '%s'"
 
-#: plugins/x2go/x2go_plugin.c:2648
+#: plugins/x2go/x2go_plugin.cpp:2648
 msgid "Could not open X11 DISPLAY."
 msgstr "无法打开 X11 DISPLAY。"
 
-#: plugins/x2go/x2go_plugin.c:2688
+#: plugins/x2go/x2go_plugin.cpp:2688
 msgid "Waiting for window of X2Go Agent to appear…"
 msgstr "等待 X2Go Agent 窗口出现…"
 
-#: plugins/x2go/x2go_plugin.c:2714
+#: plugins/x2go/x2go_plugin.cpp:2714
 msgid "Waiting for PyHoca-CLI to show the session's window…"
 msgstr "等待 PyHoca-CLI 显示会话窗口…"
 
-#: plugins/x2go/x2go_plugin.c:2765
+#: plugins/x2go/x2go_plugin.cpp:2765
 msgid "No X2Go session window appeared. Something went wrong…"
 msgstr "没有出现 X2Go 会话窗口。出了些问题…"
 
-#: plugins/x2go/x2go_plugin.c:2876
+#: plugins/x2go/x2go_plugin.cpp:2876
 msgid "RemminaProtocolWidget* gp is 'NULL'!"
 msgstr "RemminaProtocolWidget* gp 是 'NULL'!"
 
-#: plugins/x2go/x2go_plugin.c:2897
+#: plugins/x2go/x2go_plugin.cpp:2897
 #, c-format
 msgid "The %s protocol is unavailable because GtkSocket only works under X.org"
 msgstr "%s 协议不可用，因为 GtkSocket 仅在 X.org 下工作"
 
-#: plugins/x2go/x2go_plugin.c:2906
+#: plugins/x2go/x2go_plugin.cpp:2906
 msgid "Could not initialize pthread. Falling back to non-threaded mode…"
 msgstr "无法初始化 pthread。退回到非线程模式…"
 
@@ -3401,7 +3401,7 @@ msgstr "无法初始化 pthread。退回到非线程模式…"
 #. your language.
 #. (Except your listing-grammar differs from english.)
 #. 'value1' and 'value2'
-#: plugins/x2go/x2go_plugin.c:2949 plugins/x2go/x2go_plugin.c:2967
+#: plugins/x2go/x2go_plugin.cpp:2949 plugins/x2go/x2go_plugin.cpp:2967
 #, c-format
 msgid "%sand '%s'"
 msgstr "%s及'%s'"
@@ -3412,7 +3412,7 @@ msgstr "%s及'%s'"
 #. TRANSLATORS: Presumably you just want to leave it english.
 #. (Except your listing-grammar differs from english.)
 #. 'value1' and 'value2'
-#: plugins/x2go/x2go_plugin.c:2954 plugins/x2go/x2go_plugin.c:2972
+#: plugins/x2go/x2go_plugin.cpp:2954 plugins/x2go/x2go_plugin.cpp:2972
 #, c-format
 msgid "%s'%s' "
 msgstr "%s'%s' "
@@ -3420,255 +3420,255 @@ msgstr "%s'%s' "
 #. TRANSLATORS: Presumably you just want to leave it english.
 #. (Except your listing-grammar differs from english.)
 #. 'value1', 'value2', 'valueN-1' and 'valueN'
-#: plugins/x2go/x2go_plugin.c:2959
+#: plugins/x2go/x2go_plugin.cpp:2959
 #, c-format
 msgid "%s'%s', "
 msgstr "%s'%s', "
 
-#: plugins/x2go/x2go_plugin.c:2998
+#: plugins/x2go/x2go_plugin.cpp:2998
 msgid "Invalid validation data in ProtocolSettings array!"
 msgstr "ProtocolSettings 数组中的验证数据无效！"
 
-#: plugins/x2go/x2go_plugin.c:3013 plugins/x2go/x2go_plugin.c:3078
+#: plugins/x2go/x2go_plugin.cpp:3013 plugins/x2go/x2go_plugin.cpp:3078
 msgid "Validation data in ProtocolSettings array is invalid!"
 msgstr "ProtocolSettings 数组中的验证数据无效！"
 
-#: plugins/x2go/x2go_plugin.c:3022
+#: plugins/x2go/x2go_plugin.cpp:3022
 msgid "Parameters 'key' or 'value' are 'NULL'!"
 msgstr "参数'key' 或 'value' 是 'NULL'！"
 
-#: plugins/x2go/x2go_plugin.c:3040
+#: plugins/x2go/x2go_plugin.cpp:3040
 #, c-format
 msgid "Allowed values are %s."
 msgstr "允许的值为 %s。"
 
-#: plugins/x2go/x2go_plugin.c:3042
+#: plugins/x2go/x2go_plugin.cpp:3042
 #, c-format
 msgid "The only allowed value is '%s'."
 msgstr "唯一允许的值为 '%s'。"
 
-#: plugins/x2go/x2go_plugin.c:3089
+#: plugins/x2go/x2go_plugin.cpp:3089
 msgid "The lower limit is not a valid integer!"
 msgstr "下限不是有效整数！"
 
-#: plugins/x2go/x2go_plugin.c:3094
+#: plugins/x2go/x2go_plugin.cpp:3094
 msgid "The lower limit is too high!"
 msgstr "下限过高！"
 
-#: plugins/x2go/x2go_plugin.c:3099
+#: plugins/x2go/x2go_plugin.cpp:3099
 msgid "The lower limit is too low!"
 msgstr "下限过低！"
 
-#: plugins/x2go/x2go_plugin.c:3104 plugins/x2go/x2go_plugin.c:3134
-#: plugins/x2go/x2go_plugin.c:3154
+#: plugins/x2go/x2go_plugin.cpp:3104 plugins/x2go/x2go_plugin.cpp:3134
+#: plugins/x2go/x2go_plugin.cpp:3154
 msgid "Something unknown went wrong."
 msgstr "一些未知的东西出了问题。"
 
-#: plugins/x2go/x2go_plugin.c:3109 plugins/x2go/x2go_plugin.c:3139
-#: plugins/x2go/x2go_plugin.c:3158
+#: plugins/x2go/x2go_plugin.cpp:3109 plugins/x2go/x2go_plugin.cpp:3139
+#: plugins/x2go/x2go_plugin.cpp:3158
 msgid "Please check the RemminaProtocolSetting array for possible errors."
 msgstr "请检查 RemminaProtocolSetting 数组是否存在错误。"
 
-#: plugins/x2go/x2go_plugin.c:3119
+#: plugins/x2go/x2go_plugin.cpp:3119
 msgid "The upper limit is not a valid integer!"
 msgstr "上限不是有效整数！"
 
-#: plugins/x2go/x2go_plugin.c:3124
+#: plugins/x2go/x2go_plugin.cpp:3124
 msgid "The upper limit is too high!"
 msgstr "上限过高！"
 
-#: plugins/x2go/x2go_plugin.c:3129
+#: plugins/x2go/x2go_plugin.cpp:3129
 msgid "The upper limit is too low!"
 msgstr "上限过低！"
 
-#: plugins/x2go/x2go_plugin.c:3149
+#: plugins/x2go/x2go_plugin.cpp:3149
 msgid "The input is not a valid integer!"
 msgstr "输入不是有效整数！"
 
-#: plugins/x2go/x2go_plugin.c:3151 plugins/x2go/x2go_plugin.c:3170
+#: plugins/x2go/x2go_plugin.cpp:3151 plugins/x2go/x2go_plugin.cpp:3170
 #, c-format
 msgid "Input must be a number between %i and %i."
 msgstr "输入值必须在 %i 和 %i 之间。"
 
-#: plugins/x2go/x2go_plugin.c:3199
+#: plugins/x2go/x2go_plugin.cpp:3199
 msgid "Startup program"
 msgstr "启动程序"
 
-#: plugins/x2go/x2go_plugin.c:3201
+#: plugins/x2go/x2go_plugin.cpp:3201
 msgid "Which command should be executed after creating the X2Go session?"
 msgstr "创建 X2Go 会话后应该执行哪个命令？"
 
-#: plugins/x2go/x2go_plugin.c:3203
+#: plugins/x2go/x2go_plugin.cpp:3203
 msgid "Keyboard Layout (auto)"
 msgstr "键盘布局 (自动)"
 
-#: plugins/x2go/x2go_plugin.c:3204
+#: plugins/x2go/x2go_plugin.cpp:3204
 msgid "Keyboard type (auto)"
 msgstr "键盘类型 (自动)"
 
-#: plugins/x2go/x2go_plugin.c:3205
+#: plugins/x2go/x2go_plugin.cpp:3205
 msgid "Audio support"
 msgstr "音频支持"
 
-#: plugins/x2go/x2go_plugin.c:3207
+#: plugins/x2go/x2go_plugin.cpp:3207
 msgid "The sound system of the X2Go server (default: 'pulse')."
 msgstr "X2Go 服务器的声音系统 (默认值：'pulse')。"
 
-#: plugins/x2go/x2go_plugin.c:3210
+#: plugins/x2go/x2go_plugin.cpp:3210
 msgid "Clipboard direction"
 msgstr "剪贴板方向"
 
-#: plugins/x2go/x2go_plugin.c:3212
+#: plugins/x2go/x2go_plugin.cpp:3212
 msgid "Which direction should clipboard content be copied? (default: 'both')."
 msgstr "应在哪个方向复制剪贴板内容？(默认:“both”)。"
 
-#: plugins/x2go/x2go_plugin.c:3216
+#: plugins/x2go/x2go_plugin.cpp:3216
 msgid "DPI resolution"
 msgstr "DPI 分辨率"
 
-#: plugins/x2go/x2go_plugin.c:3217
+#: plugins/x2go/x2go_plugin.cpp:3217
 msgid ""
 "Launch session with a specific resolution (in dots per inch). Must be "
 "between 20 and 400."
 msgstr "以特定的分辨率 (点每英寸) 启动会话。值必须在 20 到 400 之间。"
 
-#: plugins/x2go/x2go_plugin.c:3261
+#: plugins/x2go/x2go_plugin.cpp:3261
 msgid "X2Go plugin loaded."
 msgstr "已加载 X2Go 插件。"
 
-#: plugins/x2go/x2go_plugin.h:43
+#: plugins/x2go/x2go_plugin.hpp:43
 msgid "X2Go - Launch an X2Go session"
 msgstr "X2Go - 启动一个 X2Go 会话"
 
-#: plugins/gvnc/gvnc_plugin_config.h:40
+#: plugins/gvnc/gvnc_plugin_config.hpp:40
 msgid "Remmina VNC plugin for GNOME and KVM"
 msgstr "GNOME 和 KVM 的 Remmina VNC 插件"
 
-#: plugins/gvnc/gvnc_plugin.c:477
+#: plugins/gvnc/gvnc_plugin.cpp:477
 #, c-format
 msgid "Unsupported authentication type %u"
 msgstr "不支持的认证类型 %u"
 
-#: plugins/gvnc/gvnc_plugin.c:489
+#: plugins/gvnc/gvnc_plugin.cpp:489
 #, c-format
 msgid "Authentication failure: %s"
 msgstr "认证失败：%s"
 
-#: plugins/gvnc/gvnc_plugin.c:820
+#: plugins/gvnc/gvnc_plugin.cpp:820
 msgid "Use server settings"
 msgstr "使用服务器设置"
 
-#: plugins/gvnc/gvnc_plugin.c:821
+#: plugins/gvnc/gvnc_plugin.cpp:821
 msgid "True colour (24 bits)"
 msgstr "真彩色（24 位）"
 
-#: plugins/gvnc/gvnc_plugin.c:822
+#: plugins/gvnc/gvnc_plugin.cpp:822
 msgid "High colour (16 bits)"
 msgstr "增强色（16 位）"
 
-#: plugins/gvnc/gvnc_plugin.c:823
+#: plugins/gvnc/gvnc_plugin.cpp:823
 msgid "Low colour (8 bits)"
 msgstr "低色（8 位）"
 
-#: plugins/gvnc/gvnc_plugin.c:824
+#: plugins/gvnc/gvnc_plugin.cpp:824
 msgid "Ultra low colour (3 bits)"
 msgstr "极低色（3 位）"
 
-#: plugins/gvnc/gvnc_plugin.c:848
+#: plugins/gvnc/gvnc_plugin.cpp:848
 msgid "VNC password"
 msgstr "VNC 密码"
 
-#: plugins/gvnc/gvnc_plugin.c:850
+#: plugins/gvnc/gvnc_plugin.cpp:850
 msgid "Use JPEG Compression"
 msgstr "使用 JPEG 压缩"
 
-#: plugins/gvnc/gvnc_plugin.c:850
+#: plugins/gvnc/gvnc_plugin.cpp:850
 msgid "This might not work on all VNC servers"
 msgstr "这可能不适用于所有 VNC 服务器"
 
-#: plugins/gvnc/gvnc_plugin.c:851
+#: plugins/gvnc/gvnc_plugin.cpp:851
 msgid "Enable GTK-VNC debug"
 msgstr "启用 GTK-VNC 调试"
 
-#: plugins/gvnc/gvnc_plugin.c:871
+#: plugins/gvnc/gvnc_plugin.cpp:871
 msgid "Shared connection"
 msgstr "共享的连接"
 
-#: plugins/gvnc/gvnc_plugin.c:871
+#: plugins/gvnc/gvnc_plugin.cpp:871
 msgid ""
 "If the server should try to share the desktop by leaving other clients "
 "connected"
 msgstr "服务器是否应该通过让其他客户端保持连接来尝试共享桌面"
 
-#: plugins/gvnc/gvnc_plugin.c:881
+#: plugins/gvnc/gvnc_plugin.cpp:881
 msgid "Send Ctrl+Alt+_Del"
 msgstr "发送 Ctrl+Alt+_Del"
 
-#: plugins/gvnc/gvnc_plugin.c:882
+#: plugins/gvnc/gvnc_plugin.cpp:882
 msgid "Send Ctrl+Alt+_Backspace"
 msgstr "发送 Ctrl+Alt+_Backspace"
 
-#: plugins/gvnc/gvnc_plugin.c:883
+#: plugins/gvnc/gvnc_plugin.cpp:883
 msgid "Send Ctrl+Alt+_F1"
 msgstr "发送 Ctrl+Alt+_F1"
 
-#: plugins/gvnc/gvnc_plugin.c:884
+#: plugins/gvnc/gvnc_plugin.cpp:884
 msgid "Send Ctrl+Alt+_F2"
 msgstr "发送 Ctrl+Alt+_F2"
 
-#: plugins/gvnc/gvnc_plugin.c:885
+#: plugins/gvnc/gvnc_plugin.cpp:885
 msgid "Send Ctrl+Alt+_F3"
 msgstr "发送 Ctrl+Alt+_F3"
 
-#: plugins/gvnc/gvnc_plugin.c:886
+#: plugins/gvnc/gvnc_plugin.cpp:886
 msgid "Send Ctrl+Alt+_F4"
 msgstr "发送 Ctrl+Alt+_F4"
 
-#: plugins/gvnc/gvnc_plugin.c:887
+#: plugins/gvnc/gvnc_plugin.cpp:887
 msgid "Send Ctrl+Alt+_F5"
 msgstr "发送 Ctrl+Alt+_F5"
 
-#: plugins/gvnc/gvnc_plugin.c:888
+#: plugins/gvnc/gvnc_plugin.cpp:888
 msgid "Send Ctrl+Alt+_F6"
 msgstr "发送 Ctrl+Alt+_F6"
 
-#: plugins/gvnc/gvnc_plugin.c:889
+#: plugins/gvnc/gvnc_plugin.cpp:889
 msgid "Send Ctrl+Alt+_F7"
 msgstr "发送 Ctrl+Alt+_F7"
 
-#: plugins/gvnc/gvnc_plugin.c:890
+#: plugins/gvnc/gvnc_plugin.cpp:890
 msgid "Send Ctrl+Alt+_F8"
 msgstr "发送 Ctrl+Alt+_F8"
 
-#: plugins/gvnc/gvnc_plugin.c:891
+#: plugins/gvnc/gvnc_plugin.cpp:891
 msgid "Send Ctrl+Alt+_F9"
 msgstr "发送 Ctrl+Alt+_F9"
 
-#: plugins/gvnc/gvnc_plugin.c:892
+#: plugins/gvnc/gvnc_plugin.cpp:892
 msgid "Send Ctrl+Alt+_F10"
 msgstr "发送 Ctrl+Alt+_F10"
 
-#: plugins/gvnc/gvnc_plugin.c:893
+#: plugins/gvnc/gvnc_plugin.cpp:893
 msgid "Send Ctrl+Alt+_F11"
 msgstr "发送 Ctrl+Alt+_F11"
 
-#: plugins/gvnc/gvnc_plugin.c:894
+#: plugins/gvnc/gvnc_plugin.cpp:894
 msgid "Send Ctrl+Alt+_F12"
 msgstr "发送 Ctrl+Alt+_F12"
 
-#: plugins/gvnc/gvnc_plugin.c:896
+#: plugins/gvnc/gvnc_plugin.cpp:896
 msgid "Reboot remote host"
 msgstr "重启远程主机"
 
-#: plugins/gvnc/gvnc_plugin.c:897
+#: plugins/gvnc/gvnc_plugin.cpp:897
 msgid "Reset remote host (hard reboot)"
 msgstr "重置远程主机（硬重启）"
 
-#: plugins/gvnc/gvnc_plugin.c:898
+#: plugins/gvnc/gvnc_plugin.cpp:898
 msgid "Shutdown remote host"
 msgstr "关闭远程主机"
 
-#: plugins/telepathy/telepathy_channel_handler.c:237
+#: plugins/telepathy/telepathy_channel_handler.cpp:237
 #, c-format
 msgid ""
 "%s wants to share their desktop.\n"
@@ -3677,11 +3677,11 @@ msgstr ""
 "%s 请求共享他/她的桌面。\n"
 "您是否接受邀请？"
 
-#: plugins/telepathy/telepathy_channel_handler.c:240
+#: plugins/telepathy/telepathy_channel_handler.cpp:240
 msgid "Desktop sharing invitation"
 msgstr "桌面共享邀请"
 
-#: plugins/telepathy/telepathy_plugin.c:57
+#: plugins/telepathy/telepathy_plugin.cpp:57
 msgid "Telepathy - Desktop Sharing"
 msgstr "Telepathy - 桌面共享"
 

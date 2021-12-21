@@ -33,8 +33,8 @@
 
 
 set(REMMINA_PLUGIN_SRCS
-        plugin_config.h
-        plugin.c
+        plugin_config.hpp
+        plugin.cpp
 )
 
 add_library(remmina-plugin-tool_hello_world MODULE ${REMMINA_PLUGIN_SRCS})

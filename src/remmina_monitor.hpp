@@ -38,21 +38,21 @@
 #include <glib-object.h>
 #include <gio/gio.h>
 
-#include "remmina_file.h"
+#include "remmina_file.hpp"
 
 typedef struct _RemminaMonitor
 {
     GNetworkMonitor *netmonitor;
-    gboolean connected;
+    bool connected;
     GSocketConnectable *addr;
-    gboolean reachable;
+    bool reachable;
     GHashTable *server_status;
 } RemminaMonitor;
 
-G_BEGIN_DECLS
 
-gboolean remmina_network_monitor_status( RemminaMonitor *rm_monitor );
+
+GNetworkConnectivity remmina_network_monitor_status( RemminaMonitor *rm_monitor );
 RemminaMonitor *remmina_network_monitor_new();
-gchar *remmina_monitor_can_reach( RemminaFile *remminafile, RemminaMonitor *monitor );
+char *remmina_monitor_can_reach( RemminaFile *remminafile, RemminaMonitor *monitor );
 
-G_END_DECLS
+

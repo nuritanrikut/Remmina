@@ -34,7 +34,7 @@
 
 #pragma once
 
-#include "common/remmina_plugin.h"
+#include "common/remmina_plugin.hpp"
 #include <spice-client.h>
 #ifdef SPICE_GTK_CHECK_VERSION
 #    if SPICE_GTK_CHECK_VERSION( 0, 31, 0 )

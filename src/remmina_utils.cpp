@@ -45,8 +45,8 @@
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
 #include <gio/gio.h>
-#include "remmina_sodium.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_sodium.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 /** Returns @c TRUE if @a ptr is @c NULL or @c *ptr is @c FALSE. */
 #define EMPTY( ptr ) ( !( ptr ) || !*( ptr ) )
@@ -58,8 +58,8 @@ struct utsname u;
  */
 typedef struct lsb_distro_info
 {
-    gchar *name;
-    gchar *scanstring;
+    char *name;
+    char *scanstring;
 } LSBDistroInfo;
 
 /*
@@ -74,8 +74,8 @@ typedef struct lsb_distro_info
 
 typedef struct distro_info
 {
-    gchar *name;
-    gchar *filename;
+    const char *name;
+    const char *filename;
 } DistroInfo;
 
 static DistroInfo distroArray[] = {
@@ -122,10 +122,10 @@ static DistroInfo distroArray[] = {
     { NULL, NULL },
 };
 
-gint remmina_utils_strpos( const gchar *haystack, const gchar *needle )
+gint remmina_utils_strpos( const char *haystack, const char *needle )
 {
     TRACE_CALL( __func__ );
-    const gchar *sub;
+    const char *sub;
 
     if( !*needle )
         return -1;
@@ -140,7 +140,7 @@ gint remmina_utils_strpos( const gchar *haystack, const gchar *needle )
 /* end can be -1 for haystack->len.
  * returns: position of found text or -1.
  * (C) Taken from geany */
-gint remmina_utils_string_find( GString *haystack, gint start, gint end, const gchar *needle )
+gint remmina_utils_string_find( GString *haystack, gint start, gint end, const char *needle )
 {
     TRACE_CALL( __func__ );
     gint pos;
@@ -172,7 +172,7 @@ gint remmina_utils_string_find( GString *haystack, gint start, gint end, const g
  * len can be -1 to replace the remainder of @a str.
  * returns: pos + strlen(replace).
  * (C) Taken from geany */
-gint remmina_utils_string_replace( GString *str, gint pos, gint len, const gchar *replace )
+gint remmina_utils_string_replace( GString *str, gint pos, gint len, const char *replace )
 {
     TRACE_CALL( __func__ );
     g_string_erase( str, pos, len );
@@ -193,7 +193,7 @@ gint remmina_utils_string_replace( GString *str, gint pos, gint len, const gchar
  *
  * @return Number of replacements made.
  **/
-guint remmina_utils_string_replace_all( GString *haystack, const gchar *needle, const gchar *replace )
+guint remmina_utils_string_replace_all( GString *haystack, const char *needle, const char *replace )
 {
     TRACE_CALL( __func__ );
     guint count = 0;
@@ -221,13 +221,13 @@ guint remmina_utils_string_replace_all( GString *haystack, const gchar *needle, 
  * @param a string.
  * @return a newly allocated copy of string cleaned by \t, \n and \"
  */
-gchar *remmina_utils_string_strip( const gchar *s )
+char *remmina_utils_string_strip( const char *s )
 {
-    gchar *p = g_malloc( strlen( s ) + 1 );
+    char *p = static_cast<char *>( g_malloc( strlen( s ) + 1 ) );
 
     if( p )
     {
-        gchar *p2 = p;
+        char *p2 = p;
         while( *s != '\0' )
         {
             if( *s != '\t' && *s != '\n' && *s != '\"' )
@@ -254,12 +254,12 @@ gchar *remmina_utils_string_strip( const gchar *s )
  * @return Returns a string containing distro information verbatim from /etc/xxx-release (distro). Use g_free to free the string.
  *
  */
-static gchar *remmina_utils_read_distrofile( gchar *filename )
+static char *remmina_utils_read_distrofile( const char *filename )
 {
     TRACE_CALL( __func__ );
     gsize file_sz;
     struct stat st;
-    gchar *distro_desc = NULL;
+    char *distro_desc = NULL;
     GError *err = NULL;
 
     if( g_stat( filename, &st ) == -1 )
@@ -293,14 +293,14 @@ static gchar *remmina_utils_read_distrofile( gchar *filename )
  * Return the current language defined in the LC_ALL.
  * @return a language string or en_US.
  */
-gchar *remmina_utils_get_lang()
+const char *remmina_utils_get_lang()
 {
-    gchar *lang = setlocale( LC_ALL, NULL );
-    gchar *ptr;
+    char *lang = strdup( setlocale( LC_ALL, NULL ) );
+    char *ptr;
 
     if( !lang || lang[0] == '\0' )
     {
-        lang = "en_US\0";
+        lang = strdup( "en_US\0" );
     }
     else
     {
@@ -315,13 +315,13 @@ gchar *remmina_utils_get_lang()
  * Return the OS name as in "uname -s".
  * @return The OS name or NULL.
  */
-const gchar *remmina_utils_get_kernel_name()
+const char *remmina_utils_get_kernel_name()
 {
     TRACE_CALL( __func__ );
     return u.sysname;
 }
 
-const gchar *remmina_utils_get_kernel_release()
+const char *remmina_utils_get_kernel_release()
 /**
  * Return the OS version as in "uname -r".
  * @return The OS release or NULL.
@@ -335,7 +335,7 @@ const gchar *remmina_utils_get_kernel_release()
  * Return the machine hardware name as in "uname -m".
  * @return The machine hardware name or NULL.
  */
-const gchar *remmina_utils_get_kernel_arch()
+const char *remmina_utils_get_kernel_arch()
 {
     TRACE_CALL( __func__ );
     return u.machine;
@@ -345,10 +345,10 @@ const gchar *remmina_utils_get_kernel_arch()
  * Print the Distributor as specified by the lsb_release command.
  * @return the distributor ID string or NULL. Caller must free it with g_free().
  */
-gchar *remmina_utils_get_lsb_id()
+char *remmina_utils_get_lsb_id()
 {
     TRACE_CALL( __func__ );
-    gchar *lsb_id = NULL;
+    char *lsb_id = NULL;
     if( g_spawn_command_line_sync( "/usr/bin/lsb_release -si", &lsb_id, NULL, NULL, NULL ) )
         return lsb_id;
     return NULL;
@@ -358,10 +358,10 @@ gchar *remmina_utils_get_lsb_id()
  * Print the Distribution description as specified by the lsb_release command.
  * @return the Distribution description string or NULL. Caller must free it with g_free().
  */
-gchar *remmina_utils_get_lsb_description()
+char *remmina_utils_get_lsb_description()
 {
     TRACE_CALL( __func__ );
-    gchar *lsb_description = NULL;
+    char *lsb_description = NULL;
     GError *err = NULL;
 
     if( g_spawn_command_line_sync( "/usr/bin/lsb_release -sd", &lsb_description, NULL, NULL, &err ) )
@@ -381,10 +381,10 @@ gchar *remmina_utils_get_lsb_description()
  * Print the Distribution release name as specified by the lsb_release command.
  * @return the Distribution release name string or NULL. Caller must free it with g_free().
  */
-gchar *remmina_utils_get_lsb_release()
+char *remmina_utils_get_lsb_release()
 {
     TRACE_CALL( __func__ );
-    gchar *lsb_release = NULL;
+    char *lsb_release = NULL;
     if( g_spawn_command_line_sync( "/usr/bin/lsb_release -sr", &lsb_release, NULL, NULL, NULL ) )
         return lsb_release;
     return NULL;
@@ -394,10 +394,10 @@ gchar *remmina_utils_get_lsb_release()
  * Print the Distribution codename as specified by the lsb_release command.
  * @return the codename string or NULL. Caller must free it with g_free().
  */
-gchar *remmina_utils_get_lsb_codename()
+char *remmina_utils_get_lsb_codename()
 {
     TRACE_CALL( __func__ );
-    gchar *lsb_codename = NULL;
+    char *lsb_codename = NULL;
     if( g_spawn_command_line_sync( "/usr/bin/lsb_release -sc", &lsb_codename, NULL, NULL, NULL ) )
         return lsb_codename;
     return NULL;
@@ -411,7 +411,7 @@ gchar *remmina_utils_get_lsb_codename()
 GHashTable *remmina_utils_get_etc_release()
 {
     TRACE_CALL( __func__ );
-    gchar *etc_release = NULL;
+    char *etc_release = NULL;
     gint i;
     GHashTable *r;
 
@@ -426,7 +426,8 @@ GHashTable *remmina_utils_get_etc_release()
             if( etc_release[0] != '\0' )
             {
                 g_debug( "%s: Distro description %s\n", __func__, etc_release );
-                g_hash_table_insert( r, distroArray[i].filename, etc_release );
+                g_hash_table_insert(
+                    r, static_cast<void *>( const_cast<char *>( distroArray[i].filename ) ), etc_release );
             }
             else
             {
@@ -441,10 +442,10 @@ GHashTable *remmina_utils_get_etc_release()
  * A sample function to show how use the other fOS related functions.
  * @return a semicolon separated OS data like in "uname -srm".
  */
-const gchar *remmina_utils_get_os_info()
+const char *remmina_utils_get_os_info()
 {
     TRACE_CALL( __func__ );
-    gchar *kernel_string;
+    char *kernel_string;
 
     if( uname( &u ) == -1 )
         g_print( "uname:" );
@@ -475,7 +476,7 @@ const gchar *remmina_utils_get_os_info()
  * Taken from https://github.com/ttuegel/notmuch do PR in case of substantial modifications.
  *
  */
-gchar *remmina_sha1_file( const gchar *filename )
+char *remmina_sha1_file( const char *filename )
 {
     FILE *file;
 
@@ -524,14 +525,14 @@ DONE:
  * Generate a random sting of chars to be used as part of UID for news or stats
  * @return a string or NULL. Caller must free it with g_free().
  */
-gchar *remmina_gen_random_uuid()
+char *remmina_gen_random_uuid()
 {
     TRACE_CALL( __func__ );
-    gchar *result;
+    char *result;
     int i;
     static char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    result = g_malloc0( 15 );
+    result = static_cast<char*>(g_malloc0( 15 ));
 
     for( i = 0; i < 7; i++ )
         result[i] = alpha[randombytes_uniform( sizeof( alpha ) )];

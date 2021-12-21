@@ -33,9 +33,9 @@
 
 
 set(REMMINA_PLUGIN_TELEPATHY_SRCS
-        telepathy_plugin.c
-        telepathy_handler.c
-        telepathy_channel_handler.c
+        telepathy_plugin.cpp
+        telepathy_handler.cpp
+        telepathy_channel_handler.cpp
         )
 
 add_library(remmina-plugin-telepathy MODULE ${REMMINA_PLUGIN_TELEPATHY_SRCS})

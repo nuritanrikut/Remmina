@@ -36,8 +36,8 @@
 #  files in the program, then also delete it here.
 
 set(REMMINA_PLUGIN_X2GO_SRCS
-    x2go_plugin.c
-    x2go_plugin.h
+    x2go_plugin.cpp
+    x2go_plugin.hpp
     )
 
 add_library(remmina-plugin-x2go ${REMMINA_PLUGIN_X2GO_SRCS})

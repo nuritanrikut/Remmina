@@ -36,7 +36,7 @@
 
 #pragma once
 
-#include "common/remmina_plugin.h"
+#include "common/remmina_plugin.hpp"
 #include <freerdp/freerdp.h>
 #include <freerdp/version.h>
 #include <freerdp/channels/channels.h>
@@ -167,6 +167,8 @@ typedef enum
 
 struct remmina_plugin_rdp_event
 {
+    remmina_plugin_rdp_event() : type( REMMINA_RDP_EVENT_TYPE_SCANCODE ) { }
+
     RemminaPluginRdpEventType type;
     union
     {
@@ -256,8 +258,8 @@ typedef struct
 struct remmina_plugin_rdp_ui_object
 {
     RemminaPluginRdpUiType type;
-    gboolean sync;
-    gboolean complete;
+    bool sync;
+    bool complete;
     pthread_mutex_t sync_wait_mutex;
     pthread_cond_t sync_wait_cond;
     union
@@ -330,37 +332,37 @@ struct rf_context
 
     pthread_t remmina_plugin_thread;
     RemminaScaleMode scale;
-    gboolean user_cancelled;
-    gboolean thread_cancelled;
+    bool user_cancelled;
+    bool thread_cancelled;
 
     CliprdrClientContext *cliprdr;
     DispClientContext *dispcontext;
 
     RDP_PLUGIN_DATA rdpdr_data[5];
     RDP_PLUGIN_DATA drdynvc_data[5];
-    gchar rdpsnd_options[20];
+    char rdpsnd_options[20];
 
-    gboolean rdpgfxchan;
+    bool rdpgfxchan;
 
-    gboolean connected;
-    gboolean is_reconnecting;
-    gboolean stop_reconnecting_requested;
+    bool connected;
+    bool is_reconnecting;
+    bool stop_reconnecting_requested;
     /* orphaned: rf_context has still one or more libfreerdp thread active,
 	 * but no longer maintained by an open RemminaProtocolWidget/tab.
 	 * When the orphaned thread terminates, we must cleanup rf_context.
 	 */
-    gboolean orphaned;
+    bool orphaned;
     int reconnect_maxattempts;
     int reconnect_nattempt;
 
-    gboolean sw_gdi;
+    bool sw_gdi;
     GtkWidget *drawing_area;
     gint scale_width;
     gint scale_height;
     gdouble scale_x;
     gdouble scale_y;
     guint delayed_monitor_layout_handler;
-    gboolean use_client_keymap;
+    bool use_client_keymap;
 
     gint srcBpp;
     GdkDisplay *display;
@@ -387,7 +389,7 @@ struct rf_context
 
     GArray *keymap; /* Array of RemminaPluginRdpKeymapEntry */
 
-    gboolean attempt_interactive_authentication;
+    bool attempt_interactive_authentication;
 
     enum
     {

@@ -37,8 +37,8 @@
 #include <glib.h>
 #include <gmodule.h>
 #include <string.h>
-#include "remmina_string_array.h"
-#include "remmina/remmina_trace_calls.h"
+#include "remmina_string_array.hpp"
+#include "remmina/remmina_trace_calls.hpp"
 
 RemminaStringArray *remmina_string_array_new( void )
 {
@@ -46,11 +46,11 @@ RemminaStringArray *remmina_string_array_new( void )
     return g_ptr_array_new();
 }
 
-RemminaStringArray *remmina_string_array_new_from_string( const gchar *strs )
+RemminaStringArray *remmina_string_array_new_from_string( const char *strs )
 {
     TRACE_CALL( __func__ );
     RemminaStringArray *array;
-    gchar *buf, *ptr1, *ptr2;
+    char *buf, *ptr1, *ptr2;
 
     array = remmina_string_array_new();
     if( !strs || strs[0] == '\0' )
@@ -72,7 +72,7 @@ RemminaStringArray *remmina_string_array_new_from_string( const gchar *strs )
     return array;
 }
 
-RemminaStringArray *remmina_string_array_new_from_allocated_string( gchar *strs )
+RemminaStringArray *remmina_string_array_new_from_allocated_string( char *strs )
 {
     TRACE_CALL( __func__ );
     RemminaStringArray *array;
@@ -81,13 +81,13 @@ RemminaStringArray *remmina_string_array_new_from_allocated_string( gchar *strs 
     return array;
 }
 
-void remmina_string_array_add( RemminaStringArray *array, const gchar *str )
+void remmina_string_array_add( RemminaStringArray *array, const char *str )
 {
     TRACE_CALL( __func__ );
     g_ptr_array_add( array, g_strdup( str ) );
 }
 
-gint remmina_string_array_find( RemminaStringArray *array, const gchar *str )
+gint remmina_string_array_find( RemminaStringArray *array, const char *str )
 {
     TRACE_CALL( __func__ );
     gint i;
@@ -106,7 +106,7 @@ void remmina_string_array_remove_index( RemminaStringArray *array, gint i )
     g_ptr_array_remove_index( array, i );
 }
 
-void remmina_string_array_remove( RemminaStringArray *array, const gchar *str )
+void remmina_string_array_remove( RemminaStringArray *array, const char *str )
 {
     TRACE_CALL( __func__ );
     gint i;
@@ -118,7 +118,7 @@ void remmina_string_array_remove( RemminaStringArray *array, const gchar *str )
     }
 }
 
-void remmina_string_array_intersect( RemminaStringArray *array, const gchar *dest_strs )
+void remmina_string_array_intersect( RemminaStringArray *array, const char *dest_strs )
 {
     TRACE_CALL( __func__ );
     RemminaStringArray *dest_array;
@@ -141,7 +141,7 @@ void remmina_string_array_intersect( RemminaStringArray *array, const gchar *des
     remmina_string_array_free( dest_array );
 }
 
-static gint remmina_string_array_compare_func( const gchar **a, const gchar **b )
+static gint remmina_string_array_compare_func( const char **a, const char **b )
 {
     TRACE_CALL( __func__ );
     return g_strcmp0( *a, *b );
@@ -153,7 +153,7 @@ void remmina_string_array_sort( RemminaStringArray *array )
     g_ptr_array_sort( array, (GCompareFunc)remmina_string_array_compare_func );
 }
 
-gchar *remmina_string_array_to_string( RemminaStringArray *array )
+char *remmina_string_array_to_string( RemminaStringArray *array )
 {
     TRACE_CALL( __func__ );
     GString *gstr;

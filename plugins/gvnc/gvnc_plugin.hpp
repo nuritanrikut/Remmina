@@ -32,12 +32,12 @@
  *
  */
 
-#include "common/remmina_plugin.h"
+#include "common/remmina_plugin.hpp"
 
 #include <gdk/gdkkeysyms.h>
-#include <vncdisplay.h>
-#include <vncutil.h>
-#include <vncaudiopulse.h>
+#include <vncdisplay.hpp>
+#include <vncutil.hpp>
+#include <vncaudiopulse.hpp>
 
 #ifndef GDK_Return
 #    define GDK_Return GDK_KEY_Return
@@ -94,18 +94,16 @@ typedef struct _GVncPluginData
     GtkWidget *vnc;
     VncConnection *conn;
     VncAudioPulse *pa;
-    gchar *error_msg;
-    gchar *clipstr;
+    char *error_msg;
+    char *clipstr;
     gulong signal_clipboard;
     gint depth_profile;
     gint shared;
-    gboolean lossy_encoding;
-    gboolean viewonly;
+    bool lossy_encoding;
+    bool viewonly;
     gint width;
     gint height;
     gint fd;
-    gchar *addr;
+    char *addr;
 } GVncPluginData;
 
-G_BEGIN_DECLS
-G_END_DECLS
