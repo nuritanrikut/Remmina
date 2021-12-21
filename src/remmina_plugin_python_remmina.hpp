@@ -40,10 +40,10 @@
  * @details This struct is responsible to provide the same accessibility to the protocol widget for Python as for
  * native plugins.
  */
-typedef struct
+struct PyRemminaProtocolWidget
 {
     PyObject_HEAD RemminaProtocolWidget *gp;
-} PyRemminaProtocolWidget;
+};
 
 /**
  * @brief Maps an instance of a Python plugin to a Remmina one.
@@ -51,7 +51,7 @@ typedef struct
  * @details This is used to map a Python plugin instance to the Remmina plugin one. Also instance specific data as the
  * protocol widget are stored in this struct.
  */
-typedef struct
+struct PyPlugin
 {
     PyObject *pythonInstance;
 
@@ -64,12 +64,12 @@ typedef struct
     RemminaPlugin *generic_plugin;
 
     PyRemminaProtocolWidget *gp;
-} PyPlugin;
+};
 
 /**
  * @brief Initializes the 'remmina' module in the Python engine.
  */
-void remmina_plugin_python_module_init( void );
+void remmina_plugin_python_module_init();
 
 /**
  * @brief Returns a pointer to the Python instance, mapped to the RemminaProtocolWidget or null if not found.

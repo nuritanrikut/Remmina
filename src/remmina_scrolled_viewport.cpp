@@ -203,7 +203,7 @@ void remmina_scrolled_viewport_remove_motion( RemminaScrolledViewport *gsv )
     }
 }
 
-GtkWidget *remmina_scrolled_viewport_new( void )
+GtkWidget *remmina_scrolled_viewport_new()
 {
     TRACE_CALL( __func__ );
     RemminaScrolledViewport *gsv;

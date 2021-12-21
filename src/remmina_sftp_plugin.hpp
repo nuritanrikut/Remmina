@@ -38,7 +38,7 @@
 
 
 
-void remmina_sftp_plugin_register( void );
+void remmina_sftp_plugin_register();
 int remmina_plugin_sftp_start_direct_tunnel( RemminaProtocolWidget *gp, char **phost, int *pport );
 
 

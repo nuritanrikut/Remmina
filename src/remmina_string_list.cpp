@@ -48,7 +48,7 @@ static RemminaStringList *string_list;
 #define GET_OBJECT( object_name ) gtk_builder_get_object( string_list->builder, object_name )
 
 /* Update the buttons state on the items in the TreeModel */
-void remmina_string_list_update_buttons_state( void )
+void remmina_string_list_update_buttons_state()
 {
     gint items_count = gtk_tree_model_iter_n_children( GTK_TREE_MODEL( string_list->liststore_items ), NULL );
 
@@ -217,7 +217,7 @@ void remmina_string_list_set_text( const char *text, const bool clear_data )
 }
 
 /* Get a string value representing the string list */
-char *remmina_string_list_get_text( void )
+char *remmina_string_list_get_text()
 {
     TRACE_CALL( __func__ );
     GString *str;
@@ -292,7 +292,7 @@ void remmina_string_list_set_titles( char *title1, char *title2 )
 }
 
 /* RemminaStringList initialization */
-static void remmina_string_list_init( void )
+static void remmina_string_list_init()
 {
     TRACE_CALL( __func__ );
     string_list->priv->validation_func = NULL;

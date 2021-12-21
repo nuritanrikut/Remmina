@@ -39,14 +39,14 @@
 #include <glib.h>
 #include <webkit2/webkit2.h>
 
-typedef enum
+enum WWWWebViewDocumentType
 {
     WWW_WEB_VIEW_DOCUMENT_HTML,
     WWW_WEB_VIEW_DOCUMENT_XML,
     WWW_WEB_VIEW_DOCUMENT_IMAGE,
     WWW_WEB_VIEW_DOCUMENT_OCTET_STREAM,
     WWW_WEB_VIEW_DOCUMENT_OTHER
-} WWWWebViewDocumentType;
+};
 
 extern RemminaPluginService *remmina_plugin_service;
 #define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )
@@ -56,4 +56,3 @@ void remmina_plugin_www_decide_newwin( WebKitPolicyDecision *decision, RemminaPr
 int remmina_plugin_www_decide_resource( WebKitPolicyDecision *decision, RemminaProtocolWidget *gp );
 void remmina_plugin_www_response_received( WebKitDownload *download, GParamSpec *ps, RemminaProtocolWidget *gp );
 void remmina_plugin_www_notify_download( WebKitDownload *download, char *destination, RemminaProtocolWidget *gp );
-

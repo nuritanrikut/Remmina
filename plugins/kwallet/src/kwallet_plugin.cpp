@@ -41,7 +41,7 @@ static KWallet::Wallet* wallet;
 
 static char folderName[] = "Remmina";
 
-int rp_kwallet_init(void)
+int rp_kwallet_init()
 {
 	QString s = KWallet::Wallet::LocalWallet();
 	wallet = KWallet::Wallet::openWallet(s, 0);
@@ -61,7 +61,7 @@ int rp_kwallet_init(void)
 	return 1;
 }
 
-int rp_kwallet_is_service_available(void)
+int rp_kwallet_is_service_available()
 {
 	return wallet != 0;
 }

@@ -36,8 +36,8 @@
 
 
 
-int remmina_sysinfo_is_appindicator_available( void );
-char *remmina_sysinfo_get_gnome_shell_version( void );
-char *remmina_sysinfo_get_wm_name( void );
+int remmina_sysinfo_is_appindicator_available();
+char *remmina_sysinfo_get_gnome_shell_version();
+char *remmina_sysinfo_get_wm_name();
 
 

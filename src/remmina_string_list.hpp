@@ -38,14 +38,14 @@
 
 typedef int ( *RemminaStringListValidationFunc )( const char *new_str, char **error );
 
-typedef struct _RemminaStringListPriv
+struct RemminaStringListPriv
 {
     RemminaStringListValidationFunc validation_func;
     const char *fields_separator;
     bool two_columns;
-} RemminaStringListPriv;
+};
 
-typedef struct _RemminaStringList
+struct RemminaStringList
 {
     GtkBuilder *builder;
     GtkDialog *dialog;
@@ -66,19 +66,15 @@ typedef struct _RemminaStringList
     GtkLabel *label_status;
 
     RemminaStringListPriv *priv;
-} RemminaStringList;
-
-
+};
 
 /* RemminaStringList instance */
 GtkDialog *remmina_string_list_new( bool two_columns, const char *fields_separator );
 /* Load a string list by splitting a string value */
 void remmina_string_list_set_text( const char *text, const bool clear_data );
 /* Get a string value representing the string list */
-char *remmina_string_list_get_text( void );
+char *remmina_string_list_get_text();
 /* Set the dialog titles */
 void remmina_string_list_set_titles( char *title1, char *title2 );
 /* Set a function that will be used to validate the new rows */
 void remmina_string_list_set_validation_func( RemminaStringListValidationFunc func );
-
-

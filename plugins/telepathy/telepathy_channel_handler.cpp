@@ -48,7 +48,7 @@
 
 extern RemminaPluginService *remmina_plugin_telepathy_service;
 
-typedef struct _RemminaTpChannelHandler
+struct RemminaTpChannelHandler
 {
     char *connection_path;
     char *channel_path;
@@ -67,7 +67,7 @@ typedef struct _RemminaTpChannelHandler
     char *host;
     guint port;
     char *protocol;
-} RemminaTpChannelHandler;
+};
 
 static void remmina_tp_channel_handler_free( RemminaTpChannelHandler *chandler )
 {

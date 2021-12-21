@@ -52,55 +52,55 @@ static int remmina_masterthread_exec_callback( RemminaMTExecData *d )
     {
         switch( d->func )
         {
-            case remmina_masterthread_exec_data::FUNC_INIT_SAVE_CRED:
+            case RemminaMTExecData::FUNC_INIT_SAVE_CRED:
                 remmina_protocol_widget_save_cred( d->p.init_save_creds.gp );
                 break;
-            case remmina_masterthread_exec_data::FUNC_CHAT_RECEIVE:
+            case RemminaMTExecData::FUNC_CHAT_RECEIVE:
                 remmina_protocol_widget_chat_receive( d->p.chat_receive.gp, d->p.chat_receive.text );
                 break;
-            case remmina_masterthread_exec_data::FUNC_FILE_GET_STRING:
+            case RemminaMTExecData::FUNC_FILE_GET_STRING:
                 d->p.file_get_string.retval =
                     remmina_file_get_string( d->p.file_get_string.remminafile, d->p.file_get_string.setting );
                 break;
-            case remmina_masterthread_exec_data::FUNC_GTK_LABEL_SET_TEXT:
+            case RemminaMTExecData::FUNC_GTK_LABEL_SET_TEXT:
                 gtk_label_set_text( d->p.gtk_label_set_text.label, d->p.gtk_label_set_text.str );
                 break;
-            case remmina_masterthread_exec_data::FUNC_FTP_CLIENT_UPDATE_TASK:
+            case RemminaMTExecData::FUNC_FTP_CLIENT_UPDATE_TASK:
                 remmina_ftp_client_update_task( d->p.ftp_client_update_task.client, d->p.ftp_client_update_task.task );
                 break;
-            case remmina_masterthread_exec_data::FUNC_FTP_CLIENT_GET_WAITING_TASK:
+            case RemminaMTExecData::FUNC_FTP_CLIENT_GET_WAITING_TASK:
                 d->p.ftp_client_get_waiting_task.retval =
                     remmina_ftp_client_get_waiting_task( d->p.ftp_client_get_waiting_task.client );
                 break;
-            case remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_EMIT_SIGNAL:
+            case RemminaMTExecData::FUNC_PROTOCOLWIDGET_EMIT_SIGNAL:
                 remmina_protocol_widget_emit_signal( d->p.protocolwidget_emit_signal.gp,
                                                      d->p.protocolwidget_emit_signal.signal_name );
                 break;
-            case remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_MPPROGRESS:
+            case RemminaMTExecData::FUNC_PROTOCOLWIDGET_MPPROGRESS:
                 d->p.protocolwidget_mpprogress.ret_mp =
                     remmina_protocol_widget_mpprogress( d->p.protocolwidget_mpprogress.cnnobj,
                                                         d->p.protocolwidget_mpprogress.message,
                                                         d->p.protocolwidget_mpprogress.response_callback,
                                                         d->p.protocolwidget_mpprogress.response_callback_data );
                 break;
-            case remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_MPDESTROY:
+            case RemminaMTExecData::FUNC_PROTOCOLWIDGET_MPDESTROY:
                 remmina_protocol_widget_mpdestroy( d->p.protocolwidget_mpdestroy.cnnobj,
                                                    d->p.protocolwidget_mpdestroy.mp );
                 break;
-            case remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_MPSHOWRETRY:
+            case RemminaMTExecData::FUNC_PROTOCOLWIDGET_MPSHOWRETRY:
                 remmina_protocol_widget_panel_show_retry( d->p.protocolwidget_mpshowretry.gp );
                 break;
-            case remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_PANELSHOWLISTEN:
+            case RemminaMTExecData::FUNC_PROTOCOLWIDGET_PANELSHOWLISTEN:
                 remmina_protocol_widget_panel_show_listen( d->p.protocolwidget_panelshowlisten.gp,
                                                            d->p.protocolwidget_panelshowlisten.port );
                 break;
-            case remmina_masterthread_exec_data::FUNC_SFTP_CLIENT_CONFIRM_RESUME:
+            case RemminaMTExecData::FUNC_SFTP_CLIENT_CONFIRM_RESUME:
 #ifdef HAVE_LIBSSH
                 d->p.sftp_client_confirm_resume.retval = remmina_sftp_client_confirm_resume(
                     d->p.sftp_client_confirm_resume.client, d->p.sftp_client_confirm_resume.path );
 #endif
                 break;
-            case remmina_masterthread_exec_data::FUNC_VTE_TERMINAL_SET_ENCODING_AND_PTY:
+            case RemminaMTExecData::FUNC_VTE_TERMINAL_SET_ENCODING_AND_PTY:
 #if defined( HAVE_LIBSSH ) && defined( HAVE_LIBVTE )
                 remmina_plugin_ssh_vte_terminal_set_encoding_and_pty( d->p.vte_terminal_set_encoding_and_pty.terminal,
                                                                       d->p.vte_terminal_set_encoding_and_pty.codeset,

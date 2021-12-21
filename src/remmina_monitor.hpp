@@ -40,19 +40,15 @@
 
 #include "remmina_file.hpp"
 
-typedef struct _RemminaMonitor
+struct RemminaMonitor
 {
     GNetworkMonitor *netmonitor;
     bool connected;
     GSocketConnectable *addr;
     bool reachable;
     GHashTable *server_status;
-} RemminaMonitor;
-
-
+};
 
 GNetworkConnectivity remmina_network_monitor_status( RemminaMonitor *rm_monitor );
 RemminaMonitor *remmina_network_monitor_new();
 char *remmina_monitor_can_reach( RemminaFile *remminafile, RemminaMonitor *monitor );
-
-

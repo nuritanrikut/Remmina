@@ -60,7 +60,7 @@
 #    include "remmina/remmina_trace_calls.hpp"
 #    include "remmina_sysinfo.hpp"
 
-typedef struct _RemminaIcon
+struct RemminaIcon
 {
     AppIndicator *icon;
     bool indicator_connected;
@@ -69,11 +69,11 @@ typedef struct _RemminaIcon
 #    endif
     guint32 popup_time;
     char *autostart_file;
-} RemminaIcon;
+};
 
 static RemminaIcon remmina_icon = { 0 };
 
-void remmina_icon_destroy( void )
+void remmina_icon_destroy()
 {
     TRACE_CALL( __func__ );
     if( remmina_icon.icon )
@@ -95,19 +95,19 @@ void remmina_icon_destroy( void )
     }
 }
 
-static void remmina_icon_main( void )
+static void remmina_icon_main()
 {
     TRACE_CALL( __func__ );
     remmina_exec_command( REMMINA_COMMAND_MAIN, NULL );
 }
 
-static void remmina_icon_preferences( void )
+static void remmina_icon_preferences()
 {
     TRACE_CALL( __func__ );
     remmina_exec_command( REMMINA_COMMAND_PREF, "2" );
 }
 
-static void remmina_icon_about( void )
+static void remmina_icon_about()
 {
     TRACE_CALL( __func__ );
     remmina_exec_command( REMMINA_COMMAND_ABOUT, NULL );
@@ -257,7 +257,7 @@ static void remmina_icon_populate_extra_menu_item( GtkWidget *menu )
     g_signal_connect( G_OBJECT( menu ), "edit-item", G_CALLBACK( remmina_icon_on_edit_item ), NULL );
 }
 
-void remmina_icon_populate_menu( void )
+void remmina_icon_populate_menu()
 {
     TRACE_CALL( __func__ );
     GtkWidget *menu;
@@ -291,7 +291,7 @@ static void remmina_icon_save_autostart_file( GKeyFile *gkeyfile )
     g_free( content );
 }
 
-static void remmina_icon_create_autostart_file( void )
+static void remmina_icon_create_autostart_file()
 {
     TRACE_CALL( __func__ );
     if( g_file_test( remmina_icon.autostart_file, G_FILE_TEST_EXISTS ) )
@@ -322,7 +322,7 @@ static void remmina_icon_create_autostart_file( void )
  * its work without the remmina main window.
  * @return TRUE if the Remmina icon is available.
  */
-int remmina_icon_is_available( void )
+int remmina_icon_is_available()
 {
     TRACE_CALL( __func__ );
 
@@ -356,7 +356,7 @@ static void remmina_icon_connection_changed_cb( AppIndicator *indicator, bool co
     remmina_icon.indicator_connected = connected;
 }
 
-void remmina_icon_init( void )
+void remmina_icon_init()
 {
     TRACE_CALL( __func__ );
 
@@ -444,7 +444,7 @@ void remmina_icon_init( void )
     //g_object_get(G_OBJECT(remmina_icon.icon), "connected", &remmina_icon.indicator_connected, NULL);
 }
 
-int remmina_icon_is_autostart( void )
+int remmina_icon_is_autostart()
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
@@ -481,15 +481,15 @@ void remmina_icon_set_autostart( bool autostart )
 }
 
 #else
-void remmina_icon_init( void ){};
-void remmina_icon_destroy( void ){};
-int remmina_icon_is_available( void )
+void remmina_icon_init(){};
+void remmina_icon_destroy(){};
+int remmina_icon_is_available()
 {
     return FALSE;
 };
-void remmina_icon_populate_menu( void ){};
+void remmina_icon_populate_menu(){};
 void remmina_icon_set_autostart( bool autostart ){};
-int remmina_icon_is_autostart( void )
+int remmina_icon_is_autostart()
 {
     return FALSE;
 };

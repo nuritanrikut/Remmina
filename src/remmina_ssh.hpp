@@ -48,15 +48,17 @@
 #    include "remmina_file.hpp"
 #    include "rcw.hpp"
 
-
-
 /*-----------------------------------------------------------------------------*
 *                           SSH Base                                          *
 *-----------------------------------------------------------------------------*/
 
 #    define REMMINA_SSH( a ) ( (RemminaSSH *)a )
 
-typedef struct _RemminaSSH
+struct RemminaProtocolWidget;
+struct RemminaSSHTunnel;
+struct RemminaSSHTunnelBuffer;
+
+struct RemminaSSH
 {
     ssh_session session;
     ssh_callbacks callback;
@@ -88,13 +90,12 @@ typedef struct _RemminaSSH
     bool is_multiauth;
     char *tunnel_entrance_host;
     gint tunnel_entrance_port;
-
-} RemminaSSH;
+};
 
 char *remmina_ssh_identity_path( const char *id );
 
 /* Auto-detect commonly used private key identities */
-char *remmina_ssh_find_identity( void );
+char *remmina_ssh_find_identity();
 
 /* Initialize the ssh object */
 int remmina_ssh_init_from_file( RemminaSSH *ssh, RemminaFile *remminafile, bool is_tunnel );
@@ -135,8 +136,6 @@ void remmina_ssh_free( RemminaSSH *ssh );
 /*-----------------------------------------------------------------------------*
 *                           SSH Tunnel                                        *
 *-----------------------------------------------------------------------------*/
-typedef struct _RemminaSSHTunnel RemminaSSHTunnel;
-typedef struct _RemminaSSHTunnelBuffer RemminaSSHTunnelBuffer;
 
 typedef int ( *RemminaSSHTunnelCallback )( RemminaSSHTunnel *, gpointer );
 
@@ -147,7 +146,7 @@ enum
     REMMINA_SSH_TUNNEL_REVERSE
 };
 
-struct _RemminaSSHTunnel
+struct RemminaSSHTunnel
 {
     RemminaSSH ssh;
 
@@ -219,12 +218,12 @@ void remmina_ssh_tunnel_free( RemminaSSHTunnel *tunnel );
 *                           SSH sFTP                                          *
 *-----------------------------------------------------------------------------*/
 
-typedef struct _RemminaSFTP
+struct RemminaSFTP
 {
     RemminaSSH ssh;
 
     sftp_session sftp_sess;
-} RemminaSFTP;
+};
 
 /* Create a new SFTP session object from RemminaFile */
 RemminaSFTP *remmina_sftp_new_from_file( RemminaFile *remminafile );
@@ -243,7 +242,7 @@ void remmina_sftp_free( RemminaSFTP *sftp );
 *-----------------------------------------------------------------------------*/
 typedef void ( *RemminaSSHExitFunc )( gpointer data );
 
-typedef struct _RemminaSSHShell
+struct RemminaSSHShell
 {
     RemminaSSH ssh;
 
@@ -256,7 +255,7 @@ typedef struct _RemminaSSHShell
     bool closed;
     RemminaSSHExitFunc exit_callback;
     gpointer user_data;
-} RemminaSSHShell;
+};
 
 /* Create a new SSH Shell session object from RemminaFile */
 RemminaSSHShell *remmina_ssh_shell_new_from_file( RemminaFile *remminafile );
@@ -273,14 +272,12 @@ void remmina_ssh_shell_set_size( RemminaSSHShell *shell, gint columns, gint rows
 /* Free the SFTP session */
 void remmina_ssh_shell_free( RemminaSSHShell *shell );
 
-
-
 #else
 
 #    define RemminaSSH void
 #    define RemminaSSHTunnel void
 #    define RemminaSFTP void
 #    define RemminaSSHShell void
-typedef void ( *RemminaSSHTunnelCallback )( void );
+typedef void ( *RemminaSSHTunnelCallback )();
 
 #endif /* HAVE_LIBSSH */

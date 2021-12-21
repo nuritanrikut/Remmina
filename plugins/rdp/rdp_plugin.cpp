@@ -716,9 +716,9 @@ static BOOL remmina_rdp_post_connect( freerdp *instance )
     RemminaPluginRdpUiObject *ui;
     UINT32 freerdp_local_color_format;
 
-    rfi = reinterpret_cast<rf_context *>( instance->context );
+    rfi = reinterpret_cast<rfContext *>( instance->context );
     gp = rfi->protocol_widget;
-    rfi->postconnect_error = rf_context::REMMINA_POSTCONNECT_ERROR_OK;
+    rfi->postconnect_error = rfContext::REMMINA_POSTCONNECT_ERROR_OK;
 
     rfi->attempt_interactive_authentication = FALSE; // We authenticated!
 
@@ -755,14 +755,14 @@ static BOOL remmina_rdp_post_connect( freerdp *instance )
 
     if( !gdi_init( instance, freerdp_local_color_format ) )
     {
-        rfi->postconnect_error = rf_context::REMMINA_POSTCONNECT_ERROR_GDI_INIT;
+        rfi->postconnect_error = rfContext::REMMINA_POSTCONNECT_ERROR_GDI_INIT;
         return FALSE;
     }
 
     if( instance->context->codecs->h264 == NULL && freerdp_settings_get_bool( rfi->settings, FreeRDP_GfxH264 ) )
     {
         gdi_free( instance );
-        rfi->postconnect_error = rf_context::REMMINA_POSTCONNECT_ERROR_NO_H264;
+        rfi->postconnect_error = rfContext::REMMINA_POSTCONNECT_ERROR_NO_H264;
         return FALSE;
     }
 
@@ -2537,18 +2537,18 @@ static int remmina_rdp_main( RemminaProtocolWidget *gp )
                     /* remmina_rdp_post_connect() returned FALSE to libfreerdp. We saved the error on rfi->postconnect_error */
                     switch( rfi->postconnect_error )
                     {
-                        case rf_context::REMMINA_POSTCONNECT_ERROR_OK:
+                        case rfContext::REMMINA_POSTCONNECT_ERROR_OK:
                             /* We should never come here */
                             remmina_plugin_service->protocol_plugin_set_error(
                                 gp,
                                 _( "Cannot connect to the RDP server “%s”." ),
                                 freerdp_settings_get_string( rfi->settings, FreeRDP_ServerHostname ) );
                             break;
-                        case rf_context::REMMINA_POSTCONNECT_ERROR_GDI_INIT:
+                        case rfContext::REMMINA_POSTCONNECT_ERROR_GDI_INIT:
                             remmina_plugin_service->protocol_plugin_set_error( gp,
                                                                                _( "Could not start libfreerdp-gdi." ) );
                             break;
-                        case rf_context::REMMINA_POSTCONNECT_ERROR_NO_H264:
+                        case rfContext::REMMINA_POSTCONNECT_ERROR_NO_H264:
                             remmina_plugin_service->protocol_plugin_set_error(
                                 gp,
                                 _( "You requested a H.264 GFX mode for the server “%s”, but your libfreerdp does not "
@@ -2809,11 +2809,11 @@ static int remmina_rdp_close_connection( RemminaProtocolWidget *gp )
         return FALSE;
     }
 
-    if( rfi && rfi->clipboard.srv_clip_data_wait == rf_clipboard::SCDW_BUSY_WAIT )
+    if( rfi && rfi->clipboard.srv_clip_data_wait == rfClipboard::SCDW_BUSY_WAIT )
     {
         REMMINA_PLUGIN_DEBUG( "[RDP] requesting clipboard transfer to abort" );
         /* Allow clipboard transfer from server to terminate */
-        rfi->clipboard.srv_clip_data_wait = rf_clipboard::SCDW_ABORTING;
+        rfi->clipboard.srv_clip_data_wait = rfClipboard::SCDW_ABORTING;
         usleep( 100000 );
     }
 

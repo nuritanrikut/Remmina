@@ -81,7 +81,7 @@ G_DEFINE_TYPE( RemminaConnectionWindow, rcw, GTK_TYPE_WINDOW )
 
 #define FULL_SCREEN_TARGET_MONITOR_UNDEFINED -1
 
-struct _RemminaConnectionWindowPriv
+struct RemminaConnectionWindowPriv
 {
     GtkNotebook *notebook;
     GtkWidget *floating_toolbar_widget;
@@ -154,7 +154,7 @@ struct _RemminaConnectionWindowPriv
     RemminaConnectionWindowOnDeleteConfirmMode on_delete_confirm_mode;
 };
 
-typedef struct _RemminaConnectionObject
+struct RemminaConnectionObject
 {
     RemminaConnectionWindow *cnnwin;
     RemminaFile *remmina_file;
@@ -171,7 +171,7 @@ typedef struct _RemminaConnectionObject
     bool dynres_unlocked;
 
     gulong deferred_open_size_allocate_handler;
-} RemminaConnectionObject;
+};
 
 enum
 {
@@ -3845,7 +3845,7 @@ rcw_on_switch_page( GtkNotebook *notebook, GtkWidget *newpage, guint page_num, R
     RemminaConnectionWindowPriv *priv = cnnwin->priv;
     RemminaConnectionObject *cnnobj_newpage;
 
-    cnnobj_newpage = static_cast<RemminaConnectionObject *>(g_object_get_data( G_OBJECT( newpage ), "cnnobj" ));
+    cnnobj_newpage = static_cast<RemminaConnectionObject *>( g_object_get_data( G_OBJECT( newpage ), "cnnobj" ) );
     if( priv->spf_eventsourceid )
         g_source_remove( priv->spf_eventsourceid );
     priv->spf_eventsourceid = g_idle_add( rcw_on_switch_page_finalsel, cnnobj_newpage );
@@ -3997,7 +3997,7 @@ static RemminaConnectionWindow *rcw_create_scrolled( gint width, gint height, bo
 
     /* Add drop capabilities to the drop/dest target for the toolbar (the notebook) */
     gtk_drag_dest_set( GTK_WIDGET( notebook ),
-                       static_cast<GtkDestDefaults>(GTK_DEST_DEFAULT_MOTION | GTK_DEST_DEFAULT_HIGHLIGHT),
+                       static_cast<GtkDestDefaults>( GTK_DEST_DEFAULT_MOTION | GTK_DEST_DEFAULT_HIGHLIGHT ),
                        dnd_targets_tb,
                        sizeof dnd_targets_tb / sizeof *dnd_targets_tb,
                        GDK_ACTION_MOVE );
@@ -4248,7 +4248,7 @@ RemminaConnectionWindow *rcw_create_fullscreen( GtkWindow *old, gint view_mode )
     rcw_create_overlay_ftb_overlay( cnnwin );
     /* Add drag and drop capabilities to the drop/dest target for floating toolbar */
     gtk_drag_dest_set( GTK_WIDGET( cnnwin->priv->overlay ),
-                       static_cast<GtkDestDefaults>(GTK_DEST_DEFAULT_MOTION | GTK_DEST_DEFAULT_HIGHLIGHT),
+                       static_cast<GtkDestDefaults>( GTK_DEST_DEFAULT_MOTION | GTK_DEST_DEFAULT_HIGHLIGHT ),
                        dnd_targets_ftb,
                        sizeof dnd_targets_ftb / sizeof *dnd_targets_ftb,
                        GDK_ACTION_MOVE );

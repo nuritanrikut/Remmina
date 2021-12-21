@@ -49,7 +49,7 @@
 
 G_DEFINE_TYPE( RemminaAppletMenu, remmina_applet_menu, GTK_TYPE_MENU )
 
-struct _RemminaAppletMenuPriv
+struct RemminaAppletMenuPriv
 {
     bool hide_count;
 };
@@ -260,7 +260,7 @@ void remmina_applet_menu_add_item( RemminaAppletMenu *menu, RemminaAppletMenuIte
     remmina_applet_menu_register_item( menu, menuitem );
 }
 
-GtkWidget *remmina_applet_menu_new( void )
+GtkWidget *remmina_applet_menu_new()
 {
     TRACE_CALL( __func__ );
     RemminaAppletMenu *menu;

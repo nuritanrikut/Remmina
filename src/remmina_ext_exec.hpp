@@ -35,16 +35,12 @@
 
 #pragma once
 
-
-
-typedef struct
+struct PCon_Spinner
 {
     GtkDialog *dialog;
     GtkLabel *label_pleasewait;
     GtkButton *button_cancel;
     GtkWidget *spinner;
-} PCon_Spinner;
+};
 
 GtkDialog *remmina_ext_exec_new( RemminaFile *remminafile, const char *remmina_ext_exec_type );
-
-

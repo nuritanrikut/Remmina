@@ -38,22 +38,22 @@
 
 #include "remmina/plugin.hpp"
 
-
+struct RemminaProtocolPlugin;
 
 typedef int ( *RemminaPluginFunc )( char *name, RemminaPlugin *plugin, gpointer data );
 
-void remmina_plugin_manager_init( void );
+void remmina_plugin_manager_init();
 RemminaPlugin *remmina_plugin_manager_get_plugin( RemminaPluginType type, const char *name );
 int remmina_plugin_manager_query_feature_by_type( RemminaPluginType ptype,
-                                                       const char *name,
-                                                       RemminaProtocolFeatureType ftype );
+                                                  const char *name,
+                                                  RemminaProtocolFeatureType ftype );
 void remmina_plugin_manager_for_each_plugin( RemminaPluginType type, RemminaPluginFunc func, gpointer data );
 void remmina_plugin_manager_show( GtkWindow *parent );
 void remmina_plugin_manager_for_each_plugin_stdout( RemminaPluginType type, RemminaPluginFunc func, gpointer data );
 void remmina_plugin_manager_show_stdout();
 RemminaFilePlugin *remmina_plugin_manager_get_import_file_handler( const char *file );
 RemminaFilePlugin *remmina_plugin_manager_get_export_file_handler( RemminaFile *remminafile );
-RemminaSecretPlugin *remmina_plugin_manager_get_secret_plugin( void );
+RemminaSecretPlugin *remmina_plugin_manager_get_secret_plugin();
 const char *remmina_plugin_manager_get_canonical_setting_name( const RemminaProtocolSetting *setting );
 int remmina_plugin_manager_is_encrypted_setting( RemminaProtocolPlugin *pp, const char *setting );
 int remmina_gtksocket_available();
@@ -62,13 +62,11 @@ extern RemminaPluginService remmina_plugin_manager_service;
 
 typedef int ( *RemminaPluginLoaderFunc )( RemminaPluginService *, const char *name );
 
-typedef struct
+struct RemminaPluginLoader
 {
     char *filetype;
     RemminaPluginLoaderFunc func;
-} RemminaPluginLoader;
+};
 
 int remmina_plugin_manager_loader_supported( const char *filetype );
 void remmina_plugin_manager_add_loader( char *filetype, RemminaPluginLoaderFunc func );
-
-

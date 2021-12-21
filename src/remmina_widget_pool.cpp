@@ -42,7 +42,7 @@
 
 static GPtrArray *remmina_widget_pool = NULL;
 
-void remmina_widget_pool_init( void )
+void remmina_widget_pool_init()
 {
     TRACE_CALL( __func__ );
     remmina_widget_pool = g_ptr_array_new();

@@ -303,7 +303,7 @@ static PyMethodDef remmina_python_module_type_methods[] = {
     { NULL } /* Sentinel */
 };
 
-typedef struct
+struct PyRemminaProtocolSetting
 {
     PyObject_HEAD RemminaProtocolSettingType settingType;
     char *name;
@@ -311,7 +311,7 @@ typedef struct
     bool compact;
     PyObject *opt1;
     PyObject *opt2;
-} PyRemminaProtocolSetting;
+};
 
 /**
  * @brief The definition of the Python module 'remmina'.
@@ -405,14 +405,14 @@ static PyTypeObject python_protocol_setting_type = { PyVarObject_HEAD_INIT( NULL
 
 // -- Python Type -> Feature
 
-typedef struct
+struct PyRemminaProtocolFeature
 {
     PyObject_HEAD RemminaProtocolFeatureType type;
     gint id;
     PyObject *opt1;
     PyObject *opt2;
     PyObject *opt3;
-} PyRemminaProtocolFeature;
+};
 
 static PyMemberDef python_protocol_feature_members[] = {
     { "type", offsetof( PyRemminaProtocolFeature, type ), T_INT, 0, NULL },
@@ -462,7 +462,7 @@ static PyTypeObject python_protocol_feature_type = { PyVarObject_HEAD_INIT( NULL
  * @brief Is called from the Python engine when it initializes the 'remmina' module.
  * @details This function is only called by the Python engine!
  */
-static PyMODINIT_FUNC remmina_plugin_python_module_initialize( void )
+static PyMODINIT_FUNC remmina_plugin_python_module_initialize()
 {
     TRACE_CALL( __func__ );
     if( PyType_Ready( &python_protocol_setting_type ) < 0 )
@@ -541,7 +541,7 @@ static PyMODINIT_FUNC remmina_plugin_python_module_initialize( void )
  * @brief Initializes all globals and registers the 'remmina' module in the Python engine.
  * @details This
  */
-void remmina_plugin_python_module_init( void )
+void remmina_plugin_python_module_init()
 {
     TRACE_CALL( __func__ );
     remmina_plugin_registry = g_ptr_array_new();

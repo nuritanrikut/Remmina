@@ -36,8 +36,6 @@
 
 #pragma once
 
-
-
 #define REMMINA_TYPE_FILE_EDITOR ( remmina_file_editor_get_type() )
 #define REMMINA_FILE_EDITOR( obj ) \
     ( G_TYPE_CHECK_INSTANCE_CAST( ( obj ), REMMINA_TYPE_FILE_EDITOR, RemminaFileEditor ) )
@@ -48,31 +46,29 @@
 #define REMMINA_FILE_EDITOR_GET_CLASS( obj ) \
     ( G_TYPE_INSTANCE_GET_CLASS( ( obj ), REMMINA_TYPE_FILE_EDITOR, RemminaFileEditorClass ) )
 
-typedef struct _RemminaFileEditorPriv RemminaFileEditorPriv;
+struct RemminaFileEditorPriv;
 
-typedef struct _RemminaFileEditor
+struct RemminaFileEditor
 {
     GtkDialog dialog;
 
     RemminaFileEditorPriv *priv;
-} RemminaFileEditor;
+};
 
-typedef struct _RemminaFileEditorClass
+struct RemminaFileEditorClass
 {
     GtkDialogClass parent_class;
-} RemminaFileEditorClass;
+};
 
-GType remmina_file_editor_get_type( void ) G_GNUC_CONST;
+GType remmina_file_editor_get_type() G_GNUC_CONST;
 
 /* Base constructor */
 GtkWidget *remmina_file_editor_new_from_file( RemminaFile *remminafile );
 /* Create new file */
-GtkWidget *remmina_file_editor_new( void );
+GtkWidget *remmina_file_editor_new();
 GtkWidget *remmina_file_editor_new_full( const char *server, const char *protocol );
 GtkWidget *remmina_file_editor_new_copy( const char *filename );
 /* Open existing file */
 GtkWidget *remmina_file_editor_new_from_filename( const char *filename );
 void remmina_file_editor_check_profile( RemminaFileEditor *gfe );
 void remmina_file_editor_file_save( RemminaFileEditor *gfe );
-
-

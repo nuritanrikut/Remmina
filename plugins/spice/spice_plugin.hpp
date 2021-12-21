@@ -53,7 +53,7 @@
 extern RemminaPluginService *remmina_plugin_service;
 #define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )
 
-typedef struct _RemminaPluginSpiceData
+struct RemminaPluginSpiceData
 {
     SpiceAudio *audio;
     SpiceDisplay *display;
@@ -70,4 +70,4 @@ typedef struct _RemminaPluginSpiceData
     GtkWidget *file_transfer_dialog;
 #    endif /* SPICE_GTK_CHECK_VERSION(0, 31, 0) */
 #endif     /* SPICE_GTK_CHECK_VERSION */
-} RemminaPluginSpiceData;
+};

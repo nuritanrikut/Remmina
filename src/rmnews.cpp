@@ -78,11 +78,11 @@ static SoupSession *session;
 static const char *output_file_path = NULL;
 
 static const char *supported_mime_types[] = { "x-scheme-handler/rdp",
-                                               "x-scheme-handler/spice",
-                                               "x-scheme-handler/vnc",
-                                               "x-scheme-handler/remmina",
-                                               "application/x-remmina",
-                                               NULL };
+                                              "x-scheme-handler/spice",
+                                              "x-scheme-handler/vnc",
+                                              "x-scheme-handler/remmina",
+                                              "application/x-remmina",
+                                              NULL };
 
 gint eweekdays[7] = { 86400, 172800, 259200, 345600, 432000, 518400, 604800 };
 
@@ -334,7 +334,7 @@ static void rmnews_get_url_cb( SoupSession *session, SoupMessage *msg, gpointer 
                 REMMINA_DEBUG( "periodic_rmnews_last_get set to %ld", remmina_pref.periodic_rmnews_last_get );
                 REMMINA_DEBUG( "Saving preferences" );
                 remmina_pref_save();
-                g_free( const_cast<char*>(filesha) );
+                g_free( const_cast<char *>( filesha ) );
                 filesha = NULL;
                 return;
             }
@@ -377,7 +377,7 @@ static void rmnews_get_url_cb( SoupSession *session, SoupMessage *msg, gpointer 
             /* Increase counter with number of successful GETs */
             remmina_pref.periodic_rmnews_get_count = remmina_pref.periodic_rmnews_get_count + 1;
             remmina_pref_save();
-            g_free( const_cast<char*>(filesha) );
+            g_free( const_cast<char *>( filesha ) );
             filesha = NULL;
         }
     }
@@ -488,16 +488,16 @@ void rmnews_get_news()
     }
 
     REMMINA_DEBUG( "Gathering news" );
-    session = static_cast<SoupSession*>(g_object_new( SOUP_TYPE_SESSION,
-                            SOUP_SESSION_ADD_FEATURE_BY_TYPE,
-                            SOUP_TYPE_CONTENT_DECODER,
-                            SOUP_SESSION_ADD_FEATURE_BY_TYPE,
-                            SOUP_TYPE_COOKIE_JAR,
-                            SOUP_SESSION_USER_AGENT,
-                            "get ",
-                            SOUP_SESSION_ACCEPT_LANGUAGE_AUTO,
-                            TRUE,
-                            NULL ));
+    session = static_cast<SoupSession *>( g_object_new( SOUP_TYPE_SESSION,
+                                                        SOUP_SESSION_ADD_FEATURE_BY_TYPE,
+                                                        SOUP_TYPE_CONTENT_DECODER,
+                                                        SOUP_SESSION_ADD_FEATURE_BY_TYPE,
+                                                        SOUP_TYPE_COOKIE_JAR,
+                                                        SOUP_SESSION_USER_AGENT,
+                                                        "get ",
+                                                        SOUP_SESSION_ACCEPT_LANGUAGE_AUTO,
+                                                        TRUE,
+                                                        NULL ) );
     /* TODO: Catch log level and set SOUP_LOGGER_LOG_MINIMAL or more */
     logger = soup_logger_new( SOUP_LOGGER_LOG_NONE, -1 );
     soup_session_add_feature( session, SOUP_SESSION_FEATURE( logger ) );

@@ -47,8 +47,8 @@
 #define REMMINA_ERROR( fmt, ... ) _remmina_error( __func__, fmt, ##__VA_ARGS__ )
 #define REMMINA_CRITICAL( fmt, ... ) _remmina_critical( __func__, fmt, ##__VA_ARGS__ )
 
-void remmina_log_start( void );
-int remmina_log_running( void );
+void remmina_log_start();
+int remmina_log_running();
 void remmina_log_print( const char *text );
 void _remmina_info( const char *fmt, ... );
 void _remmina_message( const char *fmt, ... );

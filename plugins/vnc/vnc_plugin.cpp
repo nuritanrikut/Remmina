@@ -320,11 +320,11 @@ static void remmina_plugin_vnc_queuecursor( RemminaProtocolWidget *gp, cairo_sur
         gpdata->queuecursor_handler = IDLE_ADD( (GSourceFunc)remmina_plugin_vnc_setcursor, gp );
 }
 
-typedef struct _RemminaKeyVal
+struct RemminaKeyVal
 {
     guint keyval;
     guint16 keycode;
-} RemminaKeyVal;
+};
 
 /***************************** LibVNCClient related codes
  * *********************************/
@@ -401,12 +401,12 @@ static void remmina_plugin_vnc_process_vnc_event( RemminaProtocolWidget *gp )
     }
 }
 
-typedef struct _RemminaPluginVncCuttextParam
+struct RemminaPluginVncCuttextParam
 {
     RemminaProtocolWidget *gp;
     char *text;
     gint textlen;
-} RemminaPluginVncCuttextParam;
+};
 
 static void remmina_plugin_vnc_update_quality( rfbClient *cl, gint quality )
 {
@@ -1251,7 +1251,7 @@ static int remmina_plugin_vnc_main_loop( RemminaProtocolWidget *gp )
     gint i;
     rfbClient *cl;
     fd_set fds;
-    struct timeval timeout;
+     timeval timeout;
 
     if( !gpdata->connected )
     {

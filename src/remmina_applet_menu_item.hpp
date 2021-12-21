@@ -35,8 +35,6 @@
 
 #pragma once
 
-
-
 #define REMMINA_TYPE_APPLET_MENU_ITEM ( remmina_applet_menu_item_get_type() )
 #define REMMINA_APPLET_MENU_ITEM( obj ) \
     ( G_TYPE_CHECK_INSTANCE_CAST( ( obj ), REMMINA_TYPE_APPLET_MENU_ITEM, RemminaAppletMenuItem ) )
@@ -48,14 +46,14 @@
 #define REMMINA_APPLET_MENU_ITEM_GET_CLASS( obj ) \
     ( G_TYPE_INSTANCE_GET_CLASS( ( obj ), REMMINA_TYPE_APPLET_MENU_ITEM, RemminaAppletMenuItemClass ) )
 
-typedef enum
+enum RemminaAppletMenuItemType
 {
     REMMINA_APPLET_MENU_ITEM_FILE,
     REMMINA_APPLET_MENU_ITEM_NEW,
     REMMINA_APPLET_MENU_ITEM_DISCOVERED
-} RemminaAppletMenuItemType;
+};
 
-typedef struct _RemminaAppletMenuItem
+struct RemminaAppletMenuItem
 {
     GtkMenuItem menu_item;
 
@@ -66,16 +64,14 @@ typedef struct _RemminaAppletMenuItem
     char *protocol;
     char *server;
     bool ssh_tunnel_enabled;
-} RemminaAppletMenuItem;
+};
 
-typedef struct _RemminaAppletMenuItemClass
+struct RemminaAppletMenuItemClass
 {
     GtkMenuItemClass parent_class;
-} RemminaAppletMenuItemClass;
+};
 
-GType remmina_applet_menu_item_get_type( void ) G_GNUC_CONST;
+GType remmina_applet_menu_item_get_type() G_GNUC_CONST;
 
 GtkWidget *remmina_applet_menu_item_new( RemminaAppletMenuItemType item_type, ... );
 gint remmina_applet_menu_item_compare( gconstpointer a, gconstpointer b, gpointer user_data );
-
-

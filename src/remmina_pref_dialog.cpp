@@ -479,7 +479,7 @@ static void remmina_pref_dialog_set_button_label( GtkButton *button, guint keyva
 }
 
 /* Remmina preferences initialization */
-static void remmina_pref_dialog_init( void )
+static void remmina_pref_dialog_init()
 {
     TRACE_CALL( __func__ );
     char buf[100];

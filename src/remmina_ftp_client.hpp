@@ -36,8 +36,6 @@
 
 #pragma once
 
-
-
 #define REMMINA_TYPE_FTP_CLIENT ( remmina_ftp_client_get_type() )
 #define REMMINA_FTP_CLIENT( obj ) ( G_TYPE_CHECK_INSTANCE_CAST( ( obj ), REMMINA_TYPE_FTP_CLIENT, RemminaFTPClient ) )
 #define REMMINA_FTP_CLIENT_CLASS( klass ) \
@@ -47,16 +45,16 @@
 #define REMMINA_FTP_CLIENT_GET_CLASS( obj ) \
     ( G_TYPE_INSTANCE_GET_CLASS( ( obj ), REMMINA_TYPE_FTP_CLIENT, RemminaFTPClientClass ) )
 
-typedef struct _RemminaFTPClientPriv RemminaFTPClientPriv;
+struct RemminaFTPClientPriv;
 
-typedef struct _RemminaFTPClient
+struct RemminaFTPClient
 {
     GtkBox vbox;
 
     RemminaFTPClientPriv *priv;
-} RemminaFTPClient;
+};
 
-typedef struct _RemminaFTPClientClass
+struct RemminaFTPClientClass
 {
     GtkBoxClass parent_class;
 
@@ -64,9 +62,9 @@ typedef struct _RemminaFTPClientClass
     void ( *new_task )( RemminaFTPClient *client );
     void ( *cancel_task )( RemminaFTPClient *client );
     void ( *delete_file )( RemminaFTPClient *client );
-} RemminaFTPClientClass;
+};
 
-GType remmina_ftp_client_get_type( void ) G_GNUC_CONST;
+GType remmina_ftp_client_get_type() G_GNUC_CONST;
 
 enum
 {
@@ -118,7 +116,7 @@ enum
     REMMINA_FTP_TASK_N_COLUMNS
 };
 
-typedef struct _RemminaFTPTask
+struct RemminaFTPTask
 {
     /* Read-only */
     gint type;
@@ -133,9 +131,9 @@ typedef struct _RemminaFTPTask
     gint status;
     gfloat donesize;
     char *tooltip;
-} RemminaFTPTask;
+};
 
-GtkWidget *remmina_ftp_client_new( void );
+GtkWidget *remmina_ftp_client_new();
 
 void remmina_ftp_client_save_state( RemminaFTPClient *client, RemminaFile *remminafile );
 void remmina_ftp_client_load_state( RemminaFTPClient *client, RemminaFile *remminafile );
@@ -160,5 +158,3 @@ int remmina_ftp_client_get_overwrite_status( RemminaFTPClient *client );
 /* Get/Set Set resume_all status */
 void remmina_ftp_client_set_resume_status( RemminaFTPClient *client, bool status );
 int remmina_ftp_client_get_resume_status( RemminaFTPClient *client );
-
-

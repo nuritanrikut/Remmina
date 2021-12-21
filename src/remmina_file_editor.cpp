@@ -89,7 +89,7 @@ static const char *server_tips2 = N_( "<big>"
                                       "</big>" );
 #endif
 
-struct _RemminaFileEditorPriv
+struct RemminaFileEditorPriv
 {
     RemminaFile *remmina_file;
     RemminaProtocolPlugin *plugin;
@@ -2210,7 +2210,7 @@ GtkWidget *remmina_file_editor_new_from_file( RemminaFile *remminafile )
     return GTK_WIDGET( gfe );
 }
 
-GtkWidget *remmina_file_editor_new( void )
+GtkWidget *remmina_file_editor_new()
 {
     TRACE_CALL( __func__ );
     return remmina_file_editor_new_full( NULL, NULL );

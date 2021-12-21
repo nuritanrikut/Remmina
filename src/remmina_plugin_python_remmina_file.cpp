@@ -42,10 +42,10 @@
 #include "remmina_file.hpp"
 #include "remmina_plugin_python_remmina_file.hpp"
 
-typedef struct
+struct PyRemminaFile
 {
     PyObject_HEAD RemminaFile *file;
-} PyRemminaFile;
+};
 
 static PyObject *file_get_path( PyRemminaFile *self, PyObject *args );
 static PyObject *file_set_setting( PyRemminaFile *self, PyObject *args, PyObject *kwds );

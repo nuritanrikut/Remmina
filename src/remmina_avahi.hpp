@@ -35,21 +35,17 @@
 
 #pragma once
 
+struct RemminaAvahiPriv;
 
-
-typedef struct _RemminaAvahiPriv RemminaAvahiPriv;
-
-typedef struct _RemminaAvahi
+struct RemminaAvahi
 {
     GHashTable *discovered_services;
     bool started;
 
     RemminaAvahiPriv *priv;
-} RemminaAvahi;
+};
 
-RemminaAvahi *remmina_avahi_new( void );
+RemminaAvahi *remmina_avahi_new();
 void remmina_avahi_start( RemminaAvahi *ga );
 void remmina_avahi_stop( RemminaAvahi *ga );
 void remmina_avahi_free( RemminaAvahi *ga );
-
-

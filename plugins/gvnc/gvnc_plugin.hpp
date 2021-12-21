@@ -88,7 +88,7 @@
 #define GET_PLUGIN_DATA( gp ) (GVncPluginData *)g_object_get_data( G_OBJECT( gp ), "plugin-data" )
 #define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )
 
-typedef struct _GVncPluginData
+struct GVncPluginData
 {
     GtkWidget *box;
     GtkWidget *vnc;
@@ -105,5 +105,5 @@ typedef struct _GVncPluginData
     gint height;
     gint fd;
     char *addr;
-} GVncPluginData;
+};
 

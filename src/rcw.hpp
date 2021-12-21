@@ -39,8 +39,6 @@
 #include "remmina_file.hpp"
 #include "remmina_message_panel.hpp"
 
-
-
 #define REMMINA_TYPE_CONNECTION_WINDOW ( rcw_get_type() )
 #define RCW( obj ) ( G_TYPE_CHECK_INSTANCE_CAST( ( obj ), REMMINA_TYPE_CONNECTION_WINDOW, RemminaConnectionWindow ) )
 #define RCW_CLASS( klass ) \
@@ -51,29 +49,28 @@
 #define RCW_GET_CLASS( obj ) \
     ( G_TYPE_INSTANCE_GET_CLASS( ( obj ), REMMINA_TYPE_CONNECTION_WINDOW, RemminaConnectionWindowClass ) )
 
-typedef struct _RemminaConnectionWindowPriv RemminaConnectionWindowPriv;
+struct RemminaConnectionWindowPriv;
+struct RemminaConnectionObject;
 
-typedef struct _RemminaConnectionWindow
+struct RemminaConnectionWindow
 {
     GtkWindow window;
     RemminaConnectionWindowPriv *priv;
-} RemminaConnectionWindow;
+};
 
-typedef struct _RemminaConnectionWindowClass
+struct RemminaConnectionWindowClass
 {
     GtkWindowClass parent_class;
     void ( *toolbar_place )( RemminaConnectionWindow *gp );
-} RemminaConnectionWindowClass;
+};
 
-typedef struct _RemminaConnectionObject RemminaConnectionObject;
-
-typedef enum
+enum RemminaConnectionWindowOnDeleteConfirmMode
 {
     RCW_ONDELETE_CONFIRM_IF_2_OR_MORE = 0,
     RCW_ONDELETE_NOCONFIRM = 1
-} RemminaConnectionWindowOnDeleteConfirmMode;
+};
 
-GType rcw_get_type( void ) G_GNUC_CONST;
+GType rcw_get_type() G_GNUC_CONST;
 
 /* Open a new connection window for a .remmina file */
 int rcw_open_from_filename( const char *filename );
@@ -91,5 +88,3 @@ void rco_get_monitor_geometry( RemminaConnectionObject *cnnobj, GdkRectangle *sz
 
 #define MESSAGE_PANEL_SPINNER 0x00000001
 #define MESSAGE_PANEL_OKBUTTON 0x00000002
-
-

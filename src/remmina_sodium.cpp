@@ -131,7 +131,7 @@ gint remmina_sodium_pwhash_str_verify( const char *key, const char *pass )
     return rc;
 }
 
-void remmina_sodium_init( void )
+void remmina_sodium_init()
 {
     TRACE_CALL( __func__ );
 #    if defined( __linux__ ) && defined( RNDGETENTCNT )

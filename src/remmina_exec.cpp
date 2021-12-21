@@ -76,7 +76,7 @@ static int cb_closewidget( GtkWidget *widget, gpointer data )
     return TRUE;
 }
 
-const char *remmina_exec_get_build_config( void )
+const char *remmina_exec_get_build_config()
 {
     static const char build_config[] = "Build configuration: " BUILD_CONFIG "\n"
                                        "Build type:          " BUILD_TYPE "\n"

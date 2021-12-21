@@ -56,7 +56,7 @@ static char *cachedir;
  *
  * The returned string must be freed by the caller with g_free
  */
-char *remmina_file_get_datadir( void )
+char *remmina_file_get_datadir()
 {
     TRACE_CALL( __func__ );
     const char *dir = ".remmina";
@@ -114,7 +114,7 @@ static int remmina_file_manager_do_copy( const char *src_path, const char *dst_p
  *
  * If it finds default profiles in the XDG_DATA_DIRS it copies the profiles into the user data-folder.
  */
-void remmina_file_manager_init( void )
+void remmina_file_manager_init()
 {
     TRACE_CALL( __func__ );
     GDir *dir;
@@ -213,7 +213,7 @@ gint remmina_file_manager_iterate( GFunc func, gpointer user_data )
     return items_count;
 }
 
-char *remmina_file_manager_get_groups( void )
+char *remmina_file_manager_get_groups()
 {
     TRACE_CALL( __func__ );
     char filename[MAX_PATH_LEN];
@@ -311,7 +311,7 @@ static void remmina_file_manager_add_group( GNode *node, const char *group )
         g_free( p1 );
 }
 
-GNode *remmina_file_manager_get_group_tree( void )
+GNode *remmina_file_manager_get_group_tree()
 {
     TRACE_CALL( __func__ );
     char filename[MAX_PATH_LEN];

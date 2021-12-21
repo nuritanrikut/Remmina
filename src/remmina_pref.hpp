@@ -41,8 +41,6 @@
  * Remmina Preference Loader
  */
 
-
-
 enum
 {
     REMMINA_VIEW_FILE_LIST,
@@ -93,7 +91,7 @@ enum
     FLOATING_TOOLBAR_VISIBILITY_DISABLE = 2
 };
 
-typedef struct _RemminaColorPref
+struct RemminaColorPref
 {
     /* Color palette for VTE terminal */
     char *background;
@@ -119,9 +117,9 @@ typedef struct _RemminaColorPref
     char *color13;
     char *color14;
     char *color15;
-} RemminaColorPref;
+};
 
-typedef struct _RemminaPref
+struct RemminaPref
 {
     /* In RemminaPrefDialog options tab */
     const char *datadir_path;
@@ -227,7 +225,7 @@ typedef struct _RemminaPref
     glong periodic_rmnews_last_get;
     glong periodic_rmnews_get_count;
     char *periodic_rmnews_uuid_prefix;
-} RemminaPref;
+};
 
 #define DEFAULT_SSH_PARSECONFIG TRUE
 #define DEFAULT_SSHTUNNEL_PORT 4732
@@ -243,30 +241,28 @@ extern char *remmina_pref_file;
 extern char *remmina_colors_file;
 extern RemminaPref remmina_pref;
 
-void remmina_pref_init( void );
-int remmina_pref_is_rw( void );
-int remmina_pref_save( void );
+void remmina_pref_init();
+int remmina_pref_is_rw();
+int remmina_pref_save();
 
 void remmina_pref_add_recent( const char *protocol, const char *server );
 char *remmina_pref_get_recent( const char *protocol );
-void remmina_pref_clear_recent( void );
+void remmina_pref_clear_recent();
 
 guint *remmina_pref_keymap_get_table( const char *keymap );
 guint remmina_pref_keymap_get_keyval( const char *keymap, guint keyval );
-char **remmina_pref_keymap_groups( void );
+char **remmina_pref_keymap_groups();
 
-gint remmina_pref_get_scale_quality( void );
-gint remmina_pref_get_ssh_loglevel( void );
-int remmina_pref_get_ssh_parseconfig( void );
-gint remmina_pref_get_sshtunnel_port( void );
+gint remmina_pref_get_scale_quality();
+gint remmina_pref_get_ssh_loglevel();
+int remmina_pref_get_ssh_parseconfig();
+gint remmina_pref_get_sshtunnel_port();
 void remmina_pref_file_load_colors( GKeyFile *gkeyfile, RemminaColorPref *color_pref );
-gint remmina_pref_get_ssh_tcp_keepidle( void );
-gint remmina_pref_get_ssh_tcp_keepintvl( void );
-gint remmina_pref_get_ssh_tcp_keepcnt( void );
-gint remmina_pref_get_ssh_tcp_usrtimeout( void );
+gint remmina_pref_get_ssh_tcp_keepidle();
+gint remmina_pref_get_ssh_tcp_keepintvl();
+gint remmina_pref_get_ssh_tcp_keepcnt();
+gint remmina_pref_get_ssh_tcp_usrtimeout();
 
 void remmina_pref_set_value( const char *key, const char *value );
 char *remmina_pref_get_value( const char *key );
 int remmina_pref_get_boolean( const char *key );
-
-

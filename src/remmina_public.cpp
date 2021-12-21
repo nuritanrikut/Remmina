@@ -358,7 +358,7 @@ char *remmina_public_combine_path( const char *path1, const char *path2 )
 //static int remmina_public_open_unix_sock(const char *unixsock, GError **error)
 gint remmina_public_open_unix_sock( const char *unixsock )
 {
-    struct sockaddr_un addr;
+     sockaddr_un addr;
     int fd;
 
     if( strlen( unixsock ) + 1 > sizeof( addr.sun_path ) )
@@ -379,7 +379,7 @@ gint remmina_public_open_unix_sock( const char *unixsock )
         return -1;
     }
 
-    if( connect( fd, (struct sockaddr *)&addr, sizeof addr ) < 0 )
+    if( connect( fd, ( sockaddr *)&addr, sizeof addr ) < 0 )
     {
         //g_set_error(error, REMMINA_ERROR, REMMINA_ERROR_FAILED,
         g_debug( _( "Connecting to UNIX socket failed: %s" ), g_strerror( errno ) );
@@ -538,7 +538,7 @@ gint remmina_public_open_xdisplay( const char *disp )
     char *display;
     char *ptr;
     gint port;
-    struct sockaddr_un addr;
+     sockaddr_un addr;
     gint sock = -1;
 
     display = g_strdup( disp );
@@ -556,7 +556,7 @@ gint remmina_public_open_xdisplay( const char *disp )
                 memset( &addr, 0, sizeof( addr ) );
                 addr.sun_family = AF_UNIX;
                 snprintf( addr.sun_path, sizeof( addr.sun_path ), X_UNIX_SOCKET, port );
-                if( connect( sock, (struct sockaddr *)&addr, sizeof( addr ) ) == -1 )
+                if( connect( sock, ( sockaddr *)&addr, sizeof( addr ) ) == -1 )
                 {
                     close( sock );
                     sock = -1;

@@ -43,7 +43,7 @@
 
 
 
-struct _RemminaFile
+struct RemminaFile
 {
     char *filename;
     // @todo Add a cache file with content remminafile->filename = last_success
@@ -79,7 +79,7 @@ enum
 #define TOOLBAR_OPACITY_MIN 0.2
 
 /* Create a empty .remmina file */
-RemminaFile *remmina_file_new( void );
+RemminaFile *remmina_file_new();
 RemminaFile *remmina_file_copy( const char *filename );
 void remmina_file_generate_filename( RemminaFile *remminafile );
 void remmina_file_set_filename( RemminaFile *remminafile, const char *filename );

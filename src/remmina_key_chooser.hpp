@@ -43,15 +43,13 @@
 #define KEY_MODIFIER_META _( "Meta+" )
 #define KEY_CHOOSER_NONE _( "<None>" )
 
-typedef struct _RemminaKeyChooserArguments
+struct RemminaKeyChooserArguments
 {
     guint keyval;
     guint state;
     bool use_modifiers;
     gint response;
-} RemminaKeyChooserArguments;
-
-
+};
 
 /* Show a key chooser dialog and return the keyval for the selected key */
 RemminaKeyChooserArguments *remmina_key_chooser_new( GtkWindow *parent_window, bool use_modifiers );
@@ -59,5 +57,3 @@ RemminaKeyChooserArguments *remmina_key_chooser_new( GtkWindow *parent_window, b
 char *remmina_key_chooser_get_value( guint keyval, guint state );
 /* Get the keyval of a (lowercase) character value */
 guint remmina_key_chooser_get_keyval( const char *value );
-
-

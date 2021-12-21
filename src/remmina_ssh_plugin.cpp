@@ -198,7 +198,7 @@ const GdkRGBA xterm_palette[PALETTE_SIZE] = { { 0, 0, 0, 1 },
 #    define DEFAULT_PALETTE "linux_palette"
 
 /** The SSH plugin implementation */
-typedef struct _RemminaSshSearch
+struct RemminaSshSearch
 {
     GtkWidget *parent;
 
@@ -219,9 +219,9 @@ typedef struct _RemminaSshSearch
     bool regex_caseless;
     bool has_regex;
     char *regex_pattern;
-} RemminaSshSearch;
+};
 
-typedef struct _RemminaPluginSshData
+struct RemminaPluginSshData
 {
     RemminaSSHShell *shell;
     GFile *vte_session_file;
@@ -232,7 +232,7 @@ typedef struct _RemminaPluginSshData
     pthread_t thread;
 
     RemminaSshSearch *search_widget;
-} RemminaPluginSshData;
+};
 
 #    define GET_OBJECT( object_name ) gtk_builder_get_object( search_widget->builder, object_name )
 
@@ -413,7 +413,7 @@ void remmina_plugin_ssh_vte_terminal_set_encoding_and_pty( VteTerminal *terminal
         /* Allow the execution of this function from a non main thread */
         RemminaMTExecData *d;
         d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = remmina_masterthread_exec_data::FUNC_VTE_TERMINAL_SET_ENCODING_AND_PTY;
+        d->func = RemminaMTExecData::FUNC_VTE_TERMINAL_SET_ENCODING_AND_PTY;
         d->p.vte_terminal_set_encoding_and_pty.terminal = terminal;
         d->p.vte_terminal_set_encoding_and_pty.codeset = codeset;
         d->p.vte_terminal_set_encoding_and_pty.master = master;
@@ -1825,7 +1825,7 @@ void remmina_ssh_plugin_load_terminal_palettes( gpointer *ssh_terminal_palette_n
     color_palette[field_idx] = NULL;
 }
 
-void remmina_ssh_plugin_register( void )
+void remmina_ssh_plugin_register()
 {
     TRACE_CALL( __func__ );
     remmina_plugin_ssh_features[0].opt3 = GUINT_TO_POINTER( remmina_pref.vte_shortcutkey_copy );
@@ -1859,7 +1859,7 @@ void remmina_ssh_plugin_register( void )
 
 #else
 
-void remmina_ssh_plugin_register( void )
+void remmina_ssh_plugin_register()
 {
     TRACE_CALL( __func__ );
 }

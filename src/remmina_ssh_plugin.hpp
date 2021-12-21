@@ -40,11 +40,9 @@
 #    include <vte/vte.h>
 #endif
 
+void remmina_ssh_plugin_register();
 
-
-void remmina_ssh_plugin_register( void );
-
-typedef struct _RemminaProtocolSettingOpt
+struct RemminaProtocolSettingOpt
 {
     RemminaProtocolSettingType type;
     const char *name;
@@ -52,7 +50,7 @@ typedef struct _RemminaProtocolSettingOpt
     bool compact;
     gpointer opt1;
     gpointer opt2;
-} RemminaProtocolSettingOpt;
+};
 
 /* For callback in main thread */
 #if defined( HAVE_LIBSSH ) && defined( HAVE_LIBVTE )
@@ -67,5 +65,3 @@ void remmina_plugin_ssh_vte_decrease_font( GtkMenuItem *menuitem, gpointer vte )
 void remmina_plugin_ssh_vte_increase_font( GtkMenuItem *menuitem, gpointer vte );
 int remmina_ssh_plugin_popup_menu( GtkWidget *widget, GdkEvent *event, GtkWidget *menu );
 #endif
-
-

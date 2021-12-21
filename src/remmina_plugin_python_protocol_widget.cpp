@@ -209,11 +209,11 @@ static PyTypeObject python_protocol_widget_type = { PyVarObject_HEAD_INIT( NULL,
                                                     .tp_new = PyType_GenericNew,
                                                     .tp_methods = python_protocol_widget_type_methods };
 
-typedef struct
+struct PyRemminaFile
 {
     PyObject_HEAD PyDictObject *settings;
     PyDictObject *spsettings;
-} PyRemminaFile;
+};
 
 #define SELF_CHECK() \
     if( !self ) \
@@ -223,7 +223,7 @@ typedef struct
         return NULL; \
     }
 
-void remmina_plugin_python_protocol_widget_init( void )
+void remmina_plugin_python_protocol_widget_init()
 {
     pygobject_init( -1, -1, -1 );
 }
@@ -534,8 +534,13 @@ static PyObject *protocol_widget_panel_auth( PyRemminaProtocolWidget *self, PyOb
         }
         else
         {
-            remmina_protocol_widget_panel_auth(
-                self->gp, static_cast<RemminaMessagePanelFlags>(pflags), title, default_username, default_password, default_domain, password_prompt );
+            remmina_protocol_widget_panel_auth( self->gp,
+                                                static_cast<RemminaMessagePanelFlags>( pflags ),
+                                                title,
+                                                default_username,
+                                                default_password,
+                                                default_domain,
+                                                password_prompt );
         }
     }
     else

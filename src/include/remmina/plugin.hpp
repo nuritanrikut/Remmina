@@ -40,9 +40,9 @@
 #include <remmina/types.hpp>
 #include "remmina/remmina_trace_calls.hpp"
 
+struct RemminaFile;
 
-
-typedef enum
+enum RemminaPluginType
 {
     REMMINA_PLUGIN_TYPE_PROTOCOL = 0,
     REMMINA_PLUGIN_TYPE_ENTRY = 1,
@@ -50,19 +50,18 @@ typedef enum
     REMMINA_PLUGIN_TYPE_TOOL = 3,
     REMMINA_PLUGIN_TYPE_PREF = 4,
     REMMINA_PLUGIN_TYPE_SECRET = 5
-} RemminaPluginType;
+};
 
-typedef struct _RemminaPlugin
+struct RemminaPlugin
 {
     RemminaPluginType type;
     const char *name;
     const char *description;
     const char *domain;
     const char *version;
-} RemminaPlugin;
+};
 
-typedef struct _RemminaProtocolPlugin _RemminaProtocolPlugin;
-typedef struct _RemminaProtocolPlugin
+struct RemminaProtocolPlugin
 {
     RemminaPluginType type;
     const char *name;
@@ -86,9 +85,9 @@ typedef struct _RemminaProtocolPlugin
     int ( *get_plugin_screenshot )( RemminaProtocolWidget *gp, RemminaPluginScreenshotData *rpsd );
     int ( *map_event )( RemminaProtocolWidget *gp );
     int ( *unmap_event )( RemminaProtocolWidget *gp );
-} RemminaProtocolPlugin;
+};
 
-typedef struct _RemminaEntryPlugin
+struct RemminaEntryPlugin
 {
     RemminaPluginType type;
     const char *name;
@@ -96,10 +95,10 @@ typedef struct _RemminaEntryPlugin
     const char *domain;
     const char *version;
 
-    void ( *entry_func )( void );
-} RemminaEntryPlugin;
+    void ( *entry_func )();
+};
 
-typedef struct _RemminaFilePlugin
+struct RemminaFilePlugin
 {
     RemminaPluginType type;
     const char *name;
@@ -112,9 +111,9 @@ typedef struct _RemminaFilePlugin
     int ( *export_test_func )( RemminaFile *file );
     int ( *export_func )( RemminaFile *file, const char *to_file );
     const char *export_hints;
-} RemminaFilePlugin;
+};
 
-typedef struct _RemminaToolPlugin
+struct RemminaToolPlugin
 {
     RemminaPluginType type;
     const char *name;
@@ -122,10 +121,10 @@ typedef struct _RemminaToolPlugin
     const char *domain;
     const char *version;
 
-    void ( *exec_func )( void );
-} RemminaToolPlugin;
+    void ( *exec_func )();
+};
 
-typedef struct _RemminaPrefPlugin
+struct RemminaPrefPlugin
 {
     RemminaPluginType type;
     const char *name;
@@ -134,10 +133,10 @@ typedef struct _RemminaPrefPlugin
     const char *version;
 
     const char *pref_label;
-    GtkWidget *( *get_pref_body )( void );
-} RemminaPrefPlugin;
+    GtkWidget *( *get_pref_body )();
+};
 
-typedef struct _RemminaSecretPlugin
+struct RemminaSecretPlugin
 {
     RemminaPluginType type;
     const char *name;
@@ -146,17 +145,17 @@ typedef struct _RemminaSecretPlugin
     const char *version;
     int init_order;
 
-    int ( *init )( void );
-    int ( *is_service_available )( void );
+    int ( *init )();
+    int ( *is_service_available )();
     void ( *store_password )( RemminaFile *remminafile, const char *key, const char *password );
     char *( *get_password )( RemminaFile *remminafile, const char *key );
     void ( *delete_password )( RemminaFile *remminafile, const char *key );
-} RemminaSecretPlugin;
+};
 
 /* Plugin Service is a struct containing a list of function pointers,
  * which is passed from Remmina main program to the plugin module
  * through the plugin entry function remmina_plugin_entry() */
-typedef struct _RemminaPluginService
+struct RemminaPluginService
 {
     int ( *register_plugin )( RemminaPlugin *plugin );
 
@@ -225,9 +224,9 @@ typedef struct _RemminaPluginService
                                                  int length,
                                                  GdkEventType action );
 
-    char *( *file_get_user_datadir )( void );
+    char *( *file_get_user_datadir )();
 
-    RemminaFile *( *file_new )( void );
+    RemminaFile *( *file_new )();
     const char *( *file_get_path )( RemminaFile *remminafile );
     void ( *file_set_string )( RemminaFile *remminafile, const char *setting, const char *value );
     const char *( *file_get_string )( RemminaFile *remminafile, const char *setting );
@@ -238,10 +237,10 @@ typedef struct _RemminaPluginService
 
     void ( *pref_set_value )( const char *key, const char *value );
     char *( *pref_get_value )( const char *key );
-    gint ( *pref_get_scale_quality )( void );
-    gint ( *pref_get_sshtunnel_port )( void );
-    gint ( *pref_get_ssh_loglevel )( void );
-    int ( *pref_get_ssh_parseconfig )( void );
+    gint ( *pref_get_scale_quality )();
+    gint ( *pref_get_sshtunnel_port )();
+    gint ( *pref_get_ssh_loglevel )();
+    int ( *pref_get_ssh_parseconfig )();
     guint *( *pref_keymap_get_table )( const char *keymap );
     guint ( *pref_keymap_get_keyval )( const char *keymap, guint keyval );
 
@@ -259,13 +258,11 @@ typedef struct _RemminaPluginService
     GtkWidget *( *open_connection )( RemminaFile *remminafile, GCallback disconnect_cb, gpointer data, guint *handler );
     gint ( *open_unix_sock )( const char *unixsock );
     void ( *get_server_port )( const char *server, gint defaultport, char **host, gint *port );
-    int ( *is_main_thread )( void );
-    int ( *gtksocket_available )( void );
+    int ( *is_main_thread )();
+    int ( *gtksocket_available )();
     gint ( *get_profile_remote_width )( RemminaProtocolWidget *gp );
     gint ( *get_profile_remote_height )( RemminaProtocolWidget *gp );
-} RemminaPluginService;
+};
 
 /* "Prototype" of the plugin entry function */
 typedef int ( *RemminaPluginEntryFunc )( RemminaPluginService *service );
-
-

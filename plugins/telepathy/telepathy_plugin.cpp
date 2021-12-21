@@ -41,7 +41,7 @@ RemminaPluginService *remmina_plugin_telepathy_service = NULL;
 
 static RemminaTpHandler *remmina_tp_handler = NULL;
 
-void remmina_plugin_telepathy_entry( void )
+void remmina_plugin_telepathy_entry()
 {
     TRACE_CALL( __func__ );
     if( remmina_tp_handler == NULL )

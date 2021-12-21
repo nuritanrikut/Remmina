@@ -47,7 +47,7 @@
 #    include <avahi-common/malloc.h>
 #    include <avahi-common/error.h>
 
-struct _RemminaAvahiPriv
+struct RemminaAvahiPriv
 {
     AvahiSimplePoll *simple_poll;
     AvahiClient *client;
@@ -206,7 +206,7 @@ static int remmina_avahi_iterate( RemminaAvahi *ga )
     return TRUE;
 }
 
-RemminaAvahi *remmina_avahi_new( void )
+RemminaAvahi *remmina_avahi_new()
 {
     TRACE_CALL( __func__ );
     RemminaAvahi *ga;
@@ -309,7 +309,7 @@ void remmina_avahi_free( RemminaAvahi *ga )
 
 #else
 
-RemminaAvahi *remmina_avahi_new( void )
+RemminaAvahi *remmina_avahi_new()
 {
     TRACE_CALL( __func__ );
     return NULL;

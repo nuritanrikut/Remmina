@@ -277,7 +277,7 @@ static UINT remmina_rdp_cliprdr_server_format_list( CliprdrClientContext *contex
 
     GtkTargetList *list = gtk_target_list_new( NULL, 0 );
 
-    if( clipboard->srv_clip_data_wait == rf_clipboard::SCDW_BUSY_WAIT )
+    if( clipboard->srv_clip_data_wait == rfClipboard::SCDW_BUSY_WAIT )
     {
         REMMINA_PLUGIN_DEBUG( "gp=%p: we already have a FormatDataRequest in progress to the server, aborting", gp );
         remmina_rdp_clipboard_abort_client_format_data_request( clipboard->rfi );
@@ -445,7 +445,7 @@ static UINT remmina_rdp_cliprdr_server_format_data_request( CliprdrClientContext
     return CHANNEL_RC_OK;
 }
 
-int timeval_diff( struct timeval *start, struct timeval *end )
+int timeval_diff(  timeval *start,  timeval *end )
 {
     /* Returns the time elapsed from start to end, in ms */
     int64_t ms_end = ( end->tv_sec * 1000 ) + ( end->tv_usec / 1000 );
@@ -465,7 +465,7 @@ static UINT remmina_rdp_cliprdr_server_format_data_response( CliprdrClientContex
     RemminaProtocolWidget *gp;
     rfClipboard *clipboard;
     gpointer output = NULL;
-    struct timeval now;
+     timeval now;
     int mstrans;
 
     clipboard = (rfClipboard *)context->custom;
@@ -626,7 +626,7 @@ static UINT remmina_rdp_cliprdr_server_format_data_response( CliprdrClientContex
 
     pthread_mutex_lock( &clipboard->transfer_clip_mutex );
     pthread_cond_signal( &clipboard->transfer_clip_cond );
-    if( clipboard->srv_clip_data_wait == rf_clipboard::SCDW_BUSY_WAIT )
+    if( clipboard->srv_clip_data_wait == rfClipboard::SCDW_BUSY_WAIT )
     {
         REMMINA_PLUGIN_DEBUG( "gp=%p: clipboard transfer from server completed.", gp );
     }
@@ -638,7 +638,7 @@ static UINT remmina_rdp_cliprdr_server_format_data_response( CliprdrClientContex
                               "it. Data is on local cache now, try to paste later.",
                               gp );
     }
-    clipboard->srv_clip_data_wait = rf_clipboard::SCDW_NONE;
+    clipboard->srv_clip_data_wait = rfClipboard::SCDW_NONE;
     pthread_mutex_unlock( &clipboard->transfer_clip_mutex );
 
     return CHANNEL_RC_OK;
@@ -658,8 +658,8 @@ void remmina_rdp_cliprdr_request_data( GtkClipboard *gtkClipboard,
     rfClipboard *clipboard;
     rfContext *rfi = GET_PLUGIN_DATA( gp );
     RemminaPluginRdpEvent rdp_event;
-    struct timespec to;
-    struct timeval tv;
+     timespec to;
+     timeval tv;
     int rc;
     time_t tlimit, tlimit1s, tnow, tstart;
 
@@ -667,7 +667,7 @@ void remmina_rdp_cliprdr_request_data( GtkClipboard *gtkClipboard,
         "gp=%p: A local application has requested remote clipboard data for remote format id %d", gp, info );
 
     clipboard = &( rfi->clipboard );
-    if( clipboard->srv_clip_data_wait != rf_clipboard::SCDW_NONE )
+    if( clipboard->srv_clip_data_wait != rfClipboard::SCDW_NONE )
     {
         g_message( "[RDP] Cannot paste now, I’m already transferring clipboard data from server. Try again later\n" );
         return;
@@ -687,7 +687,7 @@ void remmina_rdp_cliprdr_request_data( GtkClipboard *gtkClipboard,
         pFormatDataRequest->requestedFormatId = clipboard->format;
 
         clipboard->srv_clip_data_wait =
-            rf_clipboard::SCDW_BUSY_WAIT; // Annotate that we are waiting for ServerFormatDataResponse
+            rfClipboard::SCDW_BUSY_WAIT; // Annotate that we are waiting for ServerFormatDataResponse
 
         REMMINA_PLUGIN_DEBUG(
             "gp=%p Requesting clipboard data with format %d from the server via ServerFormatDataRequest",
@@ -705,7 +705,7 @@ void remmina_rdp_cliprdr_request_data( GtkClipboard *gtkClipboard,
         rc = 100000;
         tlimit1s = tstart + 1;
         while( ( tnow = time( NULL ) ) < tlimit && rc != 0
-               && clipboard->srv_clip_data_wait == rf_clipboard::SCDW_BUSY_WAIT )
+               && clipboard->srv_clip_data_wait == rfClipboard::SCDW_BUSY_WAIT )
         {
             if( tnow >= tlimit1s )
             {
@@ -732,7 +732,7 @@ void remmina_rdp_cliprdr_request_data( GtkClipboard *gtkClipboard,
         if( rc != 0 )
         {
             /* Timeout, just log it and hope that data will arrive later */
-            if( clipboard->srv_clip_data_wait == rf_clipboard::SCDW_ABORTING )
+            if( clipboard->srv_clip_data_wait == rfClipboard::SCDW_ABORTING )
             {
                 g_warning( "[RDP] gp=%p Clipboard data wait aborted.", gp );
             }
@@ -778,7 +778,7 @@ void remmina_rdp_cliprdr_request_data( GtkClipboard *gtkClipboard,
                                   strlen( static_cast<char *>( clipboard->srv_data ) ) );
             gtk_selection_data_set_text( selection_data, static_cast<char *>( clipboard->srv_data ), -1 );
         }
-        clipboard->srv_clip_data_wait = rf_clipboard::SCDW_NONE;
+        clipboard->srv_clip_data_wait = rfClipboard::SCDW_NONE;
     }
     else
     {
@@ -836,14 +836,14 @@ CLIPRDR_FORMAT_LIST *remmina_rdp_cliprdr_get_client_format_list( RemminaProtocol
         }
         if( srvcount > 0 )
         {
-            retp = (struct retp_t *)malloc( sizeof( struct retp_t ) + sizeof( CLIPRDR_FORMAT ) * srvcount );
+            retp = ( retp_t *)malloc( sizeof(  retp_t ) + sizeof( CLIPRDR_FORMAT ) * srvcount );
             retp->pFormatList.formats = retp->formats;
             retp->pFormatList.numFormats = srvcount;
             memcpy( retp->formats, formats, sizeof( CLIPRDR_FORMAT ) * srvcount );
         }
         else
         {
-            retp = (struct retp_t *)malloc( sizeof( struct retp_t ) );
+            retp = ( retp_t *)malloc( sizeof(  retp_t ) );
             retp->pFormatList.formats = NULL;
             retp->pFormatList.numFormats = 0;
         }
@@ -851,7 +851,7 @@ CLIPRDR_FORMAT_LIST *remmina_rdp_cliprdr_get_client_format_list( RemminaProtocol
     }
     else
     {
-        retp = (struct retp_t *)malloc( sizeof( struct retp_t ) + sizeof( CLIPRDR_FORMAT ) );
+        retp = ( retp_t *)malloc( sizeof(  retp_t ) + sizeof( CLIPRDR_FORMAT ) );
         retp->pFormatList.formats = NULL;
         retp->pFormatList.numFormats = 0;
     }
@@ -1050,12 +1050,12 @@ void remmina_rdp_clipboard_free( rfContext *rfi )
 void remmina_rdp_clipboard_abort_client_format_data_request( rfContext *rfi )
 {
     TRACE_CALL( __func__ );
-    if( rfi && rfi->clipboard.srv_clip_data_wait == rf_clipboard::SCDW_BUSY_WAIT )
+    if( rfi && rfi->clipboard.srv_clip_data_wait == rfClipboard::SCDW_BUSY_WAIT )
     {
         REMMINA_PLUGIN_DEBUG(
             "requesting clipboard data transfer from server to be ignored and busywait loop to exit" );
         /* Allow clipboard transfer from server to terminate */
-        rfi->clipboard.srv_clip_data_wait = rf_clipboard::SCDW_ABORTING;
+        rfi->clipboard.srv_clip_data_wait = rfClipboard::SCDW_ABORTING;
         usleep( 100000 );
     }
 }
@@ -1073,7 +1073,7 @@ void remmina_rdp_cliprdr_init( rfContext *rfi, CliprdrClientContext *cliprdr )
     clipboard->context = cliprdr;
     pthread_mutex_init( &clipboard->transfer_clip_mutex, NULL );
     pthread_cond_init( &clipboard->transfer_clip_cond, NULL );
-    clipboard->srv_clip_data_wait = rf_clipboard::SCDW_NONE;
+    clipboard->srv_clip_data_wait = rfClipboard::SCDW_NONE;
 
     cliprdr->MonitorReady = remmina_rdp_cliprdr_monitor_ready;
     cliprdr->ServerCapabilities = remmina_rdp_cliprdr_server_capabilities;

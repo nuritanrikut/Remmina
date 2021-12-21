@@ -60,19 +60,19 @@
 #define REMMINA_IS_CELL_RENDERER_PIXBUF( obj ) \
     ( G_TYPE_CHECK_INSTANCE_TYPE( ( obj ), REMMINA_TYPE_CELL_RENDERER_PIXBUF ) )
 
-typedef struct _RemminaCellRendererPixbuf
+struct RemminaCellRendererPixbuf
 {
     GtkCellRendererPixbuf renderer;
-} RemminaCellRendererPixbuf;
+};
 
-typedef struct _RemminaCellRendererPixbufClass
+struct RemminaCellRendererPixbufClass
 {
     GtkCellRendererPixbufClass parent_class;
 
     void ( *activate )( RemminaCellRendererPixbuf *renderer );
-} RemminaCellRendererPixbufClass;
+};
 
-GType remmina_cell_renderer_pixbuf_get_type( void ) G_GNUC_CONST;
+GType remmina_cell_renderer_pixbuf_get_type() G_GNUC_CONST;
 
 G_DEFINE_TYPE( RemminaCellRendererPixbuf, remmina_cell_renderer_pixbuf, GTK_TYPE_CELL_RENDERER_PIXBUF )
 
@@ -117,7 +117,7 @@ static void remmina_cell_renderer_pixbuf_init( RemminaCellRendererPixbuf *render
     g_object_set( G_OBJECT( renderer ), "mode", GTK_CELL_RENDERER_MODE_ACTIVATABLE, NULL );
 }
 
-static GtkCellRenderer *remmina_cell_renderer_pixbuf_new( void )
+static GtkCellRenderer *remmina_cell_renderer_pixbuf_new()
 {
     TRACE_CALL( __func__ );
     GtkCellRenderer *renderer;
@@ -143,7 +143,7 @@ G_DEFINE_TYPE( RemminaFTPClient, remmina_ftp_client, GTK_TYPE_GRID )
         gdk_window_set_cursor( gtk_widget_get_window( GTK_WIDGET( client ) ), NULL ); \
     }
 
-struct _RemminaFTPClientPriv
+struct RemminaFTPClientPriv
 {
     GtkWidget *directory_combo;
     GtkWidget *vpaned;
@@ -1247,7 +1247,7 @@ static void remmina_ftp_client_init( RemminaFTPClient *client )
                       client );
 }
 
-GtkWidget *remmina_ftp_client_new( void )
+GtkWidget *remmina_ftp_client_new()
 {
     TRACE_CALL( __func__ );
     RemminaFTPClient *client;
@@ -1372,7 +1372,7 @@ RemminaFTPTask *remmina_ftp_client_get_waiting_task( RemminaFTPClient *client )
         RemminaMTExecData *d;
         RemminaFTPTask *retval;
         d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = remmina_masterthread_exec_data::FUNC_FTP_CLIENT_GET_WAITING_TASK;
+        d->func = RemminaMTExecData::FUNC_FTP_CLIENT_GET_WAITING_TASK;
         d->p.ftp_client_get_waiting_task.client = client;
         remmina_masterthread_exec_and_wait( d );
         retval = d->p.ftp_client_get_waiting_task.retval;
@@ -1434,8 +1434,8 @@ void remmina_ftp_client_update_task( RemminaFTPClient *client, RemminaFTPTask *t
     {
         /* Allow the execution of this function from a non main thread */
         RemminaMTExecData *d;
-        d = static_cast<RemminaMTExecData *>(g_malloc( sizeof( RemminaMTExecData ) ));
-        d->func = remmina_masterthread_exec_data::FUNC_FTP_CLIENT_UPDATE_TASK;
+        d = static_cast<RemminaMTExecData *>( g_malloc( sizeof( RemminaMTExecData ) ) );
+        d->func = RemminaMTExecData::FUNC_FTP_CLIENT_UPDATE_TASK;
         d->p.ftp_client_update_task.client = client;
         d->p.ftp_client_update_task.task = task;
         remmina_masterthread_exec_and_wait( d );

@@ -562,8 +562,8 @@ static void remmina_profiles_get_data( RemminaFile *remminafile, gpointer user_d
     GDateTime *prof_gdate;  /** Source date -> from profile */
     GDateTime *pdata_gdate; /** Destination date -> The date in the pdata structure */
 
-    struct ProfilesData *pdata;
-    pdata = (struct ProfilesData *)user_data;
+     ProfilesData *pdata;
+    pdata = ( ProfilesData *)user_data;
 
     pdata->protocol = remmina_file_get_string( remminafile, "protocol" );
     //pdata->pdatestr = remmina_file_get_string(remminafile, "last_success");
@@ -705,8 +705,8 @@ JsonNode *remmina_stats_get_profiles()
     gpointer pcountkey, pcountvalue;
     gpointer pdatekey, pdatevalue;
 
-    struct ProfilesData *pdata;
-    pdata = static_cast<ProfilesData*>(g_malloc0( sizeof( struct ProfilesData ) ));
+     ProfilesData *pdata;
+    pdata = static_cast<ProfilesData*>(g_malloc0( sizeof(  ProfilesData ) ));
 
     b = json_builder_new();
     json_builder_begin_object( b );

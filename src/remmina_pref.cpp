@@ -69,7 +69,7 @@ static const char *default_keymap_data =
     "Meta_L = Super_L\n"
     "Meta_R = Super_R\n";
 
-static void remmina_pref_gen_secret( void )
+static void remmina_pref_gen_secret()
 {
     TRACE_CALL( __func__ );
     guchar s[32];
@@ -106,7 +106,7 @@ static guint remmina_pref_get_keyval_from_str( const char *str )
     return k;
 }
 
-static void remmina_pref_init_keymap( void )
+static void remmina_pref_init_keymap()
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
@@ -222,7 +222,7 @@ void remmina_pref_file_load_colors( GKeyFile *gkeyfile, RemminaColorPref *color_
     }
 }
 
-void remmina_pref_init( void )
+void remmina_pref_init()
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
@@ -760,7 +760,7 @@ void remmina_pref_init( void )
     remmina_pref_init_keymap();
 }
 
-int remmina_pref_is_rw( void )
+int remmina_pref_is_rw()
 {
     TRACE_CALL( __func__ );
     if( access( remmina_pref_file, W_OK ) == 0 )
@@ -770,7 +770,7 @@ int remmina_pref_is_rw( void )
     return FALSE;
 }
 
-int remmina_pref_save( void )
+int remmina_pref_save()
 {
     TRACE_CALL( __func__ );
 
@@ -1020,7 +1020,7 @@ char *remmina_pref_get_recent( const char *protocol )
     return val;
 }
 
-void remmina_pref_clear_recent( void )
+void remmina_pref_clear_recent()
 {
     TRACE_CALL( __func__ );
     GKeyFile *gkeyfile;
@@ -1075,7 +1075,7 @@ guint remmina_pref_keymap_get_keyval( const char *keymap, guint keyval )
     return keyval;
 }
 
-char **remmina_pref_keymap_groups( void )
+char **remmina_pref_keymap_groups()
 {
     TRACE_CALL( __func__ );
     GList *list;
@@ -1099,7 +1099,7 @@ char **remmina_pref_keymap_groups( void )
     return keys;
 }
 
-gint remmina_pref_get_scale_quality( void )
+gint remmina_pref_get_scale_quality()
 {
     TRACE_CALL( __func__ );
     /* Paranoid programming */
@@ -1108,43 +1108,43 @@ gint remmina_pref_get_scale_quality( void )
     return remmina_pref.scale_quality;
 }
 
-gint remmina_pref_get_ssh_loglevel( void )
+gint remmina_pref_get_ssh_loglevel()
 {
     TRACE_CALL( __func__ );
     return remmina_pref.ssh_loglevel;
 }
 
-int remmina_pref_get_ssh_parseconfig( void )
+int remmina_pref_get_ssh_parseconfig()
 {
     TRACE_CALL( __func__ );
     return remmina_pref.ssh_parseconfig;
 }
 
-gint remmina_pref_get_sshtunnel_port( void )
+gint remmina_pref_get_sshtunnel_port()
 {
     TRACE_CALL( __func__ );
     return remmina_pref.sshtunnel_port;
 }
 
-gint remmina_pref_get_ssh_tcp_keepidle( void )
+gint remmina_pref_get_ssh_tcp_keepidle()
 {
     TRACE_CALL( __func__ );
     return remmina_pref.ssh_tcp_keepidle;
 }
 
-gint remmina_pref_get_ssh_tcp_keepintvl( void )
+gint remmina_pref_get_ssh_tcp_keepintvl()
 {
     TRACE_CALL( __func__ );
     return remmina_pref.ssh_tcp_keepintvl;
 }
 
-gint remmina_pref_get_ssh_tcp_keepcnt( void )
+gint remmina_pref_get_ssh_tcp_keepcnt()
 {
     TRACE_CALL( __func__ );
     return remmina_pref.ssh_tcp_keepcnt;
 }
 
-gint remmina_pref_get_ssh_tcp_usrtimeout( void )
+gint remmina_pref_get_ssh_tcp_usrtimeout()
 {
     TRACE_CALL( __func__ );
     return remmina_pref.ssh_tcp_usrtimeout;

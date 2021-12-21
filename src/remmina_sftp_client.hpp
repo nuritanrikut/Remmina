@@ -44,8 +44,6 @@
 #    include "remmina_ftp_client.hpp"
 #    include "remmina_ssh.hpp"
 
-
-
 #    define REMMINA_TYPE_SFTP_CLIENT ( remmina_sftp_client_get_type() )
 #    define REMMINA_SFTP_CLIENT( obj ) \
         ( G_TYPE_CHECK_INSTANCE_CAST( ( obj ), REMMINA_TYPE_SFTP_CLIENT, RemminaSFTPClient ) )
@@ -56,7 +54,7 @@
 #    define REMMINA_SFTP_CLIENT_GET_CLASS( obj ) \
         ( G_TYPE_INSTANCE_GET_CLASS( ( obj ), REMMINA_TYPE_SFTP_CLIENT, RemminaSFTPClientClass ) )
 
-typedef struct _RemminaSFTPClient
+struct RemminaSFTPClient
 {
     RemminaFTPClient client;
 
@@ -66,20 +64,18 @@ typedef struct _RemminaSFTPClient
     gint taskid;
     bool thread_abort;
     RemminaProtocolWidget *gp;
-} RemminaSFTPClient;
+};
 
-typedef struct _RemminaSFTPClientClass
+struct RemminaSFTPClientClass
 {
     RemminaFTPClientClass parent_class;
-} RemminaSFTPClientClass;
+};
 
-GType remmina_sftp_client_get_type( void ) G_GNUC_CONST;
+GType remmina_sftp_client_get_type() G_GNUC_CONST;
 
 RemminaSFTPClient *remmina_sftp_client_new();
 
 void remmina_sftp_client_open( RemminaSFTPClient *client, RemminaSFTP *sftp );
 gint remmina_sftp_client_confirm_resume( RemminaSFTPClient *client, const char *path );
-
-
 
 #endif /* HAVE_LIBSSH */

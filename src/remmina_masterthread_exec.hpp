@@ -40,7 +40,7 @@
 #include "remmina_ftp_client.hpp"
 #include "remmina_ssh_plugin.hpp"
 
-typedef struct remmina_masterthread_exec_data
+struct RemminaMTExecData
 {
     enum
     {
@@ -143,9 +143,9 @@ typedef struct remmina_masterthread_exec_data
     /* Flag to catch cancellations */
     bool cancelled;
     bool complete;
-} RemminaMTExecData;
+};
 
 void remmina_masterthread_exec_and_wait( RemminaMTExecData *d );
 
-void remmina_masterthread_exec_save_main_thread_id( void );
-int remmina_masterthread_exec_is_main_thread( void );
+void remmina_masterthread_exec_save_main_thread_id();
+int remmina_masterthread_exec_is_main_thread();

@@ -117,7 +117,7 @@ char *remmina_ssh_identity_path( const char *id )
     return g_strdup_printf( "%s/%s", g_get_home_dir(), id );
 }
 
-char *remmina_ssh_find_identity( void )
+char *remmina_ssh_find_identity()
 {
     TRACE_CALL( __func__ );
     char *path;
@@ -1243,7 +1243,7 @@ int remmina_ssh_init_session( RemminaSSH *ssh )
     gint optval;
 #    endif
 
-    ssh->callback = g_new0( struct ssh_callbacks_struct, 1 );
+    ssh->callback = g_new0(  ssh_callbacks_struct, 1 );
 
     /* Init & startup the SSH session */
     REMMINA_DEBUG( "server=%s port=%d is_tunnel=%s tunnel_entrance_host=%s tunnel_entrance_port=%d",
@@ -1704,7 +1704,7 @@ void remmina_ssh_free( RemminaSSH *ssh )
 /*-----------------------------------------------------------------------------*
 *                           SSH Tunnel                                        *
 *-----------------------------------------------------------------------------*/
-struct _RemminaSSHTunnelBuffer
+struct RemminaSSHTunnelBuffer
 {
     char *data;
     char *ptr;
@@ -1895,7 +1895,7 @@ static gpointer remmina_ssh_tunnel_main_thread_proc( gpointer data )
     char *ptr;
     ssize_t len = 0, lenw = 0;
     fd_set set;
-    struct timeval timeout;
+     timeval timeout;
     g_autoptr( GDateTime ) t1 = NULL;
     g_autoptr( GDateTime ) t2 = NULL;
     GTimeSpan diff; // microseconds
@@ -1906,7 +1906,7 @@ static gpointer remmina_ssh_tunnel_main_thread_proc( gpointer data )
     gint maxfd;
     gint i;
     gint ret;
-    struct sockaddr_in sin;
+     sockaddr_in sin;
 
     t1 = t2 = g_date_time_new_now_local();
 
@@ -2075,7 +2075,7 @@ static gpointer remmina_ssh_tunnel_main_thread_proc( gpointer data )
                     sin.sin_port = htons( tunnel->localport );
                     sin.sin_addr.s_addr = inet_addr( "127.0.0.1" );
                     sock = socket( AF_INET, SOCK_STREAM, 0 );
-                    if( connect( sock, (struct sockaddr *)&sin, sizeof( sin ) ) < 0 )
+                    if( connect( sock, ( sockaddr *)&sin, sizeof( sin ) ) < 0 )
                     {
                         remmina_ssh_set_application_error(
                             REMMINA_SSH( tunnel ), _( "Cannot connect to local port %i." ), tunnel->localport );
@@ -2308,7 +2308,7 @@ int remmina_ssh_tunnel_open( RemminaSSHTunnel *tunnel, const char *host, gint po
     TRACE_CALL( __func__ );
     gint sock;
     gint sockopt = 1;
-    struct sockaddr_in sin;
+     sockaddr_in sin;
 
     tunnel->tunnel_type = REMMINA_SSH_TUNNEL_OPEN;
     tunnel->dest = g_strdup( host );
@@ -2332,7 +2332,7 @@ int remmina_ssh_tunnel_open( RemminaSSHTunnel *tunnel, const char *host, gint po
     sin.sin_port = htons( local_port );
     sin.sin_addr.s_addr = inet_addr( "127.0.0.1" );
 
-    if( bind( sock, (struct sockaddr *)&sin, sizeof( sin ) ) )
+    if( bind( sock, ( sockaddr *)&sin, sizeof( sin ) ) )
     {
         REMMINA_SSH( tunnel )->error = g_strdup( _( "Could not bind server socket to local port." ) );
         close( sock );
@@ -2554,7 +2554,7 @@ static gpointer remmina_ssh_shell_thread( gpointer data )
     RemminaFile *remminafile;
     remminafile = remmina_protocol_widget_get_file( gp );
     fd_set fds;
-    struct timeval timeout;
+     timeval timeout;
     ssh_channel channel = NULL;
     ssh_channel ch[2], chout[2];
     char *buf = NULL;
@@ -2726,7 +2726,7 @@ int remmina_ssh_shell_open( RemminaSSHShell *shell, RemminaSSHExitFunc exit_call
 {
     TRACE_CALL( __func__ );
     char *slavedevice;
-    struct termios stermios;
+     termios stermios;
 
     shell->master = posix_openpt( O_RDWR | O_NOCTTY );
     if( shell->master == -1 || grantpt( shell->master ) == -1 || unlockpt( shell->master ) == -1

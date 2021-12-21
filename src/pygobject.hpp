@@ -41,14 +41,10 @@
 #include <glib.h>
 #include <glib-object.h>
 
-
-
 /* PyGClosure is a _private_ structure */
 typedef void ( *PyClosureExceptionHandler )( GValue *ret, guint n_param_values, const GValue *params );
-typedef struct _PyGClosure PyGClosure;
-typedef struct _PyGObjectData PyGObjectData;
 
-struct _PyGClosure
+struct PyGClosure
 {
     GClosure closure;
     PyObject *callback;
@@ -57,15 +53,15 @@ struct _PyGClosure
     PyClosureExceptionHandler exception_handler;
 };
 
-typedef enum
+enum PyGObjectFlags
 {
     PYGOBJECT_USING_TOGGLE_REF = 1 << 0,
     PYGOBJECT_IS_FLOATING_REF = 1 << 1
-} PyGObjectFlags;
+};
 
 /* closures is just an alias for what is found in the
    * PyGObjectData */
-typedef struct
+struct PyGObject
 {
     PyObject_HEAD GObject *obj;
     PyObject *inst_dict;   /* the instance dictionary -- must be last */
@@ -79,40 +75,39 @@ typedef struct
         GSList *closures; /* stale field; no longer updated DO-NOT-USE! */
         PyGObjectFlags flags;
     } private_flags;
-
-} PyGObject;
+};
 
 #define pygobject_get( v ) ( ( (PyGObject *)( v ) )->obj )
 #define pygobject_check( v, base ) ( PyObject_TypeCheck( v, base ) )
 
-typedef struct
+struct PyGBoxed
 {
     PyObject_HEAD gpointer boxed;
     GType gtype;
     bool free_on_dealloc;
-} PyGBoxed;
+};
 
 #define pyg_boxed_get( v, t ) ( (t *)( (PyGBoxed *)( v ) )->boxed )
 #define pyg_boxed_check( v, typecode ) \
     ( PyObject_TypeCheck( v, &PyGBoxed_Type ) && ( (PyGBoxed *)( v ) )->gtype == typecode )
 
-typedef struct
+struct PyGPointer
 {
     PyObject_HEAD gpointer pointer;
     GType gtype;
-} PyGPointer;
+};
 
 #define pyg_pointer_get( v, t ) ( (t *)( (PyGPointer *)( v ) )->pointer )
 #define pyg_pointer_check( v, typecode ) \
     ( PyObject_TypeCheck( v, &PyGPointer_Type ) && ( (PyGPointer *)( v ) )->gtype == typecode )
 
-typedef void ( *PyGFatalExceptionFunc )( void );
-typedef void ( *PyGThreadBlockFunc )( void );
+typedef void ( *PyGFatalExceptionFunc )();
+typedef void ( *PyGThreadBlockFunc )();
 
-typedef struct
+struct PyGParamSpec
 {
     PyObject_HEAD GParamSpec *pspec;
-} PyGParamSpec;
+};
 
 #define PyGParamSpec_Get( v ) ( ( (PyGParamSpec *)v )->pspec )
 #define PyGParamSpec_Check( v ) ( PyObject_TypeCheck( v, &PyGParamSpec_Type ) )
@@ -174,11 +169,11 @@ struct _PyGObject_Functions
     GParamSpec *( *paramspec_get )( PyObject *tuple );
     int ( *pyobj_to_unichar_conv )( PyObject *pyobj, void *ptr );
     int ( *parse_constructor_args )( GType obj_type,
-                                          char **arg_names,
-                                          char **prop_names,
-                                          GParameter *params,
-                                          guint *nparams,
-                                          PyObject **py_args );
+                                     char **arg_names,
+                                     char **prop_names,
+                                     GParameter *params,
+                                     guint *nparams,
+                                     PyObject **py_args );
     PyObject *( *param_gvalue_as_pyobject )( const GValue *gvalue, bool copy_boxed, const GParamSpec *pspec );
     int ( *gvalue_from_param_pyobject )( GValue *value, PyObject *py_obj, const GParamSpec *pspec );
     PyTypeObject *enum_type;
@@ -190,9 +185,9 @@ struct _PyGObject_Functions
     PyObject *( *flags_from_gtype )( GType gtype, int value );
 
     bool threads_enabled;
-    int ( *enable_threads )( void );
+    int ( *enable_threads )();
 
-    int ( *gil_state_ensure )( void );
+    int ( *gil_state_ensure )();
     void ( *gil_state_release )( int flag );
 
     void ( *register_class_init )( GType gtype, PyGClassInitFunc class_init );
@@ -200,7 +195,7 @@ struct _PyGObject_Functions
     void ( *closure_set_exception_handler )( GClosure *closure, PyClosureExceptionHandler handler );
 
     void ( *add_warning_redirection )( const char *domain, PyObject *warning );
-    void ( *disable_warning_redirections )( void );
+    void ( *disable_warning_redirections )();
     void ( *type_register_custom )( const char *type_name, PyGTypeRegistrationFunction callback, gpointer data );
     int ( *gerror_exception_check )( GError **error );
     PyObject *( *option_group_new )( GOptionGroup *group );
@@ -210,9 +205,9 @@ struct _PyGObject_Functions
 #ifndef _INSIDE_PYGOBJECT_
 
 #    if defined( NO_IMPORT ) || defined( NO_IMPORT_PYGOBJECT )
-extern struct _PyGObject_Functions *_PyGObject_API;
+extern _PyGObject_Functions *_PyGObject_API;
 #    else
-struct _PyGObject_Functions *_PyGObject_API;
+_PyGObject_Functions *_PyGObject_API;
 #    endif
 
 #    define pygobject_register_class ( _PyGObject_API->register_class )
@@ -360,11 +355,11 @@ static inline PyObject *pygobject_init( int req_major, int req_minor, int req_mi
     cobject = PyObject_GetAttrString( gobject, "_PyGObject_API" );
 #    if PY_VERSION_HEX >= 0x03000000
     if( cobject && PyCapsule_CheckExact( cobject ) )
-        _PyGObject_API = (struct _PyGObject_Functions *)PyCapsule_GetPointer( cobject, "gobject._PyGObject_API" );
+        _PyGObject_API = (_PyGObject_Functions *)PyCapsule_GetPointer( cobject, "gobject._PyGObject_API" );
 
 #    else
     if( cobject && PyCObject_Check( cobject ) )
-        _PyGObject_API = (struct _PyGObject_Functions *)PyCObject_AsVoidPtr( cobject );
+        _PyGObject_API = (_PyGObject_Functions *)PyCObject_AsVoidPtr( cobject );
 #    endif
     else
     {
@@ -653,7 +648,5 @@ static inline PyObject *pygobject_init( int req_major, int req_minor, int req_mi
             GSList, g_slist, py_list, list, check_func, convert_func, child_free_func, errormsg, errorreturn )
 
 #endif /* !_INSIDE_PYGOBJECT_ */
-
-
 
 #endif /* !_PYGOBJECT_H_ */

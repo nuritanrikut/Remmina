@@ -57,7 +57,7 @@
 #    include <gdk/gdkwayland.h>
 #endif
 
-struct _RemminaProtocolWidgetPriv
+struct RemminaProtocolWidgetPriv
 {
     RemminaFile *remmina_file;
     RemminaProtocolPlugin *plugin;
@@ -121,11 +121,11 @@ enum
     LAST_SIGNAL
 };
 
-typedef struct _RemminaProtocolWidgetSignalData
+struct RemminaProtocolWidgetSignalData
 {
     RemminaProtocolWidget *gp;
     const char *signal_name;
-} RemminaProtocolWidgetSignalData;
+};
 
 static guint remmina_protocol_widget_signals[LAST_SIGNAL] = { 0 };
 
@@ -567,12 +567,12 @@ void remmina_protocol_widget_send_keystrokes( RemminaProtocolWidget *gp, GtkMenu
     gint n_keys;
 
     /* Single keystroke replace */
-    typedef struct _KeystrokeReplace
+    struct KeystrokeReplace
     {
         char *search;
         char *replace;
         guint keyval;
-    } KeystrokeReplace;
+    };
     /* Special characters to replace */
     KeystrokeReplace keystrokes_replaces[] = {
         { const_cast<char *>( "\\n" ), const_cast<char *>( "\n" ), GDK_KEY_Return },
@@ -664,12 +664,12 @@ void remmina_protocol_widget_send_clip_strokes( GtkClipboard *clipboard, const c
     gint n_keys;
 
     /* Single keystroke replace */
-    typedef struct _KeystrokeReplace
+    struct KeystrokeReplace
     {
         char *search;
         char *replace;
         guint keyval;
-    } KeystrokeReplace;
+    };
     /* Special characters to replace */
     KeystrokeReplace text_replaces[] = {
         { const_cast<char *>( "\\n" ), const_cast<char *>( "\n" ), GDK_KEY_Return },
@@ -811,7 +811,7 @@ void remmina_protocol_widget_emit_signal( RemminaProtocolWidget *gp, const char 
         /* Allow the execution of this function from a non main thread */
         RemminaMTExecData *d;
         d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_EMIT_SIGNAL;
+        d->func = RemminaMTExecData::FUNC_PROTOCOLWIDGET_EMIT_SIGNAL;
         d->p.protocolwidget_emit_signal.signal_name = signal_name;
         d->p.protocolwidget_emit_signal.gp = gp;
         remmina_masterthread_exec_and_wait( d );
@@ -942,7 +942,7 @@ RemminaMessagePanel *remmina_protocol_widget_mpprogress( RemminaConnectionObject
         /* Allow the execution of this function from a non main thread */
         RemminaMTExecData *d;
         d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_MPPROGRESS;
+        d->func = RemminaMTExecData::FUNC_PROTOCOLWIDGET_MPPROGRESS;
         d->p.protocolwidget_mpprogress.cnnobj = cnnobj;
         d->p.protocolwidget_mpprogress.message = msg;
         d->p.protocolwidget_mpprogress.response_callback = response_callback;
@@ -966,7 +966,7 @@ void remmina_protocol_widget_mpdestroy( RemminaConnectionObject *cnnobj, Remmina
         /* Allow the execution of this function from a non main thread */
         RemminaMTExecData *d;
         d = static_cast<RemminaMTExecData *>( g_malloc( sizeof( RemminaMTExecData ) ) );
-        d->func = remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_MPDESTROY;
+        d->func = RemminaMTExecData::FUNC_PROTOCOLWIDGET_MPDESTROY;
         d->p.protocolwidget_mpdestroy.cnnobj = cnnobj;
         d->p.protocolwidget_mpdestroy.mp = mp;
         remmina_masterthread_exec_and_wait( d );
@@ -1591,7 +1591,7 @@ struct remmina_protocol_widget_dialog_mt_data_t
 
 static void authpanel_mt_cb( void *user_data, int button )
 {
-    struct remmina_protocol_widget_dialog_mt_data_t *d = (struct remmina_protocol_widget_dialog_mt_data_t *)user_data;
+     remmina_protocol_widget_dialog_mt_data_t *d = ( remmina_protocol_widget_dialog_mt_data_t *)user_data;
 
     d->rcbutton = button;
     if( button == GTK_RESPONSE_OK )
@@ -1639,7 +1639,7 @@ static void authpanel_mt_cb( void *user_data, int button )
 
 static int remmina_protocol_widget_dialog_mt_setup( gpointer user_data )
 {
-    struct remmina_protocol_widget_dialog_mt_data_t *d = (struct remmina_protocol_widget_dialog_mt_data_t *)user_data;
+     remmina_protocol_widget_dialog_mt_data_t *d = ( remmina_protocol_widget_dialog_mt_data_t *)user_data;
 
     RemminaFile *remminafile = d->gp->priv->remmina_file;
     RemminaMessagePanel *mp;
@@ -1683,13 +1683,13 @@ static int remmina_protocol_widget_dialog_mt_setup( gpointer user_data )
     return FALSE;
 }
 
-typedef struct
+struct MpRunInfo
 {
     RemminaMessagePanel *mp;
     GMainLoop *loop;
     gint response;
     bool destroyed;
-} MpRunInfo;
+};
 
 static void shutdown_loop( MpRunInfo *mpri )
 {
@@ -1733,8 +1733,8 @@ static int remmina_protocol_widget_dialog( enum panel_type dtype,
 {
     TRACE_CALL( __func__ );
 
-    struct remmina_protocol_widget_dialog_mt_data_t *d = (struct remmina_protocol_widget_dialog_mt_data_t *)g_malloc(
-        sizeof( struct remmina_protocol_widget_dialog_mt_data_t ) );
+     remmina_protocol_widget_dialog_mt_data_t *d = ( remmina_protocol_widget_dialog_mt_data_t *)g_malloc(
+        sizeof(  remmina_protocol_widget_dialog_mt_data_t ) );
     int rcbutton;
 
     d->gp = gp;
@@ -2062,7 +2062,7 @@ void remmina_protocol_widget_save_cred( RemminaProtocolWidget *gp )
         /* Allow the execution of this function from a non main thread */
         RemminaMTExecData *d;
         d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = remmina_masterthread_exec_data::FUNC_INIT_SAVE_CRED;
+        d->func = RemminaMTExecData::FUNC_INIT_SAVE_CRED;
         d->p.init_save_creds.gp = gp;
         remmina_masterthread_exec_and_wait( d );
         g_free( d );
@@ -2120,7 +2120,7 @@ void remmina_protocol_widget_panel_show_listen( RemminaProtocolWidget *gp, gint 
         /* Allow the execution of this function from a non main thread */
         RemminaMTExecData *d;
         d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_PANELSHOWLISTEN;
+        d->func = RemminaMTExecData::FUNC_PROTOCOLWIDGET_PANELSHOWLISTEN;
         d->p.protocolwidget_panelshowlisten.gp = gp;
         d->p.protocolwidget_panelshowlisten.port = port;
         remmina_masterthread_exec_and_wait( d );
@@ -2150,7 +2150,7 @@ void remmina_protocol_widget_panel_show_retry( RemminaProtocolWidget *gp )
         /* Allow the execution of this function from a non main thread */
         RemminaMTExecData *d;
         d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = remmina_masterthread_exec_data::FUNC_PROTOCOLWIDGET_MPSHOWRETRY;
+        d->func = RemminaMTExecData::FUNC_PROTOCOLWIDGET_MPSHOWRETRY;
         d->p.protocolwidget_mpshowretry.gp = gp;
         remmina_masterthread_exec_and_wait( d );
         g_free( d );
@@ -2223,7 +2223,7 @@ void remmina_protocol_widget_chat_receive( RemminaProtocolWidget *gp, const char
             /* Allow the execution of this function from a non main thread */
             RemminaMTExecData *d;
             d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-            d->func = remmina_masterthread_exec_data::FUNC_CHAT_RECEIVE;
+            d->func = RemminaMTExecData::FUNC_CHAT_RECEIVE;
             d->p.chat_receive.gp = gp;
             d->p.chat_receive.text = text;
             remmina_masterthread_exec_and_wait( d );
@@ -2274,7 +2274,7 @@ GtkWidget *remmina_protocol_widget_gtkviewport( RemminaProtocolWidget *gp )
     return rcw_get_gtkviewport( gp->cnnobj );
 }
 
-GtkWidget *remmina_protocol_widget_new( void )
+GtkWidget *remmina_protocol_widget_new()
 {
     return GTK_WIDGET( g_object_new( REMMINA_TYPE_PROTOCOL_WIDGET, NULL ) );
 }

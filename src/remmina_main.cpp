@@ -123,7 +123,7 @@ static const char *quick_connect_plugin_list[] = { "RDP", "VNC", "SSH", "NX", "S
 /**
  * Save the Remmina Main Window size to assure the main geometry at each restart
  */
-static void remmina_main_save_size( void )
+static void remmina_main_save_size()
 {
     TRACE_CALL( __func__ );
     if( ( gdk_window_get_state( gtk_widget_get_window( GTK_WIDGET( remminamain->window ) ) )
@@ -154,7 +154,7 @@ static void remmina_main_save_expanded_group_func( GtkTreeView *tree_view, GtkTr
     }
 }
 
-static void remmina_main_save_expanded_group( void )
+static void remmina_main_save_expanded_group()
 {
     TRACE_CALL( __func__ );
     if( GTK_IS_TREE_STORE( remminamain->priv->file_model ) )
@@ -260,7 +260,7 @@ extern "C"
     }
 }
 
-static void remmina_main_clear_selection_data( void )
+static void remmina_main_clear_selection_data()
 {
     TRACE_CALL( __func__ );
     g_free( remminamain->priv->selected_filename );
@@ -478,7 +478,7 @@ static void remmina_main_expand_group_traverse( GtkTreeIter *iter )
     }
 }
 
-static void remmina_main_expand_group( void )
+static void remmina_main_expand_group()
 {
     TRACE_CALL( __func__ );
     GtkTreeIter iter;
@@ -1296,7 +1296,7 @@ static int is_empty( const char *s )
     return TRUE;
 }
 
-static int remmina_main_quickconnect( void )
+static int remmina_main_quickconnect()
 {
     TRACE_CALL( __func__ );
     RemminaFile *remminafile;
@@ -1551,7 +1551,7 @@ extern "C"
 }
 
 /* Remmina main window initialization */
-static void remmina_main_init( void )
+static void remmina_main_init()
 {
     TRACE_CALL( __func__ );
     int i, qcp_idx, qcp_actidx;
@@ -1640,7 +1640,7 @@ extern "C"
 }
 
 /* RemminaMain instance */
-GtkWidget *remmina_main_new( void )
+GtkWidget *remmina_main_new()
 {
     TRACE_CALL( __func__ );
     GSimpleActionGroup *actions;

@@ -82,7 +82,7 @@ typedef void ( *PThreadCleanupFunc )( void * );
 #define X_UNIX_SOCKET "/tmp/.X11-unix/X%d"
 
 #define INCLUDE_GET_AVAILABLE_XDISPLAY \
-    static gint remmina_get_available_xdisplay( void ) \
+    static gint remmina_get_available_xdisplay() \
     { \
         gint i; \
         gint display = 0; \

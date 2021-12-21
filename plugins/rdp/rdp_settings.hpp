@@ -36,9 +36,9 @@
 #pragma once
 
 
-void remmina_rdp_settings_init( void );
-guint remmina_rdp_settings_get_keyboard_layout( void );
-GtkWidget *remmina_rdp_settings_new( void );
+void remmina_rdp_settings_init();
+guint remmina_rdp_settings_get_keyboard_layout();
+GtkWidget *remmina_rdp_settings_new();
 
 void remmina_rdp_settings_get_orientation_scale_prefs( int *desktopOrientation,
                                                        int *desktopScaleFactor,

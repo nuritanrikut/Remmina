@@ -37,11 +37,11 @@
 
 
 
-void remmina_icon_init( void );
-int remmina_icon_is_autostart( void );
+void remmina_icon_init();
+int remmina_icon_is_autostart();
 void remmina_icon_set_autostart( bool autostart );
-void remmina_icon_populate_menu( void );
-void remmina_icon_destroy( void );
-int remmina_icon_is_available( void );
+void remmina_icon_populate_menu();
+void remmina_icon_destroy();
+int remmina_icon_is_available();
 
 

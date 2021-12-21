@@ -37,7 +37,7 @@
 #include <sodium.h>
 
 #if SODIUM_VERSION_INT >= 90200
-typedef struct _RemminaUnlockDialog
+struct RemminaUnlockDialog
 {
     GtkBuilder *builder;
     GtkDialog *dialog;
@@ -49,15 +49,11 @@ typedef struct _RemminaUnlockDialog
     bool unlock_init;
 
     gint retval;
-} RemminaUnlockDialog;
+};
 
 extern GTimer *timer;
 extern bool isinit;
 
 #endif
 
-
-
 gint remmina_unlock_new( GtkWindow *parent );
-
-

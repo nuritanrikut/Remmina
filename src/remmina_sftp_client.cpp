@@ -1067,7 +1067,7 @@ gint remmina_sftp_client_confirm_resume( RemminaSFTPClient *client, const char *
         RemminaMTExecData *d;
         gint retval;
         d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = remmina_masterthread_exec_data::FUNC_SFTP_CLIENT_CONFIRM_RESUME;
+        d->func = RemminaMTExecData::FUNC_SFTP_CLIENT_CONFIRM_RESUME;
         d->p.sftp_client_confirm_resume.client = client;
         d->p.sftp_client_confirm_resume.path = path;
         remmina_masterthread_exec_and_wait( d );
@@ -1120,7 +1120,7 @@ gint remmina_sftp_client_confirm_resume( RemminaSFTPClient *client, const char *
     return response;
 }
 
-RemminaSFTPClient *remmina_sftp_client_new( void )
+RemminaSFTPClient *remmina_sftp_client_new()
 {
     TRACE_CALL( __func__ );
     return REMMINA_SFTP_CLIENT( g_object_new( REMMINA_TYPE_SFTP_CLIENT, NULL ) );

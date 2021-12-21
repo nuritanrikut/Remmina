@@ -53,20 +53,20 @@ bool logstart;
 #define REMMINA_LOG_WINDOW_GET_CLASS( obj ) \
     ( G_TYPE_INSTANCE_GET_CLASS( ( obj ), REMMINA_TYPE_LOG_WINDOW, RemminaLogWindowClass ) )
 
-typedef struct _RemminaLogWindow
+struct RemminaLogWindow
 {
     GtkWindow window;
 
     GtkWidget *log_view;
     GtkTextBuffer *log_buffer;
-} RemminaLogWindow;
+};
 
-typedef struct _RemminaLogWindowClass
+struct RemminaLogWindowClass
 {
     GtkWindowClass parent_class;
-} RemminaLogWindowClass;
+};
 
-GType remmina_log_window_get_type( void ) G_GNUC_CONST;
+GType remmina_log_window_get_type() G_GNUC_CONST;
 
 G_DEFINE_TYPE( RemminaLogWindow, remmina_log_window, GTK_TYPE_WINDOW )
 
@@ -96,7 +96,7 @@ static void remmina_log_window_class_init( RemminaLogWindowClass *klass )
 /* We will always only have one log window per instance */
 static GtkWidget *log_window = NULL;
 
-static GtkWidget *remmina_log_window_new( void )
+static GtkWidget *remmina_log_window_new()
 {
     TRACE_CALL( __func__ );
     return GTK_WIDGET( g_object_new( REMMINA_TYPE_LOG_WINDOW, NULL ) );
@@ -114,7 +114,7 @@ static void remmina_log_start_stop( GtkSwitch *logswitch, gpointer user_data )
     logstart = !logstart;
 }
 
-void remmina_log_start( void )
+void remmina_log_start()
 {
     TRACE_CALL( __func__ );
     if( log_window )
@@ -163,7 +163,7 @@ void remmina_log_start( void )
            "https://gitlab.com/Remmina/Remmina/-/wikis/Usage/Remmina-debugging\n" ) );
 }
 
-int remmina_log_running( void )
+int remmina_log_running()
 {
     TRACE_CALL( __func__ );
     return ( log_window != NULL );

@@ -51,6 +51,8 @@
 
 #include <winpr/clipboard.h>
 
+struct rfContext;
+
 /**
  * FREERDP_CHECK_VERSION:
  * @major: major version (e.g. 2 for version 2.1.0)
@@ -77,8 +79,6 @@
 #define AVC_MIN_DESKTOP_WIDTH 644
 #define AVC_MIN_DESKTOP_HEIGHT 480
 
-typedef struct rf_context rfContext;
-
 #define GET_PLUGIN_DATA( gp ) (rfContext *)g_object_get_data( G_OBJECT( gp ), "plugin-data" )
 
 /* Performance Flags, from freerdp source
@@ -104,7 +104,7 @@ typedef struct rf_context rfContext;
 extern RemminaPluginService *remmina_plugin_service;
 #define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )
 
-struct rf_clipboard
+struct rfClipboard
 {
     rfContext *rfi;
     CliprdrClientContext *context;
@@ -127,33 +127,29 @@ struct rf_clipboard
     UINT32 server_html_format_id;
 
     /* Stats for clipboard download */
-    struct timeval clientformatdatarequest_tv;
+    timeval clientformatdatarequest_tv;
 };
-typedef struct rf_clipboard rfClipboard;
 
-struct rf_pointer
+struct rfPointer
 {
     rdpPointer pointer;
     GdkCursor *cursor;
 };
-typedef struct rf_pointer rfPointer;
 
-struct rf_bitmap
+struct rfBitmap
 {
     rdpBitmap bitmap;
     Pixmap pixmap;
     cairo_surface_t *surface;
 };
-typedef struct rf_bitmap rfBitmap;
 
-struct rf_glyph
+struct rfGlyph
 {
     rdpGlyph glyph;
     Pixmap pixmap;
 };
-typedef struct rf_glyph rfGlyph;
 
-typedef enum
+enum RemminaPluginRdpEventType
 {
     REMMINA_RDP_EVENT_TYPE_SCANCODE,
     REMMINA_RDP_EVENT_TYPE_SCANCODE_UNICODE,
@@ -163,11 +159,11 @@ typedef enum
     REMMINA_RDP_EVENT_TYPE_CLIPBOARD_SEND_CLIENT_FORMAT_DATA_REQUEST,
     REMMINA_RDP_EVENT_TYPE_SEND_MONITOR_LAYOUT,
     REMMINA_RDP_EVENT_DISCONNECT
-} RemminaPluginRdpEventType;
+};
 
-struct remmina_plugin_rdp_event
+struct RemminaPluginRdpEvent
 {
-    remmina_plugin_rdp_event() : type( REMMINA_RDP_EVENT_TYPE_SCANCODE ) { }
+    RemminaPluginRdpEvent() : type( REMMINA_RDP_EVENT_TYPE_SCANCODE ) { }
 
     RemminaPluginRdpEventType type;
     union
@@ -214,9 +210,8 @@ struct remmina_plugin_rdp_event
         } monitor_layout;
     };
 };
-typedef struct remmina_plugin_rdp_event RemminaPluginRdpEvent;
 
-typedef enum
+enum RemminaPluginRdpUiType
 {
     REMMINA_RDP_UI_UPDATE_REGIONS = 0,
     REMMINA_RDP_UI_CONNECTED,
@@ -225,16 +220,16 @@ typedef enum
     REMMINA_RDP_UI_NOCODEC,
     REMMINA_RDP_UI_CLIPBOARD,
     REMMINA_RDP_UI_EVENT
-} RemminaPluginRdpUiType;
+};
 
-typedef enum
+enum RemminaPluginRdpUiClipboardType
 {
     REMMINA_RDP_UI_CLIPBOARD_FORMATLIST,
     REMMINA_RDP_UI_CLIPBOARD_GET_DATA,
     REMMINA_RDP_UI_CLIPBOARD_SET_DATA
-} RemminaPluginRdpUiClipboardType;
+};
 
-typedef enum
+enum RemminaPluginRdpUiPointerType
 {
     REMMINA_RDP_POINTER_NEW,
     REMMINA_RDP_POINTER_FREE,
@@ -242,20 +237,20 @@ typedef enum
     REMMINA_RDP_POINTER_NULL,
     REMMINA_RDP_POINTER_DEFAULT,
     REMMINA_RDP_POINTER_SETPOS
-} RemminaPluginRdpUiPointerType;
+};
 
-typedef enum
+enum RemminaPluginRdpUiEeventType
 {
     REMMINA_RDP_UI_EVENT_UPDATE_SCALE,
     REMMINA_RDP_UI_EVENT_DESTROY_CAIRO_SURFACE
-} RemminaPluginRdpUiEeventType;
+};
 
-typedef struct
+struct region
 {
     gint x, y, w, h;
-} region;
+};
 
-struct remmina_plugin_rdp_ui_object
+struct RemminaPluginRdpUiObject
 {
     RemminaPluginRdpUiType type;
     bool sync;
@@ -313,13 +308,13 @@ struct remmina_plugin_rdp_ui_object
     void *retptr;
 };
 
-typedef struct remmina_plugin_rdp_keymap_entry
+struct RemminaPluginRdpKeymapEntry
 {
     unsigned orig_keycode;
     unsigned translated_keycode;
-} RemminaPluginRdpKeymapEntry;
+};
 
-struct rf_context
+struct rfContext
 {
     rdpContext context;
     DEFINE_RDP_CLIENT_COMMON();
@@ -347,9 +342,9 @@ struct rf_context
     bool connected;
     bool is_reconnecting;
     bool stop_reconnecting_requested;
-    /* orphaned: rf_context has still one or more libfreerdp thread active,
+    /* orphaned: rfContext has still one or more libfreerdp thread active,
 	 * but no longer maintained by an open RemminaProtocolWidget/tab.
-	 * When the orphaned thread terminates, we must cleanup rf_context.
+	 * When the orphaned thread terminates, we must cleanup rfContext.
 	 */
     bool orphaned;
     int reconnect_maxattempts;
@@ -398,8 +393,6 @@ struct rf_context
         REMMINA_POSTCONNECT_ERROR_NO_H264
     } postconnect_error;
 };
-
-typedef struct remmina_plugin_rdp_ui_object RemminaPluginRdpUiObject;
 
 void rf_init( RemminaProtocolWidget *gp );
 void rf_uninit( RemminaProtocolWidget *gp );

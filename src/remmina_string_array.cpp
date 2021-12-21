@@ -40,7 +40,7 @@
 #include "remmina_string_array.hpp"
 #include "remmina/remmina_trace_calls.hpp"
 
-RemminaStringArray *remmina_string_array_new( void )
+RemminaStringArray *remmina_string_array_new()
 {
     TRACE_CALL( __func__ );
     return g_ptr_array_new();

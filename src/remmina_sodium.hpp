@@ -41,7 +41,7 @@
 
 #define SODIUM_VERSION_INT ( SODIUM_LIBRARY_VERSION_MAJOR * 10000 + SODIUM_LIBRARY_VERSION_MINOR * 100 )
 #if SODIUM_VERSION_INT >= 90200
-void remmina_sodium_init( void );
+void remmina_sodium_init();
 char *remmina_sodium_pwhash( const char *pass );
 char *remmina_sodium_pwhash_str( const char *pass );
 gint remmina_sodium_pwhash_str_verify( const char *key, const char *pass );

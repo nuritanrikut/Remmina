@@ -42,7 +42,7 @@ static guint keyboard_layout = 0;
 static guint rdp_keyboard_layout = 0;
 static char *rdp_keyboard_remapping_list = NULL;
 
-static void remmina_rdp_settings_kbd_init( void )
+static void remmina_rdp_settings_kbd_init()
 {
     TRACE_CALL( __func__ );
 #if FREERDP_CHECK_VERSION( 2, 3, 0 )
@@ -54,7 +54,7 @@ static void remmina_rdp_settings_kbd_init( void )
 #endif
 }
 
-void remmina_rdp_settings_init( void )
+void remmina_rdp_settings_init()
 {
     TRACE_CALL( __func__ );
     char *value;
@@ -69,7 +69,7 @@ void remmina_rdp_settings_init( void )
     remmina_rdp_settings_kbd_init();
 }
 
-guint remmina_rdp_settings_get_keyboard_layout( void )
+guint remmina_rdp_settings_get_keyboard_layout()
 {
     TRACE_CALL( __func__ );
     return keyboard_layout;
@@ -86,7 +86,7 @@ guint remmina_rdp_settings_get_keyboard_layout( void )
 #define REMMINA_RDPSET_GRID_GET_CLASS( obj ) \
     ( G_TYPE_INSTANCE_GET_CLASS( ( obj ), REMMINA_TYPE_PLUGIN_RDPSET_GRID, RemminaPluginRdpsetGridClass ) )
 
-typedef struct _RemminaPluginRdpsetGrid
+struct RemminaPluginRdpsetGrid
 {
     GtkGrid grid;
 
@@ -119,14 +119,14 @@ typedef struct _RemminaPluginRdpsetGrid
     GtkWidget *desktop_orientation_combo;
 
     guint quality_values[10];
-} RemminaPluginRdpsetGrid;
+};
 
-typedef struct _RemminaPluginRdpsetGridClass
+struct RemminaPluginRdpsetGridClass
 {
     GtkGridClass parent_class;
-} RemminaPluginRdpsetGridClass;
+};
 
-GType remmina_rdp_settings_grid_get_type( void ) G_GNUC_CONST;
+GType remmina_rdp_settings_grid_get_type() G_GNUC_CONST;
 
 G_DEFINE_TYPE( RemminaPluginRdpsetGrid, remmina_rdp_settings_grid, GTK_TYPE_GRID )
 
@@ -706,7 +706,7 @@ static void remmina_rdp_settings_grid_init( RemminaPluginRdpsetGrid *grid )
     grid->reconnect_attempts = widget;
 }
 
-GtkWidget *remmina_rdp_settings_new( void )
+GtkWidget *remmina_rdp_settings_new()
 {
     TRACE_CALL( __func__ );
     GtkWidget *widget;

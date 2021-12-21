@@ -38,6 +38,6 @@
 
 #include "json-glib/json-glib.h"
 
-JsonNode *remmina_stats_get_all( void );
+JsonNode *remmina_stats_get_all();
 
 

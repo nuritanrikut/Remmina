@@ -39,7 +39,8 @@
 #include "rcw.hpp"
 #include "remmina_file.hpp"
 #include "remmina_ssh.hpp"
-
+#include "remmina/types.hpp"
+#include "remmina/plugin.hpp"
 
 
 #define REMMINA_PROTOCOL_FEATURE_TOOL_SSH -1
@@ -55,10 +56,9 @@
 #define REMMINA_PROTOCOL_WIDGET_GET_CLASS( obj ) \
     ( G_TYPE_INSTANCE_GET_CLASS( ( obj ), REMMINA_TYPE_PROTOCOL_WIDGET, RemminaProtocolWidgetClass ) )
 
-typedef struct _RemminaProtocolWidgetPriv RemminaProtocolWidgetPriv;
-typedef struct _RemminaProtocolPlugin RemminaProtocolPlugin;
+struct RemminaProtocolWidgetPriv;
 
-struct _RemminaProtocolWidget
+struct RemminaProtocolWidget
 {
     GtkEventBox event_box;
     RemminaConnectionObject *cnnobj;
@@ -66,7 +66,7 @@ struct _RemminaProtocolWidget
     RemminaProtocolPlugin *plugin;
 };
 
-struct _RemminaProtocolWidgetClass
+struct RemminaProtocolWidgetClass
 {
     GtkEventBoxClass parent_class;
 
@@ -78,12 +78,12 @@ struct _RemminaProtocolWidgetClass
     void ( *unlock_dynres )( RemminaProtocolWidget *gp );
 };
 
-GType remmina_protocol_widget_get_type( void ) G_GNUC_CONST;
+GType remmina_protocol_widget_get_type() G_GNUC_CONST;
 
 GtkWindow *remmina_protocol_widget_get_gtkwindow( RemminaProtocolWidget *gp );
 GtkWidget *remmina_protocol_widget_gtkviewport( RemminaProtocolWidget *gp );
 
-GtkWidget *remmina_protocol_widget_new( void );
+GtkWidget *remmina_protocol_widget_new();
 void remmina_protocol_widget_setup( RemminaProtocolWidget *gp,
                                     RemminaFile *remminafile,
                                     RemminaConnectionObject *cnnobj );

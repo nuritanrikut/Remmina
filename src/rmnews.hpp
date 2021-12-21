@@ -32,7 +32,7 @@
  *
  */
 
-typedef struct _RemminaNewsDialog
+struct RemminaNewsDialog
 {
     GtkBuilder *builder;
     GtkDialog *dialog;
@@ -45,12 +45,10 @@ typedef struct _RemminaNewsDialog
     GtkSwitch *rmnews_news_switch;
 
     gint retval;
-} RemminaNewsDialog;
+};
 
 #pragma once
-
 
 void rmnews_schedule();
 void rmnews_show_news();
 void rmnews_get_url( const char *url );
-

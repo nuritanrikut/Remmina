@@ -40,12 +40,12 @@
  * Remmina Preferences Dialog
  */
 
-typedef struct _RemminaPrefDialogPriv
+struct RemminaPrefDialogPriv
 {
     GtkWidget *resolutions_list;
-} RemminaPrefDialogPriv;
+};
 
-typedef struct _RemminaPrefDialog
+struct RemminaPrefDialog
 {
     GtkBuilder *builder;
     GtkWidget *dialog;
@@ -149,7 +149,7 @@ typedef struct _RemminaPrefDialog
     GtkFileChooser *button_term_cs;
 
     RemminaPrefDialogPriv *priv;
-} RemminaPrefDialog;
+};
 
 enum
 {
@@ -158,13 +158,9 @@ enum
     REMMINA_PREF_APPLET_TAB = 2
 };
 
-
-
 /* RemminaPrefDialog instance */
 GtkWidget *remmina_pref_dialog_new( gint default_tab, GtkWindow *parent );
 /* Get the current PrefDialog or NULL if not initialized */
-GtkWidget *remmina_pref_dialog_get_dialog( void );
+GtkWidget *remmina_pref_dialog_get_dialog();
 void remmina_prefdiag_unlock_repwd_on_changed( GtkEditable *editable, RemminaPrefDialog *dialog );
 void remmina_pref_dialog_on_action_close( GSimpleAction *action, GVariant *param, gpointer data );
-
-

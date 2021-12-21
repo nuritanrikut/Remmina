@@ -68,9 +68,9 @@
 #define KEYFILE_GROUP_REMMINA "remmina"
 #define KEYFILE_GROUP_STATE "Remmina Connection States"
 
-static struct timespec times[2];
+static timespec times[2];
 
-static RemminaFile *remmina_file_new_empty( void )
+static RemminaFile *remmina_file_new_empty()
 {
     TRACE_CALL( __func__ );
     RemminaFile *remminafile;
@@ -86,7 +86,7 @@ static RemminaFile *remmina_file_new_empty( void )
     return remminafile;
 }
 
-RemminaFile *remmina_file_new( void )
+RemminaFile *remmina_file_new()
 {
     TRACE_CALL( __func__ );
     RemminaFile *remminafile;
@@ -364,7 +364,7 @@ RemminaFile *remmina_file_load( const char *filename )
 
     gkeyfile = g_key_file_new();
 
-    if( g_file_test( filename, static_cast<GFileTest>(G_FILE_TEST_IS_REGULAR | G_FILE_TEST_EXISTS) ) )
+    if( g_file_test( filename, static_cast<GFileTest>( G_FILE_TEST_IS_REGULAR | G_FILE_TEST_EXISTS ) ) )
     {
         if( !g_key_file_load_from_file( gkeyfile, filename, G_KEY_FILE_NONE, NULL ) )
         {
@@ -522,7 +522,7 @@ const char *remmina_file_get_string( RemminaFile *remminafile, const char *setti
         RemminaMTExecData *d;
         const char *retval;
         d = (RemminaMTExecData *)g_malloc( sizeof( RemminaMTExecData ) );
-        d->func = remmina_masterthread_exec_data::FUNC_FILE_GET_STRING;
+        d->func = RemminaMTExecData::FUNC_FILE_GET_STRING;
         d->p.file_get_string.remminafile = remminafile;
         d->p.file_get_string.setting = setting;
         remmina_masterthread_exec_and_wait( d );
@@ -600,7 +600,7 @@ gint remmina_file_get_int( RemminaFile *remminafile, const char *setting, gint d
     char *value;
     gint r;
 
-    value = static_cast<char*>(g_hash_table_lookup( remminafile->settings, setting ));
+    value = static_cast<char *>( g_hash_table_lookup( remminafile->settings, setting ) );
     r = value == NULL ? default_value : ( value[0] == 't' ? TRUE : atoi( value ) );
     // TOO verbose: REMMINA_DEBUG ("Integer value is: %d", r);
     return r;
@@ -612,7 +612,7 @@ gint remmina_file_get_state_int( RemminaFile *remminafile, const char *setting, 
     char *value;
     gint r;
 
-    value = static_cast<char*>(g_hash_table_lookup( remminafile->states, setting ));
+    value = static_cast<char *>( g_hash_table_lookup( remminafile->states, setting ) );
     r = value == NULL ? default_value : ( value[0] == 't' ? TRUE : atoi( value ) );
     // TOO verbose: REMMINA_DEBUG ("Integer value is: %d", r);
     return r;
@@ -625,7 +625,7 @@ gdouble remmina_file_get_double( RemminaFile *remminafile, const char *setting, 
     TRACE_CALL( __func__ );
     char *value;
 
-    value = static_cast<char*>(g_hash_table_lookup( remminafile->settings, setting ));
+    value = static_cast<char *>( g_hash_table_lookup( remminafile->settings, setting ) );
     if( !value )
         return default_value;
 
@@ -649,7 +649,7 @@ gdouble remmina_file_get_state_double( RemminaFile *remminafile, const char *set
     TRACE_CALL( __func__ );
     char *value;
 
-    value = static_cast<char*>(g_hash_table_lookup( remminafile->states, setting ));
+    value = static_cast<char *>( g_hash_table_lookup( remminafile->states, setting ) );
     if( !value )
         return default_value;
 
@@ -1052,8 +1052,8 @@ char *remmina_file_get_datetime( RemminaFile *remminafile )
     GFile *file;
     GFileInfo *info;
 
-    struct timeval tv;
-    struct tm *ptm;
+    timeval tv;
+    tm *ptm;
     char time_string[256];
 
     guint64 mtime;

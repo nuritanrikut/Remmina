@@ -42,9 +42,9 @@
 
 #include "remmina_string_array.hpp"
 
-typedef struct _RemminaMainPriv RemminaMainPriv;
+struct RemminaMainPriv;
 
-typedef struct _RemminaMain
+struct RemminaMain
 {
     GtkBuilder *builder;
     GtkWindow *window;
@@ -82,9 +82,9 @@ typedef struct _RemminaMain
     GtkAccelGroup *accelgroup_shortcuts;
     RemminaMainPriv *priv;
     RemminaMonitor *monitor;
-} RemminaMain;
+};
 
-struct _RemminaMainPriv
+struct RemminaMainPriv
 {
     GtkTreeModel *file_model;
     GtkTreeModel *file_model_filter;
@@ -99,18 +99,18 @@ struct _RemminaMainPriv
 };
 
 /* Create the remminamain struct and the remmina main Remmina window */
-GtkWidget *remmina_main_new( void );
+GtkWidget *remmina_main_new();
 /* Get the current main GTK window or NULL if not initialized */
-GtkWindow *remmina_main_get_window( void );
+GtkWindow *remmina_main_get_window();
 
 void remmina_main_update_file_datetime( RemminaFile *file );
 
-void remmina_main_destroy( void );
+void remmina_main_destroy();
 extern "C"
 {
-    void remmina_main_on_destroy_event( void );
+    void remmina_main_on_destroy_event();
 }
-void remmina_main_save_before_destroy( void );
+void remmina_main_save_before_destroy();
 
 void remmina_main_show_warning_dialog( const char *message );
 void remmina_main_on_action_application_about( GSimpleAction *action, GVariant *param, gpointer data );

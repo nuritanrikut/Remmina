@@ -106,9 +106,9 @@ static void remmina_mpchange_file_list_callback( RemminaFile *remminafile, gpoin
     const char *username, *domain, *group;
 
     char *s;
-    struct mpchanger_params *mpcp;
+     mpchanger_params *mpcp;
 
-    mpcp = (struct mpchanger_params *)user_data;
+    mpcp = ( mpchanger_params *)user_data;
     store = GTK_LIST_STORE( mpcp->store );
 
     username = remmina_file_get_string( remminafile, "username" );
@@ -155,7 +155,7 @@ static void remmina_mpchange_checkbox_toggle( GtkCellRendererToggle *cell, char 
 {
     TRACE_CALL( __func__ );
     GtkTreeIter iter;
-    struct mpchanger_params *mpcp = (struct mpchanger_params *)user_data;
+     mpchanger_params *mpcp = ( mpchanger_params *)user_data;
     GtkTreePath *path;
 
     bool a = gtk_cell_renderer_toggle_get_active( cell );
@@ -165,7 +165,7 @@ static void remmina_mpchange_checkbox_toggle( GtkCellRendererToggle *cell, char 
     gtk_list_store_set( mpcp->store, &iter, COL_F, !a, -1 );
 }
 
-static void remmina_mpchange_dochange( char *fname, struct mpchanger_params *mpcp )
+static void remmina_mpchange_dochange( char *fname,  mpchanger_params *mpcp )
 {
     TRACE_CALL( __func__ );
 
@@ -180,7 +180,7 @@ static void remmina_mpchange_dochange( char *fname, struct mpchanger_params *mpc
     }
 }
 
-static void enable_inputs( struct mpchanger_params *mpcp, bool ena )
+static void enable_inputs(  mpchanger_params *mpcp, bool ena )
 {
     gtk_widget_set_sensitive( GTK_WIDGET( mpcp->eGroup ), ena );
     gtk_widget_set_sensitive( GTK_WIDGET( mpcp->eUsername ), ena );
@@ -194,7 +194,7 @@ static void enable_inputs( struct mpchanger_params *mpcp, bool ena )
 static int changenext( gpointer user_data )
 {
     TRACE_CALL( __func__ );
-    struct mpchanger_params *mpcp = (struct mpchanger_params *)user_data;
+     mpchanger_params *mpcp = ( mpchanger_params *)user_data;
     char *fname;
     bool sel;
 
@@ -221,7 +221,7 @@ static int changenext( gpointer user_data )
 static void remmina_mpchange_dochange_clicked( GtkButton *btn, gpointer user_data )
 {
     TRACE_CALL( __func__ );
-    struct mpchanger_params *mpcp = (struct mpchanger_params *)user_data;
+     mpchanger_params *mpcp = ( mpchanger_params *)user_data;
     const char *passwd1, *passwd2;
 
     if( mpcp->searchentrychange_timeout_source_id )
@@ -262,7 +262,7 @@ static void remmina_mpchange_dochange_clicked( GtkButton *btn, gpointer user_dat
 static int remmina_mpchange_searchfield_changed_to( gpointer user_data )
 {
     TRACE_CALL( __func__ );
-    struct mpchanger_params *mpcp = (struct mpchanger_params *)user_data;
+     mpchanger_params *mpcp = ( mpchanger_params *)user_data;
     const char *s;
 
     if( mpcp->searchentrychange_timeout_source_id )
@@ -301,7 +301,7 @@ static int remmina_mpchange_searchfield_changed_to( gpointer user_data )
 static void remmina_mpchange_searchfield_changed( GtkSearchEntry *se, gpointer user_data )
 {
     TRACE_CALL( __func__ );
-    struct mpchanger_params *mpcp = (struct mpchanger_params *)user_data;
+     mpchanger_params *mpcp = ( mpchanger_params *)user_data;
 
     if( mpcp->searchentrychange_timeout_source_id )
     {
@@ -317,7 +317,7 @@ static void remmina_mpchange_stopsearch( GtkSearchEntry *entry, gpointer user_da
 {
     TRACE_CALL( __func__ );
     /* The stop-search signal is emitted when pressing Esc on a GtkSearchEntry. We end the dialog. */
-    struct mpchanger_params *mpcp = (struct mpchanger_params *)user_data;
+     mpchanger_params *mpcp = ( mpchanger_params *)user_data;
     gtk_dialog_response( mpcp->dialog, 1 );
 }
 

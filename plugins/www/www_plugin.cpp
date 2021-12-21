@@ -55,7 +55,7 @@
 
 #define GET_PLUGIN_DATA( gp ) (RemminaPluginWWWData *)g_object_get_data( G_OBJECT( gp ), "plugin-data" )
 
-typedef struct _RemminaPluginWWWData
+struct RemminaPluginWWWData
 {
     WWWWebViewDocumentType document_type;
     GtkWidget *box;
@@ -70,7 +70,7 @@ typedef struct _RemminaPluginWWWData
     char *url;
     bool authenticated;
     bool formauthenticated;
-} RemminaPluginWWWData;
+};
 
 RemminaPluginService *remmina_plugin_service = NULL;
 

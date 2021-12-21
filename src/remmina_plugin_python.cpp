@@ -73,7 +73,7 @@ static int basename_no_ext( const char *in, char **out );
 /**
  *
  */
-void remmina_plugin_python_init( void )
+void remmina_plugin_python_init()
 {
     TRACE_CALL( __FUNC__ );
 

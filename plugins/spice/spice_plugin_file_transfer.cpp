@@ -43,14 +43,14 @@ static void
 remmina_plugin_spice_file_transfer_finished_cb( SpiceFileTransferTask *, GError *, RemminaProtocolWidget * );
 static void remmina_plugin_spice_file_transfer_progress_cb( GObject *, GParamSpec *, RemminaProtocolWidget * );
 
-typedef struct _RemminaPluginSpiceXferWidgets
+struct RemminaPluginSpiceXferWidgets
 {
     GtkWidget *vbox;
     GtkWidget *hbox;
     GtkWidget *progress;
     GtkWidget *label;
     GtkWidget *cancel;
-} RemminaPluginSpiceXferWidgets;
+};
 
 static RemminaPluginSpiceXferWidgets *remmina_plugin_spice_xfer_widgets_new( SpiceFileTransferTask * );
 static void remmina_plugin_spice_xfer_widgets_free( RemminaPluginSpiceXferWidgets *widgets );
@@ -80,8 +80,8 @@ void remmina_plugin_spice_file_transfer_new_cb( SpiceMainChannel *main_channel,
 		 * (and add the GTK_DIALOG_DESTROY_WITH_PARENT flag) if it becomes
 		 * accessible from the Remmina plugin API.
 		 */
-        gpdata->file_transfer_dialog =
-            gtk_dialog_new_with_buttons( _( "File Transfers" ), NULL, static_cast<GtkDialogFlags>(0), _( "_Cancel" ), GTK_RESPONSE_CANCEL, NULL );
+        gpdata->file_transfer_dialog = gtk_dialog_new_with_buttons(
+            _( "File Transfers" ), NULL, static_cast<GtkDialogFlags>( 0 ), _( "_Cancel" ), GTK_RESPONSE_CANCEL, NULL );
         dialog_content = gtk_dialog_get_content_area( GTK_DIALOG( gpdata->file_transfer_dialog ) );
         gtk_widget_set_size_request( dialog_content, 400, -1 );
         gtk_window_set_resizable( GTK_WINDOW( gpdata->file_transfer_dialog ), FALSE );
@@ -173,7 +173,7 @@ remmina_plugin_spice_file_transfer_dialog_response_cb( GtkDialog *dialog, gint r
         g_hash_table_iter_init( &iter, gpdata->file_transfers );
         while( g_hash_table_iter_next( &iter, &key, &value ) )
         {
-            task = static_cast<SpiceFileTransferTask*>(key);
+            task = static_cast<SpiceFileTransferTask *>( key );
             spice_file_transfer_task_cancel( task );
         }
     }
@@ -187,7 +187,7 @@ remmina_plugin_spice_file_transfer_progress_cb( GObject *task, GParamSpec *param
     RemminaPluginSpiceXferWidgets *widgets;
     RemminaPluginSpiceData *gpdata = GET_PLUGIN_DATA( gp );
 
-    widgets = static_cast<RemminaPluginSpiceXferWidgets*>(g_hash_table_lookup( gpdata->file_transfers, task ));
+    widgets = static_cast<RemminaPluginSpiceXferWidgets *>( g_hash_table_lookup( gpdata->file_transfers, task ) );
     if( widgets )
     {
         gtk_progress_bar_set_fraction( GTK_PROGRESS_BAR( widgets->progress ),

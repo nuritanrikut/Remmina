@@ -35,8 +35,6 @@
 
 #pragma once
 
-
-
 #define REMMINA_TYPE_APPLET_MENU ( remmina_applet_menu_get_type() )
 #define REMMINA_APPLET_MENU( obj ) \
     ( G_TYPE_CHECK_INSTANCE_CAST( ( obj ), REMMINA_TYPE_APPLET_MENU, RemminaAppletMenu ) )
@@ -47,36 +45,34 @@
 #define REMMINA_APPLET_MENU_GET_CLASS( obj ) \
     ( G_TYPE_INSTANCE_GET_CLASS( ( obj ), REMMINA_TYPE_APPLET_MENU, RemminaAppletMenuClass ) )
 
-typedef enum
+enum RemminaAppletMenuNewConnectionType
 {
     REMMINA_APPLET_MENU_NEW_CONNECTION_NONE,
     REMMINA_APPLET_MENU_NEW_CONNECTION_TOP,
     REMMINA_APPLET_MENU_NEW_CONNECTION_BOTTOM
-} RemminaAppletMenuNewConnectionType;
+};
 
-typedef struct _RemminaAppletMenuPriv RemminaAppletMenuPriv;
+struct RemminaAppletMenuPriv;
 
-typedef struct _RemminaAppletMenu
+struct RemminaAppletMenu
 {
     GtkMenu menu;
 
     RemminaAppletMenuPriv *priv;
-} RemminaAppletMenu;
+};
 
-typedef struct _RemminaAppletMenuClass
+struct RemminaAppletMenuClass
 {
     GtkMenuClass parent_class;
 
     void ( *launch_item )( RemminaAppletMenu *menu );
     void ( *edit_item )( RemminaAppletMenu *menu );
-} RemminaAppletMenuClass;
+};
 
-GType remmina_applet_menu_get_type( void ) G_GNUC_CONST;
+GType remmina_applet_menu_get_type() G_GNUC_CONST;
 
 void remmina_applet_menu_register_item( RemminaAppletMenu *menu, RemminaAppletMenuItem *menuitem );
 void remmina_applet_menu_add_item( RemminaAppletMenu *menu, RemminaAppletMenuItem *menuitem );
-GtkWidget *remmina_applet_menu_new( void );
+GtkWidget *remmina_applet_menu_new();
 void remmina_applet_menu_set_hide_count( RemminaAppletMenu *menu, bool hide_count );
 void remmina_applet_menu_populate( RemminaAppletMenu *menu );
-
-

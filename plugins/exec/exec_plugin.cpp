@@ -48,13 +48,13 @@
 
 #define GET_PLUGIN_DATA( gp ) (RemminaPluginExecData *)g_object_get_data( G_OBJECT( gp ), "plugin-data" )
 
-typedef struct _RemminaPluginExecData
+struct RemminaPluginExecData
 {
     GtkWidget *log_view;
     GtkTextBuffer *log_buffer;
     GtkTextBuffer *err;
     GtkWidget *sw;
-} RemminaPluginExecData;
+};
 
 static RemminaPluginService *remmina_plugin_service = NULL;
 #define REMMINA_PLUGIN_DEBUG( fmt, ... ) remmina_plugin_service->_remmina_debug( __func__, fmt, ##__VA_ARGS__ )

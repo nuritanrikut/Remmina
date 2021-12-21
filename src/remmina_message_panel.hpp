@@ -36,7 +36,7 @@
 
 #pragma once
 
-
+#include <gtk/gtk.h>
 
 #define REMMINA_TYPE_MESSAGE_PANEL ( remmina_message_panel_get_type() )
 G_DECLARE_DERIVABLE_TYPE( RemminaMessagePanel, remmina_message_panel, REMMINA, MESSAGE_PANEL, GtkBox )
@@ -65,7 +65,7 @@ enum
 /* Callback function type to receive buttons notification */
 typedef void ( *RemminaMessagePanelCallback )( void *user_data, int button );
 
-RemminaMessagePanel *remmina_message_panel_new( void );
+RemminaMessagePanel *remmina_message_panel_new();
 void remmina_message_panel_setup_progress( RemminaMessagePanel *mp,
                                            const char *message,
                                            RemminaMessagePanelCallback response_callback,

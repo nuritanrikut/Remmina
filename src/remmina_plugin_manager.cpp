@@ -582,7 +582,7 @@ RemminaFilePlugin *remmina_plugin_manager_get_export_file_handler( RemminaFile *
     return NULL;
 }
 
-RemminaSecretPlugin *remmina_plugin_manager_get_secret_plugin( void )
+RemminaSecretPlugin *remmina_plugin_manager_get_secret_plugin()
 {
     TRACE_CALL( __func__ );
     return remmina_secret_plugin;

@@ -51,12 +51,12 @@
 /** Returns @c TRUE if @a ptr is @c NULL or @c *ptr is @c FALSE. */
 #define EMPTY( ptr ) ( !( ptr ) || !*( ptr ) )
 
-struct utsname u;
+utsname u;
 
 /* Copyright (C) 1998 VMware, Inc. All rights reserved.
  * Some of the code in this file is taken from the VMware open client.
  */
-typedef struct lsb_distro_info
+struct RemminaUnlockDialog
 {
     char *name;
     char *scanstring;
@@ -72,11 +72,11 @@ typedef struct lsb_distro_info
  * };
  */
 
-typedef struct distro_info
+struct DistroInfo
 {
     const char *name;
     const char *filename;
-} DistroInfo;
+};
 
 static DistroInfo distroArray[] = {
     { "RedHat", "/etc/redhat-release" },
@@ -532,7 +532,7 @@ char *remmina_gen_random_uuid()
     int i;
     static char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    result = static_cast<char*>(g_malloc0( 15 ));
+    result = static_cast<char *>( g_malloc0( 15 ) );
 
     for( i = 0; i < 7; i++ )
         result[i] = alpha[randombytes_uniform( sizeof( alpha ) )];

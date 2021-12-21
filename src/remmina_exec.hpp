@@ -35,9 +35,7 @@
 
 #pragma once
 
-
-
-typedef enum
+enum RemminaCommandType
 {
     REMMINA_COMMAND_NONE = 0,
     REMMINA_COMMAND_MAIN = 1,
@@ -52,19 +50,17 @@ typedef enum
     REMMINA_COMMAND_EXIT = 10,
     REMMINA_COMMAND_AUTOSTART = 11,
     REMMINA_COMMAND_ENCRYPT_PASSWORD = 12
-} RemminaCommandType;
+};
 
-typedef enum
+enum RemminaCondExitType
 {
     REMMINA_CONDEXIT_ONDISCONNECT = 0,
     REMMINA_CONDEXIT_ONQUIT = 1,
     REMMINA_CONDEXIT_ONMAINWINDELETE = 2
-} RemminaCondExitType;
+};
 
 void remmina_exec_command( RemminaCommandType command, const char *data );
-void remmina_exec_exitremmina( void );
+void remmina_exec_exitremmina();
 void remmina_application_condexit( RemminaCondExitType why );
 
 int remmina_exec_set_setting( char *profilefilename, char **settings );
-
-

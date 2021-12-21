@@ -124,7 +124,7 @@ static int remmina_tp_handler_register( RemminaTpHandler *handler )
     return TRUE;
 }
 
-RemminaTpHandler *remmina_tp_handler_new( void )
+RemminaTpHandler *remmina_tp_handler_new()
 {
     TRACE_CALL( __func__ );
     RemminaTpHandler *handler;
