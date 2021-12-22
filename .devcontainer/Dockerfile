@@ -33,3 +33,4 @@ RUN LC_ALL=en_US.UTF-8 apt-get update -qq \
 # RUN apt-get install libayatana-appindicator3-dev
 # RUN apt-get install clang-format
 # RUN apt-get install xdg-utils
+# RUN apt-get install libgtkmm-3.0-dev

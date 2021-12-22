@@ -187,7 +187,7 @@ compile_gresources(
 add_custom_target(resource DEPENDS ${RESOURCE_FILE})
 add_executable(remmina ${REMMINA_SRCS} ${RESOURCE_FILE})
 add_dependencies(remmina resource)
-target_link_libraries(remmina ${GTK_LIBRARIES} -rdynamic)
+target_link_libraries(remmina ${GTK_LIBRARIES} ${GTKMM_LIBRARIES} -rdynamic)
 
 if(WITH_PYTHONLIBS)
   if(PythonLibs_FOUND)

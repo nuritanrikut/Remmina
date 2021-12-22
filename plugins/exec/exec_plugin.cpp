@@ -35,13 +35,12 @@
  *
  */
 
+#include <gtkmm.h>
+
 #include "exec_plugin_config.hpp"
 
 #include "common/remmina_plugin.hpp"
 
-#include <gdk/gdkkeysyms.h>
-#include <gtk/gtk.h>
-#include <glib.h>
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <unistd.h>
@@ -50,10 +49,10 @@
 
 struct RemminaPluginExecData
 {
-    GtkWidget *log_view;
-    GtkTextBuffer *log_buffer;
-    GtkTextBuffer *err;
-    GtkWidget *sw;
+    Gtk::TextView *log_view;
+    Glib::RefPtr<Gtk::TextBuffer> log_buffer;
+    Glib::RefPtr<Gtk::TextBuffer> err;
+    Gtk::ScrolledWindow *sw;
 };
 
 static RemminaPluginService *remmina_plugin_service = NULL;
@@ -79,7 +78,8 @@ static int cb_out_watch( GIOChannel *channel, GIOCondition cond, RemminaProtocol
     }
 
     g_io_channel_read_line( channel, &string, &size, NULL, NULL );
-    gtk_text_buffer_insert_at_cursor( gpdata->log_buffer, string, -1 );
+    gpdata->log_buffer->insert_at_cursor( Glib::ustring( string, size ) );
+    //gtk_text_buffer_insert_at_cursor( gpdata->log_buffer, string, -1 );
     g_free( string );
 
     return TRUE;
@@ -99,7 +99,8 @@ static int cb_err_watch( GIOChannel *channel, GIOCondition cond, RemminaProtocol
     }
 
     g_io_channel_read_line( channel, &string, &size, NULL, NULL );
-    gtk_text_buffer_insert_at_cursor( gpdata->err, string, -1 );
+    gpdata->err->insert_at_cursor( Glib::ustring( string, size ) );
+    // gtk_text_buffer_insert_at_cursor( gpdata->err, string, -1 );
     g_free( string );
 
     return TRUE;
@@ -115,20 +116,25 @@ static void remmina_plugin_exec_init( RemminaProtocolWidget *gp )
     gpdata = g_new0( RemminaPluginExecData, 1 );
     g_object_set_data_full( G_OBJECT( gp ), "plugin-data", gpdata, g_free );
 
-    gpdata->log_view = gtk_text_view_new();
-    gtk_text_view_set_wrap_mode( GTK_TEXT_VIEW( gpdata->log_view ), GTK_WRAP_CHAR );
-    gtk_text_view_set_editable( GTK_TEXT_VIEW( gpdata->log_view ), FALSE );
-    gtk_text_view_set_left_margin( GTK_TEXT_VIEW( gpdata->log_view ), 20 );
-    gtk_text_view_set_right_margin( GTK_TEXT_VIEW( gpdata->log_view ), 20 );
-    gpdata->log_buffer = gtk_text_view_get_buffer( GTK_TEXT_VIEW( gpdata->log_view ) );
-    gpdata->sw = gtk_scrolled_window_new( NULL, NULL );
-    gtk_widget_set_size_request( gpdata->sw, 640, 480 );
-    gtk_scrolled_window_set_policy( GTK_SCROLLED_WINDOW( gpdata->sw ), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC );
-    gtk_container_add( GTK_CONTAINER( gp ), gpdata->sw );
-    gtk_container_add( GTK_CONTAINER( gpdata->sw ), gpdata->log_view );
-    gtk_text_buffer_set_text( gpdata->log_buffer, "Remmina Exec Plugin Logger", -1 );
+    gpdata->log_view = new Gtk::TextView();
+    gpdata->log_view->set_wrap_mode( Gtk::WrapMode::WRAP_CHAR );
+    gpdata->log_view->set_editable( false );
+    gpdata->log_view->set_left_margin( 20 );
+    gpdata->log_view->set_right_margin( 20 );
 
-    gtk_widget_show_all( gpdata->sw );
+    gpdata->log_buffer = gpdata->log_view->get_buffer();
+
+    gpdata->sw = new Gtk::ScrolledWindow();
+    gpdata->sw->set_size_request( 640, 480 );
+    gpdata->sw->set_policy( Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC );
+
+    Gtk::Container *container = Glib::wrap( GTK_CONTAINER( gp ) );
+    container->add( *gpdata->sw );
+    container->add( *gpdata->log_view );
+
+    gpdata->log_buffer->set_text( "Remmina Exec Plugin Logger" );
+
+    gpdata->sw->show_all();
 }
 
 static int remmina_plugin_exec_run( RemminaProtocolWidget *gp )
@@ -152,7 +158,7 @@ static int remmina_plugin_exec_run( RemminaProtocolWidget *gp )
     cmd = remmina_plugin_service->file_get_string( remminafile, "execcommand" );
     if( !cmd )
     {
-        gtk_text_buffer_set_text( gpdata->log_buffer, _( "You did not set any command to be executed" ), -1 );
+        gpdata->log_buffer->set_text( _( "You did not set any command to be executed" ) );
         remmina_plugin_service->protocol_plugin_signal_connection_opened( gp );
         return TRUE;
     }
@@ -160,7 +166,7 @@ static int remmina_plugin_exec_run( RemminaProtocolWidget *gp )
     g_shell_parse_argv( cmd, NULL, &argv, &error );
     if( error )
     {
-        gtk_text_buffer_set_text( gpdata->log_buffer, error->message, -1 );
+        gpdata->log_buffer->set_text( error->message );
         remmina_plugin_service->protocol_plugin_signal_connection_opened( gp );
         g_error_free( error );
         return TRUE;
@@ -183,7 +189,7 @@ static int remmina_plugin_exec_run( RemminaProtocolWidget *gp )
             &error );
         if( error != NULL )
         {
-            gtk_text_buffer_set_text( gpdata->log_buffer, error->message, -1 );
+            gpdata->log_buffer->set_text( error->message );
             g_error_free( error );
             remmina_plugin_service->protocol_plugin_signal_connection_opened( gp );
             return TRUE;
@@ -231,12 +237,13 @@ static int remmina_plugin_exec_run( RemminaProtocolWidget *gp )
         if( !error )
         {
             REMMINA_PLUGIN_DEBUG( "[%s] Command executed", PLUGIN_NAME );
-            gtk_text_buffer_set_text( gpdata->log_buffer, stdout_buffer, -1 );
+
+            gpdata->log_buffer->set_text( stdout_buffer );
         }
         else
         {
             g_warning( "Command %s exited with error: %s\n", cmd, error->message );
-            gtk_text_buffer_set_text( gpdata->log_buffer, error->message, -1 );
+            gpdata->log_buffer->set_text( error->message );
             g_error_free( error );
         }
     }

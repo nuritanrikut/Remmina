@@ -397,6 +397,10 @@ foreach(module_path ${CMAKE_MODULE_PATH})
   endif()
 endforeach()
 
+pkg_check_modules(GTKMM gtkmm-3.0)
+link_directories( ${GTKMM_LIBRARY_DIRS}  )
+include_directories( ${GTKMM_INCLUDE_DIRS}  )
+
 # find_required_package(GTK)
 find_package(GLib REQUIRED)
 if(NOT GLib_FOUND)
